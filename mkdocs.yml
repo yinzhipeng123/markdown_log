@@ -1,0 +1,37 @@
+#mkdocs serve
+site_name: MarkDown_Log
+site_url: https://yinzhipeng123.github.io/makedown_log/
+repo_name: MarkDown_Log
+repo_url: https://github.com/yinzhipeng123/makedown_log
+copyright: MarkDown_Log - Documentation
+
+nav:
+- Home: index.md
+- 文章列表:
+  - MkDocs: api/MkDoc.md
+- Prometheus:
+  - Prometheus:
+    - 单机部署: prometheus/prometheus/prometheus.md
+    - Exporter Metrics解释: prometheus/prometheus/Exporter_Metrics.md
+    - Prometheus监控查询例子: prometheus/prometheus/query_xamples.md
+    - Prometheus监控查询语法入门: prometheus/prometheus/query_rules.md
+  - Alertmanager:
+    - Alertmanager部署: prometheus/prometheus/prometheus.md
+    - Alertmanager配置: prometheus/alertmanager/alertmanager_config.md
+  - Grafana:
+    - Dashboard: prometheus/grafana/grafana_dashboard.md
+- Etcd:
+  - etcd部署: etcd/etcd.md
+- Python:
+  - CSV模块: python/csv.md
+- Go:
+  - Go入门: go/go_one.md
+  - Web框架 Gin: 
+    - Gin入门:  go/go_gin.md
+    - Gin 路由拆分成单个文件: go/gin_route.md
+    - Gin 路由拆分成单独APP: go/gin__app_route.md
+  
+  
+
+theme:
+  name: material

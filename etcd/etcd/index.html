@@ -1,0 +1,1076 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://yinzhipeng123.github.io/makedown_log/etcd/etcd/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
+    
+    
+      
+        <title>etcd部署 - MarkDown_Log</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3754935a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#etcd" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MarkDown_Log" class="md-header__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MarkDown_Log
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              etcd部署
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/yinzhipeng123/makedown_log/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MarkDown_Log
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MarkDown_Log" class="md-nav__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    MarkDown_Log
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/yinzhipeng123/makedown_log/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MarkDown_Log
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        文章列表
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="文章列表" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          文章列表
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/MkDoc/" class="md-nav__link">
+        MkDocs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Prometheus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Prometheus" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Prometheus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        Prometheus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Prometheus" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Prometheus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
+        单机部署
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
+        Exporter Metrics解释
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/query_xamples/" class="md-nav__link">
+        Prometheus监控查询例子
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/query_rules/" class="md-nav__link">
+        Prometheus监控查询语法入门
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Alertmanager
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Alertmanager" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Alertmanager
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
+        Alertmanager部署
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
+        Alertmanager配置
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Grafana
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Grafana" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Grafana
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Etcd
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Etcd" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Etcd
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          etcd部署
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        etcd部署
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    单机部署
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API接口
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/csv/" class="md-nav__link">
+        CSV模块
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Go
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Go" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Go
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go/go_one/" class="md-nav__link">
+        Go入门
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Web框架 Gin
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web框架 Gin" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Web框架 Gin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go/go_gin/" class="md-nav__link">
+        Gin入门
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go/gin_route/" class="md-nav__link">
+        Gin 路由拆分成单个文件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go/gin__app_route/" class="md-nav__link">
+        Gin 路由拆分成单独APP
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    单机部署
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API接口
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/yinzhipeng123/makedown_log/edit/master/docs/etcd/etcd.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="etcd">Etcd</h1>
+<h2 id="_1">单机部署</h2>
+<p>服务端</p>
+<table>
+<thead>
+<tr>
+<th>主机名</th>
+<th>etcd版本</th>
+<th>IP地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>etcd</td>
+<td>v3.4.13</td>
+<td>192.168.70.132</td>
+</tr>
+</tbody>
+</table>
+<p>下载地址:</p>
+<p>https://github.com/etcd-io/etcd/releases/tag/v3.4.13</p>
+<pre><code class="language-bash">[root@etcd ~]# tar -zxvf etcd-v3.4.13-linux-amd64.tar.gz
+
+[root@centos7 ~]# cd etcd-v3.4.13-linux-amd64
+
+[root@centos7 etcd-v3.4.13-linux-amd64]# nohup ./etcd --advertise-client-urls 'http://0.0.0.0:2379'  --listen-client-urls 'http://0.0.0.0:2379'   --enable-v2  &gt; etcd.log 2&gt;&amp;1 &amp;
+
+--advertise-client-urls 
+--listen-client-urls  这两个0.0.0.0开头是为了浏览器也能访问，默认只能访问127.0.0.1
+--enable-v2 开启V2的API
+</code></pre>
+<p>因为是单机集群，所以就启动一个节点即可</p>
+<pre><code class="language-bash">[root@etcd etcd-v3.4.13-linux-amd64]# ./etcd --version
+etcd Version: 3.4.13
+Git SHA: ae9734ed2
+Go Version: go1.12.17
+Go OS/Arch: linux/amd64
+[root@etcd etcd-v3.4.13-linux-amd64]# ./etcd --help
+Usage:
+
+  etcd [flags]
+    Start an etcd server.
+
+  etcd --version
+    Show the version of etcd.
+
+  etcd -h | --help
+    Show the help information about etcd.
+
+  etcd --config-file
+    Path to the server configuration file. Note that if a configuration file is provided, other command line flags and environment variables will be ignored.
+
+  etcd gateway
+    Run the stateless pass-through etcd TCP connection forwarding proxy.
+
+  etcd grpc-proxy
+    Run the stateless etcd v3 gRPC L7 reverse proxy.
+
+
+Member:
+  --name 'default'
+    Human-readable name for this member.
+  --data-dir '${name}.etcd'
+    Path to the data directory.
+  --wal-dir ''
+    Path to the dedicated wal directory.
+  --snapshot-count '100000'
+    Number of committed transactions to trigger a snapshot to disk.
+  --heartbeat-interval '100'
+    Time (in milliseconds) of a heartbeat interval.
+  --election-timeout '1000'
+    Time (in milliseconds) for an election to timeout. See tuning documentation for details.
+  --initial-election-tick-advance 'true'
+    Whether to fast-forward initial election ticks on boot for faster election.
+  --listen-peer-urls 'http://localhost:2380'
+    List of URLs to listen on for peer traffic.
+  --listen-client-urls 'http://localhost:2379'
+    List of URLs to listen on for client traffic.
+  --max-snapshots '5'
+    Maximum number of snapshot files to retain (0 is unlimited).
+  --max-wals '5'
+    Maximum number of wal files to retain (0 is unlimited).
+  --quota-backend-bytes '0'
+    Raise alarms when backend size exceeds the given quota (0 defaults to low space quota).
+  --backend-batch-interval ''
+    BackendBatchInterval is the maximum time before commit the backend transaction.
+  --backend-batch-limit '0'
+    BackendBatchLimit is the maximum operations before commit the backend transaction.
+  --max-txn-ops '128'
+    Maximum number of operations permitted in a transaction.
+  --max-request-bytes '1572864'
+    Maximum client request size in bytes the server will accept.
+  --grpc-keepalive-min-time '5s'
+    Minimum duration interval that a client should wait before pinging server.
+  --grpc-keepalive-interval '2h'
+    Frequency duration of server-to-client ping to check if a connection is alive (0 to disable).
+  --grpc-keepalive-timeout '20s'
+    Additional duration of wait before closing a non-responsive connection (0 to disable).
+
+Clustering:
+  --initial-advertise-peer-urls 'http://localhost:2380'
+    List of this member's peer URLs to advertise to the rest of the cluster.
+  --initial-cluster 'default=http://localhost:2380'
+    Initial cluster configuration for bootstrapping.
+  --initial-cluster-state 'new'
+    Initial cluster state ('new' or 'existing').
+  --initial-cluster-token 'etcd-cluster'
+    Initial cluster token for the etcd cluster during bootstrap.
+    Specifying this can protect you from unintended cross-cluster interaction when running multiple clusters.
+  --advertise-client-urls 'http://localhost:2379'
+    List of this member's client URLs to advertise to the public.
+    The client URLs advertised should be accessible to machines that talk to etcd cluster. etcd client libraries parse these URLs to connect to the cluster.
+  --discovery ''
+    Discovery URL used to bootstrap the cluster.
+  --discovery-fallback 'proxy'
+    Expected behavior ('exit' or 'proxy') when discovery services fails.
+    &quot;proxy&quot; supports v2 API only.
+  --discovery-proxy ''
+    HTTP proxy to use for traffic to discovery service.
+  --discovery-srv ''
+    DNS srv domain used to bootstrap the cluster.
+  --discovery-srv-name ''
+    Suffix to the dns srv name queried when bootstrapping.
+  --strict-reconfig-check 'true'
+    Reject reconfiguration requests that would cause quorum loss.
+  --pre-vote 'false'
+    Enable to run an additional Raft election phase.
+  --auto-compaction-retention '0'
+    Auto compaction retention length. 0 means disable auto compaction.
+  --auto-compaction-mode 'periodic'
+    Interpret 'auto-compaction-retention' one of: periodic|revision. 'periodic' for duration based retention, defaulting to hours if no time unit is provided (e.g. '5m'). 'revision' for revision number based retention.
+  --enable-v2 'false'
+    Accept etcd V2 client requests.
+
+Security:
+  --cert-file ''
+    Path to the client server TLS cert file.
+  --key-file ''
+    Path to the client server TLS key file.
+  --client-cert-auth 'false'
+    Enable client cert authentication.
+  --client-crl-file ''
+    Path to the client certificate revocation list file.
+  --client-cert-allowed-hostname ''
+    Allowed TLS hostname for client cert authentication.
+  --trusted-ca-file ''
+    Path to the client server TLS trusted CA cert file.
+  --auto-tls 'false'
+    Client TLS using generated certificates.
+  --peer-cert-file ''
+    Path to the peer server TLS cert file.
+  --peer-key-file ''
+    Path to the peer server TLS key file.
+  --peer-client-cert-auth 'false'
+    Enable peer client cert authentication.
+  --peer-trusted-ca-file ''
+    Path to the peer server TLS trusted CA file.
+  --peer-cert-allowed-cn ''
+    Required CN for client certs connecting to the peer endpoint.
+  --peer-cert-allowed-hostname ''
+    Allowed TLS hostname for inter peer authentication.
+  --peer-auto-tls 'false'
+    Peer TLS using self-generated certificates if --peer-key-file and --peer-cert-file are not provided.
+  --peer-crl-file ''
+    Path to the peer certificate revocation list file.
+  --cipher-suites ''
+    Comma-separated list of supported TLS cipher suites between client/server and peers (empty will be auto-populated by Go).
+  --cors '*'
+    Comma-separated whitelist of origins for CORS, or cross-origin resource sharing, (empty or * means allow all).
+  --host-whitelist '*'
+    Acceptable hostnames from HTTP client requests, if server is not secure (empty or * means allow all).
+
+Auth:
+  --auth-token 'simple'
+    Specify a v3 authentication token type and its options ('simple' or 'jwt').
+  --bcrypt-cost 10
+    Specify the cost / strength of the bcrypt algorithm for hashing auth passwords. Valid values are between 4 and 31.
+  --auth-token-ttl 300
+    Time (in seconds) of the auth-token-ttl.
+
+Profiling and Monitoring:
+  --enable-pprof 'false'
+    Enable runtime profiling data via HTTP server. Address is at client URL + &quot;/debug/pprof/&quot;
+  --metrics 'basic'
+    Set level of detail for exported metrics, specify 'extensive' to include histogram metrics.
+  --listen-metrics-urls ''
+    List of URLs to listen on for the metrics and health endpoints.
+
+Logging:
+  --logger 'capnslog'
+    Specify 'zap' for structured logging or 'capnslog'. [WARN] 'capnslog' will be deprecated in v3.5.
+  --log-outputs 'default'
+    Specify 'stdout' or 'stderr' to skip journald logging even when running under systemd, or list of comma separated output targets.
+  --log-level 'info'
+    Configures log level. Only supports debug, info, warn, error, panic, or fatal.
+
+v2 Proxy (to be deprecated in v4):
+  --proxy 'off'
+    Proxy mode setting ('off', 'readonly' or 'on').
+  --proxy-failure-wait 5000
+    Time (in milliseconds) an endpoint will be held in a failed state.
+  --proxy-refresh-interval 30000
+    Time (in milliseconds) of the endpoints refresh interval.
+  --proxy-dial-timeout 1000
+    Time (in milliseconds) for a dial to timeout.
+  --proxy-write-timeout 5000
+    Time (in milliseconds) for a write to timeout.
+  --proxy-read-timeout 0
+    Time (in milliseconds) for a read to timeout.
+
+Experimental feature:
+  --experimental-initial-corrupt-check 'false'
+    Enable to check data corruption before serving any client/peer traffic.
+  --experimental-corrupt-check-time '0s'
+    Duration of time between cluster corruption check passes.
+  --experimental-enable-v2v3 ''
+    Serve v2 requests through the v3 backend under a given prefix.
+  --experimental-backend-bbolt-freelist-type 'array'
+    ExperimentalBackendFreelistType specifies the type of freelist that boltdb backend uses(array and map are supported types).
+  --experimental-enable-lease-checkpoint 'false'
+    ExperimentalEnableLeaseCheckpoint enables primary lessor to persist lease remainingTTL to prevent indefinite auto-renewal of long lived leases.
+  --experimental-compaction-batch-limit 1000
+    ExperimentalCompactionBatchLimit sets the maximum revisions deleted in each compaction batch.
+  --experimental-peer-skip-client-san-verification 'false'
+    Skip verification of SAN field in client certificate for peer connections.
+  --experimental-watch-progress-notify-interval '10m'
+    Duration of periodical watch progress notification.
+
+Unsafe feature:
+  --force-new-cluster 'false'
+    Force to create a new one-member cluster.
+
+CAUTIOUS with unsafe flag! It may break the guarantees given by the consensus protocol!
+
+TO BE DEPRECATED:
+
+  --debug 'false'
+    Enable debug-level logging for etcd. [WARN] Will be deprecated in v3.5. Use '--log-level=debug' instead.
+  --log-package-levels ''
+    Specify a particular log level for each etcd package (eg: 'etcdmain=CRITICAL,etcdserver=DEBUG').
+</code></pre>
+<p>yum安装方法</p>
+<pre><code class="language-bash">[root@etcd ~]# yum install -y etcd
+[root@etcd ~]# systemctl start etcd
+</code></pre>
+<h2 id="api">API接口</h2>
+<p>https://github.com/etcd-io/etcd/blob/6acb3d67fbe131b3b2d5d010e00ec80182be4628/Documentation/v2/api.md</p>
+<p>查看所有值的API接口</p>
+<pre><code>curl http://127.0.0.1:2379/v2/keys
+{&quot;action&quot;:&quot;get&quot;,&quot;node&quot;:{&quot;dir&quot;:true}}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ringtail/lucas">lucas</a> - 用于 kubernetes etcd3.0 + 集群的基于 Web 的键值查看器。</li>
+<li><a href="https://etcdmanager.io/">etcd-manager</a> - 现代、高效、多平台和免费的 etcd 3.x GUI 和客户端工具。适用于 Windows、Linux 和 Mac。</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../prometheus/grafana/grafana_dashboard/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dashboard" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Dashboard
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../python/csv/" class="md-footer__link md-footer__link--next" aria-label="Next: CSV模块" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              CSV模块
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            MarkDown_Log - Documentation
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>
