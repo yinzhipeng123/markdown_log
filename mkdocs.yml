@@ -24,6 +24,7 @@ nav:
   - etcd部署: etcd/etcd.md
 - Python:
   - CSV模块: python/csv.md
+  - XLSX模块: python/xlsx.md
 - Go:
   - Go入门: go/go_one.md
   - Web框架 Gin: 
