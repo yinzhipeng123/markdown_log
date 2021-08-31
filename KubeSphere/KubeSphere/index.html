@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/makedown_log/python/k8s/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/makedown_log/KubeSphere/KubeSphere/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
-        <title>K8S模块 - MarkDown_Log</title>
+        <title>KubeSphere安装 - MarkDown_Log</title>
       
     
     
@@ -62,6 +62,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#kubesphere" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              K8S模块
+              KubeSphere安装
             
           </span>
         </div>
@@ -486,14 +491,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Python
@@ -511,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../csv/" class="md-nav__link">
+      <a href="../../python/csv/" class="md-nav__link">
         CSV模块
       </a>
     </li>
@@ -523,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xlxs/" class="md-nav__link">
+      <a href="../../python/xlxs/" class="md-nav__link">
         XLSX模块
       </a>
     </li>
@@ -533,19 +536,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../python/k8s/" class="md-nav__link">
         K8S模块
       </a>
-      
     </li>
   
 
@@ -555,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mem/" class="md-nav__link">
+      <a href="../../python/mem/" class="md-nav__link">
         内存性能模块
       </a>
     </li>
@@ -679,12 +674,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       <label class="md-nav__link" for="__nav_7">
         KubeSphere
@@ -700,11 +697,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../KubeSphere/KubeSphere/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         KubeSphere安装
       </a>
+      
     </li>
   
 
@@ -722,45 +729,69 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yinzhipeng123/makedown_log/edit/master/docs/python/k8s.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/yinzhipeng123/makedown_log/edit/master/docs/KubeSphere/KubeSphere.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>K8S模块</h1>
-                
-                <p>Python 使用K8S API</p>
-<pre><code class="language-python">from kubernetes import client, config
-config_file = r&quot;config&quot;
-config.kube_config.load_kube_config(config_file=config_file)
-# 获取K8S 核心API接口
-Api_Instance = client.CoreV1Api()
-# 获取K8S APP APIJ接口
-apps_api = client.AppsV1Api()
-print(apps_api.list_deployment_for_all_namespaces())
+                <h1 id="kubesphere">KubeSphere 单点安装</h1>
+<p>https://kubesphere.com.cn/docs/quick-start/all-in-one-on-linux/</p>
+<p>all in one：</p>
+<p>设置4核，8G内存，太小的话，有的服务无法启动，关闭防火墙，关闭selinux</p>
+<table>
+<thead>
+<tr>
+<th>主机名</th>
+<th>KubeSphere版本</th>
+<th>IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>centos7</td>
+<td>3.1.0</td>
+<td>192.168.70.130</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">[root@centos7 ~]# yum install yum-utils device-mapper-persistent-data lvm2 openssl socat conntrack ebtables ipset
+[root@centos7 ~]# yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+[root@centos7 ~]# yum list docker-ce --showduplicates | sort -r
+[root@centos7 ~]# yum install docker-ce-20.10.6
+[root@centos7 ~]# systemctl enable --now docker
+
+[root@centos7 ~]# export KKZONE=cn
+[root@centos7 ~]# curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.0 sh -
+[root@centos7 ~]# chmod +x kk
+[root@centos7 ~]#./kk create cluster --with-kubernetes v1.20.4 --with-kubesphere v3.1.0
+然后会提示让安装依赖，忽略就可以 输入yes，然后就完成了安装
 </code></pre>
-<p>获取所有的deployment详情</p>
-<p>config文件为K8S链接文件config</p>
-<p>官方地址：</p>
-<p>https://github.com/kubernetes-client/python</p>
-<pre><code class="language-python">from kubernetes import client, config
-import json
-
-config_file = r&quot;config&quot;
-
-config.kube_config.load_kube_config(config_file=config_file)
-
-v1 = client.CoreV1Api()
-print(&quot;Listing pods with their IPs:&quot;)
-ret = v1.list_pod_for_all_namespaces(watch=False)
-for i in ret.items:
-    print(&quot;%s\t%s\t%s&quot; % (i.status.pod_ip, i.metadata.namespace, i.metadata.name))
-</code></pre>
+<p>启用多集群管理功能</p>
+<p>https://v3-1.docs.kubesphere.io/zh/docs/multicluster-management/enable-multicluster/direct-connection/</p>
+<p>启动商店</p>
+<p>https://v3-1.docs.kubesphere.io/zh/docs/pluggable-components/app-store/</p>
                 
               
               
@@ -780,7 +811,7 @@ for i in ret.items:
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../xlxs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: XLSX模块" rel="prev">
+        <a href="../../go/gin__app_route/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gin 路由拆分成单独APP" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -789,26 +820,11 @@ for i in ret.items:
               <span class="md-footer__direction">
                 Previous
               </span>
-              XLSX模块
+              Gin 路由拆分成单独APP
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../mem/" class="md-footer__link md-footer__link--next" aria-label="Next: 内存性能模块" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              内存性能模块
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
