@@ -35,8 +35,5 @@ nav:
     - Gin 路由拆分成单独APP: go/gin__app_route.md
 - KubeSphere:
   - KubeSphere安装: KubeSphere/KubeSphere.md
-  
-  
-
 theme:
   name: material
