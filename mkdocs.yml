@@ -1,8 +1,8 @@
 #mkdocs serve
 site_name: MarkDown_Log
-site_url: https://yinzhipeng123.github.io/makedown_log/
+site_url: https://yinzhipeng123.github.io/markdown_log/
 repo_name: MarkDown_Log
-repo_url: https://github.com/yinzhipeng123/makedown_log
+repo_url: https://github.com/yinzhipeng123/markdown_log/
 copyright: MarkDown_Log - Documentation
 
 nav:
