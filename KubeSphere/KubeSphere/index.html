@@ -881,7 +881,7 @@ https://kubesphere.io             2021-09-01 10:35:12
 #####################################################
 </code></pre>
 <p>刷新页面，节点管理中，出现边缘节点</p>
-<p><img alt="" src="https://kubesphere.com.cn/images/docs/zh-cn/enable-pluggable-components/kubeedge/edge-nodes.png" /></p>
+<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge.png?raw=true" /></p>
 <h2 id="_2">添加边缘节点</h2>
 <p>新建一台机器，来当做边缘节点，关闭防火墙，关闭selinux，我设置的是4G，双核机器</p>
 <table>
@@ -912,6 +912,7 @@ hosts:          dns files mdns4_minimal [NOTFOUND=return]
 [root@edgenode ~] sysctl -p | grep ip_forward
 </code></pre>
 <p>然后就可以在KubeSphere页面上，节点管理--》边缘节点--》添加节点，输入给node的名字，node的IP地址，然后复制下面的命令</p>
+<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge_add.png?raw=true" /></p>
 <p>但是需要把命令中的10000,10001,10002,10004依次更换为30000,30001,30002,30004</p>
 <pre><code class="language-bash">[root@edgenode ~]# arch=$(uname -m); curl -LO https://kubeedge.pek3b.qingstor.com/bin/v1.6.2/$arch/keadm-v1.6.2-linux-$arch.tar.gz  &amp;&amp; tar xvf keadm-v1.6.2-linux-$arch.tar.gz &amp;&amp; chmod +x keadm &amp;&amp; ./keadm join --kubeedge-version=1.6.2 --region=zh --cloudcore-ipport=192.168.70.130:30000 --quicport 30001 --certport 30002 --tunnelport 30004 --edgenode-name edge-1 --edgenode-ip 192.168.70.140 --token 41c74c8e8f86d03b8560eb5be566c62c33eeac1865cdf3a48ad554e9626ef34e.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzA1NTAwNDZ9.mmR51Ue8rduKViXYqEuQQFyNcYol_IHQIm0K53iOQdM --with-edge-taint
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -938,6 +939,7 @@ kubeedge-v1.6.2-linux-amd64/version
 KubeEdge edgecore is running, For logs visit: journalctl -u edgecore.service -b
 </code></pre>
 <p>服务端刷新页面，就添加完成了</p>
+<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge_add_fin.png?raw=true" /></p>
                 
               
               
