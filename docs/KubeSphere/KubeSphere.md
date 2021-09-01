@@ -162,6 +162,8 @@ rm -rf  /etc/systemd/system/edgecore.service
 
 ## 删除边缘节点
 
+在集群的机器上执行下面的命令，<edgenode-name>是页面上的边缘节点的名字
+
 ```
 kubectl delete node <edgenode-name>
 ```
