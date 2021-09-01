@@ -76,7 +76,7 @@ https://kubesphere.io             2021-09-01 10:35:12
 
 刷新页面，节点管理中，出现边缘节点
 
-![](https://kubesphere.com.cn/images/docs/zh-cn/enable-pluggable-components/kubeedge/edge-nodes.png)
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge.png?raw=true)
 
 ## 添加边缘节点
 
@@ -104,7 +104,7 @@ hosts:          dns files mdns4_minimal [NOTFOUND=return]
 
 然后就可以在KubeSphere页面上，节点管理--》边缘节点--》添加节点，输入给node的名字，node的IP地址，然后复制下面的命令
 
-
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge_add.png?raw=true)
 
 但是需要把命令中的10000,10001,10002,10004依次更换为30000,30001,30002,30004
 
@@ -136,7 +136,7 @@ KubeEdge edgecore is running, For logs visit: journalctl -u edgecore.service -b
 
 服务端刷新页面，就添加完成了
 
-
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge_add_fin.png?raw=true)
 
 
 
