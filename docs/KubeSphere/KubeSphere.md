@@ -140,3 +140,33 @@ KubeEdge edgecore is running, For logs visit: journalctl -u edgecore.service -b
 
 
 
+其实上面arch=$(uname -m)开头的命令，是连接[cloudcore]服务，在页面中查看cloudcore是nodeport的形式提供的，映射都是30000后的端口号，所以需要改下，而`kubeedge.cloudCore.cloudHub.advertiseAddress`则应该是cloudcore服务的IP地址，他们是一个IP地址，all-in-one模式下只有一个IP地址，如果在公网下，cloudcore应该是SLB或者公网地址才行
+
+
+
+
+
+## 边缘节点重置
+
+如果该边缘节点需要重置，需要如下操作。
+
+```
+./keadm reset
+
+yum remove mosquitto
+
+rm -rf  /var/lib/kubeedge /var/lib/edged /etc/kubeedge/ca /etc/kubeedge/certs
+
+rm -rf  /etc/systemd/system/edgecore.service
+```
+
+## 删除边缘节点
+
+```
+kubectl delete node <edgenode-name>
+```
+
+
+
+
+
