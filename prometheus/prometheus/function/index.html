@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/one/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/function/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
-        <title>函数 - MarkDown_Log</title>
+        <title>Prometheus语法函数 - MarkDown_Log</title>
       
     
     
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              函数
+              Prometheus语法函数
             
           </span>
         </div>
@@ -254,12 +254,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Prometheus
@@ -275,12 +277,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
       
       <label class="md-nav__link" for="__nav_3_1">
         Prometheus
@@ -337,6 +341,114 @@
       <a href="../query_rules/" class="md-nav__link">
         Prometheus监控查询语法入门
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Prometheus语法函数
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Prometheus语法函数
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#avg_over_timerange-vector" class="md-nav__link">
+    avg_over_time(range-vector)：指定区间内所有点的平均值。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max_over_timerange-vector" class="md-nav__link">
+    max_over_time(range-vector)：指定区间内所有点的最大值。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min_over_timerange-vector" class="md-nav__link">
+    min_over_time(range-vector)：指定区间内所有点的最小值。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sum_over_timerange-vector" class="md-nav__link">
+    sum_over_time(range-vector)：指定区间内所有值的总和。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count_over_timerange-vector" class="md-nav__link">
+    count_over_time(range-vector)：指定区间内所有值的计数。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantile_over_timescalar-range-vector-0-1" class="md-nav__link">
+    quantile_over_time(scalar, range-vector)：指定区间内值的 φ 分位数 (0 ≤ φ ≤ 1)。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stddev_over_timerange-vector" class="md-nav__link">
+    stddev_over_time(range-vector)：指定区间内值的总体标准差。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdvar_over_timerange-vector" class="md-nav__link">
+    stdvar_over_time(range-vector)：指定区间内值的总体标准方差。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#last_over_timerange-vector" class="md-nav__link">
+    last_over_time(range-vector)：指定时间间隔内的最近点值。
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -424,8 +536,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../../grafana/grafana_install/" class="md-nav__link">
+        Grafana部署
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../grafana/grafana_dashboard/" class="md-nav__link">
         Dashboard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grafana/grafana_var/" class="md-nav__link">
+        Grafana添加变量
       </a>
     </li>
   
@@ -744,14 +880,7 @@
       
         <li class="md-nav__item">
   <a href="#max_over_timerange-vector" class="md-nav__link">
-    `max_over_time(range-vector)：指定区间内所有点的最大值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    
+    max_over_time(range-vector)：指定区间内所有点的最大值。
   </a>
   
 </li>
@@ -817,7 +946,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/prometheus/prometheus/one.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/prometheus/prometheus/function.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -828,9 +957,8 @@
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/one1111111.png?raw=true" /></p>
 <p>然后通过avg_over_time计算1分钟内的平均值，例如：avg_over_time(node_procs_running[1m])</p>
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/two2222222.png?raw=true" /></p>
-<h2 id="max_over_timerange-vector">`max_over_time(range-vector)：指定区间内所有点的最大值。</h2>
+<h2 id="max_over_timerange-vector">max_over_time(range-vector)：指定区间内所有点的最大值。</h2>
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/three3333333.png?raw=true" /></p>
-<h2 id="_2"></h2>
 <h2 id="min_over_timerange-vector">min_over_time(range-vector)：指定区间内所有点的最小值。</h2>
 <h2 id="sum_over_timerange-vector">sum_over_time(range-vector)：指定区间内所有值的总和。</h2>
 <h2 id="count_over_timerange-vector">count_over_time(range-vector)：指定区间内所有值的计数。</h2>
@@ -853,6 +981,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../query_rules/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prometheus监控查询语法入门" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Prometheus监控查询语法入门
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../prometheus/" class="md-footer__link md-footer__link--next" aria-label="Next: Alertmanager部署" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Alertmanager部署
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

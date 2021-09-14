@@ -14,11 +14,11 @@
 
 在面板的设置中，可以设置一些变量，供Grafana大屏中的数据公式调用
 
-
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Grafana/var/var1.png?raw=true)
 
 例如，获取集群总共的内存大小
 
-
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Grafana/var/var2.png?raw=true)
 
 本身sum(node_memory_MemTotal_bytes)是句promSQL，需要放进`query_result(query)`中，但是查出来的数据是带标签和时间戳的  `{} 2792702402560 1631610328000`，这时候需要正则/.* ([^\ ]*) .*/来过滤出中间的数字
 
@@ -31,3 +31,4 @@
 1. https://yunlzheng.gitbook.io/prometheus-book/part-ii-prometheus-jin-jie/grafana/templating
 2. https://www.jianshu.com/p/aa50419b4ed3
 
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Grafana/var/var3.png?raw=true)
