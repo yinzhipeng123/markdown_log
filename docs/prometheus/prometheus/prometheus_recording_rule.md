@@ -42,3 +42,5 @@ github上的例子：https://github.com/helm/charts/blob/master/stable/prometheu
 
 
 例如，下面的指标，就可以在界面上直接查询到：
+
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/rules/rules.png?raw=true)
