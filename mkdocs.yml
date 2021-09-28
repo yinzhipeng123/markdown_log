@@ -18,11 +18,13 @@ nav:
   - Prometheus:
     - 单机部署: prometheus/prometheus/prometheus.md
     - K8S部署: prometheus/prometheus/prometheus_k8s.md
+    - K8S kube-state-metrics指标说明: prometheus/prometheus/kube-state-metrics.md
     - Exporter Metrics解释: prometheus/prometheus/Exporter_Metrics.md
     - Prometheus监控查询例子: prometheus/prometheus/query_xamples.md
     - Prometheus监控查询语法入门: prometheus/prometheus/query_rules.md
     - Prometheus语法函数: prometheus/prometheus/function.md
     - Prometheus recording_rules功能: prometheus/prometheus/prometheus_recording_rule.md
+    - Prometheus指标讲解"为什么rate可以计算CPU的使用率": prometheus/prometheus/prometheus_rate.md
   - Alertmanager:
     - Alertmanager部署: prometheus/prometheus/prometheus.md
     - Alertmanager配置: prometheus/alertmanager/alertmanager_config.md
@@ -48,6 +50,9 @@ nav:
   - KubeSphere安装: KubeSphere/KubeSphere.md
 - Yum:
   - ius源: yum/ius.md
+- Centos7:
+  - 修改网卡: centos7/ens33.md
+
 
 theme:
   name: material
