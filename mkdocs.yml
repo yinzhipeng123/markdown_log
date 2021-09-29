@@ -52,6 +52,8 @@ nav:
   - ius源: yum/ius.md
 - Centos7:
   - 修改网卡: centos7/ens33.md
+- K8S:
+  - K8S 1.16.9部署: kubernetes/kubernetes1.16.md
 
 
 theme:
