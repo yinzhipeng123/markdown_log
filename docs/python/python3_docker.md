@@ -1,8 +1,10 @@
 # Python3的Docker镜像制作
 
-Dockerfile
 
-```
+
+编辑`Dockerfile`文件
+
+```dockerfile
 FROM docker.io/library/centos:7.4.1708
 #python3基础镜像构建
 MAINTAINER yinzhipeng
@@ -18,5 +20,11 @@ RUN ln -s /usr/local/python/python3/bin/python3 /usr/bin/python3
 RUN ln -s /usr/local/python/python3/bin/pip3 /usr/bin/pip3
 WORKDIR /app
 CMD bash -c "while true;do sleep 1s;done"
+```
+
+然后执行
+
+```bash
+ docker build  -t='self_Python3' .
 ```
 
