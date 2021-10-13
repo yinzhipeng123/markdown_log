@@ -39,7 +39,8 @@ nav:
   - XLSX模块: python/xlxs.md
   - K8S模块: python/k8s.md
   - 内存性能模块: python/mem.md
-  - Centos7安装python3: python/python3_env.md
+  - Centos7安装Python3: python/python3_env.md
+  - Python3 Dokcer镜像制作: python/python3_docker.md
 - Go:
   - Go入门: go/go_one.md
   - Web框架 Gin: 
