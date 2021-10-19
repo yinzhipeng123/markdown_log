@@ -9,21 +9,21 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/query_xamples/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/python/python_log/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
-        <title>Prometheus监控查询例子 - MarkDown_Log</title>
+        <title>Python3 日志控制 - MarkDown_Log</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3754935a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3754935a.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
         
       
     
@@ -55,7 +55,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prometheus" class="md-skip">
+        <a href="#python" class="md-skip">
           跳转至
         </a>
       
@@ -74,7 +74,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="MarkDown_Log" class="md-header__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+    <a href="../.." title="MarkDown_Log" class="md-header__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prometheus监控查询例子
+              Python3 日志控制
             
           </span>
         </div>
@@ -167,7 +167,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="MarkDown_Log" class="md-nav__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+    <a href="../.." title="MarkDown_Log" class="md-nav__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -199,7 +199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -235,7 +235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/MkDoc/" class="md-nav__link">
+      <a href="../../api/MkDoc/" class="md-nav__link">
         MkDocs
       </a>
     </li>
@@ -254,14 +254,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Prometheus
@@ -277,14 +275,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
       <label class="md-nav__link" for="__nav_3_1">
         Prometheus
@@ -302,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
         单机部署
       </a>
     </li>
@@ -314,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_k8s/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus_k8s/" class="md-nav__link">
         K8S部署
       </a>
     </li>
@@ -326,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kube-state-metrics/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/kube-state-metrics/" class="md-nav__link">
         K8S kube-state-metrics指标说明
       </a>
     </li>
@@ -338,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Exporter_Metrics/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
         Exporter Metrics解释
       </a>
     </li>
@@ -348,47 +344,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Prometheus监控查询例子
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/query_xamples/" class="md-nav__link">
         Prometheus监控查询例子
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prometheus" class="md-nav__link">
-    Prometheus监控查询例子
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -398,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../query_rules/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/query_rules/" class="md-nav__link">
         Prometheus监控查询语法入门
       </a>
     </li>
@@ -410,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../function/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/function/" class="md-nav__link">
         Prometheus语法函数
       </a>
     </li>
@@ -422,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_recording_rule/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus_recording_rule/" class="md-nav__link">
         Prometheus recording_rules功能
       </a>
     </li>
@@ -434,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_rate/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus_rate/" class="md-nav__link">
         Prometheus指标讲解"为什么rate可以计算CPU的使用率"
       </a>
     </li>
@@ -473,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
         Alertmanager部署
       </a>
     </li>
@@ -485,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../alertmanager/alertmanager_config/" class="md-nav__link">
+      <a href="../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
         Alertmanager配置
       </a>
     </li>
@@ -524,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_install/" class="md-nav__link">
+      <a href="../../prometheus/grafana/grafana_install/" class="md-nav__link">
         Grafana部署
       </a>
     </li>
@@ -536,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_dashboard/" class="md-nav__link">
+      <a href="../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
         Dashboard
       </a>
     </li>
@@ -548,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_var/" class="md-nav__link">
+      <a href="../../prometheus/grafana/grafana_var/" class="md-nav__link">
         Grafana添加变量
       </a>
     </li>
@@ -596,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../etcd/etcd/" class="md-nav__link">
+      <a href="../../etcd/etcd/" class="md-nav__link">
         etcd部署
       </a>
     </li>
@@ -615,12 +575,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Python
@@ -638,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/csv/" class="md-nav__link">
+      <a href="../csv/" class="md-nav__link">
         CSV模块
       </a>
     </li>
@@ -650,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/xlxs/" class="md-nav__link">
+      <a href="../xlxs/" class="md-nav__link">
         XLSX模块
       </a>
     </li>
@@ -662,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/k8s/" class="md-nav__link">
+      <a href="../k8s/" class="md-nav__link">
         K8S模块
       </a>
     </li>
@@ -674,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/mem/" class="md-nav__link">
+      <a href="../mem/" class="md-nav__link">
         内存性能模块
       </a>
     </li>
@@ -686,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/python3_env/" class="md-nav__link">
+      <a href="../python3_env/" class="md-nav__link">
         Centos7安装Python3
       </a>
     </li>
@@ -698,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/python3_docker/" class="md-nav__link">
+      <a href="../python3_docker/" class="md-nav__link">
         Python3 Dokcer镜像制作
       </a>
     </li>
@@ -708,11 +670,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../python/python_log/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Python3 日志控制
       </a>
+      
     </li>
   
 
@@ -752,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../go/go_one/" class="md-nav__link">
+      <a href="../../go/go_one/" class="md-nav__link">
         Go入门
       </a>
     </li>
@@ -785,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../go/go_gin/" class="md-nav__link">
+      <a href="../../go/go_gin/" class="md-nav__link">
         Gin入门
       </a>
     </li>
@@ -797,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../go/gin_route/" class="md-nav__link">
+      <a href="../../go/gin_route/" class="md-nav__link">
         Gin 路由拆分成单个文件
       </a>
     </li>
@@ -809,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../go/gin__app_route/" class="md-nav__link">
+      <a href="../../go/gin__app_route/" class="md-nav__link">
         Gin 路由拆分成单独APP
       </a>
     </li>
@@ -857,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KubeSphere/KubeSphere/" class="md-nav__link">
+      <a href="../../KubeSphere/KubeSphere/" class="md-nav__link">
         KubeSphere安装
       </a>
     </li>
@@ -899,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yum/ius/" class="md-nav__link">
+      <a href="../../yum/ius/" class="md-nav__link">
         ius源
       </a>
     </li>
@@ -941,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../centos7/ens33/" class="md-nav__link">
+      <a href="../../centos7/ens33/" class="md-nav__link">
         修改网卡
       </a>
     </li>
@@ -983,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../kubernetes/kubernetes1.16/" class="md-nav__link">
+      <a href="../../kubernetes/kubernetes1.16/" class="md-nav__link">
         K8S 1.16.9部署
       </a>
     </li>
@@ -1012,21 +984,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prometheus" class="md-nav__link">
-    Prometheus监控查询例子
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1038,50 +997,82 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/prometheus/prometheus/query_xamples.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/python/python_log.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Prometheus监控查询例子</h1>
-                
-                <h2 id="prometheus">Prometheus监控查询例子</h2>
-<p>例：</p>
-<pre><code class="language-json"># HELP node_procs_running Number of processes in runnable state.
-# TYPE node_procs_running gauge
-node_procs_running 4
+                <h1 id="python">Python控制台输出重定向到日志并控制日志大小</h1>
+<p>python控制台输出，可以输出print和一些error信息。那么启动python的时候可以重定向控制台的输出信息到日志文件中</p>
+<pre><code class="language-bash">mkdir -p /app/example/log
+touch /app/example/example.py
 </code></pre>
-<p>该数据表示系统中正在运行和可运行状态的线程数量，通过页面查询发现是4，而且是gauge，是个可增可减的值</p>
-<p>在Prometheus上查询</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/20210720181107.png?raw=true" /></p>
-<p>可以查询到一个数据，因为该监控是由node_exporter提供的，所以只能查到一个数据</p>
-<p>发现该数据增加了两个标签，猜测是因为Prometheus配置提供的。</p>
-<p>然后查询该数据的图谱：</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/2021072018140622.png?raw=true" /></p>
-<p>例：</p>
-<pre><code class="language-json"># HELP node_cpu_seconds_total Seconds the cpus spent in each mode.
-# TYPE node_cpu_seconds_total counter
-node_cpu_seconds_total{cpu=&quot;0&quot;,mode=&quot;idle&quot;} 12463.13
-node_cpu_seconds_total{cpu=&quot;0&quot;,mode=&quot;iowait&quot;} 2.32
-node_cpu_seconds_total{cpu=&quot;0&quot;,mode=&quot;irq&quot;} 0
-node_cpu_seconds_total{cpu=&quot;0&quot;,mode=&quot;nice&quot;} 0.04
-node_cpu_seconds_total{cpu=&quot;0&quot;,mode=&quot;softirq&quot;} 0.21
-node_cpu_seconds_total{cpu=&quot;0&quot;,mode=&quot;steal&quot;} 0
-node_cpu_seconds_total{cpu=&quot;0&quot;,mode=&quot;system&quot;} 6.16
-node_cpu_seconds_total{cpu=&quot;0&quot;,mode=&quot;user&quot;} 3.18
-node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;idle&quot;} 12458.04
-node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;iowait&quot;} 0.58
-node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;irq&quot;} 0
-node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;nice&quot;} 0.02
-node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;softirq&quot;} 0.37
-node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;steal&quot;} 0
-node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;system&quot;} 9.62
-node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;user&quot;} 1.89
+<p>编辑python文件，设置日志文件及最大大小和保存个数、及日志样式</p>
+<pre><code class="language-python">import os
+import time
+import traceback
+import schedule
+import logging
+import colorlog
+import sys
+
+# ————————日志————————
+logfilename = &quot;/app/example/log/example.log&quot;
+log_colors_config = {
+    'DEBUG': 'white',
+    'INFO': 'green',
+    'WARNING': 'yellow',
+    'ERROR': 'red',
+    'CRITICAL': 'bold_red',
+}
+logger = logging.getLogger(__name__)
+logger.setLevel(level=logging.DEBUG)
+# 设置日志文件大小
+handler = logging.handlers.RotatingFileHandler(logfilename, encoding='utf-8',
+                                               maxBytes=100 * 1024 * 1024,
+                                               backupCount=10)
+
+# 输出到文件的日志级别
+handler.setLevel(logging.INFO)
+# 日志样式
+formatter = logging.Formatter(
+    '%(asctime)s-%(name)s-%(filename)s-[line:%(lineno)d]-%(levelname)s-[日志信息]: %(message)s')
+# 控制台日志样式
+formatter_color = colorlog.ColoredFormatter(
+    '%(log_color)s%(asctime)s-%(name)s-%(filename)s-[line:%(lineno)d]-%(levelname)s-[日志信息]: %(message)s',
+    log_colors=log_colors_config)
+
+# 控制台的日志
+console = logging.StreamHandler(stream=sys.stdout)
+# 控制台的日志级别
+console.setLevel(logging.DEBUG)
+# 设置日志样式
+handler.setFormatter(formatter)
+# 设置控制台日志样式
+console.setFormatter(formatter_color)
+#添加输出
+logger.addHandler(handler)
+logger.addHandler(console)
+# ————————日志————————
+
+
+
+logger.info(&quot;cron start&quot;)
+try:
+    logger.info(&quot;dir:&quot; + os.getcwd())
+    while True:
+        time.sleep(1)
+        print(&quot;hello&quot;)
+
+except Exception as e:
+    logger.error(e)
+    logger.error(traceback.print_exc())
 </code></pre>
-<p>CPU在每种状态下的CPU时间，是个counter 类型</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/me100000000.png?raw=true" /></p>
-<p>看来标签会根据配置文件自动加上的。查询其中一个值的2小时的数据图谱</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/me2000000000.png?raw=true" /></p>
+<p>到此，example.py中 <code>logger.info</code> 和 <code>logger.error</code> 日志会输出到 <code>日志文件</code> 中 和 <code>控制台</code> 上，<code>print</code> 语句会输出到控制台上</p>
+<p>用下面的方式启动，控制台的输出会都出现在 <code>/app/example/log/example.log</code> 文件中</p>
+<p>一开始我以为<code>logger.info</code> 和 <code>logger.error</code> 会在日志中出现两次，逻辑上，代码中指定了一遍控制台输出，通过命令指定了一遍控制台输出，后来发现并没有，只会在日志中出现一次。而且日志大小正常被切割</p>
+<pre><code class="language-bash">nohup python3  /app/example/example.py &gt; /app/example/log/example.log 2&gt;&amp;1 &amp;
+</code></pre>
                 
               
               
@@ -1101,7 +1092,7 @@ node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;user&quot;} 1.89
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../Exporter_Metrics/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Exporter Metrics解释" rel="prev">
+        <a href="../python3_docker/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Python3 Dokcer镜像制作" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1110,20 +1101,20 @@ node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;user&quot;} 1.89
               <span class="md-footer__direction">
                 上一页
               </span>
-              Exporter Metrics解释
+              Python3 Dokcer镜像制作
             </div>
           </div>
         </a>
       
       
         
-        <a href="../query_rules/" class="md-footer__link md-footer__link--next" aria-label="下一页: Prometheus监控查询语法入门" rel="next">
+        <a href="../../go/go_one/" class="md-footer__link md-footer__link--next" aria-label="下一页: Go入门" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Prometheus监控查询语法入门
+              Go入门
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1156,10 +1147,10 @@ node_cpu_seconds_total{cpu=&quot;1&quot;,mode=&quot;user&quot;} 1.89
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
     
   </body>
