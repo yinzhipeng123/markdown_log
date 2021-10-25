@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/function/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/python/basics/basic/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
-        <title>Prometheus语法函数 - MarkDown_Log</title>
+        <title>Python一些语法 - MarkDown_Log</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#map" class="md-skip">
           跳转至
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prometheus语法函数
+              Python一些语法
             
           </span>
         </div>
@@ -254,14 +254,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Prometheus
@@ -277,14 +275,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
       <label class="md-nav__link" for="__nav_3_1">
         Prometheus
@@ -302,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus/" class="md-nav__link">
         单机部署
       </a>
     </li>
@@ -314,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_k8s/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus_k8s/" class="md-nav__link">
         K8S部署
       </a>
     </li>
@@ -326,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kube-state-metrics/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/kube-state-metrics/" class="md-nav__link">
         K8S kube-state-metrics指标说明
       </a>
     </li>
@@ -338,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Exporter_Metrics/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
         Exporter Metrics解释
       </a>
     </li>
@@ -350,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../query_xamples/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/query_xamples/" class="md-nav__link">
         Prometheus监控查询例子
       </a>
     </li>
@@ -362,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../query_rules/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/query_rules/" class="md-nav__link">
         Prometheus监控查询语法入门
       </a>
     </li>
@@ -372,107 +368,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Prometheus语法函数
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../prometheus/prometheus/function/" class="md-nav__link">
         Prometheus语法函数
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#avg_over_timerange-vector" class="md-nav__link">
-    avg_over_time(range-vector)：指定区间内所有点的平均值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#max_over_timerange-vector" class="md-nav__link">
-    max_over_time(range-vector)：指定区间内所有点的最大值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#min_over_timerange-vector" class="md-nav__link">
-    min_over_time(range-vector)：指定区间内所有点的最小值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sum_over_timerange-vector" class="md-nav__link">
-    sum_over_time(range-vector)：指定区间内所有值的总和。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count_over_timerange-vector" class="md-nav__link">
-    count_over_time(range-vector)：指定区间内所有值的计数。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantile_over_timescalar-range-vector-0-1" class="md-nav__link">
-    quantile_over_time(scalar, range-vector)：指定区间内值的 φ 分位数 (0 ≤ φ ≤ 1)。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stddev_over_timerange-vector" class="md-nav__link">
-    stddev_over_time(range-vector)：指定区间内值的总体标准差。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stdvar_over_timerange-vector" class="md-nav__link">
-    stdvar_over_time(range-vector)：指定区间内值的总体标准方差。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#last_over_timerange-vector" class="md-nav__link">
-    last_over_time(range-vector)：指定时间间隔内的最近点值。
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -482,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_recording_rule/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus_recording_rule/" class="md-nav__link">
         Prometheus recording_rules功能
       </a>
     </li>
@@ -494,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_rate/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus_rate/" class="md-nav__link">
         Prometheus指标讲解"为什么rate可以计算CPU的使用率"
       </a>
     </li>
@@ -533,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus/" class="md-nav__link">
         Alertmanager部署
       </a>
     </li>
@@ -545,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../alertmanager/alertmanager_config/" class="md-nav__link">
+      <a href="../../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
         Alertmanager配置
       </a>
     </li>
@@ -584,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_install/" class="md-nav__link">
+      <a href="../../../prometheus/grafana/grafana_install/" class="md-nav__link">
         Grafana部署
       </a>
     </li>
@@ -596,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_dashboard/" class="md-nav__link">
+      <a href="../../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
         Dashboard
       </a>
     </li>
@@ -608,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_var/" class="md-nav__link">
+      <a href="../../../prometheus/grafana/grafana_var/" class="md-nav__link">
         Grafana添加变量
       </a>
     </li>
@@ -675,12 +575,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Python
@@ -696,11 +598,166 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../python/basics/basic/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python一些语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Python一些语法
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    map函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lambda" class="md-nav__link">
+    lambda函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    -&gt; 的用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#__annotations____" class="md-nav__link">
+    __annotations____  的用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    import * 的问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with" class="md-nav__link">
+    with关键字
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    文件读取多行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seek" class="md-nav__link">
+    操作文本seek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    操作json
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    句法错误
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    触发异常
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    异常链
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    类的构造函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    类中私有变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    迭代器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    生成器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    性能测量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    查看包内对象
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -710,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/csv/" class="md-nav__link">
+      <a href="../../csv/" class="md-nav__link">
         CSV模块
       </a>
     </li>
@@ -722,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/xlxs/" class="md-nav__link">
+      <a href="../../xlxs/" class="md-nav__link">
         XLSX模块
       </a>
     </li>
@@ -734,7 +791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/k8s/" class="md-nav__link">
+      <a href="../../k8s/" class="md-nav__link">
         K8S模块
       </a>
     </li>
@@ -746,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/mem/" class="md-nav__link">
+      <a href="../../mem/" class="md-nav__link">
         内存性能模块
       </a>
     </li>
@@ -758,7 +815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/python3_env/" class="md-nav__link">
+      <a href="../../python3_env/" class="md-nav__link">
         Centos7安装Python3
       </a>
     </li>
@@ -770,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/python3_docker/" class="md-nav__link">
+      <a href="../../python3_docker/" class="md-nav__link">
         Python3 Dokcer镜像制作
       </a>
     </li>
@@ -782,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/python_log/" class="md-nav__link">
+      <a href="../../python_log/" class="md-nav__link">
         Python3 日志控制
       </a>
     </li>
@@ -794,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/flask/flask_init/" class="md-nav__link">
+      <a href="../../flask/flask_init/" class="md-nav__link">
         Flask
       </a>
     </li>
@@ -1138,8 +1195,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1148,64 +1203,127 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avg_over_timerange-vector" class="md-nav__link">
-    avg_over_time(range-vector)：指定区间内所有点的平均值。
+  <a href="#map" class="md-nav__link">
+    map函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#max_over_timerange-vector" class="md-nav__link">
-    max_over_time(range-vector)：指定区间内所有点的最大值。
+  <a href="#lambda" class="md-nav__link">
+    lambda函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#min_over_timerange-vector" class="md-nav__link">
-    min_over_time(range-vector)：指定区间内所有点的最小值。
+  <a href="#-" class="md-nav__link">
+    -&gt; 的用法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sum_over_timerange-vector" class="md-nav__link">
-    sum_over_time(range-vector)：指定区间内所有值的总和。
+  <a href="#__annotations____" class="md-nav__link">
+    __annotations____  的用法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#count_over_timerange-vector" class="md-nav__link">
-    count_over_time(range-vector)：指定区间内所有值的计数。
+  <a href="#import" class="md-nav__link">
+    import * 的问题
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quantile_over_timescalar-range-vector-0-1" class="md-nav__link">
-    quantile_over_time(scalar, range-vector)：指定区间内值的 φ 分位数 (0 ≤ φ ≤ 1)。
+  <a href="#with" class="md-nav__link">
+    with关键字
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stddev_over_timerange-vector" class="md-nav__link">
-    stddev_over_time(range-vector)：指定区间内值的总体标准差。
+  <a href="#_1" class="md-nav__link">
+    文件读取多行
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stdvar_over_timerange-vector" class="md-nav__link">
-    stdvar_over_time(range-vector)：指定区间内值的总体标准方差。
+  <a href="#seek" class="md-nav__link">
+    操作文本seek
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#last_over_timerange-vector" class="md-nav__link">
-    last_over_time(range-vector)：指定时间间隔内的最近点值。
+  <a href="#json" class="md-nav__link">
+    操作json
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    句法错误
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    触发异常
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    异常链
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    类的构造函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    类中私有变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    迭代器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    生成器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    性能测量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    查看包内对象
   </a>
   
 </li>
@@ -1222,26 +1340,345 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/prometheus/prometheus/function.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/python/basics/basic.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">函数</h1>
-<h2 id="avg_over_timerange-vector">avg_over_time(range-vector)：指定区间内所有点的平均值。</h2>
-<p><strong>range-vector</strong>：这个代表一段时间所有的值，比如这种：node_procs_running[1m]</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/one1111111.png?raw=true" /></p>
-<p>然后通过avg_over_time计算1分钟内的平均值，例如：avg_over_time(node_procs_running[1m])</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/two2222222.png?raw=true" /></p>
-<h2 id="max_over_timerange-vector">max_over_time(range-vector)：指定区间内所有点的最大值。</h2>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/three3333333.png?raw=true" /></p>
-<h2 id="min_over_timerange-vector">min_over_time(range-vector)：指定区间内所有点的最小值。</h2>
-<h2 id="sum_over_timerange-vector">sum_over_time(range-vector)：指定区间内所有值的总和。</h2>
-<h2 id="count_over_timerange-vector">count_over_time(range-vector)：指定区间内所有值的计数。</h2>
-<h2 id="quantile_over_timescalar-range-vector-0-1">quantile_over_time(scalar, range-vector)：指定区间内值的 φ 分位数 (0 ≤ φ ≤ 1)。</h2>
-<h2 id="stddev_over_timerange-vector">stddev_over_time(range-vector)：指定区间内值的总体标准差。</h2>
-<h2 id="stdvar_over_timerange-vector">stdvar_over_time(range-vector)：指定区间内值的总体标准方差。</h2>
-<h2 id="last_over_timerange-vector">last_over_time(range-vector)：指定时间间隔内的最近点值。</h2>
+                  <h1>Python一些语法</h1>
+                
+                <p>python3.9.6</p>
+<h2 id="map">map函数</h2>
+<pre><code class="language-python">def sq(x):
+    return x * x
+
+
+print(list(map(sq, [1, 2, 3, 4, 5])))
+</code></pre>
+<p>结果：</p>
+<pre><code class="language-bash">[1, 4, 9, 16, 25]
+</code></pre>
+<h2 id="lambda">lambda函数</h2>
+<p>例1：</p>
+<pre><code class="language-python">def sq(x):
+    return x * x
+
+
+print(list(map(lambda x: x*x,[y for y in range(6)])))
+</code></pre>
+<p>结果：</p>
+<pre><code class="language-bash">[0, 1, 4, 9, 16, 25]
+</code></pre>
+<p>例2：</p>
+<pre><code class="language-python">funca = lambda x, y, z: (x + 8) * y - z
+print(funca(5, 6, 8))
+</code></pre>
+<p>结果：</p>
+<pre><code class="language-bash">70
+</code></pre>
+<h2 id="-">-&gt; 的用法</h2>
+<p><code>-&gt;</code>常常出现在python函数定义的函数名后面，为函数添加<code>元数据</code>,描述函数的返回类型</p>
+<pre><code class="language-python">def add(a: int, b: int) -&gt; int:
+   return a + b
+
+
+print(add.__annotations__)
+
+result = add(8, 8)
+
+print(result)
+</code></pre>
+<p>结果：</p>
+<pre><code class="language-bash">{'a': &lt;class 'int'&gt;, 'b': &lt;class 'int'&gt;, 'return': &lt;class 'int'&gt;}
+64
+</code></pre>
+<h2 id="__annotations____"><strong><em>_</em>_annotations</strong>____  的用法</h2>
+<p>以字典的形式存放在函数的 <code>__annotations__</code> 属性中，并且不会影响函数的任何其他部，打印函数的标注</p>
+<p>https://docs.python.org/zh-cn/3/tutorial/controlflow.html</p>
+<pre><code class="language-python">def f(ham: str, eggs: str = 'eggs') -&gt; str:
+    print(&quot;Annotations:&quot;, f.__annotations__)
+    print(&quot;Arguments:&quot;, ham, eggs)
+    return ham + ' and ' + eggs
+
+
+g = f('spam')
+print(g)
+</code></pre>
+<p>结果：</p>
+<pre><code>Annotations: {'ham': &lt;class 'str'&gt;, 'eggs': &lt;class 'str'&gt;, 'return': &lt;class 'str'&gt;}
+Arguments: spam eggs
+spam and eggs
+</code></pre>
+<h2 id="import">import * 的问题</h2>
+<pre><code>&gt;&gt;&gt; from fibo import *
+&gt;&gt;&gt; fib(500)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377
+</code></pre>
+<p>这种方式会导入所有不以下划线（<code>_</code>）开头的名称。大多数情况下，不要用这个功能，这种方式向解释器导入了一批未知的名称，可能会覆盖已经定义的名称。</p>
+<p>注意，一般情况下，不建议从模块或包内导入 <code>*</code>， 因为，这项操作经常让代码变得难以理解。不过，为了在交互式编译器中少打几个字，这么用也没问题。</p>
+<p>另外从包导入*，有个索引问题 https://docs.python.org/zh-cn/3/tutorial/modules.html#importing-from-a-package</p>
+<h2 id="with">with关键字</h2>
+<pre><code>&gt;&gt;&gt; with open('workfile') as f:
+...     read_data = f.read()
+
+&gt;&gt;&gt; # We can check that the file has been automatically closed.
+&gt;&gt;&gt; f.closed
+True
+</code></pre>
+<p>如果没有使用 [<code>with</code>]关键字，则应调用 <code>f.close()</code> 关闭文件，即可释放文件占用的系统资源。</p>
+<p>调用 <code>f.write()</code> 时，未使用 <code>with</code> 关键字，或未调用 <code>f.close()</code>，即使程序正常退出，也<strong>可能</strong> 导致 <code>f.write()</code> 的参数没有完全写入磁盘。</p>
+<p>通过 [<code>with</code>] 语句，或调用 <code>f.close()</code> 关闭文件对象后，再次使用该文件对象将会失败。</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; f.close()
+&gt;&gt;&gt; f.read()
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+ValueError: I/O operation on closed file.
+</code></pre>
+<h2 id="_1">文件读取多行</h2>
+<p>从文件中读取多行时，可以用循环遍历整个文件对象。这种操作能高效利用内存，快速，且代码简单：</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; for line in f:
+...     print(line, end='')
+...
+This is the first line of the file.
+Second line of the file
+</code></pre>
+<p>如需以列表形式读取文件中的所有行，可以用 <code>list(f)</code> 或 <code>f.readlines()</code>。</p>
+<h2 id="seek">操作文本seek</h2>
+<p><code>f.seek(offset, whence)</code> 可以改变文件对象的位置。通过向参考点添加 <em>offset</em> 计算位置；参考点由 <em>whence</em> 参数指定。 <em>whence</em> 值为 0 时，表示从文件开头计算，1 表示使用当前文件位置，2 表示使用文件末尾作为参考点。省略 <em>whence</em> 时，其默认值为 0，即使用文件开头作为参考点。</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; f = open('workfile', 'rb+')
+&gt;&gt;&gt; f.write(b'0123456789abcdef')
+16
+&gt;&gt;&gt; f.seek(5)      # Go to the 6th byte in the file
+5
+&gt;&gt;&gt; f.read(1)
+b'5'
+&gt;&gt;&gt; f.seek(-3, 2)  # Go to the 3rd byte before the end
+13
+&gt;&gt;&gt; f.read(1)
+b'd'
+</code></pre>
+<p>在文本文件（模式字符串未使用 <code>b</code> 时打开的文件）中，只允许相对于文件开头搜索（使用 <code>seek(0, 2)</code> 搜索到文件末尾是个例外），唯一有效的 <em>offset</em> 值是能从 <code>f.tell()</code> 中返回的，或 0。其他 <em>offset</em> 值都会产生未定义的行为。</p>
+<p>文件对象还支持 <code>isatty()</code> 和 <code>truncate()</code> 等方法，但不常用；文件对象的完整指南详见库参考。</p>
+<h2 id="json">操作json</h2>
+<p>Python 支持 <a href="http://json.org/">JSON (JavaScript Object Notation)</a> 这种流行数据交换格式，用户无需没完没了地编写、调试代码，才能把复杂的数据类型保存到文件。[<code>json</code>] 标准模块采用 Python 数据层次结构，并将之转换为字符串表示形式；这个过程称为 <em>serializing</em> （序列化）。从字符串表示中重建数据称为 <em>deserializing</em> （解序化）。在序列化和解序化之间，表示对象的字符串可能已经存储在文件或数据中，或通过网络连接发送到远方 的机器。</p>
+<p>注解</p>
+<p>JSON 格式通常用于现代应用程序的数据交换。程序员早已对它耳熟能详，可谓是交互操作的不二之选。</p>
+<p>只需一行简单的代码即可查看某个对象的 JSON 字符串表现形式：</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; import json
+&gt;&gt;&gt; x = [1, 'simple', 'list']
+&gt;&gt;&gt; json.dumps(x)
+'[1, &quot;simple&quot;, &quot;list&quot;]'
+</code></pre>
+<p>[<code>dumps()</code>] 函数还有一个变体， [<code>dump()</code>]，它只将对象序列化为 <a href="https://docs.python.org/zh-cn/3/glossary.html#term-text-file">text file</a> 。因此，如果 <code>f</code> 是 <a href="https://docs.python.org/zh-cn/3/glossary.html#term-text-file">text file</a> 对象，可以这样做：</p>
+<pre><code>json.dump(x, f)
+</code></pre>
+<p>要再次解码对象，如果 <code>f</code> 是已打开、供读取的 <a href="https://docs.python.org/zh-cn/3/glossary.html#term-text-file">text file</a> 对象：</p>
+<pre><code>x = json.load(f)
+</code></pre>
+<p>这种简单的序列化技术可以处理列表和字典，但在 JSON 中序列化任意类的实例，则需要付出额外努力。[<code>json</code>] 模块的参考包含对此的解释。</p>
+<h2 id="_2">句法错误</h2>
+<p>句法错误又称解析错误，是学习 Python 时最常见的错误：</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; while True print('Hello world')
+  File &quot;&lt;stdin&gt;&quot;, line 1
+    while True print('Hello world')
+                   ^
+SyntaxError: invalid syntax
+</code></pre>
+<p>解析器会复现出现句法错误的代码行，并用小“箭头”指向行里检测到的第一个错误。错误是由箭头 <em>上方</em> 的 token 触发的（至少是在这里检测出的）：本例中，在 [<code>print()</code>]函数中检测到错误，因为，在它前面缺少冒号（<code>':'</code>） 。错误信息还输出文件名与行号，在使用脚本文件时，就可以知道去哪里查错。</p>
+<h2 id="_3">触发异常</h2>
+<p>[<code>raise</code>] 语句支持强制触发指定的异常。例如：</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; raise NameError('HiThere')
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: HiThere
+</code></pre>
+<p>[<code>raise</code>] 唯一的参数就是要触发的异常。这个参数必须是异常实例或异常类（派生自 [<code>Exception</code>] 类）。如果传递的是异常类，将通过调用没有参数的构造函数来隐式实例化：</p>
+<pre><code>raise ValueError  # shorthand for 'raise ValueError()'
+</code></pre>
+<p>如果只想判断是否触发了异常，但并不打算处理该异常，则可以使用更简单的 [<code>raise</code>]语句重新触发异常：</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; try:
+...     raise NameError('HiThere')
+... except NameError:
+...     print('An exception flew by!')
+...     raise
+...
+An exception flew by!
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;
+NameError: HiThere
+</code></pre>
+<h2 id="_4">异常链</h2>
+<p>[<code>raise</code>] 语句支持可选的 [<code>from</code>]子句，该子句用于启用链式异常。 例如：</p>
+<pre><code># exc must be exception instance or None.
+raise RuntimeError from exc
+</code></pre>
+<p>转换异常时，这种方式很有用。例如：</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; def func():
+...     raise ConnectionError
+...
+&gt;&gt;&gt; try:
+...     func()
+... except ConnectionError as exc:
+...     raise RuntimeError('Failed to open database') from exc
+...
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;
+  File &quot;&lt;stdin&gt;&quot;, line 2, in func
+ConnectionError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 4, in &lt;module&gt;
+RuntimeError: Failed to open database
+</code></pre>
+<p>异常链会在 [<code>except</code>]或 [<code>finally</code>] 子句内部引发异常时自动生成。 这可以通过使用 <code>from None</code> 这样的写法来禁用:</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; try:
+...     open('database.sqlite')
+... except OSError:
+...     raise RuntimeError from None
+...
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 4, in &lt;module&gt;
+RuntimeError
+</code></pre>
+<p>异常链机制详见 <a href="https://docs.python.org/zh-cn/3/library/exceptions.html#bltin-exceptions">内置异常</a>。</p>
+<h2 id="_5">类的构造函数</h2>
+<p>当然，<code>__init__()</code> 方法还可以有额外参数以实现更高灵活性。 在这种情况下，提供给类实例化运算符的参数将被传递给 <code>__init__()</code>。 例如，:</p>
+<p>>&gt;&gt;</p>
+<pre><code class="language-python">&gt;&gt;&gt; class Complex:
+...     def __init__(self, realpart, imagpart):
+...         self.r = realpart
+...         self.i = imagpart
+...
+&gt;&gt;&gt; x = Complex(3.0, -4.5)
+&gt;&gt;&gt; x.r, x.i
+(3.0, -4.5)
+</code></pre>
+<h2 id="_6">类中私有变量</h2>
+<pre><code class="language-python">class A(object):
+    def __init__(self):
+        self.__data = []  # 翻译成 self._A__data=[]
+
+    def add(self, item):
+        self.__data.append(item)  # 翻译成 self._A__data.append(item)
+
+    def printData(self):
+        print(self.__data)  # 翻译成 self._A__data
+
+
+a = A()
+a.add('hello')
+a.add('python')
+a.printData()
+# print a.__data  #外界不能访问私有变量 AttributeError: 'A' object has no attribute '__data'
+print(a._A__data)  # 通过这种方式，在外面也能够访问“私有”变量；这一点在调试中是比较有用的！
+</code></pre>
+<p>结果：</p>
+<pre><code class="language-bash">['hello', 'python']
+['hello', 'python']
+</code></pre>
+<h2 id="_7">迭代器</h2>
+<p>到目前为止，您可能已经注意到大多数容器对象都可以使用 [<code>for</code>] 语句:</p>
+<pre><code>for element in [1, 2, 3]:
+    print(element)
+for element in (1, 2, 3):
+    print(element)
+for key in {'one':1, 'two':2}:
+    print(key)
+for char in &quot;123&quot;:
+    print(char)
+for line in open(&quot;myfile.txt&quot;):
+    print(line, end='')
+</code></pre>
+<p>这种访问风格清晰、简洁又方便。 迭代器的使用非常普遍并使得 Python 成为一个统一的整体。 在幕后，[<code>for</code>]语句会在容器对象上调用 [<code>iter()</code>]。 该函数返回一个定义了 [<code>__next__()</code>] 方法的迭代器对象，此方法将逐一访问容器中的元素。 当元素用尽时，[<code>__next__()</code>] 将引发 [<code>StopIteration</code>] 异常来通知终止 <code>for</code> 循环。 你可以使用 [<code>next()</code>] 内置函数来调用 [<code>__next__()</code>]方法；这个例子显示了它的运作方式:</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; s = 'abc'
+&gt;&gt;&gt; it = iter(s)
+&gt;&gt;&gt; it
+&lt;iterator object at 0x00A1DB50&gt;
+&gt;&gt;&gt; next(it)
+'a'
+&gt;&gt;&gt; next(it)
+'b'
+&gt;&gt;&gt; next(it)
+'c'
+&gt;&gt;&gt; next(it)
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+    next(it)
+StopIteration
+</code></pre>
+<p>看过迭代器协议的幕后机制，给你的类添加迭代器行为就很容易了。 定义一个 <code>__iter__()</code> 方法来返回一个带有 [<code>__next__()</code>] 方法的对象。 如果类已定义了 <code>__next__()</code>，则 <code>__iter__()</code> 可以简单地返回 <code>self</code>:</p>
+<pre><code>class Reverse:
+    &quot;&quot;&quot;Iterator for looping over a sequence backwards.&quot;&quot;&quot;
+    def __init__(self, data):
+        self.data = data
+        self.index = len(data)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index == 0:
+            raise StopIteration
+        self.index = self.index - 1
+        return self.data[self.index]
+</code></pre>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; rev = Reverse('spam')
+&gt;&gt;&gt; iter(rev)
+&lt;__main__.Reverse object at 0x00A1DB50&gt;
+&gt;&gt;&gt; for char in rev:
+...     print(char)
+...
+m
+a
+p
+s
+</code></pre>
+<h2 id="_8">生成器</h2>
+<p><a href="https://docs.python.org/zh-cn/3/glossary.html#term-generator">生成器</a> 是一个用于创建迭代器的简单而强大的工具。 它们的写法类似于标准的函数，但当它们要返回数据时会使用 [<code>yield</code>]语句。 每次在生成器上调用 [<code>next()</code>] 时，它会从上次离开的位置恢复执行（它会记住上次执行语句时的所有数据值）。 一个显示如何非常容易地创建生成器的示例如下:</p>
+<pre><code>def reverse(data):
+    for index in range(len(data)-1, -1, -1):
+        yield data[index]
+</code></pre>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; for char in reverse('golf'):
+...     print(char)
+...
+f
+l
+o
+g
+</code></pre>
+<p>可以用生成器来完成的操作同样可以用前一节所描述的基于类的迭代器来完成。 但生成器的写法更为紧凑，因为它会自动创建 <code>__iter__()</code> 和 [<code>__next__()</code>] 方法。</p>
+<p>另一个关键特性在于局部变量和执行状态会在每次调用之间自动保存。 这使得该函数相比使用 <code>self.index</code> 和 <code>self.data</code> 这种实例变量的方式更易编写且更为清晰。</p>
+<p>除了会自动创建方法和保存程序状态，当生成器终结时，它们还会自动引发 [<code>StopIteration</code>]。 这些特性结合在一起，使得创建迭代器能与编写常规函数一样容易。</p>
+<h2 id="_9">性能测量</h2>
+<p>一些Python用户对了解同一问题的不同方法的相对性能产生了浓厚的兴趣。 Python提供了一种可以立即回答这些问题的测量工具。</p>
+<p>例如，元组封包和拆包功能相比传统的交换参数可能更具吸引力。[<code>timeit</code>]模块可以快速演示在运行效率方面一定的优势:</p>
+<p>>&gt;&gt;</p>
+<pre><code>&gt;&gt;&gt; from timeit import Timer
+&gt;&gt;&gt; Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
+0.57535828626024577
+&gt;&gt;&gt; Timer('a,b = b,a', 'a=1; b=2').timeit()
+0.54962537085770791
+</code></pre>
+<p>与 [<code>timeit</code>]的精细粒度级别相反， [<code>profile</code>] 模块提供了用于在较大的代码块中识别时间关键部分的工具。</p>
+<h2 id="_10">查看包内对象</h2>
+<pre><code class="language-python">import flask
+print(dir(flask))
+</code></pre>
                 
               
               
@@ -1261,7 +1698,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../query_rules/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Prometheus监控查询语法入门" rel="prev">
+        <a href="../../../etcd/etcd/" class="md-footer__link md-footer__link--prev" aria-label="上一页: etcd部署" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1270,20 +1707,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              Prometheus监控查询语法入门
+              etcd部署
             </div>
           </div>
         </a>
       
       
         
-        <a href="../prometheus_recording_rule/" class="md-footer__link md-footer__link--next" aria-label="下一页: Prometheus recording_rules功能" rel="next">
+        <a href="../../csv/" class="md-footer__link md-footer__link--next" aria-label="下一页: CSV模块" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Prometheus recording_rules功能
+              CSV模块
             </div>
           </div>
           <div class="md-footer__button md-icon">

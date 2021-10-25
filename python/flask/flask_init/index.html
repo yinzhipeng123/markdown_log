@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/function/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/python/flask/flask_init/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
-        <title>Prometheus语法函数 - MarkDown_Log</title>
+        <title>Flask - MarkDown_Log</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#flask" class="md-skip">
           跳转至
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prometheus语法函数
+              Flask
             
           </span>
         </div>
@@ -254,14 +254,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Prometheus
@@ -277,14 +275,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
       <label class="md-nav__link" for="__nav_3_1">
         Prometheus
@@ -302,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus/" class="md-nav__link">
         单机部署
       </a>
     </li>
@@ -314,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_k8s/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus_k8s/" class="md-nav__link">
         K8S部署
       </a>
     </li>
@@ -326,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kube-state-metrics/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/kube-state-metrics/" class="md-nav__link">
         K8S kube-state-metrics指标说明
       </a>
     </li>
@@ -338,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Exporter_Metrics/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
         Exporter Metrics解释
       </a>
     </li>
@@ -350,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../query_xamples/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/query_xamples/" class="md-nav__link">
         Prometheus监控查询例子
       </a>
     </li>
@@ -362,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../query_rules/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/query_rules/" class="md-nav__link">
         Prometheus监控查询语法入门
       </a>
     </li>
@@ -372,107 +368,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Prometheus语法函数
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../prometheus/prometheus/function/" class="md-nav__link">
         Prometheus语法函数
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#avg_over_timerange-vector" class="md-nav__link">
-    avg_over_time(range-vector)：指定区间内所有点的平均值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#max_over_timerange-vector" class="md-nav__link">
-    max_over_time(range-vector)：指定区间内所有点的最大值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#min_over_timerange-vector" class="md-nav__link">
-    min_over_time(range-vector)：指定区间内所有点的最小值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sum_over_timerange-vector" class="md-nav__link">
-    sum_over_time(range-vector)：指定区间内所有值的总和。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count_over_timerange-vector" class="md-nav__link">
-    count_over_time(range-vector)：指定区间内所有值的计数。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantile_over_timescalar-range-vector-0-1" class="md-nav__link">
-    quantile_over_time(scalar, range-vector)：指定区间内值的 φ 分位数 (0 ≤ φ ≤ 1)。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stddev_over_timerange-vector" class="md-nav__link">
-    stddev_over_time(range-vector)：指定区间内值的总体标准差。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stdvar_over_timerange-vector" class="md-nav__link">
-    stdvar_over_time(range-vector)：指定区间内值的总体标准方差。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#last_over_timerange-vector" class="md-nav__link">
-    last_over_time(range-vector)：指定时间间隔内的最近点值。
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -482,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_recording_rule/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus_recording_rule/" class="md-nav__link">
         Prometheus recording_rules功能
       </a>
     </li>
@@ -494,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_rate/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus_rate/" class="md-nav__link">
         Prometheus指标讲解"为什么rate可以计算CPU的使用率"
       </a>
     </li>
@@ -533,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus/" class="md-nav__link">
         Alertmanager部署
       </a>
     </li>
@@ -545,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../alertmanager/alertmanager_config/" class="md-nav__link">
+      <a href="../../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
         Alertmanager配置
       </a>
     </li>
@@ -584,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_install/" class="md-nav__link">
+      <a href="../../../prometheus/grafana/grafana_install/" class="md-nav__link">
         Grafana部署
       </a>
     </li>
@@ -596,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_dashboard/" class="md-nav__link">
+      <a href="../../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
         Dashboard
       </a>
     </li>
@@ -608,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_var/" class="md-nav__link">
+      <a href="../../../prometheus/grafana/grafana_var/" class="md-nav__link">
         Grafana添加变量
       </a>
     </li>
@@ -675,12 +575,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Python
@@ -698,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/basics/basic/" class="md-nav__link">
+      <a href="../../basics/basic/" class="md-nav__link">
         Python一些语法
       </a>
     </li>
@@ -710,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/csv/" class="md-nav__link">
+      <a href="../../csv/" class="md-nav__link">
         CSV模块
       </a>
     </li>
@@ -722,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/xlxs/" class="md-nav__link">
+      <a href="../../xlxs/" class="md-nav__link">
         XLSX模块
       </a>
     </li>
@@ -734,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/k8s/" class="md-nav__link">
+      <a href="../../k8s/" class="md-nav__link">
         K8S模块
       </a>
     </li>
@@ -746,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/mem/" class="md-nav__link">
+      <a href="../../mem/" class="md-nav__link">
         内存性能模块
       </a>
     </li>
@@ -758,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/python3_env/" class="md-nav__link">
+      <a href="../../python3_env/" class="md-nav__link">
         Centos7安装Python3
       </a>
     </li>
@@ -770,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/python3_docker/" class="md-nav__link">
+      <a href="../../python3_docker/" class="md-nav__link">
         Python3 Dokcer镜像制作
       </a>
     </li>
@@ -782,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/python_log/" class="md-nav__link">
+      <a href="../../python_log/" class="md-nav__link">
         Python3 日志控制
       </a>
     </li>
@@ -792,11 +694,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../python/flask/flask_init/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Flask
       </a>
+      
     </li>
   
 
@@ -1141,77 +1053,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#avg_over_timerange-vector" class="md-nav__link">
-    avg_over_time(range-vector)：指定区间内所有点的平均值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#max_over_timerange-vector" class="md-nav__link">
-    max_over_time(range-vector)：指定区间内所有点的最大值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#min_over_timerange-vector" class="md-nav__link">
-    min_over_time(range-vector)：指定区间内所有点的最小值。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sum_over_timerange-vector" class="md-nav__link">
-    sum_over_time(range-vector)：指定区间内所有值的总和。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count_over_timerange-vector" class="md-nav__link">
-    count_over_time(range-vector)：指定区间内所有值的计数。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantile_over_timescalar-range-vector-0-1" class="md-nav__link">
-    quantile_over_time(scalar, range-vector)：指定区间内值的 φ 分位数 (0 ≤ φ ≤ 1)。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stddev_over_timerange-vector" class="md-nav__link">
-    stddev_over_time(range-vector)：指定区间内值的总体标准差。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stdvar_over_timerange-vector" class="md-nav__link">
-    stdvar_over_time(range-vector)：指定区间内值的总体标准方差。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#last_over_timerange-vector" class="md-nav__link">
-    last_over_time(range-vector)：指定时间间隔内的最近点值。
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1222,26 +1063,159 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/prometheus/prometheus/function.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/python/flask/flask_init.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">函数</h1>
-<h2 id="avg_over_timerange-vector">avg_over_time(range-vector)：指定区间内所有点的平均值。</h2>
-<p><strong>range-vector</strong>：这个代表一段时间所有的值，比如这种：node_procs_running[1m]</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/one1111111.png?raw=true" /></p>
-<p>然后通过avg_over_time计算1分钟内的平均值，例如：avg_over_time(node_procs_running[1m])</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/two2222222.png?raw=true" /></p>
-<h2 id="max_over_timerange-vector">max_over_time(range-vector)：指定区间内所有点的最大值。</h2>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/three3333333.png?raw=true" /></p>
-<h2 id="min_over_timerange-vector">min_over_time(range-vector)：指定区间内所有点的最小值。</h2>
-<h2 id="sum_over_timerange-vector">sum_over_time(range-vector)：指定区间内所有值的总和。</h2>
-<h2 id="count_over_timerange-vector">count_over_time(range-vector)：指定区间内所有值的计数。</h2>
-<h2 id="quantile_over_timescalar-range-vector-0-1">quantile_over_time(scalar, range-vector)：指定区间内值的 φ 分位数 (0 ≤ φ ≤ 1)。</h2>
-<h2 id="stddev_over_timerange-vector">stddev_over_time(range-vector)：指定区间内值的总体标准差。</h2>
-<h2 id="stdvar_over_timerange-vector">stdvar_over_time(range-vector)：指定区间内值的总体标准方差。</h2>
-<h2 id="last_over_timerange-vector">last_over_time(range-vector)：指定时间间隔内的最近点值。</h2>
+                <h1 id="flask">Flask框架</h1>
+<p>一个基于python的，简单快速的WEB框架</p>
+<p>GitHub地址：https://github.com/pallets/flask</p>
+<p>官方文档：https://flask.palletsprojects.com/en/2.0.x/</p>
+<h1 id="flask-g">Flask g 对象</h1>
+<h3 id="1g">1.什么是g对象。</h3>
+<p>1.在flask中，有一个专门用来存储用户信息的g对象，g的全称的为global。
+2.g对象在一次请求中的所有的代码的地方，都是可以使用的。</p>
+<h3 id="2gsession">2.g对象和session的区别</h3>
+<p>在我看来，最大的区别是，session对象是可以跨request的，只要session还未失效，不同的request的请求会获取到同一个session，但是g对象不是，g对象不需要管过期时间，请求一次就g对象就改变了一次，或者重新赋值了一次</p>
+<p>也就是session可以在我们的这个网站随意都可以用 而 g只能是这次的请求如果重定向之后就会改变</p>
+<p>flask_g.py</p>
+<pre><code class="language-python">from flask import Flask, g, request
+from util import login_log
+
+app = Flask(__name__)
+
+@app.route('/login/', methods=['GET', 'POST'])
+def login():
+    username = request.args.get('username')
+
+    if username == 'key':
+        g.username = username
+        login_log()
+        return '恭喜您！登录成功'
+    else:
+        return '登录名或密码错误!'
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+<p>util.py</p>
+<pre><code>from flask import  g
+def login_log():
+    print('登录名为: {}'.format(g.username))
+</code></pre>
+<p>启动flask_g.py  </p>
+<p>浏览器访问 http://127.0.0.1:5000/login/?username=key</p>
+<p>控制台输出 </p>
+<pre><code>登录名为: key
+</code></pre>
+<p>g对象的使用案例：https://vimsky.com/examples/detail/python-method-flask.g.html</p>
+<h1 id="flask-request">Flask Request对象</h1>
+<p>来自客户端网页的数据作为全局请求对象发送到服务器。为了处理请求数据，应该从Flask模块导入。</p>
+<p>Request对象的重要属性如下所列：</p>
+<ul>
+<li><strong>Form</strong> - 它是一个字典对象，包含表单参数及其值的键和值对。</li>
+<li><strong>args</strong> - 解析查询字符串的内容，它是问号（？）之后的URL的一部分。</li>
+<li><strong>Cookies</strong> - 保存Cookie名称和值的字典对象。</li>
+<li><strong>files</strong> - 与上传文件有关的数据。</li>
+<li><strong>method</strong> - 当前请求方法。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>form</td>
+<td>一个从POST和PUT请求解析的 MultiDict（一键多值字典）。</td>
+</tr>
+<tr>
+<td>args</td>
+<td>MultiDict，要操作 URL （如 ?key=value ）中提交的参数可以使用 args 属性:searchword = request.args.get('key', '')</td>
+</tr>
+<tr>
+<td>values</td>
+<td>CombinedMultiDict，内容是form和args。 可以使用values替代form和args。</td>
+</tr>
+<tr>
+<td>cookies</td>
+<td>请求的cookies，类型是dict。</td>
+</tr>
+<tr>
+<td>stream</td>
+<td>在可知的mimetype下，如果进来的表单数据无法解码，会没有任何改动的保存到这个 stream 以供使用。很多时候，当请求的数据转换为string时，使用data是最好的方式。这个stream只返回数据一次。</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>请求头，字典类型。</td>
+</tr>
+<tr>
+<td>data</td>
+<td>包含了请求的数据，并转换为字符串，除非是一个Flask无法处理的mimetype。</td>
+</tr>
+<tr>
+<td>files</td>
+<td>MultiDict，带有通过POST或PUT请求上传的文件。</td>
+</tr>
+<tr>
+<td>environ</td>
+<td>WSGI隐含的环境配置。</td>
+</tr>
+<tr>
+<td>method</td>
+<td>请求方法，比如POST、GET。</td>
+</tr>
+<tr>
+<td>path</td>
+<td>获取请求文件路径：/myapplication/page.html</td>
+</tr>
+<tr>
+<td>base_url</td>
+<td>获取域名与请求文件路径：http://www.baidu.com/myapplication/page.html</td>
+</tr>
+<tr>
+<td>url</td>
+<td>获取全部url：http://www.baidu.com/myapplication/page.html?id=1&amp;edit=edit</td>
+</tr>
+<tr>
+<td>url_root</td>
+<td>获取域名：http://www.baidu.com/</td>
+</tr>
+<tr>
+<td>is_xhr</td>
+<td>如果请求是一个来自JavaScript XMLHttpRequest的触发，则返回True，这个只工作在支持X-Requested-With头的库并且设置了XMLHttpRequest。</td>
+</tr>
+<tr>
+<td>blueprint</td>
+<td>蓝图名字。</td>
+</tr>
+<tr>
+<td>endpoint</td>
+<td>endpoint匹配请求，这个与view_args相结合，可是用于重构相同或修改URL。当匹配的时候发生异常，会返回None。</td>
+</tr>
+<tr>
+<td>json</td>
+<td>如果mimetype是application/json，这个参数将会解析JSON数据，如果不是则返回None。 可以使用这个替代get_json()方法。</td>
+</tr>
+<tr>
+<td>max_content_length</td>
+<td>只读，返回MAX_CONTENT_LENGTH的配置键。</td>
+</tr>
+<tr>
+<td>module</td>
+<td>如果请求是发送到一个实际的模块，则该参数返回当前模块的名称。这是弃用的功能，使用blueprints替代。</td>
+</tr>
+<tr>
+<td>routing_exception = None</td>
+<td>如果匹配URL失败，这个异常将会/已经抛出作为请求处理的一部分。这通常用于NotFound异常或类似的情况。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="flask-response">Flask Response对象</h2>
+<p>https://blog.csdn.net/qq_42666483/article/details/82526765</p>
                 
               
               
@@ -1261,7 +1235,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../query_rules/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Prometheus监控查询语法入门" rel="prev">
+        <a href="../../python_log/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Python3 日志控制" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1270,20 +1244,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              Prometheus监控查询语法入门
+              Python3 日志控制
             </div>
           </div>
         </a>
       
       
         
-        <a href="../prometheus_recording_rule/" class="md-footer__link md-footer__link--next" aria-label="下一页: Prometheus recording_rules功能" rel="next">
+        <a href="../../../go/go_one/" class="md-footer__link md-footer__link--next" aria-label="下一页: Go入门" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Prometheus recording_rules功能
+              Go入门
             </div>
           </div>
           <div class="md-footer__button md-icon">
