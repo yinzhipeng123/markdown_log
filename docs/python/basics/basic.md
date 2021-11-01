@@ -504,3 +504,82 @@ import flask
 print(dir(flask))
 ```
 
+## 单元测试
+
+
+
+```python
+def average(values):
+    """Computes the arithmetic mean of a list of numbers.
+
+    >>> print(average([20, 30, 70]))
+    45.0
+    """
+    return sum(values) / len(values)
+
+
+result = average([20, 30, 70])
+print(result)
+
+import doctest
+doctest.testmod()
+```
+
+
+
+在引号中，单元测试想让这个方法结果等于45
+
+运行结果：
+
+```
+40.0
+**********************************************************************
+File "D:\idea\zkh-infra-web\tar\test\flask_learn\unit_test.py", line 4, in __main__.average
+Failed example:
+    print(average([20, 30, 70]))
+Expected:
+    45.0
+Got:
+    40.0
+**********************************************************************
+1 items had failures:
+   1 of   1 in __main__.average
+***Test Failed*** 1 failures.
+```
+
+由于运行结果为40，不符合预期，所以报错
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

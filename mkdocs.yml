@@ -8,7 +8,7 @@ copyright: MarkDown_Log - Documentation
 
 extra:
   search:
-    language: 'jp'
+    language: 'zh_CN'
 
 nav:
 - Home: index.md
@@ -58,6 +58,8 @@ nav:
   - 修改网卡: centos7/ens33.md
 - K8S:
   - K8S 1.16.9部署: kubernetes/kubernetes1.16.md
+  - 污点: kubernetes/dudian.md
+  - 亲和性: kubernetes/diaodu.md
 - Docker:
   - Docker: docker/docker_su.md
 theme:
