@@ -9,6 +9,7 @@ copyright: MarkDown_Log - Documentation
 extra:
   search:
     language: 'zh_CN'
+  disqus: 'something'
 
 nav:
 - Home: index.md
