@@ -68,3 +68,5 @@ theme:
 plugins:
   - search:
       indexing: 'full'
+extra_javascript:
+    - '//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js'
