@@ -5,11 +5,76 @@ repo_name: MarkDown_Log
 repo_url: https://github.com/yinzhipeng123/markdown_log/
 copyright: MarkDown_Log - Documentation
 
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
 
 extra:
   search:
     language: 'zh_CN'
   disqus: 'something'
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com
+
+
+theme:
+  name: material
+  language: 'zh'
+  highlightjs: true        # 打开代码高亮
+  hljs_style: github       # 代码高亮风格
+  hljs_languages:          # 编程语言
+    - c
+    - c++
+    - java
+    - python
+  features:
+    - content.code.annotate
+    - content.tabs.link
+    - header.autohide
+    - navigation.expand
+    - navigation.indexes
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+
+plugins:
+  - search:
+      indexing: 'full'
+extra_javascript:
+    - '//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js'
 
 nav:
 - Home: index.md
@@ -45,6 +110,16 @@ nav:
   - Python3 Dokcer镜像制作: python/python3_docker.md
   - Python3 日志控制: python/python_log.md
   - Flask: python/flask/flask_init.md
+  - 线程: 
+    - 通过继承实现多线程: python/threading/thread.md
+    - threading.Event(): python/threading/thread_event.md
+    - join的作用: python/threading/join.md
+  - shedule:
+    - 后台执行: python/shedule/run_in_back.md
+  - 类:
+    - 类的继承: python/basics/class/class.md
+    - 类变量与实例变量: python/basics/class/class_var.md
+  - mypy: python/basics/mypy.md
 - Go:
   - Go入门: go/go_one.md
   - Web框架 Gin: 
@@ -63,11 +138,3 @@ nav:
   - 亲和性: kubernetes/diaodu.md
 - Docker:
   - Docker: docker/docker_su.md
-theme:
-  name: material
-  language: 'zh'
-plugins:
-  - search:
-      indexing: 'full'
-extra_javascript:
-    - '//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js'

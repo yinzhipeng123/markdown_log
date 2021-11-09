@@ -553,29 +553,139 @@ Got:
 
 
 
+## 方法设置默认参数
+
+```python
+>>> x = 42
+>>> def spam(a, b=x):
+...     print(a, b)
+...
+>>> spam(1)
+1 42
+>>> x = 23 # Has no effect
+>>> spam(1)
+1 42
+>>>
+```
 
 
 
+## classmethod 的使用方法
 
 
 
+```python
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+class A(object):
+    bar = 1
+    def func1(self):  
+        print ('foo') 
+    @classmethod
+    def func2(cls):
+        print ('func2')
+        print (cls.bar)
+        cls().func1()   # 调用 foo 方法
+ 
+A.func2()               # 不需要实例化
+```
+
+结果：
+
+```
+func2
+1
+foo
+```
 
 
 
+Python有3种方法，静态方法（staticmethod），类方法（classmethod）和实例方法。下面用代码举例。
+
+对于一般的函数foo(x)，它跟类和类的实例没有任何关系，直接调用foo(x)即可。
+
+```
+# -*- coding:utf-8 -*-
+def foo(x):
+    print("running foo(%s)" % x)
+
+foo("test")
+```
+
+在类A里面的实例方法foo(self, x)，**第一个参数是self**，我们需要有一个A的实例，才可以调用这个函数。
 
 
 
+```
+# -*- coding:utf-8 -*-
+class A:
+    def foo(self, x):
+        print("running foo(%s, %s)" % (self, x))
+
+# A.foo(x) 这样会报错
+a = A()
+a.foo("test")
+```
 
 
 
+当我们需要和类直接进行交互，而不需要和实例进行交互时，类方法是最好的选择。类方法与实例方法类似，但是传递的不是类的实例，而是类本身，**第一个参数是cls**。**我们可以用类的实例调用类方法，也可以直接用类名来调用。**
 
 
 
+```
+# -*- coding:utf-8 -*-
+class A:
+    class_attr = "attr"
+    
+    def __init__(self):
+        pass
+        
+    @classmethod
+    def class_foo(cls):
+        print("running class_foo(%s)" % (cls.class_attr))
+
+a = A()
+a.class_foo()
+A.class_foo()
+```
 
 
 
+静态方法类似普通方法，参数里面不用self。这些方法和类相关，但是又不需要类和实例中的任何信息、属性等等。如果把这些方法写到类外面，这样就把和类相关的代码分散到类外，使得之后对于代码的理解和维护都是巨大的障碍。而静态方法就是用来解决这一类问题的。
+
+比如我们检查是否开启了日志功能，这个和类相关，但是跟类的属性和实例都没有关系。
 
 
+
+```
+# -*- coding:utf-8 -*-
+log_enabled = True
+
+class A:
+    class_attr = "attr"
+    
+    def __init__(self):
+        pass
+        
+    @staticmethod
+    def static_foo():
+        if log_enabled:
+            print("log is enabled")
+        else:
+            print("log is disabled")
+        
+
+A.static_foo()
+```
+
+- @staticmethod不需要表示自身对象的self和自身类的cls参数，就跟使用函数一样。
+
+- @classmethod也不需要self参数，但第一个参数需要是表示自身类的cls参数。
+
+  如果在@staticmethod中要调用到这个类的一些属性方法，只能直接类名.属性名或类名.方法名。
+  而@classmethod因为持有cls参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码。
 
 
 
