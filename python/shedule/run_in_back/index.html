@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1485,15 +1487,16 @@
                 
                 
                 <h1 id="shedule">shedule模块</h1>
+<p>让任务在后台运行</p>
 <p>https://schedule.readthedocs.io/en/stable/background-execution.html</p>
-<pre><code class="language-python">import threading
+<pre class="highlight"><code class="language-python">import threading
 import time
 
 import schedule
 
 
 def run_continuously(interval=1):
-    &quot;&quot;&quot;Continuously run, while executing pending jobs at each
+    """Continuously run, while executing pending jobs at each
     elapsed time interval.
     @return cease_continuous_run: threading. Event which can
     be set to cease continuous run. Please note that it is
@@ -1502,7 +1505,7 @@ def run_continuously(interval=1):
     should run every minute and you set a continuous run
     interval of one hour then your job won't be run 60 times
     at each interval but only once.
-    &quot;&quot;&quot;
+    """
     cease_continuous_run = threading.Event()
 
     class ScheduleThread(threading.Thread):
@@ -1530,8 +1533,7 @@ stop_run_continuously = run_continuously()
 time.sleep(10)
 
 # Stop the background thread
-stop_run_continuously.set()
-</code></pre>
+stop_run_continuously.set()</code></pre>
                 
               
               
@@ -1652,6 +1654,10 @@ stop_run_continuously.set()
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1512,7 +1514,7 @@
                 
                 <h2 id="python-csv">Python csv模块</h2>
 <p>Python csv模块使用方法代码实例，复制粘贴运行即可</p>
-<pre><code class="language-python">import csv
+<pre class="highlight"><code class="language-python">import csv
 
 
 def writeDict1():
@@ -1539,7 +1541,7 @@ def writeDict2():
 
 
 def readDict1():
-    with open(&quot;test1.csv&quot;, 'r', encoding='utf_8_sig') as f:
+    with open("test1.csv", 'r', encoding='utf_8_sig') as f:
         f_csv = csv.reader(f)
         for row in f_csv:
             print(row)
@@ -1559,7 +1561,6 @@ if __name__ == '__main__':
     writeDict2()
     readDict1()
     readDict2()
-
 </code></pre>
                 
               
@@ -1681,6 +1682,10 @@ if __name__ == '__main__':
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1486,12 +1488,11 @@
                 
                 <h1 id="k8sprometheus">K8S环境中部署Prometheus</h1>
 <p>找一台有kubectl命令的机器，并能连接到K8S集群，然后克隆官方git库，因为我的K8S是1.18，所以我要克隆 release-0.5版本</p>
-<pre><code class="language-bash">[root@centos7 ~]# git clone -b release-0.5 https://github.com/prometheus-operator/kube-prometheus.git
+<pre class="highlight"><code class="language-bash">[root@centos7 ~]# git clone -b release-0.5 https://github.com/prometheus-operator/kube-prometheus.git
 然后直接部署即可
 [root@centos7 ~]# kubectl apply -f kube-prometheus/manifests/setup/
 [root@centos7 ~]# kubectl apply -f kube-prometheus/manifests/*
-然后就部署完成了
-</code></pre>
+然后就部署完成了</code></pre>
                 
               
               
@@ -1612,6 +1613,10 @@
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

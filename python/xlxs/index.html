@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1483,7 +1485,7 @@
                 
                 
                 <h1 id="python-xlsx">Python 生成xlsx表格</h1>
-<pre><code class="language-Python">import xlsxwriter
+<pre class="highlight"><code class="language-Python">import xlsxwriter
 workbook = xlsxwriter.Workbook('currency_format.xlsx')
 cell_format_one = workbook.add_format({'bold': True, 'font_color': 'red'})
 cell_format_two = workbook.add_format({'bold': False, 'font_color': 'green'})
@@ -1503,16 +1505,15 @@ worksheet.write(1, 3, 'l', cell_format_two)
 worksheet.write(1, 4, 'd', cell_format_two)
 worksheet.write(1, 5, '!', cell_format_two)
 workbook.close()
-print('end !')
-</code></pre>
+print('end !')</code></pre>
 <p>可以把 showrow 设置为全局变量或者方法内变量，代表总行数，show_add_row调用一次，自动加一，调用一次方法行数自动加一</p>
-<pre><code>
+<pre class="highlight"><code>
 import xlsxwriter
 
 workbook = xlsxwriter.Workbook('one.xlsx')
 format_title = workbook.add_format({'bold': True, 'font_color': 'black', 'align': 'center'})
 format_row = workbook.add_format({'bold': False, 'font_color': 'black', 'align': 'center'})
-sheet = workbook.add_worksheet(&quot;表格说明&quot;)
+sheet = workbook.add_worksheet("表格说明")
 
 showrow = 0
 
@@ -1529,13 +1530,12 @@ def show_add_row(sheet, list, format):
     showrow = showrow + 1
 
 
-title_list = [&quot;1&quot;, '2', &quot;3&quot;]
-word_list = [&quot;4&quot;, '5', &quot;6&quot;]
+title_list = ["1", '2', "3"]
+word_list = ["4", '5', "6"]
 
 show_add_row(sheet, title_list, format_title)
 show_add_row(sheet, word_list, word_list)
-workbook.close()
-</code></pre>
+workbook.close()</code></pre>
                 
               
               
@@ -1656,6 +1656,10 @@ workbook.close()
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

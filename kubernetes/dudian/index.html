@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1537,30 +1539,27 @@
 <ul>
 <li>执行 <code>kubectl taint</code> 命令，可向节点添加污点，如下所示：</li>
 </ul>
-<p><code>sh
-  kubectl taint nodes node1 key=value:NoSchedule</code></p>
+<pre class="highlight"><code class="language-sh">kubectl taint nodes node1 key=value:NoSchedule</code></pre>
 <p>该命令为节点 <code>node1</code> 添加了一个污点。污点是一个键值对，在本例中，污点的键为 <code>key</code>，值为 <code>value</code>，污点效果为 <code>NoSchedule</code>。此污点意味着 Kubernetes 不会向该节点调度任何 Pod，除非该 Pod 有一个匹配的容忍（toleration）</p>
 <ul>
 <li>执行如下命令可以将本例中的污点移除：</li>
 </ul>
-<p><code>sh
-  kubectl taint nodes node1 key:NoSchedule-</code></p>
+<pre class="highlight"><code class="language-sh">kubectl taint nodes node1 key:NoSchedule-</code></pre>
 <ol>
 <li>设置污点：</li>
 </ol>
-<pre><code class="language-sh">    kubectl taint node [node] key=value[effect]   
+<pre class="highlight"><code class="language-sh">    kubectl taint node [node] key=value[effect]   
           其中[effect] 可取值： [ NoSchedule | PreferNoSchedule | NoExecute ]
            NoSchedule ：一定不能被调度。
            PreferNoSchedule：尽量不要调度。
            NoExecute：不仅不会调度，还会驱逐Node上已有的Pod。
 
     #示例：
-      kubectl taint node 10.3.1.16 test=16:NoSchedule    
-</code></pre>
+      kubectl taint node 10.3.1.16 test=16:NoSchedule    </code></pre>
 <ol>
 <li>去除污点：</li>
 </ol>
-<pre><code class="language-sh">    #比如设置污点：
+<pre class="highlight"><code class="language-sh">    #比如设置污点：
      kubectl taint node 10.3.1.16 test=16:NoSchedule
      kubectl taint node 10.3.1.16 test=16:NoExecute
 
@@ -1573,29 +1572,26 @@
     #示例：
      kubectl taint node 10.3.1.16 test:NoSchedule-
      kubectl taint node 10.3.1.16 test:NoExecute-
-     kubectl taint node 10.3.1.16 test-
-</code></pre>
+     kubectl taint node 10.3.1.16 test-</code></pre>
 <h2 id="pod">向 Pod 添加容忍</h2>
 <p>PodSpec 中有一个 <code>tolerations</code> 字段，可用于向 Pod 添加容忍。下面的两个例子中定义的容忍都可以匹配上例中的污点，包含这些容忍的 Pod 也都可以被调度到 <code>node1</code> 节点上：</p>
 <ul>
 <li>容忍1：</li>
 </ul>
-<p><code>yaml
-  tolerations:
-  - key: "key"
-    operator: "Equal"
-    value: "value"
-    effect: "NoSchedule"</code></p>
+<pre class="highlight"><code class="language-yaml">tolerations:
+- key: "key"
+  operator: "Equal"
+  value: "value"
+  effect: "NoSchedule"</code></pre>
 <ul>
 <li>容忍2：</li>
 </ul>
-<p><code>yaml
-  tolerations:
-  - key: "key"
-    operator: "Exists"
-    effect: "NoSchedule"</code></p>
+<pre class="highlight"><code class="language-yaml">tolerations:
+- key: "key"
+  operator: "Exists"
+  effect: "NoSchedule"</code></pre>
 <p>下面这个 Pod 的例子中，使用了容忍：</p>
-<pre><code class="language-yaml">apiVersion: v1
+<pre class="highlight"><code class="language-yaml">apiVersion: v1
 kind: Pod
 metadata:
   name: nginx
@@ -1607,10 +1603,9 @@ spec:
     image: nginx
     imagePullPolicy: IfNotPresent
   tolerations:
-  - key: &quot;example-key&quot;
-    operator: &quot;Exists&quot;
-    effect: &quot;NoSchedule&quot;
-</code></pre>
+  - key: "example-key"
+    operator: "Exists"
+    effect: "NoSchedule"</code></pre>
 <h2 id="_3">污点与容忍的匹配</h2>
 <p>当满足如下条件时，Kubernetes 认为容忍和污点匹配：</p>
 <ul>
@@ -1624,7 +1619,7 @@ spec:
 <p>污点的</p>
 </li>
 </ul>
-<p><code>operator</code></p>
+<pre class="highlight"><code>operator</code></pre>
 <p>为：</p>
 <ul>
 <li><code>Exists</code> （此时污点中不应该指定 <code>value</code>）</li>
@@ -1636,16 +1631,14 @@ spec:
 <ul>
 <li>容忍中未定义 <code>key</code> 但是定义了 operator 为 <code>Exists</code>，Kubernetes 认为此容忍匹配所有的污点，如下所示：</li>
 </ul>
-<p><code>yaml
-  tolerations:
-  - operator: "Exists"</code></p>
+<pre class="highlight"><code class="language-yaml">tolerations:
+- operator: "Exists"</code></pre>
 <ul>
 <li>容忍中未定义 <code>effect</code> 但是定义了 <code>key</code>，Kubernetes 认为此容忍匹配所有 <code>effect</code>，如下所示：</li>
 </ul>
-<p><code>yaml
-  tolerations:
-  - key: "key"
-    operator: "Exists"</code></p>
+<pre class="highlight"><code class="language-yaml">tolerations:
+- key: "key"
+  operator: "Exists"</code></pre>
 <p>支持的效果 <code>effect</code> 有：</p>
 <ul>
 <li><strong><code>NoSchedule</code></strong></li>
@@ -1669,28 +1662,26 @@ spec:
 <p>如果存在至少一个忽略的污点带有效果</p>
 </li>
 </ul>
-<p><code>NoExecute</code></p>
+<pre class="highlight"><code>NoExecute</code></pre>
 <p>，则：</p>
 <ul>
 <li>假设 Pod 已经在该节点上运行，Kubernetes 将从该节点上驱逐（evict）该 Pod</li>
 <li>假设 Pod 尚未在该节点上运行，Kubernetes 将不会把 Pod 调度到该节点</li>
 </ul>
 <p>例如，假设您给一个节点添加了三个污点：</p>
-<pre><code class="language-sh">kubectl taint nodes node1 key1=value1:NoSchedule
+<pre class="highlight"><code class="language-sh">kubectl taint nodes node1 key1=value1:NoSchedule
 kubectl taint nodes node1 key1=value1:NoExecute
-kubectl taint nodes node1 key2=value2:NoSchedule
-</code></pre>
+kubectl taint nodes node1 key2=value2:NoSchedule</code></pre>
 <p>同时，有一个 Pod 带有两个容忍：</p>
-<pre><code class="language-yaml">tolerations:
-- key: &quot;key1&quot;
-  operator: &quot;Equal&quot;
-  value: &quot;value1&quot;
-  effect: &quot;NoSchedule&quot;
-- key: &quot;key1&quot;
-  operator: &quot;Equal&quot;
-  value: &quot;value1&quot;
-  effect: &quot;NoExecute&quot;
-</code></pre>
+<pre class="highlight"><code class="language-yaml">tolerations:
+- key: "key1"
+  operator: "Equal"
+  value: "value1"
+  effect: "NoSchedule"
+- key: "key1"
+  operator: "Equal"
+  value: "value1"
+  effect: "NoExecute"</code></pre>
 <p>在这个案例中，Pod 上有两个容忍，匹配了节点的前两个污点，只有节点的第三个污点对该 Pod 来说不可忽略，该污点的效果为 <code>NoSchedule</code>：</p>
 <ul>
 <li>Kubernetes 不会将此 Pod 调度到该节点上</li>
@@ -1698,13 +1689,12 @@ kubectl taint nodes node1 key2=value2:NoSchedule
 </ul>
 <p>通常，在带有效果 <code>NoExecute</code> 的污点被添加到节点时，节点上任何不容忍该污点的 Pod 将被立刻驱逐，而容忍该污点的 Pod 则不会被驱逐。</p>
 <p>此外，带有效果 <code>NoExecute</code> 的污点还可以指定一个可选字段 <code>tolerationSeconds</code>，该字段指定了 Pod 在多长时间后被驱逐，例如：</p>
-<pre><code class="language-yaml">tolerations:
-- key: &quot;key1&quot;
-  operator: &quot;Equal&quot;
-  value: &quot;value1&quot;
-  effect: &quot;NoExecute&quot;
-  tolerationSeconds: 3600 
-</code></pre>
+<pre class="highlight"><code class="language-yaml">tolerations:
+- key: "key1"
+  operator: "Equal"
+  value: "value1"
+  effect: "NoExecute"
+  tolerationSeconds: 3600 </code></pre>
 <p>此例子中，如果 Pod 已经运行在节点上，再向节点增加此污点时，Pod 将在该节点上继续运行 3600 秒，然后才被驱逐。如果污点在此之间被移除，则 Pod 将不会被驱逐。</p>
                 
               
@@ -1826,6 +1816,10 @@ kubectl taint nodes node1 key2=value2:NoSchedule
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

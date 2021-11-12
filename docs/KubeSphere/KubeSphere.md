@@ -32,7 +32,15 @@ https://v3-1.docs.kubesphere.io/zh/docs/multicluster-management/enable-multiclus
 
 https://v3-1.docs.kubesphere.io/zh/docs/pluggable-components/app-store/
 
+启动Metrics Server功能
 
+[https://kubesphere.com.cn/docs/pluggable-components/metrics-server/#%E5%9C%A8%E5%AE%89%E8%A3%85%E5%90%8E%E5%90%AF%E7%94%A8-metrics-server](https://kubesphere.com.cn/docs/pluggable-components/metrics-server/#在安装后启用-metrics-server)
+
+
+
+
+
+**需要注意的是，如果使用边缘节点功能，一定要启动Metrics Server功能，否则边缘节点没有监控信息**
 
 ## 启用边缘节点功能
 
@@ -102,7 +110,7 @@ hosts:          dns files mdns4_minimal [NOTFOUND=return]
 [root@edgenode ~] sysctl -p | grep ip_forward
 ```
 
-然后就可以在KubeSphere页面上，节点管理--》边缘节点--》添加节点，输入给node的名字，node的IP地址，然后复制下面的命令
+然后就可以在KubeSphere页面上，节点管理--》边缘节点--》添加节点，输入给node的名字，node的IP地址（**注意：这里这个node的IP地址，不要是node的真实IP地址，这个IP是个虚拟IP地址，类似K8S的clusterIP一样，是个假的IP，下面的图的IP地址，不应该是192.168.70.140，可以设置为1.1.1.1或者2.2.2.2之类的**），然后复制下面的命令
 
 ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge_add.png?raw=true)
 
@@ -170,5 +178,12 @@ kubectl delete node <edgenode-name>
 
 
 
+设置公开集群，在集群的`集群设置`中，`集群可见性`中，`编辑可见性`，拉到最底部，有个`设置为公开集群`的开关打开。
 
+创建企业空间及相关用户
 
+https://kubesphere.com.cn/docs/quick-start/create-workspace-and-project/
+
+导入HELM仓库
+
+https://kubesphere.com.cn/docs/workspace-administration/app-repository/import-helm-repository/

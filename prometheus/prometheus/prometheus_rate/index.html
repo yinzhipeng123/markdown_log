@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1486,8 +1488,7 @@
                 
                 <h1 id="ratecpu">为什么rate可以计算CPU的使用率</h1>
 <p>在计算POD的CPU使用率的时候，官方给出了一个计算公式</p>
-<pre><code class="language-sql">sum (rate (container_cpu_usage_seconds_total{pod_name=~&quot;$Pod&quot;,namespace=&quot;$namespace&quot;}[1m])) by (pod_name)
-</code></pre>
+<pre class="highlight"><code class="language-sql">sum (rate (container_cpu_usage_seconds_total{pod_name=~"$Pod",namespace="$namespace"}[1m])) by (pod_name)</code></pre>
 <p>参考：</p>
 <ol>
 <li>https://blog.csdn.net/shm19990131/article/details/107162470</li>
@@ -1495,7 +1496,7 @@
 <li>https://blog.csdn.net/qq_35753140/article/details/105121525</li>
 </ol>
 <p>总结：</p>
-<pre><code>increase()函数
+<pre class="highlight"><code>increase()函数
 increase函数在Prometheus中，是用来针对Counter这种持续增长的数值，截取其中一段时间的增量
 increase(node_cpu[1m])=》这样就获取了CPU总使用时间在1分钟内的增量
 
@@ -1506,7 +1507,6 @@ rate()函数
 
 rate(metrice[1m]) == increase(metrice[1m])/1m
 rate函数等于 increase的值除以时间
-
 </code></pre>
 <p>在计算机中，CPU使用率是统计CPU的在不同状态下的CPU使用时间占总时间多少</p>
 <p>例如：</p>
@@ -1639,6 +1639,10 @@ cpu0 5分钟内处于空闲状态的时间占比：increase(node_cpu_seconds_tot
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

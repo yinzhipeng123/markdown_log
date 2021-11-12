@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1554,11 +1556,10 @@
                 
                 <p>Mypy是Python的可选静态类型检查器。您可以在Python程序中添加类型提示（PEP 484），并使用mypy进行静态类型检查。查找程序中的错误，甚至不运行它们！</p>
 <p>安装</p>
-<pre><code class="language-shell">pip3 install mypy
-</code></pre>
+<pre class="highlight"><code class="language-shell">pip3 install mypy</code></pre>
 <p>Test继承ABC</p>
 <p>1.</p>
-<pre><code>class ABC(object):
+<pre class="highlight"><code>class ABC(object):
 
     def prt(self):
         print(self)
@@ -1571,18 +1572,16 @@ class Test(ABC):
         print(self.__class__)
 
     def prc(self):
-        print(&quot;abc&quot;)
+        print("abc")
 
 
-g: &quot;ABC&quot; = Test()
-g.prt()
-</code></pre>
+g: "ABC" = Test()
+g.prt()</code></pre>
 <p>运行结果:</p>
-<pre><code class="language-bash">(venv) D:\idea\flask_learn&gt;mypy learn.py
-Success: no issues found in 1 source file
-</code></pre>
+<pre class="highlight"><code class="language-bash">(venv) D:\idea\flask_learn&gt;mypy learn.py
+Success: no issues found in 1 source file</code></pre>
 <p>2</p>
-<pre><code>class ABC(object):
+<pre class="highlight"><code>class ABC(object):
 
     def prt(self):
         print(self)
@@ -1595,23 +1594,21 @@ class Test(ABC):
         print(self.__class__)
 
     def prc(self):
-        print(&quot;abc&quot;)
+        print("abc")
 
 
-g: &quot;ABC&quot; = Test()
-g.prc()
-</code></pre>
+g: "ABC" = Test()
+g.prc()</code></pre>
 <p>运行结果：</p>
-<pre><code class="language-bash">(venv) D:\idea\flask_learn&gt;mypy learn.py
-learn.py:18: error: &quot;ABC&quot; has no attribute &quot;prc&quot;
+<pre class="highlight"><code class="language-bash">(venv) D:\idea\flask_learn&gt;mypy learn.py
+learn.py:18: error: "ABC" has no attribute "prc"
 Found 1 error in 1 file (checked 1 source file)
-
 </code></pre>
 <p>3</p>
-<pre><code class="language-python">class Person(object):  # 定义一个父类
+<pre class="highlight"><code class="language-python">class Person(object):  # 定义一个父类
 
     def talk(self):  # 父类中的方法
-        print(&quot;person is talking....&quot;)
+        print("person is talking....")
 
 
 class Chinese(Person):  # 定义一个子类， 继承Person类
@@ -1620,33 +1617,29 @@ class Chinese(Person):  # 定义一个子类， 继承Person类
         print('is walking...')
 
 
-g: &quot;Person&quot; = Chinese()
-g.walk()
-</code></pre>
+g: "Person" = Chinese()
+g.walk()</code></pre>
 <p>运行结果：</p>
-<pre><code class="language-bash">(venv) D:\idea\flask_learn&gt;mypy learn.py
-learn.py:14: error: &quot;Person&quot; has no attribute &quot;walk&quot;
-Found 1 error in 1 file (checked 1 source file)
-</code></pre>
+<pre class="highlight"><code class="language-bash">(venv) D:\idea\flask_learn&gt;mypy learn.py
+learn.py:14: error: "Person" has no attribute "walk"
+Found 1 error in 1 file (checked 1 source file)</code></pre>
 <p>平时我们代码大概都是下面的样子</p>
-<pre><code class="language-python"># 参数name的类型是未知的
+<pre class="highlight"><code class="language-python"># 参数name的类型是未知的
 # 返回的类型也是未知的
 def greeting(name):
-    return 'Hello ' + name
-</code></pre>
+    return 'Hello ' + name</code></pre>
 <p>稍微修改一些</p>
-<pre><code class="language-rust"># 参数name后面跟了:str 代表name期望是str类型
+<pre class="highlight"><code class="language-rust"># 参数name后面跟了:str 代表name期望是str类型
 # 参数括号后面跟了-&gt;str代表返回类型为str类型
 def greeting(name: str) -&gt; str:
     return 'Hello ' + name
 x: str = 'xxx' # 声明一个变量为str类型
 greeting(x) # Hello xxx
-greeting(123) # TypeError: can only concatenate str (not &quot;int&quot;) to str
-</code></pre>
+greeting(123) # TypeError: can only concatenate str (not "int") to str</code></pre>
 <p>到目前为止仅有str、float等基本类型，使用list、tuple复杂类型需要引用typing中的类型</p>
 <h3 id="list">LIST</h3>
 <p>数组类型</p>
-<pre><code class="language-python">from typing import List
+<pre class="highlight"><code class="language-python">from typing import List
 
 # 参数names为list类型并且元素都是str类型
 # 返回为None
@@ -1654,25 +1647,23 @@ def greet_all(names: List[str]) -&gt; None:
     for name in names:
         print('Hello ' + name)
 
-names = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;]
+names = ["Alice", "Bob", "Charlie"]
 ages = [10, 20, 30]
 
 greet_all(names)   # Ok!
-greet_all(ages)    #出错了 Error due to incompatible types 
-</code></pre>
+greet_all(ages)    #出错了 Error due to incompatible types </code></pre>
 <h3 id="dict">Dict</h3>
 <p>字典类型</p>
-<pre><code class="language-python">from typing import Dict
+<pre class="highlight"><code class="language-python">from typing import Dict
 
 # Dict[int, str] int代表key类型， str代表val类型
 def test(t: Dict[int, str]) -&gt; Dict:
     return t
 
-test({1: '234'}) # {1: '234'}
-</code></pre>
+test({1: '234'}) # {1: '234'}</code></pre>
 <h3 id="iterable">Iterable</h3>
 <p>可以迭代类型包括 List、Set、Tuple、Str、Dict</p>
-<pre><code class="language-python">def greeting(names: Iterable[str]) -&gt; None:
+<pre class="highlight"><code class="language-python">def greeting(names: Iterable[str]) -&gt; None:
     for name in names:
         print(name)
 
@@ -1681,11 +1672,10 @@ greeting(('ccc', 'ddd')) # tuple ccc ddd
 greeting({'eee', 'fff'}) # set eee fff
 greeting({'ggg': 'hhh'}) # dict ggg
 greeting('123') # str 1 2 3 
-greeting(678) # error: Argument 1 to &quot;greeting&quot; has incompatible type &quot;int&quot;; expected &quot;Iterable[str]&quot;
-</code></pre>
+greeting(678) # error: Argument 1 to "greeting" has incompatible type "int"; expected "Iterable[str]"</code></pre>
 <h3 id="union">Union</h3>
 <p>接受多个指定类型，但不接受除此外的类型</p>
-<pre><code class="language-python">from typing import Union
+<pre class="highlight"><code class="language-python">from typing import Union
 # user_id 只能为int或者str
 def normalize_id(user_id: Union[int, str]) -&gt; str:
     if isinstance(user_id, int):
@@ -1693,11 +1683,10 @@ def normalize_id(user_id: Union[int, str]) -&gt; str:
     else:
         return user_id
 normalize_id(1) # user-100001
-normalize_id('2') # 2
-</code></pre>
+normalize_id('2') # 2</code></pre>
 <h3 id="optional">Optional</h3>
 <p>可选类型，给参数设置默认值</p>
-<pre><code class="language-python">from typing import Optional
+<pre class="highlight"><code class="language-python">from typing import Optional
 
 # Optional[str]只是Union [str，None]的简写或别名。它主要是为了方便帮助功能签名看起来更清洁
 # Optional[str, int] 只能包含一个类型, 这样是不正确的
@@ -1706,11 +1695,10 @@ def greeting(name: Optional[str] = None) -&gt; str:
         name = 'stranger'
     return 'Hello, ' + name
 greeting() # Hello, stranger
-greeting('123') # Hello, 123
-</code></pre>
+greeting('123') # Hello, 123</code></pre>
 <h3 id="any">Any</h3>
 <p>有时候我们不确定是什么类型的时候可以用到Any</p>
-<pre><code class="language-python">from typing import Any
+<pre class="highlight"><code class="language-python">from typing import Any
 
 def greeting(name: Any = None) -&gt; str:
     if name is None:
@@ -1721,18 +1709,16 @@ def greeting(name: Any = None) -&gt; str:
 greeting() # Hello, stranger
 greeting('123') # Hello, 123
 greeting(234) # Hello, 234
-greeting([345]) # Hello, [345]
-</code></pre>
+greeting([345]) # Hello, [345]</code></pre>
 <h3 id="typevar">TypeVar</h3>
 <p>自定义类型</p>
-<pre><code class="language-python">from typing import TypeVar
+<pre class="highlight"><code class="language-python">from typing import TypeVar
 
 T = TypeVar('T') # 任意类型
 A = TypeVar('A', int, str) # A类型只能为int或str
 def test(t: A) -&gt; None:
     print(t)
-test(1)
-</code></pre>
+test(1)</code></pre>
                 
               
               
@@ -1853,6 +1839,10 @@ test(1)
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

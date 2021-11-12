@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1555,44 +1557,39 @@
 <p>（4)检验pip是否安装成功，windows控制台输入"pip",由如下输出则安装成功
       <img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/oooooooo.png?raw=true" /></p>
 <p>如果安装完 PIP出现这个</p>
-<pre><code class="language-bash">$-&gt; pip
+<pre class="highlight"><code class="language-bash">$-&gt; pip
 Traceback (most recent call last):
-  File &quot;/home/work/.jumbo/bin/pip&quot;, line 9, in &lt;module&gt;
+  File "/home/work/.jumbo/bin/pip", line 9, in &lt;module&gt;
     load_entry_point('pip==21.1.1', 'console_scripts', 'pip')()
-  File &quot;/home/work/.jumbo/lib/python2.7/site-packages/pkg_resources/__init__.py&quot;, line 552, in load_entry_point
+  File "/home/work/.jumbo/lib/python2.7/site-packages/pkg_resources/__init__.py", line 552, in load_entry_point
     return get_distribution(dist).load_entry_point(group, name)
-  File &quot;/home/work/.jumbo/lib/python2.7/site-packages/pkg_resources/__init__.py&quot;, line 2672, in load_entry_point
+  File "/home/work/.jumbo/lib/python2.7/site-packages/pkg_resources/__init__.py", line 2672, in load_entry_point
     return ep.load()
-  File &quot;/home/work/.jumbo/lib/python2.7/site-packages/pkg_resources/__init__.py&quot;, line 2345, in load
+  File "/home/work/.jumbo/lib/python2.7/site-packages/pkg_resources/__init__.py", line 2345, in load
     return self.resolve()
-  File &quot;/home/work/.jumbo/lib/python2.7/site-packages/pkg_resources/__init__.py&quot;, line 2351, in resolve
+  File "/home/work/.jumbo/lib/python2.7/site-packages/pkg_resources/__init__.py", line 2351, in resolve
     module = __import__(self.module_name, fromlist=['__name__'], level=0)
-  File &quot;/home/work/.jumbo/lib/python2.7/site-packages/pip/__init__.py&quot;, line 1, in &lt;module&gt;
+  File "/home/work/.jumbo/lib/python2.7/site-packages/pip/__init__.py", line 1, in &lt;module&gt;
     from typing import List, Optional
-ImportError: No module named typing
-</code></pre>
+ImportError: No module named typing</code></pre>
 <p>解决方案：</p>
-<pre><code class="language-bash">&gt; curl -O https://bootstrap.pypa.io/pip/2.7/get-pip.py
+<pre class="highlight"><code class="language-bash">&gt; curl -O https://bootstrap.pypa.io/pip/2.7/get-pip.py
 &gt; python get-pip.py
-&gt; python -m pip install --upgrade &quot;pip &lt; 21.0&quot;
-</code></pre>
+&gt; python -m pip install --upgrade "pip &lt; 21.0"</code></pre>
 <p>5、pip安装wheel </p>
 <p>控制台输入：</p>
-<pre><code>pip install wheel  -i https://pypi.tuna.tsinghua.edu.cn/simple
-</code></pre>
+<pre class="highlight"><code>pip install wheel  -i https://pypi.tuna.tsinghua.edu.cn/simple</code></pre>
 <p>Python及pip安装完成</p>
 <p>cmd下输入</p>
-<pre><code class="language-powershell">pip install mkdocs -i https://pypi.tuna.tsinghua.edu.cn/simple
-</code></pre>
+<pre class="highlight"><code class="language-powershell">pip install mkdocs -i https://pypi.tuna.tsinghua.edu.cn/simple</code></pre>
 <p>在github上建立空的公开git库，并克隆到本地</p>
 <p>以我的为例</p>
-<pre><code class="language-powershell">D:\git&gt;git clone https://github.com/yinzhipeng123/markdown_log.git
+<pre class="highlight"><code class="language-powershell">D:\git&gt;git clone https://github.com/yinzhipeng123/markdown_log.git
 D:\git&gt;cd markdown_log
 D:\git\markdown_log&gt;mkdocs new .
 INFO    -  Writing config file: .\mkdocs.yml
 INFO    -  Writing initial docs: .\docs\index.md
-D:\git\markdown_log&gt;mkdocs serve
-</code></pre>
+D:\git\markdown_log&gt;mkdocs serve</code></pre>
 <p>mkdocs serve会把makedown文件以静态页面的形式展示到127.0.0.1:8000，可以更改docs下的md文件进行实时更新</p>
 <p>修改mkdocs.yml会对网站一些页面进行设置</p>
 <p>以上详细参考https://www.mkdocs.org/getting-started/</p>
@@ -1600,53 +1597,46 @@ D:\git\markdown_log&gt;mkdocs serve
 <p>该项目yml文件配置https://github.com/siddhi-io/siddhi/blob/master/mkdocs.yml</p>
 <p>可以参考其配置</p>
 <h2 id="github-pages">GitHub Pages发布</h2>
-<pre><code class="language-powershell">D:\git\markdown_log&gt;mkdocs build
+<pre class="highlight"><code class="language-powershell">D:\git\markdown_log&gt;mkdocs build
 WARNING -  Config value: 'pages'. Warning: The 'pages' configuration option has been deprecated and will be removed in a future release of MkDocs. Use 'nav' instead.
 INFO    -  Cleaning site directory
 INFO    -  Building documentation to directory: D:\git\markdown_log\site
 
-
 </code></pre>
 <p>然后剪切site下的所有文件到D:\git\markdown_log下</p>
 <p>这里我做了个脚本  clear_code.sh</p>
-<pre><code class="language-bash">#!/usr/bin/env bash
+<pre class="highlight"><code class="language-bash">#!/usr/bin/env bash
 
 shopt -s extglob
 rm -rf !(mkdocs.yml|README.md|docs|site|.git|clear_code.sh)
 
 mkdocs build
-mv site/* ./
-</code></pre>
+mv site/* ./</code></pre>
 <p>windows安装git后，这个脚本放在这个目录，双击就能执行，脚本解释：删除上次构建，然后构建，移动目录</p>
 <p>然后git上传上去</p>
-<pre><code class="language-powershell">git add -A
+<pre class="highlight"><code class="language-powershell">git add -A
 git commit -m '修改文件'
-git push origin main
-</code></pre>
+git push origin main</code></pre>
 <p>然后在git库的页面这样设置</p>
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/image/image-20210713182030557.png?raw=true" /></p>
 <p>然后就可以通过这个地址进行访问了</p>
 <h2 id="mkdocs_1">美化MkDocs</h2>
 <p>cmd中执行pip</p>
-<pre><code class="language-powershell">pip install mkdocs-windmill
-</code></pre>
+<pre class="highlight"><code class="language-powershell">pip install mkdocs-windmill</code></pre>
 <p>修改mkdocs.yml，添加行theme: windmill，使用nav</p>
-<pre><code class="language-yaml">site_name: markdown_log
+<pre class="highlight"><code class="language-yaml">site_name: markdown_log
 site_url: https://yinzhipeng123.github.io/markdown_log/
 nav:
 - MkDocs: index.md
 - 文章列表:
   - MkDocs: api/MkDoc.md
-theme: windmill
-</code></pre>
+theme: windmill</code></pre>
 <p>cmd中启动</p>
-<pre><code class="language-powershell">mkdocs serve
-</code></pre>
+<pre class="highlight"><code class="language-powershell">mkdocs serve</code></pre>
 <p>127.0.0.1:8000预览之后。就双击执行clear_code.sh进行构建，然后git回去</p>
-<pre><code class="language-powershell">git add -A
+<pre class="highlight"><code class="language-powershell">git add -A
 git commit -m '修改文件'
-git push origin main
-</code></pre>
+git push origin main</code></pre>
 <h2 id="_1">为什么要写博客</h2>
 <p><img alt="" src="https://raw.githubusercontent.com/yinzhipeng123/markdown_log/main/docs/image/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2.jpg" /></p>
 <p>当我要回答一个问题，我需要确定自己对这个问题所涉及到的技术都了然于心，不然写出来的东西如果是错的话，姑且不说丢不丢人，最重要的是这样会误人子弟。所以如果看到一个问题我并不是非常了解，我不会第一时间就去回答，而是自己去研究一轮，研究透彻了，再去回答问题。在这么一个过程当中，<strong>我又巩固了以前的知识，并学习到了新的知识，顺带还帮助到提出问题的人，这是双赢的，何乐而不为</strong>？</p>
@@ -1773,6 +1763,10 @@ git push origin main
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

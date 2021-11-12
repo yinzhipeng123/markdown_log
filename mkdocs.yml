@@ -5,7 +5,14 @@ repo_name: MarkDown_Log
 repo_url: https://github.com/yinzhipeng123/markdown_log/
 copyright: MarkDown_Log - Documentation
 
+
 markdown_extensions:
+  - pymdownx.highlight: 
+      use_pygments: false
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.keys
+  
   - admonition
   - abbr
   - attr_list
@@ -29,13 +36,7 @@ extra:
 theme:
   name: material
   language: 'zh'
-  highlightjs: true        # 打开代码高亮
-  hljs_style: github       # 代码高亮风格
-  hljs_languages:          # 编程语言
-    - c
-    - c++
-    - java
-    - python
+  
   features:
     - content.code.annotate
     - content.tabs.link
@@ -74,7 +75,11 @@ plugins:
   - search:
       indexing: 'full'
 extra_javascript:
-    - '//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js'
+  - '//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js'
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+  - javascripts/highlight.js
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css
 
 nav:
 - Home: index.md

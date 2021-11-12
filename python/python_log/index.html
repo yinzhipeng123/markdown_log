@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1484,11 +1486,10 @@
                 
                 <h1 id="python">Python控制台输出重定向到日志并控制日志大小</h1>
 <p>python控制台输出，可以输出print和一些error信息。那么启动python的时候可以重定向控制台的输出信息到日志文件中</p>
-<pre><code class="language-bash">mkdir -p /app/example/log
-touch /app/example/example.py
-</code></pre>
+<pre class="highlight"><code class="language-bash">mkdir -p /app/example/log
+touch /app/example/example.py</code></pre>
 <p>编辑python文件，设置日志文件及最大大小和保存个数、及日志样式</p>
-<pre><code class="language-python">import os
+<pre class="highlight"><code class="language-python">import os
 import time
 import traceback
 import schedule
@@ -1497,7 +1498,7 @@ import colorlog
 import sys
 
 # ————————日志————————
-logfilename = &quot;/app/example/log/example.log&quot;
+logfilename = "/app/example/log/example.log"
 log_colors_config = {
     'DEBUG': 'white',
     'INFO': 'green',
@@ -1537,22 +1538,20 @@ logger.addHandler(console)
 
 
 
-logger.info(&quot;cron start&quot;)
+logger.info("cron start")
 try:
-    logger.info(&quot;dir:&quot; + os.getcwd())
+    logger.info("dir:" + os.getcwd())
     while True:
         time.sleep(1)
-        print(&quot;hello&quot;)
+        print("hello")
 
 except Exception as e:
     logger.error(e)
-    logger.error(traceback.print_exc())
-</code></pre>
+    logger.error(traceback.print_exc())</code></pre>
 <p>到此，example.py中 <code>logger.info</code> 和 <code>logger.error</code> 日志会输出到 <code>日志文件</code> 中 和 <code>控制台</code> 上，<code>print</code> 语句会输出到控制台上</p>
 <p>用下面的方式启动，控制台的输出会都出现在 <code>/app/example/log/example.log</code> 文件中</p>
 <p>一开始我以为<code>logger.info</code> 和 <code>logger.error</code> 会在日志中出现两次，逻辑上，代码中指定了一遍控制台输出，通过命令指定了一遍控制台输出，后来发现并没有，只会在日志中出现一次。而且日志大小正常被切割</p>
-<pre><code class="language-bash">nohup python3  /app/example/example.py &gt; /app/example/log/example.log 2&gt;&amp;1 &amp;
-</code></pre>
+<pre class="highlight"><code class="language-bash">nohup python3  /app/example/example.py &gt; /app/example/log/example.log 2&gt;&amp;1 &amp;</code></pre>
                 
               
               
@@ -1673,6 +1672,10 @@ except Exception as e:
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

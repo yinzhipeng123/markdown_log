@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1672,31 +1674,24 @@ rate(http_requests_total[5m] offset 5m)</p>
 <li><code>quantile</code> (分位数)</li>
 </ul>
 <p>使用聚合操作的语法如下：</p>
-<pre><code>&lt;aggr-op&gt;([parameter,] &lt;vector expression&gt;) [without|by (&lt;label list&gt;)]
-</code></pre>
+<pre class="highlight"><code>&lt;aggr-op&gt;([parameter,] &lt;vector expression&gt;) [without|by (&lt;label list&gt;)]</code></pre>
 <p>其中只有<code>count_values</code>, <code>quantile</code>, <code>topk</code>, <code>bottomk</code>支持参数(parameter)。</p>
 <p>without用于从计算结果中移除列举的标签，而保留其它标签。by则正好相反，结果向量中只保留列出的标签，其余标签则移除。通过without和by可以按照样本的问题对数据进行聚合。</p>
 <p>例如：</p>
-<pre><code>sum(http_requests_total) without (instance)
-</code></pre>
+<pre class="highlight"><code>sum(http_requests_total) without (instance)</code></pre>
 <p>等价于</p>
-<pre><code>sum(http_requests_total) by (code,handler,job,method)
-</code></pre>
+<pre class="highlight"><code>sum(http_requests_total) by (code,handler,job,method)</code></pre>
 <p>如果只需要计算整个应用的HTTP请求总量，可以直接使用表达式：</p>
-<pre><code>sum(http_requests_total)
-</code></pre>
+<pre class="highlight"><code>sum(http_requests_total)</code></pre>
 <p>count_values用于时间序列中每一个样本值出现的次数。count_values会为每一个唯一的样本值输出一个时间序列，并且每一个时间序列包含一个额外的标签。</p>
 <p>例如：</p>
-<pre><code>count_values(&quot;count&quot;, http_requests_total)
-</code></pre>
+<pre class="highlight"><code>count_values("count", http_requests_total)</code></pre>
 <p>topk和bottomk则用于对样本值进行排序，返回当前样本值前n位，或者后n位的时间序列。</p>
 <p>获取HTTP请求数前5位的时序样本数据，可以使用表达式：</p>
-<pre><code>topk(5, http_requests_total)
-</code></pre>
+<pre class="highlight"><code>topk(5, http_requests_total)</code></pre>
 <p>quantile用于计算当前样本数据值的分布情况quantile(φ, express)其中0 ≤ φ ≤ 1。</p>
 <p>例如，当φ为0.5时，即表示找到当前样本数据中的中位数：</p>
-<pre><code>quantile(0.5, http_requests_total)
-</code></pre>
+<pre class="highlight"><code>quantile(0.5, http_requests_total)</code></pre>
                 
               
               
@@ -1817,6 +1812,10 @@ rate(http_requests_total[5m] offset 5m)</p>
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

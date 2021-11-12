@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1526,17 +1528,17 @@
 <li>event.clear()：将event的标志设置为False，调用wait方法的所有线程将被阻塞；</li>
 <li>event.isSet()：判断event的标志是否为True。</li>
 </ul>
-<pre><code class="language-python">import threading
+<pre class="highlight"><code class="language-python">import threading
 import time
 event = threading.Event()
 def func():
     # 等待事件，进入等待阻塞状态
     print('%s wait for event...' % threading.currentThread().getName())
-    print(&quot;event.is_set():&quot;+str(event.is_set()))
+    print("event.is_set():"+str(event.is_set()))
     event.wait()
     # 收到事件后进入运行状态
     print('%s recv event.' % threading.currentThread().getName())
-    print(&quot;event.is_set():&quot;+str(event.is_set()))
+    print("event.is_set():"+str(event.is_set()))
 t1 = threading.Thread(target=func)
 t2 = threading.Thread(target=func)
 t1.start()
@@ -1546,10 +1548,9 @@ time.sleep(2)
 
 # 发送事件通知
 print('MainThread set event..............')
-event.set()
-</code></pre>
+event.set()</code></pre>
 <p>结果：</p>
-<pre><code>Thread-1 wait for event...
+<pre class="highlight"><code>Thread-1 wait for event...
 event.is_set():False
 Thread-2 wait for event...
 event.is_set():False
@@ -1559,10 +1560,9 @@ event.is_set():True
 Thread-1 recv event.
 event.is_set():True
 
-进程已结束，退出代码为 0
-</code></pre>
+进程已结束，退出代码为 0</code></pre>
 <h3 id="_1">用继承方式实现</h3>
-<pre><code class="language-python">import threading
+<pre class="highlight"><code class="language-python">import threading
 import time
 
 class MyThread(threading.Thread):
@@ -1571,12 +1571,12 @@ class MyThread(threading.Thread):
     def run(self):
         # 等待事件，进入等待阻塞状态
         print('%s wait for event...' % threading.currentThread().getName())
-        print(&quot;event.is_set():&quot; + str(MyThread.event.is_set()))
+        print("event.is_set():" + str(MyThread.event.is_set()))
         MyThread.event.wait()
 
         # 收到事件后进入运行状态
         print('%s recv event.' % threading.currentThread().getName())
-        print(&quot;event.is_set():&quot; + str(MyThread.event.is_set()))
+        print("event.is_set():" + str(MyThread.event.is_set()))
 
 
 t1 = MyThread()
@@ -1588,10 +1588,9 @@ time.sleep(2)
 
 # 发送事件通知
 print('MainThread set event..............')
-MyThread.event.set()
-</code></pre>
+MyThread.event.set()</code></pre>
 <p>结果：</p>
-<pre><code class="language-python">Thread-1 wait for event...
+<pre class="highlight"><code class="language-python">Thread-1 wait for event...
 event.is_set():False
 Thread-2 wait for event...
 event.is_set():False
@@ -1601,8 +1600,7 @@ event.is_set():True
 Thread-1 recv event.
 event.is_set():True
 
-进程已结束，退出代码为 0
-</code></pre>
+进程已结束，退出代码为 0</code></pre>
                 
               
               
@@ -1723,6 +1721,10 @@ event.is_set():True
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

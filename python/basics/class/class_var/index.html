@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1549,21 +1551,21 @@
 <h2 id="self">self 简介</h2>
 <p>类的方法与普通的函数只有一个特别的区别 —— 它们必须有一个额外的第一个参数名称，但是在调用这个方法的时候你不为这个参数赋值，Python 会提供这个值。这个特别的变量指对象本身，按照惯例它的名称是 self。虽然你可以给这个参数任何名称，但是 强烈建议 你使用 self 这个名称。</p>
 <p>实际上，实例变量就是一个用 self 修饰的变量。self 将一个变量绑定到一个特定的实例上，这样它就属于这实例自己。</p>
-<pre><code class="language-python">class A(object):
-    va = &quot;10&quot;
+<pre class="highlight"><code class="language-python">class A(object):
+    va = "10"
 
     def foo(self):
-        print(&quot;A.va=&quot; + A.va)
-        print(&quot;self.va=&quot; + self.va)
-        self.va = &quot;40&quot;
-        print(&quot;A.va=&quot; + A.va)
-        print(&quot;self.va=&quot; + self.va)
-        va = &quot;20&quot;
-        print(&quot;va=&quot;+va)
+        print("A.va=" + A.va)
+        print("self.va=" + self.va)
+        self.va = "40"
+        print("A.va=" + A.va)
+        print("self.va=" + self.va)
+        va = "20"
+        print("va="+va)
 
-        A.va = &quot;15&quot;
-        print(&quot;A.va=&quot;+A.va)
-        print(&quot;self.v=&quot;+self.va)
+        A.va = "15"
+        print("A.va="+A.va)
+        print("self.v="+self.va)
 
 
 obj1 = A()
@@ -1571,10 +1573,9 @@ obj2 = A()
 obj1.foo()
 print(A.va)
 print(obj1.va)
-print(obj2.va)
-</code></pre>
+print(obj2.va)</code></pre>
 <p>结果：</p>
-<pre><code>A.va=10
+<pre class="highlight"><code>A.va=10
 self.va=10
 A.va=10
 self.va=40
@@ -1583,8 +1584,7 @@ A.va=15
 self.v=40
 15
 40
-15
-</code></pre>
+15</code></pre>
 <p>分析程序结果我们发现，一般情况下，类变量可以用类名或者self的形式访问。当 <code>self.类变量</code> 被重新赋值时，它的值就发生了变化，但类变量的值不会随之变化。方法内的局部变量会屏蔽掉类变量和实例变量。类变量是所有实例共享的，而实例变量只属于对象自己，每个实例的实例变量可以有不同的值。</p>
 <h2 id="_2">要点总结</h2>
 <ul>
@@ -1717,6 +1717,10 @@ self.v=40
       <script src="../../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../../javascripts/highlight.js"></script>
       
     
   </body>

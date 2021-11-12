@@ -15,9 +15,15 @@
 
 <center><font face="黑体" color=red size=10>Join & Daemon</font></center>
 
-主线程A中，创建了子线程B，并且在主线程A中调用了`B.setDaemon()`，这个的意思是，把主线程A设置为守护线程，这时候，要是主线程A执行结束了，就不管子线程B是否完成，一并和主线程A退出。这就是`setDaemon`方法的含义，这基本和join是相反的。此外，还有个要特别注意的：必须在`start()` 方法调用之前设置，如果不设置为守护线程，程序会被无限挂起。
+`join`字面意思：**联合**
 
-&nbsp;
+`daemon`字面意思：**守护**
+
+正常的多线程，A开启了B，A和B是两个独立的线程，互不干扰
+
+主线程A中，创建了子线程B，并且在主线程A中调用了`B.setDaemon()`，我的理解就是让B守护A，A进程结束了，就不管子线程B是否完成，一并和主线程A退出。这就是`setDaemon`方法的含义
+
+主线程A中，创建了子线程B，并且在主线程A中调用了`B.join()`，我的理解就是让B联合A，A进程结束了，就会进入阻塞状态等待B，等待B结束，A才退出
 
 &nbsp;
 
@@ -62,8 +68,9 @@ if __name__ == '__main__':
     print('一共用时：', time.time()-start_time)
 ```
 
-其执行结果如下
-![img](https://images2017.cnblogs.com/blog/1203446/201709/1203446-20170911141534407-1287489554.png)
+其执行结果如下：
+
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/join1.png?raw=true)
 
 关键点：
 
@@ -102,7 +109,7 @@ if __name__ == '__main__':
 ```
 
 其执行结果如下，注意请确保setDaemon()在start()之前。
-![img](https://images2017.cnblogs.com/blog/1203446/201709/1203446-20170911143032641-1967021221.png)
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/join2.png?raw=true)
 
 关键点：
 
@@ -143,7 +150,7 @@ if __name__ == '__main__':
 ```
 
 其执行结果如下：
-![img](https://images2017.cnblogs.com/blog/1203446/201709/1203446-20170911144052203-746545220.png)
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/join.png?raw=true)
 
 关键点：
 

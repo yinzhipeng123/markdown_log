@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1556,7 +1558,7 @@
 </table>
 <p>机器都关闭selinux和防火墙</p>
 <h5 id="_1">三台机器都执行：</h5>
-<pre><code class="language-bash"># cat &gt;&gt; /etc/hosts &lt;&lt; EOF
+<pre class="highlight"><code class="language-bash"># cat &gt;&gt; /etc/hosts &lt;&lt; EOF
 192.168.70.130 k8s-master
 192.168.70.141 k8s-node1
 192.168.70.142 k8s-node2
@@ -1629,18 +1631,18 @@ EOF
 # mkdir /etc/docker
 # cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
 {
-  # &quot;registry-mirrors&quot;: [
-    &quot;https://registry.docker-cn.com&quot;,
-    &quot;http://hub-mirror.c.163.com&quot;,
-    &quot;https://docker.mirrors.ustc.edu.cn&quot;
-  ], &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;],
-  &quot;log-driver&quot;: &quot;json-file&quot;,
-  &quot;log-opts&quot;: {
-    &quot;max-size&quot;: &quot;100m&quot;
+  # "registry-mirrors": [
+    "https://registry.docker-cn.com",
+    "http://hub-mirror.c.163.com",
+    "https://docker.mirrors.ustc.edu.cn"
+  ], "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
   },
-  &quot;storage-driver&quot;: &quot;overlay2&quot;,
-  &quot;storage-opts&quot;: [
-    &quot;overlay2.override_kernel_check=true&quot;
+  "storage-driver": "overlay2",
+  "storage-opts": [
+    "overlay2.override_kernel_check=true"
   ]
 }
 EOF
@@ -1678,10 +1680,9 @@ for imagename in ${images[@]} ; do
 done
 
 # chmod 777 image.sh
-# ./image.sh
-</code></pre>
+# ./image.sh</code></pre>
 <h5 id="master">master执行：</h5>
-<pre><code class="language-bash"># kubeadm init \
+<pre class="highlight"><code class="language-bash"># kubeadm init \
 --apiserver-advertise-address=192.168.70.130 \
 --image-repository registry.cn-hangzhou.aliyuncs.com/google_containers \
 --kubernetes-version v1.16.9 \
@@ -1699,7 +1700,7 @@ To start using your cluster, you need to run the following as a regular user:
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 You should now deploy a pod network to the cluster.
-Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 
 Then you can join any number of worker nodes by running the following on each as root:
@@ -1708,7 +1709,7 @@ kubeadm join 192.168.70.130:6443 --token eufass.9mj0z1oafwjwna8y \
     --discovery-token-ca-cert-hash sha256:1899cb7904899c7377fa01ca452d7260241f2f333f6dfff1bc843f338224ffb9 
 
 
-# echo &quot;export KUBECONFIG=/etc/kubernetes/admin.conf&quot; &gt;&gt; ~/.bash_profile
+# echo "export KUBECONFIG=/etc/kubernetes/admin.conf" &gt;&gt; ~/.bash_profile
 # source .bash_profile
 # mkdir -p $HOME/.kube
 # cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
@@ -1719,11 +1720,11 @@ NAME                 AGE
 scheduler            &lt;unknown&gt;
 controller-manager   &lt;unknown&gt;
 etcd-0               &lt;unknown&gt;
-# kubectl get cs -o=go-template='{{printf &quot;|NAME|STATUS|MESSAGE|\n&quot;}}{{range .items}}{{$name := .metadata.name}}{{range .conditions}}{{printf &quot;|%s|%s|%s|\n&quot; $name .status .message}}{{end}}{{end}}'
+# kubectl get cs -o=go-template='{{printf "|NAME|STATUS|MESSAGE|\n"}}{{range .items}}{{$name := .metadata.name}}{{range .conditions}}{{printf "|%s|%s|%s|\n" $name .status .message}}{{end}}{{end}}'
 |NAME|STATUS|MESSAGE|
 |scheduler|True|ok|
 |controller-manager|True|ok|
-|etcd-0|True|{&quot;health&quot;:&quot;true&quot;}|
+|etcd-0|True|{"health":"true"}|
 
 
 部署网络
@@ -1742,13 +1743,11 @@ kube-flannel-ds-s390x     0         0         0       0            0           &
 # kubeadm token create --print-join-command
 W0628 09:12:59.371222   26258 configset.go:202] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io]
 kubeadm join 192.168.70.130:6443 --token jf0j4u.lieaijygwth7jcoo     --discovery-token-ca-cert-hash sha256:1899cb7904899c7377fa01ca452d7260241f2f333f6dfff1bc843f338224ffb9 
-
 </code></pre>
 <h5 id="node">node执行：</h5>
-<pre><code># kubeadm join 192.168.119.191:6443 --token jf0j4u.lieaijygwth7jcoo     --discovery-token-ca-cert-hash sha256:1899cb7904899c7377fa01ca452d7260241f2f333f6dfff1bc843f338224ffb9
-</code></pre>
+<pre class="highlight"><code># kubeadm join 192.168.119.191:6443 --token jf0j4u.lieaijygwth7jcoo     --discovery-token-ca-cert-hash sha256:1899cb7904899c7377fa01ca452d7260241f2f333f6dfff1bc843f338224ffb9</code></pre>
 <p>测试集群：</p>
-<pre><code class="language-bash">在master上执行
+<pre class="highlight"><code class="language-bash">在master上执行
 
 # kubectl run curl --image=radial/busyboxplus:curl -it
 kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
@@ -1781,8 +1780,7 @@ service/nginx        NodePort    10.1.245.2   &lt;none&gt;        80:31532/TCP  
 $ curl 10.1.245.2
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
-&lt;head&gt;
-</code></pre>
+&lt;head&gt;</code></pre>
                 
               
               
@@ -1903,6 +1901,10 @@ $ curl 10.1.245.2
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

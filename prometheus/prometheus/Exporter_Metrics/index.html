@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1543,13 +1545,11 @@
 <p>在官方的exporter介绍页面中，介绍了编写exporter公约和Metrics的解释，地址：https://prometheus.io/docs/instrumenting/writing_clientlibs/#labels</p>
 <p>官方定义了主要4种指标(metric type)：Counter（计数器）、Gauge（仪表盘）、Histogram（直方图）、Summary（摘要）。</p>
 <p>访问 http://192.168.70.131:9100/metrics 会返回如下这种格式的数据：</p>
-<pre><code class="language-json"># HELP node_cpu Seconds the cpus spent in each mode.
+<pre class="highlight"><code class="language-json"># HELP node_cpu Seconds the cpus spent in each mode.
 # TYPE node_cpu counter
-node_cpu{cpu=&quot;cpu0&quot;,mode=&quot;idle&quot;} 362812.7890625
-</code></pre>
-<pre><code>#HELP解释了该数据是什么
-#TYPE会说该数据是什么指标
-</code></pre>
+node_cpu{cpu="cpu0",mode="idle"} 362812.7890625</code></pre>
+<pre class="highlight"><code>#HELP解释了该数据是什么
+#TYPE会说该数据是什么指标</code></pre>
 <h4 id="counter">Counter：只增不减的计数器</h4>
 <p>Counter类型的指标其工作方式和计数器一样，只增不减（除非系统发生重置）。常见的监控指标，如http_requests_total，node_cpu都是Counter类型的监控指标。 一般在定义Counter类型指标的名称时推荐使用_total作为后缀。</p>
 <p>Counter是一个简单但有强大的工具，例如我们可以在应用程序中记录某些事件发生的次数，通过以时序的形式存储这些数据，我们可以轻松的了解该事件产生速率的变化。</p>
@@ -1679,6 +1679,10 @@ node_cpu{cpu=&quot;cpu0&quot;,mode=&quot;idle&quot;} 362812.7890625
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

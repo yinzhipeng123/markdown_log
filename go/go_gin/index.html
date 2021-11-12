@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1493,34 +1495,31 @@
 <p>https://www.jetbrains.com/go/</p>
 <p><strong>设置源</strong></p>
 <p>官网地址：https://goproxy.io/zh/</p>
-<pre><code class="language-text">1. 右键 我的电脑 -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量
+<pre class="highlight"><code class="language-text">1. 右键 我的电脑 -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量
 2. 在 “[你的用户名]的用户变量” 中点击 ”新建“ 按钮
 3. 在 “变量名” 输入框并新增 “GOPROXY”
 4. 在对应的 “变量值” 输入框中新增 “https://goproxy.io,direct”
-5. 最后点击 “确定” 按钮保存设置
-</code></pre>
+5. 最后点击 “确定” 按钮保存设置</code></pre>
 <p>创建gin项目</p>
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/go/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210811151855.png?raw=true" /></p>
 <p>然后项目中新建main.go文件</p>
-<pre><code class="language-go">package main
+<pre class="highlight"><code class="language-go">package main
 
-import &quot;github.com/gin-gonic/gin&quot;
+import "github.com/gin-gonic/gin"
 
 func main() {
    r := gin.Default()
-   r.GET(&quot;/ping&quot;, func(c *gin.Context) {
+   r.GET("/ping", func(c *gin.Context) {
       c.JSON(200, gin.H{
-         &quot;message&quot;: &quot;pong&quot;,
+         "message": "pong",
       })
    })
-   r.Run() // listen and serve on 0.0.0.0:8080 (for windows &quot;localhost:8080&quot;)
-}
-</code></pre>
+   r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+}</code></pre>
 <p>在goland终端输入下面代码，编译依赖包，下载包</p>
-<pre><code class="language-text">D:\idea\mygin&gt;go mod edit -require github.com/gin-gonic/gin@latest
+<pre class="highlight"><code class="language-text">D:\idea\mygin&gt;go mod edit -require github.com/gin-gonic/gin@latest
 
-D:\idea\mygin&gt;go mod tidy
-</code></pre>
+D:\idea\mygin&gt;go mod tidy</code></pre>
 <p>如图</p>
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/go/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210811152212.png?raw=true" /></p>
 <p>项目中右键运行，如图</p>
@@ -1645,6 +1644,10 @@ D:\idea\mygin&gt;go mod tidy
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

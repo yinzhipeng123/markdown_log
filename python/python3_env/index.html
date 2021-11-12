@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1484,7 +1486,7 @@
                 
                 <h1 id="centos7python3python2">Centos7安装Python3，不影响python2</h1>
 <p>下载python3安装包：https://www.python.org/ftp/python/3.9.7/Python-3.9.7.tgz</p>
-<pre><code class="language-bash">[root@graphical ~]# cat install_python3.sh
+<pre class="highlight"><code class="language-bash">[root@graphical ~]# cat install_python3.sh
 yum install -y https://repo.ius.io/ius-release-el7.rpm https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo &amp;&amp; curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo &amp;&amp; yum makecache fast
@@ -1509,8 +1511,7 @@ export PATH=$PATH:$PYTHON3_HOME/bin
 Python 2.7.5
 [root@graphical ~]# python3 --version
 Python 3.9.6
-[root@graphical ~]# 
-</code></pre>
+[root@graphical ~]# </code></pre>
                 
               
               
@@ -1631,6 +1632,10 @@ Python 3.9.6
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

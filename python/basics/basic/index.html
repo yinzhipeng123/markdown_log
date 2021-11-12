@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1652,36 +1654,30 @@
                 
                 <p>python3.9.6</p>
 <h2 id="map">map函数</h2>
-<pre><code class="language-python">def sq(x):
+<pre class="highlight"><code class="language-python">def sq(x):
     return x * x
 
 
-print(list(map(sq, [1, 2, 3, 4, 5])))
-</code></pre>
+print(list(map(sq, [1, 2, 3, 4, 5])))</code></pre>
 <p>结果：</p>
-<pre><code class="language-bash">[1, 4, 9, 16, 25]
-</code></pre>
+<pre class="highlight"><code class="language-bash">[1, 4, 9, 16, 25]</code></pre>
 <h2 id="lambda">lambda函数</h2>
 <p>例1：</p>
-<pre><code class="language-python">def sq(x):
+<pre class="highlight"><code class="language-python">def sq(x):
     return x * x
 
 
-print(list(map(lambda x: x*x,[y for y in range(6)])))
-</code></pre>
+print(list(map(lambda x: x*x,[y for y in range(6)])))</code></pre>
 <p>结果：</p>
-<pre><code class="language-bash">[0, 1, 4, 9, 16, 25]
-</code></pre>
+<pre class="highlight"><code class="language-bash">[0, 1, 4, 9, 16, 25]</code></pre>
 <p>例2：</p>
-<pre><code class="language-python">funca = lambda x, y, z: (x + 8) * y - z
-print(funca(5, 6, 8))
-</code></pre>
+<pre class="highlight"><code class="language-python">funca = lambda x, y, z: (x + 8) * y - z
+print(funca(5, 6, 8))</code></pre>
 <p>结果：</p>
-<pre><code class="language-bash">70
-</code></pre>
+<pre class="highlight"><code class="language-bash">70</code></pre>
 <h2 id="-">-&gt; 的用法</h2>
 <p><code>-&gt;</code>常常出现在python函数定义的函数名后面，为函数添加<code>元数据</code>,描述函数的返回类型</p>
-<pre><code class="language-python">def add(a: int, b: int) -&gt; int:
+<pre class="highlight"><code class="language-python">def add(a: int, b: int) -&gt; int:
    return a + b
 
 
@@ -1689,69 +1685,61 @@ print(add.__annotations__)
 
 result = add(8, 8)
 
-print(result)
-</code></pre>
+print(result)</code></pre>
 <p>结果：</p>
-<pre><code class="language-bash">{'a': &lt;class 'int'&gt;, 'b': &lt;class 'int'&gt;, 'return': &lt;class 'int'&gt;}
-64
-</code></pre>
+<pre class="highlight"><code class="language-bash">{'a': &lt;class 'int'&gt;, 'b': &lt;class 'int'&gt;, 'return': &lt;class 'int'&gt;}
+64</code></pre>
 <h2 id="__annotations____"><strong><em>_</em>_annotations</strong>____  的用法</h2>
 <p>以字典的形式存放在函数的 <code>__annotations__</code> 属性中，并且不会影响函数的任何其他部，打印函数的标注</p>
 <p>https://docs.python.org/zh-cn/3/tutorial/controlflow.html</p>
-<pre><code class="language-python">def f(ham: str, eggs: str = 'eggs') -&gt; str:
-    print(&quot;Annotations:&quot;, f.__annotations__)
-    print(&quot;Arguments:&quot;, ham, eggs)
+<pre class="highlight"><code class="language-python">def f(ham: str, eggs: str = 'eggs') -&gt; str:
+    print("Annotations:", f.__annotations__)
+    print("Arguments:", ham, eggs)
     return ham + ' and ' + eggs
 
 
 g = f('spam')
-print(g)
-</code></pre>
+print(g)</code></pre>
 <p>结果：</p>
-<pre><code>Annotations: {'ham': &lt;class 'str'&gt;, 'eggs': &lt;class 'str'&gt;, 'return': &lt;class 'str'&gt;}
+<pre class="highlight"><code>Annotations: {'ham': &lt;class 'str'&gt;, 'eggs': &lt;class 'str'&gt;, 'return': &lt;class 'str'&gt;}
 Arguments: spam eggs
-spam and eggs
-</code></pre>
+spam and eggs</code></pre>
 <h2 id="import">import * 的问题</h2>
-<pre><code>&gt;&gt;&gt; from fibo import *
+<pre class="highlight"><code>&gt;&gt;&gt; from fibo import *
 &gt;&gt;&gt; fib(500)
-0 1 1 2 3 5 8 13 21 34 55 89 144 233 377
-</code></pre>
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377</code></pre>
 <p>这种方式会导入所有不以下划线（<code>_</code>）开头的名称。大多数情况下，不要用这个功能，这种方式向解释器导入了一批未知的名称，可能会覆盖已经定义的名称。</p>
 <p>注意，一般情况下，不建议从模块或包内导入 <code>*</code>， 因为，这项操作经常让代码变得难以理解。不过，为了在交互式编译器中少打几个字，这么用也没问题。</p>
 <p>另外从包导入*，有个索引问题 https://docs.python.org/zh-cn/3/tutorial/modules.html#importing-from-a-package</p>
 <h2 id="with">with关键字</h2>
-<pre><code>&gt;&gt;&gt; with open('workfile') as f:
+<pre class="highlight"><code>&gt;&gt;&gt; with open('workfile') as f:
 ...     read_data = f.read()
 
 &gt;&gt;&gt; # We can check that the file has been automatically closed.
 &gt;&gt;&gt; f.closed
-True
-</code></pre>
+True</code></pre>
 <p>如果没有使用 [<code>with</code>]关键字，则应调用 <code>f.close()</code> 关闭文件，即可释放文件占用的系统资源。</p>
 <p>调用 <code>f.write()</code> 时，未使用 <code>with</code> 关键字，或未调用 <code>f.close()</code>，即使程序正常退出，也<strong>可能</strong> 导致 <code>f.write()</code> 的参数没有完全写入磁盘。</p>
 <p>通过 [<code>with</code>] 语句，或调用 <code>f.close()</code> 关闭文件对象后，再次使用该文件对象将会失败。</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; f.close()
+<pre class="highlight"><code>&gt;&gt;&gt; f.close()
 &gt;&gt;&gt; f.read()
 Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-ValueError: I/O operation on closed file.
-</code></pre>
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+ValueError: I/O operation on closed file.</code></pre>
 <h2 id="_1">文件读取多行</h2>
 <p>从文件中读取多行时，可以用循环遍历整个文件对象。这种操作能高效利用内存，快速，且代码简单：</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; for line in f:
+<pre class="highlight"><code>&gt;&gt;&gt; for line in f:
 ...     print(line, end='')
 ...
 This is the first line of the file.
-Second line of the file
-</code></pre>
+Second line of the file</code></pre>
 <p>如需以列表形式读取文件中的所有行，可以用 <code>list(f)</code> 或 <code>f.readlines()</code>。</p>
 <h2 id="seek">操作文本seek</h2>
 <p><code>f.seek(offset, whence)</code> 可以改变文件对象的位置。通过向参考点添加 <em>offset</em> 计算位置；参考点由 <em>whence</em> 参数指定。 <em>whence</em> 值为 0 时，表示从文件开头计算，1 表示使用当前文件位置，2 表示使用文件末尾作为参考点。省略 <em>whence</em> 时，其默认值为 0，即使用文件开头作为参考点。</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; f = open('workfile', 'rb+')
+<pre class="highlight"><code>&gt;&gt;&gt; f = open('workfile', 'rb+')
 &gt;&gt;&gt; f.write(b'0123456789abcdef')
 16
 &gt;&gt;&gt; f.seek(5)      # Go to the 6th byte in the file
@@ -1761,8 +1749,7 @@ b'5'
 &gt;&gt;&gt; f.seek(-3, 2)  # Go to the 3rd byte before the end
 13
 &gt;&gt;&gt; f.read(1)
-b'd'
-</code></pre>
+b'd'</code></pre>
 <p>在文本文件（模式字符串未使用 <code>b</code> 时打开的文件）中，只允许相对于文件开头搜索（使用 <code>seek(0, 2)</code> 搜索到文件末尾是个例外），唯一有效的 <em>offset</em> 值是能从 <code>f.tell()</code> 中返回的，或 0。其他 <em>offset</em> 值都会产生未定义的行为。</p>
 <p>文件对象还支持 <code>isatty()</code> 和 <code>truncate()</code> 等方法，但不常用；文件对象的完整指南详见库参考。</p>
 <h2 id="json">操作json</h2>
@@ -1771,42 +1758,36 @@ b'd'
 <p>JSON 格式通常用于现代应用程序的数据交换。程序员早已对它耳熟能详，可谓是交互操作的不二之选。</p>
 <p>只需一行简单的代码即可查看某个对象的 JSON 字符串表现形式：</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; import json
+<pre class="highlight"><code>&gt;&gt;&gt; import json
 &gt;&gt;&gt; x = [1, 'simple', 'list']
 &gt;&gt;&gt; json.dumps(x)
-'[1, &quot;simple&quot;, &quot;list&quot;]'
-</code></pre>
+'[1, "simple", "list"]'</code></pre>
 <p>[<code>dumps()</code>] 函数还有一个变体， [<code>dump()</code>]，它只将对象序列化为 <a href="https://docs.python.org/zh-cn/3/glossary.html#term-text-file">text file</a> 。因此，如果 <code>f</code> 是 <a href="https://docs.python.org/zh-cn/3/glossary.html#term-text-file">text file</a> 对象，可以这样做：</p>
-<pre><code>json.dump(x, f)
-</code></pre>
+<pre class="highlight"><code>json.dump(x, f)</code></pre>
 <p>要再次解码对象，如果 <code>f</code> 是已打开、供读取的 <a href="https://docs.python.org/zh-cn/3/glossary.html#term-text-file">text file</a> 对象：</p>
-<pre><code>x = json.load(f)
-</code></pre>
+<pre class="highlight"><code>x = json.load(f)</code></pre>
 <p>这种简单的序列化技术可以处理列表和字典，但在 JSON 中序列化任意类的实例，则需要付出额外努力。[<code>json</code>] 模块的参考包含对此的解释。</p>
 <h2 id="_2">句法错误</h2>
 <p>句法错误又称解析错误，是学习 Python 时最常见的错误：</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; while True print('Hello world')
-  File &quot;&lt;stdin&gt;&quot;, line 1
+<pre class="highlight"><code>&gt;&gt;&gt; while True print('Hello world')
+  File "&lt;stdin&gt;", line 1
     while True print('Hello world')
                    ^
-SyntaxError: invalid syntax
-</code></pre>
+SyntaxError: invalid syntax</code></pre>
 <p>解析器会复现出现句法错误的代码行，并用小“箭头”指向行里检测到的第一个错误。错误是由箭头 <em>上方</em> 的 token 触发的（至少是在这里检测出的）：本例中，在 [<code>print()</code>]函数中检测到错误，因为，在它前面缺少冒号（<code>':'</code>） 。错误信息还输出文件名与行号，在使用脚本文件时，就可以知道去哪里查错。</p>
 <h2 id="_3">触发异常</h2>
 <p>[<code>raise</code>] 语句支持强制触发指定的异常。例如：</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; raise NameError('HiThere')
+<pre class="highlight"><code>&gt;&gt;&gt; raise NameError('HiThere')
 Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-NameError: HiThere
-</code></pre>
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+NameError: HiThere</code></pre>
 <p>[<code>raise</code>] 唯一的参数就是要触发的异常。这个参数必须是异常实例或异常类（派生自 [<code>Exception</code>] 类）。如果传递的是异常类，将通过调用没有参数的构造函数来隐式实例化：</p>
-<pre><code>raise ValueError  # shorthand for 'raise ValueError()'
-</code></pre>
+<pre class="highlight"><code>raise ValueError  # shorthand for 'raise ValueError()'</code></pre>
 <p>如果只想判断是否触发了异常，但并不打算处理该异常，则可以使用更简单的 [<code>raise</code>]语句重新触发异常：</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; try:
+<pre class="highlight"><code>&gt;&gt;&gt; try:
 ...     raise NameError('HiThere')
 ... except NameError:
 ...     print('An exception flew by!')
@@ -1814,17 +1795,15 @@ NameError: HiThere
 ...
 An exception flew by!
 Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;
-NameError: HiThere
-</code></pre>
+  File "&lt;stdin&gt;", line 2, in &lt;module&gt;
+NameError: HiThere</code></pre>
 <h2 id="_4">异常链</h2>
 <p>[<code>raise</code>] 语句支持可选的 [<code>from</code>]子句，该子句用于启用链式异常。 例如：</p>
-<pre><code># exc must be exception instance or None.
-raise RuntimeError from exc
-</code></pre>
+<pre class="highlight"><code># exc must be exception instance or None.
+raise RuntimeError from exc</code></pre>
 <p>转换异常时，这种方式很有用。例如：</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; def func():
+<pre class="highlight"><code>&gt;&gt;&gt; def func():
 ...     raise ConnectionError
 ...
 &gt;&gt;&gt; try:
@@ -1833,42 +1812,39 @@ raise RuntimeError from exc
 ...     raise RuntimeError('Failed to open database') from exc
 ...
 Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;
-  File &quot;&lt;stdin&gt;&quot;, line 2, in func
+  File "&lt;stdin&gt;", line 2, in &lt;module&gt;
+  File "&lt;stdin&gt;", line 2, in func
 ConnectionError
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 4, in &lt;module&gt;
-RuntimeError: Failed to open database
-</code></pre>
+  File "&lt;stdin&gt;", line 4, in &lt;module&gt;
+RuntimeError: Failed to open database</code></pre>
 <p>异常链会在 [<code>except</code>]或 [<code>finally</code>] 子句内部引发异常时自动生成。 这可以通过使用 <code>from None</code> 这样的写法来禁用:</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; try:
+<pre class="highlight"><code>&gt;&gt;&gt; try:
 ...     open('database.sqlite')
 ... except OSError:
 ...     raise RuntimeError from None
 ...
 Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 4, in &lt;module&gt;
-RuntimeError
-</code></pre>
+  File "&lt;stdin&gt;", line 4, in &lt;module&gt;
+RuntimeError</code></pre>
 <p>异常链机制详见 <a href="https://docs.python.org/zh-cn/3/library/exceptions.html#bltin-exceptions">内置异常</a>。</p>
 <h2 id="_5">类的构造函数</h2>
 <p>当然，<code>__init__()</code> 方法还可以有额外参数以实现更高灵活性。 在这种情况下，提供给类实例化运算符的参数将被传递给 <code>__init__()</code>。 例如，:</p>
 <p>>&gt;&gt;</p>
-<pre><code class="language-python">&gt;&gt;&gt; class Complex:
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; class Complex:
 ...     def __init__(self, realpart, imagpart):
 ...         self.r = realpart
 ...         self.i = imagpart
 ...
 &gt;&gt;&gt; x = Complex(3.0, -4.5)
 &gt;&gt;&gt; x.r, x.i
-(3.0, -4.5)
-</code></pre>
+(3.0, -4.5)</code></pre>
 <h2 id="_6">类中私有变量</h2>
-<pre><code class="language-python">class A(object):
+<pre class="highlight"><code class="language-python">class A(object):
     def __init__(self):
         self.__data = []  # 翻译成 self._A__data=[]
 
@@ -1884,28 +1860,25 @@ a.add('hello')
 a.add('python')
 a.printData()
 # print a.__data  #外界不能访问私有变量 AttributeError: 'A' object has no attribute '__data'
-print(a._A__data)  # 通过这种方式，在外面也能够访问“私有”变量；这一点在调试中是比较有用的！
-</code></pre>
+print(a._A__data)  # 通过这种方式，在外面也能够访问“私有”变量；这一点在调试中是比较有用的！</code></pre>
 <p>结果：</p>
-<pre><code class="language-bash">['hello', 'python']
-['hello', 'python']
-</code></pre>
+<pre class="highlight"><code class="language-bash">['hello', 'python']
+['hello', 'python']</code></pre>
 <h2 id="_7">迭代器</h2>
 <p>到目前为止，您可能已经注意到大多数容器对象都可以使用 [<code>for</code>] 语句:</p>
-<pre><code>for element in [1, 2, 3]:
+<pre class="highlight"><code>for element in [1, 2, 3]:
     print(element)
 for element in (1, 2, 3):
     print(element)
 for key in {'one':1, 'two':2}:
     print(key)
-for char in &quot;123&quot;:
+for char in "123":
     print(char)
-for line in open(&quot;myfile.txt&quot;):
-    print(line, end='')
-</code></pre>
+for line in open("myfile.txt"):
+    print(line, end='')</code></pre>
 <p>这种访问风格清晰、简洁又方便。 迭代器的使用非常普遍并使得 Python 成为一个统一的整体。 在幕后，[<code>for</code>]语句会在容器对象上调用 [<code>iter()</code>]。 该函数返回一个定义了 [<code>__next__()</code>] 方法的迭代器对象，此方法将逐一访问容器中的元素。 当元素用尽时，[<code>__next__()</code>] 将引发 [<code>StopIteration</code>] 异常来通知终止 <code>for</code> 循环。 你可以使用 [<code>next()</code>] 内置函数来调用 [<code>__next__()</code>]方法；这个例子显示了它的运作方式:</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; s = 'abc'
+<pre class="highlight"><code>&gt;&gt;&gt; s = 'abc'
 &gt;&gt;&gt; it = iter(s)
 &gt;&gt;&gt; it
 &lt;iterator object at 0x00A1DB50&gt;
@@ -1917,13 +1890,12 @@ for line in open(&quot;myfile.txt&quot;):
 'c'
 &gt;&gt;&gt; next(it)
 Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
     next(it)
-StopIteration
-</code></pre>
+StopIteration</code></pre>
 <p>看过迭代器协议的幕后机制，给你的类添加迭代器行为就很容易了。 定义一个 <code>__iter__()</code> 方法来返回一个带有 [<code>__next__()</code>] 方法的对象。 如果类已定义了 <code>__next__()</code>，则 <code>__iter__()</code> 可以简单地返回 <code>self</code>:</p>
-<pre><code>class Reverse:
-    &quot;&quot;&quot;Iterator for looping over a sequence backwards.&quot;&quot;&quot;
+<pre class="highlight"><code>class Reverse:
+    """Iterator for looping over a sequence backwards."""
     def __init__(self, data):
         self.data = data
         self.index = len(data)
@@ -1935,10 +1907,9 @@ StopIteration
         if self.index == 0:
             raise StopIteration
         self.index = self.index - 1
-        return self.data[self.index]
-</code></pre>
+        return self.data[self.index]</code></pre>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; rev = Reverse('spam')
+<pre class="highlight"><code>&gt;&gt;&gt; rev = Reverse('spam')
 &gt;&gt;&gt; iter(rev)
 &lt;__main__.Reverse object at 0x00A1DB50&gt;
 &gt;&gt;&gt; for char in rev:
@@ -1947,23 +1918,20 @@ StopIteration
 m
 a
 p
-s
-</code></pre>
+s</code></pre>
 <h2 id="_8">生成器</h2>
 <p><a href="https://docs.python.org/zh-cn/3/glossary.html#term-generator">生成器</a> 是一个用于创建迭代器的简单而强大的工具。 它们的写法类似于标准的函数，但当它们要返回数据时会使用 [<code>yield</code>]语句。 每次在生成器上调用 [<code>next()</code>] 时，它会从上次离开的位置恢复执行（它会记住上次执行语句时的所有数据值）。 一个显示如何非常容易地创建生成器的示例如下:</p>
-<pre><code>def reverse(data):
+<pre class="highlight"><code>def reverse(data):
     for index in range(len(data)-1, -1, -1):
-        yield data[index]
-</code></pre>
+        yield data[index]</code></pre>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; for char in reverse('golf'):
+<pre class="highlight"><code>&gt;&gt;&gt; for char in reverse('golf'):
 ...     print(char)
 ...
 f
 l
 o
-g
-</code></pre>
+g</code></pre>
 <p>可以用生成器来完成的操作同样可以用前一节所描述的基于类的迭代器来完成。 但生成器的写法更为紧凑，因为它会自动创建 <code>__iter__()</code> 和 [<code>__next__()</code>] 方法。</p>
 <p>另一个关键特性在于局部变量和执行状态会在每次调用之间自动保存。 这使得该函数相比使用 <code>self.index</code> 和 <code>self.data</code> 这种实例变量的方式更易编写且更为清晰。</p>
 <p>除了会自动创建方法和保存程序状态，当生成器终结时，它们还会自动引发 [<code>StopIteration</code>]。 这些特性结合在一起，使得创建迭代器能与编写常规函数一样容易。</p>
@@ -1971,24 +1939,22 @@ g
 <p>一些Python用户对了解同一问题的不同方法的相对性能产生了浓厚的兴趣。 Python提供了一种可以立即回答这些问题的测量工具。</p>
 <p>例如，元组封包和拆包功能相比传统的交换参数可能更具吸引力。[<code>timeit</code>]模块可以快速演示在运行效率方面一定的优势:</p>
 <p>>&gt;&gt;</p>
-<pre><code>&gt;&gt;&gt; from timeit import Timer
+<pre class="highlight"><code>&gt;&gt;&gt; from timeit import Timer
 &gt;&gt;&gt; Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
 0.57535828626024577
 &gt;&gt;&gt; Timer('a,b = b,a', 'a=1; b=2').timeit()
-0.54962537085770791
-</code></pre>
+0.54962537085770791</code></pre>
 <p>与 [<code>timeit</code>]的精细粒度级别相反， [<code>profile</code>] 模块提供了用于在较大的代码块中识别时间关键部分的工具。</p>
 <h2 id="_10">查看包内对象</h2>
-<pre><code class="language-python">import flask
-print(dir(flask))
-</code></pre>
+<pre class="highlight"><code class="language-python">import flask
+print(dir(flask))</code></pre>
 <h2 id="_11">单元测试</h2>
-<pre><code class="language-python">def average(values):
-    &quot;&quot;&quot;Computes the arithmetic mean of a list of numbers.
+<pre class="highlight"><code class="language-python">def average(values):
+    """Computes the arithmetic mean of a list of numbers.
 
     &gt;&gt;&gt; print(average([20, 30, 70]))
     45.0
-    &quot;&quot;&quot;
+    """
     return sum(values) / len(values)
 
 
@@ -1996,13 +1962,12 @@ result = average([20, 30, 70])
 print(result)
 
 import doctest
-doctest.testmod()
-</code></pre>
+doctest.testmod()</code></pre>
 <p>在引号中，单元测试想让这个方法结果等于45</p>
 <p>运行结果：</p>
-<pre><code>40.0
+<pre class="highlight"><code>40.0
 **********************************************************************
-File &quot;D:\idea\zkh-infra-web\tar\test\flask_learn\unit_test.py&quot;, line 4, in __main__.average
+File "D:\idea\zkh-infra-web\tar\test\flask_learn\unit_test.py", line 4, in __main__.average
 Failed example:
     print(average([20, 30, 70]))
 Expected:
@@ -2012,11 +1977,10 @@ Got:
 **********************************************************************
 1 items had failures:
    1 of   1 in __main__.average
-***Test Failed*** 1 failures.
-</code></pre>
+***Test Failed*** 1 failures.</code></pre>
 <p>由于运行结果为40，不符合预期，所以报错</p>
 <h2 id="_12">方法设置默认参数</h2>
-<pre><code class="language-python">&gt;&gt;&gt; x = 42
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; x = 42
 &gt;&gt;&gt; def spam(a, b=x):
 ...     print(a, b)
 ...
@@ -2025,10 +1989,9 @@ Got:
 &gt;&gt;&gt; x = 23 # Has no effect
 &gt;&gt;&gt; spam(1)
 1 42
-&gt;&gt;&gt;
-</code></pre>
+&gt;&gt;&gt;</code></pre>
 <h2 id="classmethod">classmethod 的使用方法</h2>
-<pre><code class="language-python">#!/usr/bin/python
+<pre class="highlight"><code class="language-python">#!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
 class A(object):
@@ -2041,54 +2004,49 @@ class A(object):
         print (cls.bar)
         cls().func1()   # 调用 foo 方法
 
-A.func2()               # 不需要实例化
-</code></pre>
+A.func2()               # 不需要实例化</code></pre>
 <p>结果：</p>
-<pre><code>func2
+<pre class="highlight"><code>func2
 1
-foo
-</code></pre>
+foo</code></pre>
 <p>Python有3种方法，静态方法（staticmethod），类方法（classmethod）和实例方法。下面用代码举例。</p>
 <p>对于一般的函数foo(x)，它跟类和类的实例没有任何关系，直接调用foo(x)即可。</p>
-<pre><code># -*- coding:utf-8 -*-
+<pre class="highlight"><code># -*- coding:utf-8 -*-
 def foo(x):
-    print(&quot;running foo(%s)&quot; % x)
+    print("running foo(%s)" % x)
 
-foo(&quot;test&quot;)
-</code></pre>
+foo("test")</code></pre>
 <p>在类A里面的实例方法foo(self, x)，<strong>第一个参数是self</strong>，我们需要有一个A的实例，才可以调用这个函数。</p>
-<pre><code># -*- coding:utf-8 -*-
+<pre class="highlight"><code># -*- coding:utf-8 -*-
 class A:
     def foo(self, x):
-        print(&quot;running foo(%s, %s)&quot; % (self, x))
+        print("running foo(%s, %s)" % (self, x))
 
 # A.foo(x) 这样会报错
 a = A()
-a.foo(&quot;test&quot;)
-</code></pre>
+a.foo("test")</code></pre>
 <p>当我们需要和类直接进行交互，而不需要和实例进行交互时，类方法是最好的选择。类方法与实例方法类似，但是传递的不是类的实例，而是类本身，<strong>第一个参数是cls</strong>。<strong>我们可以用类的实例调用类方法，也可以直接用类名来调用。</strong></p>
-<pre><code># -*- coding:utf-8 -*-
+<pre class="highlight"><code># -*- coding:utf-8 -*-
 class A:
-    class_attr = &quot;attr&quot;
+    class_attr = "attr"
 
     def __init__(self):
         pass
 
     @classmethod
     def class_foo(cls):
-        print(&quot;running class_foo(%s)&quot; % (cls.class_attr))
+        print("running class_foo(%s)" % (cls.class_attr))
 
 a = A()
 a.class_foo()
-A.class_foo()
-</code></pre>
+A.class_foo()</code></pre>
 <p>静态方法类似普通方法，参数里面不用self。这些方法和类相关，但是又不需要类和实例中的任何信息、属性等等。如果把这些方法写到类外面，这样就把和类相关的代码分散到类外，使得之后对于代码的理解和维护都是巨大的障碍。而静态方法就是用来解决这一类问题的。</p>
 <p>比如我们检查是否开启了日志功能，这个和类相关，但是跟类的属性和实例都没有关系。</p>
-<pre><code># -*- coding:utf-8 -*-
+<pre class="highlight"><code># -*- coding:utf-8 -*-
 log_enabled = True
 
 class A:
-    class_attr = &quot;attr&quot;
+    class_attr = "attr"
 
     def __init__(self):
         pass
@@ -2096,13 +2054,12 @@ class A:
     @staticmethod
     def static_foo():
         if log_enabled:
-            print(&quot;log is enabled&quot;)
+            print("log is enabled")
         else:
-            print(&quot;log is disabled&quot;)
+            print("log is disabled")
 
 
-A.static_foo()
-</code></pre>
+A.static_foo()</code></pre>
 <ul>
 <li>
 <p>@staticmethod不需要表示自身对象的self和自身类的cls参数，就跟使用函数一样。</p>
@@ -2233,6 +2190,10 @@ A.static_foo()
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

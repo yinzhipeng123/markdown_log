@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1538,7 +1540,7 @@
                 <h1 id="_1">通过继承实现多线程</h1>
 <h2 id="run">一，实现run方法</h2>
 <p>先看不带init方法的</p>
-<pre><code class="language-python">import time
+<pre class="highlight"><code class="language-python">import time
 import threading
 
 class MyThread(threading.Thread):
@@ -1550,15 +1552,13 @@ class MyThread(threading.Thread):
 
 for _ in range(5):
     th = MyThread()
-    th.start()
-</code></pre>
+    th.start()</code></pre>
 <p>结果：</p>
-<pre><code>2
+<pre class="highlight"><code>2
 2
 2
 2
-2
-</code></pre>
+2</code></pre>
 <ul>
 <li>定义一个类，继承<code>threading.Thread</code>类，里面只需要定义<code>run</code>方法</li>
 <li><code>run</code>方法相当于之前传入<code>Thread</code>的那个函数，注意只能用<code>run</code>这个名字，不用显式调用，线程<code>start()</code>时会自动调用<code>run</code></li>
@@ -1567,7 +1567,7 @@ for _ in range(5):
 </ul>
 <h2 id="_2">二，用初始化方法实现传参</h2>
 <p>带初始化方法的，上面每次运行的<code>run</code>都是一样的，真正使用时很少会这样用，有时会需要传入一些区别性的参数，这就需要定义类的<code>__init__</code>了</p>
-<pre><code class="language-python">import threading
+<pre class="highlight"><code class="language-python">import threading
 import requests
 from bs4 import BeautifulSoup
 
@@ -1582,10 +1582,9 @@ class MyThread(threading.Thread):
 
 for i in range(10):
   th = MyThread(i)
-  th.start()
-</code></pre>
+  th.start()</code></pre>
 <p>结果：</p>
-<pre><code class="language-sh">0
+<pre class="highlight"><code class="language-sh">0
 1
 2
 3
@@ -1594,8 +1593,7 @@ for i in range(10):
 6
 7
 8
-9
-</code></pre>
+9</code></pre>
 <h2 id="thrad">三，调用Thrad对象的方法</h2>
 <ul>
 <li><code>Thread</code>函数的参数。初始化线程时传入一些参数，这里也可以在<code>__init__</code>中定义</li>
@@ -1603,7 +1601,7 @@ for i in range(10):
 <li><code>threading.activeCount()</code>等直接调用的变量。在这里依然可以调用</li>
 </ul>
 <p>所以用类的方法不会有任何限制，下面来看一个例子</p>
-<pre><code>import time
+<pre class="highlight"><code>import time
 import threading
 
 
@@ -1625,23 +1623,22 @@ t = time.time()
 
 ths = [MyThread('thread {}'.format(i)) for i in range(3)]
 
-print(&quot;len(ths):&quot;+str(len(ths)))
+print("len(ths):"+str(len(ths)))
 
 for th in ths:
     th.start()
 
-print(&quot;threading.activeCount:&quot;+str(threading.activeCount()))
+print("threading.activeCount:"+str(threading.activeCount()))
 
 for th in ths:
     th.join()
 
-print(time.time() - t)
-</code></pre>
+print(time.time() - t)</code></pre>
 <h2 id="run_1">四，给run方法传入写好的方法</h2>
 <p>之前是直接用<code>run</code>定义计算函数，如果已经有一个计算函数，也可以用传入的方式而不是改写成<code>run</code></p>
-<pre><code class="language-python">import threading
+<pre class="highlight"><code class="language-python">import threading
 def gettitle(page):
-  print(&quot;page:&quot;+str(page))
+  print("page:"+str(page))
 
 class MyThread(threading.Thread):
 
@@ -1655,10 +1652,9 @@ class MyThread(threading.Thread):
 
 for i in range(10):
   th = MyThread(gettitle, page = i)
-  th.start()
-</code></pre>
+  th.start()</code></pre>
 <p>结果：</p>
-<pre><code>page:0
+<pre class="highlight"><code>page:0
 page:1
 page:2
 page:3
@@ -1667,8 +1663,7 @@ page:5
 page:6
 page:7
 page:8
-page:9
-</code></pre>
+page:9</code></pre>
                 
               
               
@@ -1789,6 +1784,10 @@ page:9
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1528,8 +1530,7 @@
 <p>Alertmanager 可以在运行时重新加载其配置。alertmanager进程发送SIGHUP信号。或者给altermanager创建的http请求发送 -reload</p>
 <p>比如这样 curl -X POST "http://10.102.74.90:9090/-/reload"</p>
 <p>要指定要加载的配置文件，请使用该  <code>--config.file</code>  标志。</p>
-<pre><code class="language-shell">./alertmanager --config.file=alertmanager.yml
-</code></pre>
+<pre class="highlight"><code class="language-shell">./alertmanager --config.file=alertmanager.yml</code></pre>
 <p>Alertmanager主要负责对Prometheus产生的告警进行统一处理，因此在Alertmanager配置中一般会包含以下几个主要部分：</p>
 <ul>
 <li>全局配置（global）：用于定义一些全局的公共参数，如全局的SMTP配置，Slack配置等内容；</li>
@@ -1551,7 +1552,7 @@
 <li><code>&lt;tmpl_secret&gt;</code>: 一个在使用前被模板扩展的字符串，这是一个密码</li>
 <li><code>&lt;int&gt;</code>: 一个整数值</li>
 </ul>
-<pre><code class="language-yaml">global:
+<pre class="highlight"><code class="language-yaml">global:
   # 默认的SMTP发件人标头字段。
   [ smtp_from: &lt;tmpl_string&gt; ]
 
@@ -1559,7 +1560,7 @@
   [ smtp_smarthost: &lt;string&gt; ]
 
   #SMTP的主机名
-  [ smtp_hello: &lt;string&gt; | default = &quot;localhost&quot; ]
+  [ smtp_hello: &lt;string&gt; | default = "localhost" ]
 
   #SMTP的主机登录名字
   [ smtp_auth_username: &lt;string&gt; ]
@@ -1580,11 +1581,11 @@
   [ slack_api_url: &lt;secret&gt; ]
   [ slack_api_url_file: &lt;filepath&gt; ]
   [ victorops_api_key: &lt;secret&gt; ]
-  [ victorops_api_url: &lt;string&gt; | default = &quot;https://alert.victorops.com/integrations/generic/20131114/alert/&quot; ]
-  [ pagerduty_url: &lt;string&gt; | default = &quot;https://events.pagerduty.com/v2/enqueue&quot; ]
+  [ victorops_api_url: &lt;string&gt; | default = "https://alert.victorops.com/integrations/generic/20131114/alert/" ]
+  [ pagerduty_url: &lt;string&gt; | default = "https://events.pagerduty.com/v2/enqueue" ]
   [ opsgenie_api_key: &lt;secret&gt; ]
-  [ opsgenie_api_url: &lt;string&gt; | default = &quot;https://api.opsgenie.com/&quot; ]
-  [ wechat_api_url: &lt;string&gt; | default = &quot;https://qyapi.weixin.qq.com/cgi-bin/&quot; ]
+  [ opsgenie_api_url: &lt;string&gt; | default = "https://api.opsgenie.com/" ]
+  [ wechat_api_url: &lt;string&gt; | default = "https://qyapi.weixin.qq.com/cgi-bin/" ]
   [ wechat_api_secret: &lt;secret&gt; ]
   [ wechat_api_corp_id: &lt;string&gt; ]
 
@@ -1614,14 +1615,13 @@ inhibit_rules:
 
 #静音路由的静音时间间隔列表。
 mute_time_intervals:
-  [ - &lt;mute_time_interval&gt; ... ]
-</code></pre>
+  [ - &lt;mute_time_interval&gt; ... ]</code></pre>
 <h2 id="route">Route</h2>
 <p>路由块定义路由树中的一个节点及其子节点。如果未设置，其可选配置参数将从其父节点继承。</p>
 <p>每个警报在配置的顶级路由处进入路由树，该路由树必须匹配所有警报（即没有任何配置的匹配器）。然后遍历子节点。如果<code>continue</code>设置为 false，它会在第一个匹配的孩子之后停止。如果<code>continue</code>在匹配节点上为 true，则警报将继续与后续兄弟节点匹配。如果警报与节点的任何子节点都不匹配（没有匹配的子节点或不存在），则根据当前节点的配置参数处理警报。</p>
 <p>翻译自：https://prometheus.io/docs/alerting/latest/configuration/#route</p>
 <p>个人认为该解释已经过时</p>
-<pre><code class="language-yaml">[ receiver: &lt;string&gt; ]
+<pre class="highlight"><code class="language-yaml">[ receiver: &lt;string&gt; ]
 #用于将传入警报分组在一起的标签。例如，
 #cluster=A和alertname=LatencyHigh将出现多个警报
 #分成一组。
@@ -1679,10 +1679,9 @@ mute_time_intervals:
 #零个或多个子路由。
 routes:
   [ - &lt;route&gt; ... ]
-
 </code></pre>
 <p>例子</p>
-<pre><code class="language-yaml">#包含子级继承的所有参数的根路由
+<pre class="highlight"><code class="language-yaml">#包含子级继承的所有参数的根路由
 #如果未覆盖，则返回路由。
 route:
   receiver: 'default-receiver'
@@ -1697,13 +1696,12 @@ route:
   - receiver: 'database-pager'
     group_wait: 10s
     matchers:
-    - service=~&quot;mysql|cassandra&quot;
+    - service=~"mysql|cassandra"
   #所有带有team=frontend标签的警报都与此子路由匹配。
   - receiver: 'frontend-pager'
     group_by: [product, environment]
     matchers:
-    - team=&quot;frontend&quot;
-</code></pre>
+    - team="frontend"</code></pre>
 <p>接下来看下官方在git库中的例子</p>
 <p>https://github.com/prometheus/alertmanager/blob/main/doc/examples/simple.yml</p>
                 
@@ -1826,6 +1824,10 @@ route:
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

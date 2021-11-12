@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1553,8 +1555,11 @@
 </ol>
 <p>&nbsp;</p>
 <p><center><font face="黑体" color=red size=10>Join &amp; Daemon</font></center></p>
-<p>主线程A中，创建了子线程B，并且在主线程A中调用了<code>B.setDaemon()</code>，这个的意思是，把主线程A设置为守护线程，这时候，要是主线程A执行结束了，就不管子线程B是否完成，一并和主线程A退出。这就是<code>setDaemon</code>方法的含义，这基本和join是相反的。此外，还有个要特别注意的：必须在<code>start()</code> 方法调用之前设置，如果不设置为守护线程，程序会被无限挂起。</p>
-<p>&nbsp;</p>
+<p><code>join</code>字面意思：<strong>联合</strong></p>
+<p><code>daemon</code>字面意思：<strong>守护</strong></p>
+<p>正常的多线程，A开启了B，A和B是两个独立的线程，互不干扰</p>
+<p>主线程A中，创建了子线程B，并且在主线程A中调用了<code>B.setDaemon()</code>，我的理解就是让B守护A，A进程结束了，就不管子线程B是否完成，一并和主线程A退出。这就是<code>setDaemon</code>方法的含义</p>
+<p>主线程A中，创建了子线程B，并且在主线程A中调用了<code>B.join()</code>，我的理解就是让B联合A，A进程结束了，就会进入阻塞状态等待B，等待B结束，A才退出</p>
 <p>&nbsp;</p>
 <p>下面仅以多线程为例：</p>
 <p>首先需要明确几个概念：</p>
@@ -1565,7 +1570,7 @@
 <li>此时join的作用就凸显出来了，join所完成的工作就是线程同步，即主线程任务结束之后，进入阻塞状态，一直等待其他的子线程执行结束之后，主线程在终止，例子见下面三。</li>
 </ol>
 <h4 id="python">一：Python多线程的默认情况</h4>
-<pre><code class="language-python">import threading
+<pre class="highlight"><code class="language-python">import threading
 import time
 
 def run():
@@ -1588,17 +1593,16 @@ if __name__ == '__main__':
         t.start()
 
     print('主线程结束！' , threading.current_thread().name)
-    print('一共用时：', time.time()-start_time)
-</code></pre>
-<p>其执行结果如下
-<img alt="img" src="https://images2017.cnblogs.com/blog/1203446/201709/1203446-20170911141534407-1287489554.png" /></p>
+    print('一共用时：', time.time()-start_time)</code></pre>
+<p>其执行结果如下：</p>
+<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/join1.png?raw=true" /></p>
 <p>关键点：</p>
 <ol>
 <li>我们的计时是对主线程计时，主线程结束，计时随之结束，打印出主线程的用时。</li>
 <li>主线程的任务完成之后，主线程随之结束，子线程继续执行自己的任务，直到全部的子线程的任务全部结束，程序结束。</li>
 </ol>
 <h4 id="_2">二：设置守护线程</h4>
-<pre><code>import threading
+<pre class="highlight"><code>import threading
 import time
 
 def run():
@@ -1623,16 +1627,15 @@ if __name__ == '__main__':
         t.start()
 
     print('主线程结束了！' , threading.current_thread().name)
-    print('一共用时：', time.time()-start_time)
-</code></pre>
+    print('一共用时：', time.time()-start_time)</code></pre>
 <p>其执行结果如下，注意请确保setDaemon()在start()之前。
-<img alt="img" src="https://images2017.cnblogs.com/blog/1203446/201709/1203446-20170911143032641-1967021221.png" /></p>
+<img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/join2.png?raw=true" /></p>
 <p>关键点：</p>
 <ol>
 <li>非常明显的看到，主线程结束以后，子线程还没有来得及执行，整个程序就退出了。</li>
 </ol>
 <h4 id="join_1">三：join的作用</h4>
-<pre><code>import threading
+<pre class="highlight"><code>import threading
 import time
 
 def run():
@@ -1660,10 +1663,9 @@ if __name__ == '__main__':
         t.join()
 
     print('主线程结束了！' , threading.current_thread().name)
-    print('一共用时：', time.time()-start_time)
-</code></pre>
+    print('一共用时：', time.time()-start_time)</code></pre>
 <p>其执行结果如下：
-<img alt="img" src="https://images2017.cnblogs.com/blog/1203446/201709/1203446-20170911144052203-746545220.png" /></p>
+<img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/join.png?raw=true" /></p>
 <p>关键点：</p>
 <ol>
 <li>可以看到，主线程一直等待全部的子线程结束之后，主线程自身才结束，程序退出。</li>
@@ -1788,6 +1790,10 @@ if __name__ == '__main__':
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

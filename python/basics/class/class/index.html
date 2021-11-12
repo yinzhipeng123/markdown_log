@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1534,11 +1536,11 @@
                   <h1>类的继承</h1>
                 
                 <h2 id="_1">类的继承</h2>
-<pre><code class="language-python">
+<pre class="highlight"><code class="language-python">
 class Person(object):   # 定义一个父类
 
     def talk(self):    # 父类中的方法
-        print(&quot;person is talking....&quot;)  
+        print("person is talking....")  
 
 
 class Chinese(Person):    # 定义一个子类， 继承Person类
@@ -1553,20 +1555,17 @@ c.walk()     # 调用本身的方法
 # 输出
 
 person is talking....
-is walking...
-</code></pre>
+is walking...</code></pre>
 <h2 id="_2">构造函数的继承</h2>
 <ol>
 <li>经典类的写法：</li>
 </ol>
-<p><code>python
-    父类名称.__init__(self,参数1，参数2，...)</code></p>
+<pre class="highlight"><code class="language-python"> 父类名称.__init__(self,参数1，参数2，...)</code></pre>
 <ol>
 <li>新式类的写法：</li>
 </ol>
-<p><code>python
-   super(子类，self).__init__(参数1，参数2，....)</code></p>
-<pre><code class="language-python">class Person(object):
+<pre class="highlight"><code class="language-python">super(子类，self).__init__(参数1，参数2，....)</code></pre>
+<pre class="highlight"><code class="language-python">class Person(object):
 
     def __init__(self, name, age):
         self.name = name
@@ -1574,7 +1573,7 @@ is walking...
         self.weight = 'weight'
 
     def talk(self):
-        print(&quot;person is talking....&quot;)
+        print("person is talking....")
 
 
 class Chinese(Person):
@@ -1590,10 +1589,9 @@ class Chinese(Person):
 class American(Person):
     pass
 
-c = Chinese('bigberg', 22, 'Chinese')
-</code></pre>
+c = Chinese('bigberg', 22, 'Chinese')</code></pre>
 <h2 id="_3">子类对父类方法的重写</h2>
-<pre><code class="language-python">class Person(object):
+<pre class="highlight"><code class="language-python">class Person(object):
 
     def __init__(self, name, age):
         self.name = name
@@ -1601,7 +1599,7 @@ c = Chinese('bigberg', 22, 'Chinese')
         self.weight = 'weight'
 
     def talk(self):
-        print(&quot;person is talking....&quot;)
+        print("person is talking....")
 
 class Chinese(Person):
 
@@ -1621,10 +1619,9 @@ c.talk()
 
 # 输出
 bigberg 22 weight Chinese
-bigberg is speaking chinese
-</code></pre>
+bigberg is speaking chinese</code></pre>
 <h2 id="_4">类继承的事例</h2>
-<pre><code class="language-python">class SchoolMember(object):
+<pre class="highlight"><code class="language-python">class SchoolMember(object):
     '''学习成员基类'''
     member = 0
 
@@ -1702,8 +1699,7 @@ just enrolled a new school member [lichuang].
 开除了[lichuang]
 2
 开除了[Wusir]
-开除了[haitao]
-</code></pre>
+开除了[haitao]</code></pre>
                 
               
               
@@ -1824,6 +1820,10 @@ just enrolled a new school member [lichuang].
       <script src="../../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../../javascripts/highlight.js"></script>
       
     
   </body>

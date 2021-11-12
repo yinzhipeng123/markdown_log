@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1540,7 +1542,7 @@
 </table>
 <p>下载地址:</p>
 <p>https://github.com/etcd-io/etcd/releases/tag/v3.4.13</p>
-<pre><code class="language-bash">[root@etcd ~]# tar -zxvf etcd-v3.4.13-linux-amd64.tar.gz
+<pre class="highlight"><code class="language-bash">[root@etcd ~]# tar -zxvf etcd-v3.4.13-linux-amd64.tar.gz
 
 [root@centos7 ~]# cd etcd-v3.4.13-linux-amd64
 
@@ -1548,10 +1550,9 @@
 
 --advertise-client-urls 
 --listen-client-urls  这两个0.0.0.0开头是为了浏览器也能访问，默认只能访问127.0.0.1
---enable-v2 开启V2的API
-</code></pre>
+--enable-v2 开启V2的API</code></pre>
 <p>因为是单机集群，所以就启动一个节点即可</p>
-<pre><code class="language-bash">[root@etcd etcd-v3.4.13-linux-amd64]# ./etcd --version
+<pre class="highlight"><code class="language-bash">[root@etcd etcd-v3.4.13-linux-amd64]# ./etcd --version
 etcd Version: 3.4.13
 Git SHA: ae9734ed2
 Go Version: go1.12.17
@@ -1635,7 +1636,7 @@ Clustering:
     Discovery URL used to bootstrap the cluster.
   --discovery-fallback 'proxy'
     Expected behavior ('exit' or 'proxy') when discovery services fails.
-    &quot;proxy&quot; supports v2 API only.
+    "proxy" supports v2 API only.
   --discovery-proxy ''
     HTTP proxy to use for traffic to discovery service.
   --discovery-srv ''
@@ -1701,7 +1702,7 @@ Auth:
 
 Profiling and Monitoring:
   --enable-pprof 'false'
-    Enable runtime profiling data via HTTP server. Address is at client URL + &quot;/debug/pprof/&quot;
+    Enable runtime profiling data via HTTP server. Address is at client URL + "/debug/pprof/"
   --metrics 'basic'
     Set level of detail for exported metrics, specify 'extensive' to include histogram metrics.
   --listen-metrics-urls ''
@@ -1758,18 +1759,15 @@ TO BE DEPRECATED:
   --debug 'false'
     Enable debug-level logging for etcd. [WARN] Will be deprecated in v3.5. Use '--log-level=debug' instead.
   --log-package-levels ''
-    Specify a particular log level for each etcd package (eg: 'etcdmain=CRITICAL,etcdserver=DEBUG').
-</code></pre>
+    Specify a particular log level for each etcd package (eg: 'etcdmain=CRITICAL,etcdserver=DEBUG').</code></pre>
 <p>yum安装方法</p>
-<pre><code class="language-bash">[root@etcd ~]# yum install -y etcd
-[root@etcd ~]# systemctl start etcd
-</code></pre>
+<pre class="highlight"><code class="language-bash">[root@etcd ~]# yum install -y etcd
+[root@etcd ~]# systemctl start etcd</code></pre>
 <h2 id="api">API接口</h2>
 <p>https://github.com/etcd-io/etcd/blob/6acb3d67fbe131b3b2d5d010e00ec80182be4628/Documentation/v2/api.md</p>
 <p>查看所有值的API接口</p>
-<pre><code>curl http://127.0.0.1:2379/v2/keys
-{&quot;action&quot;:&quot;get&quot;,&quot;node&quot;:{&quot;dir&quot;:true}}
-</code></pre>
+<pre class="highlight"><code>curl http://127.0.0.1:2379/v2/keys
+{"action":"get","node":{"dir":true}}</code></pre>
 <ul>
 <li><a href="https://github.com/ringtail/lucas">lucas</a> - 用于 kubernetes etcd3.0 + 集群的基于 Web 的键值查看器。</li>
 <li><a href="https://etcdmanager.io/">etcd-manager</a> - 现代、高效、多平台和免费的 etcd 3.x GUI 和客户端工具。适用于 Windows、Linux 和 Mac。</li>
@@ -1894,6 +1892,10 @@ TO BE DEPRECATED:
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

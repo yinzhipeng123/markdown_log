@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1485,19 +1487,17 @@
                 <h1 id="nodeselector">nodeSelector</h1>
 <p>我们知道<code>label</code>是<code>kubernetes</code>中一个非常重要的概念，用户可以非常灵活的利用 label 来管理集群中的资源，比如最常见的一个就是 service 通过匹配 label 去选择 POD 的。而 POD 的调度也可以根据节点的 label 进行特定的部署。</p>
 <p>我们可以通过下面的命令查看我们的 node 的 label：</p>
-<pre><code class="language-shell">$ kubectl get nodes --show-labels
+<pre class="highlight"><code class="language-shell">$ kubectl get nodes --show-labels
 NAME            STATUS    ROLES     AGE       VERSION   LABELS
 192.168.1.140   Ready     &lt;none&gt;    42d       v1.8.1    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/hostname=192.168.1.140
 192.168.1.161   Ready     &lt;none&gt;    118d      v1.8.1    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/cluster-service=true,kubernetes.io/hostname=192.168.1.161
 192.168.1.170   Ready     &lt;none&gt;    118d      v1.8.1    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/cluster-service=true,kubernetes.io/hostname=192.168.1.170
-192.168.1.172   Ready     &lt;none&gt;    114d      v1.8.1    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/cluster-service=true,kubernetes.io/hostname=192.168.1.172
-</code></pre>
+192.168.1.172   Ready     &lt;none&gt;    114d      v1.8.1    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/cluster-service=true,kubernetes.io/hostname=192.168.1.172</code></pre>
 <p>现在我们先给节点<strong>192.168.1.140</strong>增加一个<code>source=qikqiak</code>的标签，命令如下：</p>
-<pre><code class="language-shell">$ kubectl label nodes 192.168.1.140 source=qikqiak
-node &quot;192.168.1.140&quot; labeled
-</code></pre>
+<pre class="highlight"><code class="language-shell">$ kubectl label nodes 192.168.1.140 source=qikqiak
+node "192.168.1.140" labeled</code></pre>
 <p>我们可以通过上面的<code>--show-labels</code>参数可以查看上述标签是否生效。当 node 被打上了相关标签后，在调度的时候就可以使用这些标签了，只需要在 POD 的 spec 字段中添加<code>nodeSelector</code>字段，里面是我们需要被调度的节点的 label。例如，下面是我们之前的一个默认的 busybox POD 的 YAML 文件：</p>
-<pre><code class="language-yaml">apiVersion: v1
+<pre class="highlight"><code class="language-yaml">apiVersion: v1
 kind: Pod
 metadata:
   labels:
@@ -1507,13 +1507,12 @@ spec:
   containers:
   - command:
     - sleep
-    - &quot;3600&quot;
+    - "3600"
     image: busybox
     imagePullPolicy: Always
-    name: test-busybox
-</code></pre>
+    name: test-busybox</code></pre>
 <p>然后我需要让上面的 POD 被调度到140的节点上，那么最简单的方法就是去匹配140上面的 label，如下：</p>
-<pre><code class="language-yaml">apiVersion: v1
+<pre class="highlight"><code class="language-yaml">apiVersion: v1
 kind: Pod
 metadata:
   labels:
@@ -1523,33 +1522,31 @@ spec:
   containers:
   - command:
     - sleep
-    - &quot;3600&quot;
+    - "3600"
     image: busybox
     imagePullPolicy: Always
     name: test-busybox
   nodeSelector:
-    source: qikqiak
-</code></pre>
+    source: qikqiak</code></pre>
 <p>然后我们可以通过 describe 命令查看调度结果：</p>
-<pre><code class="language-shell">$ kubectl describe pod test-busybox
+<pre class="highlight"><code class="language-shell">$ kubectl describe pod test-busybox
 ......
 Events:
   Type    Reason                 Age   From                    Message
   ----    ------                 ----  ----                    -------
   Normal  Scheduled              49s   default-scheduler       Successfully assigned test-busybox to 192.168.1.140
-  Normal  SuccessfulMountVolume  49s   kubelet, 192.168.1.140  MountVolume.SetUp succeeded for volume &quot;default-token-hmpbz&quot;
-  Normal  Pulling                49s   kubelet, 192.168.1.140  pulling image &quot;busybox&quot;
-  Normal  Pulled                 41s   kubelet, 192.168.1.140  Successfully pulled image &quot;busybox&quot;
+  Normal  SuccessfulMountVolume  49s   kubelet, 192.168.1.140  MountVolume.SetUp succeeded for volume "default-token-hmpbz"
+  Normal  Pulling                49s   kubelet, 192.168.1.140  pulling image "busybox"
+  Normal  Pulled                 41s   kubelet, 192.168.1.140  Successfully pulled image "busybox"
   Normal  Created                41s   kubelet, 192.168.1.140  Created container
-  Normal  Started                41s   kubelet, 192.168.1.140  Started container
-</code></pre>
+  Normal  Started                41s   kubelet, 192.168.1.140  Started container</code></pre>
 <p>我们可以看到 Events 下面的信息，上面的 POD 被正确的调度到了140节点。通过上面的例子我们可以感受到<code>nodeSelector</code>的方式比较直观，但是还够灵活，控制粒度偏大</p>
 <h1 id="node-affinity">node affinity</h1>
 <p>节点亲和性（node affinity）的概念与 <code>nodeSelector</code> 相似，可以基于节点的标签来限定 Pod 可以被调度到哪些节点上。</p>
 <p>当前支持两种类型的节点亲和性， <code>requiredDuringSchedulingIgnoredDuringExecution</code> （hard，目标节点必须满足此条件） 以及 <code>preferredDuringSchedulingIgnoredDuringExecution</code> （soft，目标节点最好能满足此条件）。名字中 <code>IgnoredDuringExecution</code> 意味着：如果 Pod 已经调度到节点上以后，节点的标签发生改变，使得节点已经不再匹配该亲和性规则了，Pod 仍将继续在节点上执行（这一点与 <code>nodeSelector</code> 相似）。将来，Kubernetes 将会提供 <code>requiredDuringSchedulingRequiredDuringExecution</code> 这个选项，该选项与 <code>requiredDuringSchedulingIgnoredDuringExecution</code> 相似，不同的是，当节点的标签不在匹配亲和性规则之后，Pod 将被从节点上驱逐。</p>
 <p><code>requiredDuringSchedulingIgnoredDuringExecution</code> 的一个例子是，<code>只在 Intel CPU 上运行该 Pod</code>，<code>preferredDuringSchedulingIgnoredDuringExecution</code> 的一个例子是，<code>尽量在高可用区 XYZ 中运行这个 Pod，但是如果做不到，也可以在其他地方运行该 Pod</code>。</p>
 <p>PodSpec 中通过 <code>affinity.nodeAffinity</code> 字段来定义节点亲和性，示例文件如下：</p>
-<pre><code class="language-yaml">apiVersion: v1
+<pre class="highlight"><code class="language-yaml">apiVersion: v1
 kind: Pod
 metadata:
   name: with-node-affinity
@@ -1574,8 +1571,7 @@ spec:
             - another-node-label-value
   containers:
   - name: with-node-affinity
-    image: k8s.gcr.io/pause:2.0
-</code></pre>
+    image: k8s.gcr.io/pause:2.0</code></pre>
 <p>此处的亲和性规则表明，该 Pod 只能被调度到包含 key 为 <code>kubernetes.io/e2e-az-name</code> 且 value 为 <code>e2e-az1</code> 或 <code>e2e-az2</code> 的标签的节点上。此外，如果节点已经满足了前述条件，将优先选择包含 key 为 <code>another-node-label-key</code> 且 value 为 <code>another-node-label-value</code> 的标签的节点。</p>
 <p>例子中使用了操作符 <code>In</code>。节点亲和性支持如下操作符：<code>In</code>、<code>NotIn</code>、<code>Exists</code>、<code>DoesNotExist</code>、<code>Gt</code>、<code>Lt</code>。使用 <code>NotIn</code> 和 <code>DoesNotExist</code> 可以实现节点反亲和性（node anti-affinity）的效果，或者也可以使用 <a href="https://kuboard.cn/learning/k8s-intermediate/config/taints-toleration/">污点</a> 为节点排斥某类 Pod。</p>
 <ul>
@@ -1608,7 +1604,7 @@ spec:
 </li>
 </ul>
 <h2 id="pod-affinity">pod affinity 的一个例子</h2>
-<pre><code class="language-yaml">apiVersion: v1
+<pre class="highlight"><code class="language-yaml">apiVersion: v1
 kind: Pod
 metadata:
   name: with-pod-affinity
@@ -1637,7 +1633,6 @@ spec:
   containers:
   - name: with-pod-affinity
     image: k8s.gcr.io/pause:2.0
-
 </code></pre>
 <p>该 Pod 的 <code>affinity</code> 定义了一个 Pod 亲和性规则和一个 Pod 反亲和性规则，例子中， <code>podAffinity</code> 是 <code>requiredDuringSchedulingIgnoredDuringExecution</code>，而 <code>podAntiAffinity</code> 则是 <code>preferredDuringSchedulingIgnoredDuringExecution</code>。</p>
 <ul>
@@ -1661,7 +1656,7 @@ spec:
 <p>顾名思义，<code>topology</code> 就是 <code>拓扑</code> 的意思，这里指的是一个 <code>拓扑域</code>，是指一个范围的概念，比如一个 Node、一个机柜、一个机房或者是一个地区（如杭州、上海）等，实际上对应的还是 Node 上的标签。这里的 <code>topologyKey</code> 对应的是 Node 上的标签的 Key（没有Value），可以看出，其实 <code>topologyKey</code> 就是用于筛选 Node 的。通过这种方式，我们就可以将各个 Pod 进行跨集群、跨机房、跨地区的调度了。</p>
 <h2 id="topologykey_1">如何使用topologyKey</h2>
 <p>看下面的例子：</p>
-<pre><code>apiVersion: v1
+<pre class="highlight"><code>apiVersion: v1
 kind: Pod
 metadata:
   name: with-pod-affinity
@@ -1689,8 +1684,7 @@ spec:
           topologyKey: kubernetes.io/hostname
   containers:
   - name: with-pod-affinity
-    image: k8s.gcr.io/pause:2.0
-</code></pre>
+    image: k8s.gcr.io/pause:2.0</code></pre>
 <p>这里 Pod 的亲和性规则是：这个 Pod 要调度到的 Node 必须有一个标签为 <code>security: S1</code> 的 Pod，且该 Node 必须有一个 Key 为 <code>failure-domain.beta.kubernetes.io/zone</code> 的 标签，即 Node 必须属于 <code>failure-domain.beta.kubernetes.io/zone</code> 拓扑域。</p>
 <p>Pod 的反亲和性规则是：这个 Pod 尽量不要调度到这样的 Node，其包含一个 Key 为 <code>kubernetes.io/hostname</code> 的标签，且该 Node 上有标签为 <code>security: S2</code> 的 Pod。</p>
 <h2 id="topologykey_2">topologyKey详解</h2>
@@ -1711,7 +1705,7 @@ spec:
 <h4 id="_3">始终在同一个节点始终在同一个节点</h4>
 <p>在一个三节点的集群中，部署一个使用 redis 的 web 应用程序，并期望 web-server 尽可能与 redis 在同一个节点上。</p>
 <p>下面是 redis deployment 的 yaml 片段，包含三个副本以及 <code>app=store</code> 标签选择器。Deployment 中配置了 <code>PodAntiAffinity</code>，确保调度器不会将三个副本调度到一个节点上：</p>
-<pre><code class="language-yaml">apiVersion: apps/v1
+<pre class="highlight"><code class="language-yaml">apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-cache
@@ -1734,13 +1728,12 @@ spec:
                 operator: In
                 values:
                 - store
-            topologyKey: &quot;kubernetes.io/hostname&quot;
+            topologyKey: "kubernetes.io/hostname"
       containers:
       - name: redis-server
-        image: redis:3.2-alpine
-</code></pre>
+        image: redis:3.2-alpine</code></pre>
 <p>下面是 webserver deployment 的 yaml 片段，配置了 <code>podAntiAffinity</code> 以及 <code>podAffinity</code>。要求将其副本与 包含 <code>app=store</code> 标签的 Pod 放在同一个节点上；同时也要求 web-server 的副本不被调度到同一个节点上。</p>
-<pre><code class="language-yaml">apiVersion: apps/v1
+<pre class="highlight"><code class="language-yaml">apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-server
@@ -1763,7 +1756,7 @@ spec:
                 operator: In
                 values:
                 - web-store
-            topologyKey: &quot;kubernetes.io/hostname&quot;
+            topologyKey: "kubernetes.io/hostname"
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
@@ -1772,11 +1765,10 @@ spec:
                 operator: In
                 values:
                 - store
-            topologyKey: &quot;kubernetes.io/hostname&quot;
+            topologyKey: "kubernetes.io/hostname"
       containers:
       - name: web-app
-        image: nginx:1.12-alpine
-</code></pre>
+        image: nginx:1.12-alpine</code></pre>
 <p>如果创建上述两个 deployment，集群将如下所示：</p>
 <table>
 <thead>
@@ -1800,17 +1792,15 @@ spec:
 </tbody>
 </table>
 <p><code>web-server</code> 的三个副本都自动与 cach 的副本运行在相同的节点上。</p>
-<pre><code class="language-sh">kubectl get pods -o wide
-</code></pre>
+<pre class="highlight"><code class="language-sh">kubectl get pods -o wide</code></pre>
 <p>输出结果如下所示</p>
-<pre><code class="language-text">NAME                           READY     STATUS    RESTARTS   AGE       IP           NODE
+<pre class="highlight"><code class="language-text">NAME                           READY     STATUS    RESTARTS   AGE       IP           NODE
 redis-cache-1450370735-6dzlj   1/1       Running   0          8m        10.192.4.2   kube-node-3
 redis-cache-1450370735-j2j96   1/1       Running   0          8m        10.192.2.2   kube-node-1
 redis-cache-1450370735-z73mh   1/1       Running   0          8m        10.192.3.1   kube-node-2
 web-server-1287567482-5d4dz    1/1       Running   0          7m        10.192.2.3   kube-node-1
 web-server-1287567482-6f7v5    1/1       Running   0          7m        10.192.4.3   kube-node-3
-web-server-1287567482-s330j    1/1       Running   0          7m        10.192.3.2   kube-node-2
-</code></pre>
+web-server-1287567482-s330j    1/1       Running   0          7m        10.192.3.2   kube-node-2</code></pre>
 <h4 id="_4">始终不在相同的节点上</h4>
 <p>上面的例子使用了 <code>PodAntiAffinity</code> 规则与 <code>topologyKey: "kubernetes.io/hostname"</code> 来部署 redis 集群，因此没有任何两个副本被调度到同一个节点上。参考 <a href="https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/#tolerating-node-failure">ZooKeeper tutorial (opens new window)</a>了解如何使用相同的方式为 StatefulSet 配置反亲和性以实现高可用。</p>
 <p>http://bazingafeng.com/2019/03/31/k8s-affinity-topologykey/</p>
@@ -1935,6 +1925,10 @@ web-server-1287567482-s330j    1/1       Running   0          7m        10.192.3
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

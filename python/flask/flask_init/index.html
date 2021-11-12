@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1494,7 +1496,7 @@
 <p>在我看来，最大的区别是，session对象是可以跨request的，只要session还未失效，不同的request的请求会获取到同一个session，但是g对象不是，g对象不需要管过期时间，请求一次就g对象就改变了一次，或者重新赋值了一次</p>
 <p>也就是session可以在我们的这个网站随意都可以用 而 g只能是这次的请求如果重定向之后就会改变</p>
 <p>flask_g.py</p>
-<pre><code class="language-python">from flask import Flask, g, request
+<pre class="highlight"><code class="language-python">from flask import Flask, g, request
 from util import login_log
 
 app = Flask(__name__)
@@ -1511,18 +1513,15 @@ def login():
         return '登录名或密码错误!'
 
 if __name__ == '__main__':
-    app.run()
-</code></pre>
+    app.run()</code></pre>
 <p>util.py</p>
-<pre><code>from flask import  g
+<pre class="highlight"><code>from flask import  g
 def login_log():
-    print('登录名为: {}'.format(g.username))
-</code></pre>
+    print('登录名为: {}'.format(g.username))</code></pre>
 <p>启动flask_g.py  </p>
 <p>浏览器访问 http://127.0.0.1:5000/login/?username=key</p>
 <p>控制台输出 </p>
-<pre><code>登录名为: key
-</code></pre>
+<pre class="highlight"><code>登录名为: key</code></pre>
 <p>g对象的使用案例：https://vimsky.com/examples/detail/python-method-flask.g.html</p>
 <h1 id="flask-request">Flask Request对象</h1>
 <p>来自客户端网页的数据作为全局请求对象发送到服务器。为了处理请求数据，应该从Flask模块导入。</p>
@@ -1750,6 +1749,10 @@ def login_log():
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

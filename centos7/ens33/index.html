@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1478,28 +1480,27 @@
                   <h1>修改网卡</h1>
                 
                 <p>修改网卡为固定地址</p>
-<pre><code class="language-bash">[root@master ~]# cat /etc/sysconfig/network-scripts/ifcfg-ens33 
-TYPE=&quot;Ethernet&quot;
-PROXY_METHOD=&quot;none&quot;
-BROWSER_ONLY=&quot;no&quot;
-BOOTPROTO=&quot;static&quot;
-DEFROUTE=&quot;yes&quot;
-IPV4_FAILURE_FATAL=&quot;no&quot;
-IPV6INIT=&quot;yes&quot;
-IPV6_AUTOCONF=&quot;yes&quot;
-IPV6_DEFROUTE=&quot;yes&quot;
-IPV6_FAILURE_FATAL=&quot;no&quot;
-IPV6_ADDR_GEN_MODE=&quot;stable-privacy&quot;
-NAME=&quot;ens33&quot;
-UUID=&quot;f52ff6ca-5e7d-4f00-b4f7-679ef47b77da&quot;
-DEVICE=&quot;ens33&quot;
-ONBOOT=&quot;yes&quot;
+<pre class="highlight"><code class="language-bash">[root@master ~]# cat /etc/sysconfig/network-scripts/ifcfg-ens33 
+TYPE="Ethernet"
+PROXY_METHOD="none"
+BROWSER_ONLY="no"
+BOOTPROTO="static"
+DEFROUTE="yes"
+IPV4_FAILURE_FATAL="no"
+IPV6INIT="yes"
+IPV6_AUTOCONF="yes"
+IPV6_DEFROUTE="yes"
+IPV6_FAILURE_FATAL="no"
+IPV6_ADDR_GEN_MODE="stable-privacy"
+NAME="ens33"
+UUID="f52ff6ca-5e7d-4f00-b4f7-679ef47b77da"
+DEVICE="ens33"
+ONBOOT="yes"
 IPADDR=192.168.70.131
 PREFIX=24
 GATEWAY=192.168.70.2
 DNS1=192.168.70.2
-DNS2=114.114.114.114
-</code></pre>
+DNS2=114.114.114.114</code></pre>
                 
               
               
@@ -1620,6 +1621,10 @@ DNS2=114.114.114.114
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

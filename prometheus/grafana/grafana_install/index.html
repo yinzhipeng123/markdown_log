@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1488,7 +1490,7 @@
 <p>下载地址：</p>
 <p>https://grafana.com/grafana/download</p>
 <p>centos系列安装：</p>
-<pre><code class="language-bash">[root@centos7 ~]# wget https://dl.grafana.com/oss/release/grafana-6.6.0-1.x86_64.rpm
+<pre class="highlight"><code class="language-bash">[root@centos7 ~]# wget https://dl.grafana.com/oss/release/grafana-6.6.0-1.x86_64.rpm
 [root@centos7 ~]# sudo yum install grafana-6.6.0-1.x86_64.rpm
 [root@centos7 ~]# systemctl daemon-reload
 [root@centos7 ~]# systemctl start grafana-server
@@ -1498,8 +1500,7 @@ Version 6.6.0 (commit: 5c11bbdfb4, branch: HEAD)
 [root@centos7 ~]# sudo systemctl enable grafana-server
 Created symlink from /etc/systemd/system/multi-user.target.wants/grafana-server.service to /usr/lib/systemd/system/grafana-server.service.
 [root@centos7 ~]# curl 127.0.0.7:3000
-&lt;a href=&quot;/login&quot;&gt;Found&lt;/a&gt;.
-</code></pre>
+&lt;a href="/login"&gt;Found&lt;/a&gt;.</code></pre>
                 
               
               
@@ -1620,6 +1621,10 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/grafana-server.
       <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
       
     
   </body>

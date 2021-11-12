@@ -38,6 +38,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
     
       
 
@@ -1515,7 +1517,7 @@
                 <h2 id="gin-app">Gin 路由拆分到不同的APP</h2>
 <p>有时候项目规模实在太大，那么我们就更倾向于把业务拆分的更详细一些，例如把不同的业务代码拆分成不同的APP。</p>
 <p>因此我们在项目目录下单独定义一个app目录，用来存放我们不同业务线的代码文件，这样就很容易进行横向扩展。大致目录结构如下：</p>
-<pre><code class="language-tex">
+<pre class="highlight"><code class="language-tex">
 myapp
 │  go.mod
 │  main.go
@@ -1529,16 +1531,15 @@ myapp
 │          router.go
 │
 └─routers
-        route.go
-</code></pre>
+        route.go</code></pre>
 <p>main.go</p>
-<pre><code class="language-go">package main
+<pre class="highlight"><code class="language-go">package main
 
 import (
-   &quot;fmt&quot;
-   &quot;myapp/app/blog&quot;
-   &quot;myapp/app/shop&quot;
-   &quot;myapp/routers&quot;
+   "fmt"
+   "myapp/app/blog"
+   "myapp/app/shop"
+   "myapp/routers"
 )
 
 func main() {
@@ -1547,21 +1548,19 @@ func main() {
    // 初始化路由
    r := routers.Init()
    if err := r.Run(); err != nil {
-      fmt.Println(&quot;startup service failed, err:%v\n&quot;, err)
+      fmt.Println("startup service failed, err:%v\n", err)
    }
-}
-</code></pre>
+}</code></pre>
 <p>go.mod</p>
-<pre><code class="language-go">module myapp
+<pre class="highlight"><code class="language-go">module myapp
 
 go 1.16
 
-require github.com/gin-gonic/gin v1.7.3
-</code></pre>
+require github.com/gin-gonic/gin v1.7.3</code></pre>
 <p>route.go</p>
-<pre><code class="language-go">package routers
+<pre class="highlight"><code class="language-go">package routers
 
-import &quot;github.com/gin-gonic/gin&quot;
+import "github.com/gin-gonic/gin"
 
 type Option func(*gin.Engine)
 
@@ -1579,64 +1578,57 @@ func Init() *gin.Engine {
       opt(r)
    }
    return r
-}
-</code></pre>
+}</code></pre>
 <p>app/shop/handler.go</p>
-<pre><code class="language-go">package shop
+<pre class="highlight"><code class="language-go">package shop
 
 import (
-   &quot;github.com/gin-gonic/gin&quot;
-   &quot;net/http&quot;
+   "github.com/gin-gonic/gin"
+   "net/http"
 )
 
 func helloShop(c *gin.Context) {
    c.JSON(http.StatusOK, gin.H{
-      &quot;message&quot;: &quot;Hello Shop!&quot;,
+      "message": "Hello Shop!",
    })
-}
-</code></pre>
+}</code></pre>
 <p>app/shop/router.go</p>
-<pre><code class="language-go">package shop
+<pre class="highlight"><code class="language-go">package shop
 
-import &quot;github.com/gin-gonic/gin&quot;
+import "github.com/gin-gonic/gin"
 
 func Routers(e *gin.Engine) {
-    e.GET(&quot;/shop&quot;, helloShop)
+    e.GET("/shop", helloShop)
 
 }
-
 </code></pre>
 <p>app/blog/handler.go</p>
-<pre><code class="language-go">package blog
+<pre class="highlight"><code class="language-go">package blog
 
 import (
-   &quot;github.com/gin-gonic/gin&quot;
-   &quot;net/http&quot;
+   "github.com/gin-gonic/gin"
+   "net/http"
 )
 
 func helloBlog(c *gin.Context) {
    c.JSON(http.StatusOK, gin.H{
-      &quot;message&quot;: &quot;Hello Blog&quot;,
+      "message": "Hello Blog",
    })
-}
-</code></pre>
+}</code></pre>
 <p>app/blog/router.go</p>
-<pre><code class="language-go">package blog
+<pre class="highlight"><code class="language-go">package blog
 
 import (
-   &quot;github.com/gin-gonic/gin&quot;
+   "github.com/gin-gonic/gin"
 )
 
 func Routers(e *gin.Engine) {
-   e.GET(&quot;/Blog&quot;, helloBlog)
-}
-</code></pre>
+   e.GET("/Blog", helloBlog)
+}</code></pre>
 <p>然后在终端运行</p>
-<pre><code class="language-powershell">D:\idea\mygin&gt;go mod tidy
-</code></pre>
+<pre class="highlight"><code class="language-powershell">D:\idea\mygin&gt;go mod tidy</code></pre>
 <p>项目运行，或者在goland中 main.go右键运行</p>
-<pre><code class="language-powershell">D:\idea\mygin&gt;go run main.go
-</code></pre>
+<pre class="highlight"><code class="language-powershell">D:\idea\mygin&gt;go run main.go</code></pre>
                 
               
               
@@ -1757,6 +1749,10 @@ func Routers(e *gin.Engine) {
       <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>
