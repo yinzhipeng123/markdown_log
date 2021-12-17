@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/query_rules/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/Linux/cpu/linux%E7%BA%BF%E7%A8%8B/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.1.11">
     
     
       
-        <title>Prometheus监控查询语法入门 - MarkDown_Log</title>
+        <title>Linux线程 - MarkDown_Log</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#linux" class="md-skip">
           跳转至
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prometheus监控查询语法入门
+              Linux线程
             
           </span>
         </div>
@@ -225,8 +225,6 @@
         
   
   
-    
-  
 
 
   
@@ -238,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../prometheus/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../prometheus/prometheus/prometheus/" class="md-tabs__link">
         Prometheus
       </a>
     </li>
@@ -484,14 +482,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Prometheus
@@ -507,16 +503,14 @@
             
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
       
       <label class="md-nav__link" for="__nav_3_1">
         Prometheus
@@ -534,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus/" class="md-nav__link">
         单机部署
       </a>
     </li>
@@ -546,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_k8s/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus_k8s/" class="md-nav__link">
         K8S部署
       </a>
     </li>
@@ -558,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kube-state-metrics/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/kube-state-metrics/" class="md-nav__link">
         K8S kube-state-metrics指标说明
       </a>
     </li>
@@ -570,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Exporter_Metrics/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
         Exporter Metrics解释
       </a>
     </li>
@@ -582,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../query_xamples/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/query_xamples/" class="md-nav__link">
         Prometheus监控查询例子
       </a>
     </li>
@@ -592,109 +586,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Prometheus监控查询语法入门
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../prometheus/prometheus/query_rules/" class="md-nav__link">
         Prometheus监控查询语法入门
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#label" class="md-nav__link">
-    label上的匹配器
-  </a>
-  
-    <nav class="md-nav" aria-label="label上的匹配器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.相等匹配器（=）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2.不相等匹配器（！=）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3.正则表达式匹配器（=~）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4.正则表达式相反匹配器（！~）
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    区间向量选择器
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    偏移量修改器
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    聚合函数：
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -704,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../function/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/function/" class="md-nav__link">
         Prometheus语法函数
       </a>
     </li>
@@ -716,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_recording_rule/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus_recording_rule/" class="md-nav__link">
         Prometheus recording_rules功能
       </a>
     </li>
@@ -728,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus_rate/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus_rate/" class="md-nav__link">
         Prometheus指标讲解"为什么rate可以计算CPU的使用率"
       </a>
     </li>
@@ -769,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prometheus/" class="md-nav__link">
+      <a href="../../../prometheus/prometheus/prometheus/" class="md-nav__link">
         Alertmanager部署
       </a>
     </li>
@@ -781,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../alertmanager/alertmanager_config/" class="md-nav__link">
+      <a href="../../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
         Alertmanager配置
       </a>
     </li>
@@ -822,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_install/" class="md-nav__link">
+      <a href="../../../prometheus/grafana/grafana_install/" class="md-nav__link">
         Grafana部署
       </a>
     </li>
@@ -834,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_dashboard/" class="md-nav__link">
+      <a href="../../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
         Dashboard
       </a>
     </li>
@@ -846,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grafana/grafana_var/" class="md-nav__link">
+      <a href="../../../prometheus/grafana/grafana_var/" class="md-nav__link">
         Grafana添加变量
       </a>
     </li>
@@ -1569,129 +1465,26 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/prometheus/prometheus/query_rules.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/Linux/cpu/linux线程.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Prometheus监控查询语法入门</h1>
+                  <h1>Linux线程</h1>
                 
-                <h2 id="_1"></h2>
-<p>metric介绍，Prometheus本质上是时序数据库，Prometheus会将所有采集到的样本数据以时间序列的方式保存在内存数据库中，并且定时保存到硬盘上</p>
-<p>数据结构如下图：</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/metrics.png?raw=true" /></p>
-<p>在Prometheus的世界里面，所有的数值都是64 bit的。每条时间序列里面记录的就是64 bit Timestamp（时间戳）和64 bit的Sample Value（采样值）</p>
-<p>在prometheus有两种查询方式，查询一般是不带时间的，该两种方式如下，</p>
-<p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Prometheus/Prometheus/metrics2.png?raw=true" /></p>
-<p>查询什么数据，只要写好PromQL，在Prometheus暴露的9090端口的页面中查询即可。</p>
-<p>相关语法：</p>
-<h2 id="label">label上的匹配器</h2>
-<p>匹配器是作用于标签上的，标签匹配器可以对时间序列进行过滤，Prometheus支持完全匹配和正则匹配两种模式。</p>
-<h3 id="1">1.相等匹配器（=）</h3>
-<p>相等匹配器（Equality Matcher），用于选择与提供的字符串完全相同的标签。下面介绍的例子中就会使用相等匹配器按照条件进行一系列过滤。</p>
-<p>http_requests_total{job="HelloWorld",status="200",method="POST",handler="/api/comments"}</p>
-<p>需要注意的是，如果标签为空或者不存在，那么也可以使用Label=""的形式。对于不存在的标签，比如demo标签，图4-7所示的go_gc_duration_seconds_count和图4-8所示的go_gc_duration_seconds_count{demo=""}效果其实是一样的。</p>
-<h3 id="2">2.不相等匹配器（！=）</h3>
-<p>不相等匹配器（Negative Equality Matcher），用于选择与提供的字符串不相同的标签。它和相等匹配器是完全相反的。举个例子，如果想要查看job并不是HelloWorld的HTTP请求总数，可以使用如下不相等匹配器。</p>
-<p>http_requests_total{job!="HelloWorld"}</p>
-<h3 id="3">3.正则表达式匹配器（=~）</h3>
-<p>正则表达式匹配器（Regular Expression Matcher），用于选择与提供的字符串进行正则运算后所得结果相匹配的标签。Prometheus的正则运算是强指定的，比如正则表达式a只会匹配到字符串a，而并不会匹配到ab或者ba或者abc。如果你不想使用这样的强指定功能，可以在正则表达式的前面或者后面加上“.<em>”。比如下面的例子表示job是所有以Hello开头的HTTP请求总数。
-http_requests_total{job=~"Hello.</em>"}</p>
-<p>http_requests_total直接等效于{<strong>name</strong>="http_requests_total"}，后者也可以使用和前者一样的4种匹配器（=，！=，=~，！~）。比如下面的案例可以表示所有以Hello开头的指标。
-{<strong>name</strong>=~"Hello.*"}</p>
-<p>如果想要查看job是以Hello开头的，且在生产（prod）、测试（test）、预发布（pre）等环境下响应结果不是200的HTTP请求总数，可以使用这样的方式进行查询。
-http_requests_total{job=~"Hello.*",env=~"prod|test|pre",code!="200"}</p>
-<p>由于所有的PromQL表达式必须至少包含一个指标名称，或者至少有一个不会匹配到空字符串的标签过滤器，因此结合Prometheus官方文档，可以梳理出如下非法示例。
-{job=~".*"} # 非法！
-{job=""}    # 非法！
-{job!=""}   # 非法！</p>
-<p>相反，如下表达式是合法的。
-{job=~".+"}               # 合法！.+表示至少一个字符
-{job=~".<em>",method="get"}  # 合法！.</em>表示任意一个字符
-{job="",method="post"}    # 合法！存在一个非空匹配
-{job=~".+",method="post"} # 合法！存在一个非空匹配</p>
-<h3 id="4">4.正则表达式相反匹配器（！~）</h3>
-<p>正则表达式相反匹配器（Negative Regular Expression Matcher），用于选择与提供的字符串进行正则运算后所得结果不匹配的标签。因为PromQL的正则表达式基于RE2的语法，但是RE2不支持向前不匹配表达式，所以！~的出现是作为一种替代方案，以实现基于正则表达式排除指定标签值的功能。在一个选择器当中，可以针对同一个标签来使用多个匹配器。比如下面的例子，可以实现查找job名是node且安装在/prometheus目录下，但是并不在/prometheus/user目录下的所有文件系统并确定其大小。
-node_filesystem_size_bytes{job="node",mountpoint=~"/prometheus/.<em>", mountpoint!~
-  "/prometheus/user/.</em>"}</p>
-<p>PromQL采用的是RE2[1]引擎，支持正则表达式。RE2来源于Go语言，它被设计为一种线性时间的模式，非常适合用于PromQL这种时间序列的方式。但是就像我们前文描述的RE2那样，其不支持向前不匹配表达式（向前断言），也不支持反向引用，同时还缺失很多高级特性。
-思考拓展
-=、！=、=~、！~这4个匹配器在实战中非常有用，但是如果频繁为标签施加正则匹配器，比如HTTP状态码有1xx、2xx、3xx、4xx、5xx，在统计所有返回值是5xx的HTTP请求时，PromQL语句就会变成http_requests_total{job="HelloWorld"，status=~"500"，status=~"501"，status=~"502"，status=~"503"，status=~"504"，status=~"505"，status=~"506"…}
-但是，我们都知道5xx代表服务器错误，这些状态代码表示服务器在尝试处理请求时发生了内部错误。这些错误可能来自服务器本身，而不是请求。
-1）500：服务器遇到错误，无法完成请求（服务器内部错误）。
-2）501：服务器不具备完成请求的功能。例如，当服务器无法识别请求方法时可能会返回此代码（尚未实施）。
-3）502：服务器作为网关或代理，从上游服务器收到无效响应（错误网关）。
-4）503：服务器目前无法使用（由于超载或停机维护），通常只是暂时状态（服务不可用）。
-5）504：服务器作为网关或代理，但是没有及时从上游服务器收到请求（网关超时）。
-6）505：服务器不支持请求中所用的HTTP协议版本（HTTP版本不受支持）。
-7）506：由《透明内容协商协议》（RFC 2295）扩展而来，代表服务器存在内部配置错误。
-8）507：服务器无法存储完成请求所必需的内容。这个状况被认为是临时的。
-9）509：服务器达到带宽限制。这不是一个官方的状态码，但是仍被广泛使用。
-10）510：获取资源所需要的策略并没有被满足。
-为了消除这样的错误，可以进行如下优化。
-优化一　多个表达式之间使用“|”进行分割：http_requests_total{job="HelloWorld"，status=~"500|501|502|503|504|505|506|507|509|510"}。
-优化二　将这些返回值包装为5xx，这样就可以直接使用正则表达式匹配器对http_requests_total{job="HelloWorld"，status=~"5xx"}进行优化。
-优化三　如果要选择不以4xx开头的所有HTTP状态码，可以使用http_requests_total{status！~"4.."}。</p>
-<h2 id="_2">区间向量选择器</h2>
-<p>区间向量选择器返回一组时间序列，每个时间序列包含一段时间范围内的样本数据。和瞬时向量选择器不同的是，它从当前时间向前选择了一定时间范围的样本。区间向量选择器主要在选择器末尾的方括号[]中，通过时间范围选择器进行定义，以指定每个返回的区间向量样本值中提取多长的时间范围。例如，下面的例子可以表示最近5分钟内的所有HTTP请求的样本数据，其中[5m]将瞬时向量选择器转变为区间向量选择器。
-http_request_total{}[5m]</p>
-<p>时间范围通过整数来表示，可以使用以下单位之一：秒（s）、分钟（m）、小时（h）、天（d）、周（w）、年（y）。需要强调的是，必须用整数来表示时间，比如38 m是正确的，但是2 h 15 m和1.5 h都是错误的。这里的y是忽略闰年的，永远是60×60×24×365秒。</p>
-<p>案例一：计算2分钟内系统进程的CPU使用率。
-rate(node_cpu[2m])</p>
-<p>案例二：计算系统CPU的总体使用率，通过排除系统闲置的CPU使用率即可获得。
-1 - avg without(cpu) (rate(node_cpu{mode="idle"}[2m]))</p>
-<p>案例三：node_cpu_seconds_total可以获取当前CPU的所有信息，使用avg聚合查询到数据后，再使用by来区分实例，这样就能做到分实例查询各自的数据。
-avg(irate(node_cpu_seconds_total{job="node_srv"}[5m])) by (instance)</p>
-<p>实战拓展
-1）区间向量选择器往往和速率函数rate一起使用。比如子查询，以1次/分钟的速率采集关于http_requests_total指标在过去30分钟内的数据，然后返回这30分钟内距离当前时间最近的5分钟内的采集结果，如下所示。
-rate(http_requests_total[5m])[30m:1m]</p>
-<p>注意，使用不必要的子查询或者不停地嵌套子查询并不是好的PromQL风格。
-2）一个区间向量表达式不能直接展示在Graph中，但是可以展示在Console视图中。</p>
-<h2 id="_3">偏移量修改器</h2>
-<p>偏移量修改器可以让瞬时向量选择器和区间向量选择器发生偏移，它允许获取查询计算时间并在每个选择器的基础上将其向前推移。
-瞬时向量选择器和区间向量选择器都可获取当前时间基准下的样本数据，如果我们要获取查询计算时间前5分钟的HTTP请求情况，可以使用下面这样的方式。
-http_request_total{} offset 5m</p>
-<p>偏移向量修改器的关键字必须紧跟在选择器{}后面，如下的表达式分别是正确和错误的示例。
-sum(http_requests_total{method="GET"} offset 5m) // 正确
-sum(http_requests_total{method="GET"}) offset 5m // 非法</p>
-<p>该操作同样适用于区间向量选择器，比如下这个例子，其以指标http_requests_total 5分钟前的时间点为起始高，返回5分钟之内的HTTP请求量的增长速率。
-rate(http_requests_total[5m] offset 5m)</p>
-<p>偏移向量修改器通过调整计算时间一样可以看到一些历史数据，但是这种方式一般只对调试单条语句的历史数据有帮助。随着新数据的到来，历史数据也会不断发生变化，所以建议在Grafana中直接看历史数据的变化趋势。</p>
-<p>Prometheus有4大指标类型（Metrics Type），分别是Counter（计数器）、Gauge（仪表盘）、Histogram（直方图）和Summary（摘要）。这是在Prometheus客户端（目前主要有Go、Java、Python、Ruby等语言版本）中提供的4种核心指标类型，但是Prometheus的服务端并不区分指标类型，而是简单地把这些指标统一视为无类型的时间序列。未来，Prometheus官方应该会做出改变</p>
-<h2 id="_4">聚合函数：</h2>
-<p>Prometheus还提供了下列内置的聚合操作符，这些操作符作用域瞬时向量。可以将瞬时表达式返回的样本数据进行聚合，形成一个新的时间序列。</p>
-<ul>
-<li><code>sum</code> (求和)</li>
-<li><code>min</code> (最小值)</li>
-<li><code>max</code> (最大值)</li>
-<li><code>avg</code> (平均值)</li>
-<li><code>stddev</code> (标准差)</li>
-<li><code>stdvar</code> (标准方差)</li>
-<li><code>count</code> (计数)</li>
-<li><code>count_values</code> (对value进行计数)</li>
-<li><code>bottomk</code> (后n条时序)</li>
-<li><code>topk</code> (前n条时序)</li>
-<li><code>quantile</code> (分位数)</li>
-</ul>
-<p>使用聚合操作的语法如下：</p>
-<pre class="highlight"><code>&lt;aggr-op&gt;([parameter,] &lt;vector expression&gt;) [without|by (&lt;label list&gt;)]</code></pre>
-<p>其中只有<code>count_values</code>, <code>quantile</code>, <code>topk</code>, <code>bottomk</code>支持参数(parameter)。</p>
-<p>without用于从计算结果中移除列举的标签，而保留其它标签。by则正好相反，结果向量中只保留列出的标签，其余标签则移除。通过without和by可以按照样本的问题对数据进行聚合。</p>
-<p>例如：</p>
-<pre class="highlight"><code>sum(http_requests_total) without (instance)</code></pre>
-<p>等价于</p>
-<pre class="highlight"><code>sum(http_requests_total) by (code,handler,job,method)</code></pre>
-<p>如果只需要计算整个应用的HTTP请求总量，可以直接使用表达式：</p>
-<pre class="highlight"><code>sum(http_requests_total)</code></pre>
-<p>count_values用于时间序列中每一个样本值出现的次数。count_values会为每一个唯一的样本值输出一个时间序列，并且每一个时间序列包含一个额外的标签。</p>
-<p>例如：</p>
-<pre class="highlight"><code>count_values("count", http_requests_total)</code></pre>
-<p>topk和bottomk则用于对样本值进行排序，返回当前样本值前n位，或者后n位的时间序列。</p>
-<p>获取HTTP请求数前5位的时序样本数据，可以使用表达式：</p>
-<pre class="highlight"><code>topk(5, http_requests_total)</code></pre>
-<p>quantile用于计算当前样本数据值的分布情况quantile(φ, express)其中0 ≤ φ ≤ 1。</p>
-<p>例如，当φ为0.5时，即表示找到当前样本数据中的中位数：</p>
-<pre class="highlight"><code>quantile(0.5, http_requests_total)</code></pre>
+                <h2 id="linux">Linux线程</h2>
+<p>Linux的线程实则为轻量级进程</p>
+<p>轻量级进程，可见其本质仍然是进程，与普通进程相比，LWP与其它进程共享所有（或大部分）逻辑地址空间和系统资源，一个进程可以创建多个LWP，这样它们共享大部分资源；LWP有它自己的进程标识符，并和其他进程有着父子关系；这是和类Unix操作系统的系统调用vfork()生成的进程一样的。LWP由内核管理并像普通进程一样被调度。Linux内核是支持LWP的典型例子。Linux内核在 2.0.x版本就已经实现了轻量进程，应用程序可以通过一个统一的clone()系统调用接口，用不同的参数指定创建轻量进程还是普通进程，通过参数决定子进程和父进程共享的资源种类和数量，这样就有了轻重之分。在内核中， clone()调用经过参数传递和解释后会调用do_fork()，这个核内函数同时也是fork()、vfork()系统调用的最终实现。</p>
+<p>在大多数系统中，LWP与普通进程的区别也在于它只有一个最小的执行上下文和调度程序所需的统计信息，而这也是它之所以被称为轻量级的原因。
+因为LWP之间共享它们的大部分资源，所以它在某些应用程序就不适用了；这个时候就要使用多个普通的进程了。例如，为了避免内存泄漏（a process can be replaced by another one）和实现特权分隔（processes can run under other credentials and have other permissions）。</p>
+<p>其实最初根本没有线程的概念，只有进程，一个任务一个进程一个执行流，多任务处理机就是多进程。后来提出线程的概念，但是要如何去实现，这里就有很多种实现方法了，可以想到两种实现方法，一种就是上面所说的用户线程的方法，其优缺点上文以简述；再有就是用轻量级进程去模拟，即我们可以把LWP看成是一个线程。就因为这个使得线程和进程的概念混淆了，有人说系统调度单位是进程，又有人说是线程，其实系统调度的单位一直就没有改变，只是后来部分线程和进程的界限模糊了，至少上文中的用户线程绝对不是调度对象，LWP模拟的线程却是调度对象。</p>
+<p>参考文档：</p>
+<ol>
+<li>http://www.uml.org.cn/embeded/202011244.asp</li>
+<li>https://www.daimajiaoliu.com/daima/485a207729003f8</li>
+<li>https://www.daimajiaoliu.com/daima/4795933fc9003ec</li>
+<li>https://www.modb.pro/db/15191</li>
+</ol>
                 
               
               
@@ -1734,41 +1527,6 @@ rate(http_requests_total[5m] offset 5m)</p>
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../query_xamples/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Prometheus监控查询例子" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              Prometheus监控查询例子
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../function/" class="md-footer__link md-footer__link--next" aria-label="下一页: Prometheus语法函数" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              Prometheus语法函数
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

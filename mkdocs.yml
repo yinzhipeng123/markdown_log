@@ -12,7 +12,6 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.snippets
   - pymdownx.keys
-  
   - admonition
   - abbr
   - attr_list
@@ -42,7 +41,6 @@ theme:
     - content.tabs.link
     - header.autohide
     - navigation.expand
-    - navigation.indexes
     - navigation.instant
     - navigation.sections
     - navigation.tabs
