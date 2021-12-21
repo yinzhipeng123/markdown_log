@@ -1603,6 +1603,7 @@ https://kubesphere.io             2021-09-01 10:35:12
 <p>刷新页面，节点管理中，出现边缘节点</p>
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge.png?raw=true" /></p>
 <h2 id="_2">添加边缘节点</h2>
+<p>https://kubesphere.com.cn/docs/installing-on-linux/cluster-operation/add-edge-nodes/</p>
 <p>新建一台机器，来当做边缘节点，关闭防火墙，关闭selinux，我设置的是4G，双核机器</p>
 <table>
 <thead>
@@ -1632,7 +1633,7 @@ hosts:          dns files mdns4_minimal [NOTFOUND=return]
 [root@edgenode ~] sysctl -p | grep ip_forward</code></pre>
 <p>然后就可以在KubeSphere页面上，节点管理--》边缘节点--》添加节点，输入给node的名字，node的IP地址（<strong>注意：这里这个node的IP地址，不要是node的真实IP地址，这个IP是个虚拟IP地址，类似K8S的clusterIP一样，是个假的IP，下面的图的IP地址，不应该是192.168.70.140，可以设置为1.1.1.1或者2.2.2.2之类的</strong>），然后复制下面的命令</p>
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge_add.png?raw=true" /></p>
-<p>但是需要把命令中的10000,10001,10002,10004依次更换为30000,30001,30002,30004</p>
+<p>但是需要把命令中的10000,10001,10002,10004依次更换为30000,30001,30002,30004，如果安装失败，就把--region=zh 改成--region=en</p>
 <pre class="highlight"><code class="language-bash">[root@edgenode ~]# arch=$(uname -m); curl -LO https://kubeedge.pek3b.qingstor.com/bin/v1.6.2/$arch/keadm-v1.6.2-linux-$arch.tar.gz  &amp;&amp; tar xvf keadm-v1.6.2-linux-$arch.tar.gz &amp;&amp; chmod +x keadm &amp;&amp; ./keadm join --kubeedge-version=1.6.2 --region=zh --cloudcore-ipport=192.168.70.130:30000 --quicport 30001 --certport 30002 --tunnelport 30004 --edgenode-name edge-1 --edgenode-ip 192.168.70.140 --token 41c74c8e8f86d03b8560eb5be566c62c33eeac1865cdf3a48ad554e9626ef34e.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzA1NTAwNDZ9.mmR51Ue8rduKViXYqEuQQFyNcYol_IHQIm0K53iOQdM --with-edge-taint
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -1658,6 +1659,34 @@ kubeedge-v1.6.2-linux-amd64/version
 KubeEdge edgecore is running, For logs visit: journalctl -u edgecore.service -b</code></pre>
 <p>服务端刷新页面，就添加完成了</p>
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge_add_fin.png?raw=true" /></p>
+<p>上面添加完后，边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 <code>Pending</code> 状态。由于部分守护进程集（例如，Calico）有强容忍度，在当前版本中 (KubeSphere 3.2.1)，您需要手动 Patch Pod 以防止它们调度至该边缘节点。</p>
+<pre class="highlight"><code class="language-shell">#!/bin/bash
+
+NodeSelectorPatchJson='{"spec":{"template":{"spec":{"nodeSelector":{"node-role.kubernetes.io/master": "","node-role.kubernetes.io/worker": ""}}}}}'
+
+NoShedulePatchJson='{"spec":{"template":{"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"node-role.kubernetes.io/edge","operator":"DoesNotExist"}]}]}}}}}}}'
+
+edgenode="edgenode"
+if [ $1 ]; then
+        edgenode="$1"
+fi
+
+
+namespaces=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $1}' ))
+pods=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $2}' ))
+length=${#namespaces[@]}
+
+
+for((i=0;i&lt;$length;i++));  
+do
+        ns=${namespaces[$i]}
+        pod=${pods[$i]}
+        resources=$(kubectl -n $ns describe pod $pod | grep "Controlled By" |awk '{print $3}')
+        echo "Patching for ns:"${namespaces[$i]}",resources:"$resources
+        kubectl -n $ns patch $resources --type merge --patch "$NoShedulePatchJson"
+        sleep 1
+done
+</code></pre>
 <p>其实上面arch=$(uname -m)开头的命令，是连接[cloudcore]服务，在页面中查看cloudcore是nodeport的形式提供的，映射都是30000后的端口号，所以需要改下，而<code>kubeedge.cloudCore.cloudHub.advertiseAddress</code>则应该是cloudcore服务的IP地址，他们是一个IP地址，all-in-one模式下只有一个IP地址，如果在公网下，cloudcore应该是SLB或者公网地址才行</p>
 <p><img alt="" src="https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge-cloud.png?raw=true" /></p>
 <h2 id="_3">边缘节点重置</h2>

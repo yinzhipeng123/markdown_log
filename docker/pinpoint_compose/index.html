@@ -1,0 +1,2675 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/docker/pinpoint_compose/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.1.11">
+    
+    
+      
+        <title>pinpoint - MarkDown_Log</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3754935a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css">
+    
+    
+      
+
+  
+
+
+  
+
+  
+
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pinpoint" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MarkDown_Log" class="md-header__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MarkDown_Log
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              pinpoint
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/yinzhipeng123/markdown_log/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MarkDown_Log
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api/MkDoc/" class="md-tabs__link">
+        MkDocs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-tabs__link">
+        Prometheus
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../etcd/etcd/" class="md-tabs__link">
+        Etcd
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../python/basics/basic/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../go/go_one/" class="md-tabs__link">
+        Go
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../KubeSphere/KubeSphere/" class="md-tabs__link">
+        KubeSphere
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../yum/ius/" class="md-tabs__link">
+        Yum
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../centos7/ens33/" class="md-tabs__link">
+        Centos7
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../kubernetes/kubernetes1.16/" class="md-tabs__link">
+        K8S
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docker_su/" class="md-tabs__link">
+        Docker
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MarkDown_Log" class="md-nav__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    MarkDown_Log
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/yinzhipeng123/markdown_log/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MarkDown_Log
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        MkDocs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="MkDocs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          MkDocs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/MkDoc/" class="md-nav__link">
+        MkDocs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Prometheus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Prometheus" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Prometheus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        Prometheus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Prometheus" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Prometheus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
+        单机部署
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/prometheus_k8s/" class="md-nav__link">
+        K8S部署
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/kube-state-metrics/" class="md-nav__link">
+        K8S kube-state-metrics指标说明
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
+        Exporter Metrics解释
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/query_xamples/" class="md-nav__link">
+        Prometheus监控查询例子
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/query_rules/" class="md-nav__link">
+        Prometheus监控查询语法入门
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/function/" class="md-nav__link">
+        Prometheus语法函数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/prometheus_recording_rule/" class="md-nav__link">
+        Prometheus recording_rules功能
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/prometheus_rate/" class="md-nav__link">
+        Prometheus指标讲解"为什么rate可以计算CPU的使用率"
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Alertmanager
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Alertmanager" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Alertmanager
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
+        Alertmanager部署
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
+        Alertmanager配置
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" data-md-state="indeterminate" type="checkbox" id="__nav_3_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Grafana
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Grafana" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Grafana
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/grafana/grafana_install/" class="md-nav__link">
+        Grafana部署
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prometheus/grafana/grafana_var/" class="md-nav__link">
+        Grafana添加变量
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Etcd
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Etcd" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Etcd
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../etcd/etcd/" class="md-nav__link">
+        etcd部署
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/basics/basic/" class="md-nav__link">
+        Python一些语法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/csv/" class="md-nav__link">
+        CSV模块
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/xlxs/" class="md-nav__link">
+        XLSX模块
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/k8s/" class="md-nav__link">
+        K8S模块
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/mem/" class="md-nav__link">
+        内存性能模块
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python3_env/" class="md-nav__link">
+        Centos7安装Python3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python3_docker/" class="md-nav__link">
+        Python3 Dokcer镜像制作
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python_log/" class="md-nav__link">
+        Python3 日志控制
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/flask_init/" class="md-nav__link">
+        Flask
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_10" data-md-state="indeterminate" type="checkbox" id="__nav_5_10" checked>
+      
+      <label class="md-nav__link" for="__nav_5_10">
+        线程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="线程" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_10">
+          <span class="md-nav__icon md-icon"></span>
+          线程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/threading/thread/" class="md-nav__link">
+        通过继承实现多线程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/threading/thread_event/" class="md-nav__link">
+        threading.Event()
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/threading/join/" class="md-nav__link">
+        join的作用
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_11" data-md-state="indeterminate" type="checkbox" id="__nav_5_11" checked>
+      
+      <label class="md-nav__link" for="__nav_5_11">
+        shedule
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="shedule" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_11">
+          <span class="md-nav__icon md-icon"></span>
+          shedule
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/shedule/run_in_back/" class="md-nav__link">
+        后台执行
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_12" data-md-state="indeterminate" type="checkbox" id="__nav_5_12" checked>
+      
+      <label class="md-nav__link" for="__nav_5_12">
+        类
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="类" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_12">
+          <span class="md-nav__icon md-icon"></span>
+          类
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/basics/class/class/" class="md-nav__link">
+        类的继承
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/basics/class/class_var/" class="md-nav__link">
+        类变量与实例变量
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/basics/mypy/" class="md-nav__link">
+        mypy
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        Go
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Go" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Go
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go/go_one/" class="md-nav__link">
+        Go入门
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_2" checked>
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Web框架 Gin
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web框架 Gin" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Web框架 Gin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go/go_gin/" class="md-nav__link">
+        Gin入门
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go/gin_route/" class="md-nav__link">
+        Gin 路由拆分成单个文件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go/gin__app_route/" class="md-nav__link">
+        Gin 路由拆分成单独APP
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        KubeSphere
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="KubeSphere" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          KubeSphere
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../KubeSphere/KubeSphere/" class="md-nav__link">
+        KubeSphere安装
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Yum
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Yum" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Yum
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../yum/ius/" class="md-nav__link">
+        ius源
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Centos7
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Centos7" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Centos7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../centos7/ens33/" class="md-nav__link">
+        修改网卡
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      <label class="md-nav__link" for="__nav_10">
+        K8S
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="K8S" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          K8S
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kubernetes/kubernetes1.16/" class="md-nav__link">
+        K8S 1.16.9部署
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kubernetes/dudian/" class="md-nav__link">
+        污点
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kubernetes/diaodu/" class="md-nav__link">
+        亲和性
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" data-md-state="indeterminate" type="checkbox" id="__nav_11" checked>
+      
+      <label class="md-nav__link" for="__nav_11">
+        Docker
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Docker" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker_su/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/docker/pinpoint_compose.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="pinpoint">pinpoint</h1>
+<p>项目地址：https://github.com/pinpoint-apm/pinpoint-docker</p>
+<p>pinpoint docker-compose 部署文件</p>
+<p>https://github.com/pinpoint-apm/pinpoint-docker/blob/master/docker-compose.yml</p>
+<pre class="highlight"><code class="language-yaml">version: "3.6"
+
+services:
+  pinpoint-hbase:
+    build:
+      context: ./pinpoint-hbase/
+      dockerfile: Dockerfile
+      args:
+        - PINPOINT_VERSION=${PINPOINT_VERSION}
+
+    container_name: "${PINPOINT_HBASE_NAME}"
+    image: "pinpointdocker/pinpoint-hbase:${PINPOINT_VERSION}"
+    networks:
+      - pinpoint
+
+    volumes:
+      - /home/pinpoint/hbase
+      - /home/pinpoint/zookeeper
+    expose:
+      # HBase Master API port
+      - "60000"
+      # HBase Master Web UI
+      - "16010"
+      # Regionserver API port
+      - "60020"
+      # HBase Regionserver web UI
+      - "16030"
+    ports:
+      - "60000:60000"
+      - "16010:16010"
+      - "60020:60020"
+      - "16030:16030"
+    restart: always
+    depends_on:
+      - zoo1
+
+  pinpoint-mysql:
+    build:
+      context: ./pinpoint-mysql/
+      dockerfile: Dockerfile
+      args:
+        - PINPOINT_VERSION=${PINPOINT_VERSION}
+
+    container_name: pinpoint-mysql
+    restart: always
+    image: "pinpointdocker/pinpoint-mysql:${PINPOINT_VERSION}"
+    hostname: pinpoint-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - pinpoint
+
+  pinpoint-web:
+    build:
+      context: ./pinpoint-web/
+      dockerfile: Dockerfile
+      args:
+        - PINPOINT_VERSION=${PINPOINT_VERSION}
+
+    container_name: "${PINPOINT_WEB_NAME}"
+    image: "pinpointdocker/pinpoint-web:${PINPOINT_VERSION}"
+
+    depends_on:
+      - pinpoint-hbase
+      - pinpoint-mysql
+      - zoo1
+    restart: always
+    expose:
+      - "9997"
+    ports:
+      - "9997:9997"
+      - "${SERVER_PORT:-8080}:${SERVER_PORT:-8080}"
+    environment:
+      - SERVER_PORT=${SERVER_PORT}
+      - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES},batch
+      - PINPOINT_ZOOKEEPER_ADDRESS=${PINPOINT_ZOOKEEPER_ADDRESS}
+      - CLUSTER_ENABLE=${CLUSTER_ENABLE}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - CONFIG_SENDUSAGE=${CONFIG_SENDUSAGE}
+      - LOGGING_LEVEL_ROOT=${WEB_LOGGING_LEVEL_ROOT}
+      - CONFIG_SHOW_APPLICATIONSTAT=${CONFIG_SHOW_APPLICATIONSTAT}
+      - BATCH_ENABLE=${BATCH_ENABLE}
+      - BATCH_SERVER_IP=${BATCH_SERVER_IP}
+      - BATCH_FLINK_SERVER=${BATCH_FLINK_SERVER}
+      - JDBC_DRIVERCLASSNAME=${JDBC_DRIVERCLASSNAME}
+      - JDBC_URL=${JDBC_URL}
+      - JDBC_USERNAME=${JDBC_USERNAME}
+      - JDBC_PASSWORD=${JDBC_PASSWORD}
+      - ALARM_MAIL_SERVER_URL=${ALARM_MAIL_SERVER_URL}
+      - ALARM_MAIL_SERVER_PORT=${ALARM_MAIL_SERVER_PORT}
+      - ALARM_MAIL_SERVER_USERNAME=${ALARM_MAIL_SERVER_USERNAME}
+      - ALARM_MAIL_SERVER_PASSWORD=${ALARM_MAIL_SERVER_PASSWORD}
+      - ALARM_MAIL_SENDER_ADDRESS=${ALARM_MAIL_SENDER_ADDRESS}
+      - ALARM_MAIL_TRANSPORT_PROTOCOL=${ALARM_MAIL_TRANSPORT_PROTOCOL}
+      - ALARM_MAIL_SMTP_PORT=${ALARM_MAIL_SMTP_PORT}
+      - ALARM_MAIL_SMTP_AUTH=${ALARM_MAIL_SMTP_AUTH}
+      - ALARM_MAIL_SMTP_STARTTLS_ENABLE=${ALARM_MAIL_SMTP_STARTTLS_ENABLE}
+      - ALARM_MAIL_SMTP_STARTTLS_REQUIRED=${ALARM_MAIL_SMTP_STARTTLS_REQUIRED}
+      - ALARM_MAIL_DEBUG=${ALARM_MAIL_DEBUG}
+    links:
+      - "pinpoint-mysql:pinpoint-mysql"
+    networks:
+      - pinpoint
+
+  pinpoint-collector:
+    build:
+      context: ./pinpoint-collector/
+      dockerfile: Dockerfile
+      args:
+        - PINPOINT_VERSION=${PINPOINT_VERSION}
+
+    container_name: "${PINPOINT_COLLECTOR_NAME}"
+    image: "pinpointdocker/pinpoint-collector:${PINPOINT_VERSION}"
+
+    depends_on:
+      - pinpoint-hbase
+      - zoo1
+    restart: always
+    expose:
+      - "9991"
+      - "9992"
+      - "9993"
+      - "9994"
+      - "9995"
+      - "9996"
+    ports:
+      - "${COLLECTOR_RECEIVER_GRPC_AGENT_PORT:-9991}:9991/tcp"
+      - "${COLLECTOR_RECEIVER_GRPC_STAT_PORT:-9992}:9992/tcp"
+      - "${COLLECTOR_RECEIVER_GRPC_SPAN_PORT:-9993}:9993/tcp"
+      - "${COLLECTOR_RECEIVER_BASE_PORT:-9994}:9994"
+      - "${COLLECTOR_RECEIVER_STAT_UDP_PORT:-9995}:9995/tcp"
+      - "${COLLECTOR_RECEIVER_SPAN_UDP_PORT:-9996}:9996/tcp"
+      - "${COLLECTOR_RECEIVER_STAT_UDP_PORT:-9995}:9995/udp"
+      - "${COLLECTOR_RECEIVER_SPAN_UDP_PORT:-9996}:9996/udp"
+
+    networks:
+      - pinpoint
+    environment:
+      - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES}
+      - PINPOINT_ZOOKEEPER_ADDRESS=${PINPOINT_ZOOKEEPER_ADDRESS}
+      - CLUSTER_ENABLE=${CLUSTER_ENABLE}
+      - LOGGING_LEVEL_ROOT=${COLLECTOR_LOGGING_LEVEL_ROOT}
+      - FLINK_CLUSTER_ENABLE=${FLINK_CLUSTER_ENABLE}
+      - FLINK_CLUSTER_ZOOKEEPER_ADDRESS=${FLINK_CLUSTER_ZOOKEEPER_ADDRESS}
+
+  pinpoint-quickstart:
+    build:
+      context: ./pinpoint-quickstart/
+      dockerfile: Dockerfile
+
+    container_name: "pinpoint-quickstart"
+    image: "pinpointdocker/pinpoint-quickstart"
+    ports:
+      - "${APP_PORT:-8080}:8080"
+    volumes:
+      - data-volume:/pinpoint-agent
+    environment:
+      JAVA_OPTS: "-javaagent:/pinpoint-agent/pinpoint-bootstrap-${PINPOINT_VERSION}.jar -Dpinpoint.agentId=${AGENT_ID} -Dpinpoint.applicationName=${APP_NAME} -Dpinpoint.profiler.profiles.active=${SPRING_PROFILES}"
+    networks:
+      - pinpoint
+    depends_on:
+      - pinpoint-agent
+
+  pinpoint-agent:
+    build:
+      context: ./pinpoint-agent/
+      dockerfile: Dockerfile
+      args:
+        - PINPOINT_VERSION=${PINPOINT_VERSION}
+
+    container_name: "${PINPOINT_AGENT_NAME}"
+    image: "pinpointdocker/pinpoint-agent:${PINPOINT_VERSION}"
+
+    restart: unless-stopped
+
+    networks:
+      - pinpoint
+    volumes:
+      - data-volume:/pinpoint-agent
+    environment:
+      - SPRING_PROFILES=${SPRING_PROFILES}
+      - COLLECTOR_IP=${COLLECTOR_IP}
+      - PROFILER_TRANSPORT_AGENT_COLLECTOR_PORT=${PROFILER_TRANSPORT_AGENT_COLLECTOR_PORT}
+      - PROFILER_TRANSPORT_METADATA_COLLECTOR_PORT=${PROFILER_TRANSPORT_METADATA_COLLECTOR_PORT}
+      - PROFILER_TRANSPORT_STAT_COLLECTOR_PORT=${PROFILER_TRANSPORT_STAT_COLLECTOR_PORT}
+      - PROFILER_TRANSPORT_SPAN_COLLECTOR_PORT=${PROFILER_TRANSPORT_SPAN_COLLECTOR_PORT}
+      - PROFILER_SAMPLING_RATE=${PROFILER_SAMPLING_RATE}
+      - DEBUG_LEVEL=${AGENT_DEBUG_LEVEL}
+      - PROFILER_TRANSPORT_MODULE=${PROFILER_TRANSPORT_MODULE}
+    depends_on:
+      - pinpoint-collector
+
+  #zookeepers
+  zoo1:
+    image: zookeeper:3.4
+    restart: always
+    hostname: zoo1
+    expose:
+      - "2181"
+      - "2888"
+      - "3888"
+    ports:
+      - "2181"
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=0.0.0.0:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
+    networks:
+      - pinpoint
+
+  zoo2:
+    image: zookeeper:3.4
+    restart: always
+    hostname: zoo2
+    expose:
+      - "2181"
+      - "2888"
+      - "3888"
+    ports:
+      - "2181"
+    environment:
+      ZOO_MY_ID: 2
+      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=0.0.0.0:2888:3888 server.3=zoo3:2888:3888
+    networks:
+      - pinpoint
+
+  zoo3:
+    image: zookeeper:3.4
+    restart: always
+    hostname: zoo3
+    expose:
+      - "2181"
+      - "2888"
+      - "3888"
+    ports:
+      - "2181"
+    environment:
+      ZOO_MY_ID: 3
+      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=0.0.0.0:2888:3888
+    networks:
+      - pinpoint
+
+  ##flink
+  jobmanager:
+    build:
+      context: pinpoint-flink
+      dockerfile: Dockerfile
+      args:
+        - PINPOINT_VERSION=${PINPOINT_VERSION}
+
+    container_name: "${PINPOINT_FLINK_NAME}-jobmanager"
+    image: "pinpointdocker/pinpoint-flink:${PINPOINT_VERSION}"
+    expose:
+      - "6123"
+    ports:
+      - "${FLINK_WEB_PORT:-8081}:8081"
+    command: standalone-job -p 1 pinpoint-flink-job.jar -spring.profiles.active release
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+      - PINPOINT_ZOOKEEPER_ADDRESS=${PINPOINT_ZOOKEEPER_ADDRESS}
+    networks:
+      - pinpoint
+    depends_on:
+      - zoo1
+
+  taskmanager:
+    build:
+      context: pinpoint-flink
+      dockerfile: Dockerfile
+      args:
+        - PINPOINT_VERSION=${PINPOINT_VERSION}
+
+    container_name: "${PINPOINT_FLINK_NAME}-taskmanager"
+    image: "pinpointdocker/pinpoint-flink:${PINPOINT_VERSION}"
+    expose:
+      - "6121"
+      - "6122"
+      - "19994"
+    ports:
+      - "6121:6121"
+      - "6122:6122"
+      - "19994:19994"
+    depends_on:
+      - zoo1
+      - jobmanager
+    command: taskmanager
+    links:
+      - "jobmanager:jobmanager"
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+    networks:
+      - pinpoint
+
+volumes:
+  data-volume:
+  mysql_data:
+
+networks:
+  pinpoint:
+    driver: bridge</code></pre>
+<p>docker-compose会默认读取同级目录的.env</p>
+<pre class="highlight"><code class="language-bash">PINPOINT_VERSION=2.3.2
+SPRING_PROFILES=release
+#zookeeper information required
+PINPOINT_ZOOKEEPER_ADDRESS=zoo1
+
+### Pinpoint-Hbase
+
+PINPOINT_HBASE_NAME=pinpoint-hbase
+#config for hbase in external docker
+
+### Pinpoint-mysql
+MYSQL_ROOT_PASSWORD=root123
+MYSQL_USER=admin
+MYSQL_PASSWORD=admin
+MYSQL_DATABASE=pinpoint
+
+### Pinpoint-Web
+
+PINPOINT_WEB_NAME=pinpoint-web
+
+SERVER_PORT=8079
+
+WEB_LOGGING_LEVEL_ROOT=INFO
+
+CLUSTER_ENABLE=true
+
+ADMIN_PASSWORD=admin
+
+#analytics
+CONFIG_SENDUSAGE=true
+
+#flink server information required if used
+BATCH_ENABLE=false
+BATCH_SERVER_IP=127.0.0.1
+BATCH_FLINK_SERVER=pinpoint-flink-jobmanager
+
+CONFIG_SHOW_APPLICATIONSTAT=true
+
+#mysql information required if used
+JDBC_DRIVERCLASSNAME=com.mysql.jdbc.Driver
+JDBC_URL=jdbc:mysql://pinpoint-mysql:3306/pinpoint?characterEncoding=UTF-8
+JDBC_USERNAME=admin
+JDBC_PASSWORD=admin
+
+#mail server information required if used
+ALARM_MAIL_SERVER_URL=smtp.gmail.com
+ALARM_MAIL_SERVER_PORT=587
+ALARM_MAIL_SERVER_USERNAME=username
+ALARM_MAIL_SERVER_PASSWORD=password
+ALARM_MAIL_SENDER_ADDRESS=pinpoint_operator@pinpoint.com
+ALARM_MAIL_TRANSPORT_PROTOCOL=smtp
+ALARM_MAIL_SMTP_PORT=25
+ALARM_MAIL_SMTP_AUTH=false
+ALARM_MAIL_SMTP_STARTTLS_ENABLE=false
+ALARM_MAIL_SMTP_STARTTLS_REQUIRED=false
+ALARM_MAIL_DEBUG=false
+
+
+### Pinpoint-Collector
+
+PINPOINT_COLLECTOR_NAME=pinpoint-collector
+
+CLUSTER_ENABLE=true
+
+COLLECTOR_LOGGING_LEVEL_ROOT=INFO
+
+#grpc
+COLLECTOR_RECEIVER_GRPC_AGENT_PORT=9991
+COLLECTOR_RECEIVER_GRPC_STAT_PORT=9992
+COLLECTOR_RECEIVER_GRPC_SPAN_PORT=9993
+
+#thrift
+COLLECTOR_RECEIVER_BASE_PORT=9994
+COLLECTOR_RECEIVER_STAT_UDP_PORT=9995
+COLLECTOR_RECEIVER_SPAN_UDP_PORT=9996
+
+FLINK_CLUSTER_ENABLE=true
+FLINK_CLUSTER_ZOOKEEPER_ADDRESS=zoo1
+
+
+### Pinpoint-Agent
+
+PINPOINT_AGENT_NAME=pinpoint-agent
+
+#network module(GRPC,THRIFT)
+PROFILER_TRANSPORT_MODULE=GRPC
+
+#collector information required
+COLLECTOR_IP=pinpoint-collector
+PROFILER_TRANSPORT_AGENT_COLLECTOR_PORT=9991
+PROFILER_TRANSPORT_METADATA_COLLECTOR_PORT=9991
+PROFILER_TRANSPORT_STAT_COLLECTOR_PORT=9992
+PROFILER_TRANSPORT_SPAN_COLLECTOR_PORT=9993
+COLLECTOR_TCP_PORT=9994
+COLLECTOR_STAT_PORT=9995
+COLLECTOR_SPAN_PORT=9996
+
+# Set sampling rate. If you set it to N, 1 out of N transaction will be sampled.
+PROFILER_SAMPLING_RATE=1
+
+AGENT_ID=app-in-docker
+APP_NAME=quickapp
+
+AGENT_DEBUG_LEVEL=INFO
+
+
+### Pinpoint-flink
+
+PINPOINT_FLINK_NAME=pinpoint-flink
+FLINK_WEB_PORT=8081
+
+
+### Pinpoint-quickstart
+
+APP_PORT=8000</code></pre>
+<h3 id="_1">工程、服务、容器</h3>
+<ul>
+<li><strong>Docker Compose 将所管理的容器分为三层，分别是工程（project）、服务（service）、容器（container）</strong></li>
+<li><strong>Docker Compose 运行目录下的所有文件（docker-compose.yml）组成一个工程,一个工程包含多个服务，每个服务中定义了容器运行的镜像、参数、依赖，一个服务可包括多个容器实例</strong></li>
+</ul>
+<h2 id="docker-compose">Docker Compose 常用命令与配置</h2>
+<h3 id="_2">常见命令</h3>
+<ul>
+<li><strong>ps</strong>：列出所有运行容器</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose ps</code></pre>
+<ul>
+<li><strong>logs</strong>：查看服务日志输出</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose logs</code></pre>
+<ul>
+<li><strong>port</strong>：打印绑定的公共端口，下面命令可以输出 eureka 服务 8761 端口所绑定的公共端口</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose port eureka 8761</code></pre>
+<ul>
+<li><strong>build</strong>：构建或者重新构建服务</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose build</code></pre>
+<ul>
+<li><strong>start</strong>：启动指定服务已存在的容器</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose start eureka</code></pre>
+<ul>
+<li><strong>stop</strong>：停止已运行的服务的容器</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose stop eureka</code></pre>
+<ul>
+<li><strong>rm</strong>：删除指定服务的容器</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose rm eureka</code></pre>
+<ul>
+<li><strong>up</strong>：构建、启动容器</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose up</code></pre>
+<ul>
+<li><strong>kill</strong>：通过发送 SIGKILL 信号来停止指定服务的容器</li>
+</ul>
+<pre class="highlight"><code class="language-bash">docker-compose kill eureka</code></pre>
+<ul>
+<li><strong>pull</strong>：下载服务镜像</li>
+<li><strong>scale</strong>：设置指定服务运气容器的个数，以 service=num 形式指定</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose scale user=3 movie=3</code></pre>
+<ul>
+<li><strong>run</strong>：在一个服务上执行一个命令</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">docker-compose run web bash</code></pre>
+<h3 id="docker-composeyml">docker-compose.yml 属性</h3>
+<ul>
+<li><strong>version</strong>：指定 docker-compose.yml 文件的写法格式</li>
+<li><strong>services</strong>：多个容器集合</li>
+<li><strong>build</strong>：配置构建时，Compose 会利用它自动构建镜像，该值可以是一个路径，也可以是一个对象，用于指定 Dockerfile 参数</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">build: ./dir
+---------------
+build:
+    context: ./dir
+    dockerfile: Dockerfile
+    args:
+        buildno: 1</code></pre>
+<ul>
+<li><strong>command</strong>：覆盖容器启动后默认执行的命令</li>
+</ul>
+<pre class="highlight"><code class="language-bash">command: bundle exec thin -p 3000
+----------------------------------
+command: [bundle,exec,thin,-p,3000]</code></pre>
+<ul>
+<li><strong>dns</strong>：配置 dns 服务器，可以是一个值或列表</li>
+</ul>
+<pre class="highlight"><code class="language-css">dns: 8.8.8.8
+------------
+dns:
+    - 8.8.8.8
+    - 9.9.9.9</code></pre>
+<ul>
+<li><strong>dns_search</strong>：配置 DNS 搜索域，可以是一个值或列表</li>
+</ul>
+<pre class="highlight"><code class="language-css">dns_search: example.com
+------------------------
+dns_search:
+    - dc1.example.com
+    - dc2.example.com</code></pre>
+<ul>
+<li><strong>environment</strong>：环境变量配置，可以用数组或字典两种方式</li>
+</ul>
+<pre class="highlight"><code class="language-bash">environment:
+    RACK_ENV: development
+    SHOW: 'ture'
+-------------------------
+environment:
+    - RACK_ENV=development
+    - SHOW=ture</code></pre>
+<ul>
+<li><strong>env_file</strong>：从文件中获取环境变量，可以指定一个文件路径或路径列表，其优先级低于 environment 指定的环境变量</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">env_file: .env
+---------------
+env_file:
+    - ./common.env</code></pre>
+<ul>
+<li><strong>expose</strong>：暴露端口，只将端口暴露给连接的服务，而不暴露给主机</li>
+</ul>
+<pre class="highlight"><code class="language-bash">expose:
+    - "3000"
+    - "8000"</code></pre>
+<ul>
+<li><strong>image</strong>：指定服务所使用的镜像</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">image: java</code></pre>
+<ul>
+<li><strong>network_mode</strong>：设置网络模式</li>
+</ul>
+<pre class="highlight"><code class="language-bash">network_mode: "bridge"
+network_mode: "host"
+network_mode: "none"
+network_mode: "service:[service name]"
+network_mode: "container:[container name/id]"</code></pre>
+<ul>
+<li><strong>ports</strong>：对外暴露的端口定义，和 expose 对应</li>
+</ul>
+<pre class="highlight"><code class="language-objectivec">ports:   # 暴露端口信息  - "宿主机端口:容器暴露端口"
+- "8763:8763"
+- "8763:8763"</code></pre>
+<ul>
+<li><strong>links</strong>：将指定容器连接到当前连接，可以设置别名，避免ip方式导致的容器重启动态改变的无法连接情况</li>
+</ul>
+<pre class="highlight"><code class="language-bash">links:    # 指定服务名称:别名 
+    - docker-compose-eureka-server:compose-eureka</code></pre>
+<ul>
+<li><strong>volumes</strong>：卷挂载路径</li>
+</ul>
+<pre class="highlight"><code class="language-csharp">volumes:
+  - /lib
+  - /var</code></pre>
+<ul>
+<li><strong>logs</strong>：日志输出信息</li>
+</ul>
+<pre class="highlight"><code class="language-undefined">--no-color          单色输出，不显示其他颜.
+-f, --follow        跟踪日志输出，就是可以实时查看日志
+-t, --timestamps    显示时间戳
+--tail              从日志的结尾显示，--tail=200</code></pre>
+<h2 id="docker-compose_1">Docker Compose 其它</h2>
+<h3 id="_3">更新容器</h3>
+<ul>
+<li>当服务的配置发生更改时，可使用 docker-compose up 命令更新配置</li>
+<li>此时，Compose 会删除旧容器并创建新容器，新容器会以不同的 IP 地址加入网络，名称保持不变，任何指向旧容起的连接都会被关闭，重新找到新容器并连接上去</li>
+</ul>
+<h3 id="links">links</h3>
+<ul>
+<li>服务之间可以使用服务名称相互访问，links 允许定义一个别名，从而使用该别名访问其它服务</li>
+</ul>
+<pre class="highlight"><code class="language-bash">version: '2'
+services:
+    web:
+        build: .
+        links:
+            - "db:database"
+    db:
+        image: postgres</code></pre>
+<ul>
+<li>这样 Web 服务就可以使用 db 或 database 作为 hostname 访问 db 服务了</li>
+</ul>
+<h3 id="restart">restart</h3>
+<p>重启策略</p>
+<ul>
+<li>always – 不管退出状态码是什么始终重启容器。当指定always时，docker daemon将无限次数地重启容器。容器也会在daemon启动时尝试重启，不管容器当时的状态如何。</li>
+<li>no – 容器退出时不要自动重启。这个是默认值。</li>
+<li>on-failure[:max-retries] – 只在容器以非0状态码退出时重启。可选的，可以退出docker daemon尝试重启容器的次数。</li>
+<li>unless-stopped - 不管退出状态码是什么始终重启容器，不过当daemon启动时，如果容器之前已经为停止状态，不要尝试启动它。</li>
+</ul>
+<h3 id="depends_on">depends_on</h3>
+<p>在使用 Compose 时，最大的好处就是少打启动命令，但是一般项目容器启动的顺序是有要求的，如果直接从上到下启动容器，必然会因为容器依赖问题而启动失败。
+ 例如在没启动数据库容器的时候启动了应用容器，这时候应用容器会因为找不到数据库而退出，为了避免这种情况我们需要加入一个标签，就是 depends_on，这个标签解决了容器的依赖、启动先后的问题。
+ 例如下面容器会先启动 redis 和 db 两个服务，最后才启动 web 服务：</p>
+<pre class="highlight"><code class="language-bash">version: '2'
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+      - redis
+  redis:
+    image: redis
+  db:
+    image: postgres</code></pre>
+<p>注意的是，默认情况下使用 docker-compose up web 这样的方式启动 web 服务时，也会启动 redis 和 db 两个服务，因为在配置文件中定义了依赖关系。</p>
+<p>https://juejin.cn/post/6844903976534540296</p>
+<p>默认情况下，Compose会为我们的应用创建一个网络，服务的每个容器都会加入该网络中。这样，容器就可被该网络中的其他容器访问，不仅如此，该容器还能以服务名称作为hostname被其他容器访问。</p>
+<p>默认情况下，应用程序的网络名称基于Compose的工程名称，而项目名称基于docker-compose.yml所在目录的名称。如需修改工程名称，可使用--project-name标识或COMPOSE_PORJECT_NAME环境变量。</p>
+<p>举个例子，假如一个应用程序在名为myapp的目录中，并且docker-compose.yml如下所示：</p>
+<pre class="highlight"><code>version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres
+复制代码</code></pre>
+<p>当我们运行docker-compose up时，将会执行以下几步：</p>
+<ul>
+<li>创建一个名为myapp_default的网络；</li>
+<li>使用web服务的配置创建容器，它以“web”这个名称加入网络myapp_default；</li>
+<li>使用db服务的配置创建容器，它以“db”这个名称加入网络myapp_default。</li>
+</ul>
+<p>容器间可使用服务名称（web或db）作为hostname相互访问。例如，web这个服务可使用<code>postgres://db:5432</code> 访问db容器。</p>
+<h3 id="_4">更新容器</h3>
+<p>当服务的配置发生更改时，可使用docker-compose up命令更新配置。</p>
+<p>此时，Compose会删除旧容器并创建新容器。新容器会以不同的IP地址加入网络，名称保持不变。任何指向旧容器的连接都会被关闭，容器会重新找到新容器并连接上去。</p>
+<h3 id="links_1">links</h3>
+<p>前文讲过，默认情况下，服务之间可使用服务名称相互访问。links允许我们定义一个别名，从而使用该别名访问其他服务。举个例子：</p>
+<pre class="highlight"><code>version: '2'
+services:
+  web:
+    build: .
+    links:
+      - "db:database"
+  db:
+    image: postgres
+复制代码</code></pre>
+<p>这样web服务就可使用db或database作为hostname访问db服务了。</p>
+<h3 id="_5">指定自定义网络</h3>
+<p>一些场景下，默认的网络配置满足不了我们的需求，此时我们可使用networks命令自定义网络。networks命令允许我们创建更加复杂的网络拓扑并指定自定义网络驱动和选项。不仅如此，我们还可使用networks将服务连接到不是由Compose管理的、外部创建的网络。</p>
+<p>如下，我们在其中定义了两个自定义网络。</p>
+<pre class="highlight"><code>version: '2'
+
+services:
+  proxy:
+    build: ./proxy
+    networks:
+      - front
+  app:
+    build: ./app
+    networks:
+      - front
+      - back
+  db:
+    image: postgres
+    networks:
+      - back
+
+networks:
+  front:
+    # Use a custom driver
+    driver: custom-driver-1
+  back:
+    # Use a custom driver which takes special options
+    driver: custom-driver-2
+    driver_opts:
+      foo: "1"
+      bar: "2"
+复制代码</code></pre>
+<p>其中，proxy服务与db服务隔离，两者分别使用自己的网络；app服务可与两者通信。</p>
+<p>由本例不难发现，使用networks命令，即可方便实现服务间的网络隔离与连接。</p>
+<h3 id="_6">配置默认网络</h3>
+<p>除自定义网络外，我们也可为默认网络自定义配置。</p>
+<pre class="highlight"><code>version: '2'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres
+
+networks:
+  default:
+    # Use a custom driver
+    driver: custom-driver-1
+复制代码</code></pre>
+<p>这样，就可为该应用指定自定义的网络驱动。</p>
+<h3 id="_7">使用已存在的网络</h3>
+<p>一些场景下，我们并不需要创建新的网络，而只需加入已存在的网络，此时可使用external选项。示例：</p>
+<pre class="highlight"><code>networks:
+  default:
+    external:
+      name: my-pre-existing-network复制代码</code></pre>
+<h3 id="docker-compose_2">Docker Compose 链接外部容器的几种方式</h3>
+<p>在Docker中，容器之间的链接是一种很常见的操作：它提供了访问其中的某个容器的网络服务而不需要将所需的端口暴露给Docker Host主机的功能。Docker Compose中对该特性的支持同样是很方便的。然而，如果需要链接的容器没有定义在同一个<code>docker-compose.yml</code>中的时候，这个时候就稍微麻烦复杂了点。</p>
+<p>在不使用Docker Compose的时候，将两个容器链接起来使用<code>—link</code>参数，相对来说比较简单，以<code>nginx</code>镜像为例子：</p>
+<pre class="highlight"><code>docker run --rm --name test1 -d nginx  #开启一个实例test1
+docker run --rm --name test2 --link test1 -d nginx #开启一个实例test2并与test1建立链接
+复制代码</code></pre>
+<p>这样，<code>test2</code>与<code>test1</code>便建立了链接，就可以在<code>test2</code>中使用访问<code>test1</code>中的服务了。</p>
+<p>如果使用Docker Compose，那么这个事情就更简单了，还是以上面的<code>nginx</code>镜像为例子，编辑<code>docker-compose.yml</code>文件为：</p>
+<pre class="highlight"><code>version: "3"
+services:
+  test2:
+    image: nginx
+    depends_on:
+      - test1
+    links:
+      - test1
+  test1:
+    image: nginx
+复制代码</code></pre>
+<p>最终效果与使用普通的Docker命令<code>docker run xxxx</code>建立的链接并无区别。这只是一种最为理想的情况。</p>
+<ol>
+<li>如果容器没有定义在同一个<code>docker-compose.yml</code>文件中，应该如何链接它们呢？</li>
+<li>又如果定义在<code>docker-compose.yml</code>文件中的容器需要与<code>docker run xxx</code>启动的容器链接，需要如何处理？</li>
+</ol>
+<p>针对这两种典型的情况，下面给出我个人测试可行的办法：</p>
+<h3 id="_8">方式一：让需要链接的容器同属一个外部网络</h3>
+<p>我们还是使用nginx镜像来模拟这样的一个情景：假设我们需要将两个使用Docker Compose管理的nignx容器（<code>test1</code>和<code>test2</code>）链接起来，使得<code>test2</code>能够访问<code>test1</code>中提供的服务，这里我们以能ping通为准。</p>
+<p>首先，我们定义容器<code>test1</code>的<code>docker-compose.yml</code>文件内容为：</p>
+<pre class="highlight"><code>version: "3"
+services:
+  test2:
+    image: nginx
+    container_name: test1
+    networks:
+      - default
+      - app_net
+networks:
+  app_net:
+    external: true
+复制代码</code></pre>
+<p>容器<code>test2</code>内容与<code>test1</code>基本一样，只是多了一个<code>external_links</code>,需要特别说明的是：<strong>最近发布的Docker版本已经不需要使用external_links来链接容器，容器的DNS服务可以正确的作出判断</strong>，因此如果你你需要兼容较老版本的Docker的话，那么容器<code>test2</code>的<code>docker-compose.yml</code>文件内容为：</p>
+<pre class="highlight"><code>version: "3"
+services:
+  test2:
+    image: nginx
+    networks:
+      - default
+      - app_net
+    external_links:
+      - test1
+    container_name: test2
+networks:
+  app_net:
+    external: true复制代码</code></pre>
+<p>否则的话，<code>test2</code>的<code>docker-compose.yml</code>和<code>test1</code>的定义完全一致，不需要额外多指定一个<code>external_links</code>。相关的问题请参见stackoverflow上的相关问题：<a href="https://link.juejin.cn?target=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F39067295%2Fdocker-compose-external-container">docker-compose + external container</a></p>
+<p>正如你看到的那样，这里两个容器的定义里都使用了同一个外部网络<code>app_net</code>,因此，我们需要在启动这两个容器之前通过以下命令再创建外部网络：</p>
+<pre class="highlight"><code>docker network create app_net复制代码</code></pre>
+<p>之后，通过<code>docker-compose up -d</code>命令启动这两个容器，然后执行<code>docker exec -it test2 ping test1</code>,你将会看到如下的输出：</p>
+<pre class="highlight"><code>docker exec -it test2 ping test1
+PING test1 (172.18.0.2): 56 data bytes
+64 bytes from 172.18.0.2: icmp_seq=0 ttl=64 time=0.091 ms
+64 bytes from 172.18.0.2: icmp_seq=1 ttl=64 time=0.146 ms
+64 bytes from 172.18.0.2: icmp_seq=2 ttl=64 time=0.150 ms
+64 bytes from 172.18.0.2: icmp_seq=3 ttl=64 time=0.145 ms
+64 bytes from 172.18.0.2: icmp_seq=4 ttl=64 time=0.126 ms
+64 bytes from 172.18.0.2: icmp_seq=5 ttl=64 time=0.147 ms
+复制代码</code></pre>
+<p>证明这两个容器是成功链接了，反过来在<code>test1</code>中ping<code>test2</code>也是能够正常ping通的。</p>
+<p>如果我们通过<code>docker run --rm --name test3 -d nginx</code>这种方式来先启动了一个容器(<code>test3</code>)并且没有指定它所属的外部网络，而需要将其与<code>test1</code>或者<code>test2</code>链接的话，这个时候手动链接外部网络即可：</p>
+<pre class="highlight"><code>docker network connect app_net test3复制代码</code></pre>
+<p>这样，三个容器都可以相互访问了。</p>
+<h3 id="_9">方式二：更改需要链接的容器的网络模式</h3>
+<p>通过更改你想要相互链接的容器的网络模式为<code>bridge</code>,并指定需要链接的外部容器（<code>external_links</code>)即可。与同属外部网络的容器可以相互访问的链接方式一不同，这种方式的访问是单向的。</p>
+<p>还是以nginx容器镜像为例子，如果容器实例<code>nginx1</code>需要访问容器实例<code>nginx2</code>，那么<code>nginx2</code>的<code>doker-compose.yml</code>定义为：</p>
+<pre class="highlight"><code>version: "3"
+services:
+  nginx2:
+    image: nginx
+    container_name: nginx2
+    network_mode: bridge
+复制代码</code></pre>
+<p>与其对应的，<code>nginx1</code>的<code>docker-compose.yml</code>定义为：</p>
+<pre class="highlight"><code>version: "3"
+services:
+  nginx1:
+    image: nginx
+    external_links:
+      - nginx2
+    container_name: nginx1
+    network_mode: bridge
+复制代码</code></pre>
+<blockquote>
+<p>需要特别说明的是，这里的<code>external_links</code>是不能省略的，而且<code>nginx1</code>的启动必须要在<code>nginx2</code>之后，否则可能会报找不到容器<code>nginx2</code>的错误。</p>
+</blockquote>
+<p>接着我们使用ping来测试下连通性：</p>
+<pre class="highlight"><code>$ docker exec -it nginx1 ping nginx2  # nginx1 to nginx2
+PING nginx2 (172.17.0.4): 56 data bytes
+64 bytes from 172.17.0.4: icmp_seq=0 ttl=64 time=0.141 ms
+64 bytes from 172.17.0.4: icmp_seq=1 ttl=64 time=0.139 ms
+64 bytes from 172.17.0.4: icmp_seq=2 ttl=64 time=0.145 ms
+
+$ docker exec -it nginx2 ping nginx1 #nginx2 to nginx1
+ping: unknown host复制代码</code></pre>
+<p>以上也能充分证明这种方式是属于单向联通的。</p>
+<p>在实际应用中根据自己的需要灵活的选择这两种链接方式，如果想偷懒的话，大可选择第二种。不过我更推荐第一种，不难看出无论是联通性还是灵活性，较为更改网络模式的第二种都更为友好。</p>
+<p>附docker-compose.yml文件详解</p>
+<pre class="highlight"><code>Compose和Docker兼容性：
+    Compose 文件格式有3个版本,分别为1, 2.x 和 3.x
+    目前主流的为 3.x 其支持 docker 1.13.0 及其以上的版本
+
+常用参数：
+    version           # 指定 compose 文件的版本
+    services          # 定义所有的 service 信息, services 下面的第一级别的 key 既是一个 service 的名称
+
+        build                 # 指定包含构建上下文的路径, 或作为一个对象，该对象具有 context 和指定的 dockerfile 文件以及 args 参数值
+            context               # context: 指定 Dockerfile 文件所在的路径
+            dockerfile            # dockerfile: 指定 context 指定的目录下面的 Dockerfile 的名称(默认为 Dockerfile)
+            args                  # args: Dockerfile 在 build 过程中需要的参数 (等同于 docker container build --build-arg 的作用)
+            cache_from            # v3.2中新增的参数, 指定缓存的镜像列表 (等同于 docker container build --cache_from 的作用)
+            labels                # v3.3中新增的参数, 设置镜像的元数据 (等同于 docker container build --labels 的作用)
+            shm_size              # v3.5中新增的参数, 设置容器 /dev/shm 分区的大小 (等同于 docker container build --shm-size 的作用)
+
+        command               # 覆盖容器启动后默认执行的命令, 支持 shell 格式和 [] 格式
+
+        configs               # 不知道怎么用
+
+        cgroup_parent         # 不知道怎么用
+
+        container_name        # 指定容器的名称 (等同于 docker run --name 的作用)
+
+        credential_spec       # 不知道怎么用
+
+        deploy                # v3 版本以上, 指定与部署和运行服务相关的配置, deploy 部分是 docker stack 使用的, docker stack 依赖 docker swarm
+            endpoint_mode         # v3.3 版本中新增的功能, 指定服务暴露的方式
+                vip                   # Docker 为该服务分配了一个虚拟 IP(VIP), 作为客户端的访问服务的地址
+                dnsrr                 # DNS轮询, Docker 为该服务设置 DNS 条目, 使得服务名称的 DNS 查询返回一个 IP 地址列表, 客户端直接访问其中的一个地址
+            labels                # 指定服务的标签，这些标签仅在服务上设置
+            mode                  # 指定 deploy 的模式
+                global                # 每个集群节点都只有一个容器
+                replicated            # 用户可以指定集群中容器的数量(默认)
+            placement             # 不知道怎么用
+            replicas              # deploy 的 mode 为 replicated 时, 指定容器副本的数量
+            resources             # 资源限制
+                limits                # 设置容器的资源限制
+                    cpus: "0.5"           # 设置该容器最多只能使用 50% 的 CPU 
+                    memory: 50M           # 设置该容器最多只能使用 50M 的内存空间 
+                reservations          # 设置为容器预留的系统资源(随时可用)
+                    cpus: "0.2"           # 为该容器保留 20% 的 CPU
+                    memory: 20M           # 为该容器保留 20M 的内存空间
+            restart_policy        # 定义容器重启策略, 用于代替 restart 参数
+                condition             # 定义容器重启策略(接受三个参数)
+                    none                  # 不尝试重启
+                    on-failure            # 只有当容器内部应用程序出现问题才会重启
+                    any                   # 无论如何都会尝试重启(默认)
+                delay                 # 尝试重启的间隔时间(默认为 0s)
+                max_attempts          # 尝试重启次数(默认一直尝试重启)
+                window                # 检查重启是否成功之前的等待时间(即如果容器启动了, 隔多少秒之后去检测容器是否正常, 默认 0s)
+            update_config         # 用于配置滚动更新配置
+                parallelism           # 一次性更新的容器数量
+                delay                 # 更新一组容器之间的间隔时间
+                failure_action        # 定义更新失败的策略
+                    continue              # 继续更新
+                    rollback              # 回滚更新
+                    pause                 # 暂停更新(默认)
+                monitor               # 每次更新后的持续时间以监视更新是否失败(单位: ns|us|ms|s|m|h) (默认为0)
+                max_failure_ratio     # 回滚期间容忍的失败率(默认值为0)
+                order                 # v3.4 版本中新增的参数, 回滚期间的操作顺序
+                    stop-first            #旧任务在启动新任务之前停止(默认)
+                    start-first           #首先启动新任务, 并且正在运行的任务暂时重叠
+            rollback_config       # v3.7 版本中新增的参数, 用于定义在 update_config 更新失败的回滚策略
+                parallelism           # 一次回滚的容器数, 如果设置为0, 则所有容器同时回滚
+                delay                 # 每个组回滚之间的时间间隔(默认为0)
+                failure_action        # 定义回滚失败的策略
+                    continue              # 继续回滚
+                    pause                 # 暂停回滚
+                monitor               # 每次回滚任务后的持续时间以监视失败(单位: ns|us|ms|s|m|h) (默认为0)
+                max_failure_ratio     # 回滚期间容忍的失败率(默认值0)
+                order                 # 回滚期间的操作顺序
+                    stop-first            # 旧任务在启动新任务之前停止(默认)
+                    start-first           # 首先启动新任务, 并且正在运行的任务暂时重叠
+
+            注意：
+                支持 docker-compose up 和 docker-compose run 但不支持 docker stack deploy 的子选项
+                security_opt  container_name  devices  tmpfs  stop_signal  links    cgroup_parent
+                network_mode  external_links  restart  build  userns_mode  sysctls
+
+        devices               # 指定设备映射列表 (等同于 docker run --device 的作用)
+
+        depends_on            # 定义容器启动顺序 (此选项解决了容器之间的依赖关系， 此选项在 v3 版本中 使用 swarm 部署时将忽略该选项)
+            示例：
+                docker-compose up 以依赖顺序启动服务，下面例子中 redis 和 db 服务在 web 启动前启动
+                默认情况下使用 docker-compose up web 这样的方式启动 web 服务时，也会启动 redis 和 db 两个服务，因为在配置文件中定义了依赖关系
+                version: '3'
+                services:
+                    web:
+                        build: .
+                        depends_on:
+                            - db      
+                            - redis  
+                    redis:
+                        image: redis
+                    db:
+                        image: postgres                             
+
+        dns                   # 设置 DNS 地址(等同于 docker run --dns 的作用)
+
+        dns_search            # 设置 DNS 搜索域(等同于 docker run --dns-search 的作用)
+
+        tmpfs                 # v2 版本以上, 挂载目录到容器中, 作为容器的临时文件系统(等同于 docker run --tmpfs 的作用, 在使用 swarm 部署时将忽略该选项)
+
+        entrypoint            # 覆盖容器的默认 entrypoint 指令 (等同于 docker run --entrypoint 的作用)
+
+        env_file              # 从指定文件中读取变量设置为容器中的环境变量, 可以是单个值或者一个文件列表, 如果多个文件中的变量重名则后面的变量覆盖前面的变量, environment 的值覆盖 env_file 的值
+            文件格式：
+                RACK_ENV=development 
+
+        environment           # 设置环境变量， environment 的值可以覆盖 env_file 的值 (等同于 docker run --env 的作用)
+
+        expose                # 暴露端口, 但是不能和宿主机建立映射关系, 类似于 Dockerfile 的 EXPOSE 指令
+
+        external_links        # 连接不在 docker-compose.yml 中定义的容器或者不在 compose 管理的容器(docker run 启动的容器, 在 v3 版本中使用 swarm 部署时将忽略该选项)
+
+        extra_hosts           # 添加 host 记录到容器中的 /etc/hosts 中 (等同于 docker run --add-host 的作用)
+
+        healthcheck           # v2.1 以上版本, 定义容器健康状态检查, 类似于 Dockerfile 的 HEALTHCHECK 指令
+            test                  # 检查容器检查状态的命令, 该选项必须是一个字符串或者列表, 第一项必须是 NONE, CMD 或 CMD-SHELL, 如果其是一个字符串则相当于 CMD-SHELL 加该字符串
+                NONE                  # 禁用容器的健康状态检测
+                CMD                   # test: ["CMD", "curl", "-f", "http://localhost"]
+                CMD-SHELL             # test: ["CMD-SHELL", "curl -f http://localhost || exit 1"] 或者　test: curl -f https://localhost || exit 1
+            interval: 1m30s       # 每次检查之间的间隔时间
+            timeout: 10s          # 运行命令的超时时间
+            retries: 3            # 重试次数
+            start_period: 40s     # v3.4 以上新增的选项, 定义容器启动时间间隔
+            disable: true         # true 或 false, 表示是否禁用健康状态检测和　test: NONE 相同
+
+        image                 # 指定 docker 镜像, 可以是远程仓库镜像、本地镜像
+
+        init                  # v3.7 中新增的参数, true 或 false 表示是否在容器中运行一个 init, 它接收信号并传递给进程
+
+        isolation             # 隔离容器技术, 在 Linux 中仅支持 default 值
+
+        labels                # 使用 Docker 标签将元数据添加到容器, 与 Dockerfile 中的 LABELS 类似
+
+        links                 # 链接到其它服务中的容器, 该选项是 docker 历史遗留的选项, 目前已被用户自定义网络名称空间取代, 最终有可能被废弃 (在使用 swarm 部署时将忽略该选项)
+
+        logging               # 设置容器日志服务
+            driver                # 指定日志记录驱动程序, 默认 json-file (等同于 docker run --log-driver 的作用)
+            options               # 指定日志的相关参数 (等同于 docker run --log-opt 的作用)
+                max-size              # 设置单个日志文件的大小, 当到达这个值后会进行日志滚动操作
+                max-file              # 日志文件保留的数量
+
+        network_mode          # 指定网络模式 (等同于 docker run --net 的作用, 在使用 swarm 部署时将忽略该选项)         
+
+        networks              # 将容器加入指定网络 (等同于 docker network connect 的作用), networks 可以位于 compose 文件顶级键和 services 键的二级键
+            aliases               # 同一网络上的容器可以使用服务名称或别名连接到其中一个服务的容器
+            ipv4_address      # IP V4 格式
+            ipv6_address      # IP V6 格式
+
+            示例:
+                version: '3.7'
+                services: 
+                    test: 
+                        image: nginx:1.14-alpine
+                        container_name: mynginx
+                        command: ifconfig
+                        networks: 
+                            app_net:                                # 调用下面 networks 定义的 app_net 网络
+                            ipv4_address: 172.16.238.10
+                networks:
+                    app_net:
+                        driver: bridge
+                        ipam:
+                            driver: default
+                            config:
+                                - subnet: 172.16.238.0/24
+
+        pid: 'host'           # 共享宿主机的 进程空间(PID)
+
+        ports                 # 建立宿主机和容器之间的端口映射关系, ports 支持两种语法格式
+            SHORT 语法格式示例:
+                - "3000"                            # 暴露容器的 3000 端口, 宿主机的端口由 docker 随机映射一个没有被占用的端口
+                - "3000-3005"                       # 暴露容器的 3000 到 3005 端口, 宿主机的端口由 docker 随机映射没有被占用的端口
+                - "8000:8000"                       # 容器的 8000 端口和宿主机的 8000 端口建立映射关系
+                - "9090-9091:8080-8081"
+                - "127.0.0.1:8001:8001"             # 指定映射宿主机的指定地址的
+                - "127.0.0.1:5000-5010:5000-5010"   
+                - "6060:6060/udp"                   # 指定协议
+
+            LONG 语法格式示例:(v3.2 新增的语法格式)
+                ports:
+                    - target: 80                    # 容器端口
+                      published: 8080               # 宿主机端口
+                      protocol: tcp                 # 协议类型
+                      mode: host                    # host 在每个节点上发布主机端口,  ingress 对于群模式端口进行负载均衡
+
+        secrets               # 不知道怎么用
+
+        security_opt          # 为每个容器覆盖默认的标签 (在使用 swarm 部署时将忽略该选项)
+
+        stop_grace_period     # 指定在发送了 SIGTERM 信号之后, 容器等待多少秒之后退出(默认 10s)
+
+        stop_signal           # 指定停止容器发送的信号 (默认为 SIGTERM 相当于 kill PID; SIGKILL 相当于 kill -9 PID; 在使用 swarm 部署时将忽略该选项)
+
+        sysctls               # 设置容器中的内核参数 (在使用 swarm 部署时将忽略该选项)
+
+        ulimits               # 设置容器的 limit
+
+        userns_mode           # 如果Docker守护程序配置了用户名称空间, 则禁用此服务的用户名称空间 (在使用 swarm 部署时将忽略该选项)
+
+        volumes               # 定义容器和宿主机的卷映射关系, 其和 networks 一样可以位于 services 键的二级键和 compose 顶级键, 如果需要跨服务间使用则在顶级键定义, 在 services 中引用
+            SHORT 语法格式示例:
+                volumes:
+                    - /var/lib/mysql                # 映射容器内的 /var/lib/mysql 到宿主机的一个随机目录中
+                    - /opt/data:/var/lib/mysql      # 映射容器内的 /var/lib/mysql 到宿主机的 /opt/data
+                    - ./cache:/tmp/cache            # 映射容器内的 /var/lib/mysql 到宿主机 compose 文件所在的位置
+                    - ~/configs:/etc/configs/:ro    # 映射容器宿主机的目录到容器中去, 权限只读
+                    - datavolume:/var/lib/mysql     # datavolume 为 volumes 顶级键定义的目录, 在此处直接调用
+
+            LONG 语法格式示例:(v3.2 新增的语法格式)
+                version: "3.2"
+                services:
+                    web:
+                        image: nginx:alpine
+                        ports:
+                            - "80:80"
+                        volumes:
+                            - type: volume                  # mount 的类型, 必须是 bind、volume 或 tmpfs
+                                source: mydata              # 宿主机目录
+                                target: /data               # 容器目录
+                                volume:                     # 配置额外的选项, 其 key 必须和 type 的值相同
+                                    nocopy: true                # volume 额外的选项, 在创建卷时禁用从容器复制数据
+                            - type: bind                    # volume 模式只指定容器路径即可, 宿主机路径随机生成; bind 需要指定容器和数据机的映射路径
+                                source: ./static
+                                target: /opt/app/static
+                                read_only: true             # 设置文件系统为只读文件系统
+                volumes:
+                    mydata:                                 # 定义在 volume, 可在所有服务中调用
+
+        restart               # 定义容器重启策略(在使用 swarm 部署时将忽略该选项, 在 swarm 使用 restart_policy 代替 restart)
+            no                    # 禁止自动重启容器(默认)
+            always                # 无论如何容器都会重启
+            on-failure            # 当出现 on-failure 报错时, 容器重新启动
+
+        其他选项：
+            domainname, hostname, ipc, mac_address, privileged, read_only, shm_size, stdin_open, tty, user, working_dir
+            上面这些选项都只接受单个值和 docker run 的对应参数类似
+
+        对于值为时间的可接受的值：
+            2.5s
+            10s
+            1m30s
+            2h32m
+            5h34m56s
+            时间单位: us, ms, s, m， h
+        对于值为大小的可接受的值：
+            2b
+            1024kb
+            2048k
+            300m
+            1gb
+            单位: b, k, m, g 或者 kb, mb, gb
+    networks          # 定义 networks 信息
+        driver                # 指定网络模式, 大多数情况下, 它 bridge 于单个主机和 overlay Swarm 上
+            bridge                # Docker 默认使用 bridge 连接单个主机上的网络
+            overlay               # overlay 驱动程序创建一个跨多个节点命名的网络
+            host                  # 共享主机网络名称空间(等同于 docker run --net=host)
+            none                  # 等同于 docker run --net=none
+        driver_opts           # v3.2以上版本, 传递给驱动程序的参数, 这些参数取决于驱动程序
+        attachable            # driver 为 overlay 时使用, 如果设置为 true 则除了服务之外，独立容器也可以附加到该网络; 如果独立容器连接到该网络，则它可以与其他 Docker 守护进程连接到的该网络的服务和独立容器进行通信
+        ipam                  # 自定义 IPAM 配置. 这是一个具有多个属性的对象, 每个属性都是可选的
+            driver                # IPAM 驱动程序, bridge 或者 default
+            config                # 配置项
+                subnet                # CIDR格式的子网，表示该网络的网段
+        external              # 外部网络, 如果设置为 true 则 docker-compose up 不会尝试创建它, 如果它不存在则引发错误
+        name                  # v3.5 以上版本, 为此网络设置名称
+文件格式示例：
+    version: "3"
+    services:
+      redis:
+        image: redis:alpine
+        ports:
+          - "6379"
+        networks:
+          - frontend
+        deploy:
+          replicas: 2
+          update_config:
+            parallelism: 2
+            delay: 10s
+          restart_policy:
+            condition: on-failure
+      db:
+        image: postgres:9.4
+        volumes:
+          - db-data:/var/lib/postgresql/data
+        networks:
+          - backend
+        deploy:
+          placement:
+            constraints: [node.role == manager]复制代码</code></pre>
+                
+              
+              
+                
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC81NDU5Ni8zMTA2Nw==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+              
+              <span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+              <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            MarkDown_Log - Documentation
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+        <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/highlight.js"></script>
+      
+    
+  </body>
+</html>

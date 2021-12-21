@@ -88,6 +88,8 @@ https://kubesphere.io             2021-09-01 10:35:12
 
 ## 添加边缘节点
 
+https://kubesphere.com.cn/docs/installing-on-linux/cluster-operation/add-edge-nodes/
+
 新建一台机器，来当做边缘节点，关闭防火墙，关闭selinux，我设置的是4G，双核机器
 
 | 主机名   | IP             |
@@ -114,7 +116,7 @@ hosts:          dns files mdns4_minimal [NOTFOUND=return]
 
 ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge_add.png?raw=true)
 
-但是需要把命令中的10000,10001,10002,10004依次更换为30000,30001,30002,30004
+但是需要把命令中的10000,10001,10002,10004依次更换为30000,30001,30002,30004，如果安装失败，就把--region=zh 改成--region=en
 
 ```bash
 [root@edgenode ~]# arch=$(uname -m); curl -LO https://kubeedge.pek3b.qingstor.com/bin/v1.6.2/$arch/keadm-v1.6.2-linux-$arch.tar.gz  && tar xvf keadm-v1.6.2-linux-$arch.tar.gz && chmod +x keadm && ./keadm join --kubeedge-version=1.6.2 --region=zh --cloudcore-ipport=192.168.70.130:30000 --quicport 30001 --certport 30002 --tunnelport 30004 --edgenode-name edge-1 --edgenode-ip 192.168.70.140 --token 41c74c8e8f86d03b8560eb5be566c62c33eeac1865cdf3a48ad554e9626ef34e.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzA1NTAwNDZ9.mmR51Ue8rduKViXYqEuQQFyNcYol_IHQIm0K53iOQdM --with-edge-taint
@@ -145,6 +147,38 @@ KubeEdge edgecore is running, For logs visit: journalctl -u edgecore.service -b
 服务端刷新页面，就添加完成了
 
 ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/KubeSphere/edge_add_fin.png?raw=true)
+
+上面添加完后，边缘节点加入集群后，部分 Pod 在调度至该边缘节点上后可能会一直处于 `Pending` 状态。由于部分守护进程集（例如，Calico）有强容忍度，在当前版本中 (KubeSphere 3.2.1)，您需要手动 Patch Pod 以防止它们调度至该边缘节点。
+
+```shell
+#!/bin/bash
+   
+NodeSelectorPatchJson='{"spec":{"template":{"spec":{"nodeSelector":{"node-role.kubernetes.io/master": "","node-role.kubernetes.io/worker": ""}}}}}'
+   
+NoShedulePatchJson='{"spec":{"template":{"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"node-role.kubernetes.io/edge","operator":"DoesNotExist"}]}]}}}}}}}'
+   
+edgenode="edgenode"
+if [ $1 ]; then
+        edgenode="$1"
+fi
+   
+   
+namespaces=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $1}' ))
+pods=($(kubectl get pods -A -o wide |egrep -i $edgenode | awk '{print $2}' ))
+length=${#namespaces[@]}
+   
+   
+for((i=0;i<$length;i++));  
+do
+        ns=${namespaces[$i]}
+        pod=${pods[$i]}
+        resources=$(kubectl -n $ns describe pod $pod | grep "Controlled By" |awk '{print $3}')
+        echo "Patching for ns:"${namespaces[$i]}",resources:"$resources
+        kubectl -n $ns patch $resources --type merge --patch "$NoShedulePatchJson"
+        sleep 1
+done
+
+```
 
 
 

@@ -228,3 +228,11 @@ local     pinpoint-docker_mysql_data
 
 ```
 
+
+
+github上 docker-compose 源码中对 卷的介绍，但是不详细：https://github.com/docker/docker.github.io/blob/master/compose/compose-file/compose-file-v3.md#volume-configuration-reference
+
+
+
+注意每个docker-compose.yaml 上都有个 version 版本，是告诉docker-compose 这个yaml 是基于哪个版本的语法写的 ，关于docker-compose的语法版本介绍：https://github.com/docker/docker.github.io/blob/master/compose/compose-file/compose-versioning.md
+
