@@ -149,8 +149,8 @@ nav:
 - Rancher:
   - Rancher安装: rancher/rancher_instatll.md
 - Linux优化: 
-  -计算:
-    linux线程: Linux/Cpu/linux线程.md
+  - 计算:
+    - linux线程: Linux/Cpu/linux线程.md
 - 散文:
   - 常用地址: soft/url.md
   - URL在线编码转换工具: soft/url_code.md
