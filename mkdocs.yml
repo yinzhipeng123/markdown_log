@@ -119,6 +119,7 @@ nav:
     - join的作用: python/threading/join.md
   - shedule:
     - 后台执行: python/shedule/run_in_back.md
+    - schedule日志显示下次任务执行时间: python/shedule/see_cron.md
   - 类:
     - 类的继承: python/basics/class/class.md
     - 类变量与实例变量: python/basics/class/class_var.md
@@ -141,3 +142,13 @@ nav:
   - 亲和性: kubernetes/diaodu.md
 - Docker:
   - Docker: docker/docker_su.md
+- 内网穿透:
+  - n2n: n2n/n2n.md
+- Pinpoint:
+  - Pinpoint安装: pinpoint/pinpoint_install.md
+- Rancher:
+  - Rancher安装: rancher/rancher_instatll.md
+- 散文:
+  - 常用地址: soft/url.md
+  - URL在线编码转换工具: soft/url_code.md
+  - P99: soft/p99.md
