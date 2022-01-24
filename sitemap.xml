@@ -2,282 +2,292 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/KubeSphere/KubeSphere/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/Linux/Cpu/LWP/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/Linux/Cpu/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%A0%94%E7%A9%B6/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/api/MkDoc/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/api/github/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/centos7/ens33/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/docker/docker-compose/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/docker/docker_su/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/docker/pinpoint_compose/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/etcd/etcd/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/go/gin__app_route/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/go/gin_route/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/go/go_gin/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/go/go_one/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/kubernetes/ClusterRole/</loc>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/kubernetes/depolyment_model/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/kubernetes/diaodu/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/kubernetes/dudian/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/kubernetes/kubernetes1.16/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/kubernetes/minikube/minikube/</loc>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/n2n/n2n/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/pinpoint/pinpoint_install/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/alertmanager/alertmanager_config/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/grafana/grafana_dashboard/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/grafana/grafana_install/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/grafana/grafana_var/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/Exporter_Metrics/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/function/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/kube-state-metrics/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/prometheus/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/prometheus_k8s/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/prometheus_rate/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/prometheus_recording_rule/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/query_rules/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/prometheus/prometheus/query_xamples/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/csv/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/k8s/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/mem/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/python3_docker/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/python3_env/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/python_log/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/xlxs/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/basics/basic/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/basics/mypy/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/basics/class/class/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/basics/class/class_var/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/flask/flask_init/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/shedule/run_in_back/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/shedule/see_cron/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/threading/join/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/threading/thread/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/python/threading/thread_event/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/rancher/rancher_instatll/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/soft/p99/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/soft/url/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/soft/url_code/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/yum/ius/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

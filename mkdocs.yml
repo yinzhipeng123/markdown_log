@@ -140,6 +140,8 @@ nav:
   - K8S 1.16.9部署: kubernetes/kubernetes1.16.md
   - 污点: kubernetes/dudian.md
   - 亲和性: kubernetes/diaodu.md
+  - minikube: kubernetes/minikube/minikube.md
+  - ClusterRole: kubernetes/ClusterRole.md
 - Docker:
   - Docker: docker/docker_su.md
 - 内网穿透:

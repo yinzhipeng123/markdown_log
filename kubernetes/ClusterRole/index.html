@@ -9,21 +9,21 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/python/flask/flask_init/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/kubernetes/ClusterRole/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.1.11">
     
     
       
-        <title>Flask - MarkDown_Log</title>
+        <title>ClusterRole - MarkDown_Log</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3754935a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3754935a.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
         
       
     
@@ -67,7 +67,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flask" class="md-skip">
+        <a href="#role-clusterrole" class="md-skip">
           跳转至
         </a>
       
@@ -88,7 +88,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="MarkDown_Log" class="md-header__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+    <a href="../.." title="MarkDown_Log" class="md-header__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flask
+              ClusterRole
             
           </span>
         </div>
@@ -200,7 +200,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -215,7 +215,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../api/MkDoc/" class="md-tabs__link">
+      <a href="../../api/MkDoc/" class="md-tabs__link">
         MkDocs
       </a>
     </li>
@@ -236,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../prometheus/prometheus/prometheus/" class="md-tabs__link">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-tabs__link">
         Prometheus
       </a>
     </li>
@@ -254,8 +254,88 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../etcd/etcd/" class="md-tabs__link">
+      <a href="../../etcd/etcd/" class="md-tabs__link">
         Etcd
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../python/basics/basic/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../go/go_one/" class="md-tabs__link">
+        Go
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../KubeSphere/KubeSphere/" class="md-tabs__link">
+        KubeSphere
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../yum/ius/" class="md-tabs__link">
+        Yum
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../centos7/ens33/" class="md-tabs__link">
+        Centos7
       </a>
     </li>
   
@@ -272,87 +352,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../basics/basic/" class="md-tabs__link md-tabs__link--active">
-        Python
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../go/go_one/" class="md-tabs__link">
-        Go
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../KubeSphere/KubeSphere/" class="md-tabs__link">
-        KubeSphere
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../yum/ius/" class="md-tabs__link">
-        Yum
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../centos7/ens33/" class="md-tabs__link">
-        Centos7
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../kubernetes/kubernetes1.16/" class="md-tabs__link">
+      <a href="../kubernetes1.16/" class="md-tabs__link md-tabs__link--active">
         K8S
       </a>
     </li>
@@ -368,7 +368,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../docker/docker_su/" class="md-tabs__link">
+      <a href="../../docker/docker_su/" class="md-tabs__link">
         Docker
       </a>
     </li>
@@ -384,7 +384,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../n2n/n2n/" class="md-tabs__link">
+      <a href="../../n2n/n2n/" class="md-tabs__link">
         内网穿透
       </a>
     </li>
@@ -400,7 +400,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../pinpoint/pinpoint_install/" class="md-tabs__link">
+      <a href="../../pinpoint/pinpoint_install/" class="md-tabs__link">
         Pinpoint
       </a>
     </li>
@@ -416,7 +416,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../rancher/rancher_instatll/" class="md-tabs__link">
+      <a href="../../rancher/rancher_instatll/" class="md-tabs__link">
         Rancher
       </a>
     </li>
@@ -437,7 +437,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Linux/Cpu/LWP/" class="md-tabs__link">
+      <a href="../../Linux/Cpu/LWP/" class="md-tabs__link">
         Linux优化
       </a>
     </li>
@@ -455,7 +455,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../soft/url/" class="md-tabs__link">
+      <a href="../../soft/url/" class="md-tabs__link">
         散文
       </a>
     </li>
@@ -484,7 +484,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="MarkDown_Log" class="md-nav__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+    <a href="../.." title="MarkDown_Log" class="md-nav__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -516,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -552,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/MkDoc/" class="md-nav__link">
+      <a href="../../api/MkDoc/" class="md-nav__link">
         MkDocs
       </a>
     </li>
@@ -617,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/prometheus/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
         单机部署
       </a>
     </li>
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/prometheus_k8s/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus_k8s/" class="md-nav__link">
         K8S部署
       </a>
     </li>
@@ -641,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/kube-state-metrics/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/kube-state-metrics/" class="md-nav__link">
         K8S kube-state-metrics指标说明
       </a>
     </li>
@@ -653,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
         Exporter Metrics解释
       </a>
     </li>
@@ -665,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/query_xamples/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/query_xamples/" class="md-nav__link">
         Prometheus监控查询例子
       </a>
     </li>
@@ -677,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/query_rules/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/query_rules/" class="md-nav__link">
         Prometheus监控查询语法入门
       </a>
     </li>
@@ -689,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/function/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/function/" class="md-nav__link">
         Prometheus语法函数
       </a>
     </li>
@@ -701,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/prometheus_recording_rule/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus_recording_rule/" class="md-nav__link">
         Prometheus recording_rules功能
       </a>
     </li>
@@ -713,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/prometheus_rate/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus_rate/" class="md-nav__link">
         Prometheus指标讲解"为什么rate可以计算CPU的使用率"
       </a>
     </li>
@@ -754,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/prometheus/prometheus/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
         Alertmanager部署
       </a>
     </li>
@@ -766,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
+      <a href="../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
         Alertmanager配置
       </a>
     </li>
@@ -807,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/grafana/grafana_install/" class="md-nav__link">
+      <a href="../../prometheus/grafana/grafana_install/" class="md-nav__link">
         Grafana部署
       </a>
     </li>
@@ -819,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
+      <a href="../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
         Dashboard
       </a>
     </li>
@@ -831,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../prometheus/grafana/grafana_var/" class="md-nav__link">
+      <a href="../../prometheus/grafana/grafana_var/" class="md-nav__link">
         Grafana添加变量
       </a>
     </li>
@@ -879,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../etcd/etcd/" class="md-nav__link">
+      <a href="../../etcd/etcd/" class="md-nav__link">
         etcd部署
       </a>
     </li>
@@ -898,14 +898,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Python
@@ -923,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/basic/" class="md-nav__link">
+      <a href="../../python/basics/basic/" class="md-nav__link">
         Python一些语法
       </a>
     </li>
@@ -935,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../csv/" class="md-nav__link">
+      <a href="../../python/csv/" class="md-nav__link">
         CSV模块
       </a>
     </li>
@@ -947,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../xlxs/" class="md-nav__link">
+      <a href="../../python/xlxs/" class="md-nav__link">
         XLSX模块
       </a>
     </li>
@@ -959,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../k8s/" class="md-nav__link">
+      <a href="../../python/k8s/" class="md-nav__link">
         K8S模块
       </a>
     </li>
@@ -971,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mem/" class="md-nav__link">
+      <a href="../../python/mem/" class="md-nav__link">
         内存性能模块
       </a>
     </li>
@@ -983,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python3_env/" class="md-nav__link">
+      <a href="../../python/python3_env/" class="md-nav__link">
         Centos7安装Python3
       </a>
     </li>
@@ -995,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python3_docker/" class="md-nav__link">
+      <a href="../../python/python3_docker/" class="md-nav__link">
         Python3 Dokcer镜像制作
       </a>
     </li>
@@ -1007,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python_log/" class="md-nav__link">
+      <a href="../../python/python_log/" class="md-nav__link">
         Python3 日志控制
       </a>
     </li>
@@ -1017,21 +1015,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../python/flask/flask_init/" class="md-nav__link">
         Flask
       </a>
-      
     </li>
   
 
@@ -1064,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../threading/thread/" class="md-nav__link">
+      <a href="../../python/threading/thread/" class="md-nav__link">
         通过继承实现多线程
       </a>
     </li>
@@ -1076,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../threading/thread_event/" class="md-nav__link">
+      <a href="../../python/threading/thread_event/" class="md-nav__link">
         threading.Event()
       </a>
     </li>
@@ -1088,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../threading/join/" class="md-nav__link">
+      <a href="../../python/threading/join/" class="md-nav__link">
         join的作用
       </a>
     </li>
@@ -1129,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../shedule/run_in_back/" class="md-nav__link">
+      <a href="../../python/shedule/run_in_back/" class="md-nav__link">
         后台执行
       </a>
     </li>
@@ -1141,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../shedule/see_cron/" class="md-nav__link">
+      <a href="../../python/shedule/see_cron/" class="md-nav__link">
         schedule日志显示下次任务执行时间
       </a>
     </li>
@@ -1182,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/class/class/" class="md-nav__link">
+      <a href="../../python/basics/class/class/" class="md-nav__link">
         类的继承
       </a>
     </li>
@@ -1194,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/class/class_var/" class="md-nav__link">
+      <a href="../../python/basics/class/class_var/" class="md-nav__link">
         类变量与实例变量
       </a>
     </li>
@@ -1212,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/mypy/" class="md-nav__link">
+      <a href="../../python/basics/mypy/" class="md-nav__link">
         mypy
       </a>
     </li>
@@ -1254,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../go/go_one/" class="md-nav__link">
+      <a href="../../go/go_one/" class="md-nav__link">
         Go入门
       </a>
     </li>
@@ -1289,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../go/go_gin/" class="md-nav__link">
+      <a href="../../go/go_gin/" class="md-nav__link">
         Gin入门
       </a>
     </li>
@@ -1301,7 +1289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../go/gin_route/" class="md-nav__link">
+      <a href="../../go/gin_route/" class="md-nav__link">
         Gin 路由拆分成单个文件
       </a>
     </li>
@@ -1313,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../go/gin__app_route/" class="md-nav__link">
+      <a href="../../go/gin__app_route/" class="md-nav__link">
         Gin 路由拆分成单独APP
       </a>
     </li>
@@ -1361,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KubeSphere/KubeSphere/" class="md-nav__link">
+      <a href="../../KubeSphere/KubeSphere/" class="md-nav__link">
         KubeSphere安装
       </a>
     </li>
@@ -1403,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yum/ius/" class="md-nav__link">
+      <a href="../../yum/ius/" class="md-nav__link">
         ius源
       </a>
     </li>
@@ -1445,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../centos7/ens33/" class="md-nav__link">
+      <a href="../../centos7/ens33/" class="md-nav__link">
         修改网卡
       </a>
     </li>
@@ -1464,12 +1452,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
       
       <label class="md-nav__link" for="__nav_10">
         K8S
@@ -1487,7 +1477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../kubernetes/kubernetes1.16/" class="md-nav__link">
+      <a href="../kubernetes1.16/" class="md-nav__link">
         K8S 1.16.9部署
       </a>
     </li>
@@ -1499,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../kubernetes/dudian/" class="md-nav__link">
+      <a href="../dudian/" class="md-nav__link">
         污点
       </a>
     </li>
@@ -1511,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../kubernetes/diaodu/" class="md-nav__link">
+      <a href="../diaodu/" class="md-nav__link">
         亲和性
       </a>
     </li>
@@ -1523,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../kubernetes/minikube/minikube/" class="md-nav__link">
+      <a href="../minikube/minikube/" class="md-nav__link">
         minikube
       </a>
     </li>
@@ -1533,11 +1523,61 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../kubernetes/ClusterRole/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ClusterRole
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ClusterRole
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#role-clusterrole" class="md-nav__link">
+    Role 与 ClusterRole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rolebinding-clusterrolebinding" class="md-nav__link">
+    RoleBinding 与 ClusterRoleBinding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-account" class="md-nav__link">
+    Service Account
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1577,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docker/docker_su/" class="md-nav__link">
+      <a href="../../docker/docker_su/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -1619,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../n2n/n2n/" class="md-nav__link">
+      <a href="../../n2n/n2n/" class="md-nav__link">
         n2n
       </a>
     </li>
@@ -1661,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../pinpoint/pinpoint_install/" class="md-nav__link">
+      <a href="../../pinpoint/pinpoint_install/" class="md-nav__link">
         Pinpoint安装
       </a>
     </li>
@@ -1703,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rancher/rancher_instatll/" class="md-nav__link">
+      <a href="../../rancher/rancher_instatll/" class="md-nav__link">
         Rancher安装
       </a>
     </li>
@@ -1768,7 +1808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Cpu/LWP/" class="md-nav__link">
+      <a href="../../Linux/Cpu/LWP/" class="md-nav__link">
         LWP
       </a>
     </li>
@@ -1780,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Cpu/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%A0%94%E7%A9%B6/" class="md-nav__link">
+      <a href="../../Linux/Cpu/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%A0%94%E7%A9%B6/" class="md-nav__link">
         线程
       </a>
     </li>
@@ -1828,7 +1868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../soft/url/" class="md-nav__link">
+      <a href="../../soft/url/" class="md-nav__link">
         常用地址
       </a>
     </li>
@@ -1840,7 +1880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../soft/url_code/" class="md-nav__link">
+      <a href="../../soft/url_code/" class="md-nav__link">
         URL在线编码转换工具
       </a>
     </li>
@@ -1852,7 +1892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../soft/p99/" class="md-nav__link">
+      <a href="../../soft/p99/" class="md-nav__link">
         P99
       </a>
     </li>
@@ -1877,156 +1917,163 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/python/flask/flask_init.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/kubernetes/ClusterRole.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="flask">Flask框架</h1>
-<p>一个基于python的，简单快速的WEB框架</p>
-<p>GitHub地址：https://github.com/pallets/flask</p>
-<p>官方文档：https://flask.palletsprojects.com/en/2.0.x/</p>
-<h1 id="flask-g">Flask g 对象</h1>
-<h3 id="1g">1.什么是g对象。</h3>
-<p>1.在flask中，有一个专门用来存储用户信息的g对象，g的全称的为global。
-2.g对象在一次请求中的所有的代码的地方，都是可以使用的。</p>
-<h3 id="2gsession">2.g对象和session的区别</h3>
-<p>在我看来，最大的区别是，session对象是可以跨request的，只要session还未失效，不同的request的请求会获取到同一个session，但是g对象不是，g对象不需要管过期时间，请求一次就g对象就改变了一次，或者重新赋值了一次</p>
-<p>也就是session可以在我们的这个网站随意都可以用 而 g只能是这次的请求如果重定向之后就会改变</p>
-<p>flask_g.py</p>
-<pre class="highlight"><code class="language-python">from flask import Flask, g, request
-from util import login_log
-
-app = Flask(__name__)
-
-@app.route('/login/', methods=['GET', 'POST'])
-def login():
-    username = request.args.get('username')
-
-    if username == 'key':
-        g.username = username
-        login_log()
-        return '恭喜您！登录成功'
-    else:
-        return '登录名或密码错误!'
-
-if __name__ == '__main__':
-    app.run()</code></pre>
-<p>util.py</p>
-<pre class="highlight"><code>from flask import  g
-def login_log():
-    print('登录名为: {}'.format(g.username))</code></pre>
-<p>启动flask_g.py  </p>
-<p>浏览器访问 http://127.0.0.1:5000/login/?username=key</p>
-<p>控制台输出 </p>
-<pre class="highlight"><code>登录名为: key</code></pre>
-<p>g对象的使用案例：https://vimsky.com/examples/detail/python-method-flask.g.html</p>
-<h1 id="flask-request">Flask Request对象</h1>
-<p>来自客户端网页的数据作为全局请求对象发送到服务器。为了处理请求数据，应该从Flask模块导入。</p>
-<p>Request对象的重要属性如下所列：</p>
-<ul>
-<li><strong>Form</strong> - 它是一个字典对象，包含表单参数及其值的键和值对。</li>
-<li><strong>args</strong> - 解析查询字符串的内容，它是问号（？）之后的URL的一部分。</li>
-<li><strong>Cookies</strong> - 保存Cookie名称和值的字典对象。</li>
-<li><strong>files</strong> - 与上传文件有关的数据。</li>
-<li><strong>method</strong> - 当前请求方法。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>属性名</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>form</td>
-<td>一个从POST和PUT请求解析的 MultiDict（一键多值字典）。</td>
-</tr>
-<tr>
-<td>args</td>
-<td>MultiDict，要操作 URL （如 ?key=value ）中提交的参数可以使用 args 属性:searchword = request.args.get('key', '')</td>
-</tr>
-<tr>
-<td>values</td>
-<td>CombinedMultiDict，内容是form和args。 可以使用values替代form和args。</td>
-</tr>
-<tr>
-<td>cookies</td>
-<td>请求的cookies，类型是dict。</td>
-</tr>
-<tr>
-<td>stream</td>
-<td>在可知的mimetype下，如果进来的表单数据无法解码，会没有任何改动的保存到这个 stream 以供使用。很多时候，当请求的数据转换为string时，使用data是最好的方式。这个stream只返回数据一次。</td>
-</tr>
-<tr>
-<td>headers</td>
-<td>请求头，字典类型。</td>
-</tr>
-<tr>
-<td>data</td>
-<td>包含了请求的数据，并转换为字符串，除非是一个Flask无法处理的mimetype。</td>
-</tr>
-<tr>
-<td>files</td>
-<td>MultiDict，带有通过POST或PUT请求上传的文件。</td>
-</tr>
-<tr>
-<td>environ</td>
-<td>WSGI隐含的环境配置。</td>
-</tr>
-<tr>
-<td>method</td>
-<td>请求方法，比如POST、GET。</td>
-</tr>
-<tr>
-<td>path</td>
-<td>获取请求文件路径：/myapplication/page.html</td>
-</tr>
-<tr>
-<td>base_url</td>
-<td>获取域名与请求文件路径：http://www.baidu.com/myapplication/page.html</td>
-</tr>
-<tr>
-<td>url</td>
-<td>获取全部url：http://www.baidu.com/myapplication/page.html?id=1&amp;edit=edit</td>
-</tr>
-<tr>
-<td>url_root</td>
-<td>获取域名：http://www.baidu.com/</td>
-</tr>
-<tr>
-<td>is_xhr</td>
-<td>如果请求是一个来自JavaScript XMLHttpRequest的触发，则返回True，这个只工作在支持X-Requested-With头的库并且设置了XMLHttpRequest。</td>
-</tr>
-<tr>
-<td>blueprint</td>
-<td>蓝图名字。</td>
-</tr>
-<tr>
-<td>endpoint</td>
-<td>endpoint匹配请求，这个与view_args相结合，可是用于重构相同或修改URL。当匹配的时候发生异常，会返回None。</td>
-</tr>
-<tr>
-<td>json</td>
-<td>如果mimetype是application/json，这个参数将会解析JSON数据，如果不是则返回None。 可以使用这个替代get_json()方法。</td>
-</tr>
-<tr>
-<td>max_content_length</td>
-<td>只读，返回MAX_CONTENT_LENGTH的配置键。</td>
-</tr>
-<tr>
-<td>module</td>
-<td>如果请求是发送到一个实际的模块，则该参数返回当前模块的名称。这是弃用的功能，使用blueprints替代。</td>
-</tr>
-<tr>
-<td>routing_exception = None</td>
-<td>如果匹配URL失败，这个异常将会/已经抛出作为请求处理的一部分。这通常用于NotFound异常或类似的情况。</td>
-</tr>
-</tbody>
-</table>
-<h2 id="flask-response">Flask Response对象</h2>
-<p>https://blog.csdn.net/qq_42666483/article/details/82526765</p>
+                  <h1>ClusterRole</h1>
+                
+                <h3 id="role-clusterrole">Role 与 ClusterRole</h3>
+<p><code>Role</code> 对象就是一个角色包含了一套表示一组权限的规则。但是只对一个<code>namespace</code>生效，书写规则的时候必须写上针对哪个<code>namespace</code></p>
+<p><code>ClusterRole</code> 对象也是一个角色包含了一套表示一组权限的规则，但是对整个 Kubernetes 集群范围内有效。</p>
+<h3 id="rolebinding-clusterrolebinding">RoleBinding 与 ClusterRoleBinding</h3>
+<p><code>RoleBinding</code> 就是将一个<code>Role</code>绑定给某个用户，也可以绑定<code>ClusterRole</code> ，但是只能对一个<code>namespace</code>生效，因为<code>RoleBinding</code> 需要指定<code>namespace</code></p>
+<p><code>ClusterRoleBinding</code> 就是将一个<code>ClusterRole</code> 绑定给某个用户</p>
+<h3 id="service-account">Service Account</h3>
+<p>ServiceAccount 为 Pod 中的进程提供身份信息。</p>
+<p>当您（真人用户）访问集群（例如使用<code>kubectl</code>命令）时，apiserver 会将您认证为一个特定的 User Account（目前通常是<code>admin</code>，除非您的系统管理员自定义了集群配置）。Pod 容器中的进程也可以与 apiserver 联系。 当它们在联系 apiserver 的时候，它们会被认证为一个特定的 Service Account（例如<code>default</code>）。</p>
+<p>当您创建 pod 的时候，如果您没有指定一个 service account，系统会自动得在与该pod 相同的 namespace 下为其指派一个<code>default</code> service account。如果您获取刚创建的 pod 的原始 json 或 yaml 信息（例如使用<code>kubectl get pods/podename -o yaml</code>命令），您将看到<code>spec.serviceAccountName</code>字段已经被设置为 <code>default</code>。</p>
+<p>详解：</p>
+<p>https://jimmysong.io/kubernetes-handbook/concepts/serviceaccount.html</p>
+<p>https://jimmysong.io/kubernetes-handbook/concepts/rbac.html</p>
+<p><code>kube-state-metrics-clusterRole.yaml</code></p>
+<pre class="highlight"><code>apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: kube-state-metrics
+    app.kubernetes.io/version: v1.9.5
+  name: kube-state-metrics
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  - nodes
+  - pods
+  - services
+  - resourcequotas
+  - replicationcontrollers
+  - limitranges
+  - persistentvolumeclaims
+  - persistentvolumes
+  - namespaces
+  - endpoints
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - extensions
+  resources:
+  - daemonsets
+  - deployments
+  - replicasets
+  - ingresses
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - statefulsets
+  - daemonsets
+  - deployments
+  - replicasets
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - batch
+  resources:
+  - cronjobs
+  - jobs
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - autoscaling
+  resources:
+  - horizontalpodautoscalers
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - authentication.k8s.io
+  resources:
+  - tokenreviews
+  verbs:
+  - create
+- apiGroups:
+  - authorization.k8s.io
+  resources:
+  - subjectaccessreviews
+  verbs:
+  - create
+- apiGroups:
+  - policy
+  resources:
+  - poddisruptionbudgets
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - certificates.k8s.io
+  resources:
+  - certificatesigningrequests
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - storage.k8s.io
+  resources:
+  - storageclasses
+  - volumeattachments
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - admissionregistration.k8s.io
+  resources:
+  - mutatingwebhookconfigurations
+  - validatingwebhookconfigurations
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - networkpolicies
+  verbs:
+  - list
+  - watch</code></pre>
+<p><code>kube-state-metrics-clusterRoleBinding.yaml</code></p>
+<pre class="highlight"><code>apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/name: kube-state-metrics
+    app.kubernetes.io/version: v1.9.5
+  name: kube-state-metrics
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kube-state-metrics
+subjects:
+- kind: ServiceAccount
+  name: kube-state-metrics
+  namespace: monitoring
+</code></pre>
+<p><code>kube-state-metrics-serviceAccount.yaml</code></p>
+<pre class="highlight"><code>apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/name: kube-state-metrics
+    app.kubernetes.io/version: v1.9.5
+  name: kube-state-metrics
+  namespace: monitoring</code></pre>
                 
               
               
@@ -2073,7 +2120,7 @@ def login_log():
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../python_log/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Python3 日志控制" rel="prev">
+        <a href="../minikube/minikube/" class="md-footer__link md-footer__link--prev" aria-label="上一页: minikube" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2082,20 +2129,20 @@ def login_log():
               <span class="md-footer__direction">
                 上一页
               </span>
-              Python3 日志控制
+              minikube
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../threading/thread/" class="md-footer__link md-footer__link--next" aria-label="下一页: 通过继承实现多线程" rel="next">
+        <a href="../../docker/docker_su/" class="md-footer__link md-footer__link--next" aria-label="下一页: Docker" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              通过继承实现多线程
+              Docker
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2141,16 +2188,16 @@ def login_log():
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
       
-        <script src="../../../javascripts/highlight.js"></script>
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>
