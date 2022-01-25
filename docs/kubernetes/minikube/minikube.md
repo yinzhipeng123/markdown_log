@@ -17,8 +17,9 @@ Docker安装：https://mirrors.cloud.tencent.com/help/docker-ce.html
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 #minikube启动集群
-minikube start --image-mirror-country='cn' --force --driver=docker
-#添加节点
+minikube start --image-mirror-country='cn' --force --driver=docker  -n=2 --cpus=2 --memory=3000MB --network-plugin=cni --cni=flannel --extra-config=kubeadm.pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.20 
+#如果不设置cni，后续添加节点，会出现Cluster was created without any CNI, adding a node to it might cause broken networking。就是后续的节点无法访问集群内的service
+#添加节点，可以不添加，上面命令已经添加了两个节点
 minikube node add 
 
 部署完成
@@ -36,7 +37,11 @@ kubectl port-forward -n infra svc/consul-net --address 0.0.0.0 8500:8500
 kubectl port-forward -n namespace $POD_NAME --address 0.0.0.0  3306:3306
 ```
 
+后台运行
 
+```
+nohup kubectl port-forward svc/infra-consul-net --address 0.0.0.0  8500:8500 >>forward-8500.log 2>&1 &
+```
 
 访问k8s面板
 
