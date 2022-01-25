@@ -2,7 +2,9 @@
 
 
 
-我的ECS是腾讯云的，Centos7.6 镜像
+我的ECS是腾讯云的，Centos7.6 镜像，地域在硅谷，因为K8S很多镜像都在海外，国内即使有腾讯阿里的源，但是经常也下载不下来，折腾了很多遍，不折腾了，直接地域选择海外，节省很多心力
+
+
 
 机器需要安装  Kubectl和Docker
 
@@ -16,8 +18,11 @@ Docker安装：https://mirrors.cloud.tencent.com/help/docker-ce.html
 #安装minikube
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
-#minikube启动集群
-minikube start --image-mirror-country='cn' --force --driver=docker  -n=2 --cpus=2 --memory=3000MB --network-plugin=cni --cni=flannel --extra-config=kubeadm.pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.20 
+# minikube启动集群，--image-mirror-country='cn'就是在中国区安装集群，下载镜像从阿里云下，经过测试，发现还是有很多镜像下载不下来
+# minikube start --image-mirror-country='cn' --force --driver=docker --nodes=2 --cpus=2 --memory=3000MB --network-plugin=cni --cni=flannel --extra-config=kubeadm.pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.20 
+# 海外直接用下面这条命令
+minikube start --force --driver=docker --nodes=2   --network-plugin=cni --cni=flannel --extra-config=kubeadm.pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.20 
+
 #如果不设置cni，后续添加节点，会出现Cluster was created without any CNI, adding a node to it might cause broken networking。就是后续的节点无法访问集群内的service
 #添加节点，可以不添加，上面命令已经添加了两个节点
 minikube node add 
@@ -55,4 +60,18 @@ http://ECS地址:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kuber
 
 
 
-https://developer.aliyun.com/article/221687
+测试完集群，可以重新初始化集群，省的一个个删除资源
+
+```shell
+#停止集群
+minikube stop
+#删除集群
+minikube delete
+```
+
+
+
+
+
+
+
