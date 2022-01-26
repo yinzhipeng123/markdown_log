@@ -26,11 +26,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/api/github/</loc>
-         <lastmod>2022-01-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/centos7/ens33/</loc>
          <lastmod>2022-01-26</lastmod>
          <changefreq>daily</changefreq>
@@ -282,6 +277,11 @@
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/rancher/rancher_instatll/</loc>
+         <lastmod>2022-01-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/soft/github/</loc>
          <lastmod>2022-01-26</lastmod>
          <changefreq>daily</changefreq>
     </url>

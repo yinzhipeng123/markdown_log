@@ -147,7 +147,8 @@ nav:
 - Docker:
   - Docker: docker/docker_su.md
   - 停止docker出现警告: docker/docker_Warning.md
-  - docker_compose: docker/docker-compose.md
+  - docker_compose中卷的映射: docker/docker-compose.md
+  - docker_compse讲解: docker/pinpoint_compose.md
 - 内网穿透:
   - n2n: n2n/n2n.md
 - Pinpoint:
@@ -162,3 +163,4 @@ nav:
   - 常用地址: soft/url.md
   - URL在线编码转换工具: soft/url_code.md
   - P99: soft/p99.md
+  - github代码对比: soft/github.md
