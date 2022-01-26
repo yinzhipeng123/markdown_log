@@ -9,21 +9,21 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/python/basics/class/class/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/kubernetes/emptyDir/">
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.1.11">
     
     
       
-        <title>类的继承 - MarkDown_Log</title>
+        <title>emptyDir - MarkDown_Log</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3754935a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3754935a.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
         
       
     
@@ -67,7 +67,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
-    <script>function __prefix(e){return new URL("../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#emptydir" class="md-skip">
           跳转至
         </a>
       
@@ -88,7 +88,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="MarkDown_Log" class="md-header__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+    <a href="../.." title="MarkDown_Log" class="md-header__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              类的继承
+              emptyDir
             
           </span>
         </div>
@@ -200,7 +200,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -215,7 +215,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../api/MkDoc/" class="md-tabs__link">
+      <a href="../../api/MkDoc/" class="md-tabs__link">
         MkDocs
       </a>
     </li>
@@ -236,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../prometheus/prometheus/prometheus/" class="md-tabs__link">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-tabs__link">
         Prometheus
       </a>
     </li>
@@ -254,8 +254,88 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../etcd/etcd/" class="md-tabs__link">
+      <a href="../../etcd/etcd/" class="md-tabs__link">
         Etcd
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../python/basics/basic/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../go/go_one/" class="md-tabs__link">
+        Go
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../KubeSphere/KubeSphere/" class="md-tabs__link">
+        KubeSphere
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../yum/ius/" class="md-tabs__link">
+        Yum
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../centos7/ens33/" class="md-tabs__link">
+        Centos7
       </a>
     </li>
   
@@ -272,87 +352,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../basic/" class="md-tabs__link md-tabs__link--active">
-        Python
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../go/go_one/" class="md-tabs__link">
-        Go
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../KubeSphere/KubeSphere/" class="md-tabs__link">
-        KubeSphere
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../yum/ius/" class="md-tabs__link">
-        Yum
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../centos7/ens33/" class="md-tabs__link">
-        Centos7
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../kubernetes/kubernetes1.16/" class="md-tabs__link">
+      <a href="../kubernetes1.16/" class="md-tabs__link md-tabs__link--active">
         K8S
       </a>
     </li>
@@ -368,7 +368,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../docker/docker_su/" class="md-tabs__link">
+      <a href="../../docker/docker_su/" class="md-tabs__link">
         Docker
       </a>
     </li>
@@ -384,7 +384,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../n2n/n2n/" class="md-tabs__link">
+      <a href="../../n2n/n2n/" class="md-tabs__link">
         内网穿透
       </a>
     </li>
@@ -400,7 +400,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../pinpoint/pinpoint_install/" class="md-tabs__link">
+      <a href="../../pinpoint/pinpoint_install/" class="md-tabs__link">
         Pinpoint
       </a>
     </li>
@@ -416,7 +416,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../rancher/rancher_instatll/" class="md-tabs__link">
+      <a href="../../rancher/rancher_instatll/" class="md-tabs__link">
         Rancher
       </a>
     </li>
@@ -437,7 +437,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../Linux/Cpu/LWP/" class="md-tabs__link">
+      <a href="../../Linux/Cpu/LWP/" class="md-tabs__link">
         Linux优化
       </a>
     </li>
@@ -455,7 +455,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../soft/url/" class="md-tabs__link">
+      <a href="../../soft/url/" class="md-tabs__link">
         散文
       </a>
     </li>
@@ -484,7 +484,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="MarkDown_Log" class="md-nav__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+    <a href="../.." title="MarkDown_Log" class="md-nav__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -516,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -552,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../api/MkDoc/" class="md-nav__link">
+      <a href="../../api/MkDoc/" class="md-nav__link">
         MkDocs
       </a>
     </li>
@@ -617,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/prometheus/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
         单机部署
       </a>
     </li>
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/prometheus_k8s/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus_k8s/" class="md-nav__link">
         K8S部署
       </a>
     </li>
@@ -641,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/kube-state-metrics/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/kube-state-metrics/" class="md-nav__link">
         K8S kube-state-metrics指标说明
       </a>
     </li>
@@ -653,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/Exporter_Metrics/" class="md-nav__link">
         Exporter Metrics解释
       </a>
     </li>
@@ -665,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/query_xamples/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/query_xamples/" class="md-nav__link">
         Prometheus监控查询例子
       </a>
     </li>
@@ -677,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/query_rules/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/query_rules/" class="md-nav__link">
         Prometheus监控查询语法入门
       </a>
     </li>
@@ -689,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/function/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/function/" class="md-nav__link">
         Prometheus语法函数
       </a>
     </li>
@@ -701,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/prometheus_recording_rule/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus_recording_rule/" class="md-nav__link">
         Prometheus recording_rules功能
       </a>
     </li>
@@ -713,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/prometheus_rate/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus_rate/" class="md-nav__link">
         Prometheus指标讲解"为什么rate可以计算CPU的使用率"
       </a>
     </li>
@@ -754,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/prometheus/prometheus/" class="md-nav__link">
+      <a href="../../prometheus/prometheus/prometheus/" class="md-nav__link">
         Alertmanager部署
       </a>
     </li>
@@ -766,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
+      <a href="../../prometheus/alertmanager/alertmanager_config/" class="md-nav__link">
         Alertmanager配置
       </a>
     </li>
@@ -807,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/grafana/grafana_install/" class="md-nav__link">
+      <a href="../../prometheus/grafana/grafana_install/" class="md-nav__link">
         Grafana部署
       </a>
     </li>
@@ -819,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
+      <a href="../../prometheus/grafana/grafana_dashboard/" class="md-nav__link">
         Dashboard
       </a>
     </li>
@@ -831,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../prometheus/grafana/grafana_var/" class="md-nav__link">
+      <a href="../../prometheus/grafana/grafana_var/" class="md-nav__link">
         Grafana添加变量
       </a>
     </li>
@@ -879,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../etcd/etcd/" class="md-nav__link">
+      <a href="../../etcd/etcd/" class="md-nav__link">
         etcd部署
       </a>
     </li>
@@ -898,14 +898,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Python
@@ -923,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basic/" class="md-nav__link">
+      <a href="../../python/basics/basic/" class="md-nav__link">
         Python一些语法
       </a>
     </li>
@@ -935,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../csv/" class="md-nav__link">
+      <a href="../../python/csv/" class="md-nav__link">
         CSV模块
       </a>
     </li>
@@ -947,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../xlxs/" class="md-nav__link">
+      <a href="../../python/xlxs/" class="md-nav__link">
         XLSX模块
       </a>
     </li>
@@ -959,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../k8s/" class="md-nav__link">
+      <a href="../../python/k8s/" class="md-nav__link">
         K8S模块
       </a>
     </li>
@@ -971,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mem/" class="md-nav__link">
+      <a href="../../python/mem/" class="md-nav__link">
         内存性能模块
       </a>
     </li>
@@ -983,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python3_env/" class="md-nav__link">
+      <a href="../../python/python3_env/" class="md-nav__link">
         Centos7安装Python3
       </a>
     </li>
@@ -995,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python3_docker/" class="md-nav__link">
+      <a href="../../python/python3_docker/" class="md-nav__link">
         Python3 Dokcer镜像制作
       </a>
     </li>
@@ -1007,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python_log/" class="md-nav__link">
+      <a href="../../python/python_log/" class="md-nav__link">
         Python3 日志控制
       </a>
     </li>
@@ -1019,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../flask/flask_init/" class="md-nav__link">
+      <a href="../../python/flask/flask_init/" class="md-nav__link">
         Flask
       </a>
     </li>
@@ -1054,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../threading/thread/" class="md-nav__link">
+      <a href="../../python/threading/thread/" class="md-nav__link">
         通过继承实现多线程
       </a>
     </li>
@@ -1066,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../threading/thread_event/" class="md-nav__link">
+      <a href="../../python/threading/thread_event/" class="md-nav__link">
         threading.Event()
       </a>
     </li>
@@ -1078,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../threading/join/" class="md-nav__link">
+      <a href="../../python/threading/join/" class="md-nav__link">
         join的作用
       </a>
     </li>
@@ -1119,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../shedule/run_in_back/" class="md-nav__link">
+      <a href="../../python/shedule/run_in_back/" class="md-nav__link">
         后台执行
       </a>
     </li>
@@ -1131,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../shedule/see_cron/" class="md-nav__link">
+      <a href="../../python/shedule/see_cron/" class="md-nav__link">
         schedule日志显示下次任务执行时间
       </a>
     </li>
@@ -1147,16 +1145,14 @@
             
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_12" type="checkbox" id="__nav_5_12" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_12" data-md-state="indeterminate" type="checkbox" id="__nav_5_12" checked>
       
       <label class="md-nav__link" for="__nav_5_12">
         类
@@ -1172,68 +1168,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          类的继承
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../python/basics/class/class/" class="md-nav__link">
         类的继承
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    类的继承
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    构造函数的继承
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    子类对父类方法的重写
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    类继承的事例
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1243,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../class_var/" class="md-nav__link">
+      <a href="../../python/basics/class/class_var/" class="md-nav__link">
         类变量与实例变量
       </a>
     </li>
@@ -1261,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mypy/" class="md-nav__link">
+      <a href="../../python/basics/mypy/" class="md-nav__link">
         mypy
       </a>
     </li>
@@ -1303,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../go/go_one/" class="md-nav__link">
+      <a href="../../go/go_one/" class="md-nav__link">
         Go入门
       </a>
     </li>
@@ -1338,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../go/go_gin/" class="md-nav__link">
+      <a href="../../go/go_gin/" class="md-nav__link">
         Gin入门
       </a>
     </li>
@@ -1350,7 +1289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../go/gin_route/" class="md-nav__link">
+      <a href="../../go/gin_route/" class="md-nav__link">
         Gin 路由拆分成单个文件
       </a>
     </li>
@@ -1362,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../go/gin__app_route/" class="md-nav__link">
+      <a href="../../go/gin__app_route/" class="md-nav__link">
         Gin 路由拆分成单独APP
       </a>
     </li>
@@ -1410,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../KubeSphere/KubeSphere/" class="md-nav__link">
+      <a href="../../KubeSphere/KubeSphere/" class="md-nav__link">
         KubeSphere安装
       </a>
     </li>
@@ -1452,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../yum/ius/" class="md-nav__link">
+      <a href="../../yum/ius/" class="md-nav__link">
         ius源
       </a>
     </li>
@@ -1494,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../centos7/ens33/" class="md-nav__link">
+      <a href="../../centos7/ens33/" class="md-nav__link">
         修改网卡
       </a>
     </li>
@@ -1513,12 +1452,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
       
       <label class="md-nav__link" for="__nav_10">
         K8S
@@ -1536,7 +1477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../kubernetes/kubernetes1.16/" class="md-nav__link">
+      <a href="../kubernetes1.16/" class="md-nav__link">
         K8S 1.16.9部署
       </a>
     </li>
@@ -1548,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../kubernetes/dudian/" class="md-nav__link">
+      <a href="../dudian/" class="md-nav__link">
         污点
       </a>
     </li>
@@ -1560,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../kubernetes/diaodu/" class="md-nav__link">
+      <a href="../diaodu/" class="md-nav__link">
         亲和性
       </a>
     </li>
@@ -1572,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../kubernetes/minikube/minikube/" class="md-nav__link">
+      <a href="../minikube/minikube/" class="md-nav__link">
         minikube
       </a>
     </li>
@@ -1584,7 +1525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../kubernetes/ClusterRole/" class="md-nav__link">
+      <a href="../ClusterRole/" class="md-nav__link">
         ClusterRole
       </a>
     </li>
@@ -1594,11 +1535,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../kubernetes/emptyDir/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         emptyDir
       </a>
+      
     </li>
   
 
@@ -1608,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../kubernetes/configmap-one/" class="md-nav__link">
+      <a href="../configmap-one/" class="md-nav__link">
         deployment添加配置文件
       </a>
     </li>
@@ -1650,7 +1601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../docker/docker_su/" class="md-nav__link">
+      <a href="../../docker/docker_su/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -1692,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../n2n/n2n/" class="md-nav__link">
+      <a href="../../n2n/n2n/" class="md-nav__link">
         n2n
       </a>
     </li>
@@ -1734,7 +1685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../pinpoint/pinpoint_install/" class="md-nav__link">
+      <a href="../../pinpoint/pinpoint_install/" class="md-nav__link">
         Pinpoint安装
       </a>
     </li>
@@ -1776,7 +1727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rancher/rancher_instatll/" class="md-nav__link">
+      <a href="../../rancher/rancher_instatll/" class="md-nav__link">
         Rancher安装
       </a>
     </li>
@@ -1841,7 +1792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Linux/Cpu/LWP/" class="md-nav__link">
+      <a href="../../Linux/Cpu/LWP/" class="md-nav__link">
         LWP
       </a>
     </li>
@@ -1853,7 +1804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Linux/Cpu/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%A0%94%E7%A9%B6/" class="md-nav__link">
+      <a href="../../Linux/Cpu/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%A0%94%E7%A9%B6/" class="md-nav__link">
         线程
       </a>
     </li>
@@ -1901,7 +1852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../soft/url/" class="md-nav__link">
+      <a href="../../soft/url/" class="md-nav__link">
         常用地址
       </a>
     </li>
@@ -1913,7 +1864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../soft/url_code/" class="md-nav__link">
+      <a href="../../soft/url_code/" class="md-nav__link">
         URL在线编码转换工具
       </a>
     </li>
@@ -1925,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../soft/p99/" class="md-nav__link">
+      <a href="../../soft/p99/" class="md-nav__link">
         P99
       </a>
     </li>
@@ -1950,178 +1901,101 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/python/basics/class/class.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/kubernetes/emptyDir.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>类的继承</h1>
-                
-                <h2 id="_1">类的继承</h2>
-<pre class="highlight"><code class="language-python">
-class Person(object):   # 定义一个父类
+                <h1 id="emptydir">emptyDir</h1>
+<p>emptyDir类型的存储卷创建于Pod被调度到宿主机上的时候，同一个Pod内的多个容器能读写emptyDir中的同一个文件，一旦这个Pod销毁或者漂移开该宿主机，emptyDir中的数据就会被永久删除。emptyDir类型的存储卷主要用作临时空间或者不同容器之间的数据共享。容器的crashing事件并不会导致emptyDir中的数据被删除。</p>
+<p>emptyDir支持内存作为存储资源，emptyDir.medium设为Memory即可，但如果遇到node节点重启，emptyDir中的数据也会全部丢失。</p>
+<p>以下演示如何在Pod中不同容器之间共享数据。</p>
+<p>vi emptydir-pod.yaml</p>
+<pre class="highlight"><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: emptydir-pod
+spec:
+  #定义emptyDir存储卷，名称my-emptydir-vol
+  volumes:
+    - name: my-emptydir-vol
+      emptyDir: {}
+  containers:
+    - name: busybox-1
+      image: busybox:latest
+      command:
+        - "sleep"
+        - "3600"
+      #将my-emptydir-vol存储卷Mount到容器中
+      volumeMounts:
+        - name: my-emptydir-vol
+          #此路径为容器中目录
+          mountPath: /data-1
+    - name: busybox-2
+      image: busybox:latest
+      command:
+        - "sleep"
+        - "3600"
+      #将my-emptydir-vol存储卷Mount到容器中
+      volumeMounts:
+        - name: my-emptydir-vol
+          mountPath: /data-2</code></pre>
+<p>kubectl apply -f emptydir-pod.yaml</p>
+<p>进入容器busybox-1，存在/data-1目录</p>
+<pre class="highlight"><code class="language-bash">kubectl exec -it emptydir-pod -c busybox-1 sh
 
-    def talk(self):    # 父类中的方法
-        print("person is talking....")  
+ls
+bin     data-1  dev     etc     home    proc    root    sys     tmp     usr     var
+</code></pre>
+<p>在容器busybox-1向共享目录中/data-1创建一个文件</p>
+<pre class="highlight"><code class="language-bash">cd data-1
+echo "hello world" &gt; hello.txt
+exit</code></pre>
+<p>容器busybox-2的共享目录中/data-2确实能够访问容器busybox-1创建的文件，注意busybox-1:/data-1 = busybox-2:/data-2</p>
+<pre class="highlight"><code class="language-bash">kubectl exec -it emptydir-pod -c busybox-2 sh
+cat /data-2/hello.txt
+hello world
+exit</code></pre>
+<p>我们看看emptyDir存储卷在宿主机的位置。在k8s-node1节点，在Pod临时目录下存在my-emptydir-vol目录，容器创建的文件就存放在该目录中。Pod的临时目录会在Pod销毁时删除，其中my-emptydir-vol也会被附带删除。</p>
+<pre class="highlight"><code>kubectl get pod -o yaml | grep nodeName
+    nodeName: k8s-node1
+kubectl get pod -o yaml | grep uid
+    uid: e70923f9-156a-4fde-98be-e77f3f65fbd9
 
+#在k8s-node1节点
+tree /var/lib/kubelet/pods/e70923f9-156a-4fde-98be-e77f3f65fbd9/
+/var/lib/kubelet/pods/e70923f9-156a-4fde-98be-e77f3f65fbd9/
+├── containers
+│   ├── busybox-1
+│   │   ├── 753e3ae2
+│   │   └── 96560e76
+│   └── busybox-2
+│       ├── 1a8b5849
+│       └── a6a696a2
+├── etc-hosts
+├── plugins
+│   └── kubernetes.io~empty-dir
+│       ├── my-emptydir-vol
+│       │   └── ready
+│       └── wrapped_default-token-wtqgl
+│           └── ready
+└── volumes
+    ├── kubernetes.io~empty-dir
+    │   └── my-emptydir-vol
+    │       └── hello.txt
+    └── kubernetes.io~secret
+        └── default-token-wtqgl
+            ├── ca.crt -&gt; ..data/ca.crt
+            ├── namespace -&gt; ..data/namespace
+            └── token -&gt; ..data/token
 
-class Chinese(Person):    # 定义一个子类， 继承Person类
+cat /var/lib/kubelet/pods/e70923f9-156a-4fde-98be-e77f3f65fbd9/volumes/kubernetes.io~empty-dir/my-emptydir-vol/hello.txt
+hello world</code></pre>
+<p>删除Pod，查看Pod临时目录。发现已经没有Pod临时目录e70923f9-156a-4fde-98be-e77f3f65fbd9了。</p>
+<pre class="highlight"><code>kubectl delete -f emptydir-pod.yaml
 
-    def walk(self):      # 在子类中定义其自身的方法
-        print('is walking...')
-
-c = Chinese()
-c.talk()      # 调用继承的Person类的方法
-c.walk()     # 调用本身的方法
-
-# 输出
-
-person is talking....
-is walking...</code></pre>
-<h2 id="_2">构造函数的继承</h2>
-<ol>
-<li>经典类的写法：</li>
-</ol>
-<pre class="highlight"><code class="language-python"> 父类名称.__init__(self,参数1，参数2，...)</code></pre>
-<ol>
-<li>新式类的写法：</li>
-</ol>
-<pre class="highlight"><code class="language-python">super(子类，self).__init__(参数1，参数2，....)</code></pre>
-<pre class="highlight"><code class="language-python">class Person(object):
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        self.weight = 'weight'
-
-    def talk(self):
-        print("person is talking....")
-
-
-class Chinese(Person):
-
-    def __init__(self, name, age, language):  # 先继承，在重构
-        Person.__init__(self, name, age)  #继承父类的构造方法，也可以写成：super(Chinese,self).__init__(name,age)
-        self.language = language    # 定义类的本身属性
-
-    def walk(self):
-        print('is walking...')
-
-
-class American(Person):
-    pass
-
-c = Chinese('bigberg', 22, 'Chinese')</code></pre>
-<h2 id="_3">子类对父类方法的重写</h2>
-<pre class="highlight"><code class="language-python">class Person(object):
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        self.weight = 'weight'
-
-    def talk(self):
-        print("person is talking....")
-
-class Chinese(Person):
-
-    def __init__(self, name, age, language): 
-        Person.__init__(self, name, age) 
-        self.language = language
-        print(self.name, self.age, self.weight, self.language)
-
-    def talk(self):  # 子类 重构方法
-        print('%s is speaking chinese' % self.name)
-
-    def walk(self):
-        print('is walking...')
-
-c = Chinese('bigberg', 22, 'Chinese')
-c.talk()
-
-# 输出
-bigberg 22 weight Chinese
-bigberg is speaking chinese</code></pre>
-<h2 id="_4">类继承的事例</h2>
-<pre class="highlight"><code class="language-python">class SchoolMember(object):
-    '''学习成员基类'''
-    member = 0
-
-    def __init__(self, name, age, sex):
-        self.name = name
-        self.age = age
-        self.sex = sex
-        self.enroll()
-
-    def enroll(self):
-        '注册'
-        print('just enrolled a new school member [%s].' % self.name)
-        SchoolMember.member += 1
-
-    def tell(self):
-        print('----%s----' % self.name)
-        for k, v in self.__dict__.items():
-            print(k, v)
-        print('----end-----')
-
-    def __del__(self):
-        print('开除了[%s]' % self.name)
-        SchoolMember.member -= 1
-
-
-class Teacher(SchoolMember):
-    '教师'
-    def __init__(self, name, age, sex, salary, course):
-        SchoolMember.__init__(self, name, age, sex)
-        self.salary = salary
-        self.course = course
-
-    def teaching(self):
-        print('Teacher [%s] is teaching [%s]' % (self.name, self.course))
-
-
-class Student(SchoolMember):
-    '学生'
-
-    def __init__(self, name, age, sex, course, tuition):
-        SchoolMember.__init__(self, name, age, sex)
-        self.course = course
-        self.tuition = tuition
-        self.amount = 0
-
-    def pay_tuition(self, amount):
-        print('student [%s] has just paied [%s]' % (self.name, amount))
-        self.amount += amount
-
-t1 = Teacher('Wusir', 28, 'M', 3000, 'python')
-t1.tell()
-s1 = Student('haitao', 38, 'M', 'python', 30000)
-s1.tell()
-s2 = Student('lichuang', 12, 'M', 'python', 11000)
-print(SchoolMember.member)
-del s2
-
-print(SchoolMember.member)
-
-
-
-# 输出
-----end-----
-just enrolled a new school member [haitao].
-----haitao----
-age 38
-sex M
-name haitao
-amount 0
-course python
-tuition 30000
-----end-----
-just enrolled a new school member [lichuang].
-3
-开除了[lichuang]
-2
-开除了[Wusir]
-开除了[haitao]</code></pre>
+#在k8s-node1节点
+ls /var/lib/kubelet/pods/</code></pre>
                 
               
               
@@ -2168,7 +2042,7 @@ just enrolled a new school member [lichuang].
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../../shedule/see_cron/" class="md-footer__link md-footer__link--prev" aria-label="上一页: schedule日志显示下次任务执行时间" rel="prev">
+        <a href="../ClusterRole/" class="md-footer__link md-footer__link--prev" aria-label="上一页: ClusterRole" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2177,20 +2051,20 @@ just enrolled a new school member [lichuang].
               <span class="md-footer__direction">
                 上一页
               </span>
-              schedule日志显示下次任务执行时间
+              ClusterRole
             </div>
           </div>
         </a>
       
       
         
-        <a href="../class_var/" class="md-footer__link md-footer__link--next" aria-label="下一页: 类变量与实例变量" rel="next">
+        <a href="../configmap-one/" class="md-footer__link md-footer__link--next" aria-label="下一页: deployment添加配置文件" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              类变量与实例变量
+              deployment添加配置文件
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2236,16 +2110,16 @@ just enrolled a new school member [lichuang].
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
       
-        <script src="../../../../javascripts/highlight.js"></script>
+        <script src="../../javascripts/highlight.js"></script>
       
     
   </body>

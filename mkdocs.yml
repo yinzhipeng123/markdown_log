@@ -142,6 +142,8 @@ nav:
   - 亲和性: kubernetes/diaodu.md
   - minikube: kubernetes/minikube/minikube.md
   - ClusterRole: kubernetes/ClusterRole.md
+  - emptyDir: kubernetes/emptyDir.md
+  - deployment添加配置文件: kubernetes/configmap-one.md
 - Docker:
   - Docker: docker/docker_su.md
 - 内网穿透:
