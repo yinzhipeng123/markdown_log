@@ -10,7 +10,14 @@
 
 Kubectl安装：https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
-Docker安装：https://mirrors.cloud.tencent.com/help/docker-ce.html
+版本选择：
+
+```apl
+yum list kubectl --showduplicates | sort -r
+yum install -y kubectl-1.18.20-0
+```
+
+Docker安装：https://docs.docker.com/engine/install/centos/
 
 
 
@@ -58,7 +65,22 @@ kubectl proxy --port=8001 --address='0.0.0.0' --accept-hosts='^.*' --disable-fil
 
 http://ECS地址:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/overview?namespace=default
 
+测试集群
 
+```bash
+# 创建deployment
+# kubectl create deployment nginx --image=nginx
+deployment.apps/nginx created
+#扩容deployment
+# kubectl scale deployment nginx --replicas=5
+deployment.apps/nginx scaled
+# 创建service
+# kubectl expose deployment nginx --port=80 --type=NodePort
+service/nginx exposed
+
+# kubectl get pods,svc
+
+```
 
 测试完集群，可以重新初始化集群，省的一个个删除资源
 
