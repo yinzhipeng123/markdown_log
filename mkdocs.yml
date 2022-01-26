@@ -146,6 +146,8 @@ nav:
   - deployment添加配置文件: kubernetes/configmap-one.md
 - Docker:
   - Docker: docker/docker_su.md
+  - 停止docker出现警告: docker/docker_Warning.md
+  - docker_compose: docker/docker-compose.md
 - 内网穿透:
   - n2n: n2n/n2n.md
 - Pinpoint:
