@@ -1,5 +1,3 @@
-
-
 # github 比较好用的代码对比方法
 
 ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/github/select_png.png?raw=true)
@@ -8,7 +6,4 @@
 
 ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/github/select_tag.png?raw=true)
 
-
-
 ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/github/select_compare.png?raw=true)
-

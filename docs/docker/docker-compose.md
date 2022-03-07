@@ -49,8 +49,6 @@ volumes:
      ./zoo_data:/home/pinpoint/zookeepe
 ```
 
-
-
 - 容器里面/home/pinpoint/hbase映射到当前docker-compose.yaml文件所在的目录下的hase_data目录中
 - 容器里面/home/pinpoint/zookeeper映射到当前docker-compose.yaml文件所在的目录下的zoo_data目录中
 
@@ -70,7 +68,7 @@ services:
       dockerfile: Dockerfile
       args:
         - PINPOINT_VERSION=${PINPOINT_VERSION}
-    
+
     container_name: pinpoint-mysql
     restart: always
     image: "pinpointdocker/pinpoint-mysql:${PINPOINT_VERSION}"
@@ -96,7 +94,6 @@ volumes:
 这段：
 
 ```yaml
-
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
@@ -123,8 +120,6 @@ local     pinpoint-docker_mysql_data
 
 pinpoint-docker_ 为该docker-compose.yaml部署文件的目录
 
-
-
 #### 顶级卷映射
 
 docker-compose.yaml所在位置 /root/pinpoint-docker/
@@ -140,7 +135,7 @@ services:
       dockerfile: Dockerfile
       args:
         - PINPOINT_VERSION=${PINPOINT_VERSION}
-    
+
     container_name: pinpoint-mysql
     restart: always
     image: "pinpointdocker/pinpoint-mysql:${PINPOINT_VERSION}"
@@ -157,7 +152,7 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - pinpoint
-      
+
 volumes:
   data-volume:
     driver: local
@@ -201,10 +196,7 @@ local     pinpoint-docker_data-volume
 local     pinpoint-docker_mysql_data
 ```
 
-
-
 ```
-
 [root@centos7 pinpoint-docker]# docker inspect pinpoint-docker_data-volume
 [
     {
@@ -225,14 +217,8 @@ local     pinpoint-docker_mysql_data
         "Scope": "local"
     }
 ]
-
 ```
-
-
 
 github上 docker-compose 源码中对 卷的介绍，但是不详细：https://github.com/docker/docker.github.io/blob/master/compose/compose-file/compose-file-v3.md#volume-configuration-reference
 
-
-
 注意每个docker-compose.yaml 上都有个 version 版本，是告诉docker-compose 这个yaml 是基于哪个版本的语法写的 ，关于docker-compose的语法版本介绍：https://github.com/docker/docker.github.io/blob/master/compose/compose-file/compose-versioning.md
-
