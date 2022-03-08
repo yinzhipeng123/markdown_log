@@ -2,8 +2,6 @@
 
 例如prometheus挂载配置文件
 
-
-
 配置文件：prometheus.yml 
 
  以ConfigMap形式存储，如下，在K8S中用 kubectl apply -f prometheus-yml.yaml 命令 发布 
@@ -140,10 +138,7 @@ spec:
             items:
             - key: prometheus.yml
               path: prometheus.yml
-
 ```
-
-
 
 configMap卷插件中的items字段的值是一个对象列表，可嵌套使用3个字段来组合指定要引用的特定键。
 ▪key <string>：要引用的键名称，必选字段。
