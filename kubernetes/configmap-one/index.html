@@ -2083,8 +2083,7 @@ spec:
             name: infra-prometheus-yml
             items:
             - key: prometheus.yml
-              path: prometheus.yml
-</code></pre>
+              path: prometheus.yml</code></pre>
 <p>configMap卷插件中的items字段的值是一个对象列表，可嵌套使用3个字段来组合指定要引用的特定键。
 ▪key <string>：要引用的键名称，必选字段。
 ▪path <string>：对应的键在挂载点目录中映射的文件名称，它可不同于键名称，必选字段。
