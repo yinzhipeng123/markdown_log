@@ -55,6 +55,7 @@ fi
 
 git config user.name  "${username[@]}"
 git config user.email "${email[@]}"
+git config credential.helper 'cache --timeout 0'
 echo "当前提交设置："
 git config --list
 
