@@ -52,10 +52,10 @@ else
   echo "输入错误，脚本停止"
   exit 128
 fi
-
+git config credential.helper 'cache --timeout 0'
 git config user.name  "${username[@]}"
 git config user.email "${email[@]}"
-git config credential.helper 'cache --timeout 0'
+
 echo "当前提交设置："
 git config --list
 
