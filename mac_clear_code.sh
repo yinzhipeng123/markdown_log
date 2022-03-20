@@ -54,6 +54,7 @@ else
 fi
 git config credential.helper 'cache --timeout 0'
 git config --global credential.helper 'cache --timeout 0'
+git config --system credential.helper 'cache --timeout 0'
 git config user.name  "${username[@]}"
 git config user.email "${email[@]}"
 
