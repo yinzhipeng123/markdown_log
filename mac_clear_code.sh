@@ -58,7 +58,7 @@ git config user.email "${email[@]}"
 echo "当前提交设置："
 git config --list
 
-
+echo "---------------进行提交----------------"
 git add . -A
 git commit -m "commit_message"
 git push -u origin main
