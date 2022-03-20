@@ -55,7 +55,10 @@ fi
 
 git config user.name  "${username[@]}"
 git config user.email "${email[@]}"
+echo "当前提交设置："
 git config --list
+
+
 git add . -A
 git commit -m "commit_message"
 git push -u origin main
