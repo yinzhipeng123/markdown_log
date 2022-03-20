@@ -55,7 +55,7 @@ fi
 
 git config user.name  "${username[@]}"
 git config user.email "${email[@]}"
-
+git config --list
 git add . -A
 git commit -m "commit_message"
 git push -u origin main
