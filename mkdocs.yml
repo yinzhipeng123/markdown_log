@@ -73,9 +73,9 @@ plugins:
   - search:
       indexing: 'full'
 extra_javascript:
-  - '//busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js'
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
   - javascripts/highlight.js
+  - javascripts/busuanzi.pure.mini.js
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css
 

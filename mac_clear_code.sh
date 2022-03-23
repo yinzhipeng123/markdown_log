@@ -12,10 +12,6 @@ echo ${option}
 }
 
 
-
-echo "${username[@]}"
-echo "${email[@]}"
-
 echo "当前程序执行所在目录为：$(pwd)"
 
 read -p "请确认当前所在目录，是否清理　$(pwd) 下文件，输入y，继续执行，输入n，停止执行：" confirm
@@ -30,7 +26,7 @@ else
 fi
 
 shopt -s extglob
-rm -rf !(mkdocs.yml|README.md|docs|site|.git|clear_code.sh|requirements.txt|build_option.ini|mac_clear_code.sh|.gitignore|venv)
+rm -rf !(mkdocs.yml|README.md|docs|site|.git|clear_code.sh|requirements.txt|build_option.ini|mac_clear_code.sh|.gitignore|venv|mac_sed.sh)
 echo "删除完成"
 pip freeze > requirements.txt
 mkdocs build
