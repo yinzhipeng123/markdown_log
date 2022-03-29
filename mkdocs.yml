@@ -107,6 +107,7 @@ nav:
   - Python一些语法: python/basics/basic.md
   - CSV模块: python/csv.md
   - XLSX模块: python/xlxs.md
+  - XLSX转CSV: python/xlsx_to_csv.md
   - K8S模块: python/k8s.md
   - 内存性能模块: python/mem.md
   - Centos7安装Python3: python/python3_env.md
