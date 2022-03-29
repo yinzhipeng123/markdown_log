@@ -50,6 +50,15 @@ if __name__ == '__main__':
     writeDict2()
     readDict1()
     readDict2()
-
 ```
 
+
+
+```python
+import csv
+
+with open('data.csv','w+',encoding='utf-8',newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    # 写入一行
+    writer.writerow(['1', '2', '3', '4', '5', '5', '6'])
+```
