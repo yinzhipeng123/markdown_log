@@ -86,3 +86,7 @@ self.v=40
 
 
 http://kuanghy.github.io/2015/12/19/python-variable
+
+官方对于self的讲解
+
+[编程常见问题 — Python 3.9.12 文档](https://docs.python.org/zh-cn/3.9/faq/programming.html?highlight=self#what-is-self)
