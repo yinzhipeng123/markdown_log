@@ -160,6 +160,8 @@ nav:
   - 计算:
     - LWP: Linux/Cpu/LWP.md
     - 线程: Linux/Cpu/线程的研究.md
+  - 汇编基础:
+    - win10下搭建8086汇编环境: Linux/汇编/win10-masm.md
 - 散文:
   - 常用地址: soft/url.md
   - URL在线编码转换工具: soft/url_code.md

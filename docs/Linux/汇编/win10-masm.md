@@ -82,24 +82,3 @@ hello assembly!
 ```
 
 
-
-
-
-<font face="黑体">我是黑体字</font>
-<font face="微软雅黑">我是微软雅黑</font>
-<font face="STCAIYUN">我是华文彩云</font>
-<font color=red>我是红色</font>
-<font color=#008000>我是绿色</font>
-<font color=Blue>我是蓝色</font>
-<font size=5>我是尺寸</font>
-<font face="黑体" color=green size=18>我是黑体，绿色，尺寸为5</font>
-
-
-
-<div>
-<font face="黑体" color=green size=18>我是黑体，绿色，尺寸为5
-</div>
-
-
-
-<span style="font-size:30px;color:blue";face:"STCAIYUN">这是比font标签更好的方式。可以试试。</span>  哈哈
