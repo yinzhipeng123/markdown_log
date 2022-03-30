@@ -131,8 +131,6 @@ nav:
     - Gin入门:  go/go_gin.md
     - Gin 路由拆分成单个文件: go/gin_route.md
     - Gin 路由拆分成单独APP: go/gin__app_route.md
-- KubeSphere:
-  - KubeSphere安装: KubeSphere/KubeSphere.md
 - Yum:
   - ius源: yum/ius.md
 - Centos7:
@@ -147,6 +145,8 @@ nav:
   - deployment添加配置文件: kubernetes/configmap-one.md
   - 主机内目录挂载到pod中: kubernetes/hostpath.md
   - statefulset的demo: kubernetes/statefulset.md
+  - KubeSphere:
+    - KubeSphere安装: KubeSphere/KubeSphere.md
 - Docker:
   - Docker: docker/docker_su.md
   - 停止docker出现警告: docker/docker_Warning.md
