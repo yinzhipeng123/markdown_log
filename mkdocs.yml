@@ -145,6 +145,8 @@ nav:
   - ClusterRole: kubernetes/ClusterRole.md
   - emptyDir: kubernetes/emptyDir.md
   - deployment添加配置文件: kubernetes/configmap-one.md
+  - 主机内目录挂载到pod中: kubernetes/hostpath.md
+  - statefulset的demo: kubernetes/statefulset.md
 - Docker:
   - Docker: docker/docker_su.md
   - 停止docker出现警告: docker/docker_Warning.md
