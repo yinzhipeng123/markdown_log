@@ -160,7 +160,8 @@ nav:
   - 汇编基础:
       - win10下搭建8086汇编环境: Linux/汇编/win10-masm.md
   - 计算:
-    - 线程: Linux/Cpu/线程的研究.md
+    - 线程: 
+      - 什么是线程: Linux/Cpu/线程的研究.md
       - LWP: Linux/Cpu/LWP.md
   - Centos7:
     - 修改网卡: centos7/ens33.md
