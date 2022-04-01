@@ -85,6 +85,7 @@ nav:
   - Python:
     - Python一些语法: python/basics/basic.md
     - CSV模块: python/csv.md
+    - CSV、列变行、行变列转换: python/csv_row_to_col.md
     - XLSX模块: python/xlxs.md
     - XLSX转CSV: python/xlsx_to_csv.md
     - K8S模块: python/k8s.md
