@@ -5,7 +5,6 @@ repo_name: MarkDown_Log
 repo_url: https://github.com/yinzhipeng123/markdown_log/
 copyright: MarkDown_Log - Documentation
 
-
 markdown_extensions:
   - pymdownx.highlight: 
       use_pygments: false
@@ -40,9 +39,8 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - header.autohide
-    - navigation.expand
+    - navigation.indexes
     - navigation.instant
-    - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
@@ -50,7 +48,7 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
-    - toc.integrate
+
   palette:
     - scheme: default
       primary: indigo
@@ -79,9 +77,12 @@ extra_javascript:
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css
 
+
+
 nav:
 - Home: index.md
 - 编程语言:
+  - python/index.md
   - Python:
     - Python一些语法: python/basics/basic.md
     - CSV模块: python/csv.md
@@ -111,6 +112,12 @@ nav:
       - Gin入门:  go/go_gin.md
       - Gin 路由拆分成单个文件: go/gin_route.md
       - Gin 路由拆分成单独APP: go/gin__app_route.md
+  - Bash:
+    - bash/index.md
+    - 语法:
+      - 变量: bash/var.md
+      - shell读取变量: bash/read_var.md
+      - 数学运算: bash/math.md
 - 容器技术:
   - K8S:
     - K8S 1.16.9部署: kubernetes/kubernetes1.16.md
