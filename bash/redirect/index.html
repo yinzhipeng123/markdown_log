@@ -2894,13 +2894,13 @@
 <h1 id="_1">重定向</h1>
 <p>改变你命令输出结果的位置</p>
 <p>文件描述符
-<code>0</code>：标准输入
-<code>1</code>：标准输出，默认输出到屏幕上
-<code>2</code>：错误输出，默认输出到屏幕上
-<code>&gt;</code>：标准输出覆盖重定向
-<code>&gt;&gt;</code>：标准输出追加重定向
-<code>2&gt;</code>：错误输出覆盖重定向
- 2&gt;&gt;<code>：错误输出追加重定向</code></p>
+<code>0</code>：标准输入</p>
+<p><code>1</code>：标准输出，默认输出到屏幕上</p>
+<p><code>2</code>：错误输出，默认输出到屏幕上</p>
+<p><code>&gt;</code>：标准输出覆盖重定向</p>
+<p><code>&gt;&gt;</code>：标准输出追加重定向</p>
+<p><code>2&gt;</code>：错误输出覆盖重定向</p>
+<p>2&gt;&gt;<code>：错误输出追加重定向</code></p>
 <p><code>&lt;</code>：输入重定向，常用于脚本中</p>
 <pre class="highlight"><code class="language-bash">while 
 do
@@ -2986,8 +2986,8 @@ ls: cannot access /tmp/shui: No such file or directory
 [root@shell ~]# cat haha.txt 
 ls: cannot access /tmp/shui: No such file or directory
 /tmp/douniwan</code></pre>
-<p>2&gt;&amp;1：错误的按照正确的输出
-&amp;&gt; ：不论对错都重定向，一般在脚本中，写法 &amp;&gt;/dev/null  </p>
+<p>2&gt;&amp;1：错误的按照正确的输出</p>
+<p>&amp;&gt; ：不论对错都重定向，一般在脚本中，写法 &amp;&gt;/dev/null</p>
 <pre class="highlight"><code class="language-bash">[root@shell ~]# ls /tmp/douniwan /tmp/shui &amp;&gt; haha.txt
 [root@shell ~]# cat haha.txt 
 ls: cannot access /tmp/shui: No such file or directory
