@@ -118,6 +118,17 @@ nav:
       - 变量: bash/var.md
       - shell读取变量: bash/read_var.md
       - 数学运算: bash/math.md
+      - 判断: bash/branch.md
+      - if语句: bash/if.md
+      - case语句: bash/case.md
+      - for循环: bash/for.md
+      - while循环: bash/while.md
+      - until循环: bash/until.md
+      - 数组: bash/array.md
+      - 函数: bash/function.md
+      - 特殊符号: bash/special_symbols.md
+      - bash的通配符: bash/re.md
+      - 重定向: bash/redirect.md
 - 容器技术:
   - K8S:
     - K8S 1.16.9部署: kubernetes/kubernetes1.16.md
