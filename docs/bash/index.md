@@ -2,6 +2,12 @@
 
 
 
+**Bash**，[Unix shell](https://zh.wikipedia.org/wiki/Unix_shell)的一种，在1987年由[布莱恩·福克斯](https://zh.wikipedia.org/wiki/布萊恩·福克斯)为了[GNU计划](https://zh.wikipedia.org/wiki/GNU計劃)而编写。1989年发布第一个正式版本，原先是计划用在[GNU](https://zh.wikipedia.org/wiki/GNU)操作系统上，但能运行于大多数[类Unix系统](https://zh.wikipedia.org/wiki/类Unix系统)的操作系统之上，包括[Linux](https://zh.wikipedia.org/wiki/Linux)与[Mac OS X v10.4](https://zh.wikipedia.org/wiki/Mac_OS_X_v10.4)起至[macOS Mojave](https://zh.wikipedia.org/wiki/MacOS_Mojave)都将它作为默认shell，而自[macOS Catalina](https://zh.wikipedia.org/wiki/MacOS_Catalina)，默认Shell以[zsh](https://zh.wikipedia.org/wiki/Zsh)取代。
+
+Bash是[Bourne shell](https://zh.wikipedia.org/wiki/Bourne_shell)的后继兼容版本与开放源代码版本，它的名称来自[Bourne shell](https://zh.wikipedia.org/wiki/Bourne_shell)（sh）的一个双关语（*Bourne again* / born again）：**B**ourne-**A**gain **SH**ell。
+
+Bash是一个命令处理器，通常运行于文本窗口中，并能执行用户直接输入的命令。Bash还能从文件中读取命令，这样的文件称为脚本。和其他Unix shell 一样，它支持文件名替换（通配符匹配）、[管道](https://zh.wikipedia.org/wiki/管道_(Unix))、[here文档](https://zh.wikipedia.org/wiki/Here文档)、命令替换、变量，以及条件判断和循环遍历的结构控制语句。包括关键字、语法在内的基本特性全部是从[sh](https://zh.wikipedia.org/wiki/Bourne_shell)借鉴过来的。其他特性，例如历史命令，是从[csh](https://zh.wikipedia.org/wiki/C_Shell)和[ksh](https://zh.wikipedia.org/wiki/Korn_shell)借鉴而来。总的来说，Bash虽然是一个满足[POSIX](https://zh.wikipedia.org/wiki/POSIX)规范的shell，但有很多扩展。
+
 ##### 使用bash脚本的原因
 
 - 功能比较强大，可以移植

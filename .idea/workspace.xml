@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="" />
+    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/Linux/windows/虚拟机安装windows.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/awk/awk.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/awk/awk_function.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/awk/awk_redirect.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/awk/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/shell/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/shell/re/grep.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/shell/re/re.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/shell/sed/sed.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/shell/sed/sed_exd.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/shell/sed/sed_script.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/bash/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bash/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +46,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/shell" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="see.sh" type="ShConfigurationType" temporary="true">
@@ -62,7 +82,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649561558136</updated>
-      <workItem from="1649561561558" duration="823000" />
+      <workItem from="1649561561558" duration="2705000" />
+      <workItem from="1649577470380" duration="681000" />
+      <workItem from="1649778068589" duration="525000" />
+      <workItem from="1649819116254" duration="568000" />
+      <workItem from="1649822430517" duration="7526000" />
     </task>
     <servers />
   </component>

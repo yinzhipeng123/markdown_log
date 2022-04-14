@@ -112,6 +112,17 @@ nav:
       - Gin入门:  go/go_gin.md
       - Gin 路由拆分成单个文件: go/gin_route.md
       - Gin 路由拆分成单独APP: go/gin__app_route.md
+  - awk:
+    - awk/index.md
+    - 基础语法: awk/awk.md
+    - 数组: awk/awk_array.md
+    - 循环控制: awk/awk_process_control.md
+    - 匹配: awk/awk_matching.md
+    - 函数: awk/awk_function.md
+    - 重定向: awk/awk_redirect.md
+    - awk使用bash变量: awk/awk_var.md
+    - awk无缓存输出: awk/awk_nocache.md
+    - awk不打印某列: awk/awk_noprint.md
   - Bash:
     - bash/index.md
     - 语法:
@@ -129,6 +140,20 @@ nav:
       - 特殊符号: bash/special_symbols.md
       - bash的通配符: bash/re.md
       - 重定向: bash/redirect.md
+  - 一些帮助书写Bash脚本的东西:
+      - shell/index.md
+      - sed:
+        - shell/sed/index.md
+        - 语法: shell/sed/sed.md
+        - sed脚本: shell/sed/sed_script.md
+        - 拓展: shell/sed/sed_exd.md
+      - grep: shell/re/grep.md
+      - 正则表达式: shell/re/re.md
+      - echo: shell/echo.md
+
+
+
+
 - 容器技术:
   - K8S:
     - K8S 1.16.9部署: kubernetes/kubernetes1.16.md
@@ -186,6 +211,7 @@ nav:
     - 修改网卡: centos7/ens33.md
     - Yum:
         - ius源: yum/ius.md
+  - 虚拟机安装Windows: Linux/windows/虚拟机安装windows.md
 - 散文:
   - 常用地址: soft/url.md
   - URL在线编码转换工具: soft/url_code.md
