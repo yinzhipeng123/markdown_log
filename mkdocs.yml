@@ -149,7 +149,15 @@ nav:
         - 拓展: shell/sed/sed_exd.md
       - grep: shell/re/grep.md
       - 正则表达式: shell/re/re.md
-      - echo: shell/echo.md
+      - bash的颜色控制: shell/echo.md
+      - bash脚本查看文件指定行: shell/cat.md
+      - bashm脚本命令行选项: shell/getops.md
+      - bash脚本加密: shell/gzexe.md
+      - 控制bash子bash: shell/mkfifo.md
+      - bash中的异常处理: shell/trap.md
+      - 查看系统软件变化: shell/rpm.md
+      - bash批量登录服务器: shell/sshpass.md
+
 
 
 
