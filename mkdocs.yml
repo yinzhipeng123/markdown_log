@@ -157,7 +157,6 @@ nav:
       - bash中的异常处理: shell/trap.md
       - 查看系统软件变化: shell/rpm.md
       - bash批量登录服务器: shell/sshpass.md
-
 - 容器技术:
   - K8S:
     - K8S 1.16.9部署: kubernetes/kubernetes1.16.md
@@ -216,12 +215,15 @@ nav:
     - Yum:
         - ius源: yum/ius.md
   - 虚拟机安装Windows: Linux/windows/虚拟机安装windows.md
+- 工具:
+  - tool/index.md
+  - git及github的轻度教程: tool/github使用.md
+  - Pycharm及配合Github的使用: tool/pycharm.md
+  - MkDocs的使用: tool/MkDoc.md
 - 散文:
   - 常用地址: soft/url.md
   - URL在线编码转换工具: soft/url_code.md
   - P99: soft/p99.md
   - github代码对比: soft/github.md
-  - MkDocs:
-    - git及github的轻度教程: api/github使用.md
-    - Pycharm及配合Github的使用: api/pycharm.md
-    - MkDocs在Python2环境下的使用: api/MkDoc.md
+
+

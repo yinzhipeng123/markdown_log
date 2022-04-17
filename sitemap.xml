@@ -31,21 +31,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/api/MkDoc/</loc>
-         <lastmod>2022-04-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/api/github%E4%BD%BF%E7%94%A8/</loc>
-         <lastmod>2022-04-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/api/pycharm/</loc>
-         <lastmod>2022-04-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/awk/</loc>
          <lastmod>2022-04-17</lastmod>
          <changefreq>daily</changefreq>
@@ -542,6 +527,26 @@
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/soft/url_code/</loc>
+         <lastmod>2022-04-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/tool/</loc>
+         <lastmod>2022-04-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/tool/MkDoc/</loc>
+         <lastmod>2022-04-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/tool/github%E4%BD%BF%E7%94%A8/</loc>
+         <lastmod>2022-04-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/tool/pycharm/</loc>
          <lastmod>2022-04-17</lastmod>
          <changefreq>daily</changefreq>
     </url>

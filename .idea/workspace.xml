@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/tool/MkDoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/tool/index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/api/pycharm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/api/pycharm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/api/MkDoc.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/api/github使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tool/github使用.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/api/pycharm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tool/pycharm.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +79,8 @@
       <workItem from="1649577470380" duration="681000" />
       <workItem from="1649778068589" duration="525000" />
       <workItem from="1649819116254" duration="568000" />
-      <workItem from="1649822430517" duration="9687000" />
+      <workItem from="1649822430517" duration="10064000" />
+      <workItem from="1650199753075" duration="620000" />
     </task>
     <servers />
   </component>
