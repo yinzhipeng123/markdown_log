@@ -7,38 +7,46 @@
 
 
 1、下载python安装包
-　　在python官网进行下载https://www.python.org/downloads/ 我这里下载的是2.7.9的，当然你也可以下载最新的：
+
+在python官网进行下载https://www.python.org/downloads/ 我这里下载的是2.7.9的，当然你也可以下载最新的：
 
 ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/Python2.7.png?raw=true)
 
 安装比较简单，只需要下一步...就行。
+
 2、添加Python的系统路径
-　　在“系统变量”中的“系统变量”里面的path中，添加你的python的安装路径即可，如我的安装路径如下：
+
+在“系统变量”中的“系统变量”里面的path中，添加你的python的安装路径即可，如我的安装路径如下：
+
 ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/image-20210714193055178.png?raw=true)
 
 3、检验安装是否成功
-　　在控制台输入python，是否能进入命令行
-　![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/1.png?raw=true)
+
+在控制台输入python，是否能进入命令行
+
+![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/1.png?raw=true)
 
 4、安装pip
-　　pip是一个安装和管理 Python 包的工具,后面安装软件用pip安装特别方便
-　　（1）下载pip压缩包 https://pypi.org/project/pip/20.3.4/#files
+
+pip是一个安装和管理 Python 包的工具,后面安装软件用pip安装特别方便
+
+（1）下载pip压缩包 https://pypi.org/project/pip/20.3.4/#files
    ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/image-20210714195020249.png?raw=true)　　　　　
-　　（2）解压，在控制台切换到pip的解压后的文件夹的路径中输入"python setup.py install",setup.py就是它的安装文件
+（2）解压，在控制台切换到pip的解压后的文件夹的路径中输入"python setup.py install",setup.py就是它的安装文件
    　　![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/image-20210714195401479.png?raw=true)
-　　（3)添加pip的环境变量，pip会被安装在你python安装路径中的Scripts文件夹中
+（3)添加pip的环境变量，pip会被安装在你python安装路径中的Scripts文件夹中
+
+
 
 ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/pip_exnv.png?raw=true)
 
+（4)检验pip是否安装成功，windows控制台输入"pip",由如下输出则安装成功
 
-　　（4)检验pip是否安装成功，windows控制台输入"pip",由如下输出则安装成功
-      ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/oooooooo.png?raw=true)
+​      ![](https://github.com/yinzhipeng123/markdown_log/blob/main/docs/image/oooooooo.png?raw=true)
 
 
 
 如果安装完 PIP出现这个
-
-
 
 ```bash
 $-> pip
@@ -60,15 +68,11 @@ ImportError: No module named typing
 
 解决方案：
 
-
-
 ```bash
 > curl -O https://bootstrap.pypa.io/pip/2.7/get-pip.py
 > python get-pip.py
 > python -m pip install --upgrade "pip < 21.0"
 ```
-
-
 
 5、pip安装wheel 
 
@@ -77,8 +81,6 @@ ImportError: No module named typing
 ```
 pip install wheel  -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
-
-
 
 Python及pip安装完成
 
@@ -113,8 +115,6 @@ mkdocs serve会把makedown文件以静态页面的形式展示到127.0.0.1:8000�
 
 可以参考其配置
 
-
-
 ## GitHub Pages发布
 
 ```powershell
@@ -122,8 +122,6 @@ D:\git\markdown_log>mkdocs build
 WARNING -  Config value: 'pages'. Warning: The 'pages' configuration option has been deprecated and will be removed in a future release of MkDocs. Use 'nav' instead.
 INFO    -  Cleaning site directory
 INFO    -  Building documentation to directory: D:\git\markdown_log\site
-
-
 ```
 
 然后剪切site下的所有文件到D:\git\markdown_log下
@@ -156,8 +154,6 @@ git push origin main
 
 然后就可以通过这个地址进行访问了
 
-
-
 ## 美化MkDocs
 
 cmd中执行pip
@@ -165,8 +161,6 @@ cmd中执行pip
 ```powershell
 pip install mkdocs-windmill
 ```
-
-
 
 修改mkdocs.yml，添加行theme: windmill，使用nav
 
@@ -179,8 +173,6 @@ nav:
   - MkDocs: api/MkDoc.md
 theme: windmill
 ```
-
-
 
 cmd中启动
 
@@ -207,8 +199,6 @@ git push origin main
 
 
 当我要回答一个问题，我需要确定自己对这个问题所涉及到的技术都了然于心，不然写出来的东西如果是错的话，姑且不说丢不丢人，最重要的是这样会误人子弟。所以如果看到一个问题我并不是非常了解，我不会第一时间就去回答，而是自己去研究一轮，研究透彻了，再去回答问题。在这么一个过程当中，**我又巩固了以前的知识，并学习到了新的知识，顺带还帮助到提出问题的人，这是双赢的，何乐而不为**？
-
-
 
 另外，**多写东西，可以提高你的表达能力**。
 

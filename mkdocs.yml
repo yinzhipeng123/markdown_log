@@ -158,10 +158,6 @@ nav:
       - 查看系统软件变化: shell/rpm.md
       - bash批量登录服务器: shell/sshpass.md
 
-
-
-
-
 - 容器技术:
   - K8S:
     - K8S 1.16.9部署: kubernetes/kubernetes1.16.md
@@ -226,4 +222,5 @@ nav:
   - P99: soft/p99.md
   - github代码对比: soft/github.md
   - MkDocs:
+    - git及github的轻度教程: api/github使用.md
     - MkDocs在Python2环境下的使用: api/MkDoc.md
