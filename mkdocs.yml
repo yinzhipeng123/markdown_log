@@ -1,9 +1,9 @@
 #mkdocs serve
 site_name: MarkDown_Log
 site_url: https://yinzhipeng123.github.io/markdown_log/
+# 设置git库 https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/
 repo_name: MarkDown_Log
 repo_url: https://github.com/yinzhipeng123/markdown_log/
-copyright: MarkDown_Log - Documentation
 
 markdown_extensions:
   - pymdownx.highlight: 
@@ -16,57 +16,106 @@ markdown_extensions:
   - attr_list
   - def_list
   - footnotes
+#   可以设置页面属性的功能
   - meta
   - md_in_html
-
 extra:
   search:
-    language: 'zh_CN'
+    lang:
+      - 'zh_CN'
+      - 'en'
   disqus: 'something'
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+#  谷歌分析。https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#google-analytics
   analytics:
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
+    property: G-2ZF49ZVQ2M
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target=_blank>feedback form</a>.
+#    property: !ENV GOOGLE_ANALYTICS_KEY
+#  设置页脚
   social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:yinzhipeng361@tom.com
+      name: 给我发送电子邮件
     - icon: fontawesome/brands/github
-      link: https://github.com
+      link: https://github.com/yinzhipeng123
+      name: github
+
+
 
 
 theme:
   name: material
+#  设置站点语言
+#  官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/
   language: 'zh'
   
   features:
     - content.code.annotate
     - content.tabs.link
+#   自动隐藏
     - header.autohide
+#    启用索引页，也就是介绍页
     - navigation.indexes
+#    即时加载
     - navigation.instant
+#    导航栏
     - navigation.tabs
+#    导航选项卡将锁定在标题下方
     - navigation.tabs.sticky
+#   【返回顶部】的按钮
     - navigation.top
+#    锚点跟踪
     - navigation.tracking
+#    搜索代码块
     - search.highlight
+#    搜索结果共享
     - search.share
+#    搜索建议
     - search.suggest
 
   palette:
-    - scheme: default
+#    - 主体颜色
+#    - 官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+    - scheme: slate
+#      导航栏颜色
       primary: indigo
-      accent: indigo
+#      点击颜色
+      accent: cyan
+#     点击切换主题
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - scheme: slate
-      primary: red
-      accent: red
+      primary: deep purple
+      accent: cyan
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+#  设置文章字体
+#  官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/
   font:
     text: Roboto
     code: Roboto Mono
-
-
 plugins:
   - search:
       indexing: 'full'
@@ -76,145 +125,153 @@ extra_javascript:
   - javascripts/busuanzi.pure.mini.js
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css
-
-
-
 nav:
 - Home: index.md
 - 编程语言:
-  - python/index.md
+  - programming_language/index.md
   - Python:
-    - Python一些语法: python/basics/basic.md
-    - CSV模块: python/csv.md
-    - CSV、列变行、行变列转换: python/csv_row_to_col.md
-    - XLSX模块: python/xlxs.md
-    - XLSX转CSV: python/xlsx_to_csv.md
-    - K8S模块: python/k8s.md
-    - 内存性能模块: python/mem.md
-    - Centos7安装Python3: python/python3_env.md
-    - Python3 Dokcer镜像制作: python/python3_docker.md
-    - Python3 日志控制: python/python_log.md
-    - Flask: python/flask/flask_init.md
-    - 线程: 
-      - 通过继承实现多线程: python/threading/thread.md
-      - threading.Event(): python/threading/thread_event.md
-      - join的作用: python/threading/join.md
+    - Python一些语法: programming_language/python/basics/basic.md
+    - CSV模块: programming_language/python/csv.md
+    - CSV、列变行、行变列转换: programming_language/python/csv_row_to_col.md
+    - XLSX模块: programming_language/python/xlxs.md
+    - XLSX转CSV: programming_language/python/xlsx_to_csv.md
+    - K8S模块: programming_language/python/k8s.md
+    - 内存性能模块: programming_language/python/mem.md
+    - Centos7安装Python3: programming_language/python/python3_env.md
+    - Python3 Dokcer镜像制作: programming_language/python/python3_docker.md
+    - Python3 日志控制: programming_language/python/python_log.md
+    - Flask: programming_language/python/flask/flask_init.md
+    - 线程:
+      - 通过继承实现多线程: programming_language/python/threading/thread.md
+      - threading.Event(): programming_language/python/threading/thread_event.md
+      - join的作用: programming_language/python/threading/join.md
+      - 通过继承实现多线程: programming_language/python/threading/thread.md
     - shedule:
-      - 后台执行: python/shedule/run_in_back.md
-      - schedule日志显示下次任务执行时间: python/shedule/see_cron.md
+      - 后台执行: programming_language/python/shedule/run_in_back.md
+      - schedule日志显示下次任务执行时间: programming_language/python/shedule/see_cron.md
     - 类:
-      - 类的继承: python/basics/class/class.md
-      - 类变量与实例变量: python/basics/class/class_var.md
-    - mypy: python/basics/mypy.md
+      - 类的继承: programming_language/python/basics/class/class.md
+      - 类变量与实例变量: programming_language/python/basics/class/class_var.md
+    - mypy: programming_language/python/basics/mypy.md
   - Go:
-    - Go入门: go/go_one.md
+    - Go入门: programming_language/go/go_one.md
     - Web框架 Gin: 
-      - Gin入门:  go/go_gin.md
-      - Gin 路由拆分成单个文件: go/gin_route.md
-      - Gin 路由拆分成单独APP: go/gin__app_route.md
+      - Gin入门:  programming_language/go/go_gin.md
+      - Gin 路由拆分成单个文件: programming_language/go/gin_route.md
+      - Gin 路由拆分成单独APP: programming_language/go/gin__app_route.md
   - awk:
-    - awk/index.md
-    - 基础语法: awk/awk.md
-    - 数组: awk/awk_array.md
-    - 循环控制: awk/awk_process_control.md
-    - 匹配: awk/awk_matching.md
-    - 函数: awk/awk_function.md
-    - 重定向: awk/awk_redirect.md
-    - awk使用bash变量: awk/awk_var.md
-    - awk无缓存输出: awk/awk_nocache.md
-    - awk不打印某列: awk/awk_noprint.md
+    - programming_language/awk/index.md
+    - 基础语法: programming_language/awk/awk.md
+    - 数组: programming_language/awk/awk_array.md
+    - 循环控制: programming_language/awk/awk_process_control.md
+    - 匹配: programming_language/awk/awk_matching.md
+    - 函数: programming_language/awk/awk_function.md
+    - 重定向: programming_language/awk/awk_redirect.md
+    - awk使用bash变量: programming_language/awk/awk_var.md
+    - awk无缓存输出: programming_language/awk/awk_nocache.md
+    - awk不打印某列: programming_language/awk/awk_noprint.md
   - Bash:
-    - bash/index.md
+    - programming_language/bash/index.md
     - 语法:
-      - 变量: bash/var.md
-      - shell读取变量: bash/read_var.md
-      - 数学运算: bash/math.md
-      - 判断: bash/branch.md
-      - if语句: bash/if.md
-      - case语句: bash/case.md
-      - for循环: bash/for.md
-      - while循环: bash/while.md
-      - until循环: bash/until.md
-      - 数组: bash/array.md
-      - 函数: bash/function.md
-      - 特殊符号: bash/special_symbols.md
-      - bash的通配符: bash/re.md
-      - 重定向: bash/redirect.md
+      - 变量: programming_language/bash/var.md
+      - shell读取变量: programming_language/bash/read_var.md
+      - 数学运算: programming_language/bash/math.md
+      - 判断: programming_language/bash/branch.md
+      - if语句: programming_language/bash/if.md
+      - case语句: programming_language/bash/case.md
+      - for循环: programming_language/bash/for.md
+      - while循环: programming_language/bash/while.md
+      - until循环: programming_language/bash/until.md
+      - 数组: programming_language/bash/array.md
+      - 函数: programming_language/bash/function.md
+      - 特殊符号: programming_language/bash/special_symbols.md
+      - bash的通配符: programming_language/bash/re.md
+      - 重定向: programming_language/bash/redirect.md
   - 一些帮助书写Bash脚本的东西:
-      - shell/index.md
+      - programming_language/bash_help/index.md
       - sed:
-        - shell/sed/index.md
-        - 语法: shell/sed/sed.md
-        - sed脚本: shell/sed/sed_script.md
-        - 拓展: shell/sed/sed_exd.md
-      - grep: shell/re/grep.md
-      - 正则表达式: shell/re/re.md
-      - bash的颜色控制: shell/echo.md
-      - bash脚本查看文件指定行: shell/cat.md
-      - bashm脚本命令行选项: shell/getops.md
-      - bash脚本加密: shell/gzexe.md
-      - 控制bash子bash: shell/mkfifo.md
-      - bash中的异常处理: shell/trap.md
-      - 查看系统软件变化: shell/rpm.md
-      - bash批量登录服务器: shell/sshpass.md
+        - programming_language/bash_help/sed/index.md
+        - 语法: programming_language/bash_help/sed/sed.md
+        - sed脚本: programming_language/bash_help/sed/sed_script.md
+        - 拓展: programming_language/bash_help/sed/sed_exd.md
+      - grep: programming_language/bash_help/re/grep.md
+      - 正则表达式: programming_language/bash_help/re/re.md
+      - bash的颜色控制: programming_language/bash_help/echo.md
+      - bash脚本查看文件指定行: programming_language/bash_help/cat.md
+      - bashm脚本命令行选项: programming_language/bash_help/getops.md
+      - bash脚本加密: programming_language/bash_help/gzexe.md
+      - 控制bash子bash: programming_language/bash_help/mkfifo.md
+      - bash中的异常处理: programming_language/bash_help/trap.md
+      - 查看系统软件变化: programming_language/bash_help/rpm.md
+      - bash批量登录服务器: programming_language/bash_help/sshpass.md
 - 容器技术:
+  - lxc/index.md
   - K8S:
-    - K8S 1.16.9部署: kubernetes/kubernetes1.16.md
-    - 污点: kubernetes/dudian.md
-    - 亲和性: kubernetes/diaodu.md
-    - minikube: kubernetes/minikube/minikube.md
-    - ClusterRole: kubernetes/ClusterRole.md
-    - emptyDir: kubernetes/emptyDir.md
-    - deployment添加配置文件: kubernetes/configmap-one.md
-    - 主机内目录挂载到pod中: kubernetes/hostpath.md
-    - statefulset的demo: kubernetes/statefulset.md
+    - lxc/kubernetes/index.md
+    - minikube: lxc/kubernetes/minikube/minikube.md
+    - K8S 1.16.9部署: lxc/kubernetes/kubernetes1.16.md
+    - 基础概念: lxc/kubernetes/basic.md
+    - 污点: lxc/kubernetes/stain.md
+    - 亲和性: lxc/kubernetes/dispatch.md
+    - ClusterRole: lxc/kubernetes/ClusterRole.md
+    - emptyDir: lxc/kubernetes/emptyDir.md
+    - deployment添加配置文件: lxc/kubernetes/configmap-one.md
+    - 主机内目录挂载到pod中: lxc/kubernetes/hostpath.md
+    - Deployment的demo: lxc/kubernetes/depolyment_model.md
+    - statefulset的demo: lxc/kubernetes/statefulset.md
+    - K8S部署应用的8项原则: lxc/kubernetes/principle.md
   - KubeSphere:
-    - KubeSphere安装: KubeSphere/KubeSphere.md
+    - KubeSphere安装: lxc/kubesphere/kubesphere.md
   - Rancher:
-    - Rancher安装: rancher/rancher_instatll.md
+    - Rancher安装: lxc/rancher/rancher_instatll.md
   - Docker:
-    - Docker安装和加速: docker/docker_su.md
-    - 停止docker出现警告: docker/docker_Warning.md
-    - docker_compose中卷的映射: docker/docker-compose.md
-    - docker_compse讲解: docker/pinpoint_compose.md
+    - Docker安装和加速: lxc/docker/docker_su.md
+    - 停止docker出现警告: lxc/docker/docker_Warning.md
+    - docker_compose中卷的映射: lxc/docker/docker-compose.md
+    - docker_compse讲解: lxc/docker/pinpoint_compose.md
 - 中间件:
+  - middleware/index.md
   - Etcd:
-    - etcd部署: etcd/etcd.md
+    - etcd部署: middleware/etcd/etcd.md
   - 内网穿透:
-    - n2n: n2n/n2n.md
+    - n2n: middleware/n2n/n2n.md
   - Pinpoint:
-    - Pinpoint安装: pinpoint/pinpoint_install.md
+    - Pinpoint安装: middleware/pinpoint/pinpoint_install.md
+  - Mysql:
+    - 基本语法: middleware/mysql/basic.md
+    - 数据类型: middleware/mysql/type.md
+
 - 监控:
+  - monitor/index.md
   - Prometheus:
-    - Prometheus:
-      - 单机部署: prometheus/prometheus/prometheus.md
-      - K8S部署: prometheus/prometheus/prometheus_k8s.md
-      - K8S kube-state-metrics指标说明: prometheus/prometheus/kube-state-metrics.md
-      - Exporter Metrics解释: prometheus/prometheus/Exporter_Metrics.md
-      - Prometheus监控查询例子: prometheus/prometheus/query_xamples.md
-      - Prometheus监控查询语法入门: prometheus/prometheus/query_rules.md
-      - Prometheus语法函数: prometheus/prometheus/function.md
-      - Prometheus recording_rules功能: prometheus/prometheus/prometheus_recording_rule.md
-      - Prometheus指标讲解"为什么rate可以计算CPU的使用率": prometheus/prometheus/prometheus_rate.md
+    - 单机部署: monitor/prometheus/prometheus.md
+    - K8S部署: monitor/prometheus/prometheus_k8s.md
+    - K8S kube-state-metrics指标说明: monitor/prometheus/kube-state-metrics.md
+    - Exporter Metrics解释: monitor/prometheus/Exporter_Metrics.md
+    - Prometheus监控查询例子: monitor/prometheus/query_xamples.md
+    - Prometheus监控查询语法入门: monitor/prometheus/query_rules.md
+    - Prometheus语法函数: monitor/prometheus/function.md
+    - Prometheus recording_rules功能: monitor/prometheus/prometheus_recording_rule.md
+    - Prometheus指标讲解"为什么rate可以计算CPU的使用率": monitor/prometheus/prometheus_rate.md
   - Alertmanager:
-    - Alertmanager部署: prometheus/prometheus/prometheus.md
-    - Alertmanager配置: prometheus/alertmanager/alertmanager_config.md
+    - Alertmanager部署: monitor/prometheus/prometheus.md
+    - Alertmanager配置: monitor/alertmanager/alertmanager_config.md
   - Grafana:
-    - Grafana部署: prometheus/grafana/grafana_install.md
-    - Dashboard: prometheus/grafana/grafana_dashboard.md
-    - Grafana添加变量: prometheus/grafana/grafana_var.md
+    - Grafana部署: monitor/grafana/grafana_install.md
+    - Dashboard: monitor/grafana/grafana_dashboard.md
+    - Grafana添加变量: monitor/grafana/grafana_var.md
 - 操作系统:
   - 汇编基础:
-      - win10下搭建8086汇编环境: Linux/汇编/win10-masm.md
+      - win10下搭建8086汇编环境: system/汇编/win10-masm.md
   - 计算:
     - 线程: 
-      - 什么是线程: Linux/Cpu/线程的研究.md
-      - LWP: Linux/Cpu/LWP.md
+      - 什么是线程: system/Cpu/线程的研究.md
+      - LWP: system/Cpu/LWP.md
   - Centos7:
-    - 修改网卡: centos7/ens33.md
+    - 修改网卡: system/centos7/ens33.md
     - Yum:
-        - ius源: yum/ius.md
-  - 虚拟机安装Windows: Linux/windows/虚拟机安装windows.md
+        - ius源: system/yum/ius.md
+  - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
 - 工具:
   - tool/index.md
   - git及github的轻度教程: tool/github使用.md
