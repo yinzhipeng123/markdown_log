@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/makedown_log.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/makedown_log.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/javascripts/highlight.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/javascripts/highlight.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/lxc/kubernetes/deployement/consul-domainService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/lxc/kubernetes/deployement/consul-domainService.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/lxc/kubernetes/deployement/prometheus-domainService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/lxc/kubernetes/deployement/prometheus-domainService.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/programming_language/python/basics/basic.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/programming_language/python/basics/basic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lxc/kubernetes/deployement/consul-domainService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/lxc/kubernetes/deployement/consul-domainService.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lxc/kubernetes/deployement/prometheus-domainService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/lxc/kubernetes/deployement/prometheus-domainService.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +78,8 @@
       <workItem from="1650199753075" duration="750000" />
       <workItem from="1650381966649" duration="4018000" />
       <workItem from="1650475964397" duration="482000" />
-      <workItem from="1651998233723" duration="18975000" />
+      <workItem from="1651998233723" duration="19499000" />
+      <workItem from="1652037616422" duration="888000" />
     </task>
     <servers />
   </component>
