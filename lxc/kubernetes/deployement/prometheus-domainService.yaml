@@ -5,7 +5,7 @@ metadata:
   namespace: default
   labels:
     app: infra-prometheus-net
-    service: zkh-infra-prometheus-net
+    service: yzp-infra-prometheus-net
 spec:
   type: ClusterIP
   ports:

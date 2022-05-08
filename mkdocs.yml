@@ -6,51 +6,39 @@ repo_name: MarkDown_Log
 repo_url: https://github.com/yinzhipeng123/markdown_log/
 
 markdown_extensions:
-  - pymdownx.highlight: 
+#  语法高亮，不使用pygments，设置Highlight.jsw为高亮，参考：https://github.com/squidfunk/mkdocs-material/blob/master/docs/setup/extensions/python-markdown-extensions.md
+  - pymdownx.highlight:
       use_pygments: false
   - pymdownx.superfences
+
+#  可以在md引用单独的代码段文件，参看使用：https://squidfunk.github.io/mkdocs-material/reference/abbreviations/#adding-a-glossary
   - pymdownx.snippets
+#  可以在md中添加键盘图标，参考：https://squidfunk.github.io/mkdocs-material/reference/formatting/#adding-keyboard-keys
   - pymdownx.keys
+# 下面三个选项，给md添加关键字，来实现页面上特殊的提示块，参考使用：https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+#  给md文档中的关键字添加页面提示，官网地址：https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
   - abbr
+#  通过md给页面添加按钮，图片格式等样式
   - attr_list
+#  通过md给页面添加特殊的列表
   - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+#  添加脚注，参考：https://squidfunk.github.io/mkdocs-material/reference/footnotes/#configuration
   - footnotes
 #   可以设置页面属性的功能
   - meta
+# 可以在md中添加html。参考 https://python-markdown.github.io/extensions/md_in_html/
   - md_in_html
 extra:
-  search:
-    lang:
-      - 'zh_CN'
-      - 'en'
   disqus: 'something'
-  consent:
-    title: Cookie consent
-    description: >-
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
 #  谷歌分析。https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#google-analytics
   analytics:
     provider: google
     property: G-2ZF49ZVQ2M
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >-
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="..." target=_blank>feedback form</a>.
-#    property: !ENV GOOGLE_ANALYTICS_KEY
 #  设置页脚
   social:
     - icon: fontawesome/solid/paper-plane
@@ -61,14 +49,11 @@ extra:
       name: github
 
 
-
-
 theme:
   name: material
 #  设置站点语言
 #  官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/
   language: 'zh'
-  
   features:
     - content.code.annotate
     - content.tabs.link
@@ -116,15 +101,24 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+
 plugins:
   - search:
+#  配置搜索索引器在为页面生成索引时将使用的策略。如果项目规模较大，并且索引占用大量磁盘空间，则此属性特别有用,参考地址：https://www.mkdocs.org/user-guide/configuration/#configuration-inheritance
       indexing: 'full'
+      separator: '[\\s\\u200b\\-]'
+      lang:
+        - 'en'
 extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+#highlight.js  cdn获取地址：https://highlightjs.org/download/
+  - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js
   - javascripts/highlight.js
   - javascripts/busuanzi.pure.mini.js
 extra_css:
-  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/an-old-hope.min.css
+#设置代码风格：https://github.com/highlightjs/highlight.js/tree/main/src/styles，注意的:是不要忘记在“.css”之前添加“.min”
+  - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/styles/gradient-dark.min.css
+
+
 nav:
 - Home: index.md
 - 编程语言:

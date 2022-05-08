@@ -2,121 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/makedown_log.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/makedown_log.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/KubeSphere/KubeSphere.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Linux/Cpu/LWP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Linux/Cpu/线程的研究.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Linux/windows/虚拟机安装windows.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Linux/汇编/win10-masm.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/awk.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/awk_array.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/awk_function.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/awk_matching.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/awk_nocache.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/awk_noprint.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/awk_process_control.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/awk_redirect.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/awk_var.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/awk/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/array.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/branch.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/case.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/for.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/function.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/if.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/math.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/re.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/read_var.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/redirect.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/special_symbols.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/until.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/var.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bash/while.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/centos7/ens33.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/docker/docker-compose.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/docker/docker_Warning.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/docker/docker_su.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/docker/pinpoint_compose.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/etcd/etcd.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/go/gin__app_route.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/go/gin_route.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/go/go_gin.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/go/go_one.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/ClusterRole.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/configmap-one.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/consul-deployment.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/consul-domainService.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/kube-state-metrics.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/kubeStateMetrics-clusterRole.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/kubeStateMetrics-clusterRoleBinding.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/kubeStateMetrics-serviceAccount.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/prometheus-deployment.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/prometheus-domainService.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/prometheus-yml.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/deployement/tmp.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/depolyment_model.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/diaodu.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/dudian.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/emptyDir.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/hostpath.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/kubernetes1.16.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/minikube/minikube.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/kubernetes/statefulset.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/n2n/n2n.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pinpoint/pinpoint_install.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/alertmanager/alertmanager_config.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/grafana/grafana_dashboard.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/grafana/grafana_install.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/grafana/grafana_var.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/prometheus/Exporter_Metrics.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/prometheus/function.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/prometheus/kube-state-metrics.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/prometheus/prometheus.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/prometheus/prometheus_k8s.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/prometheus/prometheus_rate.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/prometheus/prometheus_recording_rule.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/prometheus/query_rules.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prometheus/prometheus/query_xamples.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/basics/basic.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/basics/class/class.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/basics/class/class_var.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/basics/mypy.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/csv.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/csv_row_to_col.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/flask/flask_init.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/k8s.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/mem.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/python3_docker.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/python3_env.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/python_log.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/shedule/run_in_back.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/shedule/see_cron.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/threading/join.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/threading/thread.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/threading/thread_event.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/xlsx_to_csv.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/python/xlxs.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/rancher/rancher_instatll.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/cat.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/echo.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/getops.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/gzexe.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/mkfifo.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/re/grep.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/re/re.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/rpm.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/sed/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/sed/sed.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/sed/sed_exd.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/sed/sed_script.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/sshpass.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shell/trap.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/yum/ius.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javascripts/highlight.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/javascripts/highlight.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/lxc/kubernetes/deployement/consul-domainService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/lxc/kubernetes/deployement/consul-domainService.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/lxc/kubernetes/deployement/prometheus-domainService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/lxc/kubernetes/deployement/prometheus-domainService.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/programming_language/python/basics/basic.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/programming_language/python/basics/basic.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lxc/kubernetes/deployement/consul-domainService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/lxc/kubernetes/deployement/consul-domainService.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lxc/kubernetes/deployement/prometheus-domainService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/lxc/kubernetes/deployement/prometheus-domainService.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -191,7 +87,7 @@
       <workItem from="1650199753075" duration="750000" />
       <workItem from="1650381966649" duration="4018000" />
       <workItem from="1650475964397" duration="482000" />
-      <workItem from="1651998233723" duration="6829000" />
+      <workItem from="1651998233723" duration="18975000" />
     </task>
     <servers />
   </component>

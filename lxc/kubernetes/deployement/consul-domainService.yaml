@@ -5,7 +5,7 @@ metadata:
   namespace: default
   labels:
     app: infra-consul-net
-    service: zkh-infra-consul-net
+    service: yzp-infra-consul-net
 spec:
   type: ClusterIP
   ports:

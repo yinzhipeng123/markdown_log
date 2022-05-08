@@ -531,10 +531,10 @@ doctest.testmod()
 
 运行结果：
 
-```
+```bash
 40.0
 **********************************************************************
-File "D:\idea\zkh-infra-web\tar\test\flask_learn\unit_test.py", line 4, in __main__.average
+File "D:\idea\infra-web\tar\test\flask_learn\unit_test.py", line 4, in __main__.average
 Failed example:
     print(average([20, 30, 70]))
 Expected:
