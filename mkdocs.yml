@@ -234,6 +234,10 @@ nav:
   - Mysql:
     - 基本语法: middleware/mysql/basic.md
     - 数据类型: middleware/mysql/type.md
+    - 约束: middleware/mysql/constraint.md
+    - 授权: middleware/mysql/grant.md
+    - 查询: middleware/mysql/select.md
+    - 函数: middleware/mysql/function.md
 
 - 监控:
   - monitor/index.md
@@ -257,14 +261,21 @@ nav:
 - 操作系统:
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
-  - 计算:
-    - 线程: 
-      - 什么是线程: system/Cpu/线程的研究.md
-      - LWP: system/Cpu/LWP.md
+  - Linux:
+    - 什么是线程: system/linux/线程的研究.md
+    - LWP: system/linux/LWP.md
+    - 僵尸进程: system/linux/僵尸进程.md
+    - 孤儿进程: system/linux/孤儿进程.md
+    - 上下文切换导致sys高: system/linux/上下文切换导致sys高.md
+    - load高的原因: system/linux/load高的原因.md
+    - perf命令: system/linux/perf.md
+    - vmstat命令: system/linux/vmstat.md
+    - ps命令: system/linux/ps.md
+    - /proc/stat: system/linux/?proc?stat.md
   - Centos7:
     - 修改网卡: system/centos7/ens33.md
     - Yum:
-        - ius源: system/yum/ius.md
+        - ius源: system/centos7/yum/ius.md
   - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
 - 工具:
   - tool/index.md

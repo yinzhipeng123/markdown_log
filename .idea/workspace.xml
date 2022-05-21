@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/system/perf.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/Cpu/LWP.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/LWP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/Cpu/线程的研究.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/线程的研究.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/yum/ius.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/yum/ius.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +41,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/system/linux" />
+      <recent name="$PROJECT_DIR$/docs/system/centos7" />
       <recent name="$PROJECT_DIR$/docs/shell" />
     </key>
   </component>
@@ -79,7 +85,11 @@
       <workItem from="1650381966649" duration="4018000" />
       <workItem from="1650475964397" duration="482000" />
       <workItem from="1651998233723" duration="19499000" />
-      <workItem from="1652037616422" duration="888000" />
+      <workItem from="1652037616422" duration="973000" />
+      <workItem from="1652243117496" duration="1035000" />
+      <workItem from="1652960892621" duration="2959000" />
+      <workItem from="1653040260219" duration="2130000" />
+      <workItem from="1653135793027" duration="558000" />
     </task>
     <servers />
   </component>
