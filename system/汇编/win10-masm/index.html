@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#win10masm" class="md-skip">
+        <a href="#masm" class="md-skip">
           跳转至
         </a>
       
@@ -3170,9 +3170,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          win10下搭建8086汇编环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         win10下搭建8086汇编环境
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1win10masm" class="md-nav__link">
+    1、WIN10下搭建masm汇编环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2macmasm" class="md-nav__link">
+    2、mac上搭建masm汇编环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3201,6 +3246,10 @@
       
         
           
+            
+          
+        
+          
         
           
         
@@ -3222,10 +3271,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6_2">
-          Linux
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Linux</a>
+          
+            <label for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="Linux" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_2">
@@ -3233,6 +3288,8 @@
           Linux
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
           
             
               
@@ -3721,6 +3778,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1win10masm" class="md-nav__link">
+    1、WIN10下搭建masm汇编环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2macmasm" class="md-nav__link">
+    2、mac上搭建masm汇编环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3737,49 +3823,25 @@
 
 
 
-<h1 id="win10masm">WIN10下搭建masm汇编环境</h1>
-<p>依赖：dosBOX 0.74，masm 6.15</p>
-<p>https://www.dosbox.com/</p>
-<p>http://www.downcc.com/soft/318780.html</p>
-<p>masm解压后，改名为masm615，新建myasm目录，和BIN目录同级，放在D盘，如下</p>
+<h1 id="masm">搭建masm汇编环境</h1>
+<h3 id="1win10masm">1、WIN10下搭建masm汇编环境</h3>
+<ul>
+<li>下载dosbox的windows版本：https://www.dosbox.com/</li>
+<li>下载masm等程序：https://github.com/yinzhipeng123/Picture_Bed/raw/main/masm615.zip</li>
+</ul>
+<p>masm解压后，改名为masm615，，放在D盘，如下</p>
 <pre class="highlight"><code class="language-powershell">D:\masm615
 BIN/
 DOSXNT.EXE*
-EDIT.COM*
-EDIT.HLP
-HELP/
-INCLUDE/
-INIT/
-LGX.ASM
-LGX.LST
-LGX.OBJ
-Li2.asm
-li2.exe*
-li2.obj
-LIB/
-LIB.EXE*
-LINK.EXE*
-MASM.EXE*
-ML.ERR
-ml.exe*
-Ml611.exe*
-Ml710.exe*
-myasm/
-SAMPLES/
-TEST01.ASM
-test01.exe*
-test01.lst
-test01.obj
-TMP/</code></pre>
-<p>安装DOSBOX，在DOSBOX安装目录，双击DOSBox 0.74-3 Options.bat，会弹出DOSBOX的配置，末尾添加</p>
+。。。。</code></pre>
+<p>安装dosbox，在DOSBOX安装目录，双击DOSBox 0.74-3 Options.bat，会弹出DOSBOX的配置，末尾添加</p>
 <pre class="highlight"><code class="language-powershell">mount d D:\masm615
 path=%path%;D:\BIN;D:\
 d:
 cd myasm</code></pre>
-<p>安装完成了</p>
 <p>在D:\masm615\myasm目录下进行编辑asm文件，在DOSBOX模拟器里面就能直接对asm文件进行编译，运行和调试了</p>
 <p>编辑 eg101.asm</p>
-<pre class="highlight"><code class="language-asm6502">        ;eg101.asm
+<pre class="highlight"><code class="language-ASN.1">        ;eg101.asm
         .model small
         .stack
         .data
@@ -3791,12 +3853,55 @@ msg     db 'hello assembly!',13,10,'$'
         int 21h
         .exit
         end</code></pre>
-<p>打开桌面上的DOSBox 0.74-3图标</p>
-<p>命令行里输入：</p>
-<pre class="highlight"><code class="language-powershell">&gt; ml eg101.asm
+<p>打开桌面上的DOSBox 0.74-3图标，命令行里输入：</p>
+<pre class="highlight"><code class="language-powershell">&gt; ML611.EXE eg101.asm
 &gt; eg101.exe
 hello assembly!
 &gt;</code></pre>
+<h3 id="2macmasm">2、mac上搭建masm汇编环境</h3>
+<ul>
+<li>下载dosbox的windows版本：https://www.dosbox.com/</li>
+<li>下载masm等程序：https://github.com/yinzhipeng123/Picture_Bed/raw/main/masm615.zip</li>
+</ul>
+<p>masm解压后，改名为masm615，放在家目录 /Users/zhipengyin/下，如下</p>
+<pre class="highlight"><code class="language-bash">zhipengyin@zhipengyindeMBP masm615 % ls
+BIN     HELP        LIB.EXE     Ml611.exe   masm
+DOSXNT.EXE  INCLUDE     LINK.EXE    Ml710.exe   ml.exe
+EDIT.COM    INIT        MASM.EXE    SAMPLES     myasm
+EDIT.HLP    LIB     ML.ERR      TMP
+zhipengyin@zhipengyindeMBP masm615 % pwd
+/Users/zhipengyin/masm615</code></pre>
+<p>安装DOSBOX，然后编辑DOSBOX配置。如下</p>
+<pre class="highlight"><code class="language-bash">vim /Users/zhipengyin/Library/Preferences/DOSBox\ 0.74-3-3\ Preferences
+
+[autoexec]
+# Lines in this section will be run at startup.
+# You can put your MOUNT lines here.
+# 在这添加下面的内容
+mount d /Users/zhipengyin/masm615
+path=%path%;D:\BIN;D:\
+d:
+cd myasm</code></pre>
+<p>在/Users/zhipengyin/masm615/myasm目录下进行编辑asm文件，在DOSBOX模拟器里面就能直接对asm文件进行编译，运行和调试了</p>
+<p>编辑 eg101.asm</p>
+<pre class="highlight"><code class="language-ASN.1">        ;eg101.asm
+        .model small
+        .stack
+        .data
+msg     db 'hello assembly!',13,10,'$'
+        .code
+        .startup
+        mov dx , offset msg
+        mov ah , 9
+        int 21h
+        .exit
+        end</code></pre>
+<p>打开桌面上的DOSBox图标，命令行里输入：</p>
+<pre class="highlight"><code class="language-powershell">&gt; ML611.EXE eg101.asm
+&gt; eg101.exe
+hello assembly!
+&gt;</code></pre>
+<h3 id="_1"></h3>
 
               
             </article>
@@ -3831,13 +3936,13 @@ hello assembly!
       
       
         
-        <a href="../../linux/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%A0%94%E7%A9%B6/" class="md-footer__link md-footer__link--next" aria-label="下一页: 什么是线程" rel="next">
+        <a href="../../" class="md-footer__link md-footer__link--next" aria-label="下一页: Index" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              什么是线程
+              Index
             </div>
           </div>
           <div class="md-footer__button md-icon">

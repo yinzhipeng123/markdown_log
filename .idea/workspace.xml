@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/system/perf.md" afterDir="false" />
+    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/Cpu/LWP.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/LWP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/Cpu/线程的研究.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/线程的研究.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/yum/ius.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/yum/ius.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/ps.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/ps.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/perf.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -89,7 +87,15 @@
       <workItem from="1652243117496" duration="1035000" />
       <workItem from="1652960892621" duration="2959000" />
       <workItem from="1653040260219" duration="2130000" />
-      <workItem from="1653135793027" duration="558000" />
+      <workItem from="1653135793027" duration="1331000" />
+      <workItem from="1653726590951" duration="995000" />
+      <workItem from="1653811226430" duration="129000" />
+      <workItem from="1653811370878" duration="21000" />
+      <workItem from="1653811405782" duration="569000" />
+      <workItem from="1653928184818" duration="489000" />
+      <workItem from="1653928885950" duration="5000" />
+      <workItem from="1653934260378" duration="102000" />
+      <workItem from="1653969772853" duration="1323000" />
     </task>
     <servers />
   </component>
