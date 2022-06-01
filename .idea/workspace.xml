@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/linux/ps.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/ps.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/perf.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +93,8 @@
       <workItem from="1653928885950" duration="5000" />
       <workItem from="1653934260378" duration="102000" />
       <workItem from="1653969772853" duration="1323000" />
+      <workItem from="1654009148607" duration="106000" />
+      <workItem from="1654065128488" duration="1318000" />
     </task>
     <servers />
   </component>
