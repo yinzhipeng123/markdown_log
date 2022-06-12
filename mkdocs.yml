@@ -261,18 +261,43 @@ nav:
 - 操作系统:
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
+      - 存储单元: system/汇编/存储单元.md
+      - 地址总线: system/汇编/地址总线.md
+      - 控制总线: system/汇编/控制总线.md
+      - 数据总线: system/汇编/数据总线.md
+      - 内存地址空间: system/汇编/内存地址空间.md
+      - 8086CPU: system/汇编/8086CPU.md
+      - debug命令: system/汇编/debug命令.md
+      - 寄存器: system/汇编/寄存器.md
+      - 代码段: system/汇编/代码段.md
+      - 汇编指令合集: system/汇编/汇编指令合集.md
   - Linux:
     - system/index.md
-    - 什么是线程: system/linux/线程的研究.md
-    - LWP: system/linux/LWP.md
-    - 僵尸进程: system/linux/僵尸进程.md
-    - 孤儿进程: system/linux/孤儿进程.md
-    - 上下文切换导致sys高: system/linux/上下文切换导致sys高.md
-    - load高的原因: system/linux/load高的原因.md
-    - perf命令: system/linux/perf.md
-    - vmstat命令: system/linux/vmstat.md
-    - ps命令: system/linux/ps.md
-    - /proc/stat: system/linux/?proc?stat.md
+    - 计算相关:
+        - 什么是线程: system/linux/计算/线程的研究.md
+        - LWP: system/linux/计算/LWP.md
+        - 进程间通信: system/linux/计算/进程间通信.md
+        - 僵尸进程: system/linux/计算/僵尸进程.md
+        - 孤儿进程: system/linux/计算/孤儿进程.md
+        - 中断: system/linux/计算/中断.md
+        - load高的原因: system/linux/计算/load高的原因.md
+        - 上下文切换导致sys高: system/linux/计算/上下文切换导致sys高.md
+        - perf命令: system/linux/计算/perf.md
+        - vmstat命令: system/linux/计算/vmstat.md
+        - ps命令: system/linux/计算/ps.md
+        - iostat命令: system/linux/计算/iostat.md
+        - sar命令: system/linux/计算/sar.md
+        - top命令: system/linux/计算/top.md
+        - /proc/stat: system/linux/计算/?proc?stat.md
+    - 内存相关:
+        - 内存: system/linux/内存/内存.md
+        - Linux的两种内存分配方式: system/linux/内存/Linux的两种内存分配方式.md
+        - slabtop命令: system/linux/内存/slabtop.md
+        - /proc/slabinfo: system/linux/内存/?proc?slabinfo.md
+        - oom机制: system/linux/内存/oom机制.md
+        - oom评分是如何算出来: system/linux/内存/oom评分是如何算出来的.md
+        - 计算oom评分的脚本: system/linux/内存/计算oom评分的脚本.md
+        - free命令: system/linux/内存/free.md
   - Centos7:
     - 修改网卡: system/centos7/ens33.md
     - Yum:

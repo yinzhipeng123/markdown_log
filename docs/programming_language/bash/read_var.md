@@ -35,7 +35,7 @@ user jiujiu added.
 
 #### 2、read   自身显示提示信息    
 
--p   打印提示的    ——   prompt：提示   
+`-p`		打印提示的    ——   prompt：提示   
 
 ```bash
 [root@shell script]# cp sc4.sh sc5.sh
@@ -50,7 +50,7 @@ user doushuine added.
 
 #### 3、read 不回显用户输入的信息     
 
--s 不显示用户输入的信息
+`-s`		不显示用户输入的信息
 
 ```bash
 [root@shell script]# cp sc5.sh sc6.sh
@@ -71,7 +71,7 @@ echo：可以用来打印空行或者换行。
 
 #### 4、限制读取时间   
 
--t 秒数
+`-t`		秒数
 
 ```bash
 [root@shell script]# cp sc6.sh sc7.sh
@@ -85,6 +85,10 @@ echo $password | passwd --stdin $username &>/dev/null && echo "password set succ
 ```
 
 read： 
-    -p：打印提示信息
-    -s：不回显用户输入的信息
-    -t 时间：限制读取输入的等待时间
+
+​    -p：打印提示信息
+
+​    -s：不回显用户输入的信息
+
+​    -t 时间：限制读取输入的等待时间
+

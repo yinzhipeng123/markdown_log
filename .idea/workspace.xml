@@ -3,6 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/programming_language/bash/read_var.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/programming_language/bash/read_var.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/?proc?slabinfo.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/?proc?stat.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/LWP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/Linux的两种内存分配方式.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/Untitled.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/iostat.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/load高的原因.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/perf.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/ps.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/sar.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/slabtop.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/top.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/vmstat.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/上下文切换导致sys高.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/中断.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/僵尸进程.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/内存.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/孤儿进程.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/线程的研究.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/进程间通信.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +117,13 @@
       <workItem from="1653934260378" duration="102000" />
       <workItem from="1653969772853" duration="1323000" />
       <workItem from="1654009148607" duration="106000" />
-      <workItem from="1654065128488" duration="1318000" />
+      <workItem from="1654065128488" duration="1366000" />
+      <workItem from="1654139422130" duration="2996000" />
+      <workItem from="1654953694314" duration="88000" />
+      <workItem from="1654953794901" duration="2024000" />
+      <workItem from="1655002261628" duration="493000" />
+      <workItem from="1655050322426" duration="1142000" />
+      <workItem from="1655051907194" duration="1233000" />
     </task>
     <servers />
   </component>
