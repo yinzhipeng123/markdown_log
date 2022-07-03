@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更" />
+    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/内存/?proc?slabinfo.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/内存/?proc?slabinfo.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/内存/Linux的两种内存分配方式.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/内存/Linux的两种内存分配方式.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +103,15 @@
       <workItem from="1654953794901" duration="2024000" />
       <workItem from="1655002261628" duration="493000" />
       <workItem from="1655050322426" duration="1142000" />
-      <workItem from="1655051907194" duration="1574000" />
+      <workItem from="1655051907194" duration="1816000" />
+      <workItem from="1655053948697" duration="2000" />
+      <workItem from="1655053979022" duration="16000" />
+      <workItem from="1655125110200" duration="1003000" />
+      <workItem from="1655295297846" duration="18000" />
+      <workItem from="1656163976794" duration="988000" />
+      <workItem from="1656645541206" duration="3627000" />
+      <workItem from="1656653477585" duration="483000" />
+      <workItem from="1656654909092" duration="450000" />
     </task>
     <servers />
   </component>

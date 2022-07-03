@@ -2,7 +2,7 @@
 
 
 
-### 用/proc/slabtop可以实现简单的slabtop
+### 用/proc/slabinfo可以实现简单的slabtop
 
 ```bash
 $ cat /proc/slabinfo | grep -v "^#"|awk '$3!=0{print $1,$2,$3,$4}' | sort -k3nr | head -n 10 | awk '{print $1,$2,$3,(($2/$3)*100)"%",$4*$3/1024"K"}' 

@@ -259,18 +259,6 @@ nav:
     - Dashboard: monitor/grafana/grafana_dashboard.md
     - Grafana添加变量: monitor/grafana/grafana_var.md
 - 操作系统:
-  - 汇编基础:
-      - win10下搭建8086汇编环境: system/汇编/win10-masm.md
-      - 存储单元: system/汇编/存储单元.md
-      - 地址总线: system/汇编/地址总线.md
-      - 控制总线: system/汇编/控制总线.md
-      - 数据总线: system/汇编/数据总线.md
-      - 内存地址空间: system/汇编/内存地址空间.md
-      - 8086CPU: system/汇编/8086CPU.md
-      - debug命令: system/汇编/debug命令.md
-      - 寄存器: system/汇编/寄存器.md
-      - 代码段: system/汇编/代码段.md
-      - 汇编指令合集: system/汇编/汇编指令合集.md
   - Linux:
     - system/index.md
     - 计算相关:
@@ -292,17 +280,36 @@ nav:
     - 内存相关:
         - 内存: system/linux/内存/内存.md
         - Linux的两种内存分配方式: system/linux/内存/Linux的两种内存分配方式.md
+        - 内存回收的方式: system/linux/内存/内存回收的方式.md
         - slabtop命令: system/linux/内存/slabtop.md
         - /proc/slabinfo: system/linux/内存/?proc?slabinfo.md
+        - ?proc?meminfo: system/linux/内存/?proc?meminfo.md
+        - 内存页的理解: system/linux/内存/内存页的理解.md
+        - min_free_kbytes参数: system/linux/内存/min_free_kbytes参数.md
         - oom机制: system/linux/内存/oom机制.md
         - oom评分是如何算出来: system/linux/内存/oom评分是如何算出来的.md
         - 计算oom评分的脚本: system/linux/内存/计算oom评分的脚本.md
         - free命令: system/linux/内存/free.md
+        - 内存优化的手段: system/linux/内存/内存优化的手段.md
+        - 查看进程swap使用的脚本: system/linux/内存/查看进程swap使用的脚本.md
+        - 过度分配的理解: system/linux/内存/过度分配的理解.md
   - Centos7:
     - 修改网卡: system/centos7/ens33.md
     - Yum:
         - ius源: system/centos7/yum/ius.md
   - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
+  - 汇编基础:
+      - win10下搭建8086汇编环境: system/汇编/win10-masm.md
+      - 存储单元: system/汇编/存储单元.md
+      - 地址总线: system/汇编/地址总线.md
+      - 控制总线: system/汇编/控制总线.md
+      - 数据总线: system/汇编/数据总线.md
+      - 内存地址空间: system/汇编/内存地址空间.md
+      - 8086CPU: system/汇编/8086CPU.md
+      - debug命令: system/汇编/debug命令.md
+      - 寄存器: system/汇编/寄存器.md
+      - 代码段: system/汇编/代码段.md
+      - 汇编指令合集: system/汇编/汇编指令合集.md
 - 工具:
   - tool/index.md
   - git及github的轻度教程: tool/github使用.md
