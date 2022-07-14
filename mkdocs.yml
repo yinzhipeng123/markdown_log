@@ -283,7 +283,7 @@ nav:
         - 内存回收的方式: system/linux/内存/内存回收的方式.md
         - slabtop命令: system/linux/内存/slabtop.md
         - /proc/slabinfo: system/linux/内存/?proc?slabinfo.md
-        - ?proc?meminfo: system/linux/内存/?proc?meminfo.md
+        - /proc/meminfo: system/linux/内存/?proc?meminfo.md
         - 内存页的理解: system/linux/内存/内存页的理解.md
         - min_free_kbytes参数: system/linux/内存/min_free_kbytes参数.md
         - oom机制: system/linux/内存/oom机制.md
@@ -293,6 +293,11 @@ nav:
         - 内存优化的手段: system/linux/内存/内存优化的手段.md
         - 查看进程swap使用的脚本: system/linux/内存/查看进程swap使用的脚本.md
         - 过度分配的理解: system/linux/内存/过度分配的理解.md
+    - IO相关:
+        - IO技术栈: system/linux/IO/IO技术栈.md
+        - IO指标及工具: system/linux/IO/IO指标及工具.md
+        - IO优化建议: system/linux/IO/IO优化建议.md
+        - IO scheduler: system/linux/IO/IO scheduler.md
   - Centos7:
     - 修改网卡: system/centos7/ens33.md
     - Yum:

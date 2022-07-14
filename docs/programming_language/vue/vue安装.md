@@ -113,3 +113,4 @@ index.html	static
 ```
 
 这样直接双击 dist/index.html 文件就可以在浏览器中看到效果了。
+

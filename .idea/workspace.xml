@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
-      <change afterPath="$PROJECT_DIR$/docs/programming_language/vue/安装nodejs.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/IO技术栈.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/programming_language/vue/npm的使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/programming_language/vue/npm的使用.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/programming_language/vue/vue安装.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/programming_language/vue/vue安装.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +32,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/opt/github/markdown_log&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs/system/linux" />
@@ -112,6 +119,11 @@
       <workItem from="1656654909092" duration="964000" />
       <workItem from="1656845436284" duration="71000" />
       <workItem from="1656848043943" duration="1426000" />
+      <workItem from="1656945626666" duration="1023000" />
+      <workItem from="1657137444992" duration="441000" />
+      <workItem from="1657145062766" duration="444000" />
+      <workItem from="1657269787723" duration="931000" />
+      <workItem from="1657783840948" duration="750000" />
     </task>
     <servers />
   </component>

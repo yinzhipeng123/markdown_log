@@ -3141,6 +3141,8 @@
         
           
         
+          
+        
       
       
         
@@ -3573,7 +3575,7 @@
   
     <li class="md-nav__item">
       <a href="../../../system/linux/%E5%86%85%E5%AD%98/%3Fproc%3Fmeminfo/" class="md-nav__link">
-        ?proc?meminfo
+        /proc/meminfo
       </a>
     </li>
   
@@ -3700,6 +3702,105 @@
     <li class="md-nav__item">
       <a href="../../../system/linux/%E5%86%85%E5%AD%98/%E8%BF%87%E5%BA%A6%E5%88%86%E9%85%8D%E7%9A%84%E7%90%86%E8%A7%A3/" class="md-nav__link">
         过度分配的理解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_4" type="checkbox" id="__nav_6_1_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_4">
+          IO相关
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IO相关" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          IO相关
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/linux/IO/IO%E6%8A%80%E6%9C%AF%E6%A0%88/" class="md-nav__link">
+        IO技术栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/linux/IO/IO%E6%8C%87%E6%A0%87%E5%8F%8A%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        IO指标及工具
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/linux/IO/IO%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+        IO优化建议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/linux/IO/IO%20scheduler/" class="md-nav__link">
+        IO scheduler
       </a>
     </li>
   
@@ -4346,6 +4447,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#npm_3" class="md-nav__link">
+    npm更换镜像源
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npm-installnpm-i" class="md-nav__link">
+    npm install与npm i区别如下：
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4432,6 +4547,45 @@ projectName@projectVersion /path/to/project/folder
 <pre class="highlight"><code class="language-bash">$ sudo npm install -g cnpm --registry=https://registry.npmmirror.com</code></pre>
 <p>这样就可以使用 cnpm 命令来安装模块了：</p>
 <pre class="highlight"><code class="language-bash">$ cnpm install [name]</code></pre>
+<h2 id="npm_3">npm更换镜像源</h2>
+<p>查看原来的源</p>
+<pre class="highlight"><code class="language-bash">npm congfig get registry</code></pre>
+<p>更换国内的源</p>
+<pre class="highlight"><code class="language-bash">npm config set registry https://registry.npm.taobao.org</code></pre>
+<p>安装从指定的源</p>
+<pre class="highlight"><code class="language-bash">npm install --registry=https://registry.npm.taobao.org</code></pre>
+<h2 id="npm-installnpm-i"><code>npm install</code>与<code>npm i</code>区别如下：</h2>
+<ol>
+<li><code>npm i</code>安装的模块及依赖，使用<code>npm uninstall</code>是没有办法删除的，必须使用<code>npm uninstall i</code>才可以删除</li>
+<li><code>npm i</code>会帮助检测与当前<code>node</code>最匹配的<code>npm</code>的版本号，并匹配出相互依赖的<code>npm</code>包应该升级的版本号</li>
+<li><code>npm i</code>安装的一些包，在当前的<code>node</code>版本下是没有办法使用的，必须使用建议版本</li>
+<li>
+<p><code>npm i</code>安装出现问题是不会出现<code>npm-debug.log</code>文件的，但<code>npm install</code>安装出现问题是有这个文件的</p>
+</li>
+<li>
+<p><code>npm i XXX_name -S</code>  = &gt;  <code>npm install XXX_name --save</code>    写入到 <code>dependencies</code> 对象</p>
+</li>
+<li>
+<p><code>npm i XXX_name -D</code>  =&gt; <code>npm install XXX_name --save-dev</code>   写入到<code>devDependencies</code> 对象</p>
+</li>
+<li>
+<p><code>npm i XXX_name -g</code>  全局安装</p>
+</li>
+<li>
+<p><code>i</code>是<code>install</code>的简写</p>
+</li>
+<li><code>-S</code>就是<code>--save</code>的简写</li>
+<li><code>-D</code>就是<code>--save-dev</code>这样安装的包的名称及版本号就会存在<code>package.json</code>的<code>devDependencies</code>这个里面，而<code>--save</code>会将包的名称及版本号放在dependencies里面。</li>
+</ol>
+<p>我们在使用<code>npm install</code>安装模块或插件的时候，有两种命令把他们写入到 <code>package.json</code>文件里面去，比如：</p>
+<p><code>--save</code></p>
+<p><code>--save-dev</code>**</p>
+<p>在<code>package.json</code>文件里面提现出来的区别:</p>
+<p><code>--save</code>安装的插件，被写入到<code>dependencies</code>对象里面去。</p>
+<p><code>--save-dev</code>安装的插件，被写入到 <code>devDependencies</code>对象里面去。</p>
+<p><code>package.json</code>文件里面的<code>devDependencies</code>和<code>dependencies</code>对象有什么区别呢？</p>
+<p><code>devDependencies</code>里面的插件只用于开发环境，不用于生产环境。</p>
+<p><code>dependencies</code>是需要发布到生产环境的。</p>
 
               
             </article>

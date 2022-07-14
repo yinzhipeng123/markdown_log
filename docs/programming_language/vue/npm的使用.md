@@ -148,3 +148,77 @@ $ sudo npm install -g cnpm --registry=https://registry.npmmirror.com
 ```bash
 $ cnpm install [name]
 ```
+
+
+
+
+
+## npm更换镜像源
+
+
+
+查看原来的源
+
+```bash
+npm congfig get registry
+```
+
+更换国内的源
+
+```bash
+npm config set registry https://registry.npm.taobao.org
+```
+
+安装从指定的源
+
+```bash
+npm install --registry=https://registry.npm.taobao.org
+```
+
+
+
+## `npm install`与`npm i`区别如下：
+
+1. `npm i`安装的模块及依赖，使用`npm uninstall`是没有办法删除的，必须使用`npm uninstall i`才可以删除
+2. `npm i`会帮助检测与当前`node`最匹配的`npm`的版本号，并匹配出相互依赖的`npm`包应该升级的版本号
+3. `npm i`安装的一些包，在当前的`node`版本下是没有办法使用的，必须使用建议版本
+4. `npm i`安装出现问题是不会出现`npm-debug.log`文件的，但`npm install`安装出现问题是有这个文件的
+
+- `npm i XXX_name -S`  = >  `npm install XXX_name --save`    写入到 `dependencies` 对象
+
+- `npm i XXX_name -D`  => `npm install XXX_name --save-dev`   写入到`devDependencies` 对象
+
+-  `npm i XXX_name -g`  全局安装
+
+  
+
+- `i`是`install`的简写
+- `-S`就是`--save`的简写
+- `-D`就是`--save-dev`这样安装的包的名称及版本号就会存在`package.json`的`devDependencies`这个里面，而`--save`会将包的名称及版本号放在dependencies里面。
+
+
+
+我们在使用`npm install`安装模块或插件的时候，有两种命令把他们写入到 `package.json`文件里面去，比如：
+
+ `--save`
+
+`--save-dev`**
+
+
+
+在`package.json`文件里面提现出来的区别:
+
+`--save`安装的插件，被写入到`dependencies`对象里面去。
+
+`--save-dev`安装的插件，被写入到 `devDependencies`对象里面去。
+
+
+
+`package.json`文件里面的`devDependencies`和`dependencies`对象有什么区别呢？
+
+`devDependencies`里面的插件只用于开发环境，不用于生产环境。
+
+`dependencies`是需要发布到生产环境的。
+
+
+
