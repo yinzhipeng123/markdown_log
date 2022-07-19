@@ -761,6 +761,31 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/%E7%BD%91%E7%BB%9C/net.ipv4.tcp_fin_timeout/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/%E7%BD%91%E7%BB%9C/tcp/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/%E7%BD%91%E7%BB%9C/time_wait/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/%E7%BD%91%E7%BB%9C/%E4%BF%AE%E6%94%B9TCP%E7%9A%84TIME-WAIT%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/%E7%BD%91%E7%BB%9C/%E6%A8%A1%E6%8B%9F%E4%B8%80%E6%AC%A1/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/%E8%AE%A1%E7%AE%97/%3Fproc%3Fstat/</loc>
          <lastmod>2022-07-19</lastmod>
          <changefreq>daily</changefreq>

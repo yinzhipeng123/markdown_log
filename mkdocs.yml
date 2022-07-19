@@ -303,6 +303,12 @@ nav:
         - IO scheduler: system/linux/IO/IO scheduler.md
         - blktrace命令: system/linux/IO/blktrace命令.md
         - hdparm命令: system/linux/IO/hdparm命令.md
+    - 网络相关:
+        - TCP图解: system/linux/网络/tcp.md
+        - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
+        - 阿里云修改TCP的TIME-WAIT超时时间: system/linux/网络/修改TCP的TIME-WAIT超时时间.md
+        - Linux修改TCP的TIME-WAIT超时时间: system/linux/网络/net.ipv4.tcp_fin_timeout.md
+        - 模拟一次CLOSE_WAIT: system/linux/网络/模拟一次.md
   - Centos7:
     - 修改网卡: system/centos7/ens33.md
     - Yum:
