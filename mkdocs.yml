@@ -302,6 +302,7 @@ nav:
         - IO优化建议: system/linux/IO/IO优化建议.md
         - IO scheduler: system/linux/IO/IO scheduler.md
         - blktrace命令: system/linux/IO/blktrace命令.md
+        - hdparm命令: system/linux/IO/hdparm命令.md
   - Centos7:
     - 修改网卡: system/centos7/ens33.md
     - Yum:
