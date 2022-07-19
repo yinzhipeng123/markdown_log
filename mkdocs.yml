@@ -277,6 +277,7 @@ nav:
         - sar命令: system/linux/计算/sar.md
         - top命令: system/linux/计算/top.md
         - /proc/stat: system/linux/计算/?proc?stat.md
+        - strace命令: system/linux/计算/strace.md
     - 内存相关:
         - 内存: system/linux/内存/内存.md
         - Linux的两种内存分配方式: system/linux/内存/Linux的两种内存分配方式.md

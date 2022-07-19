@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
+      <change afterPath="$PROJECT_DIR$/docs/system/linux/计算/strace.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
@@ -121,7 +122,7 @@
       <workItem from="1657145062766" duration="444000" />
       <workItem from="1657269787723" duration="931000" />
       <workItem from="1657783840948" duration="1058000" />
-      <workItem from="1658247059627" duration="637000" />
+      <workItem from="1658247059627" duration="1907000" />
     </task>
     <servers />
   </component>
