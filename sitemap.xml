@@ -76,7 +76,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/lxc/kubernetes/liveness/</loc>
+         <lastmod>2022-08-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/lxc/kubernetes/principle/</loc>
+         <lastmod>2022-08-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/lxc/kubernetes/readiness/</loc>
          <lastmod>2022-08-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -87,6 +97,11 @@
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/lxc/kubernetes/statefulset/</loc>
+         <lastmod>2022-08-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/lxc/kubernetes/%E6%BB%9A%E5%8A%A8%E5%8D%87%E7%BA%A7%E4%B8%AD%E7%9A%84maxSurge%E5%92%8CmaxUnavailable/</loc>
          <lastmod>2022-08-15</lastmod>
          <changefreq>daily</changefreq>
     </url>

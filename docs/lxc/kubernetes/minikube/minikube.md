@@ -4,7 +4,9 @@
 
 我的ECS是腾讯云的，Centos7.6 镜像，地域在硅谷，因为K8S很多镜像都在海外，国内即使有腾讯阿里的源，但是经常也下载不下来，折腾了很多遍，不折腾了，直接地域选择海外，节省很多心力
 
+官方源码：[kubernetes/minikube: Run Kubernetes locally (github.com)](https://github.com/kubernetes/minikube)
 
+官网操作文档：[minikube start | minikube (k8s.io)](https://minikube.sigs.k8s.io/docs/start/)
 
 机器需要安装  Kubectl和Docker
 
@@ -12,14 +14,34 @@ Kubectl安装：https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 版本选择：
 
-```apl
+```shell
+#设置源
+cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-\$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
 yum list kubectl --showduplicates | sort -r
 yum install -y kubectl-1.18.20-0
 ```
 
 Docker安装：https://docs.docker.com/engine/install/centos/
 
+```bash
+ sudo yum install -y yum-utils
+ sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+ sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+ systemctl start docker
+ systemctl enable docker
+```
 
+安装minikube
 
 ```bash
 #安装minikube
