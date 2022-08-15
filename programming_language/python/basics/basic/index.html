@@ -505,6 +505,12 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_2">
@@ -870,6 +876,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/" class="md-nav__link">
+        python函数参数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%94%9F%E6%88%90%E5%99%A8/" class="md-nav__link">
+        python生成器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%BF%AD%E4%BB%A3%E5%99%A8/" class="md-nav__link">
+        python迭代器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../flask/flask_init/" class="md-nav__link">
         Flask
       </a>
@@ -887,7 +935,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_14" type="checkbox" id="__nav_2_2_14" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_17" type="checkbox" id="__nav_2_2_17" >
       
       
       
@@ -902,13 +950,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_2_14">
+        <label class="md-nav__link" for="__nav_2_2_17">
           线程
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="线程" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_2_14">
+        <label class="md-nav__title" for="__nav_2_2_17">
           <span class="md-nav__icon md-icon"></span>
           线程
         </label>
@@ -986,7 +1034,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_15" type="checkbox" id="__nav_2_2_15" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_18" type="checkbox" id="__nav_2_2_18" >
       
       
       
@@ -997,13 +1045,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_2_15">
+        <label class="md-nav__link" for="__nav_2_2_18">
           shedule
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="shedule" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_2_15">
+        <label class="md-nav__title" for="__nav_2_2_18">
           <span class="md-nav__icon md-icon"></span>
           shedule
         </label>
@@ -1053,7 +1101,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_16" type="checkbox" id="__nav_2_2_16" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_19" type="checkbox" id="__nav_2_2_19" >
       
       
       
@@ -1064,13 +1112,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_2_16">
+        <label class="md-nav__link" for="__nav_2_2_19">
           类
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="类" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_2_16">
+        <label class="md-nav__title" for="__nav_2_2_19">
           <span class="md-nav__icon md-icon"></span>
           类
         </label>
@@ -5192,6 +5240,23 @@ p
 s</code></pre>
 <h2 id="_8">生成器</h2>
 <p><a href="https://docs.python.org/zh-cn/3/glossary.html#term-generator">生成器</a> 是一个用于创建迭代器的简单而强大的工具。 它们的写法类似于标准的函数，但当它们要返回数据时会使用 [<code>yield</code>]语句。 每次在生成器上调用 [<code>next()</code>] 时，它会从上次离开的位置恢复执行（它会记住上次执行语句时的所有数据值）。 一个显示如何非常容易地创建生成器的示例如下:</p>
+<p>range功能：</p>
+<pre class="highlight"><code class="language-python">range(start, stop[, step])</code></pre>
+<p>参数说明：</p>
+<ul>
+<li>start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;</li>
+<li>stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5</li>
+<li>step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)</li>
+</ul>
+<p>例如：</p>
+<pre class="highlight"><code class="language-python">for i in range(3,-1,-1):
+    print(i)</code></pre>
+<p>运行结果：</p>
+<pre class="highlight"><code class="language-python">3
+2
+1
+0</code></pre>
+<p>生成器</p>
 <pre class="highlight"><code>def reverse(data):
     for index in range(len(data)-1, -1, -1):
         yield data[index]</code></pre>

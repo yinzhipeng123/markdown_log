@@ -455,6 +455,36 @@ s
 
 [生成器](https://docs.python.org/zh-cn/3/glossary.html#term-generator) 是一个用于创建迭代器的简单而强大的工具。 它们的写法类似于标准的函数，但当它们要返回数据时会使用 [`yield`]语句。 每次在生成器上调用 [`next()`] 时，它会从上次离开的位置恢复执行（它会记住上次执行语句时的所有数据值）。 一个显示如何非常容易地创建生成器的示例如下:
 
+range功能：
+
+```python
+range(start, stop[, step])
+```
+
+参数说明：
+
+- start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;
+- stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5
+- step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)
+
+例如：
+
+```python
+for i in range(3,-1,-1):
+	print(i)
+```
+
+运行结果：
+
+```python
+3
+2
+1
+0
+```
+
+生成器
+
 ```
 def reverse(data):
     for index in range(len(data)-1, -1, -1):

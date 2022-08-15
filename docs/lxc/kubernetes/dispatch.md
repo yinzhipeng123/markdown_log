@@ -1,4 +1,4 @@
-# nodeSelector
+## nodeSelector
 
 我们知道`label`是`kubernetes`中一个非常重要的概念，用户可以非常灵活的利用 label 来管理集群中的资源，比如最常见的一个就是 service 通过匹配 label 去选择 POD 的。而 POD 的调度也可以根据节点的 label 进行特定的部署。
 
@@ -82,7 +82,7 @@ Events:
 
 
 
-# node affinity
+## node affinity
 
 节点亲和性（node affinity）的概念与 `nodeSelector` 相似，可以基于节点的标签来限定 Pod 可以被调度到哪些节点上。
 
@@ -146,7 +146,7 @@ spec:
 
 
 
-# Pod亲和性与反亲和性
+## Pod亲和性与反亲和性
 
 Pod之间的亲和性与反亲和性（inter-pod affinity and anti-affinity）可以基于已经运行在节点上的 Pod 的标签（而不是节点的标签）来限定 Pod 可以被调度到哪个节点上。此类规则的表现形式是：
 
@@ -158,7 +158,7 @@ Pod之间的亲和性与反亲和性（inter-pod affinity and anti-affinity）�
 
   - X 是一个拓扑域的概念，例如节点、机柜、云供应商可用区、云供应商地域，等。X 以 `topologyKey` 的形式表达，该 Key代表了节点上代表拓扑域（topology domain）的一个标签。
 
-## pod affinity 的一个例子
+### pod affinity 的一个例子
 
 ```yaml
 apiVersion: v1
@@ -216,11 +216,11 @@ spec:
 
 
 
-# 什么是topologyKey
+## 什么是topologyKey
 
 顾名思义，`topology` 就是 `拓扑` 的意思，这里指的是一个 `拓扑域`，是指一个范围的概念，比如一个 Node、一个机柜、一个机房或者是一个地区（如杭州、上海）等，实际上对应的还是 Node 上的标签。这里的 `topologyKey` 对应的是 Node 上的标签的 Key（没有Value），可以看出，其实 `topologyKey` 就是用于筛选 Node 的。通过这种方式，我们就可以将各个 Pod 进行跨集群、跨机房、跨地区的调度了。
 
-## 如何使用topologyKey
+### 如何使用topologyKey
 
 看下面的例子：
 
@@ -260,7 +260,7 @@ spec:
 
 Pod 的反亲和性规则是：这个 Pod 尽量不要调度到这样的 Node，其包含一个 Key 为 `kubernetes.io/hostname` 的标签，且该 Node 上有标签为 `security: S2` 的 Pod。
 
-## topologyKey详解
+### topologyKey详解
 
 既然 `topologyKey` 是拓扑域，那 Pod 之间怎样才是属于同一个拓扑域？
 
@@ -270,7 +270,7 @@ Pod 的反亲和性规则是：这个 Pod 尽量不要调度到这样的 Node，
 
 当然，topologyKey 也可以使用自定义标签。比如可以给一组 Node 打上标签 `custom_topology`，那么拓扑域就是针对这个标签了，则该标签相同的 Node 上的 Pod 属于同一个拓扑域。
 
-## 注意事项
+### 注意事项
 
 原则上，topologyKey 可以是任何合法的标签 Key。但是出于性能和安全原因，对 topologyKey 有一些限制：
 
@@ -281,11 +281,11 @@ Pod 的反亲和性规则是：这个 Pod 尽量不要调度到这样的 Node，
 
 
 
-# 更多实用的例子
+## 更多实用的例子
 
 Pod 亲和性与反亲和性结合高级别控制器（例如 ReplicaSet、StatefulSet、Deployment 等）一起使用时，可以非常实用。此时可以很容易的将一组工作复杂调度到同一个 topology，例如，同一个节点。
 
-#### 始终在同一个节点始终在同一个节点
+### 始终在同一个节点始终在同一个节点
 
 在一个三节点的集群中，部署一个使用 redis 的 web 应用程序，并期望 web-server 尽可能与 redis 在同一个节点上。
 
@@ -389,7 +389,7 @@ web-server-1287567482-s330j    1/1       Running   0          7m        10.192.3
 
 
 
-#### 始终不在相同的节点上
+### 始终不在相同的节点上
 
 上面的例子使用了 `PodAntiAffinity` 规则与 `topologyKey: "kubernetes.io/hostname"` 来部署 redis 集群，因此没有任何两个副本被调度到同一个节点上。参考 [ZooKeeper tutorial (opens new window)](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/#tolerating-node-failure)了解如何使用相同的方式为 StatefulSet 配置反亲和性以实现高可用。
 

@@ -136,6 +136,9 @@ nav:
     - pycharm不能访问github: programming_language/python/pycharm不能访问github.md
     - Python3 Dokcer镜像制作: programming_language/python/python3_docker.md
     - Python3 日志控制: programming_language/python/python_log.md
+    - python函数参数: programming_language/python/函数参数.md
+    - python生成器: programming_language/python/生成器.md
+    - python迭代器: programming_language/python/迭代器.md
     - Flask: programming_language/python/flask/flask_init.md
     - 线程:
       - 通过继承实现多线程: programming_language/python/threading/thread.md

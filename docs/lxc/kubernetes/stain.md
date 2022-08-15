@@ -107,16 +107,12 @@ spec:
 
 - 效果（effect）相同
 
-- 污点的
-
-  ```
-  operator
-  ```
+- 污点的`operator`
 
   为：
-
+  
   - `Exists` （此时污点中不应该指定 `value`）
-  - 或者 `Equal` （此时容忍的 `value` 应与污点的 `value` 相同）
+- 或者 `Equal` （此时容忍的 `value` 应与污点的 `value` 相同）
 
 如果不指定 `operator`，则其默认为 `Equal`
 
@@ -139,12 +135,6 @@ spec:
     operator: "Exists"
   ```
 
-支持的效果 `effect` 有：
-
-- **`NoSchedule`**
-- **`PreferNoSchedule`** 比 `NoSchedule` 更宽容一些，Kubernetes 将尽量避免将没有匹配容忍的 Pod 调度到该节点上，但是并不是不可以
-- **`NoExecute`** 不能在节点上运行（如果已经运行，将被驱逐）
-
 一个节点上可以有多个污点，同时一个 Pod 上可以有多个容忍。Kubernetes 使用一种类似于过滤器的方法来处理多个节点和容忍：
 
 - 对于节点的所有污点，检查 Pod 上是否有匹配的容忍，如果存在匹配的容忍，则忽略该污点；
@@ -156,13 +146,7 @@ spec:
 
 - 如果没有不可忽略的污点带有效果 `NoSchedule`，但是至少存在一个不可忽略的污点带有效果 `PreferNoSchedule`，则 Kubernetes 将尽量避免将该 Pod 调度到此节点
 
-- 如果存在至少一个忽略的污点带有效果
-
-  ```
-  NoExecute
-  ```
-
-  ，则：
+- 如果存在至少一个忽略的污点带有效果`NoExecute`，则：
 
   - 假设 Pod 已经在该节点上运行，Kubernetes 将从该节点上驱逐（evict）该 Pod
   - 假设 Pod 尚未在该节点上运行，Kubernetes 将不会把 Pod 调度到该节点
