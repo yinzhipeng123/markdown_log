@@ -281,15 +281,15 @@ nav:
         - iostat命令: system/linux/计算/iostat.md
         - sar命令: system/linux/计算/sar.md
         - top命令: system/linux/计算/top.md
-        - /proc/stat: system/linux/计算/?proc?stat.md
+        - /proc/stat: system/linux/计算/0proc0stat.md
         - strace命令: system/linux/计算/strace.md
     - 内存相关:
         - 内存: system/linux/内存/内存.md
         - Linux的两种内存分配方式: system/linux/内存/Linux的两种内存分配方式.md
         - 内存回收的方式: system/linux/内存/内存回收的方式.md
         - slabtop命令: system/linux/内存/slabtop.md
-        - /proc/slabinfo: system/linux/内存/?proc?slabinfo.md
-        - /proc/meminfo: system/linux/内存/?proc?meminfo.md
+        - /proc/slabinfo: system/linux/内存/0proc0slabinfo.md
+        - /proc/meminfo: system/linux/内存/0proc0meminfo.md
         - 内存页的理解: system/linux/内存/内存页的理解.md
         - min_free_kbytes参数: system/linux/内存/min_free_kbytes参数.md
         - oom机制: system/linux/内存/oom机制.md

@@ -8,9 +8,37 @@ Cluster是计算、存储和网络资源的集合，Kubernetes利用这些资源
 
 Master是Cluster的大脑，它的主要职责是调度，即决定将应用放在哪里运行。Master运行Linux操作系统，可以是物理机或者虚拟机。为了实现高可用，可以运行多个Master。 
 
+### 1.API server
+
+资源操作的唯一入口，接受用户输入的命令，提供认证，授权、API注册和发现等机制
+
+### 2.Scheduler
+
+负责集群资源的调度，按照预定的调度策略将pod调度到相应的node节点上
+
+### 3.Controller-manager
+
+负责维护集群的状态，比程序部署安排，故障检测，自动扩展，滚动更新等
+
+### 4.Etcd
+
+负责存储集群中各种资源对象的信息
+
 ## Node
 
 Node的职责是运行容器应用。Node由Master管理，Node负责监控并汇报容器的状态，同时根据Master的要求管理容器的生命周期。Node运行在Linux操作系统上，可以是物理机或者是虚拟机。
+
+### 1.kubelet
+
+ 作用：管理本机的容器
+
+### 2.kube-proxy
+
+ 作用：负责提供集群内部的服务发现和负载均衡
+
+### 3.docker
+
+ 作用：负责节点上容器的各种操作
 
 ## Pod
 
@@ -30,13 +58,23 @@ Pods有两种使用方式：
 
 Kubernetes通常不会直接创建Pod，而是通过Controller来管理Pod的。Controller中定义了Pod的部署特性，比如有几个副本、在什么样的Node上运行等。为了满足不同的业务场景，Kubernetes提供了多种Controller，包括Deployment、ReplicaSet、DaemonSet、StatefuleSet、Job等，逐一讨论。 
 
-（1）Deployment是最常用的Controller，比如在线教程中就是通过创建Deployment来部署应用的。Deployment可以管理Pod的多个副本，并确保Pod按照期望的状态运行。 
+### 1.Deployment
+
+Deployment是最常用的Controller，比如在线教程中就是通过创建Deployment来部署应用的。Deployment可以管理Pod的多个副本，并确保Pod按照期望的状态运行。 
+
+### 2.ReplicaSet
 
 （2）ReplicaSet实现了Pod的多副本管理。使用Deployment时会自动创建ReplicaSet，也就是说Deployment是通过ReplicaSet来管理Pod的多个副本的，我们通常不需要直接使用ReplicaSet。 
 
+### 3.DaemonSet
+
 （3）DaemonSet用于每个Node最多只运行一个Pod副本的场景。正如其名称所揭示的，DaemonSet通常用于运行daemon。 
 
+### 4.StatefuleSet
+
 （4）StatefuleSet能够保证Pod的每个副本在整个生命周期中名称是不变的，而其他Controller不提供这个功能。当某个Pod发生故障需要删除并重新启动时，Pod的名称会发生变化，同时StatefuleSet会保证副本按照固定的顺序启动、更新或者删除。
+
+### 4.Job
 
 （5）Job用于运行结束就删除的应用，而其他Controller中的Pod通常是长期持续运行。
 
