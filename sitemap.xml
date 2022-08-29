@@ -721,6 +721,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/0proc%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</loc>
+         <lastmod>2022-08-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/0sys%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</loc>
+         <lastmod>2022-08-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/IO%20scheduler/</loc>
          <lastmod>2022-08-29</lastmod>
          <changefreq>daily</changefreq>
@@ -741,7 +751,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/IO%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/</loc>
+         <lastmod>2022-08-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/IO%E7%9A%84%E7%B1%BB%E5%9E%8B/</loc>
+         <lastmod>2022-08-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/Python%E5%AF%BC%E8%87%B4IO%E6%85%A2%E6%A1%88%E4%BE%8B/</loc>
+         <lastmod>2022-08-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/SQL%E6%9F%A5%E8%AF%A2%E6%85%A2%E6%A1%88%E4%BE%8B/</loc>
          <lastmod>2022-08-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -767,6 +792,11 @@
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/iotop/</loc>
+         <lastmod>2022-08-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0/</loc>
          <lastmod>2022-08-29</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -3999,6 +3999,18 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_1_4">
@@ -4012,6 +4024,48 @@
           IO相关
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0/" class="md-nav__link">
+        内核参数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0proc%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        proc文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0sys%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        sys文件系统
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -4123,6 +4177,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../IO%E7%9A%84%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        IO的类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../blktrace%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         blktrace命令
       </a>
@@ -4195,6 +4263,34 @@
     <li class="md-nav__item">
       <a href="../Python%E5%AF%BC%E8%87%B4IO%E6%85%A2%E6%A1%88%E4%BE%8B/" class="md-nav__link">
         Python导致IO慢案例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SQL%E6%9F%A5%E8%AF%A2%E6%85%A2%E6%A1%88%E4%BE%8B/" class="md-nav__link">
+        SQL查询慢案例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IO%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        IO测试方法
       </a>
     </li>
   
@@ -4961,13 +5057,36 @@
 <li>目录项结构：dentry用来记录文件的名字、索引节点指针以及与其他目录项的关联关系，目录项存储在内存中</li>
 </ol>
 <p><img alt="" src="https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/202207141427692.png" /></p>
+<p>换句话说，索引节点是每个文件的唯一标志，而目录项维护的正是文件系统的树状结构。目录项和索引节点的关系是多对一，你可以简单理解为，一个文件可以有多个别名。</p>
+<p>举个例子，通过硬链接为文件创建的别名，就会对应不同的目录项，不过这些目录项本质上还是链接同一个文件，所以，它们的索引节点相同。</p>
+<p>索引节点和目录项纪录了文件的元数据，以及文件间的目录关系，那么具体来说，文件数据到底是怎么存储的呢？是不是直接写到磁盘中就好了呢？</p>
+<p>实际上，磁盘读写的最小单位是扇区，然而扇区只有 512B 大小，如果每次都读写这么小的单位，效率一定很低。所以，文件系统又把连续的扇区组成了逻辑块，然后每次都以逻辑块为最小单元，来管理数据。常见的逻辑块大小为 4KB，也就是由连续的 8 个扇区组成。</p>
+<p><img alt="img" src="https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/202208291443067.png" /></p>
+<p>第一，目录项本身就是一个内存缓存，而索引节点则是存储在磁盘中的数据。在前面的 Buffer 和 Cache 原理中，我曾经提到过，为了协调慢速磁盘与快速 CPU 的性能差异，文件内容会缓存到页缓存 Cache 中。</p>
+<p>那么，这些索引节点自然也会缓存到内存中，加速文件的访问。</p>
+<p>第二，磁盘在执行文件系统格式化时，会被分成三个存储区域，超级块、索引节点区和数据块区。其中，</p>
+<ul>
+<li>超级块，存储整个文件系统的状态。</li>
+<li>索引节点区，用来存储索引节点。</li>
+<li>数据块区，则用来存储文件数据。</li>
+</ul>
+<p>文件系统，本身是对存储设备上的文件，进行组织管理的机制。组织方式不同，就会形成不同的文件系统。</p>
+<p>换句话说，索引节点是每个文件的唯一标志，而目录项维护的正是文件系统的树状结构。目录项和索引节点的关系是多对一，你可以简单理解为，一个文件可以有多个别名。</p>
+<p>举个例子，通过硬链接为文件创建的别名，就会对应不同的目录项，不过这些目录项本质上还是链接同一个文件，所以，它们的索引节点相同。</p>
 <h2 id="_1">虚拟文件系统级缓存</h2>
 <p>虚拟文件系统：VFS给不同类型的文件系统提供了通用的接口，用户程序和内核其他子系统不需要了解各种文件系统的实现细节，通过VFS提供的接口就可以实现对文件系统的调用，VFS是处于系统调用和文件系统中间的一个抽象层，EXT3、EXT4、NFS等文件系统需要挂载到VFS目录树中的某个子目录下面才能被使用，比如LINUX系统的根目录/</p>
+<p>这些文件系统可以分为三类。</p>
+<ul>
+<li>第一类是基于磁盘的文件系统，也就是把数据直接存储在计算机本地挂载的磁盘中。常见的 Ext4、XFS、OverlayFS 等，都是这类文件系统。</li>
+<li>第二类是基于内存的文件系统，也就是我们常说的虚拟文件系统。这类文件系统，不需要任何磁盘分配存储空间，但会占用内存。我们经常用到的 /proc 文件系统，其实就是一种最常见的虚拟文件系统。此外，/sys 文件系统也属于这一类，主要向用户空间导出层次化的内核对象。</li>
+<li>第三类是网络文件系统，也就是用来访问其他计算机数据的文件系统，比如 NFS、SMB、iSCSI 等。</li>
+</ul>
+<p>这些文件系统，要先挂载到 VFS 目录树中的某个子目录（称为挂载点），然后才能访问其中的文件。拿第一类，也就是基于磁盘的文件系统为例，在安装系统时，要先挂载一个根目录（/），在根目录下再把其他文件系统（比如其他的磁盘分区、/proc 文件系统、/sys 文件系统、NFS 等）挂载进来。</p>
 <p>缓存：为了协调快速CPU及慢速磁盘之间的性能差异，LINUX文件系统通过各种缓存实现文件的快速访问，主要包括：</p>
 <ol>
 <li>页缓存：缓存了虚拟内存页面，其中包括了文件系统的页面，提升了文件和目录的性能，当系统系统内存不足时，页缓存是可以回收的，可通过如下命令：grep "Cached" /proc/meminfo 查看系统页缓存大小</li>
 <li>目录项缓存：dentry记录了从目录项到VFS inode的映射关系，提高了路径名查找的性能， 可通过如下命令： grep "dentry" /proc/slabinfo 查看系统目录项缓存大小</li>
-<li>索引节点缓存： inode_cache缓存的对象是inode，包括文件访问权限、更新时间戳、文件大小等信息，可通过如下命令：grep "inode_cache" /proc/ slabinfo查看索引节点缓存大小</li>
+<li>索引节点缓存： inode_cache缓存的对象是inode，包括文件访问权限、更新时间戳、文件大小等信息，可通过如下命令：grep "inode_cache" /proc/slabinfo查看索引节点缓存大小</li>
 </ol>
 <p>文件缓存是这么计算的</p>
 <p>/proc/meminfo中</p>
@@ -5007,7 +5126,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../../%E5%86%85%E5%AD%98/%E8%BF%87%E5%BA%A6%E5%88%86%E9%85%8D%E7%9A%84%E7%90%86%E8%A7%A3/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 过度分配的理解" rel="prev">
+        <a href="../0sys%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-footer__link md-footer__link--prev" aria-label="上一页: sys文件系统" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -5016,7 +5135,7 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              过度分配的理解
+              sys文件系统
             </div>
           </div>
         </a>

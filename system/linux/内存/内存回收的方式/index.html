@@ -4009,6 +4009,18 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_1_4">
@@ -4022,6 +4034,48 @@
           IO相关
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IO/%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0/" class="md-nav__link">
+        内核参数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IO/0proc%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        proc文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IO/0sys%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        sys文件系统
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -4073,6 +4127,20 @@
     <li class="md-nav__item">
       <a href="../../IO/IO%20scheduler/" class="md-nav__link">
         IO scheduler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IO/IO%E7%9A%84%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        IO的类型
       </a>
     </li>
   
@@ -4157,6 +4225,34 @@
     <li class="md-nav__item">
       <a href="../../IO/Python%E5%AF%BC%E8%87%B4IO%E6%85%A2%E6%A1%88%E4%BE%8B/" class="md-nav__link">
         Python导致IO慢案例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IO/SQL%E6%9F%A5%E8%AF%A2%E6%85%A2%E6%A1%88%E4%BE%8B/" class="md-nav__link">
+        SQL查询慢案例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IO/IO%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        IO测试方法
       </a>
     </li>
   
@@ -4899,6 +4995,11 @@
 <p><strong>后台回收</strong>:内核线程kswapd0 定期扫描内存的使用情况，并根据剩余内存落在这三个阈值的空间位置，进行内存的回收操作，其中pages_low=1.25倍pages_min，page_high=1.5倍pages_min，当pages_free &lt; pages_low时，就会触发内存的回收，可以通过/proc/sys/vm/min_free_kbytes设置pages_min来控制kswapd0的回收时机</p>
 <p><strong>Swappiness</strong>： /proc/sys/vm/swappiness参数控制使用swap机制回收匿名页的积极程度，swappiness 的范围是0-100，默认值60，不过要注意的是，这个值只是调整swap积极程度的权重，即使你把它设置成0，当剩余内存加文件页小于page_high 时， 还是会发生swap ， 可参考
 https://www.kernel.org/doc/Documentation/filesystems/proc.txt</p>
+<p><strong>脏页</strong>：被应用程序修改过，并且暂时还没写入磁盘的数据（也就是脏页），这些脏页，一般可以通过两种方式写入磁盘。</p>
+<ul>
+<li>可以在应用程序中，通过系统调用 fsync ，把脏页同步到磁盘中；</li>
+<li>也可以交给系统，由内核线程 pdflush 负责这些脏页的刷新。</li>
+</ul>
 
               
             </article>

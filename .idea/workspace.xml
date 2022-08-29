@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/programming_language/python/threading/thread.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/programming_language/python/threading/thread.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/linux/内存/0proc0meminfo.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/内存/0proc0meminfo.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/linux/网络/tcp.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/网络/tcp.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/linux/网络/测试网络带宽.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/网络/测试网络带宽.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/IO/IO技术栈.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/IO/IO技术栈.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/内存/内存回收的方式.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/内存/内存回收的方式.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/计算/sar.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/计算/sar.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +137,8 @@
       <workItem from="1661237029306" duration="556000" />
       <workItem from="1661253404714" duration="526000" />
       <workItem from="1661259394543" duration="16000" />
-      <workItem from="1661404279401" duration="2096000" />
+      <workItem from="1661404279401" duration="3094000" />
+      <workItem from="1661799406470" duration="229000" />
     </task>
     <servers />
   </component>
