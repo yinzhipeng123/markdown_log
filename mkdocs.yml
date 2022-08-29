@@ -137,14 +137,19 @@ nav:
     - Python3 Dokcer镜像制作: programming_language/python/python3_docker.md
     - Python3 日志控制: programming_language/python/python_log.md
     - python函数参数: programming_language/python/函数参数.md
+    - python装饰器: programming_language/python/装饰器.md
     - python生成器: programming_language/python/生成器.md
     - python迭代器: programming_language/python/迭代器.md
+    - lambda函数: programming_language/python/lambda函数.md
     - Flask: programming_language/python/flask/flask_init.md
+    - 多进程和多线程: programming_language/python/多进程和多线程.md
     - 线程:
+      - thread线程锁: programming_language/python/threading/thread线程锁.md
       - 通过继承实现多线程: programming_language/python/threading/thread.md
       - threading.Event(): programming_language/python/threading/thread_event.md
       - join的作用: programming_language/python/threading/join.md
       - 通过继承实现多线程: programming_language/python/threading/thread.md
+    - 协程: programming_language/python/协程/协程.md
     - shedule:
       - 后台执行: programming_language/python/shedule/run_in_back.md
       - schedule日志显示下次任务执行时间: programming_language/python/shedule/see_cron.md
@@ -218,7 +223,11 @@ nav:
     - 主机内目录挂载到pod中: lxc/kubernetes/hostpath.md
     - Deployment的demo: lxc/kubernetes/depolyment_model.md
     - statefulset的demo: lxc/kubernetes/statefulset.md
+    - liveness: lxc/kubernetes/liveness.md
+    - readiness: lxc/kubernetes/readiness.md
+    - pvc实验: lxc/kubernetes/pvc实验.md
     - K8S部署应用的8项原则: lxc/kubernetes/principle.md
+    - 滚动升级中的maxSurge和maxUnavailable: lxc/kubernetes/滚动升级中的maxSurge和maxUnavailable.md
   - KubeSphere:
     - KubeSphere安装: lxc/kubesphere/kubesphere.md
   - Rancher:
@@ -306,12 +315,19 @@ nav:
         - IO scheduler: system/linux/IO/IO scheduler.md
         - blktrace命令: system/linux/IO/blktrace命令.md
         - hdparm命令: system/linux/IO/hdparm命令.md
+        - dumpe2fs: system/linux/IO/dumpe2fs.md
+        - iostat: system/linux/IO/iostat.md
+        - iotop: system/linux/IO/iotop.md
+        - Python导致IO慢案例: system/linux/IO/Python导致IO慢案例.md
+
     - 网络相关:
         - TCP图解: system/linux/网络/tcp.md
         - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
         - 阿里云修改TCP的TIME-WAIT超时时间: system/linux/网络/修改TCP的TIME-WAIT超时时间.md
         - Linux修改TCP的TIME-WAIT超时时间: system/linux/网络/net.ipv4.tcp_fin_timeout.md
         - 模拟一次CLOSE_WAIT: system/linux/网络/模拟一次.md
+        - tcpdump: system/linux/网络/tcpdump.md
+        - 测试TCP带宽: system/linux/网络/测试网络带宽.md
   - Centos7:
     - 修改网卡: system/centos7/ens33.md
     - Yum:

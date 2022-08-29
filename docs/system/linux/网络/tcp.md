@@ -10,6 +10,10 @@
 
 ![](https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/202207200303304.png)
 
+![img](https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/202208251345090.png)
+
+
+
 
 
 ### 1.短连接

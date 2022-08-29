@@ -91,7 +91,7 @@ for i in range(10):
 
 所以用类的方法不会有任何限制，下面来看一个例子
 
-```
+```python
 import time
 import threading
 
