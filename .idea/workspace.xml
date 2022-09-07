@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/lxc/kubernetes/minikube/minikube.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/lxc/kubernetes/minikube/minikube.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +137,7 @@
       <workItem from="1661799406470" duration="930000" />
       <workItem from="1661949985447" duration="211000" />
       <workItem from="1662549148652" duration="187000" />
+      <workItem from="1662549343029" duration="84000" />
     </task>
     <servers />
   </component>
