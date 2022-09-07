@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ecsminikube" class="md-skip">
+        <a href="#minikube" class="md-skip">
           跳转至
         </a>
       
@@ -2165,9 +2165,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          minikube
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         minikube
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ecsminikube" class="md-nav__link">
+    ECS部署Minikube
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-minikube" class="md-nav__link">
+    Mac 部署 minikube
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4969,6 +5007,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ecsminikube" class="md-nav__link">
+    ECS部署Minikube
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-minikube" class="md-nav__link">
+    Mac 部署 minikube
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4985,7 +5045,8 @@
 
 
 
-<h1 id="ecsminikube">ECS部署Minikube</h1>
+<h1 id="minikube">部署Minikube</h1>
+<h3 id="ecsminikube">ECS部署Minikube</h3>
 <p>我的ECS是腾讯云的，Centos7.6 镜像，地域在硅谷，因为K8S很多镜像都在海外，国内即使有腾讯阿里的源，但是经常也下载不下来，折腾了很多遍，不折腾了，直接地域选择海外，节省很多心力</p>
 <p>官方源码：<a href="https://github.com/kubernetes/minikube">kubernetes/minikube: Run Kubernetes locally (github.com)</a></p>
 <p>官网操作文档：<a href="https://minikube.sigs.k8s.io/docs/start/">minikube start | minikube (k8s.io)</a></p>
@@ -5053,6 +5114,65 @@ service/nginx exposed
 minikube stop
 #删除集群
 minikube delete</code></pre>
+<h3 id="mac-minikube">Mac 部署 minikube</h3>
+<p>因为很多镜像在海外，需要安装代理软件</p>
+<p><a href="https://github.com/yanue/V2rayU/releases/tag/3.3.0">Release 支持apple arm64,修复trojan导入问题 · yanue/V2rayU (github.com)</a></p>
+<p>设置好代理之后，在mac终端内粘贴如下命令</p>
+<pre class="highlight"><code>export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;export ALL_PROXY=socks5://127.0.0.1:1080 export NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.59.0/24,192.168.49.0/24,192.168.39.0/24</code></pre>
+<p>下载安装virtualbox</p>
+<p><a href="https://www.virtualbox.org/wiki/Downloads">Downloads – Oracle VM VirtualBox</a></p>
+<p>安装kubectl</p>
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/">Install and Set Up kubectl on macOS | Kubernetes</a></p>
+<p>开始安装minikube</p>
+<pre class="highlight"><code class="language-bash">$ minikube start --force --driver=virtualbox --kubernetes-version=v1.18.20 --nodes=2
+😄  Darwin 11.6.5 上的 minikube v1.26.1
+❗  minikube skips various validations when --force is supplied; this may lead to unexpected behavior
+✨  根据用户配置使用 virtualbox 驱动程序
+❗  Local proxy ignored: not passing HTTP_PROXY=http://127.0.0.1:1087 to docker env.
+❗  Local proxy ignored: not passing HTTPS_PROXY=http://127.0.0.1:1087 to docker env.
+👍  Starting control plane node minikube in cluster minikube
+🔥  Creating virtualbox VM (CPUs=2, Memory=2200MB, Disk=20000MB) ...
+❗  Local proxy ignored: not passing HTTP_PROXY=http://127.0.0.1:1087 to docker env.
+❗  Local proxy ignored: not passing HTTPS_PROXY=http://127.0.0.1:1087 to docker env.
+🌐  找到的网络选项：
+    ▪ NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.59.0/24,192.168.49.0/24,192.168.39.0/24
+    ▪ http_proxy=http://127.0.0.1:1087
+    ▪ https_proxy=http://127.0.0.1:1087
+❗  This VM is having trouble accessing https://k8s.gcr.io
+💡  To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/
+🐳  正在 Docker 20.10.17 中准备 Kubernetes v1.18.20…
+    ▪ env NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.59.0/24,192.168.49.0/24,192.168.39.0/24
+    ▪ kubelet.cni-conf-dir=/etc/cni/net.mk
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring CNI (Container Networking Interface) ...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🔎  Verifying Kubernetes components...
+
+👍  Starting worker node minikube-m02 in cluster minikube
+🔥  Creating virtualbox VM (CPUs=2, Memory=2200MB, Disk=20000MB) ...
+❗  Local proxy ignored: not passing HTTP_PROXY=http://127.0.0.1:1087 to docker env.
+❗  Local proxy ignored: not passing HTTPS_PROXY=http://127.0.0.1:1087 to docker env.
+🌐  找到的网络选项：
+    ▪ NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.59.0/24,192.168.49.0/24,192.168.39.0/24
+    ▪ http_proxy=http://127.0.0.1:1087
+    ▪ https_proxy=http://127.0.0.1:1087
+❗  This VM is having trouble accessing https://k8s.gcr.io
+💡  To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/
+🐳  正在 Docker 20.10.17 中准备 Kubernetes v1.18.20…
+    ▪ env NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.59.0/24,192.168.49.0/24,192.168.39.0/24
+🔎  Verifying Kubernetes components...
+
+❗  /usr/local/bin/kubectl is version 1.25.0, which may have incompatibilites with Kubernetes 1.18.20.
+    ▪ Want kubectl v1.18.20? Try 'minikube kubectl -- get pods -A'
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+$ kubectl get node -A -o wide
+NAME           STATUS   ROLES    AGE   VERSION    INTERNAL-IP      EXTERNAL-IP   OS-IMAGE               KERNEL-VERSION   CONTAINER-RUNTIME
+minikube       Ready    master   21m   v1.18.20   192.168.59.107   &lt;none&gt;        Buildroot 2021.02.12   5.10.57          docker://20.10.17
+minikube-m02   Ready    &lt;none&gt;   20m   v1.18.20   192.168.59.108   &lt;none&gt;        Buildroot 2021.02.12   5.10.57          docker://20.10.17</code></pre>
 
               
             </article>
