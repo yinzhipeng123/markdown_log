@@ -4476,6 +4476,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_2">
@@ -4550,6 +4552,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../centos7/chronyd/" class="md-nav__link">
+        时间同步chrony
+      </a>
     </li>
   
 
@@ -5049,6 +5065,8 @@
 
 <h1 id="tcpdump">tcpdump</h1>
 <p>我们知道，tcpdump 也是最常用的一个网络分析工具。它基于 libpcap  ，利用内核中的 AF_PACKET 套接字，抓取网络接口中传输的网络包；并提供了强大的过滤规则，帮你从大量的网络包中，挑出最想关注的信息。tcpdump 为你展示了每个网络包的详细细节，这就要求，在使用前，你必须要对网络协议有基本了解。而要了解网络协议的详细设计和实现细节， RFC 当然是最权威的资料。</p>
+<p>常见的收集命令：</p>
+<pre class="highlight"><code>$tcpdump -i en0 -nn tcp -p -w Desktop/file.pcnp  指定网卡，tcp类型，禁止混杂模式，保存到文件</code></pre>
 <h3 id="_1">语法：</h3>
 <p>它的基本使用方法，还是比较简单的，也就是 tcpdump [选项] [过滤表达式]。当然，选项和表达式的外面都加了中括号，表明它们都是可选的。</p>
 <pre class="highlight"><code>
@@ -5077,6 +5095,8 @@ $ tcpdump -nn udp port 53 or host 35.190.27.188</code></pre>
 <p>而通常情况下，服务器端收到客户端的 FIN 后，很可能还没发送完数据，所以就会先回复客户端一个 ACK 包。稍等一会儿，完成所有数据包的发送后，才会发送 FIN 包。这也就是四次挥手了。</p>
 <p>tcpdump手册</p>
 <p><a href="https://www.tcpdump.org/manpages/tcpdump.1.html">tcpdump(1) man page | TCPDUMP &amp; LIBPCAP</a></p>
+<p>中文手册</p>
+<p><a href="https://manpages.debian.org/unstable/manpages-zh/tcpdump.8.zh_CN.html">tcpdump(8) — manpages-zh — Debian unstable — Debian Manpages</a></p>
 
               
             </article>

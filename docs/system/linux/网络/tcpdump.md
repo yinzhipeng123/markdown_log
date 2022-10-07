@@ -2,6 +2,14 @@
 
 我们知道，tcpdump 也是最常用的一个网络分析工具。它基于 libpcap  ，利用内核中的 AF_PACKET 套接字，抓取网络接口中传输的网络包；并提供了强大的过滤规则，帮你从大量的网络包中，挑出最想关注的信息。tcpdump 为你展示了每个网络包的详细细节，这就要求，在使用前，你必须要对网络协议有基本了解。而要了解网络协议的详细设计和实现细节， RFC 当然是最权威的资料。
 
+常见的收集命令：
+
+```
+$tcpdump -i en0 -nn tcp -p -w Desktop/file.pcnp  指定网卡，tcp类型，禁止混杂模式，保存到文件
+```
+
+
+
 ### 语法：
 
 它的基本使用方法，还是比较简单的，也就是 tcpdump [选项] [过滤表达式]。当然，选项和表达式的外面都加了中括号，表明它们都是可选的。
@@ -71,3 +79,7 @@ TCP 三次握手和四次挥手很类似，作为对比， 你通常看到的 TC
 tcpdump手册
 
 [tcpdump(1) man page | TCPDUMP & LIBPCAP](https://www.tcpdump.org/manpages/tcpdump.1.html)
+
+中文手册
+
+[tcpdump(8) — manpages-zh — Debian unstable — Debian Manpages](https://manpages.debian.org/unstable/manpages-zh/tcpdump.8.zh_CN.html)

@@ -338,6 +338,7 @@ nav:
     - 修改网卡: system/centos7/ens33.md
     - Yum:
         - ius源: system/centos7/yum/ius.md
+    - 时间同步chrony: system/centos7/chronyd.md
   - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
