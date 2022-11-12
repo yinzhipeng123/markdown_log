@@ -205,6 +205,17 @@ allow 192.168.0.0/16
 
 logdir /var/log/chrony
 # 此指令指定用于写入由 log 指令启用的日志文件的目录。如果该目录不存在，则将自动创建该目录。
+
+
+#cmdport 323
+#默认为323，用于监视chronyd的端口
+
+#port 123
+#当chronyd作为NTP服务器的时候打开的监听端口，ntp客户端会通过这个端口与chronyd服务器进行同步。默认值为 123，即标准 NTP 端口。如果设置为 0，chronyd 将永远不会打开服务器端口，并将严格在仅客户端模式下运行。
+
+#log tracking
+#把每次修改时间的记录写到tracking.log中去
+
 ```
 
 更多配置细节请查看chrony官网：https://chrony.tuxfamily.org/doc/4.3/chrony.conf.html
@@ -477,7 +488,7 @@ Leap status     : Normal
 
 **Update interval**
 
-这是最近两次时钟更新之间的间隔。 
+这是最近两次时钟更新之间的间隔。 真正对系统时间更改的两次间隔，每次时间更改，可以通过在配置文件中，添加log  tracking 选项，可以把每次时间更改的记录写到tracking.log去
 
 **Leap status**
 
