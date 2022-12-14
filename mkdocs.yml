@@ -332,6 +332,7 @@ nav:
         - 阿里云修改TCP的TIME-WAIT超时时间: system/linux/网络/修改TCP的TIME-WAIT超时时间.md
         - Linux修改TCP的TIME-WAIT超时时间: system/linux/网络/net.ipv4.tcp_fin_timeout.md
         - 模拟一次CLOSE_WAIT: system/linux/网络/模拟一次.md
+        - 全连接队列和半连接队列: system/linux/网络/全连接队列和半连接队列.md
         - tcpdump: system/linux/网络/tcpdump.md
         - netstat: system/linux/网络/netstat命令.md
         - 测试TCP带宽: system/linux/网络/测试网络带宽.md

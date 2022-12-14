@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/linux/网络/netstat命令.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/网络/netstat命令.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/linux/网络/模拟一次.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/网络/模拟一次.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +161,7 @@
       <workItem from="1669377176461" duration="3034000" />
       <workItem from="1670853616823" duration="1514000" />
       <workItem from="1670857434062" duration="599000" />
+      <workItem from="1671042681613" duration="296000" />
     </task>
     <servers />
   </component>
