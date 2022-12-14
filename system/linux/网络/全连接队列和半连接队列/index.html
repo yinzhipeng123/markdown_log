@@ -4452,6 +4452,19 @@
     查看半连接状态：
   </a>
   
+    <nav class="md-nav" aria-label="查看半连接状态：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    未还待续。。。
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -5131,6 +5144,19 @@
     查看半连接状态：
   </a>
   
+    <nav class="md-nav" aria-label="查看半连接状态：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    未还待续。。。
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -5170,6 +5196,7 @@
 <p><img alt="image-20221212233058534" src="https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/image-20221212233058534.png" /></p>
 <p>大致的意思为建立连接时，服务端收到客户端发过来建立连接的syn包后，那么这个连接就会进入服务端的半连接队列里面，然后服务端给客户端回syn+ack包，然后服务端接到客户端回的ack包后，连接就会进入服务端的全连接队列中。</p>
 <h4 id="_3">基本概念</h4>
+<p><img alt="" src="https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/20221215024701.png" /></p>
 <p>全连接队列大小取决于backlog 和somaxconn 的最小值，也就是 min(backlog,somaxconn)</p>
 <ul>
 <li>somaxconn 是Linux内核参数，默认128，可通过/proc/sys/net/core/somaxconn进行配置</li>
@@ -5336,6 +5363,12 @@ ESTAB      0      15     127.0.0.1:40630              127.0.0.1:4323
 [root@VM-0-16-centos pycharm]# ss -lnp | grep 4323
 Netid  State      Recv-Q Send-Q Local Address:Port               Peer Address:Port
 tcp    LISTEN     6      5      127.0.0.1:4323                  *:*                   users:(("python3",pid=28870,fd=3))</code></pre>
+<h6 id="_7">未还待续。。。</h6>
+<p>后面我会模拟下其他情况。。。</p>
+<p>相关文章推荐：</p>
+<p>内容跟我文章讲相驳时，以我的为准</p>
+<p>https://www.cnblogs.com/xiaolincoding/p/12995358.html</p>
+<p>(https://www.cnblogs.com/xiaolincoding/p/12995358.html</p>
 
 
   
