@@ -5167,6 +5167,9 @@ if __name__ == '__main__':
 <p><img alt="" src="https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/202207200416862.png" /></p>
 <p>从服务端上截图上看 </p>
 <p><img alt="" src="https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/202207200418885.png" /></p>
+<p>上面是因为服务端还没处理完，服务端迟迟不给客户端返回FIN+ACK包，所以服务端会呈现出close_wait</p>
+<p><img src="https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/%E6%96%B0sdfasdf.jpg" style="zoom:33%;" /></p>
+<p>还有种情况是，客户端和服务端建立连接后，客户端给服务端发送数据，数据会被放入 accept queue (全连接队列)，等待应用 accept（接收），如果应用迟迟没有从accept queue里面去 accept 连接，等到 client 超时时间，主动关闭了连接，这时连接在 server 端仍在全连接队列中，状态变为 <code>CLOSE_WAIT</code></p>
 <h2 id="_1">补充</h2>
 <pre class="highlight"><code class="language-bash">curl --connect-timeout 10 -m 20 "http://XXXXXXX"</code></pre>
 <p>--connect-timeout 为允许连接到服务器的最长时间，就是网络建立连接的过程的最长时间
