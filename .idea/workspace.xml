@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更" />
+    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
+      <change afterPath="$PROJECT_DIR$/docs/system/centos7/命令搜索.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,6 +165,9 @@
       <workItem from="1670857434062" duration="599000" />
       <workItem from="1671042681613" duration="471000" />
       <workItem from="1671043155095" duration="250000" />
+      <workItem from="1671043667815" duration="352000" />
+      <workItem from="1675243388913" duration="1590000" />
+      <workItem from="1675662598052" duration="1637000" />
     </task>
     <servers />
   </component>
