@@ -292,6 +292,7 @@ nav:
         - top命令: system/linux/计算/top.md
         - /proc/stat: system/linux/计算/0proc0stat.md
         - strace命令: system/linux/计算/strace.md
+        - pidstat命令: system/linux/计算/pidstat.md
     - 内存相关:
         - 内存: system/linux/内存/内存.md
         - Linux的两种内存分配方式: system/linux/内存/Linux的两种内存分配方式.md
@@ -317,7 +318,9 @@ nav:
         - IO优化建议: system/linux/IO/IO优化建议.md
         - IO scheduler: system/linux/IO/IO scheduler.md
         - IO的类型: system/linux/IO/IO的类型.md
-        - blktrace命令: system/linux/IO/blktrace命令.md
+        - blktrace常用使用方法: system/linux/IO/blktrace常用使用方法.md
+        - blktrace命令: system/linux/IO/blktrace.md
+        - mount命令: system/linux/IO/mount.md
         - hdparm命令: system/linux/IO/hdparm命令.md
         - dumpe2fs: system/linux/IO/dumpe2fs.md
         - iostat: system/linux/IO/iostat.md
