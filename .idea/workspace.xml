@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
+      <change afterPath="$PROJECT_DIR$/docs/system/centos7/journalctl.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/centos7/命令搜索.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/命令搜索.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/linux/IO/blktrace命令.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/linux/IO/iodump.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/IO/iodump.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +171,12 @@
       <workItem from="1676013927623" duration="46000" />
       <workItem from="1676014346956" duration="1230000" />
       <workItem from="1677227324793" duration="839000" />
-      <workItem from="1677422700397" duration="872000" />
+      <workItem from="1677422700397" duration="1548000" />
+      <workItem from="1677553940384" duration="618000" />
+      <workItem from="1678288611224" duration="809000" />
+      <workItem from="1680507992173" duration="2179000" />
+      <workItem from="1680577033487" duration="619000" />
+      <workItem from="1680748109013" duration="626000" />
     </task>
     <servers />
   </component>
