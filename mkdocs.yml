@@ -321,6 +321,7 @@ nav:
         - blktrace常用使用方法: system/linux/IO/blktrace常用使用方法.md
         - blktrace命令: system/linux/IO/blktrace.md
         - mount命令: system/linux/IO/mount.md
+        - iodump命令: system/linux/IO/iodump.md
         - hdparm命令: system/linux/IO/hdparm命令.md
         - dumpe2fs: system/linux/IO/dumpe2fs.md
         - iostat: system/linux/IO/iostat.md
@@ -345,6 +346,7 @@ nav:
     - Yum:
         - ius源: system/centos7/yum/ius.md
     - 时间同步chrony: system/centos7/chronyd.md
+    - 系统日志查询命令: system/centos7/journalctl.md
   - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
