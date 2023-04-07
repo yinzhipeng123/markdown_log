@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/programming_language/vue/npm的使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/programming_language/vue/npm的使用.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +178,8 @@
       <workItem from="1680577033487" duration="619000" />
       <workItem from="1680748109013" duration="874000" />
       <workItem from="1680749355094" duration="1324000" />
-      <workItem from="1680751627649" duration="1210000" />
+      <workItem from="1680751627649" duration="2633000" />
+      <workItem from="1680771831204" duration="935000" />
     </task>
     <servers />
   </component>

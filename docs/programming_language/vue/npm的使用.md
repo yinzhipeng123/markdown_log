@@ -160,7 +160,8 @@ $ cnpm install [name]
 查看原来的源
 
 ```bash
-npm congfig get registry
+$ npm config get registry
+https://registry.npmjs.org/
 ```
 
 更换国内的源

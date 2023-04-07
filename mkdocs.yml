@@ -163,6 +163,21 @@ nav:
       - Gin入门:  programming_language/go/go_gin.md
       - Gin 路由拆分成单个文件: programming_language/go/gin_route.md
       - Gin 路由拆分成单独APP: programming_language/go/gin__app_route.md
+  - Vue:
+    - html中加载VUE: programming_language/vue/html中加载VUE.md
+    - 安装nodejs: programming_language/vue/安装nodejs.md
+    - nodejs运行网站: programming_language/vue/nodejs运行网站.md
+    - npm的使用: programming_language/vue/npm的使用.md
+    - VUE安装: programming_language/vue/vue安装.md
+    - VUE目录文件: programming_language/vue/vue目录文件.md
+    - VUE使用axios加载本地json: programming_language/vue/VUE使用axios加载本地json.md
+    - VUE使用for循环: programming_language/vue/VUE使用for循环.md
+    - VUE使用if: programming_language/vue/VUE使用if.md
+    - VUE使用事件监听: programming_language/vue/VUE使用事件监听.md
+    - VUE方法和计算属性 : programming_language/vue/VUE方法和计算属性.md
+    - VUE输入绑定: programming_language/vue/VUE输入绑定.md
+    - 前端时代的变革: programming_language/vue/前端时代的变革.md
+
   - awk:
     - programming_language/awk/index.md
     - 基础语法: programming_language/awk/awk.md
