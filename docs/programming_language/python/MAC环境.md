@@ -24,4 +24,24 @@ M1,M2版本直接就选择macOS 64-bit universal2 installer 或者 macOS 64-bit 
 
 安装Pycharm，添加Python解释器时，可以选择Virtualenv环境，新建个虚拟环境，基础解释器选择自己安装的不通版本。一个项目一个虚拟环境。这样不会冲突
 
-如果Pycharm 基础解释器选择不了，基本是读取本地变量问题，MAC建议卸载重装，直接安装官方版本，不要通过toolbox下载Pycharm。Windows用管理员账号进行安装。
+如果Pycharm 基础解释器选择不了，基本是读取本地变量问题，MAC建议卸载重装，直接安装官方版本，不要通过toolbox下载Pycharm。
+
+MAC 跑python代码提示nodename nor servname provided
+
+系统hosts 文件中要有
+
+```
+127.0.0.1	localhost 
+```
+
+推荐个切换自定义HOSTS的工具
+
+[SwitchHosts/README.zh_hans.md at master · oldj/SwitchHosts · GitHub](https://github.com/oldj/SwitchHosts/blob/master/README.zh_hans.md)
+
+然后清除dns设置
+
+```
+
+dscacheutil -flushcache
+```
+

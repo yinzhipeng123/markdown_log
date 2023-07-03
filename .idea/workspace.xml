@@ -42,7 +42,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -178,7 +178,8 @@
       <workItem from="1680749355094" duration="1324000" />
       <workItem from="1680751627649" duration="2633000" />
       <workItem from="1680771831204" duration="935000" />
-      <workItem from="1680852259189" duration="688000" />
+      <workItem from="1680852259189" duration="913000" />
+      <workItem from="1687748108088" duration="282000" />
     </task>
     <servers />
   </component>
