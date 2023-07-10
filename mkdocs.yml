@@ -344,7 +344,6 @@ nav:
         - Python导致IO慢案例: system/linux/IO/Python导致IO慢案例.md
         - SQL查询慢案例: system/linux/IO/SQL查询慢案例.md
         - IO测试方法: system/linux/IO/IO测试方法.md
-
     - 网络相关:
         - TCP图解: system/linux/网络/tcp.md
         - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
@@ -362,6 +361,7 @@ nav:
         - ius源: system/centos7/yum/ius.md
     - 时间同步chrony: system/centos7/chronyd.md
     - 系统日志查询命令: system/centos7/journalctl.md
+    - ssh专题: system/centos7/ssh专题.md
   - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
