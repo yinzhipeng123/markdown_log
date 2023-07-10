@@ -347,6 +347,8 @@ nav:
         - findmnt命令: system/linux/IO/findmnt.md
         - e2label命令: system/linux/IO/e2label.md
         - blkid命令: system/linux/IO/blkid.md
+        - lspci命令: system/linux/IO/lspci.md
+        - lsblk命令: system/linux/IO/lsblk.md
     - 网络相关:
         - TCP图解: system/linux/网络/tcp.md
         - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
@@ -358,6 +360,7 @@ nav:
         - netstat: system/linux/网络/netstat命令.md
         - 测试TCP带宽: system/linux/网络/测试网络带宽.md
         - nmap命令: system/linux/网络/nmap.md
+        - ethtool命令: system/linux/网络/ethtool.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - 修改网卡: system/centos7/ens33.md

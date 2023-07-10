@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
-      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/blkid.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/e2label.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/findmnt.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/lsblk.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/lspci.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/linux/网络/ethtool.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/centos7/命令搜索.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/命令搜索.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +192,7 @@
       <workItem from="1688362633890" duration="585000" />
       <workItem from="1688479895204" duration="2289000" />
       <workItem from="1688646481701" duration="610000" />
-      <workItem from="1688723315119" duration="3518000" />
+      <workItem from="1688723315119" duration="6211000" />
     </task>
     <servers />
   </component>

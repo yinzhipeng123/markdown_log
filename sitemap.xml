@@ -861,6 +861,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/lsblk/</loc>
+         <lastmod>2023-07-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/lspci/</loc>
+         <lastmod>2023-07-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/mount/</loc>
          <lastmod>2023-07-10</lastmod>
          <changefreq>daily</changefreq>
@@ -942,6 +952,11 @@
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/%E5%86%85%E5%AD%98/%E8%BF%87%E5%BA%A6%E5%88%86%E9%85%8D%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
+         <lastmod>2023-07-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/%E7%BD%91%E7%BB%9C/ethtool/</loc>
          <lastmod>2023-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
