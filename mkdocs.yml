@@ -344,6 +344,9 @@ nav:
         - Python导致IO慢案例: system/linux/IO/Python导致IO慢案例.md
         - SQL查询慢案例: system/linux/IO/SQL查询慢案例.md
         - IO测试方法: system/linux/IO/IO测试方法.md
+        - findmnt命令: system/linux/IO/findmnt.md
+        - e2label命令: system/linux/IO/e2label.md
+        - blkid命令: system/linux/IO/blkid.md
     - 网络相关:
         - TCP图解: system/linux/网络/tcp.md
         - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md

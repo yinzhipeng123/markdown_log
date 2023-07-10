@@ -811,6 +811,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/blkid/</loc>
+         <lastmod>2023-07-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/blktrace/</loc>
          <lastmod>2023-07-10</lastmod>
          <changefreq>daily</changefreq>
@@ -822,6 +827,16 @@
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/dumpe2fs/</loc>
+         <lastmod>2023-07-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/e2label/</loc>
+         <lastmod>2023-07-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/IO/findmnt/</loc>
          <lastmod>2023-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
