@@ -1,4 +1,5 @@
 #mkdocs serve
+site_description: yinzhipengのmarkdown_log
 site_name: MarkDown_Log
 site_url: https://yinzhipeng123.github.io/markdown_log/
 # 设置git库 https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/
@@ -62,7 +63,7 @@ theme:
 #    启用索引页，也就是介绍页
     - navigation.indexes
 #    即时加载
-    - navigation.instant
+#    - navigation.instant
 #    导航栏
     - navigation.tabs
 #    导航选项卡将锁定在标题下方
@@ -103,6 +104,29 @@ theme:
     code: Roboto Mono
 
 plugins:
+  - rss:
+      abstract_chars_count: 160  # -1 for full content
+      abstract_delimiter: <!-- more -->
+      categories:
+        - tags
+      comments_path: "#__comments"
+      date_from_meta:
+        as_creation: "date"
+        as_update: false
+        datetime_format: "%Y-%m-%d %H:%M"
+        default_timezone: Asia/Shanghai
+        default_time: "09:30"
+      enabled: true
+      feed_ttl: 1440
+      image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Feed-icon.svg/128px-Feed-icon.svg.png
+      length: 20
+      pretty_print: false
+      match_path: ".*"
+      url_parameters:
+        utm_source: "documentation"
+        utm_medium: "RSS"
+        utm_campaign: "feed-syndication"
+  - blogging
   - search:
 #  配置搜索索引器在为页面生成索引时将使用的策略。如果项目规模较大，并且索引占用大量磁盘空间，则此属性特别有用,参考地址：https://www.mkdocs.org/user-guide/configuration/#configuration-inheritance
       indexing: 'full'

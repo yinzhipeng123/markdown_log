@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="yinzhipengのmarkdown_log">
+      
       
       
         <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/programming_language/python/basics/basic/">
@@ -5902,7 +5904,7 @@ True</code></pre>
 <p>如果没有使用 [<code>with</code>]关键字，则应调用 <code>f.close()</code> 关闭文件，即可释放文件占用的系统资源。</p>
 <p>调用 <code>f.write()</code> 时，未使用 <code>with</code> 关键字，或未调用 <code>f.close()</code>，即使程序正常退出，也<strong>可能</strong> 导致 <code>f.write()</code> 的参数没有完全写入磁盘。</p>
 <p>通过 [<code>with</code>] 语句，或调用 <code>f.close()</code> 关闭文件对象后，再次使用该文件对象将会失败。</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; f.close()
 &gt;&gt;&gt; f.read()
 Traceback (most recent call last):
@@ -5910,7 +5912,7 @@ Traceback (most recent call last):
 ValueError: I/O operation on closed file.</code></pre>
 <h2 id="_1">文件读取多行</h2>
 <p>从文件中读取多行时，可以用循环遍历整个文件对象。这种操作能高效利用内存，快速，且代码简单：</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; for line in f:
 ...     print(line, end='')
 ...
@@ -5919,7 +5921,7 @@ Second line of the file</code></pre>
 <p>如需以列表形式读取文件中的所有行，可以用 <code>list(f)</code> 或 <code>f.readlines()</code>。</p>
 <h2 id="seek">操作文本seek</h2>
 <p><code>f.seek(offset, whence)</code> 可以改变文件对象的位置。通过向参考点添加 <em>offset</em> 计算位置；参考点由 <em>whence</em> 参数指定。 <em>whence</em> 值为 0 时，表示从文件开头计算，1 表示使用当前文件位置，2 表示使用文件末尾作为参考点。省略 <em>whence</em> 时，其默认值为 0，即使用文件开头作为参考点。</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; f = open('workfile', 'rb+')
 &gt;&gt;&gt; f.write(b'0123456789abcdef')
 16
@@ -5938,7 +5940,7 @@ b'd'</code></pre>
 <p>注解</p>
 <p>JSON 格式通常用于现代应用程序的数据交换。程序员早已对它耳熟能详，可谓是交互操作的不二之选。</p>
 <p>只需一行简单的代码即可查看某个对象的 JSON 字符串表现形式：</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; import json
 &gt;&gt;&gt; x = [1, 'simple', 'list']
 &gt;&gt;&gt; json.dumps(x)
@@ -5950,7 +5952,7 @@ b'd'</code></pre>
 <p>这种简单的序列化技术可以处理列表和字典，但在 JSON 中序列化任意类的实例，则需要付出额外努力。[<code>json</code>] 模块的参考包含对此的解释。</p>
 <h2 id="_2">句法错误</h2>
 <p>句法错误又称解析错误，是学习 Python 时最常见的错误：</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; while True print('Hello world')
   File "&lt;stdin&gt;", line 1
     while True print('Hello world')
@@ -5959,7 +5961,7 @@ SyntaxError: invalid syntax</code></pre>
 <p>解析器会复现出现句法错误的代码行，并用小“箭头”指向行里检测到的第一个错误。错误是由箭头 <em>上方</em> 的 token 触发的（至少是在这里检测出的）：本例中，在 [<code>print()</code>]函数中检测到错误，因为，在它前面缺少冒号（<code>':'</code>） 。错误信息还输出文件名与行号，在使用脚本文件时，就可以知道去哪里查错。</p>
 <h2 id="_3">触发异常</h2>
 <p>[<code>raise</code>] 语句支持强制触发指定的异常。例如：</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; raise NameError('HiThere')
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
@@ -5967,7 +5969,7 @@ NameError: HiThere</code></pre>
 <p>[<code>raise</code>] 唯一的参数就是要触发的异常。这个参数必须是异常实例或异常类（派生自 [<code>Exception</code>] 类）。如果传递的是异常类，将通过调用没有参数的构造函数来隐式实例化：</p>
 <pre class="highlight"><code>raise ValueError  # shorthand for 'raise ValueError()'</code></pre>
 <p>如果只想判断是否触发了异常，但并不打算处理该异常，则可以使用更简单的 [<code>raise</code>]语句重新触发异常：</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; try:
 ...     raise NameError('HiThere')
 ... except NameError:
@@ -5983,7 +5985,7 @@ NameError: HiThere</code></pre>
 <pre class="highlight"><code># exc must be exception instance or None.
 raise RuntimeError from exc</code></pre>
 <p>转换异常时，这种方式很有用。例如：</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; def func():
 ...     raise ConnectionError
 ...
@@ -6003,7 +6005,7 @@ Traceback (most recent call last):
   File "&lt;stdin&gt;", line 4, in &lt;module&gt;
 RuntimeError: Failed to open database</code></pre>
 <p>异常链会在 [<code>except</code>]或 [<code>finally</code>] 子句内部引发异常时自动生成。 这可以通过使用 <code>from None</code> 这样的写法来禁用:</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; try:
 ...     open('database.sqlite')
 ... except OSError:
@@ -6015,7 +6017,7 @@ RuntimeError</code></pre>
 <p>异常链机制详见 <a href="https://docs.python.org/zh-cn/3/library/exceptions.html#bltin-exceptions">内置异常</a>。</p>
 <h2 id="_5">类的构造函数</h2>
 <p>当然，<code>__init__()</code> 方法还可以有额外参数以实现更高灵活性。 在这种情况下，提供给类实例化运算符的参数将被传递给 <code>__init__()</code>。 例如，:</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code class="language-python">&gt;&gt;&gt; class Complex:
 ...     def __init__(self, realpart, imagpart):
 ...         self.r = realpart
@@ -6058,7 +6060,7 @@ for char in "123":
 for line in open("myfile.txt"):
     print(line, end='')</code></pre>
 <p>这种访问风格清晰、简洁又方便。 迭代器的使用非常普遍并使得 Python 成为一个统一的整体。 在幕后，[<code>for</code>]语句会在容器对象上调用 [<code>iter()</code>]。 该函数返回一个定义了 [<code>__next__()</code>] 方法的迭代器对象，此方法将逐一访问容器中的元素。 当元素用尽时，[<code>__next__()</code>] 将引发 [<code>StopIteration</code>] 异常来通知终止 <code>for</code> 循环。 你可以使用 [<code>next()</code>] 内置函数来调用 [<code>__next__()</code>]方法；这个例子显示了它的运作方式:</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; s = 'abc'
 &gt;&gt;&gt; it = iter(s)
 &gt;&gt;&gt; it
@@ -6089,7 +6091,7 @@ StopIteration</code></pre>
             raise StopIteration
         self.index = self.index - 1
         return self.data[self.index]</code></pre>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; rev = Reverse('spam')
 &gt;&gt;&gt; iter(rev)
 &lt;__main__.Reverse object at 0x00A1DB50&gt;
@@ -6122,7 +6124,7 @@ s</code></pre>
 <pre class="highlight"><code>def reverse(data):
     for index in range(len(data)-1, -1, -1):
         yield data[index]</code></pre>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; for char in reverse('golf'):
 ...     print(char)
 ...
@@ -6136,7 +6138,7 @@ g</code></pre>
 <h2 id="_9">性能测量</h2>
 <p>一些Python用户对了解同一问题的不同方法的相对性能产生了浓厚的兴趣。 Python提供了一种可以立即回答这些问题的测量工具。</p>
 <p>例如，元组封包和拆包功能相比传统的交换参数可能更具吸引力。[<code>timeit</code>]模块可以快速演示在运行效率方面一定的优势:</p>
-<p>&gt;&gt;&gt;</p>
+<p>>&gt;&gt;</p>
 <pre class="highlight"><code>&gt;&gt;&gt; from timeit import Timer
 &gt;&gt;&gt; Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
 0.57535828626024577
@@ -6366,7 +6368,7 @@ A.static_foo()</code></pre>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>

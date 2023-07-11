@@ -2512,3 +2512,11 @@ SCTP[6]是TCP和UDP协议的一种相对较新的替代方案，它结合了TCP�
 此页面是nmap（网络扫描仪）项目的一部分。有关该项目的信息，请访问⟨http://nmap.org/⟩。如果您有此手册页面的错误报告，请将其发送到dev@nmap.org.此页面来自该项目的Subversion存储库的上游Git镜像⟨https://github.com/nmap/nmap⟩关于2023-06-23。（当时，在存储库中发现的最近一次提交的日期是2023-06-16。）如果您在该HTML版本的页面中发现任何呈现问题，或者您认为该页面有更好或更新的来源，或者您对本COLOPHON中的信息（不属于原始手册页的一部分）有任何更正或改进，请发送邮件至man-pages@man7.org
 
 Nmap                           05/17/2023                        NMAP(1)
+
+
+
+[Nmap使用教程（初级篇） - zha0gongz1 - 博客园 (cnblogs.com)](https://www.cnblogs.com/zha0gongz1/p/12231851.html)
+
+[Nmap使用教程（进阶篇） - zha0gongz1 - 博客园 (cnblogs.com)](https://www.cnblogs.com/zha0gongz1/p/12234762.html)
+
+[(42条消息) Nmap常用命令_百密不疏的博客-CSDN博客](https://blog.csdn.net/m0_48907714/article/details/123001723)

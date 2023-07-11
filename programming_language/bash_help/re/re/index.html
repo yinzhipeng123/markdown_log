@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="yinzhipengのmarkdown_log">
+      
       
       
         <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/programming_language/bash_help/re/re/">
@@ -5598,126 +5600,126 @@
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">元字符</th>
-<th style="text-align: center;">功能</th>
-<th style="text-align: center;">例子</th>
-<th style="text-align: center;">匹配结果</th>
+<th align="center">元字符</th>
+<th align="center">功能</th>
+<th align="center">例子</th>
+<th align="center">匹配结果</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">^</td>
-<td style="text-align: center;">行首定位符</td>
-<td style="text-align: center;">/^root/</td>
-<td style="text-align: center;">匹配以root开头的行</td>
+<td align="center">^</td>
+<td align="center">行首定位符</td>
+<td align="center">/^root/</td>
+<td align="center">匹配以root开头的行</td>
 </tr>
 <tr>
-<td style="text-align: center;">$</td>
-<td style="text-align: center;">行尾定位符</td>
-<td style="text-align: center;">/sh$/</td>
-<td style="text-align: center;">匹配以sh结尾的行</td>
+<td align="center">$</td>
+<td align="center">行尾定位符</td>
+<td align="center">/sh$/</td>
+<td align="center">匹配以sh结尾的行</td>
 </tr>
 <tr>
-<td style="text-align: center;">.</td>
-<td style="text-align: center;">匹配任意单个字符(除了换行符)</td>
-<td style="text-align: center;">/l.ve/</td>
-<td style="text-align: center;">匹配live、love、... ...</td>
+<td align="center">.</td>
+<td align="center">匹配任意单个字符(除了换行符)</td>
+<td align="center">/l.ve/</td>
+<td align="center">匹配live、love、... ...</td>
 </tr>
 <tr>
-<td style="text-align: center;">*</td>
-<td style="text-align: center;">前导符，匹配0个或者多个它前面的模式</td>
-<td style="text-align: center;">/l*ve/</td>
-<td style="text-align: center;">匹配ve、lve、llve、... ...</td>
+<td align="center">*</td>
+<td align="center">前导符，匹配0个或者多个它前面的模式</td>
+<td align="center">/l*ve/</td>
+<td align="center">匹配ve、lve、llve、... ...</td>
 </tr>
 <tr>
-<td style="text-align: center;">.*</td>
-<td style="text-align: center;">匹配0到多个任意字符</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">.*</td>
+<td align="center">匹配0到多个任意字符</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[]</td>
-<td style="text-align: center;">匹配一组字符中的任意一个</td>
-<td style="text-align: center;">/l[ioIO]ve/</td>
-<td style="text-align: center;">匹配live、love、lIve、lOve</td>
+<td align="center">[]</td>
+<td align="center">匹配一组字符中的任意一个</td>
+<td align="center">/l[ioIO]ve/</td>
+<td align="center">匹配live、love、lIve、lOve</td>
 </tr>
 <tr>
-<td style="text-align: center;">[x-y]</td>
-<td style="text-align: center;">匹配一段范围中的任意一个</td>
-<td style="text-align: center;">/l[o-z]ve/</td>
-<td style="text-align: center;">匹配love、lpve、lqve、... ...、lzve</td>
+<td align="center">[x-y]</td>
+<td align="center">匹配一段范围中的任意一个</td>
+<td align="center">/l[o-z]ve/</td>
+<td align="center">匹配love、lpve、lqve、... ...、lzve</td>
 </tr>
 <tr>
-<td style="text-align: center;">[0-9]</td>
-<td style="text-align: center;">数字</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[0-9]</td>
+<td align="center">数字</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[a-z]</td>
-<td style="text-align: center;">小写字母</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[a-z]</td>
+<td align="center">小写字母</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[A-Z]</td>
-<td style="text-align: center;">大写字母</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[A-Z]</td>
+<td align="center">大写字母</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[a-z0-9]</td>
-<td style="text-align: center;">小写字母或数字</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[a-z0-9]</td>
+<td align="center">小写字母或数字</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[-+*/]</td>
-<td style="text-align: center;">+-*/ 四则运算</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[-+*/]</td>
+<td align="center">+-*/ 四则运算</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[a-Z]</td>
-<td style="text-align: center;">字母</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[a-Z]</td>
+<td align="center">字母</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[^]</td>
-<td style="text-align: center;">表示取反</td>
-<td style="text-align: center;"><code>/[^abc]ve/</code></td>
-<td style="text-align: center;">匹配除了ave、bve、cve以外的三个字符的字符串</td>
+<td align="center">[^]</td>
+<td align="center">表示取反</td>
+<td align="center"><code>/[^abc]ve/</code></td>
+<td align="center">匹配除了ave、bve、cve以外的三个字符的字符串</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>[^0-9]</code></td>
-<td style="text-align: center;">不是数字</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><code>[^0-9]</code></td>
+<td align="center">不是数字</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">\</td>
-<td style="text-align: center;">用于转义元字符的</td>
-<td style="text-align: center;"><code>/93\.4/</code></td>
-<td style="text-align: center;">匹配93.4</td>
+<td align="center">\</td>
+<td align="center">用于转义元字符的</td>
+<td align="center"><code>/93\.4/</code></td>
+<td align="center">匹配93.4</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>\&lt;</code></td>
-<td style="text-align: center;">词首定位符</td>
-<td style="text-align: center;">/\&lt;bin/</td>
-<td style="text-align: center;">匹配bin、binary、... ...</td>
+<td align="center"><code>\&lt;</code></td>
+<td align="center">词首定位符</td>
+<td align="center">/\&lt;bin/</td>
+<td align="center">匹配bin、binary、... ...</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>\&gt;</code></td>
-<td style="text-align: center;">词尾定位符</td>
-<td style="text-align: center;"><code>/sh\&gt;/</code></td>
-<td style="text-align: center;">匹配bash、csh、ksh、... ...</td>
+<td align="center"><code>\&gt;</code></td>
+<td align="center">词尾定位符</td>
+<td align="center"><code>/sh\&gt;/</code></td>
+<td align="center">匹配bash、csh、ksh、... ...</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -5725,84 +5727,84 @@
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">元字符</th>
-<th style="text-align: center;">功能</th>
-<th style="text-align: center;">例子</th>
-<th style="text-align: center;">匹配结果</th>
+<th align="center">元字符</th>
+<th align="center">功能</th>
+<th align="center">例子</th>
+<th align="center">匹配结果</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><code>|</code></td>
-<td style="text-align: center;">或者</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><code>|</code></td>
+<td align="center">或者</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>?</code></td>
-<td style="text-align: center;">表示0个或者1个它前面的字符</td>
-<td style="text-align: center;">a?d</td>
-<td style="text-align: center;">d   ad</td>
+<td align="center"><code>?</code></td>
+<td align="center">表示0个或者1个它前面的字符</td>
+<td align="center">a?d</td>
+<td align="center">d   ad</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>+</code></td>
-<td style="text-align: center;">表示1个或者多个它前面的字符</td>
-<td style="text-align: center;">a+d</td>
-<td style="text-align: center;">ad  aad  aaad</td>
+<td align="center"><code>+</code></td>
+<td align="center">表示1个或者多个它前面的字符</td>
+<td align="center">a+d</td>
+<td align="center">ad  aad  aaad</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>^[0-9]+$</code></td>
-<td style="text-align: center;">任意数字</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><code>^[0-9]+$</code></td>
+<td align="center">任意数字</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>\(...\)</code></td>
-<td style="text-align: center;">分组、标签</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><code>\(...\)</code></td>
+<td align="center">分组、标签</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>x\{m\}</code></td>
-<td style="text-align: center;">x是字符或者字符串，m是数字，表示次数</td>
-<td style="text-align: center;">匹配x出现m次   <code>/a\{3\}/</code></td>
-<td style="text-align: center;">匹配到aaa</td>
+<td align="center"><code>x\{m\}</code></td>
+<td align="center">x是字符或者字符串，m是数字，表示次数</td>
+<td align="center">匹配x出现m次   <code>/a\{3\}/</code></td>
+<td align="center">匹配到aaa</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>x\{m,\}</code></td>
-<td style="text-align: center;">匹配x出现至少m次</td>
-<td style="text-align: center;"><code>/a\{3,\}/</code></td>
-<td style="text-align: center;">匹配aaa、aaaa、aaaaaaaa、aaaaaaa、... ...</td>
+<td align="center"><code>x\{m,\}</code></td>
+<td align="center">匹配x出现至少m次</td>
+<td align="center"><code>/a\{3,\}/</code></td>
+<td align="center">匹配aaa、aaaa、aaaaaaaa、aaaaaaa、... ...</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>x\{m,n\}</code></td>
-<td style="text-align: center;">匹配x出现m次到n次</td>
-<td style="text-align: center;"><code>/a\{3,5\}/</code></td>
-<td style="text-align: center;">匹配aaa、aaaa、aaaaa</td>
+<td align="center"><code>x\{m,n\}</code></td>
+<td align="center">匹配x出现m次到n次</td>
+<td align="center"><code>/a\{3,5\}/</code></td>
+<td align="center">匹配aaa、aaaa、aaaaa</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>x{m}</code></td>
-<td style="text-align: center;">x出现m次</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><code>x{m}</code></td>
+<td align="center">x出现m次</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>x{m,}</code></td>
-<td style="text-align: center;">x至少出现m次</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><code>x{m,}</code></td>
+<td align="center">x至少出现m次</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>x{m,n}</code></td>
-<td style="text-align: center;">x出现m到n次</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"><code>x{m,n}</code></td>
+<td align="center">x出现m到n次</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -5817,90 +5819,90 @@ aaaannnmms    </code></pre>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">元字符</th>
-<th style="text-align: center;">功能</th>
-<th style="text-align: center;">例子</th>
-<th style="text-align: center;">匹配结果</th>
+<th align="center">元字符</th>
+<th align="center">功能</th>
+<th align="center">例子</th>
+<th align="center">匹配结果</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">[:space:]</td>
-<td style="text-align: center;">包含换行符、空格、tab等所有空白字符</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:space:]</td>
+<td align="center">包含换行符、空格、tab等所有空白字符</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:blank:]</td>
-<td style="text-align: center;">空格和制表符，空格和tab</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:blank:]</td>
+<td align="center">空格和制表符，空格和tab</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:alpha:]</td>
-<td style="text-align: center;">字母</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:alpha:]</td>
+<td align="center">字母</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:alnum:]</td>
-<td style="text-align: center;">字母和数字(包括空白字符)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:alnum:]</td>
+<td align="center">字母和数字(包括空白字符)</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:cntrl:]</td>
-<td style="text-align: center;">控制字符，ctrl、backspace等等</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:cntrl:]</td>
+<td align="center">控制字符，ctrl、backspace等等</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:lower:]</td>
-<td style="text-align: center;">小写字母</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:lower:]</td>
+<td align="center">小写字母</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:upper:]</td>
-<td style="text-align: center;">大写字母</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:upper:]</td>
+<td align="center">大写字母</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:digit:]</td>
-<td style="text-align: center;">十进制数</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:digit:]</td>
+<td align="center">十进制数</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:xdigit:]</td>
-<td style="text-align: center;">十六进制数</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:xdigit:]</td>
+<td align="center">十六进制数</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:punct:]</td>
-<td style="text-align: center;">标点符号</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:punct:]</td>
+<td align="center">标点符号</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:graph:]</td>
-<td style="text-align: center;">可打印的和可见的（非空格）字符</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:graph:]</td>
+<td align="center">可打印的和可见的（非空格）字符</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[:print:]</td>
-<td style="text-align: center;">可打印的字符</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[:print:]</td>
+<td align="center">可打印的字符</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">[^[:alpha:]]</td>
-<td style="text-align: center;">取反，表示不是字母</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">[^[:alpha:]]</td>
+<td align="center">取反，表示不是字母</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -6005,7 +6007,7 @@ southeast   SE  Patricia Hemenway   4.0 .7  417</code></pre>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
