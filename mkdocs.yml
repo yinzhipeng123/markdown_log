@@ -130,7 +130,6 @@ plugins:
         utm_source: "documentation"
         utm_medium: "RSS"
         utm_campaign: "feed-syndication"
-  - blogging
   - search:
 #  配置搜索索引器在为页面生成索引时将使用的策略。如果项目规模较大，并且索引占用大量磁盘空间，则此属性特别有用,参考地址：https://www.mkdocs.org/user-guide/configuration/#configuration-inheritance
       indexing: 'full'
