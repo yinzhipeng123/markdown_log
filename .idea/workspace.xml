@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
+      <change afterPath="$PROJECT_DIR$/docs/middleware/nginx/nginx_cmd.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/middleware/nginx/nginx_conf.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/middleware/nginx/nginx_install.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
@@ -189,7 +192,8 @@
       <workItem from="1688479895204" duration="2289000" />
       <workItem from="1688646481701" duration="610000" />
       <workItem from="1688723315119" duration="6398000" />
-      <workItem from="1689046900247" duration="5184000" />
+      <workItem from="1689046900247" duration="5486000" />
+      <workItem from="1689406476062" duration="1765000" />
     </task>
     <servers />
   </component>

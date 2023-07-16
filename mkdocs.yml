@@ -294,6 +294,10 @@ nav:
     - 授权: middleware/mysql/grant.md
     - 查询: middleware/mysql/select.md
     - 函数: middleware/mysql/function.md
+  - Nginx:
+      - Nginx部署: middleware/nginx/nginx_install.md
+      - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
+      - Nginx配置详解: middleware/nginx/nginx_conf.md
 
 - 监控:
   - monitor/index.md
