@@ -104,6 +104,9 @@ http {
     #                  '$status $body_bytes_sent "$http_referer" '
     #                  '"$http_user_agent" "$http_x_forwarded_for"';
     # 指定日志格式。 格式的名字  定义要记录哪些东西
+    # 需要记录哪些字段，可以从此网页上查看
+    # https://nginx.p2hp.com/en/docs/http/ngx_http_core_module.html#variables_hash_max_size
+    # 例如如下
     # $bytes_sent
     # 发送到客户端的字节数
     # $connection
@@ -117,7 +120,7 @@ http {
     # $request_length
     # 请求长度（包括请求行、标头和请求正文）
     # $request_time
-    # 请求处理时间（以秒为单位），分辨率为毫秒; 从客户端读取第一个字节之间经过的时间和 将最后一个字节发送到客户端后的日志写入
+    # 请求处理时间（以秒为单位），分辨率为毫秒;
     # $status
     # 响应状态
     # $time_iso8601
