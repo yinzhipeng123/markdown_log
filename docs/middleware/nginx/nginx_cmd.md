@@ -13,17 +13,17 @@ Usage: nginx [-?hvVtTq] [-s signal] [-p prefix]
 
 #### 选项:
 
-  -?,-h         : 此帮助
-  -v              : 显示版本并退出
-  -V             : 显示版本和编译配置选项，然后退出
-  -t              : 测试配置和退出
-  -T              : 测试配置，转储并退出
-  -q             : 在配置测试期间抑制非错误消息
-  -s signal     : 向主进程发送信号：停止、退出、重新打开、重新加载。 stop, quit, reopen, reload
-  -p prefix     : 设置前缀路径 (default: /usr/local/webserver/nginx/)
-  -e filename   : 设置错误日志文件 (default: logs/error.log)
-  -c filename   : 设置配置文件 (default: conf/nginx.conf)
-  -g directives : 设置配置文件之外的全局参数 --可以设置的参数：[Core functionality (p2hp.com)](https://nginx.p2hp.com/en/docs/ngx_core_module.html#load_module)
+-   -?,-h         : 此帮助
+-   -v              : 显示版本并退出
+-   -V             : 显示版本和编译配置选项，然后退出
+-   -t              : 测试配置和退出
+-   -T              : 测试配置，转储并退出
+-   -q             : 在配置测试期间抑制非错误消息
+-   -s signal     : 向主进程发送信号：停止、退出、重新打开、重新加载。 stop, quit, reopen, reload
+-   -p prefix     : 设置前缀路径 (default: /usr/local/webserver/nginx/)
+-   -e filename   : 设置错误日志文件 (default: logs/error.log)
+-   -c filename   : 设置配置文件 (default: conf/nginx.conf)
+-   -g directives : 设置配置文件之外的全局参数 --可以设置的参数：[Core functionality (p2hp.com)](https://nginx.p2hp.com/en/docs/ngx_core_module.html#load_module)
 
 ####  启动
 

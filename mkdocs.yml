@@ -138,12 +138,12 @@ plugins:
         - 'en'
 extra_javascript:
 #highlight.js  cdn获取地址：https://highlightjs.org/download/
-  - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js
+  - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js
   - javascripts/highlight.js
   - javascripts/busuanzi.pure.mini.js
 extra_css:
 #设置代码风格：https://github.com/highlightjs/highlight.js/tree/main/src/styles，注意的:是不要忘记在“.css”之前添加“.min”
-  - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/styles/gradient-dark.min.css
+  - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/a11y-dark.min.css
 
 
 nav:

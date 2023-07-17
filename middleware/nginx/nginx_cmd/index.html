@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/styles/gradient-dark.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/a11y-dark.min.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -5687,17 +5687,19 @@ nginx version: nginx/1.24.0
 Usage: nginx [-?hvVtTq] [-s signal] [-p prefix]
              [-e filename] [-c filename] [-g directives]</code></pre>
 <h4 id="_1">选项:</h4>
-<p>-?,-h         : 此帮助
-  -v              : 显示版本并退出
-  -V             : 显示版本和编译配置选项，然后退出
-  -t              : 测试配置和退出
-  -T              : 测试配置，转储并退出
-  -q             : 在配置测试期间抑制非错误消息
-  -s signal     : 向主进程发送信号：停止、退出、重新打开、重新加载。 stop, quit, reopen, reload
-  -p prefix     : 设置前缀路径 (default: /usr/local/webserver/nginx/)
-  -e filename   : 设置错误日志文件 (default: logs/error.log)
-  -c filename   : 设置配置文件 (default: conf/nginx.conf)
-  -g directives : 设置配置文件之外的全局参数 --可以设置的参数：<a href="https://nginx.p2hp.com/en/docs/ngx_core_module.html#load_module">Core functionality (p2hp.com)</a></p>
+<ul>
+<li>-?,-h         : 此帮助</li>
+<li>-v              : 显示版本并退出</li>
+<li>-V             : 显示版本和编译配置选项，然后退出</li>
+<li>-t              : 测试配置和退出</li>
+<li>-T              : 测试配置，转储并退出</li>
+<li>-q             : 在配置测试期间抑制非错误消息</li>
+<li>-s signal     : 向主进程发送信号：停止、退出、重新打开、重新加载。 stop, quit, reopen, reload</li>
+<li>-p prefix     : 设置前缀路径 (default: /usr/local/webserver/nginx/)</li>
+<li>-e filename   : 设置错误日志文件 (default: logs/error.log)</li>
+<li>-c filename   : 设置配置文件 (default: conf/nginx.conf)</li>
+<li>-g directives : 设置配置文件之外的全局参数 --可以设置的参数：<a href="https://nginx.p2hp.com/en/docs/ngx_core_module.html#load_module">Core functionality (p2hp.com)</a></li>
+</ul>
 <h4 id="_2">启动</h4>
 <pre class="highlight"><code class="language-bash">[root@VM-0-16-centos ~]# cd /usr/local/webserver/nginx/sbin
 [root@VM-0-16-centos sbin]# ./nginx 
@@ -5832,7 +5834,7 @@ root      397682  376295  0 00:38 pts/1    00:00:00 grep --color=auto nginx</cod
     
       <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
       
         <script src="../../../javascripts/highlight.js"></script>
       
