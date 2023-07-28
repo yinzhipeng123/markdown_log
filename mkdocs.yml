@@ -298,6 +298,8 @@ nav:
       - Nginx部署: middleware/nginx/nginx_install.md
       - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
       - Nginx配置详解: middleware/nginx/nginx_conf.md
+      - Nginx7层反向代理: middleware/nginx/nginx7层反向代理.md
+      - Nginx4层转发: middleware/nginx/nginx4层转发.md
 - 监控:
   - monitor/index.md
   - Prometheus:
