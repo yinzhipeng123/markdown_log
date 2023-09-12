@@ -1,0 +1,1 @@
+https://rpm-software-management.github.io/rpm/man/rpm.8.html
