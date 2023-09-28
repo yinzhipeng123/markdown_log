@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更" />
+    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/centos7/ls命令详解.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/ls命令详解.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/centos7/系统日志1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/系统日志1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/centos7/系统日志2.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/系统日志2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/centos7/系统日志3.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,7 +205,8 @@
       <workItem from="1691067947832" duration="1805000" />
       <workItem from="1694532428081" duration="208000" />
       <workItem from="1694532778667" duration="1494000" />
-      <workItem from="1694655896221" duration="969000" />
+      <workItem from="1694655896221" duration="1896000" />
+      <workItem from="1695887728355" duration="676000" />
     </task>
     <servers />
   </component>

@@ -407,6 +407,8 @@ nav:
     - ls命令详解: system/centos7/ls命令详解.md
     - Linux特殊权限解释: system/centos7/Linux特殊权限解释.md
     - linux文件系统的简单描述: system/centos7/linux文件系统的简单描述.md
+    - 系统日志syslog-ng服务: system/centos7/系统日志1.md
+    - 系统日志rsyslog服务: system/centos7/系统日志2.md
   - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md

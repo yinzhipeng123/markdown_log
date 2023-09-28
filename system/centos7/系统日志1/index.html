@@ -17,7 +17,7 @@
     
     
       
-        <title>系统日志1 - MarkDown_Log</title>
+        <title>系统日志syslog-ng服务 - MarkDown_Log</title>
       
     
     
@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#syslog-ng" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -114,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              系统日志1
+              系统日志syslog-ng服务
             
           </span>
         </div>
@@ -286,6 +291,8 @@
         
   
   
+    
+  
 
 
   
@@ -297,7 +304,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         操作系统
       </a>
     </li>
@@ -3693,12 +3700,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       
       
@@ -4996,15 +5005,21 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" checked>
       
       
       
+        
+          
+        
+          
         
           
         
@@ -5227,6 +5242,44 @@
     <li class="md-nav__item">
       <a href="../linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0/" class="md-nav__link">
         linux文件系统的简单描述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        系统日志syslog-ng服务
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%972/" class="md-nav__link">
+        系统日志rsyslog服务
       </a>
     </li>
   
@@ -5684,6 +5737,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -5703,9 +5758,12 @@
   </a>
 
 
-  <h1>系统日志1</h1>
-
-<pre class="highlight"><code class="language-bash">[root@VM-0-16-centos ~]# rpm -ql syslog-ng
+<h1 id="syslog-ng">系统日志 syslog-ng 服务</h1>
+<p>系统日志服务比较常见的有三种：syslog、rsyslog、和syslog-ng</p>
+<p>syslog：<a href="https://en.wikipedia.org/wiki/Syslog">系统日志 - 维基百科 (wikipedia.org)</a>   诞生于1980年</p>
+<p>rsyslog：<a href="https://en.wikipedia.org/wiki/Rsyslog">Rsyslog - 维基百科 (wikipedia.org)</a>   项目始于 2004 年</p>
+<p>syslog-ng：<a href="https://en.wikipedia.org/wiki/Syslog-ng">syslog-ng - 维基百科 (wikipedia.org)</a>   项目始于1998年 </p>
+<pre class="highlight"><code>[root@VM-0-16-centos ~]# rpm -ql syslog-ng
 /etc/logrotate.d/syslog
 /etc/syslog-ng
 /etc/syslog-ng/conf.d
@@ -5883,107 +5941,69 @@
         5. syslog-ng  内部博客
            http://insider.blogs.balabit.com</code></pre>
 <p>配置文件 syslog-ng.conf</p>
-<pre class="highlight"><code>SYSLOG-NG.CONF(5)                                            The syslog-ng.conf manual page                                           SYSLOG-NG.CONF(5)
+<pre class="highlight"><code class="language-ini">SYSLOG-NG.CONF(5)               The syslog-ng.conf 手册页               SYSLOG-NG.CONF(5)
 
 
+名字
+       syslog-ng.conf - syslog-ng应用程序 配置文件
 
-NAME
-       syslog-ng.conf - syslog-ng configuration file
-
-SYNOPSIS
+简介
        syslog-ng.conf
 
 DESCRIPTION
-       This manual page is only an abstract; for the complete documentation of syslog-ng, see The syslog-ng Open Source Edition Administrator Guide[1]
-       or the official syslog-ng website[2].
+       本手册页仅为摘要；有关syslog ng的完整文档，请参阅《syslog ng开放源代码版管理员指南》[1]或syslog ng官方网站[2]。syslog ng OSE应用程序是一个灵活且高度可扩展的系统日志应用程序。通常，syslog ng用于管理日志消息并实现集中式日志记录，其目的是在单个中央日志服务器上收集多个设备的日志消息。不同的设备（称为syslog ng客户端）都运行syslog ng，并从各种应用程序、文件和其他来源收集日志消息。客户端将所有重要的日志消息发送到远程syslog ng服务器，服务器在那里对它们进行排序和存储。syslog ng应用程序读取传入消息并将其转发到选定的目的地。syslog ng应用程序可以接收来自文件、远程主机和其他来源的消息。日志消息在一个定义的源中输入syslog ng，并发送到一个或多个目的地。来源和目的地是独立的对象；日志路径定义syslogng对消息的处理方式，将源连接到目标。日志路径由一个或多个源和一个或更多个目的地组成；从源到达的消息被发送到日志路径中列出的每个目的地。在syslog ng中定义的日志路径称为日志语句。可选地，日志路径可以包括筛选器。过滤器是只选择某些消息的规则，例如，只选择特定应用程序发送的消息。如果日志路径包含筛选器，则syslog ng只将满足筛选器规则的消息发送到日志路径中设置的目的地。
 
-       The syslog-ng OSE application is a flexible and highly scalable system logging application. Typically, syslog-ng is used to manage log messages
-       and implement centralized logging, where the aim is to collect the log messages of several devices on a single, central log server. The
-       different devices - called syslog-ng clients - all run syslog-ng, and collect the log messages from the various applications, files, and other
-       sources. The clients send all important log messages to the remote syslog-ng server, where the server sorts and stores them.
-
-       The syslog-ng application reads incoming messages and forwards them to the selected destinations. The syslog-ng application can receive messages
-       from files, remote hosts, and other sources.
-
-       Log messages enter syslog-ng in one of the defined sources, and are sent to one or more destinations.
-
-       Sources and destinations are independent objects; log paths define what syslog-ng does with a message, connecting the sources to the
-       destinations. A log path consists of one or more sources and one or more destinations; messages arriving from a source are sent to every
-       destination listed in the log path. A log path defined in syslog-ng is called a log statement.
-
-       Optionally, log paths can include filters. Filters are rules that select only certain messages, for example, selecting only messages sent by a
-       specific application. If a log path includes filters, syslog-ng sends only the messages satisfying the filter rules to the destinations set in
-       the log path.
-
-CONFIGURING SYSLOG-NG
-       ·   The main body of the configuration file consists of object definitions: sources, destinations, logpaths define which log message are
-           received and where they are sent. All identifiers, option names and attributes, and any other strings used in the syslog-ng configuration
-           file are case sensitive. Objects must be defined before they are referenced in another statement. Object definitions (also called
-           statements) have the following syntax:
+配置 SYSLOG-NG
+        配置文件的主体由对象定义组成：源、目的地、日志路径定义接收的日志消息以及发送的位置。syslog ng配置文件中使用的所有标识符、选项名称和属性以及任何其他字符串都区分大小写。在另一个语句中引用对象之前，必须先定义对象。对象定义（也称为语句）具有以下语法：
 
                object_type object_id {&lt;options&gt;};
 
-           ·   Type of the object: One of source, destination, log, filter, parser, rewrite rule, or template.
+·对象的类型: 源, 目的地, 日志, 滤波器, 解析器, 重写规则, 或者 模板.
 
-           ·   Identifier of the object: A unique name identifying the object. When using a reserved word as an identifier, enclose the identifier in
-               quotation marks.
+·object_id: 标识对象的唯一名称。使用保留字作为标识符时，请将标识符用引号括起来。
 
-                   Tip
-                   Use identifiers that refer to the type of the object they identify. For example, prefix source objects with s_, destinations with
-                   d_, and so on.
+               提示：使用与他们识别的对象类型相关的标识符。例如，用s_作为源对象的前缀，用d_作为目的地的前缀，依此类推。
 
-           ·   Parameters: The parameters of the object, enclosed in braces {parameters}.
+·Parameters: 对象的参数，用大括号｛parameters｝括起来。
 
-           ·   Semicolon: Object definitions end with a semicolon (;).
+·Semicolon: 对象定义以分号（；）结尾。
 
-           For example, the following line defines a source and calls it s_internal.
+           例如，下面的行定义了一个源，并将其称为s_internal。
 
                source s_internal { internal(); };
 
-           The object can be later referenced in other statements using its ID, for example, the previous source is used as a parameter of the
-           following log statement:
+           稍后可以使用对象的ID在其他语句中引用该对象，例如，以前的源用作以下日志语句的参数：
 
                log { source(s_internal); destination(d_file); };
 
-       ·   The parameters and options within a statement are similar to function calls of the C programming language: the name of the option followed
-           by a list of its parameters enclosed within brackets and terminated with a semicolon.
+ ·语句中的参数和选项类似于C编程语言的函数调用：选项的名称后面跟着一个参数列表，参数列表括在括号内，并以分号结束。
 
-               option(parameter1, parameter2); option2(parameter1, parameter2);
+              option(parameter1, parameter2); option2(parameter1, parameter2);
 
-           For example, the following source statement has three options; the first two options (file() and follow_freq()) have a single parameter,
-           while the third one (flags()) has two parameters:
+              例如，以下源语句有三个选项；前两个选项（file（）和follow_freq（））只有一个参数，而第三个选项（flags（））有两个参数：
+                            source s_tail { file("/var/log/apache/access.log"  follow_freq(1) flags(no-parse, validate-utf8)); };
 
-               source s_tail { file("/var/log/apache/access.log"
-                   follow_freq(1) flags(no-parse, validate-utf8)); };
+              对象可能具有必需参数和可选参数。必需的参数是位置参数，这意味着必须按照定义的顺序指定这些参数。可以使用选项（值）格式以任何顺序指定可选参数。如果未指定参数（可选或必需），则使用其默认值。参数及其默认值列在特定对象的参照部分中。
 
-           Objects may have required and optional parameters. Required parameters are positional, meaning that they must be specified in a defined
-           order. Optional parameters can be specified in any order using the option(value) format. If a parameter (optional or required) is not
-           specified, its default value is used. The parameters and their default values are listed in the reference section of the particular object.
+              示例1。使用必需和可选参数unix-stream（）源驱动程序有一个必需的参数：要侦听的套接字的名称。可选参数以任何顺序跟随套接字名称，因此以下源定义具有相同的效果：
 
-           Example 1. Using required and optional parameters The unix-stream() source driver has a single required argument: the name of the socket to
-           listen on. Optional parameters follow the socket name in any order, so the following source definitions have the same effect:
+               source s_demo_stream1 {unix-stream("/dev/log" max-connections(10) group(log)); };
+               source s_demo_stream2 {unix-stream("/dev/log" group(log) max-connections(10)); };
 
-               source s_demo_stream1 {
-                       unix-stream("/dev/log" max-connections(10) group(log)); };
-               source s_demo_stream2 {
-                       unix-stream("/dev/log" group(log) max-connections(10)); };
-
-       ·   Some options are global options, or can be set globally, for example, whether syslog-ng OSE should use DNS resolution to resolve IP
-           addresses. Global options are detailed in ???.
+·有些选项是全局选项，或者可以全局设置，例如，syslog ng OSE是否应该使用DNS解析来解析IP地址。全局选项详见？？？。
 
                options { use_dns(no); };
 
-       ·   All identifiers, attributes, and any other strings used in the syslog-ng configuration file are case sensitive.
+·syslog ng配置文件中使用的所有标识符、属性和任何其他字符串都区分大小写。
 
-       ·   Objects can be used before definition.
+·对象可以在定义之前使用。
 
-       ·   To add comments to the configuration file, start a line with # and write your comments. These lines are ignored by syslog-ng.
+·要在配置文件中添加注释，请以#开头一行，然后写下您的注释。syslog ng将忽略这些行。
 
-               # Comment: This is a stream source
-               source s_demo_stream {
-                       unix-stream("/dev/log" max-connections(10) group(log)); };
+# 注释: 这是一个流源
+source s_demo_stream {unix-stream("/dev/log" max-connections(10) group(log)); };
 
-       The syntax of log statements is as follows:
+日志语句的语法如下：
 
            log {
                source(s1); source(s2); ...
@@ -5992,132 +6012,99 @@ CONFIGURING SYSLOG-NG
                flags(flag1[, flag2...]);
                };
 
-       The following log statement sends all messages arriving to the localhost to a remote server.
+下面的log语句将所有到达本地主机的消息发送到远程服务器。
 
            source s_localhost { tcp(ip(127.0.0.1) port(1999) ); };
            destination d_tcp { tcp("10.1.2.3" port(1999); localport(999)); };
            log { source(s_localhost); destination(d_tcp); };
 
-       The syslog-ng application has a number of global options governing DNS usage, the timestamp format used, and other general points. Each option
-       may have parameters, similarly to driver specifications. To set global options, add an option statement to the syslog-ng configuration file
-       using the following syntax:
+syslog-ng应用程序有许多全局选项来管理DNS使用、使用的时间戳格式以及其他常规点。每个选项可能都有参数，类似于驱动程序规范。要设置全局选项，请使用以下语法将选项语句添加到syslog ng配置文件中：
 
-           options { option1(params); option2(params); ... };
+options { option1(params); option2(params); ... };
 
-       The sources, destinations, and filters available in syslog-ng are listed below. For details, see The syslog-ng Administrator Guide[1].
+下面列出了syslog ng中可用的源、目标和筛选器。有关详细信息，请参阅《syslog ng管理员指南》[1]。
 
        -       .sp
-       Table 1. Source drivers available in syslog-ng
+       表1。syslog ng中可用的源驱动程序
        ┌────────────────────────────┬────────────────────────────────────────────────────┐
-       │Name                        │ Description                                        │
+       │名字                         │ 描述                                               │
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │internal()                  │ Messages generated internally in syslog-ng.        │
+       │internal()                  │ 在syslog ng中内部生成的消息。                         │
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │file()                      │ Opens the specified file and reads messages.       │
+       │file()                      │ 打开指定的文件并读取消息。                             │
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │pipe(), fifo                │ Opens the specified named pipe and reads messages. │
+       │pipe(), fifo                │ 打开指定的命名管道并读取消息。                          │
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │pacct()                     │ Reads messages from the process accounting logs on │
-       │                            │ Linux.                                             │
+       │pacct()                     │  从Linux上的进程记帐日志中读取消息                     │
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │program()                   │ Opens the specified application and reads messages │
-       │                            │ from its standard output.                          │
+       │program()                   │ 打开指定的应用程序并从其标准输出中读取消息。              │
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │sun-stream(), sun-streams() │ Opens the specified STREAMS device on Solaris      │
-       │                            │ systems and reads incoming messages.               │
+       │sun-stream(), sun-streams() │在Solaris系统上打开指定的STREAMS设备并读取传入消息。      │
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │syslog()                    │ Listens for incoming messages using the new IETF-  │
-       │                            │ standard syslog protocol.                          │
+       │syslog()                    │ 使用新的IETF标准syslog协议侦听传入消息。                |
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │system()                    │ Automatically detects which platform syslog-ng OSE │
-       │                            │ is running on, and collects the native log         │
-       │                            │ messages of that platform.                         │
+       │system()                    │ 自动检测syslog ng OSE在哪个平台上运行，并收集该平台的本机日志消息。│
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │tcp(), tcp6()               │ Listens on the specified TCP port for incoming     │
-       │                            │ messages using the BSD-syslog protocol over IPv4   │
-       │                            │ and IPv6 networks, respectively.                   │
+       │tcp(), tcp6()               │ 分别通过IPv4和IPv6网络使用BSD syslog协议在指定的TCP端口上侦听传入消息。│
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │udp(), udp6()               │ Listens on the specified UDP port for incoming     │
-       │                            │ messages using the BSD-syslog protocol over IPv4   │
-       │                            │ and IPv6 networks, respectively.                   │
+       │udp(), udp6()               │ 分别通过IPv4和IPv6网络使用BSD syslog协议在指定的UDP端口上侦听传入消息。│
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │unix-dgram()                │ Opens the specified unix socket in SOCK_DGRAM mode │
-       │                            │ and listens for incoming messages.                 │
+       │unix-dgram()                │ 以SOCK_DGRAM模式打开指定的unix套接字并侦听传入消息。     │
        ├────────────────────────────┼────────────────────────────────────────────────────┤
-       │unix-stream()               │ Opens the specified unix socket in SOCK_STREAM     │
-       │                            │ mode and listens for incoming messages.            │
+       │unix-stream()               │ 以SOCK_STREAM模式打开指定的unix套接字并侦听传入消息。    │
        └────────────────────────────┴────────────────────────────────────────────────────┘
 
-       Table 2. Destination drivers available in syslog-ng
+       表 2. syslog ng中可用的目标驱动程序
        ┌─────────────────┬────────────────────────────────────────────────────┐
-       │Name             │ Description                                        │
+       │名字                         │ 描述                                    │
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │file()           │ Writes messages to the specified file.             │
+       │file()           │ 将消息写入指定的文件。                                 │
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │fifo(), pipe()   │ Writes messages to the specified named pipe.       │
+       │fifo(), pipe()   │ 将消息写入指定的命名管道。                             │
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │program()        │ Forks and launches the specified program, and      │
-       │                 │ sends messages to its standard input.              │
+       │program()        │  分叉并启动指定的程序，并向其标准输入发送消息。            │
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │sql()            │ Sends messages into an SQL database. In addition   │
-       │                 │ to the standard syslog-ng packages, the sql()      │
-       │                 │ destination requires database-specific packages to │
-       │                 │ be installed. Refer to the section appropriate for │
-       │                 │ your platform in ???.                              │
+       │sql()            │ 将消息发送到SQL数据库。除了标准的syslog ng包之外，sql（）目标还需要安装特定于数据库的包。请参阅？？中适用于您的平台的部分？？？。                                                │
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │syslog()         │ Sends messages to the specified remote host using  │
-       │                 │ the IETF-syslog protocol. The IETF standard        │
-       │                 │ supports message transport using the UDP, TCP, and │
-       │                 │ TLS networking protocols.                          │
+       │syslog()         │ 使用IETF系统日志协议将消息发送到指定的远程主机。IETF标准支持使用UDP、TCP和TLS网络协议的消息传输。                                                                           │
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │tcp() and tcp6() │ Sends messages to the specified TCP port of a      │
-       │                 │ remote host using the BSD-syslog protocol over     │
-       │                 │ IPv4 and IPv6, respectively.                       │
+       │tcp() and tcp6() │ 分别通过IPv4和IPv6使用BSD syslog协议将消息发送到远程主机的指定TCP端口。│
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │udp() and udp6() │ Sends messages to the specified UDP port of a      │
-       │                 │ remote host using the BSD-syslog protocol over     │
-       │                 │ IPv4 and IPv6, respectively.                       │
+       │udp() and udp6() │ 分别通过IPv4和IPv6使用BSD syslog协议将消息发送到远程主机的指定UDP端口。│
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │unix-dgram()     │ Sends messages to the specified unix socket in     │
-       │                 │ SOCK_DGRAM style (BSD).                            │
+       │unix-dgram()     │ 以SOCK_DGRAM样式（BSD）将消息发送到指定的unix套接字。    |
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │unix-stream()    │ Sends messages to the specified unix socket in     │
-       │                 │ SOCK_STREAM style (Linux).                         │
+       │unix-stream()    │ 以SOCK_STREAM样式（Linux）将消息发送到指定的unix套接字。 │
        ├─────────────────┼────────────────────────────────────────────────────┤
-       │usertty()        │ Sends messages to the terminal of the specified    │
-       │                 │ user, if the user is logged in.                    │
+       │usertty()        │ 如果指定用户已登录，则向该用户的终端发送消息。             │
        └─────────────────┴────────────────────────────────────────────────────┘
 
-       Table 3. Filter functions available in syslog-ng OSE
+       Table 3. syslog ng OSE中可用的筛选函数 
        ┌──────────────────────┬───────────────────────────────────────────────────┐
        │Name                  │ Description                                       │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │facility()            │ Filter messages based on the sending facility.    │
+       │facility()            │ 根据发送功能筛选邮件。                                │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │filter()              │ Call another filter function.                     │
+       │filter()              │ 调用另一个筛选器函数。                                │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │host()                │ Filter messages based on the sending host.        │
+       │host()                │ 根据发送主机筛选邮件。                                │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │level() or priority() │ Filter messages based on their priority.          │
+       │level() or priority() │ 根据邮件的优先级筛选邮件。                             │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │match()               │ Use a regular expression to filter messages based │
-       │                      │ on a specified header or content field.           │
+       │match()               │ 使用正则表达式可以根据指定的标头或内容字段筛选消息。       │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │message()             │ Use a regular expression to filter messages based │
-       │                      │ their content.                                    │
+       │message()             │ 使用正则表达式根据邮件内容筛选邮件。                    │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │netmask()             │ Filter messages based on the IP address of the    │
-       │                      │ sending host.                                     │
+       │netmask()             │ 根据发送主机的IP地址筛选邮件。                         │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │program()             │ Filter messages based on the sending application. │
+       │program()             │ 根据发送应用程序筛选邮件。                            │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │source()              │ Select messages of the specified syslog-ng OSE    │
-       │                      │ source statement.                                 │
+       │source()              │ 选择指定syslog ng OSE源语句的消息。                   │
        ├──────────────────────┼───────────────────────────────────────────────────┤
-       │tags()                │ Select messages having the specified tag.         │
+       │tags()                │ 选择具有指定标记的邮件。                              │
        └──────────────────────┴───────────────────────────────────────────────────┘
 
-FILES
+文件
        /home/algernon/install/syslog-ng/3.5/
 
        /home/algernon/install/syslog-ng/3.5/etc/syslog-ng.conf
@@ -6127,32 +6114,31 @@ SEE ALSO
 
        The syslog-ng OSE 3.3 Administrator Guide[1]
 
-       If you experience any problems or need help with syslog-ng, visit visit the syslog-ng wiki[3] or the syslog-ng mailing list[4].
+       如果您在使用syslog ng时遇到任何问题或需要帮助，请访问syslog ng wiki[3]或syslog ng邮件列表[4]。
 
-       For news and notifications about of syslog-ng, visit the syslog-ng Insider Blog[5].
+       有关syslog ng的新闻和通知，请访问syslog ng Insider博客[5]。
 
-AUTHOR
-       This manual page was written by the BalaBit Documentation Team &lt;documentation@balabit.com&gt;.
+作者
+       本手册页由BalaBit文档团队编写&lt;documentation@balabit.com&gt;。
 
 COPYRIGHT
 
-       The authors grant permission to copy, distribute and/or modify this manual page under the terms of the GNU General Public License Version 2 or
-       newer (GPL v2+).
+       作者根据GNU通用公共许可证第2版或更新版本（GPL v2+）的条款，授予复制、分发和/或修改本手册页面的权限。
 
 NOTES
-        1. The syslog-ng Open Source Edition Administrator Guide
+        1. 《syslog ng开放源代码版管理员指南》
            http://www.balabit.com/support/documentation/
 
-        2. the official syslog-ng website
+        2. syslog ng官方网站
            http://www.balabit.com/network-security/syslog-ng/
 
-        3. visit the syslog-ng wiki
+        3. 访问syslog ng wiki
            http://www.balabit.com/wiki/syslog-ng-faq
 
-        4. syslog-ng mailing list
+        4. syslog ng邮件列表
            https://lists.balabit.hu/mailman/listinfo/syslog-ng
 
-        5. syslog-ng Insider Blog
+        5. syslog ng内幕博客
            http://insider.blogs.balabit.com
 
 
@@ -6182,6 +6168,42 @@ syslog-ng Open Source Edition                                          02/26/201
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: linux文件系统的简单描述" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              linux文件系统的简单描述
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%972/" class="md-footer__link md-footer__link--next" aria-label="下一页: 系统日志rsyslog服务" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              系统日志rsyslog服务
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
