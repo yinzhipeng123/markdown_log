@@ -382,6 +382,7 @@ nav:
         - blkid命令: system/linux/IO/blkid.md
         - lspci命令: system/linux/IO/lspci.md
         - lsblk命令: system/linux/IO/lsblk.md
+        - 查看目录大小: system/linux/IO/du.md
     - 网络相关:
         - TCP图解: system/linux/网络/tcp.md
         - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
@@ -409,6 +410,9 @@ nav:
     - linux文件系统的简单描述: system/centos7/linux文件系统的简单描述.md
     - 系统日志syslog-ng服务: system/centos7/系统日志1.md
     - 系统日志rsyslog服务: system/centos7/系统日志2.md
+    - 查询硬件信息: system/centos7/dmidecode.md
+    - 查询raid卡信息-storcli命令: system/centos7/storcli.md
+    - find命令: system/centos7/find.md
   - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md

@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
+      <change afterPath="$PROJECT_DIR$/docs/programming_language/bash_help/sort.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/centos7/dmidecode.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/centos7/find.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/centos7/storcli.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/du.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/centos7/ls命令详解.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/ls命令详解.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/centos7/系统日志1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/系统日志1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/centos7/系统日志2.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/系统日志2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/centos7/系统日志3.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +207,11 @@
       <workItem from="1694532428081" duration="208000" />
       <workItem from="1694532778667" duration="1494000" />
       <workItem from="1694655896221" duration="1896000" />
-      <workItem from="1695887728355" duration="676000" />
+      <workItem from="1695887728355" duration="979000" />
+      <workItem from="1696751963414" duration="2725000" />
+      <workItem from="1696834647166" duration="17000" />
+      <workItem from="1696846342880" duration="16000" />
+      <workItem from="1696846389948" duration="1983000" />
     </task>
     <servers />
   </component>
