@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/programming_language/bash_help/sort.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/programming_language/bash_help/sort.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +206,7 @@
       <workItem from="1696834647166" duration="17000" />
       <workItem from="1696846342880" duration="16000" />
       <workItem from="1696846389948" duration="2084000" />
-      <workItem from="1696908821672" duration="656000" />
+      <workItem from="1696908821672" duration="1334000" />
     </task>
     <servers />
   </component>
