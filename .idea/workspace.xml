@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
-      <change afterPath="$PROJECT_DIR$/docs/programming_language/bash_help/sort.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/centos7/dmidecode.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/centos7/find.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/centos7/storcli.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/du.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/programming_language/bash_help/sort.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/programming_language/bash_help/sort.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +207,8 @@
       <workItem from="1696751963414" duration="2725000" />
       <workItem from="1696834647166" duration="17000" />
       <workItem from="1696846342880" duration="16000" />
-      <workItem from="1696846389948" duration="1983000" />
+      <workItem from="1696846389948" duration="2084000" />
+      <workItem from="1696908821672" duration="656000" />
     </task>
     <servers />
   </component>

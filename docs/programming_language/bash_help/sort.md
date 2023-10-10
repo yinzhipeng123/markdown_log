@@ -30,6 +30,22 @@
 
 
 
+查看系统中大目录并排序
+
+```bash
+[root@www /]
+#du -h / 2>/dev/null| sort -k1rh | head -n 20
+191G    /
+171G    /dev
+170G    /dev/sdfsd
+7.9G    /var
+5.6G    /sdfsdfsdfsd
+```
+
+
+
+
+
 在线man手册
 
 [sort linux 命令 在线中文手册 (51yip.com)](http://linux.51yip.com/search/sort)

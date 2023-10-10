@@ -184,6 +184,11 @@ nav:
       - 类的继承: programming_language/python/basics/class/class.md
       - 类变量与实例变量: programming_language/python/basics/class/class_var.md
     - mypy: programming_language/python/basics/mypy.md
+    - 基础:
+      - for循环: programming_language/python/basics/for循环.md
+      - if语句: programming_language/python/basics/if语句.md
+      - match语句: programming_language/python/basics/match语句.md
+      - while语句: programming_language/python/basics/while.md
   - Go:
     - Go入门: programming_language/go/go_one.md
     - Web框架 Gin: 
@@ -250,6 +255,7 @@ nav:
       - bash中的异常处理: programming_language/bash_help/trap.md
       - 查看系统软件变化: programming_language/bash_help/rpm.md
       - bash批量登录服务器: programming_language/bash_help/sshpass.md
+      - sort排序: programming_language/bash_help/sort.md
 - 容器技术:
   - lxc/index.md
   - K8S:
@@ -294,6 +300,7 @@ nav:
     - 授权: middleware/mysql/grant.md
     - 查询: middleware/mysql/select.md
     - 函数: middleware/mysql/function.md
+    - 备份: middleware/mysql/bak.md
   - Nginx:
       - Nginx部署: middleware/nginx/nginx_install.md
       - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
