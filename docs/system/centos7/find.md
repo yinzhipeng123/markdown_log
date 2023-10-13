@@ -19,3 +19,11 @@
 -rw-r--r-- 1 admin admin 2.2G Oct  9 17:57 ./ccc
 ```
 
+
+
+只保留最近30天数据
+
+```bash
+find /home/admin/ -mtime +30 -name "*.*" -exec rm -Rf {} \
+```
+

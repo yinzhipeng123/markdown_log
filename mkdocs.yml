@@ -344,6 +344,7 @@ nav:
         - ps命令: system/linux/计算/ps.md
         - iostat命令: system/linux/计算/iostat.md
         - sar命令: system/linux/计算/sar.md
+        - tsar命令: system/linux/计算/tsar.md
         - top命令: system/linux/计算/top.md
         - /proc/stat: system/linux/计算/0proc0stat.md
         - strace命令: system/linux/计算/strace.md
@@ -420,6 +421,7 @@ nav:
     - 查询硬件信息: system/centos7/dmidecode.md
     - 查询raid卡信息-storcli命令: system/centos7/storcli.md
     - find命令: system/centos7/find.md
+    - gun软件列表: system/centos7/gun软件列表.md
   - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
