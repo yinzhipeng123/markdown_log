@@ -401,7 +401,7 @@ nav:
         - tcpdump: system/linux/网络/tcpdump.md
         - netstat: system/linux/网络/netstat命令.md
         - 测试TCP带宽: system/linux/网络/测试网络带宽.md
-        - nmap命令: system/linux/网络/nmap.mdy
+        - nmap命令: system/linux/网络/nmap.md
         - ethtool命令: system/linux/网络/ethtool.md
         - iperf3测速: system/linux/网络/iperf3.md
   - Centos7:
