@@ -401,8 +401,9 @@ nav:
         - tcpdump: system/linux/网络/tcpdump.md
         - netstat: system/linux/网络/netstat命令.md
         - 测试TCP带宽: system/linux/网络/测试网络带宽.md
-        - nmap命令: system/linux/网络/nmap.md
+        - nmap命令: system/linux/网络/nmap.mdy
         - ethtool命令: system/linux/网络/ethtool.md
+        - iperf3测速: system/linux/网络/iperf3.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - 修改网卡: system/centos7/ens33.md
