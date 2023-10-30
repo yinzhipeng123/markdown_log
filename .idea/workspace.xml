@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed_rss_created.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feed_rss_created.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed_rss_updated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feed_rss_updated.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitemap.xml.gz" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.xml.gz" afterDir="false" />
-    </list>
+    <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -215,6 +209,7 @@
       <workItem from="1697162281418" duration="2600000" />
       <workItem from="1698204263162" duration="1995000" />
       <workItem from="1698390638826" duration="1516000" />
+      <workItem from="1698658310346" duration="605000" />
     </task>
     <servers />
   </component>
