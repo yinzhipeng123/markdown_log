@@ -17,7 +17,7 @@
     
     
       
-        <title>排场网页打不开 - MarkDown_Log</title>
+        <title>排查网页打不开 - MarkDown_Log</title>
       
     
     
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              排场网页打不开
+              排查网页打不开
             
           </span>
         </div>
@@ -5224,12 +5224,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          排场网页打不开
+          排查网页打不开
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        排场网页打不开
+        排查网页打不开
       </a>
       
         
@@ -5248,36 +5248,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1pingdns" class="md-nav__link">
-    1,通过终端ping网页域名，是否能通，如果不通，检查域名地址是否正确，否则检查DNS
+  <a href="#_2" class="md-nav__link">
+    第一步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2httphttp" class="md-nav__link">
-    2,浏览器打开开发者模式，查看网页返回的http状态码，根据不同的HTTP状态进行排查
+  <a href="#_3" class="md-nav__link">
+    第二步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3nginxapache" class="md-nav__link">
-    3,检查网页服务器状态，例如Nginx，Apache等
+  <a href="#_4" class="md-nav__link">
+    第三步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4javapythonphp" class="md-nav__link">
-    4,检查开发环境状态，例如Java，Python，PHP等
+  <a href="#_5" class="md-nav__link">
+    第四步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    5,检查操作系统
+  <a href="#_6" class="md-nav__link">
+    第五步
   </a>
   
 </li>
@@ -6101,36 +6101,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1pingdns" class="md-nav__link">
-    1,通过终端ping网页域名，是否能通，如果不通，检查域名地址是否正确，否则检查DNS
+  <a href="#_2" class="md-nav__link">
+    第一步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2httphttp" class="md-nav__link">
-    2,浏览器打开开发者模式，查看网页返回的http状态码，根据不同的HTTP状态进行排查
+  <a href="#_3" class="md-nav__link">
+    第二步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3nginxapache" class="md-nav__link">
-    3,检查网页服务器状态，例如Nginx，Apache等
+  <a href="#_4" class="md-nav__link">
+    第三步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4javapythonphp" class="md-nav__link">
-    4,检查开发环境状态，例如Java，Python，PHP等
+  <a href="#_5" class="md-nav__link">
+    第四步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    5,检查操作系统
+  <a href="#_6" class="md-nav__link">
+    第五步
   </a>
   
 </li>
@@ -6156,9 +6156,12 @@
 
 
 <h1 id="_1">排查网页打不开问题</h1>
-<h5 id="1pingdns">1,通过终端ping网页域名，是否能通，如果不通，检查域名地址是否正确，否则检查DNS</h5>
-<h5 id="2httphttp">2,浏览器打开开发者模式，查看网页返回的http状态码，根据不同的HTTP状态进行排查</h5>
-<p>HTTP状态码是服务器用来响应客户端请求的标准数字代码。不同的状态码表示不同的情况，可以大致分为五个类别：</p>
+<h3 id="_2">第一步</h3>
+<p><strong>1,通过终端ping网页域名，是否能通，如果不通，检查域名地址是否正确，否则检查DNS</strong></p>
+<h3 id="_3">第二步</h3>
+<p><strong>2,浏览器打开开发者模式，查看网页返回的http状态码，根据不同的HTTP状态进行排查</strong></p>
+<p>HTTP状态码是服务器用来响应客户端请求的标准数字代码。</p>
+<p>不同的状态码表示不同的情况，可以大致分为五个类别：</p>
 <ol>
 <li><strong>1xx - 信息性状态码 (Informational)</strong>：表示接收的请求正在处理。</li>
 </ol>
@@ -6217,119 +6220,99 @@
 <li>504 Gateway Timeout (网关超时)  <u>类似于502，检查服务器与上游服务器的连接问题。</u></li>
 </ul>
 <p>这些状态码是Web开发和网络诊断中的重要部分。</p>
-<h5 id="3nginxapache">3,检查网页服务器状态，例如Nginx，Apache等</h5>
+<h3 id="_4">第三步</h3>
+<p><strong>3,检查网页服务器状态，例如Nginx，Apache等</strong></p>
 <p>例如检查Nginx服务器是否正常运行，可以通过以下步骤进行：</p>
-<ol>
-<li><strong>检查Nginx服务状态</strong>：</li>
-<li>
-<p>在命令行输入 <code>sudo systemctl status nginx</code> 或 <code>service nginx status</code>（取决于你的操作系统和服务管理器）。这会显示Nginx的运行状态。</p>
-</li>
-<li>
+<p><strong>检查Nginx服务状态</strong>：</p>
+<pre class="highlight"><code>在命令行输入 `sudo systemctl status nginx` 或 `service nginx status`
+（取决于你的操作系统和服务管理器）。这会显示Nginx的运行状态。</code></pre>
 <p><strong>检查端口监听</strong>：</p>
-</li>
-<li>
-<p>使用 <code>netstat -tulpn | grep nginx</code> 或 <code>ss -tulpn | grep nginx</code> 来确认Nginx是否正在监听正确的端口（通常是80和443端口）。</p>
-</li>
-<li>
+<pre class="highlight"><code>使用 `netstat -tulpn | grep nginx` 或 `ss -tulpn | grep nginx` 
+来确认Nginx是否正在监听正确的端口（通常是80和443端口）。</code></pre>
 <p><strong>访问网站</strong>：</p>
-</li>
-<li>
-<p>尝试在nginx服务器中输入你的服务器IP或绑定的域名，看是否能成功加载网页。或者在nginx服务器上curl命令访问127.0.0.1+端口，看是否能成功加载网页</p>
-</li>
-<li>
+<pre class="highlight"><code>尝试在nginx服务器中输入你的服务器IP或绑定的域名，看是否能成功加载网页。
+或者在nginx服务器上curl命令访问127.0.0.1+端口，看是否能成功加载网页</code></pre>
 <p><strong>查看Nginx错误日志</strong>：</p>
-</li>
-<li>
-<p>Nginx的错误日志通常位于 <code>/var/log/nginx/error.log</code>。查看该文件可能会给出一些为什么Nginx无法正常运行的线索。</p>
-</li>
-<li>
+<pre class="highlight"><code>Nginx的错误日志通常位于 `/var/log/nginx/error.log`。
+查看该文件可能会给出一些为什么Nginx无法正常运行的线索。</code></pre>
 <p><strong>检查Nginx配置文件</strong>：</p>
-</li>
-<li>使用 <code>nginx -t</code> 命令来测试Nginx配置文件是否有语法错误。</li>
-<li>
-<p>或者使用 ps aux | grep [进程号] 查看Nginx启动命令是否指定了配置文件</p>
-</li>
-<li>
+<pre class="highlight"><code>使用 `nginx -t` 命令来测试Nginx配置文件是否有语法错误。
+
+或者使用 ps auxww | grep [进程号] 查看Nginx启动命令是否指定了配置文件</code></pre>
 <p><strong>检查系统资源</strong>：</p>
-</li>
-<li>
-<p>使用 <code>top</code> 或 <code>htop</code> 等命令来检查服务器的CPU和内存使用情况，确保系统资源没有被耗尽。</p>
-</li>
-</ol>
+<pre class="highlight"><code>使用 `top` 或 `htop` 等命令来检查服务器的
+CPU和内存使用情况，确保系统资源没有被耗尽。</code></pre>
 <p>一样的道理可以检查Apache。</p>
-<h5 id="4javapythonphp">4,检查开发环境状态，例如Java，Python，PHP等</h5>
+<h3 id="_5">第四步</h3>
+<p><strong>4,检查开发环境状态，例如Java，Python，PHP等</strong></p>
 <p>例如检查Java：</p>
 <p><code>jstat -gc [pid]</code> 命令提供了Java堆内存中对象的垃圾收集和堆使用情况的信息。输出的每列数据代表不同的内存区域或统计信息。以下是典型输出的列和它们的含义：</p>
-<ol>
-<li><strong>S0C</strong>: Survivor space 0 capacity (KB) - 幸存区0的容量。</li>
-<li><strong>S1C</strong>: Survivor space 1 capacity (KB) - 幸存区1的容量。</li>
-<li><strong>S0U</strong>: Survivor space 0 utilization (KB) - 幸存区0的使用量。</li>
-<li><strong>S1U</strong>: Survivor space 1 utilization (KB) - 幸存区1的使用量。</li>
-<li><strong>EC</strong>: Eden space capacity (KB) - 伊甸园区的容量。</li>
-<li><strong>EU</strong>: Eden space utilization (KB) - 伊甸园区的使用量。</li>
-<li><strong>OC</strong>: Old space capacity (KB) - 老年代区的容量。</li>
-<li><strong>OU</strong>: Old space utilization (KB) - 老年代区的使用量。</li>
-<li><strong>MC</strong>: Metaspace capacity (KB) - 元空间的容量。</li>
-<li><strong>MU</strong>: Metaspace utilization (KB) - 元空间的使用量。</li>
-<li><strong>CCSC</strong>: Compressed Class Space Capacity (KB) - 压缩类空间的容量。</li>
-<li><strong>CCSU</strong>: Compressed Class Space Used (KB) - 压缩类空间的使用量。</li>
-<li><strong>YGC</strong>: Number of young generation GC events - 年轻代垃圾收集发生的次数。</li>
-<li><strong>YGCT</strong>: Young generation garbage collection time - 年轻代垃圾收集所用的时间。</li>
-<li><strong>FGC</strong>: Number of full GC events - 完全垃圾收集发生的次数。</li>
-<li><strong>FGCT</strong>: Full garbage collection time - 完全垃圾收集所用的时间。</li>
-<li><strong>GCT</strong>: Total garbage collection time - 垃圾收集所用的总时间。</li>
-</ol>
+<pre class="highlight"><code>1. S0C: Survivor space 0 capacity (KB) - 幸存区0的容量。
+2. S1C: Survivor space 1 capacity (KB) - 幸存区1的容量。
+3. S0U: Survivor space 0 utilization (KB) - 幸存区0的使用量。
+4. S1U: Survivor space 1 utilization (KB) - 幸存区1的使用量。
+5. EC: Eden space capacity (KB) - 伊甸园区的容量。
+6. EU: Eden space utilization (KB) - 伊甸园区的使用量。
+7. OC: Old space capacity (KB) - 老年代区的容量。
+8. OU: Old space utilization (KB) - 老年代区的使用量。
+9. MC: Metaspace capacity (KB) - 元空间的容量。
+10. MU: Metaspace utilization (KB) - 元空间的使用量。
+11. CCSC: Compressed Class Space Capacity (KB) - 压缩类空间的容量。
+12. CCSU: Compressed Class Space Used (KB) - 压缩类空间的使用量。
+13. YGC: Number of young generation GC events - 年轻代垃圾收集发生的次数。
+14. YGCT: Young generation garbage collection time - 年轻代垃圾收集所用的时间。
+15. FGC: Number of full GC events - 完全垃圾收集发生的次数。
+16. FGCT: Full garbage collection time - 完全垃圾收集所用的时间。
+17. GCT: Total garbage collection time - 垃圾收集所用的总时间。</code></pre>
 <p>通过分析这些数据，你可以获得JVM堆内存使用情况和垃圾收集活动的详细视图。这对于性能调优和诊断内存问题是非常有帮助的。</p>
 <p>有一些通用的指标可以指示潜在的问题：</p>
-<ol>
-<li><strong>频繁的年轻代垃圾收集 (YGC)</strong>：</li>
-<li>
+<p><strong>频繁的年轻代垃圾收集 (YGC)</strong>：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>如果<code>YGC</code>数值不断快速增加，可能表明年轻代空间太小或者程序在短时间内生成了大量的临时对象。</p>
-</li>
-<li>
+</div>
 <p><strong>长时间的年轻代垃圾收集 (YGCT)</strong>：</p>
-</li>
-<li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>如果单次<code>YGCT</code>值较高，说明年轻代垃圾收集花费了太多时间，可能是由于堆大小不足或垃圾收集器设置不合理。</p>
-</li>
-<li>
+</div>
 <p><strong>频繁的完全垃圾收集 (FGC)</strong>：</p>
-</li>
-<li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><code>FGC</code>频繁增加可能表明老年代或永久代/元空间（取决于Java版本）容量不足，或者有大量对象长期存活。</p>
-</li>
-<li>
+</div>
 <p><strong>长时间的完全垃圾收集 (FGCT)</strong>：</p>
-</li>
-<li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>高<code>FGCT</code>值表示完全垃圾收集占用了太多时间，可能是由于老年代空间太小、存在大量长生命周期的对象，或垃圾收集器设置不当。</p>
-</li>
-<li>
+</div>
 <p><strong>高老年代使用量 (OU)</strong>：</p>
-</li>
-<li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>如果<code>OU</code>值持续接近<code>OC</code>值，表明老年代空间接近满载，可能导致频繁的完全垃圾收集。</p>
-</li>
-<li>
+</div>
 <p><strong>高元空间使用量 (MU)</strong>：</p>
-</li>
-<li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><code>MU</code>接近<code>MC</code>表明元空间使用量高，可能由于加载了大量类或内存泄漏。</p>
-</li>
-<li>
+</div>
 <p><strong>总垃圾收集时间 (GCT)</strong>：</p>
-</li>
-<li>如果<code>GCT</code>相对于应用运行时间过高，表明应用花费了大量时间在垃圾收集上。</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果<code>GCT</code>相对于应用运行时间过高，表明应用花费了大量时间在垃圾收集上。</p>
+</div>
 <p>识别这些异常情况后，可能需要对JVM的堆大小、垃圾收集器类型、垃圾收集策略等进行调整，或者检查应用代码以查找内存泄漏或不必要的对象创建。对于具体的调优策略，需要根据应用程序的具体情况和需求来定。</p>
 <p><code>jstat -gcutil &lt;pid&gt; &lt;interval&gt; &lt;count&gt;</code> 命令用于显示目标Java进程的垃圾收集（GC）统计信息，并按照设定的时间间隔重复显示指定次数。下面是该命令各部分的解释：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ol>
-<li><strong><code>jstat</code></strong>：Java的统计监控工具。</li>
-<li><strong><code>-gcutil</code></strong>：这是<code>jstat</code>的一个选项，用于显示目标Java进程的垃圾收集统计信息，包括堆区域的使用百分比等。</li>
-<li><strong><code>&lt;pid&gt;</code></strong>：目标Java进程的进程ID。您需要替换为您想监控的Java进程的实际进程ID。</li>
-<li><strong><code>&lt;interval&gt;</code></strong>：显示信息的时间间隔，单位为毫秒。这个参数是可选的，默认情况下只显示一次数据。</li>
-<li><strong><code>&lt;count&gt;</code></strong>：该命令要重复执行的次数。这个参数也是可选的，如果未指定，<code>jstat</code> 将持续显示数据，直到被中断。</li>
+<li><code>jstat</code>：Java的统计监控工具。</li>
+<li><code>-gcutil</code>：这是<code>jstat</code>的一个选项，用于显示目标Java进程的垃圾收集统计信息，包括堆区域的使用百分比等。</li>
+<li><code>&lt;pid&gt;</code>：目标Java进程的进程ID。您需要替换为您想监控的Java进程的实际进程ID。</li>
+<li><code>&lt;interval&gt;</code>：显示信息的时间间隔，单位为毫秒。这个参数是可选的，默认情况下只显示一次数据。</li>
+<li><code>&lt;count&gt;</code>：该命令要重复执行的次数。这个参数也是可选的，如果未指定，<code>jstat</code> 将持续显示数据，直到被中断。</li>
 </ol>
+</div>
 <p>例如，如果您想查看进程ID为1234的Java进程的垃圾收集统计信息，每隔5000毫秒（即5秒）更新一次，总共更新10次，您可以使用以下命令：</p>
 <pre class="highlight"><code class="language-bash">jstat -gcutil 1234 5000 10</code></pre>
 <p>这个命令将每5秒显示一次进程ID为1234的Java进程的垃圾收集统计信息，共显示10次。</p>
@@ -6353,35 +6336,30 @@
 </ul>
 <p>这些数据对于理解和调优Java应用的内存和垃圾收集行为非常有帮助。</p>
 <p>如果Java应用出现异常，<code>jstat -gcutil</code> 命令输出的数据可能会展示一些异常模式，比如：</p>
-<ol>
-<li><strong>频繁的年轻代垃圾收集（YGC）</strong>:</li>
+<p><strong>频繁的年轻代垃圾收集（YGC）</strong>:</p>
+<ul>
 <li>说明：如果YGC发生的频率非常高，可能意味着伊甸园区（Eden space）太小或者应用产生了大量的短生命周期对象。</li>
-<li>
-<p>举例：如果每几秒钟就有一次YGC，且YGCT（年轻代垃圾收集时间）相对较高，可能说明存在问题。</p>
-</li>
-<li>
+<li>举例：如果每几秒钟就有一次YGC，且YGCT（年轻代垃圾收集时间）相对较高，可能说明存在问题。</li>
+</ul>
 <p><strong>老年代（Old Generation）使用率持续增高</strong>:</p>
-</li>
+<ul>
 <li>说明：如果老年代的使用率不断攀升且不下降，可能表明内存泄漏或老年代大小不足。</li>
-<li>
-<p>举例：如果老年代的使用率（O列）逐渐接近100%且不见下降，可能是内存泄漏的迹象。</p>
-</li>
-<li>
+<li>举例：如果老年代的使用率（O列）逐渐接近100%且不见下降，可能是内存泄漏的迹象。</li>
+</ul>
 <p><strong>频繁的完全垃圾收集（FGC）</strong>:</p>
-</li>
+<ul>
 <li>说明：频繁的FGC可能会导致系统停顿，影响性能。可能是由于老年代空间不足或内存泄漏造成的。</li>
-<li>
-<p>举例：如果FGC的次数（FGC列）在短时间内迅速增加，且FGCT（完全垃圾收集时间）也在增加，可能会出现性能问题。</p>
-</li>
-<li>
-<p><strong>垃圾收集时间过长</strong>:</p>
-</li>
+<li>举例：如果FGC的次数（FGC列）在短时间内迅速增加，且FGCT（完全垃圾收集时间）也在增加，可能会出现性能问题。</li>
+</ul>
+<p><strong>垃圾收集时间过长</strong> :</p>
+<ul>
 <li>说明：如果垃圾收集所需的时间过长，可能会导致应用响应缓慢或停顿。</li>
 <li>举例：如果YGCT或FGCT的值异常高，意味着垃圾收集占用了大量时间，可能导致应用性能下降。</li>
-</ol>
+</ul>
 <p>总之，通过监控<code>jstat -gcutil</code>命令的输出，可以识别出潜在的内存管理问题，如内存泄漏、不恰当的垃圾收集策略或内存分配不足等。然后可以根据这些信息进行调优或进一步调查。</p>
-<h5 id="5">5,检查操作系统</h5>
-<p>1.<strong>检查防火墙设置</strong>：</p>
+<h3 id="_6">第五步</h3>
+<p><strong>5,检查操作系统</strong></p>
+<p><strong>检查防火墙设置</strong>：</p>
 <ul>
 <li>
 <p>确保防火墙没有阻止Nginx使用的端口，特别是HTTP (80) 和 HTTPS (443) 端口。
@@ -6392,11 +6370,11 @@ s
 <p>在某些Linux发行版上，SELinux可能会限制Nginx的操作。可以通过 <code>getenforce</code> 查看其状态，并根据需要进行调整。</p>
 </li>
 </ul>
-<p>3.<strong>检查Nginx的访问日志</strong>：</p>
+<p><strong>检查Nginx的访问日志</strong>：</p>
 <ul>
 <li>访问日志通常位于 <code>/var/log/nginx/access.log</code>。它可以提供访问者请求的详细信息，有助于识别潜在问题。</li>
 </ul>
-<p>4.<strong>查看系统日志</strong>：</p>
+<p><strong>查看系统日志</strong>：</p>
 <ul>
 <li>有时系统日志（如 <code>/var/log/syslog</code> 或 <code>/var/log/messages</code>）也能提供服务器问题的线索。</li>
 </ul>
