@@ -404,6 +404,7 @@ nav:
         - nmap命令: system/linux/网络/nmap.md
         - ethtool命令: system/linux/网络/ethtool.md
         - iperf3测速: system/linux/网络/iperf3.md
+        - mtr测试: system/linux/网络/mtr工具.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - 修改网卡: system/centos7/ens33.md
