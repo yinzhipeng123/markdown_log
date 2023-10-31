@@ -5232,6 +5232,19 @@
     各个系统安装方式：
   </a>
   
+    <nav class="md-nav" aria-label="各个系统安装方式：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mtr_2" class="md-nav__link">
+    mtr 输出结果解释
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -6073,6 +6086,19 @@
     各个系统安装方式：
   </a>
   
+    <nav class="md-nav" aria-label="各个系统安装方式：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mtr_2" class="md-nav__link">
+    mtr 输出结果解释
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -6364,6 +6390,29 @@ sudo yum install mtr</code></pre></p>
 </li>
 </ol>
 <p>对于其他操作系统或发行版，建议查看其官方文档或软件仓库以获取有关如何安装<code>mtr</code>的指南。</p>
+<p>好的，以下是<code>mtr</code>输出结果的解释：</p>
+<h3 id="mtr_2">mtr 输出结果解释</h3>
+<p>mtr结合了traceroute和ping的功能，它显示了从源计算机到目标主机的路径，并提供了每个跃点的统计信息。以下是输出列的含义：</p>
+<p><strong>HOP</strong>：
+- 表示数据包需要经过的跃点或路由器数量，从源计算机开始。</p>
+<p><strong>Host</strong>：
+- 这一列显示了每个跃点的域名或IP地址。</p>
+<p><strong>Loss%</strong>：
+- 显示了丢失的数据包百分比。</p>
+<p><strong>Snt</strong>：
+- 发送的数据包总数。</p>
+<p><strong>Last</strong>：
+- 最后一个数据包的往返时间，单位为毫秒。</p>
+<p><strong>Avg</strong>：
+- 所有数据包的平均往返时间，单位为毫秒。</p>
+<p><strong>Best</strong>：
+- 所有数据包中的最短往返时间，单位为毫秒。</p>
+<p><strong>Wrst</strong>：
+- 所有数据包中的最长往返时间，单位为毫秒。</p>
+<p><strong>StDev</strong>：
+- 往返时间的标准偏差，表示往返时间的变化程度。</p>
+<p>其他可能的列，如<strong>Jitter</strong>，表示数据包往返时间的变化情况。</p>
+<p>总的来说，mtr提供了一种实时、动态的方式来查看数据包从源计算机到目标主机的路径以及每个跃点的性能统计。高的丢包率或很长的往返时间可能表示网络中存在问题。</p>
 
 
   
