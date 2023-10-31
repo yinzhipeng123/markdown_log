@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mtr" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -5181,10 +5186,57 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          mtr测试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         mtr测试
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#man" class="md-nav__link">
+    MAN手册
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mtr_1" class="md-nav__link">
+    以下是一些mtr的常用实例：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    各个系统安装方式：
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5993,6 +6045,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#man" class="md-nav__link">
+    MAN手册
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mtr_1" class="md-nav__link">
+    以下是一些mtr的常用实例：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    各个系统安装方式：
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -6012,10 +6095,9 @@
   </a>
 
 
-  <h1>mtr测试</h1>
-
-<p>mtr工具</p>
+<h1 id="mtr">mtr工具</h1>
 <p>以下全部由gpt4生成，它翻译的man手册，及给出的一些例子</p>
+<h2 id="man">MAN手册</h2>
 <p><strong>MTR(8) 网络诊断工具</strong></p>
 <p><strong>名称</strong><br />
 mtr - 一个网络诊断工具</p>
@@ -6183,7 +6265,7 @@ TCP 跟踪的目标端口号。</p>
 <p>应将错误报告和功能请求提交给 launchpad mtr 错误跟踪器。</p>
 <p><strong>参见</strong><br />
 traceroute(8)，ping(8) TCP/IP 描述 (Stevens, ISBN 0201633469)。</p>
-<p>当然可以，以下是一些<code>mtr</code>的常用实例：</p>
+<h2 id="mtr_1">以下是一些<code>mtr</code>的常用实例：</h2>
 <ol>
 <li>
 <p><strong>基本使用</strong>:
@@ -6235,6 +6317,53 @@ traceroute(8)，ping(8) TCP/IP 描述 (Stevens, ISBN 0201633469)。</p>
 </li>
 </ol>
 <p>这只是<code>mtr</code>的一些基本使用实例。由于<code>mtr</code>是一个功能丰富的工具，还有许多其他选项和配置可用。为了更全面地了解这些功能，建议查看其官方文档或使用<code>man mtr</code>命令。</p>
+<h2 id="_1">各个系统安装方式：</h2>
+<ol>
+<li><strong>Debian/Ubuntu</strong>:
+   使用apt包管理器进行安装：</li>
+</ol>
+<pre class="highlight"><code class="language-bash">sudo apt update
+sudo apt install mtr</code></pre>
+<ol>
+<li>
+<p><strong>Fedora</strong>:
+   使用dnf包管理器进行安装：
+   <pre class="highlight"><code class="language-bash">sudo dnf install mtr</code></pre></p>
+</li>
+<li>
+<p><strong>CentOS/RHEL</strong>:
+   首先，确保启用了EPEL仓库，然后使用yum进行安装：
+   <pre class="highlight"><code class="language-bash">sudo yum install epel-release
+sudo yum install mtr</code></pre></p>
+</li>
+<li>
+<p><strong>openSUSE</strong>:
+   使用zypper包管理器进行安装：
+   <pre class="highlight"><code class="language-bash">sudo zypper install mtr</code></pre></p>
+</li>
+<li>
+<p><strong>Arch Linux/Manjaro</strong>:
+   使用pacman包管理器进行安装：
+   <pre class="highlight"><code class="language-bash">sudo pacman -S mtr</code></pre></p>
+</li>
+<li>
+<p><strong>FreeBSD</strong>:
+   使用pkg包管理器或ports集合进行安装：
+   <pre class="highlight"><code class="language-bash">sudo pkg install mtr</code></pre>
+   或
+   <pre class="highlight"><code class="language-bash">cd /usr/ports/net/mtr/ &amp;&amp; make install clean</code></pre></p>
+</li>
+<li>
+<p><strong>macOS</strong>:
+   如果已经安装了Homebrew，可以使用以下命令安装：
+   <pre class="highlight"><code class="language-bash">brew install mtr</code></pre></p>
+</li>
+<li>
+<p><strong>Windows</strong>:
+   Windows上没有原生的<code>mtr</code>工具，但可以使用第三方工具如<code>WinMTR</code>，这是一个<code>mtr</code>的Windows图形版本。可以从其官方网站下载安装包并进行安装。</p>
+</li>
+</ol>
+<p>对于其他操作系统或发行版，建议查看其官方文档或软件仓库以获取有关如何安装<code>mtr</code>的指南。</p>
 
 
   

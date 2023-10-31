@@ -1,6 +1,8 @@
-mtr工具
+# mtr工具
 
 以下全部由gpt4生成，它翻译的man手册，及给出的一些例子
+
+## MAN手册
 
 **MTR(8) 网络诊断工具**
 
@@ -192,7 +194,7 @@ traceroute(8)，ping(8) TCP/IP 描述 (Stevens, ISBN 0201633469)。
 
 
 
-当然可以，以下是一些`mtr`的常用实例：
+## 以下是一些`mtr`的常用实例：
 
 1. **基本使用**:
    ```bash
@@ -253,3 +255,59 @@ traceroute(8)，ping(8) TCP/IP 描述 (Stevens, ISBN 0201633469)。
    这将每2秒发送一个数据包。
 
 这只是`mtr`的一些基本使用实例。由于`mtr`是一个功能丰富的工具，还有许多其他选项和配置可用。为了更全面地了解这些功能，建议查看其官方文档或使用`man mtr`命令。
+
+## 各个系统安装方式：
+
+1. **Debian/Ubuntu**:
+   使用apt包管理器进行安装：
+   
+   ```bash
+   sudo apt update
+   sudo apt install mtr
+   ```
+   
+2. **Fedora**:
+   使用dnf包管理器进行安装：
+   ```bash
+   sudo dnf install mtr
+   ```
+
+3. **CentOS/RHEL**:
+   首先，确保启用了EPEL仓库，然后使用yum进行安装：
+   ```bash
+   sudo yum install epel-release
+   sudo yum install mtr
+   ```
+
+4. **openSUSE**:
+   使用zypper包管理器进行安装：
+   ```bash
+   sudo zypper install mtr
+   ```
+
+5. **Arch Linux/Manjaro**:
+   使用pacman包管理器进行安装：
+   ```bash
+   sudo pacman -S mtr
+   ```
+
+6. **FreeBSD**:
+   使用pkg包管理器或ports集合进行安装：
+   ```bash
+   sudo pkg install mtr
+   ```
+   或
+   ```bash
+   cd /usr/ports/net/mtr/ && make install clean
+   ```
+
+7. **macOS**:
+   如果已经安装了Homebrew，可以使用以下命令安装：
+   ```bash
+   brew install mtr
+   ```
+
+8. **Windows**:
+   Windows上没有原生的`mtr`工具，但可以使用第三方工具如`WinMTR`，这是一个`mtr`的Windows图形版本。可以从其官方网站下载安装包并进行安装。
+
+对于其他操作系统或发行版，建议查看其官方文档或软件仓库以获取有关如何安装`mtr`的指南。
