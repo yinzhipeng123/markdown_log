@@ -6162,62 +6162,46 @@
 <p><strong>2,浏览器打开开发者模式，查看网页返回的http状态码，根据不同的HTTP状态进行排查</strong></p>
 <p>HTTP状态码是服务器用来响应客户端请求的标准数字代码。</p>
 <p>不同的状态码表示不同的情况，可以大致分为五个类别：</p>
-<ol>
-<li><strong>1xx - 信息性状态码 (Informational)</strong>：表示接收的请求正在处理。</li>
-</ol>
+<p><strong>1xx - 信息性状态码 (Informational)</strong>：表示接收的请求正在处理。</p>
 <p><u>这类状态码通常是正常的，不需要特别的排查。</u></p>
 <ul>
 <li>100 Continue (继续)</li>
-<li>
-<p>101 Switching Protocols (切换协议)</p>
-</li>
-<li>
-<p><strong>2xx - 成功状态码 (Successful)</strong>：表示请求已成功被服务器接收、理解、并接受。</p>
-</li>
+<li>101 Switching Protocols (切换协议)</li>
 </ul>
+<p><strong>2xx - 成功状态码 (Successful)</strong>：表示请求已成功被服务器接收、理解、并接受。</p>
 <p><u>成功状态码通常意味着请求已成功处理。不需要特别排查。</u></p>
 <ul>
 <li>200 OK (成功)</li>
 <li>201 Created (已创建)</li>
 <li>202 Accepted (已接受)</li>
-<li>
-<p>204 No Content (无内容)</p>
-</li>
-<li>
+<li>204 No Content (无内容)</li>
+</ul>
 <p><strong>3xx - 重定向状态码 (Redirection)</strong>：表示需要进一步操作以完成请求。</p>
-</li>
-<li>
-<p>301 Moved Permanently (永久移动)  <u>检查服务器端的重定向设置。如果是意料之外的重定向，确认服务器配置或代码中的重定向逻辑。</u></p>
-</li>
-<li>302 Found (找到)  <u>检查服务器端的重定向设置。如果是意料之外的重定向，确认服务器配置或代码中的重定向逻辑。</u></li>
+<ul>
+<li>301 Moved Permanently (永久移动)    <u>检查服务器端的重定向设置。如果是意料之外的重定向，确认服务器配置或代码中的重定向逻辑。</u></li>
+<li>302 Found (找到)    <u>检查服务器端的重定向设置。如果是意料之外的重定向，确认服务器配置或代码中的重定向逻辑。</u></li>
 <li>303 See Other (查看其他位置)</li>
-<li>304 Not Modified (未修改)  <u>这通常是正常的，表示资源自上次请求以来未修改。检查缓存设置。</u></li>
+<li>304 Not Modified (未修改)     <u>这通常是正常的，表示资源自上次请求以来未修改。检查缓存设置。</u></li>
 <li>307 Temporary Redirect (临时重定向)</li>
-<li>
-<p>308 Permanent Redirect (永久重定向) </p>
-</li>
-<li>
+<li>308 Permanent Redirect (永久重定向) </li>
+</ul>
 <p><strong>4xx - 客户端错误状态码 (Client Error)</strong>：表示请求包含语法错误或无法完成。</p>
-</li>
-<li>
-<p>400 Bad Request (错误请求)  <u>检查请求是否正确。通常是请求格式错误。</u></p>
-</li>
-<li>401 Unauthorized (未授权)  <u>检查认证信息是否正确。</u></li>
-<li>403 Forbidden (禁止)    <u>确认服务器端权限设置。</u></li>
-<li>404 Not Found (未找到)   <u>检查请求的资源是否存在。</u></li>
-<li>405 Method Not Allowed (方法不允许)   <u>确认是否使用了服务器不支持的HTTP方法。</u></li>
-<li>408 Request Timeout (请求超时)  <u>检查网络问题或服务器性能问题。</u></li>
-<li>
-<p>429 Too Many Requests (请求过多)   <u>检查是否触发了服务器的限流措施，如有需要调整请求频率。</u></p>
-</li>
-<li>
+<ul>
+<li>400 Bad Request (错误请求)      <u>检查请求是否正确。通常是请求格式错误。</u></li>
+<li>401 Unauthorized (未授权)    <u>检查认证信息是否正确。</u></li>
+<li>403 Forbidden (禁止)     <u>确认服务器端权限设置。</u></li>
+<li>404 Not Found (未找到)      <u>检查请求的资源是否存在。</u></li>
+<li>405 Method Not Allowed (方法不允许)       <u>确认是否使用了服务器不支持的HTTP方法。</u></li>
+<li>408 Request Timeout (请求超时)      <u>检查网络问题或服务器性能问题。</u></li>
+<li>429 Too Many Requests (请求过多)     <u>检查是否触发了服务器的限流措施，如有需要调整请求频率。</u></li>
+</ul>
 <p><strong>5xx - 服务器错误状态码 (Server Error)</strong>：表示服务器在处理请求的时候发生了错误。</p>
-</li>
-<li>500 Internal Server Error (服务器内部错误)   <u>检查服务器日志，确认代码、数据库、或配置中的问题。</u></li>
-<li>501 Not Implemented (未实现)  <u>服务器不支持请求的功能。</u></li>
-<li>502 Bad Gateway (错误网关)   <u>检查服务器与上游服务器的连接。</u></li>
-<li>503 Service Unavailable (服务不可用)    <u>服务器可能超载或进行维护。检查服务器性能和配置。</u></li>
-<li>504 Gateway Timeout (网关超时)  <u>类似于502，检查服务器与上游服务器的连接问题。</u></li>
+<ul>
+<li>500 Internal Server Error (服务器内部错误)      <u>检查服务器日志，确认代码、数据库、或配置中的问题。</u></li>
+<li>501 Not Implemented (未实现)      <u>服务器不支持请求的功能。</u></li>
+<li>502 Bad Gateway (错误网关)      <u>检查服务器与上游服务器的连接。</u></li>
+<li>503 Service Unavailable (服务不可用)       <u>服务器可能超载或进行维护。检查服务器性能和配置。</u></li>
+<li>504 Gateway Timeout (网关超时)      <u>类似于502，检查服务器与上游服务器的连接问题。</u></li>
 </ul>
 <p>这些状态码是Web开发和网络诊断中的重要部分。</p>
 <h3 id="_4">第三步</h3>
