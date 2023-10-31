@@ -405,6 +405,9 @@ nav:
         - ethtool命令: system/linux/网络/ethtool.md
         - iperf3测速: system/linux/网络/iperf3.md
         - mtr测试: system/linux/网络/mtr工具.md
+        - curl命令: system/linux/网络/curl命令.md
+        - 排场网页打不开: system/linux/网络/排查网页打不开.md
+        - 各种计算机存储单位和网速单位: system/centos7/各种计算机存储单位和网速单位.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - 修改网卡: system/centos7/ens33.md
@@ -413,7 +416,7 @@ nav:
     - 时间同步chrony: system/centos7/chronyd.md
     - 系统日志查询命令: system/centos7/journalctl.md
     - ssh专题: system/centos7/ssh专题.md
-    - 各种计算机存储单位和网速单位: system/centos7/各种计算机存储单位和网速单位.md
+
     - rpm官网: system/centos7/rpm官网.md
     - ls命令详解: system/centos7/ls命令详解.md
     - Linux特殊权限解释: system/centos7/Linux特殊权限解释.md
