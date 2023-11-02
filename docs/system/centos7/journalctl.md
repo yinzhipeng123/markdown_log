@@ -34,9 +34,11 @@ journalctl --since="2012-10-30 18:17:16"
 journalctl -k --no-tail -f -a
 ```
 
+显示某服务最新的100条日志并实时刷新：
 
-
-
+```shell
+journalctl -u docker.service -n 100 -f
+```
 
 清理日志使总大小小于 100M:
 
