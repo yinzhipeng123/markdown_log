@@ -410,7 +410,7 @@ nav:
         - 各种计算机存储单位和网速单位: system/centos7/各种计算机存储单位和网速单位.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
-    - CentOS: system/centos7/CentOS查看系统驱动.md
+    - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
     - 修改网卡: system/centos7/ens33.md
     - Yum:
         - ius源: system/centos7/yum/ius.md
