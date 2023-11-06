@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
+      <change afterPath="$PROJECT_DIR$/docs/system/centos7/MegaCli.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system/centos7/storcli.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/centos7/storcli.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +225,8 @@
       <workItem from="1698753422276" duration="287000" />
       <workItem from="1698826178955" duration="1283000" />
       <workItem from="1698893237257" duration="1377000" />
-      <workItem from="1698911628715" duration="6000" />
+      <workItem from="1698911628715" duration="638000" />
+      <workItem from="1698992854906" duration="624000" />
     </task>
     <servers />
   </component>

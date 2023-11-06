@@ -6,6 +6,10 @@
 
 [超级突袭 9560-8i (broadcom.com)](https://www.broadcom.com/products/storage/raid-controllers/megaraid-9560-8i)
 
+点击页面上 storcli
+
+[Latest StorCLI](https://docs.broadcom.com/docs/1232743397)
+
 安装
 
 ```bash
@@ -351,3 +355,22 @@ CVPM02 正常    0 小时    26摄氏度 0   2019/11/02  2023/10/17  09:23:25
 
 
 ![](https://raw.githubusercontent.com/yinzhipeng123/Picture_Bed/main/Xnip2023-10-13_14-18-44.jpg)
+
+
+
+要使用`storcli64`命令来查看所有磁盘的状态，你可以使用以下命令：
+
+```
+storcli64 /c0 /eall /sall show
+```
+
+这里的参数解释如下：
+
+- `storcli64`：这是命令行工具的名称。
+- `/c0`：表示控制器编号，0是第一个控制器。如果你有多个控制器，可能需要改变这个数字。
+- `/eall`：表示所有的机箱（enclosure），如果你有多个机箱，这会显示所有机箱的信息。
+- `/sall`：表示所有的槽位（slot），即显示所有磁盘槽位的信息。
+- `show`：这个参数指示storcli显示信息。
+
+运行此命令后，你将获得一个包含所有磁盘状态的列表，其中包括每个磁盘的状态、大小、类型等信息。
+
