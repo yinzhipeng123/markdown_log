@@ -3188,6 +3188,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_5">
@@ -3294,6 +3296,20 @@
     <li class="md-nav__item">
       <a href="../../../../middleware/mysql/bak/" class="md-nav__link">
         备份
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../middleware/mysql/SHOW_SLAVE_STATUS/" class="md-nav__link">
+        SHOW_SLAVE_STATUS
       </a>
     </li>
   
@@ -4591,6 +4607,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_1_4">
@@ -4949,6 +4969,34 @@
     <li class="md-nav__item">
       <a href="../../IO/du/" class="md-nav__link">
         查看目录大小
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IO/%E5%8F%A5%E6%9F%84/" class="md-nav__link">
+        句柄
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IO/lsof/" class="md-nav__link">
+        lsof
       </a>
     </li>
   
@@ -6090,19 +6138,19 @@
  -V, --version       --显示版本
 </code></pre>
 <p>显示的解释</p>
-<p>total  内存总和 (MemTotal and SwapTotal in /proc/meminfo)</p>
-<p>used   已经使用的内存 (通过total - free - buffers - cache 来计算)</p>
-<p>free   未使用的内存 (MemFree and SwapFree in /proc/meminfo)</p>
-<p>shared  tmpfs（主要）使用的内存 (Shmem in /proc/meminfo)</p>
-<p>buffers  Buffers 是内核缓冲区用到的内存，对应的是 /proc/meminfo 中的 Buffers 值。(Buffers in /proc/meminfo)</p>
-<p>cache   Cache 是内核页缓存和 Slab 用到的内存，对应的是 /proc/meminfo 中的 Cached 与 SReclaimable 之和。(Cached and SReclaimable in /proc/meminfo)</p>
+<p><strong>total</strong>  内存总和 (MemTotal and SwapTotal in /proc/meminfo)</p>
+<p><strong>used</strong>   已经使用的内存 (通过total - free - buffers - cache 来计算)</p>
+<p><strong>free</strong>   未使用的内存 (MemFree and SwapFree in /proc/meminfo)</p>
+<p><strong>shared</strong>  tmpfs（主要）使用的内存 (Shmem in /proc/meminfo)</p>
+<p><strong>buffers</strong>  Buffers 是内核缓冲区用到的内存，对应的是 /proc/meminfo 中的 Buffers 值。(Buffers in /proc/meminfo)</p>
+<p><strong>cache</strong>   Cache 是内核页缓存和 Slab 用到的内存，对应的是 /proc/meminfo 中的 Cached 与 SReclaimable 之和。(Cached and SReclaimable in /proc/meminfo)</p>
 <ol>
 <li>版本：procps-3.2.8-36            cache值等于/proc/meminfo中的”Cached”；</li>
 <li>版本：procps-3.3.9-10.1         cache值等于/proc/meminfo的 [Cached + SReclaimable]；</li>
 <li>版本：procps-ng-3.3.10-3       cache值等于/proc/meminfo的 [Cached + Slab]。</li>
 </ol>
-<p>buff/cache   buffers 和 cache 的和</p>
-<p>available
+<p><strong>buff/cache</strong>   buffers 和 cache 的和</p>
+<p><strong>available</strong>
               启动新应用程序的可用内存量。与“缓存”或“可用”字段提供的数据不同，此字段考虑了页面缓存。在kernels 3.14上对应 MemAvailable in/proc/meminfo，在kernels 2.6.27+上和free相同</p>
 <ul>
 <li>Buffers 是对原始磁盘块的临时存储，也就是用来缓存磁盘的数据，通常不会特别大（20MB 左右）。这样，内核就可以把分散的写集中起来，统一优化磁盘的写入，比如可以把多次小的写合并成单次大的写等等。</li>

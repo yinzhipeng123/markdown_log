@@ -29,25 +29,25 @@
 
 显示的解释
 
-total  内存总和 (MemTotal and SwapTotal in /proc/meminfo)
+**total**  内存总和 (MemTotal and SwapTotal in /proc/meminfo)
 
-used   已经使用的内存 (通过total - free - buffers - cache 来计算)
+**used**   已经使用的内存 (通过total - free - buffers - cache 来计算)
 
-free   未使用的内存 (MemFree and SwapFree in /proc/meminfo)
+**free**   未使用的内存 (MemFree and SwapFree in /proc/meminfo)
 
-shared  tmpfs（主要）使用的内存 (Shmem in /proc/meminfo)
+**shared**  tmpfs（主要）使用的内存 (Shmem in /proc/meminfo)
 
-buffers  Buffers 是内核缓冲区用到的内存，对应的是 /proc/meminfo 中的 Buffers 值。(Buffers in /proc/meminfo)
+**buffers**  Buffers 是内核缓冲区用到的内存，对应的是 /proc/meminfo 中的 Buffers 值。(Buffers in /proc/meminfo)
 
-cache   Cache 是内核页缓存和 Slab 用到的内存，对应的是 /proc/meminfo 中的 Cached 与 SReclaimable 之和。(Cached and SReclaimable in /proc/meminfo)
+**cache**   Cache 是内核页缓存和 Slab 用到的内存，对应的是 /proc/meminfo 中的 Cached 与 SReclaimable 之和。(Cached and SReclaimable in /proc/meminfo)
 
 1. 版本：procps-3.2.8-36            cache值等于/proc/meminfo中的”Cached”；
 2. 版本：procps-3.3.9-10.1         cache值等于/proc/meminfo的 [Cached + SReclaimable]；
 3. 版本：procps-ng-3.3.10-3       cache值等于/proc/meminfo的 [Cached + Slab]。
 
-buff/cache   buffers 和 cache 的和
+**buff/cache**   buffers 和 cache 的和
 
-available
+**available**
               启动新应用程序的可用内存量。与“缓存”或“可用”字段提供的数据不同，此字段考虑了页面缓存。在kernels 3.14上对应 MemAvailable in/proc/meminfo，在kernels 2.6.27+上和free相同
 
 

@@ -301,6 +301,7 @@ nav:
     - 查询: middleware/mysql/select.md
     - 函数: middleware/mysql/function.md
     - 备份: middleware/mysql/bak.md
+    - SHOW_SLAVE_STATUS: middleware/mysql/SHOW_SLAVE_STATUS.md
   - Nginx:
       - Nginx部署: middleware/nginx/nginx_install.md
       - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
@@ -391,6 +392,8 @@ nav:
         - lspci命令: system/linux/IO/lspci.md
         - lsblk命令: system/linux/IO/lsblk.md
         - 查看目录大小: system/linux/IO/du.md
+        - 句柄: system/linux/IO/句柄.md
+        - lsof: system/linux/IO/lsof.md
     - 网络相关:
         - TCP图解: system/linux/网络/tcp.md
         - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md

@@ -1,0 +1,158 @@
+{
+  "main": {
+    "id": "20131b8af359e2ec",
+    "type": "split",
+    "children": [
+      {
+        "id": "75bccde17f2013c1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d5b2a952cac67db5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "system/linux/内存/Linux的两种内存分配方式.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7a8b2566ae1a015e",
+    "type": "split",
+    "children": [
+      {
+        "id": "1fb843f93db99202",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f741d8b5efd20cf3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "96094050f6cdac1b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9ffb3a33d4277c7e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d5cf4fc627b6bb27",
+    "type": "split",
+    "children": [
+      {
+        "id": "39ed5931b869aaa2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4a0b82b9ae4aea6e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "system/linux/内存/Linux的两种内存分配方式.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7f7253b79d84364d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "system/linux/内存/Linux的两种内存分配方式.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "596105ed065c93d8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e55364338cd76492",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "system/linux/内存/Linux的两种内存分配方式.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "d5b2a952cac67db5",
+  "lastOpenFiles": [
+    "system/linux/内存/free.md",
+    "system/linux/网络/测试网络带宽.md",
+    "system/linux/网络/模拟一次.md",
+    "system/linux/网络/排查网页打不开.md",
+    "system/linux/IO/SQL查询慢案例.md",
+    "tool/github使用.md"
+  ]
+}
