@@ -301,6 +301,7 @@ nav:
     - 查询: middleware/mysql/select.md
     - 函数: middleware/mysql/function.md
     - 备份: middleware/mysql/bak.md
+    - 在数据库中备份某些表: middleware/mysql/BAK_TABLE.md
     - SHOW_SLAVE_STATUS: middleware/mysql/SHOW_SLAVE_STATUS.md
   - Nginx:
       - Nginx部署: middleware/nginx/nginx_install.md
@@ -411,6 +412,7 @@ nav:
         - curl命令: system/linux/网络/curl命令.md
         - 排查网页打不开: system/linux/网络/排查网页打不开.md
         - 各种计算机存储单位和网速单位: system/centos7/各种计算机存储单位和网速单位.md
+        - 查看网卡实时流量: system/linux/网络/iftop.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md

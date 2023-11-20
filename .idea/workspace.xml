@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
-      <change afterPath="$PROJECT_DIR$/docs/.obsidian/app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.obsidian/appearance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.obsidian/core-plugins-migration.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.obsidian/core-plugins.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.obsidian/hotkeys.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.obsidian/workspace.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/middleware/mysql/SHOW_SLAVE_STATUS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/lsof.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/linux/IO/句柄.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/middleware/mysql/BAK_TABLE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/linux/网络/iftop.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/linux/内存/free.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/内存/free.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +231,9 @@
       <workItem from="1698992854906" duration="624000" />
       <workItem from="1699256163947" duration="849000" />
       <workItem from="1699609659545" duration="611000" />
-      <workItem from="1700103662879" duration="1799000" />
+      <workItem from="1700103662879" duration="2375000" />
+      <workItem from="1700301506648" duration="2166000" />
+      <workItem from="1700443930874" duration="75000" />
     </task>
     <servers />
   </component>
