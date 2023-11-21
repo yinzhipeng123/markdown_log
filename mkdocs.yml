@@ -395,6 +395,8 @@ nav:
         - 查看目录大小: system/linux/IO/du.md
         - 句柄: system/linux/IO/句柄.md
         - lsof: system/linux/IO/lsof.md
+        - 查询raid卡信息-storcli命令: system/centos7/storcli.md
+        - 查询raid卡信息-MegaCli命令: system/centos7/MegaCli.md
     - 网络相关:
         - TCP图解: system/linux/网络/tcp.md
         - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
@@ -430,7 +432,6 @@ nav:
     - 系统日志syslog-ng服务: system/centos7/系统日志1.md
     - 系统日志rsyslog服务: system/centos7/系统日志2.md
     - 查询硬件信息: system/centos7/dmidecode.md
-    - 查询raid卡信息-storcli命令: system/centos7/storcli.md
     - find命令: system/centos7/find.md
     - gun软件列表: system/centos7/gun软件列表.md
   - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
