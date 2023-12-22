@@ -415,6 +415,7 @@ nav:
         - 排查网页打不开: system/linux/网络/排查网页打不开.md
         - 各种计算机存储单位和网速单位: system/centos7/各种计算机存储单位和网速单位.md
         - 查看网卡实时流量: system/linux/网络/iftop.md
+        - 查看域名解析: system/linux/网络/dig.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
