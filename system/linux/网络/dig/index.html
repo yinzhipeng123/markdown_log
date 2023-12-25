@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dig" class="md-skip">
+        <a href="#dignslookup" class="md-skip">
           跳转至
         </a>
       
@@ -5365,9 +5365,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          查看域名解析
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         查看域名解析
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dig" class="md-nav__link">
+    dig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nslookup" class="md-nav__link">
+    nslookup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6163,6 +6201,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dig" class="md-nav__link">
+    dig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nslookup" class="md-nav__link">
+    nslookup
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6181,7 +6241,8 @@
   </a>
 
 
-<h1 id="dig">dig命令</h1>
+<h1 id="dignslookup">dig命令和nslookup命令</h1>
+<h3 id="dig">dig</h3>
 <p><code>dig</code>（域信息搜寻器）是一个用于查询DNS（域名系统）的命令行工具，广泛用于网络管理员和IT专业人员中。这是一些基本的使用方法：</p>
 <ol>
 <li>
@@ -6245,45 +6306,165 @@ www.a.shifen.com.       60      IN      A       110.242.68.3
 ;; MSG SIZE  rcvd: 90</code></pre>
 <p>这是使用<code>dig</code>命令查询<code>www.baidu.com</code>的DNS信息时得到的输出</p>
 <p><code>; &lt;&lt;&gt;&gt; DiG 9.11.4-P2-RedHat-9.11.4-26.P2.el7_9.14 &lt;&lt;&gt;&gt; www.baidu.com</code>：</p>
-<ul>
-<li>这一行显示了<code>dig</code>命令的版本信息（9.11.4-P2-RedHat-9.11.4-26.P2.el7_9.14），以及被查询的域名（www.baidu.com）。</li>
-</ul>
+<p>这一行显示了<code>dig</code>命令的版本信息（9.11.4-P2-RedHat-9.11.4-26.P2.el7_9.14），以及被查询的域名（www.baidu.com）。</p>
 <p><code>;; global options: +cmd</code>：
-- 这表示<code>dig</code>使用的全局选项，<code>+cmd</code>表示显示命令行参数。</p>
+这表示<code>dig</code>使用的全局选项，<code>+cmd</code>表示显示命令行参数。</p>
 <p><code>;; Got answer:</code>：
-- 这表明下面的部分包含了对查询的响应。</p>
+这表明下面的部分包含了对查询的响应。</p>
 <p><code>;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 5539</code>：
-- <code>opcode: QUERY</code>表示这是一个标准查询。
-- <code>status: NOERROR</code>表明查询成功，没有错误。
-- <code>id: 5539</code>是这次查询的唯一标识符。</p>
+<code>opcode: QUERY</code>表示这是一个标准查询。
+<code>status: NOERROR</code>表明查询成功，没有错误。
+<code>id: 5539</code>是这次查询的唯一标识符。</p>
 <p><code>;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 0</code>：
-- <code>flags</code>展示了不同的DNS标志：
-  - <code>qr</code>（查询响应）表示这是一个响应消息。
-  - <code>rd</code>（递归请求）表示客户端希望服务器进行递归查询。
-  - <code>ra</code>（递归可用）表示服务器可以进行递归查询。
-- <code>QUERY: 1</code>意味着询问了一个问题。
-- <code>ANSWER: 3</code>表明收到了3个回答。
-- <code>AUTHORITY: 0</code>和<code>ADDITIONAL: 0</code>表示没有权威和附加部分的记录。</p>
+<code>flags</code>展示了不同的DNS标志：
+<code>qr</code>（查询响应）表示这是一个响应消息。
+<code>rd</code>（递归请求）表示客户端希望服务器进行递归查询。
+<code>ra</code>（递归可用）表示服务器可以进行递归查询。
+<code>QUERY: 1</code>意味着询问了一个问题。
+<code>ANSWER: 3</code>表明收到了3个回答。
+<code>AUTHORITY: 0</code>和<code>ADDITIONAL: 0</code>表示没有权威和附加部分的记录。</p>
 <p><code>;; QUESTION SECTION:</code>：
-- 这是查询部分，显示了进行的查询。</p>
-<p><code>;www.baidu.com.                 IN      A</code>：
-- 这是实际的查询。查询<code>www.baidu.com</code>的<code>A</code>记录，即IP地址。</p>
+这是查询部分，显示了进行的查询。</p>
+<p><code>;www.baidu.com.                 IN      A</code>： 
+这是实际的查询。查询<code>www.baidu.com</code>的<code>A</code>记录，即IP地址。</p>
 <p><code>;; ANSWER SECTION:</code>：
-- 这部分包含了对查询的回答。</p>
+这部分包含了对查询的回答。</p>
 <p><code>www.baidu.com.          380     IN      CNAME   www.a.shifen.com.</code>：
-- 这表明<code>www.baidu.com</code>是一个别名，实际的名称是<code>www.a.shifen.com</code>（CNAME记录）。</p>
+这表明<code>www.baidu.com</code>是一个别名，实际的名称是<code>www.a.shifen.com</code>（CNAME记录）。</p>
 <p><code>www.a.shifen.com.       60      IN      A       110.242.68.4</code>：</p>
 <p><code>www.a.shifen.com.       60      IN      A       110.242.68.3</code>：
-- 这两行显示<code>www.a.shifen.com</code>的A记录，即其IP地址，分别为110.242.68.4和110.242.68.3。</p>
+这两行显示<code>www.a.shifen.com</code>的A记录，即其IP地址，分别为110.242.68.4和110.242.68.3。</p>
 <p><code>;; Query time: 1 msec</code>：
-- 查询耗时1毫秒。</p>
+查询耗时1毫秒。</p>
 <p><code>;; SERVER: 183.60.83.19#53(183.60.83.19)</code>：
-- 指出了响应查询的DNS服务器的IP地址和端口号（183.60.83.19，端口53）。</p>
+指出了响应查询的DNS服务器的IP地址和端口号（183.60.83.19，端口53）。</p>
 <p><code>;; WHEN: Thu Dec 21 12:34:59 CST 2023</code>：
-- 查询发生的时间。</p>
+查询发生的时间。</p>
 <p><code>;; MSG SIZE  rcvd: 90</code>：
-- 接收到的消息大小为90字节。</p>
+接收到的消息大小为90字节。</p>
 <p>这个输出提供了详细的信息关于<code>www.baidu.com</code>的DNS记录，包括其CNAME记录和相应的IP地址。</p>
+<h3 id="nslookup">nslookup</h3>
+<p><code>nslookup</code> 是一个功能强大的网络管理员工具，用于查询DNS（域名系统）来获取域名或IP地址的相关信息。这里是一些基本和高级的 <code>nslookup</code> 用法：</p>
+<p>基础查询</p>
+<ol>
+<li><strong>查询域名的IP地址</strong>:</li>
+</ol>
+<p><pre class="highlight"><code class="language-bash">nslookup example.com</code></pre>
+   这会返回 <code>example.com</code> 的IP地址。</p>
+<ol>
+<li><strong>反向DNS查询（根据IP地址查询域名）</strong>:
+   <pre class="highlight"><code class="language-bash">nslookup 192.0.2.1</code></pre>
+   这会返回与IP地址 <code>192.0.2.1</code> 关联的域名。</li>
+</ol>
+<p>指定DNS服务器</p>
+<ul>
+<li><strong>使用特定DNS服务器查询</strong>:
+  <pre class="highlight"><code class="language-bash">nslookup example.com 8.8.8.8</code></pre>
+  使用Google的DNS服务器（8.8.8.8）查询 <code>example.com</code>。</li>
+</ul>
+<p>查询特定类型的DNS记录</p>
+<ol>
+<li>
+<p><strong>查询MX（邮件交换）记录</strong>:
+   <pre class="highlight"><code class="language-bash">nslookup -type=mx example.com</code></pre>
+   查询 <code>example.com</code> 的邮件服务器记录。</p>
+</li>
+<li>
+<p><strong>查询NS（名称服务器）记录</strong>:
+   <pre class="highlight"><code class="language-bash">nslookup -type=ns example.com</code></pre></p>
+</li>
+</ol>
+<p>查询管理 <code>example.com</code>的TXT记录，常用于SPF记录或其他验证信息。</p>
+<ol>
+<li>
+<p><strong>查询A（地址）记录</strong>:
+   <pre class="highlight"><code class="language-bash">nslookup -type=a example.com</code></pre>
+   查询 <code>example.com</code> 的IPv4地址。</p>
+</li>
+<li>
+<p><strong>查询AAAA（IPv6地址）记录</strong>:
+   <pre class="highlight"><code class="language-bash">nslookup -type=aaaa example.com</code></pre>
+   查询 <code>example.com</code> 的IPv6地址。</p>
+</li>
+</ol>
+<p>使用交互模式</p>
+<ul>
+<li>
+<p><strong>进入交互模式</strong>:
+  <pre class="highlight"><code class="language-bash">nslookup</code></pre>
+  在交互模式下，可以连续进行多次查询而无需重复输入 <code>nslookup</code>。</p>
+</li>
+<li>
+<p><strong>在交互模式中设置类型</strong>:
+  <pre class="highlight"><code class="language-bash">&gt; set type=mx
+&gt; example.com</code></pre>
+  首先设置查询类型为MX，然后查询 <code>example.com</code>。</p>
+</li>
+<li>
+<p><strong>退出交互模式</strong>:
+  <pre class="highlight"><code class="language-bash">&gt; exit</code></pre></p>
+</li>
+</ul>
+<p>高级用法</p>
+<ol>
+<li>
+<p><strong>开启详细输出</strong>:
+   <pre class="highlight"><code class="language-bash">nslookup -debug example.com</code></pre>
+   提供查询过程的详细信息，有助于调试。</p>
+</li>
+<li>
+<p><strong>查询SOA（起始授权）记录</strong>:
+   <pre class="highlight"><code class="language-bash">nslookup -type=soa example.com</code></pre>
+   查询 <code>example.com</code> 的SOA记录，包含关于域名管理的信息。</p>
+</li>
+</ol>
+<p>注意事项</p>
+<ul>
+<li>在使用 <code>nslookup</code> 时，确保输入正确的域名或IP地址。</li>
+<li>不同的操作系统或 <code>nslookup</code> 的版本可能在命令行选项上有所差异。</li>
+<li><code>nslookup</code> 主要用于诊断和解决DNS相关的问题，对于日常的网络问题排查非常有用。</li>
+</ul>
+<p>通过这些不同的命令和选项，可以探索和理解域名系统的工作方式及其配置。</p>
+<p>命令结果解释：</p>
+<pre class="highlight"><code class="language-bash">[root@VM-0-16-centos ~]# nslookup www.baidu.com
+Server:         183.60.83.19
+Address:        183.60.83.19#53
+
+Non-authoritative answer:
+www.baidu.com   canonical name = www.a.shifen.com.
+Name:   www.a.shifen.com
+Address: 220.181.38.149
+Name:   www.a.shifen.com
+Address: 220.181.38.150
+Name:   www.a.shifen.com
+Address: 240e:83:205:58:0:ff:b09f:36bf
+Name:   www.a.shifen.com
+Address: 240e:83:205:5a:0:ff:b05f:346b</code></pre>
+<p>下面是对您提供的 <code>nslookup</code> 查询结果的逐行解释：</p>
+<p><code>[root@VM-0-16-centos ~]# nslookup www.baidu.com</code></p>
+<p>这是您在命令行界面输入的命令，表示您要使用 <code>nslookup</code> 工具查询 <code>www.baidu.com</code> 域名的DNS信息。</p>
+<p><code>Server: 183.60.83.19</code>
+这一行表示处理您的DNS查询的服务器的IP地址是 <code>183.60.83.19</code>。这是您的网络配置中指定的DNS服务器，或者是您系统默认的DNS服务器。</p>
+<p><code>Address: 183.60.83.19#53</code>
+ 这一行显示了上述DNS服务器的IP地址 (<code>183.60.83.19</code>) 和使用的端口号 (<code>#53</code>)。DNS查询通常使用53端口。</p>
+<p><code>Non-authoritative answer</code>
+这意味着这个响应不是来自存储有 <code>www.baidu.com</code> 域名记录的权威DNS服务器，而是来自一个缓存这些信息的服务器。非权威回答通常来自本地DNS服务器或ISP的DNS服务器。</p>
+<p><code>www.baidu.com canonical name = www.a.shifen.com.</code>
+这表明 <code>www.baidu.com</code> 有一个CNAME（规范名）记录指向 <code>www.a.shifen.com</code>。CNAME记录是一种DNS记录，它将一个域名映射到另一个域名。在这种情况下，当你访问 <code>www.baidu.com</code> 时，实际上被引导到 <code>www.a.shifen.com</code>。</p>
+<p><code>Name: www.a.shifen.com</code>
+这一行表明接下来的IP地址属于 <code>www.a.shifen.com</code>。</p>
+<p><code>Address: 220.181.38.149</code>
+这是 <code>www.a.shifen.com</code> 的一个IPv4地址。这意味着 <code>www.baidu.com</code>（通过 <code>www.a.shifen.com</code>）可以通过这个IP地址访问。</p>
+<p><code>Name: www.a.shifen.com</code></p>
+<p><code>Address: 220.181.38.150</code>
+这是另一个IPv4地址，属于同一个域名（<code>www.a.shifen.com</code>）。多个地址的存在可能是为了负载均衡和冗余。</p>
+<p><code>Name: www.a.shifen.com</code>
+<code>Address: 240e:83:205:58:0:ff:b09f:36bf</code>
+这是 <code>www.a.shifen.com</code> 的一个IPv6地址，提供了一个IPv6网络的访问点。</p>
+<p><code>Name: www.a.shifen.com</code>
+<code>Address: 240e:83:205:5a:0:ff:b05f:346b</code>
+另一个IPv6地址，同样属于 <code>www.a.shifen.com</code>。与IPv4地址类似，多个IPv6地址的存在可能也是出于负载均衡和冗余的考虑。</p>
+<p>总的来说，这个 <code>nslookup</code> 查询展示了 <code>www.baidu.com</code> 如何通过CNAME记录指向 <code>www.a.shifen.com</code>，以及后者的多个IPv4和IPv6地址，这些地址可能用于处理不同的网络请求，确保可靠性和高效性。</p>
 
 
   
