@@ -303,6 +303,8 @@ nav:
     - 备份: middleware/mysql/bak.md
     - 在数据库中备份某些表: middleware/mysql/BAK_TABLE.md
     - SHOW_SLAVE_STATUS: middleware/mysql/SHOW_SLAVE_STATUS.md
+    - 慢sql: middleware/mysql/慢sql.md
+    - mysql的编译安装: middleware/mysql/编译安装.md
   - Nginx:
       - Nginx部署: middleware/nginx/nginx_install.md
       - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
@@ -416,6 +418,7 @@ nav:
         - 各种计算机存储单位和网速单位: system/centos7/各种计算机存储单位和网速单位.md
         - 查看网卡实时流量: system/linux/网络/iftop.md
         - 查看域名解析: system/linux/网络/dig.md
+        - nc命令: system/linux/网络/nc命令.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
@@ -435,7 +438,10 @@ nav:
     - 查询硬件信息: system/centos7/dmidecode.md
     - find命令: system/centos7/find.md
     - gun软件列表: system/centos7/gun软件列表.md
-  - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
+    - 关闭selinux: system/centos7/关闭selinux.md
+  - Windows:
+    - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
+    - tcping: system/windows/tcping.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
       - 存储单元: system/汇编/存储单元.md

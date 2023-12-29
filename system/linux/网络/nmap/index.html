@@ -3192,6 +3192,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_5">
@@ -3326,6 +3330,34 @@
     <li class="md-nav__item">
       <a href="../../../../middleware/mysql/SHOW_SLAVE_STATUS/" class="md-nav__link">
         SHOW_SLAVE_STATUS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../middleware/mysql/%E6%85%A2sql/" class="md-nav__link">
+        慢sql
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../middleware/mysql/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        mysql的编译安装
       </a>
     </li>
   
@@ -5098,6 +5130,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_1_5">
@@ -5401,6 +5435,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nc%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        nc命令
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -5428,6 +5476,8 @@
       
       
       
+        
+          
         
           
         
@@ -5736,6 +5786,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../centos7/%E5%85%B3%E9%97%ADselinux/" class="md-nav__link">
+        关闭selinux
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -5748,10 +5812,63 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../windows/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85windows/" class="md-nav__link">
         虚拟机安装Windows
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../windows/tcping/" class="md-nav__link">
+        tcping
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6423,6 +6540,16 @@ Nmap 6.40 (http://nmap.org)
 </li>
 </ol>
 <p>记得使用Nmap时要遵守法律和道德准则，只在授权的环境中进行扫描。</p>
+<p>快速扫描所有端口：</p>
+<pre class="highlight"><code class="language-bash">nmap -p 1-65535 -T4 --min-rate 1000 --max-retries 1 -n --host-timeout 30m &lt;目标IP&gt;
+
+-p 1-65535：扫描从端口1到65535的所有端口。
+-T4：设置扫描的速度为较快。
+--min-rate 1000：设置每秒最少发送1000个包。
+--max-retries 1：每个端口只重试一次。
+-n：禁用DNS解析，加快扫描速度。
+--host-timeout 30m：如果一个主机的扫描超过30分钟则放弃扫描。
+&lt;目标IP&gt;：您要扫描的目标IP地址。</code></pre>
 <p><a href="https://www.cnblogs.com/zha0gongz1/p/12231851.html">Nmap使用教程（初级篇） - zha0gongz1 - 博客园 (cnblogs.com)</a></p>
 <p><a href="https://www.cnblogs.com/zha0gongz1/p/12234762.html">Nmap使用教程（进阶篇） - zha0gongz1 - 博客园 (cnblogs.com)</a></p>
 <p><a href="https://blog.csdn.net/m0_48907714/article/details/123001723">(42条消息) Nmap常用命令_百密不疏的博客-CSDN博客</a></p>
