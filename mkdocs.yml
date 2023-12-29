@@ -454,6 +454,12 @@ nav:
       - 寄存器: system/汇编/寄存器.md
       - 代码段: system/汇编/代码段.md
       - 汇编指令合集: system/汇编/汇编指令合集.md
+- 云计算:
+    - Cloud_Computing/index.md
+    - IaaS:
+        - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
+
+
 - 工具:
   - tool/index.md
   - git及github的轻度教程: tool/github使用.md

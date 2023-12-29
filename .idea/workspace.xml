@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
-      <change afterPath="$PROJECT_DIR$/docs/middleware/mysql/慢sql.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/middleware/mysql/编译安装.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/centos7/关闭selinux.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/linux/网络/nc命令.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/windows/tcping.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Cloud_Computing/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Cloud_Computing/iso格式转换为vhd格式.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/system/linux/网络/nmap.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/linux/网络/nmap.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,11 +78,11 @@
       <recent name="$PROJECT_DIR$/docs/system/centos7" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/Cloud_Computing" />
       <recent name="$PROJECT_DIR$/docs/system/linux/网络" />
       <recent name="$PROJECT_DIR$/docs/system/linux/IO" />
       <recent name="$PROJECT_DIR$/docs/system/linux" />
       <recent name="$PROJECT_DIR$/docs/system/centos7" />
-      <recent name="$PROJECT_DIR$/docs/shell" />
     </key>
   </component>
   <component name="RunManager">
