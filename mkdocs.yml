@@ -293,18 +293,7 @@ nav:
     - n2n: middleware/n2n/n2n.md
   - Pinpoint:
     - Pinpoint安装: middleware/pinpoint/pinpoint_install.md
-  - Mysql:
-    - 基本语法: middleware/mysql/basic.md
-    - 数据类型: middleware/mysql/type.md
-    - 约束: middleware/mysql/constraint.md
-    - 授权: middleware/mysql/grant.md
-    - 查询: middleware/mysql/select.md
-    - 函数: middleware/mysql/function.md
-    - 备份: middleware/mysql/bak.md
-    - 在数据库中备份某些表: middleware/mysql/BAK_TABLE.md
-    - SHOW_SLAVE_STATUS: middleware/mysql/SHOW_SLAVE_STATUS.md
-    - 慢sql: middleware/mysql/慢sql.md
-    - mysql的编译安装: middleware/mysql/编译安装.md
+
   - Nginx:
       - Nginx部署: middleware/nginx/nginx_install.md
       - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
@@ -312,6 +301,19 @@ nav:
       - Nginx7层反向代理: middleware/nginx/nginx7层负载均衡.md
       - Nginx7层负载均衡: middleware/nginx/nginx7层反向代理.md
       - Nginx4层转发: middleware/nginx/nginx4层转发.md
+- 数据库:
+    - Mysql:
+        - 基本语法: database/mysql/basic.md
+        - 数据类型: database/mysql/type.md
+        - 约束: database/mysql/constraint.md
+        - 授权: database/mysql/grant.md
+        - 查询: database/mysql/select.md
+        - 函数: database/mysql/function.md
+        - 备份: database/mysql/bak.md
+        - 在数据库中备份某些表: database/mysql/BAK_TABLE.md
+        - SHOW_SLAVE_STATUS: database/mysql/SHOW_SLAVE_STATUS.md
+        - 慢sql: database/mysql/慢sql.md
+        - mysql的编译安装: database/mysql/编译安装.md
 - 监控:
   - monitor/index.md
   - Prometheus:
@@ -458,8 +460,6 @@ nav:
     - Cloud_Computing/index.md
     - IaaS:
         - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
-
-
 - 工具:
   - tool/index.md
   - git及github的轻度教程: tool/github使用.md
