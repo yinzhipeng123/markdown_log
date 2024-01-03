@@ -443,9 +443,9 @@ nav:
     - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
     - tcping: system/windows/tcping.md
   - Mac:
-      - 常用软件: system/mac/MAC安装Python.md
+      - 常用软件: system/mac/软件.md
       - 安装Homebrew: system/mac/安装Homebrew.md
-      - MAC安装Python3: programming_language/python/MAC环境.md
+      - MAC安装Python: system/mac/MAC安装Python.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
       - 存储单元: system/汇编/存储单元.md
