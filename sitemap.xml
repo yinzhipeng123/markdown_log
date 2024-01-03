@@ -541,11 +541,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/programming_language/python/MAC%E7%8E%AF%E5%A2%83/</loc>
-         <lastmod>2024-01-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/programming_language/python/csv/</loc>
          <lastmod>2024-01-03</lastmod>
          <changefreq>daily</changefreq>
@@ -1277,6 +1272,11 @@
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/system/linux/%E8%AE%A1%E7%AE%97/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</loc>
+         <lastmod>2024-01-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/system/mac/MAC%E5%AE%89%E8%A3%85Python/</loc>
          <lastmod>2024-01-03</lastmod>
          <changefreq>daily</changefreq>
     </url>

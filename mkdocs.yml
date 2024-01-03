@@ -159,7 +159,6 @@ nav:
     - K8S模块: programming_language/python/k8s.md
     - 内存性能模块: programming_language/python/mem.md
     - Centos7安装Python3: programming_language/python/python3_env.md
-    - MAC安装Python3: programming_language/python/MAC环境.md
     - Python3 Dokcer镜像制作: programming_language/python/python3_docker.md
     - Python3 日志控制: programming_language/python/python_log.md
     - python函数参数: programming_language/python/函数参数.md
@@ -444,8 +443,9 @@ nav:
     - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
     - tcping: system/windows/tcping.md
   - Mac:
-      - 常用软件: system/mac/软件.md
+      - 常用软件: system/mac/MAC安装Python.md
       - 安装Homebrew: system/mac/安装Homebrew.md
+      - MAC安装Python3: programming_language/python/MAC环境.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
       - 存储单元: system/汇编/存储单元.md

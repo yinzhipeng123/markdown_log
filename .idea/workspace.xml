@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
-      <change afterPath="$PROJECT_DIR$/docs/system/mac/安装Homebrew.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/system/mac/软件.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/programming_language/python/pycharm不能访问github.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/programming_language/python/MAC环境.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/system/mac/MAC安装Python.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,11 +77,11 @@
       <recent name="$PROJECT_DIR$/docs/system/centos7" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/system/mac" />
       <recent name="$PROJECT_DIR$/docs/database" />
       <recent name="$PROJECT_DIR$/docs/Cloud_Computing" />
       <recent name="$PROJECT_DIR$/docs/system/linux/网络" />
       <recent name="$PROJECT_DIR$/docs/system/linux/IO" />
-      <recent name="$PROJECT_DIR$/docs/system/linux" />
     </key>
   </component>
   <component name="RunManager">
