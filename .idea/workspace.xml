@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87fc8809-8dda-468d-aa58-c69d470b9881" name="变更" comment="变更">
+      <change afterPath="$PROJECT_DIR$/docs/system/mac/安装Homebrew.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/system/mac/软件.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/BAK_TABLE.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/BAK_TABLE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/SHOW_SLAVE_STATUS.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/SHOW_SLAVE_STATUS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/bak.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/bak.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/basic.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/basic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/constraint.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/constraint.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/function.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/function.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/grant.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/grant.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/select.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/select.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/type.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/type.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/慢sql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/慢sql.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/middleware/mysql/编译安装.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/mysql/编译安装.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/programming_language/python/pycharm不能访问github.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
