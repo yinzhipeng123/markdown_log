@@ -263,6 +263,8 @@ nav:
     - 基础概念: lxc/kubernetes/basic.md
     - 污点: lxc/kubernetes/stain.md
     - 亲和性: lxc/kubernetes/dispatch.md
+    - initContainers: lxc/kubernetes/initContainers.md.
+    - 一个比较完整的deployment的样例: lxc/kubernetes/一个完整的deployment.md
     - ClusterRole: lxc/kubernetes/ClusterRole.md
     - emptyDir: lxc/kubernetes/emptyDir.md
     - deployment添加配置文件: lxc/kubernetes/configmap-one.md
@@ -428,7 +430,6 @@ nav:
     - 时间同步chrony: system/centos7/chronyd.md
     - 系统日志查询命令: system/centos7/journalctl.md
     - ssh专题: system/centos7/ssh专题.md
-
     - rpm官网: system/centos7/rpm官网.md
     - ls命令详解: system/centos7/ls命令详解.md
     - Linux特殊权限解释: system/centos7/Linux特殊权限解释.md
