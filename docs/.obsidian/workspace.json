@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "system/linux/内存/Linux的两种内存分配方式.md",
-                "mode": "preview",
+                "file": "lxc/kubernetes/生命周期.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 360.5
   },
   "right": {
     "id": "d5cf4fc627b6bb27",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "system/linux/内存/Linux的两种内存分配方式.md",
+                "file": "lxc/kubernetes/生命周期.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "system/linux/内存/Linux的两种内存分配方式.md",
+                "file": "lxc/kubernetes/生命周期.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "system/linux/内存/Linux的两种内存分配方式.md"
+                "file": "lxc/kubernetes/生命周期.md"
               }
             }
           }
@@ -148,6 +148,10 @@
   },
   "active": "d5b2a952cac67db5",
   "lastOpenFiles": [
+    "index.md",
+    "lxc/kubernetes/生命周期.md",
+    "programming_language/bash/不同的脚本执行方式.md",
+    "system/linux/内存/Linux的两种内存分配方式.md",
     "system/linux/内存/free.md",
     "system/linux/网络/测试网络带宽.md",
     "system/linux/网络/模拟一次.md",
