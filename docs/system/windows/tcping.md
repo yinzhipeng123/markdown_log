@@ -64,61 +64,72 @@ HTTP 选项:
 
 `tcping.exe` 是一个在 Windows 环境下模拟 ICMP ping 功能的工具，主要用于检测 TCP 端口的连通性。它不仅可以测试端口是否开放，还能提供关于延迟和响应时间的信息。下面是一些 `tcping.exe` 的常用用法：
 
-1. **基本的 TCP Ping**：
-   - 命令：`tcping.exe [服务器地址] [端口]`
-   - 作用：检测指定服务器地址的指定端口是否开放。如果未指定端口，默认为 80 端口。
-   - 示例：`tcping.exe example.com 80`
+**1.基本的 TCP Ping**：
 
-2. **持续 Ping**：
-   - 命令：`tcping.exe -t [服务器地址] [端口]`
-   - 作用：持续检测指定端口的状态，直到用户手动停止（使用 Ctrl + C）。
-   - 示例：`tcping.exe -t example.com 80`
+- 命令：`tcping.exe [服务器地址] [端口]`
+- 作用：检测指定服务器地址的指定端口是否开放。如果未指定端口，默认为 80 端口。
+- 示例：`tcping.exe example.com 80`
 
-3. **设置 Ping 的次数**：
-   - 命令：`tcping.exe -n [次数] [服务器地址] [端口]`
-   - 作用：设置要发送的 ping 数量。
-   - 示例：`tcping.exe -n 5 example.com 80`
+**2.持续 Ping**：
 
-4. **设置 Ping 的间隔时间**：
-   - 命令：`tcping.exe -i [间隔秒数] [服务器地址] [端口]`
-   - 作用：设置每次 ping 之间的间隔时间（秒）。
-   - 示例：`tcping.exe -i 10 example.com 80`
+- 命令：`tcping.exe -t [服务器地址] [端口]`
+- 作用：持续检测指定端口的状态，直到用户手动停止（使用 Ctrl + C）。
+- 示例：`tcping.exe -t example.com 80`
 
-5. **设置响应超时时间**：
-   - 命令：`tcping.exe -w [超时时间] [服务器地址] [端口]`
-   - 作用：设置等待响应的超时时间（秒）。
-   - 示例：`tcping.exe -w 2 example.com 80`
+**3.设置 Ping 的次数**：
 
-6. **HTTP 模式**：
-   - 命令：`tcping.exe -h [服务器地址]`
-   - 作用：在 HTTP 模式下进行 ping，可以对 HTTP 服务进行更具针对性的检测。
-   - 示例：`tcping.exe -h www.example.com`
+- 命令：`tcping.exe -n [次数] [服务器地址] [端口]`
+- 作用：设置要发送的 ping 数量。
+- 示例：`tcping.exe -n 5 example.com 80`
 
-7. **显示带时间戳的 Ping 结果**：
-   - 命令：`tcping.exe -d [服务器地址] [端口]`
-   - 作用：在每次 ping 的输出中包含日期和时间。
-   - 示例：`tcping.exe -d example.com 80`
+**4.设置 Ping 的间隔时间**：
+
+- 命令：`tcping.exe -i [间隔秒数] [服务器地址] [端口]`
+- 作用：设置每次 ping 之间的间隔时间（秒）。
+- 示例：`tcping.exe -i 10 example.com 80`
+
+**5.设置响应超时时间**：
+
+- 命令：`tcping.exe -w [超时时间] [服务器地址] [端口]`
+- 作用：设置等待响应的超时时间（秒）。
+- 示例：`tcping.exe -w 2 example.com 80`
+
+**6.HTTP 模式**：
+
+- 命令：`tcping.exe -h [服务器地址]`
+- 作用：在 HTTP 模式下进行 ping，可以对 HTTP 服务进行更具针对性的检测。
+- 示例：`tcping.exe -h www.example.com`
+
+**7.显示带时间戳的 Ping 结果**：
+
+- 命令：`tcping.exe -d [服务器地址] [端口]`
+- 作用：在每次 ping 的输出中包含日期和时间。
+- 示例：`tcping.exe -d example.com 80`
 
 这些用法可以根据您的具体需求进行组合和调整。`tcping` 是一个灵活的工具，适用于网络诊断和测试 TCP 端口的连通性。请记住，对于不属于您的服务器和服务，进行此类测试时应确保您有适当的权限和合法性。
 
 
 `tcping` 和传统的 `ping` 命令在功能和用途上有一些关键区别：
 
-1. **协议**：
-   - **ping**：使用 ICMP (Internet Control Message Protocol) 协议。它发送 ICMP Echo Request 消息到目标地址，如果目标响应，则返回 ICMP Echo Reply。
-   - **tcping**：使用 TCP (Transmission Control Protocol) 协议。它尝试建立到目标地址的 TCP 连接（通常是到指定的端口）。
+**1.协议**：
 
-2. **用途**：
-   - **ping**：主要用于检测网络连通性。它可以告诉您目标机器是否可以通过网络访问，并提供往返时间 (RTT) 数据。
-   - **tcping**：主要用于检测特定 TCP 端口的可达性和响应时间。它对于检测特定服务（如 HTTP、数据库服务等）是否运行或监听特定端口非常有用。
+- **ping**：使用 ICMP (Internet Control Message Protocol) 协议。它发送 ICMP Echo Request 消息到目标地址，如果目标响应，则返回 ICMP Echo Reply。
+- **tcping**：使用 TCP (Transmission Control Protocol) 协议。它尝试建立到目标地址的 TCP 连接（通常是到指定的端口）。
 
-3. **防火墙和过滤**：
-   - **ping**：许多系统和网络会阻止或过滤 ICMP 流量，这意味着即使系统在线，ping 也可能失败。
-   - **tcping**：由于许多应用和服务依赖于 TCP 连接，TCP 端口通常不会被阻止。因此，tcping 更有可能得到准确的端口可达性信息。
+**2.用途**：
 
-4. **输出信息**：
-   - **ping**：提供了目标地址的可达性、数据包往返时间、丢包信息等。
-   - **tcping**：提供了端口的开放状态、建立连接的时间等，更适合检测特定服务的状态。
+- **ping**：主要用于检测网络连通性。它可以告诉您目标机器是否可以通过网络访问，并提供往返时间 (RTT) 数据。
+- **tcping**：主要用于检测特定 TCP 端口的可达性和响应时间。它对于检测特定服务（如 HTTP、数据库服务等）是否运行或监听特定端口非常有用。
+
+**3.防火墙和过滤**：
+
+- **ping**：许多系统和网络会阻止或过滤 ICMP 流量，这意味着即使系统在线，ping 也可能失败。
+- **tcping**：由于许多应用和服务依赖于 TCP 连接，TCP 端口通常不会被阻止。因此，tcping 更有可能得到准确的端口可达性信息。
+
+**4.输出信息**：
+
+- **ping**：提供了目标地址的可达性、数据包往返时间、丢包信息等。
+- **tcping**：提供了端口的开放状态、建立连接的时间等，更适合检测特定服务的状态。
 
 总结来说，`ping` 是检测网络层的连通性和质量的工具，而 `tcping` 是检测特定 TCP 端口（因此是特定服务）的可达性和响应时间的工具。在诊断网络问题时，两者可以互为补充。
 

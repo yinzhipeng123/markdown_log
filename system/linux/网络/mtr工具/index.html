@@ -6904,6 +6904,37 @@ sudo yum install mtr</code></pre></p>
 <li>往返时间的标准偏差，表示往返时间的变化程度。</li>
 </ul>
 <p>总的来说，mtr提供了一种实时、动态的方式来查看数据包从源计算机到目标主机的路径以及每个跃点的性能统计。高的丢包率或很长的往返时间可能表示网络中存在问题。</p>
+<p>WinMTR 的各列数据的含义如下：</p>
+<ol>
+<li>
+<p><strong>Hostname</strong>: 这一列显示了经过的路由节点的主机名或 IP 地址。</p>
+</li>
+<li>
+<p><strong>Nr</strong>: 表示跳数，从 1 开始编号，代表路径上的每个路由器或交换机的位置。</p>
+</li>
+<li>
+<p><strong>Loss%</strong>: 显示从测试主机发送到该节点的数据包中有多少百分比未收到响应。例如，<code>100</code> 表示所有数据包都丢失了。</p>
+</li>
+<li>
+<p><strong>Sent</strong>: 显示发送到该节点的数据包总数。</p>
+</li>
+<li>
+<p><strong>Recv</strong>: 显示从该节点接收到的数据包总数。</p>
+</li>
+<li>
+<p><strong>Best</strong>: 最佳响应时间，也就是到该节点的最短往返时间，单位通常是毫秒。</p>
+</li>
+<li>
+<p><strong>Avg</strong>: 平均响应时间，即到该节点的平均往返时间。</p>
+</li>
+<li>
+<p><strong>Worst</strong>: 最差响应时间，即到该节点的最长往返时间。</p>
+</li>
+<li>
+<p><strong>Last</strong>: 最后一次测量到该节点的往返时间。</p>
+</li>
+</ol>
+<p>这些节点配置了不响应 ICMP 或者 TCP ping 请求，丢包率可能为 100%。</p>
 
 
   
