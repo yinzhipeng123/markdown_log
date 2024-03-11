@@ -463,15 +463,20 @@ nav:
     - Cloud_Computing/index.md
     - IaaS:
         - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
-- 工具:
+- 工具和知识:
   - tool/index.md
   - git及github的轻度教程: tool/github使用.md
   - Pycharm及配合Github的使用: tool/pycharm.md
   - MkDocs的使用: tool/MkDoc.md
-- 散文:
+  - URL在线编码转换工具: tool/url_code.md
+- 笔记:
   - 常用地址: soft/url.md
-  - URL在线编码转换工具: soft/url_code.md
   - P99: soft/p99.md
   - github代码对比: soft/github.md
+  - 爱情: soft/爱情.md
+  - 与人相处的诀窍: soft/与人相处的诀窍.md
+  - 可以被别人喜欢: soft/可以被别人喜欢.md
+  - 赢得别人的赞同: soft/赢得别人的赞同.md
+  - 领导者知晓的: soft/领导者必须领悟的.md
 
 
