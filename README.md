@@ -8,12 +8,14 @@ MarkDown做的学习笔记，使用的MkDocs进行制作，看上去还比较精
 
 如果在上进行开发此文档，
 
-需要安装git 命令行工具，python3及PIP
+需要安装 git 命令行工具，Python3 及 Pip
+
+Python版本 3.10.9
 
 使用下面这条命令安装依赖
 
 ```
-[ makedown_log]# pip install -r requirements.txt
+[ makedown_log]# pip3 install -r requirements.txt
 [ makedown_log]# mkdocs serve
 ```
 
