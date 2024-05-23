@@ -264,7 +264,7 @@ nav:
     - 基础概念: lxc/kubernetes/basic.md
     - 污点: lxc/kubernetes/stain.md
     - 亲和性: lxc/kubernetes/dispatch.md
-    - initContainers: lxc/kubernetes/initContainers.md.
+    - initContainers: lxc/kubernetes/initContainers.md
     - 一个比较完整的deployment的样例: lxc/kubernetes/一个完整的deployment.md
     - ClusterRole: lxc/kubernetes/ClusterRole.md
     - emptyDir: lxc/kubernetes/emptyDir.md
@@ -425,6 +425,7 @@ nav:
         - 查看网卡实时流量: system/linux/网络/iftop.md
         - 查看域名解析: system/linux/网络/dig.md
         - nc命令: system/linux/网络/nc命令.md
+        - DNS缓存: system/linux/网络/DNS缓存.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
