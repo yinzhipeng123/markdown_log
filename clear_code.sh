@@ -60,4 +60,4 @@ git config --list
 echo "---------------进行提交----------------"
 git add . -A 
 git commit -m "commit_message"
-git push
+git push -u origin main
