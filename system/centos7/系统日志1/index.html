@@ -1,0 +1,7319 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="yinzhipengのmarkdown_log">
+      
+      
+      
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/system/centos7/%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%971/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>系统日志syslog-ng服务 - MarkDown_Log</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/a11y-dark.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-2ZF49ZVQ2M"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-2ZF49ZVQ2M",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-2ZF49ZVQ2M",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#syslog-ng" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="MarkDown_Log" class="md-header__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MarkDown_Log
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              系统日志syslog-ng服务
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yinzhipeng123/markdown_log/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MarkDown_Log
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../programming_language/" class="md-tabs__link">
+        编程语言
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../lxc/" class="md-tabs__link">
+        容器技术
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../middleware/" class="md-tabs__link">
+        中间件
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../database/mysql/basic/" class="md-tabs__link">
+        数据库
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../monitor/" class="md-tabs__link">
+        监控
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        操作系统
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Cloud_Computing/" class="md-tabs__link">
+        云计算
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tool/" class="md-tabs__link">
+        工具和知识
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../soft/%E3%80%8A%E6%83%85%E5%95%86%E3%80%8B%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+        笔记
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MarkDown_Log" class="md-nav__button md-logo" aria-label="MarkDown_Log" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MarkDown_Log
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yinzhipeng123/markdown_log/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MarkDown_Log
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../programming_language/">编程语言</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="编程语言" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          编程语言
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/basics/basic/" class="md-nav__link">
+        Python一些语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/csv/" class="md-nav__link">
+        CSV模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/csv_row_to_col/" class="md-nav__link">
+        CSV、列变行、行变列转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/xlxs/" class="md-nav__link">
+        XLSX模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/xlsx_to_csv/" class="md-nav__link">
+        XLSX转CSV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/k8s/" class="md-nav__link">
+        K8S模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/mem/" class="md-nav__link">
+        内存性能模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/python3_env/" class="md-nav__link">
+        Centos7安装Python3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/python3_docker/" class="md-nav__link">
+        Python3 Dokcer镜像制作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/python_log/" class="md-nav__link">
+        Python3 日志控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/" class="md-nav__link">
+        python函数参数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="md-nav__link">
+        python装饰器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/%E7%94%9F%E6%88%90%E5%99%A8/" class="md-nav__link">
+        python生成器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/%E8%BF%AD%E4%BB%A3%E5%99%A8/" class="md-nav__link">
+        python迭代器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/lambda%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        lambda函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/flask/flask_init/" class="md-nav__link">
+        Flask
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        多进程和多线程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_18" type="checkbox" id="__nav_2_2_18" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_18">
+          线程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="线程" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_18">
+          <span class="md-nav__icon md-icon"></span>
+          线程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/threading/thread%E7%BA%BF%E7%A8%8B%E9%94%81/" class="md-nav__link">
+        thread线程锁
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/threading/thread/" class="md-nav__link">
+        通过继承实现多线程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/threading/thread_event/" class="md-nav__link">
+        threading.Event()
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/threading/join/" class="md-nav__link">
+        join的作用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/threading/thread/" class="md-nav__link">
+        通过继承实现多线程
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/%E5%8D%8F%E7%A8%8B/%E5%8D%8F%E7%A8%8B/" class="md-nav__link">
+        协程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_20" type="checkbox" id="__nav_2_2_20" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_20">
+          shedule
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="shedule" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_20">
+          <span class="md-nav__icon md-icon"></span>
+          shedule
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/shedule/run_in_back/" class="md-nav__link">
+        后台执行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/shedule/see_cron/" class="md-nav__link">
+        schedule日志显示下次任务执行时间
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_21" type="checkbox" id="__nav_2_2_21" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_21">
+          类
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="类" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_21">
+          <span class="md-nav__icon md-icon"></span>
+          类
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/basics/class/class/" class="md-nav__link">
+        类的继承
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/basics/class/class_var/" class="md-nav__link">
+        类变量与实例变量
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/basics/mypy/" class="md-nav__link">
+        mypy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_23" type="checkbox" id="__nav_2_2_23" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_23">
+          基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基础" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_23">
+          <span class="md-nav__icon md-icon"></span>
+          基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/basics/for%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        for循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/basics/if%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+        if语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/basics/match%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+        match语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/python/basics/while/" class="md-nav__link">
+        while语句
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Go
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Go" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Go
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/go/go_one/" class="md-nav__link">
+        Go入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" type="checkbox" id="__nav_2_3_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_2">
+          Web框架 Gin
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web框架 Gin" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Web框架 Gin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/go/go_gin/" class="md-nav__link">
+        Gin入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/go/gin_route/" class="md-nav__link">
+        Gin 路由拆分成单个文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/go/gin__app_route/" class="md-nav__link">
+        Gin 路由拆分成单独APP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Vue
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vue" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Vue
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/html%E4%B8%AD%E5%8A%A0%E8%BD%BDVUE/" class="md-nav__link">
+        html中加载VUE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/%E5%AE%89%E8%A3%85nodejs/" class="md-nav__link">
+        安装nodejs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/nodejs%E8%BF%90%E8%A1%8C%E7%BD%91%E7%AB%99/" class="md-nav__link">
+        nodejs运行网站
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/npm%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        npm的使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/vue%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        VUE安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/vue%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        VUE目录文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/VUE%E4%BD%BF%E7%94%A8axios%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0json/" class="md-nav__link">
+        VUE使用axios加载本地json
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/VUE%E4%BD%BF%E7%94%A8for%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        VUE使用for循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/VUE%E4%BD%BF%E7%94%A8if/" class="md-nav__link">
+        VUE使用if
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/VUE%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" class="md-nav__link">
+        VUE使用事件监听
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/VUE%E6%96%B9%E6%B3%95%E5%92%8C%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" class="md-nav__link">
+        VUE方法和计算属性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/VUE%E8%BE%93%E5%85%A5%E7%BB%91%E5%AE%9A/" class="md-nav__link">
+        VUE输入绑定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/vue/%E5%89%8D%E7%AB%AF%E6%97%B6%E4%BB%A3%E7%9A%84%E5%8F%98%E9%9D%A9/" class="md-nav__link">
+        前端时代的变革
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../programming_language/awk/">awk</a>
+          
+            <label for="__nav_2_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="awk" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          awk
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/awk/awk/" class="md-nav__link">
+        基础语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/awk/awk_array/" class="md-nav__link">
+        数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/awk/awk_process_control/" class="md-nav__link">
+        循环控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/awk/awk_matching/" class="md-nav__link">
+        匹配
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/awk/awk_function/" class="md-nav__link">
+        函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/awk/awk_redirect/" class="md-nav__link">
+        重定向
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/awk/awk_var/" class="md-nav__link">
+        awk使用bash变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/awk/awk_nocache/" class="md-nav__link">
+        awk无缓存输出
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/awk/awk_noprint/" class="md-nav__link">
+        awk不打印某列
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../programming_language/bash/">Bash</a>
+          
+            <label for="__nav_2_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Bash" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Bash
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" type="checkbox" id="__nav_2_6_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_2">
+          语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="语法" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/var/" class="md-nav__link">
+        变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/read_var/" class="md-nav__link">
+        shell读取变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/math/" class="md-nav__link">
+        数学运算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/branch/" class="md-nav__link">
+        判断
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/if/" class="md-nav__link">
+        if语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/case/" class="md-nav__link">
+        case语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/for/" class="md-nav__link">
+        for循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/while/" class="md-nav__link">
+        while循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/until/" class="md-nav__link">
+        until循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/array/" class="md-nav__link">
+        数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/function/" class="md-nav__link">
+        函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/special_symbols/" class="md-nav__link">
+        特殊符号
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/re/" class="md-nav__link">
+        bash的通配符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/redirect/" class="md-nav__link">
+        重定向
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash/%E4%B8%8D%E5%90%8C%E7%9A%84%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        不同的脚本执行方式
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../programming_language/bash_help/">一些帮助书写Bash脚本的东西</a>
+          
+            <label for="__nav_2_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="一些帮助书写Bash脚本的东西" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          一些帮助书写Bash脚本的东西
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_2" type="checkbox" id="__nav_2_7_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../programming_language/bash_help/sed/">sed</a>
+          
+            <label for="__nav_2_7_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="sed" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          sed
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/sed/sed/" class="md-nav__link">
+        语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/sed/sed_script/" class="md-nav__link">
+        sed脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/sed/sed_exd/" class="md-nav__link">
+        拓展
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/re/grep/" class="md-nav__link">
+        grep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/re/re/" class="md-nav__link">
+        正则表达式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/echo/" class="md-nav__link">
+        bash的颜色控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/cat/" class="md-nav__link">
+        bash脚本查看文件指定行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/getops/" class="md-nav__link">
+        bashm脚本命令行选项
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/gzexe/" class="md-nav__link">
+        bash脚本加密
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/mkfifo/" class="md-nav__link">
+        控制bash子bash
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/trap/" class="md-nav__link">
+        bash中的异常处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/rpm/" class="md-nav__link">
+        查看系统软件变化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/sshpass/" class="md-nav__link">
+        bash批量登录服务器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_language/bash_help/sort/" class="md-nav__link">
+        sort排序
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../lxc/">容器技术</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="容器技术" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          容器技术
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../lxc/kubernetes/">K8S</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="K8S" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          K8S
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/minikube/minikube/" class="md-nav__link">
+        minikube
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/kubernetes1.16/" class="md-nav__link">
+        K8S 1.16.9部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/basic/" class="md-nav__link">
+        基础概念
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/stain/" class="md-nav__link">
+        污点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/dispatch/" class="md-nav__link">
+        亲和性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/initContainers/" class="md-nav__link">
+        initContainers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84deployment/" class="md-nav__link">
+        一个比较完整的deployment的样例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/ClusterRole/" class="md-nav__link">
+        ClusterRole
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/emptyDir/" class="md-nav__link">
+        emptyDir
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/configmap-one/" class="md-nav__link">
+        deployment添加配置文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/hostpath/" class="md-nav__link">
+        主机内目录挂载到pod中
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/depolyment_model/" class="md-nav__link">
+        Deployment的demo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/statefulset/" class="md-nav__link">
+        statefulset的demo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/liveness/" class="md-nav__link">
+        liveness
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/readiness/" class="md-nav__link">
+        readiness
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/pvc%E5%AE%9E%E9%AA%8C/" class="md-nav__link">
+        pvc实验
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/principle/" class="md-nav__link">
+        K8S部署应用的8项原则
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/%E6%BB%9A%E5%8A%A8%E5%8D%87%E7%BA%A7%E4%B8%AD%E7%9A%84maxSurge%E5%92%8CmaxUnavailable/" class="md-nav__link">
+        滚动升级中的maxSurge和maxUnavailable
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="md-nav__link">
+        pod生命周期
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/initContainers/" class="md-nav__link">
+        initContainers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          KubeSphere
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="KubeSphere" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          KubeSphere
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubesphere/kubesphere/" class="md-nav__link">
+        KubeSphere安装
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Rancher
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rancher" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rancher
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/rancher/rancher_instatll/" class="md-nav__link">
+        Rancher安装
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docker" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/docker/docker_su/" class="md-nav__link">
+        Docker安装和加速
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/docker/docker_Warning/" class="md-nav__link">
+        停止docker出现警告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/docker/docker-compose/" class="md-nav__link">
+        docker_compose中卷的映射
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/docker/pinpoint_compose/" class="md-nav__link">
+        docker_compse讲解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../middleware/">中间件</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="中间件" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          中间件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Etcd
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Etcd" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Etcd
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../middleware/etcd/etcd/" class="md-nav__link">
+        etcd部署
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          内网穿透
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="内网穿透" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          内网穿透
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../middleware/n2n/n2n/" class="md-nav__link">
+        n2n
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Pinpoint
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pinpoint" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Pinpoint
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../middleware/pinpoint/pinpoint_install/" class="md-nav__link">
+        Pinpoint安装
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Nginx
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nginx" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Nginx
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../middleware/nginx/nginx_install/" class="md-nav__link">
+        Nginx部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../middleware/nginx/nginx_cmd/" class="md-nav__link">
+        Nginx启动及命令行参数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../middleware/nginx/nginx_conf/" class="md-nav__link">
+        Nginx配置详解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../middleware/nginx/nginx7%E5%B1%82%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" class="md-nav__link">
+        Nginx7层负载均衡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../middleware/nginx/nginx7%E5%B1%82%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" class="md-nav__link">
+        Nginx7层反向代理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../middleware/nginx/nginx4%E5%B1%82%E8%BD%AC%E5%8F%91/" class="md-nav__link">
+        Nginx4层转发
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          数据库
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据库" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          数据库
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_1">
+          Mysql
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mysql" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Mysql
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/basic/" class="md-nav__link">
+        基本语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/type/" class="md-nav__link">
+        数据类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/constraint/" class="md-nav__link">
+        约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/grant/" class="md-nav__link">
+        授权
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/select/" class="md-nav__link">
+        查询
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/function/" class="md-nav__link">
+        函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/bak/" class="md-nav__link">
+        备份
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/BAK_TABLE/" class="md-nav__link">
+        在数据库中备份某些表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/SHOW_SLAVE_STATUS/" class="md-nav__link">
+        SHOW_SLAVE_STATUS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/%E6%85%A2sql/" class="md-nav__link">
+        慢sql
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        mysql的编译安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/mysql/%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        索引
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../monitor/">监控</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="监控" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          监控
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Prometheus
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Prometheus" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Prometheus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/prometheus/" class="md-nav__link">
+        单机部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/prometheus_k8s/" class="md-nav__link">
+        K8S部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/kube-state-metrics/" class="md-nav__link">
+        K8S kube-state-metrics指标说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/Exporter_Metrics/" class="md-nav__link">
+        Exporter Metrics解释
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/query_xamples/" class="md-nav__link">
+        Prometheus监控查询例子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/query_rules/" class="md-nav__link">
+        Prometheus监控查询语法入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/function/" class="md-nav__link">
+        Prometheus语法函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/prometheus_recording_rule/" class="md-nav__link">
+        Prometheus recording_rules功能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/prometheus_rate/" class="md-nav__link">
+        Prometheus指标讲解"为什么rate可以计算CPU的使用率"
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Alertmanager
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Alertmanager" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Alertmanager
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/prometheus/" class="md-nav__link">
+        Alertmanager部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/alertmanager/alertmanager_config/" class="md-nav__link">
+        Alertmanager配置
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          Grafana
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Grafana" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Grafana
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/grafana/grafana_install/" class="md-nav__link">
+        Grafana部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/grafana/grafana_dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/grafana/grafana_var/" class="md-nav__link">
+        Grafana添加变量
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          操作系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="操作系统" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Linux</a>
+          
+            <label for="__nav_7_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1_2" type="checkbox" id="__nav_7_1_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_1_2">
+          计算相关
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="计算相关" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          计算相关
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%A0%94%E7%A9%B6/" class="md-nav__link">
+        什么是线程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/LWP/" class="md-nav__link">
+        LWP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/" class="md-nav__link">
+        进程间通信
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B/" class="md-nav__link">
+        僵尸进程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B/" class="md-nav__link">
+        孤儿进程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+        中断
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/load%E9%AB%98%E7%9A%84%E5%8E%9F%E5%9B%A0/" class="md-nav__link">
+        load高的原因
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2%E5%AF%BC%E8%87%B4sys%E9%AB%98/" class="md-nav__link">
+        上下文切换导致sys高
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/perf/" class="md-nav__link">
+        perf命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/vmstat/" class="md-nav__link">
+        vmstat命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/ps/" class="md-nav__link">
+        ps命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/iostat/" class="md-nav__link">
+        iostat命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/sar/" class="md-nav__link">
+        sar命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/tsar/" class="md-nav__link">
+        tsar命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/top/" class="md-nav__link">
+        top命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/0proc0stat/" class="md-nav__link">
+        /proc/stat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/strace/" class="md-nav__link">
+        strace命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E8%AE%A1%E7%AE%97/pidstat/" class="md-nav__link">
+        pidstat命令
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1_3" type="checkbox" id="__nav_7_1_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_1_3">
+          内存相关
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="内存相关" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          内存相关
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/%E5%86%85%E5%AD%98/" class="md-nav__link">
+        内存
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/Linux%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        Linux的两种内存分配方式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6%E7%9A%84%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        内存回收的方式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/slabtop/" class="md-nav__link">
+        slabtop命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/0proc0slabinfo/" class="md-nav__link">
+        /proc/slabinfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/0proc0meminfo/" class="md-nav__link">
+        /proc/meminfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/%E5%86%85%E5%AD%98%E9%A1%B5%E7%9A%84%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        内存页的理解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/min_free_kbytes%E5%8F%82%E6%95%B0/" class="md-nav__link">
+        min_free_kbytes参数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/oom%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        oom机制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/oom%E8%AF%84%E5%88%86%E6%98%AF%E5%A6%82%E4%BD%95%E7%AE%97%E5%87%BA%E6%9D%A5%E7%9A%84/" class="md-nav__link">
+        oom评分是如何算出来
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/%E8%AE%A1%E7%AE%97oom%E8%AF%84%E5%88%86%E7%9A%84%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        计算oom评分的脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/free/" class="md-nav__link">
+        free命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96%E7%9A%84%E6%89%8B%E6%AE%B5/" class="md-nav__link">
+        内存优化的手段
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8Bswap%E4%BD%BF%E7%94%A8%E7%9A%84%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        查看进程swap使用的脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E5%86%85%E5%AD%98/%E8%BF%87%E5%BA%A6%E5%88%86%E9%85%8D%E7%9A%84%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        过度分配的理解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1_4" type="checkbox" id="__nav_7_1_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_1_4">
+          IO相关
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IO相关" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          IO相关
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0/" class="md-nav__link">
+        内核参数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/0proc%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        proc文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/0sys%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        sys文件系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/IO%E6%8A%80%E6%9C%AF%E6%A0%88/" class="md-nav__link">
+        IO技术栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/IO%E6%8C%87%E6%A0%87%E5%8F%8A%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        IO指标及工具
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/IO%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+        IO优化建议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/IO%20scheduler/" class="md-nav__link">
+        IO scheduler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/IO%E7%9A%84%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        IO的类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/blktrace%E5%B8%B8%E7%94%A8%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        blktrace常用使用方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/blktrace/" class="md-nav__link">
+        blktrace命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/mount/" class="md-nav__link">
+        mount命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/iodump/" class="md-nav__link">
+        iodump命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/hdparm%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        hdparm命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/dumpe2fs/" class="md-nav__link">
+        dumpe2fs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/iostat/" class="md-nav__link">
+        iostat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/iotop/" class="md-nav__link">
+        iotop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/Python%E5%AF%BC%E8%87%B4IO%E6%85%A2%E6%A1%88%E4%BE%8B/" class="md-nav__link">
+        Python导致IO慢案例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/SQL%E6%9F%A5%E8%AF%A2%E6%85%A2%E6%A1%88%E4%BE%8B/" class="md-nav__link">
+        SQL查询慢案例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/IO%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        IO测试方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/findmnt/" class="md-nav__link">
+        findmnt命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/e2label/" class="md-nav__link">
+        e2label命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/blkid/" class="md-nav__link">
+        blkid命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/lspci/" class="md-nav__link">
+        lspci命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/lsblk/" class="md-nav__link">
+        lsblk命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/du/" class="md-nav__link">
+        查看目录大小
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/%E5%8F%A5%E6%9F%84/" class="md-nav__link">
+        句柄
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/IO/lsof/" class="md-nav__link">
+        lsof
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storcli/" class="md-nav__link">
+        查询raid卡信息-storcli命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MegaCli/" class="md-nav__link">
+        查询raid卡信息-MegaCli命令
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1_5" type="checkbox" id="__nav_7_1_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_1_5">
+          网络相关
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="网络相关" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          网络相关
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/tcp/" class="md-nav__link">
+        TCP图解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/time_wait/" class="md-nav__link">
+        TIME_WAIT过多的解决方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/%E4%BF%AE%E6%94%B9TCP%E7%9A%84TIME-WAIT%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4/" class="md-nav__link">
+        阿里云修改TCP的TIME-WAIT超时时间
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/net.ipv4.tcp_fin_timeout/" class="md-nav__link">
+        Linux修改TCP的TIME-WAIT超时时间
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/%E6%A8%A1%E6%8B%9F%E4%B8%80%E6%AC%A1/" class="md-nav__link">
+        模拟一次CLOSE_WAIT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/%E5%85%A8%E8%BF%9E%E6%8E%A5%E9%98%9F%E5%88%97%E5%92%8C%E5%8D%8A%E8%BF%9E%E6%8E%A5%E9%98%9F%E5%88%97/" class="md-nav__link">
+        全连接队列和半连接队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/tcpdump/" class="md-nav__link">
+        tcpdump
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/netstat%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        netstat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD/" class="md-nav__link">
+        测试TCP带宽
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/nmap/" class="md-nav__link">
+        nmap命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/ethtool/" class="md-nav__link">
+        ethtool命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/iperf3/" class="md-nav__link">
+        iperf3测速
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/mtr%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        mtr测试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/curl%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        curl命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/%E6%8E%92%E6%9F%A5%E7%BD%91%E9%A1%B5%E6%89%93%E4%B8%8D%E5%BC%80/" class="md-nav__link">
+        排查网页打不开
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%90%84%E7%A7%8D%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8%E5%8D%95%E4%BD%8D%E5%92%8C%E7%BD%91%E9%80%9F%E5%8D%95%E4%BD%8D/" class="md-nav__link">
+        各种计算机存储单位和网速单位
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/iftop/" class="md-nav__link">
+        查看网卡实时流量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/dig/" class="md-nav__link">
+        查看域名解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/nc%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        nc命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/DNS%E7%BC%93%E5%AD%98/" class="md-nav__link">
+        DNS缓存
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Centos7
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Centos7" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Centos7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%91%BD%E4%BB%A4%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+        提供命令查询的网站
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CentOS%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E9%A9%B1%E5%8A%A8/" class="md-nav__link">
+        CentOS查看系统驱动
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ens33/" class="md-nav__link">
+        修改网卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_4" type="checkbox" id="__nav_7_2_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_2_4">
+          Yum
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Yum" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Yum
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yum/ius/" class="md-nav__link">
+        ius源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chronyd/" class="md-nav__link">
+        时间同步chrony
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../journalctl/" class="md-nav__link">
+        系统日志查询命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ssh%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        ssh专题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpm%E5%AE%98%E7%BD%91/" class="md-nav__link">
+        rpm官网
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ls%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        ls命令详解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux%E7%89%B9%E6%AE%8A%E6%9D%83%E9%99%90%E8%A7%A3%E9%87%8A/" class="md-nav__link">
+        Linux特殊权限解释
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0/" class="md-nav__link">
+        linux文件系统的简单描述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        系统日志syslog-ng服务
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%972/" class="md-nav__link">
+        系统日志rsyslog服务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dmidecode/" class="md-nav__link">
+        查询硬件信息
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../find/" class="md-nav__link">
+        find命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gun%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8/" class="md-nav__link">
+        gun软件列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%85%B3%E9%97%ADselinux/" class="md-nav__link">
+        关闭selinux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85windows/" class="md-nav__link">
+        虚拟机安装Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/tcping/" class="md-nav__link">
+        tcping
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Mac
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mac" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Mac
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mac/%E8%BD%AF%E4%BB%B6/" class="md-nav__link">
+        常用软件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mac/%E5%AE%89%E8%A3%85Homebrew/" class="md-nav__link">
+        安装Homebrew
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mac/MAC%E5%AE%89%E8%A3%85Python/" class="md-nav__link">
+        MAC安装Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          汇编基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="汇编基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          汇编基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/win10-masm/" class="md-nav__link">
+        win10下搭建8086汇编环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83/" class="md-nav__link">
+        存储单元
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/%E5%9C%B0%E5%9D%80%E6%80%BB%E7%BA%BF/" class="md-nav__link">
+        地址总线
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/%E6%8E%A7%E5%88%B6%E6%80%BB%E7%BA%BF/" class="md-nav__link">
+        控制总线
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/%E6%95%B0%E6%8D%AE%E6%80%BB%E7%BA%BF/" class="md-nav__link">
+        数据总线
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/" class="md-nav__link">
+        内存地址空间
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/8086CPU/" class="md-nav__link">
+        8086CPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/debug%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        debug命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+        寄存器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/%E4%BB%A3%E7%A0%81%E6%AE%B5/" class="md-nav__link">
+        代码段
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B1%87%E7%BC%96/%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E5%90%88%E9%9B%86/" class="md-nav__link">
+        汇编指令合集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Cloud_Computing/">云计算</a>
+          
+            <label for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="云计算" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          云计算
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          IaaS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IaaS" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          IaaS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud_Computing/iso%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvhd%E6%A0%BC%E5%BC%8F/" class="md-nav__link">
+        iso格式转换为vhd格式
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tool/">工具和知识</a>
+          
+            <label for="__nav_9">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="工具和知识" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          工具和知识
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tool/github%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        git及github的轻度教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tool/pycharm/" class="md-nav__link">
+        Pycharm及配合Github的使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tool/MkDoc/" class="md-nav__link">
+        MkDocs的使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tool/url_code/" class="md-nav__link">
+        URL在线编码转换工具
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tool/url/" class="md-nav__link">
+        常用地址
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tool/p99/" class="md-nav__link">
+        P99
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tool/github/" class="md-nav__link">
+        github代码对比
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E3%80%8A%E6%83%85%E5%95%86%E3%80%8B%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《情商》丹尼尔·戈尔曼——笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E7%88%B1%E6%83%85/" class="md-nav__link">
+        爱情
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E4%B8%8E%E4%BA%BA%E7%9B%B8%E5%A4%84%E7%9A%84%E8%AF%80%E7%AA%8D/" class="md-nav__link">
+        与人相处的诀窍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%88%AB%E4%BA%BA%E5%96%9C%E6%AC%A2/" class="md-nav__link">
+        可以被别人喜欢
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E8%B5%A2%E5%BE%97%E5%88%AB%E4%BA%BA%E7%9A%84%E8%B5%9E%E5%90%8C/" class="md-nav__link">
+        赢得别人的赞同
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E9%A2%86%E5%AF%BC%E8%80%85%E5%BF%85%E9%A1%BB%E9%A2%86%E6%82%9F%E7%9A%84/" class="md-nav__link">
+        领导者知晓的
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E5%AF%BB%E6%89%BE%E4%BA%BA%E7%94%9F%E4%B9%8B%E8%B7%AF/" class="md-nav__link">
+        寻找人生之路
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/7%E4%B8%AA%E4%B9%A0%E6%83%AF/" class="md-nav__link">
+        7个习惯
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E4%BD%9B%E6%B3%95/" class="md-nav__link">
+        佛法中解脱的方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E9%9A%8F%E4%BE%BF%E8%AE%B0%E8%AE%B0/" class="md-nav__link">
+        随便记记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/NSCA/" class="md-nav__link">
+        NSCA笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/system/centos7/系统日志1.md" title="编辑此页" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="syslog-ng">系统日志 syslog-ng 服务</h1>
+<p>系统日志服务比较常见的有三种：syslog、rsyslog、和syslog-ng</p>
+<p>syslog：<a href="https://en.wikipedia.org/wiki/Syslog">系统日志 - 维基百科 (wikipedia.org)</a>   诞生于1980年</p>
+<p>rsyslog：<a href="https://en.wikipedia.org/wiki/Rsyslog">Rsyslog - 维基百科 (wikipedia.org)</a>   项目始于 2004 年</p>
+<p>syslog-ng：<a href="https://en.wikipedia.org/wiki/Syslog-ng">syslog-ng - 维基百科 (wikipedia.org)</a>   项目始于1998年 </p>
+<pre class="highlight"><code>[root@VM-0-16-centos ~]# rpm -ql syslog-ng
+/etc/logrotate.d/syslog
+/etc/syslog-ng
+/etc/syslog-ng/conf.d
+/etc/syslog-ng/patterndb.d
+/etc/syslog-ng/scl.conf
+/etc/syslog-ng/syslog-ng.conf
+/usr/bin/loggen
+/usr/bin/pdbtool
+/usr/bin/update-patterndb
+/usr/lib/systemd/system/syslog-ng.service
+/usr/lib64/libsyslog-ng-3.5.6.so
+/usr/lib64/syslog-ng/libaffile.so
+/usr/lib64/syslog-ng/libafprog.so
+/usr/lib64/syslog-ng/libafsocket-notls.so
+/usr/lib64/syslog-ng/libafsocket-tls.so
+/usr/lib64/syslog-ng/libafsocket.so
+/usr/lib64/syslog-ng/libafstomp.so
+/usr/lib64/syslog-ng/libafuser.so
+/usr/lib64/syslog-ng/libbasicfuncs.so
+/usr/lib64/syslog-ng/libconfgen.so
+/usr/lib64/syslog-ng/libcryptofuncs.so
+/usr/lib64/syslog-ng/libcsvparser.so
+/usr/lib64/syslog-ng/libdbparser.so
+/usr/lib64/syslog-ng/liblinux-kmsg-format.so
+/usr/lib64/syslog-ng/libsyslogformat.so
+/usr/lib64/syslog-ng/libsystem-source.so
+/usr/sbin/syslog-ng
+/usr/sbin/syslog-ng-ctl
+/usr/share/doc/syslog-ng-3.5.6
+/usr/share/doc/syslog-ng-3.5.6/AUTHORS
+/usr/share/doc/syslog-ng-3.5.6/COPYING
+/usr/share/doc/syslog-ng-3.5.6/NEWS
+/usr/share/doc/syslog-ng-3.5.6/bof-2002-09-27.txt
+/usr/share/doc/syslog-ng-3.5.6/dos-2000-11-22.txt
+/usr/share/doc/syslog-ng-3.5.6/relogger.pl
+/usr/share/doc/syslog-ng-3.5.6/syslog-ng.conf.doc
+/usr/share/doc/syslog-ng-3.5.6/syslog2ng
+/usr/share/man/man1/loggen.1.gz
+/usr/share/man/man1/pdbtool.1.gz
+/usr/share/man/man1/syslog-ng-ctl.1.gz
+/usr/share/man/man5/syslog-ng.conf.5.gz
+/usr/share/man/man8/syslog-ng.8.gz
+/usr/share/syslog-ng
+/usr/share/syslog-ng/include
+/usr/share/syslog-ng/include/scl
+/usr/share/syslog-ng/include/scl/pacct
+/usr/share/syslog-ng/include/scl/pacct/plugin.conf
+/usr/share/syslog-ng/include/scl/rewrite
+/usr/share/syslog-ng/include/scl/rewrite/cc-mask.conf
+/usr/share/syslog-ng/include/scl/syslogconf
+/usr/share/syslog-ng/include/scl/syslogconf/README
+/usr/share/syslog-ng/include/scl/syslogconf/convert-syslogconf.awk
+/usr/share/syslog-ng/include/scl/syslogconf/plugin.conf
+/usr/share/syslog-ng/include/scl/system
+/usr/share/syslog-ng/include/scl/system/plugin.conf
+/usr/share/syslog-ng/syslog-ng.vim
+/usr/share/syslog-ng/xsd
+/usr/share/syslog-ng/xsd/patterndb-1.xsd
+/usr/share/syslog-ng/xsd/patterndb-2.xsd
+/usr/share/syslog-ng/xsd/patterndb-3.xsd
+/usr/share/syslog-ng/xsd/patterndb-4.xsd
+/usr/share/vim
+/usr/share/vim/vim73
+/usr/share/vim/vim73/syntax
+/usr/share/vim/vim73/syntax/syslog-ng.vim
+/var/lib/syslog-ng</code></pre>
+<p>syslog-ng 命令</p>
+<pre class="highlight"><code class="language-ini">
+名称
+       syslog-ng - syslog-ng 系统记录器应用程序
+
+简介
+       syslog-ng [options]
+
+描述
+       本手册页仅为摘要；有关syslog ng的完整文档，请参阅《syslog ng开放源代码版管理员指南》[1] 或 syslog ng官方网站[2]。
+
+       syslog ng OSE应用程序是一个灵活且高度可扩展的系统日志应用程序。通常，syslog ng用于管理日志消息并实现集中式日志记录，其目的是在单个中央日志服务器上收集多个设备的日志消息。不同的设备（称为syslog ng客户端）都运行syslog ng，并从各种应用程序、文件和其他来源收集日志消息。客户端将所有重要的日志消息发送到远程syslog ng服务器，服务器在那里对它们进行排序和存储。
+
+选项
+       --cfgfile &lt;file&gt; or -f &lt;file&gt;
+           使用指定的配置文件。
+
+       --chroot &lt;dir&gt; or -C &lt;dir&gt;
+           将根目录更改为指定的目录。配置文件是在chroot之后读取的，因此配置文件必须在chroot中可用。通过这种方式，还可以在记录之后重新加载syslog-ng配置。但是，请注意，--user和--group选项是在记录之前解析的。
+
+       --debug or -d
+           在调试模式下启动syslog ng。
+
+       --default-modules
+           自动加载的模块的逗号分隔列表。未自动加载的模块可以通过在syslog ng OSE配置文件中包含@module＜modulename＞语句来加载。默认情况下加载以下模块：affile、afprog、afsocket、afuser、basicfuncs、csvparser、dbparser、syslogformat、afsql。仅在syslog ng Open Source Edition 3.3及更高版本中提供。
+
+       --enable-core
+           启用syslog ng在崩溃时写入核心文件，以帮助支持和调试。
+
+       --fd-limit &lt;number&gt;
+           设置所需文件描述符（fd-s）的最小数量；这设置了syslog ng可以同时打开的文件数。默认值：4096。请注意，这不会覆盖主机的全局ulimit设置。
+
+       --foreground or -F
+           不要进行后台处理，在前台运行。
+
+       --group &lt;group&gt; or -g &lt;group&gt;
+           初始化配置文件后切换到指定的组。
+
+       --help or -h
+           打印帮助信息
+
+       --module-registry
+           显示可用模块的列表和说明。请注意，并不是所有这些模块都是自动加载的，只有在--default modules选项中指定的模块。仅在syslog ng Open Source Edition 3.3及更高版本中提供。
+
+       --no-caps
+           在没有功能支持的情况下，以root身份运行syslog ng。这是默认行为。在Linux上，如果syslog ng是在启用--enable-Linux-caps选项的情况下编译的，则可以以非root身份运行syslog ng并提供功能支持。（执行syslog ng--version以显示已启用的生成参数列表。）
+
+       --persist-file &lt;persist-file&gt; or -R &lt;persist-file&gt;
+           设置存储持久选项和数据的syslog-ng.persistent文件的路径和名称。
+
+       --pidfile &lt;pidfile&gt; or -p &lt;pidfile&gt;
+           设置存储主进程PID的PID文件的路径。
+
+       --preprocess-into &lt;output-file&gt;
+           处理完配置文件并解析了包含的文件和变量后，将生成的配置写入指定的输出文件。仅在syslog ng Open Source Edition 3.3及更高版本中提供。
+
+       --process-mode &lt;mode&gt;
+           设置如何在前台（主要用于调试）、后台作为后台进程或安全后台模式下运行syslog ng。默认情况下，syslog ng在安全后台模式下运行。此模式创建一个名为supervisoring syslog ng的主管进程，如果系统日志ng崩溃，该进程将重新启动。
+
+       --stderr or -e
+           将syslog ng的内部消息记录到stderr。主要与--foreground选项一起用于调试目的。如果未指定，syslog ng将把此类消息记录到其内部源。
+
+       --syntax-only or -s
+          验证配置文件的语法是否正确，然后退出。
+
+       --user &lt;user&gt; or -u &lt;user&gt;
+           在初始化配置文件（以及可选的chrooting）后切换到指定的用户。请注意，如果指定的用户没有创建/dev/log文件的权限，则不可能重新加载syslog ng配置。
+
+       --verbose or -v
+           启用用于排除syslog ng故障的详细日志记录。
+
+       --version or -V
+           显示版本号和编译信息，以及可用模块的列表和简短描述。有关可用模块的详细描述，请参阅--module注册表选项。请注意，并不是所有这些模块都是自动加载的，只有在--default modules选项中指定的模块。
+
+       --worker-threads
+           设置syslog ng OSE可以使用的辅助线程数，包括主syslog ng OS E线程。请注意，syslog ng OSE中的某些操作可以使用不受此选项限制的线程。只有当syslog ng OSE在多线程模式下运行时，此设置才有效。仅在syslog ng Open Source Edition 3.3及更高版本中提供。有关详细信息，请参阅syslog ng Open Source Edition 3.3管理员指南。
+
+
+
+其他
+       syslog-ng.conf(5)
+
+       syslog ng OSE 3.3管理员指南[1]
+
+       如果您在使用syslog ng时遇到任何问题或需要帮助，请访问syslog ng wiki[3]或syslog ng邮件列表[4]。
+
+       有关syslog ng的新闻和通知，请访问syslog ng Insider博客[5]。
+
+作者
+      本手册页由BalaBit文档团队编写&lt;documentation@balabit.com&gt;。
+
+版权
+
+       作者根据GNU通用公共许可证第2版或更新版本（GPL v2+）的条款，授予复制、分发和/或修改本手册页面的权限。
+
+后记
+        1. 《syslog ng开放源代码版管理员指南》
+           http://www.balabit.com/support/documentation/
+
+        2. syslog ng官方网站
+           http://www.balabit.com/network-security/syslog-ng/
+
+        3. 访问 syslog-ng wiki
+           http://www.balabit.com/wiki/syslog-ng-faq
+
+        4. syslog-ng 邮件列表
+           https://lists.balabit.hu/mailman/listinfo/syslog-ng
+
+        5. syslog-ng  内部博客
+           http://insider.blogs.balabit.com</code></pre>
+<p>配置文件 syslog-ng.conf</p>
+<pre class="highlight"><code class="language-ini">SYSLOG-NG.CONF(5)               The syslog-ng.conf 手册页               SYSLOG-NG.CONF(5)
+
+
+名字
+       syslog-ng.conf - syslog-ng应用程序 配置文件
+
+简介
+       syslog-ng.conf
+
+DESCRIPTION
+       本手册页仅为摘要；有关syslog ng的完整文档，请参阅《syslog ng开放源代码版管理员指南》[1]或syslog ng官方网站[2]。syslog ng OSE应用程序是一个灵活且高度可扩展的系统日志应用程序。通常，syslog ng用于管理日志消息并实现集中式日志记录，其目的是在单个中央日志服务器上收集多个设备的日志消息。不同的设备（称为syslog ng客户端）都运行syslog ng，并从各种应用程序、文件和其他来源收集日志消息。客户端将所有重要的日志消息发送到远程syslog ng服务器，服务器在那里对它们进行排序和存储。syslog ng应用程序读取传入消息并将其转发到选定的目的地。syslog ng应用程序可以接收来自文件、远程主机和其他来源的消息。日志消息在一个定义的源中输入syslog ng，并发送到一个或多个目的地。来源和目的地是独立的对象；日志路径定义syslogng对消息的处理方式，将源连接到目标。日志路径由一个或多个源和一个或更多个目的地组成；从源到达的消息被发送到日志路径中列出的每个目的地。在syslog ng中定义的日志路径称为日志语句。可选地，日志路径可以包括筛选器。过滤器是只选择某些消息的规则，例如，只选择特定应用程序发送的消息。如果日志路径包含筛选器，则syslog ng只将满足筛选器规则的消息发送到日志路径中设置的目的地。
+
+配置 SYSLOG-NG
+        配置文件的主体由对象定义组成：源、目的地、日志路径定义接收的日志消息以及发送的位置。syslog ng配置文件中使用的所有标识符、选项名称和属性以及任何其他字符串都区分大小写。在另一个语句中引用对象之前，必须先定义对象。对象定义（也称为语句）具有以下语法：
+
+               object_type object_id {&lt;options&gt;};
+
+·对象的类型: 源, 目的地, 日志, 滤波器, 解析器, 重写规则, 或者 模板.
+
+·object_id: 标识对象的唯一名称。使用保留字作为标识符时，请将标识符用引号括起来。
+
+               提示：使用与他们识别的对象类型相关的标识符。例如，用s_作为源对象的前缀，用d_作为目的地的前缀，依此类推。
+
+·Parameters: 对象的参数，用大括号｛parameters｝括起来。
+
+·Semicolon: 对象定义以分号（；）结尾。
+
+           例如，下面的行定义了一个源，并将其称为s_internal。
+
+               source s_internal { internal(); };
+
+           稍后可以使用对象的ID在其他语句中引用该对象，例如，以前的源用作以下日志语句的参数：
+
+               log { source(s_internal); destination(d_file); };
+
+ ·语句中的参数和选项类似于C编程语言的函数调用：选项的名称后面跟着一个参数列表，参数列表括在括号内，并以分号结束。
+
+              option(parameter1, parameter2); option2(parameter1, parameter2);
+
+              例如，以下源语句有三个选项；前两个选项（file（）和follow_freq（））只有一个参数，而第三个选项（flags（））有两个参数：
+                            source s_tail { file("/var/log/apache/access.log"  follow_freq(1) flags(no-parse, validate-utf8)); };
+
+              对象可能具有必需参数和可选参数。必需的参数是位置参数，这意味着必须按照定义的顺序指定这些参数。可以使用选项（值）格式以任何顺序指定可选参数。如果未指定参数（可选或必需），则使用其默认值。参数及其默认值列在特定对象的参照部分中。
+
+              示例1。使用必需和可选参数unix-stream（）源驱动程序有一个必需的参数：要侦听的套接字的名称。可选参数以任何顺序跟随套接字名称，因此以下源定义具有相同的效果：
+
+               source s_demo_stream1 {unix-stream("/dev/log" max-connections(10) group(log)); };
+               source s_demo_stream2 {unix-stream("/dev/log" group(log) max-connections(10)); };
+
+·有些选项是全局选项，或者可以全局设置，例如，syslog ng OSE是否应该使用DNS解析来解析IP地址。全局选项详见？？？。
+
+               options { use_dns(no); };
+
+·syslog ng配置文件中使用的所有标识符、属性和任何其他字符串都区分大小写。
+
+·对象可以在定义之前使用。
+
+·要在配置文件中添加注释，请以#开头一行，然后写下您的注释。syslog ng将忽略这些行。
+
+# 注释: 这是一个流源
+source s_demo_stream {unix-stream("/dev/log" max-connections(10) group(log)); };
+
+日志语句的语法如下：
+
+           log {
+               source(s1); source(s2); ...
+               optional_element(filter1|parser1|rewrite1); optional_element(filter2|parser2|rewrite2);...
+               destination(d1); destination(d2); ...
+               flags(flag1[, flag2...]);
+               };
+
+下面的log语句将所有到达本地主机的消息发送到远程服务器。
+
+           source s_localhost { tcp(ip(127.0.0.1) port(1999) ); };
+           destination d_tcp { tcp("10.1.2.3" port(1999); localport(999)); };
+           log { source(s_localhost); destination(d_tcp); };
+
+syslog-ng应用程序有许多全局选项来管理DNS使用、使用的时间戳格式以及其他常规点。每个选项可能都有参数，类似于驱动程序规范。要设置全局选项，请使用以下语法将选项语句添加到syslog ng配置文件中：
+
+options { option1(params); option2(params); ... };
+
+下面列出了syslog ng中可用的源、目标和筛选器。有关详细信息，请参阅《syslog ng管理员指南》[1]。
+
+       -       .sp
+       表1。syslog ng中可用的源驱动程序
+       ┌────────────────────────────┬────────────────────────────────────────────────────┐
+       │名字                         │ 描述                                               │
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │internal()                  │ 在syslog ng中内部生成的消息。                         │
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │file()                      │ 打开指定的文件并读取消息。                             │
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │pipe(), fifo                │ 打开指定的命名管道并读取消息。                          │
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │pacct()                     │  从Linux上的进程记帐日志中读取消息                     │
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │program()                   │ 打开指定的应用程序并从其标准输出中读取消息。              │
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │sun-stream(), sun-streams() │在Solaris系统上打开指定的STREAMS设备并读取传入消息。      │
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │syslog()                    │ 使用新的IETF标准syslog协议侦听传入消息。                |
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │system()                    │ 自动检测syslog ng OSE在哪个平台上运行，并收集该平台的本机日志消息。│
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │tcp(), tcp6()               │ 分别通过IPv4和IPv6网络使用BSD syslog协议在指定的TCP端口上侦听传入消息。│
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │udp(), udp6()               │ 分别通过IPv4和IPv6网络使用BSD syslog协议在指定的UDP端口上侦听传入消息。│
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │unix-dgram()                │ 以SOCK_DGRAM模式打开指定的unix套接字并侦听传入消息。     │
+       ├────────────────────────────┼────────────────────────────────────────────────────┤
+       │unix-stream()               │ 以SOCK_STREAM模式打开指定的unix套接字并侦听传入消息。    │
+       └────────────────────────────┴────────────────────────────────────────────────────┘
+
+       表 2. syslog ng中可用的目标驱动程序
+       ┌─────────────────┬────────────────────────────────────────────────────┐
+       │名字                         │ 描述                                    │
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │file()           │ 将消息写入指定的文件。                                 │
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │fifo(), pipe()   │ 将消息写入指定的命名管道。                             │
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │program()        │  分叉并启动指定的程序，并向其标准输入发送消息。            │
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │sql()            │ 将消息发送到SQL数据库。除了标准的syslog ng包之外，sql（）目标还需要安装特定于数据库的包。请参阅？？中适用于您的平台的部分？？？。                                                │
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │syslog()         │ 使用IETF系统日志协议将消息发送到指定的远程主机。IETF标准支持使用UDP、TCP和TLS网络协议的消息传输。                                                                           │
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │tcp() and tcp6() │ 分别通过IPv4和IPv6使用BSD syslog协议将消息发送到远程主机的指定TCP端口。│
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │udp() and udp6() │ 分别通过IPv4和IPv6使用BSD syslog协议将消息发送到远程主机的指定UDP端口。│
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │unix-dgram()     │ 以SOCK_DGRAM样式（BSD）将消息发送到指定的unix套接字。    |
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │unix-stream()    │ 以SOCK_STREAM样式（Linux）将消息发送到指定的unix套接字。 │
+       ├─────────────────┼────────────────────────────────────────────────────┤
+       │usertty()        │ 如果指定用户已登录，则向该用户的终端发送消息。             │
+       └─────────────────┴────────────────────────────────────────────────────┘
+
+       Table 3. syslog ng OSE中可用的筛选函数 
+       ┌──────────────────────┬───────────────────────────────────────────────────┐
+       │Name                  │ Description                                       │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │facility()            │ 根据发送功能筛选邮件。                                │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │filter()              │ 调用另一个筛选器函数。                                │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │host()                │ 根据发送主机筛选邮件。                                │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │level() or priority() │ 根据邮件的优先级筛选邮件。                             │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │match()               │ 使用正则表达式可以根据指定的标头或内容字段筛选消息。       │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │message()             │ 使用正则表达式根据邮件内容筛选邮件。                    │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │netmask()             │ 根据发送主机的IP地址筛选邮件。                         │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │program()             │ 根据发送应用程序筛选邮件。                            │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │source()              │ 选择指定syslog ng OSE源语句的消息。                   │
+       ├──────────────────────┼───────────────────────────────────────────────────┤
+       │tags()                │ 选择具有指定标记的邮件。                              │
+       └──────────────────────┴───────────────────────────────────────────────────┘
+
+文件
+       /home/algernon/install/syslog-ng/3.5/
+
+       /home/algernon/install/syslog-ng/3.5/etc/syslog-ng.conf
+
+SEE ALSO
+       syslog-ng(8)
+
+       The syslog-ng OSE 3.3 Administrator Guide[1]
+
+       如果您在使用syslog ng时遇到任何问题或需要帮助，请访问syslog ng wiki[3]或syslog ng邮件列表[4]。
+
+       有关syslog ng的新闻和通知，请访问syslog ng Insider博客[5]。
+
+作者
+       本手册页由BalaBit文档团队编写&lt;documentation@balabit.com&gt;。
+
+COPYRIGHT
+
+       作者根据GNU通用公共许可证第2版或更新版本（GPL v2+）的条款，授予复制、分发和/或修改本手册页面的权限。
+
+NOTES
+        1. 《syslog ng开放源代码版管理员指南》
+           http://www.balabit.com/support/documentation/
+
+        2. syslog ng官方网站
+           http://www.balabit.com/network-security/syslog-ng/
+
+        3. 访问syslog ng wiki
+           http://www.balabit.com/wiki/syslog-ng-faq
+
+        4. syslog ng邮件列表
+           https://lists.balabit.hu/mailman/listinfo/syslog-ng
+
+        5. syslog ng内幕博客
+           http://insider.blogs.balabit.com
+
+
+
+syslog-ng Open Source Edition                                          02/26/2014                                                     SYSLOG-NG.CONF(5)</code></pre>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: linux文件系统的简单描述" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              linux文件系统的简单描述
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%972/" class="md-footer__link md-footer__link--next" aria-label="下一页: 系统日志rsyslog服务" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              系统日志rsyslog服务
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:yinzhipeng361@tom.com" target="_blank" rel="noopener" title="给我发送电子邮件" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://github.com/yinzhipeng123" target="_blank" rel="noopener" title="github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://yinzhipeng123.github.io/markdown_log/feed_rss_updated.xml" target="_blank" rel="noopener" title="rss订阅地址" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M180.5 74.262C80.813 74.262 0 155.633 0 256s80.819 181.738 180.5 181.738S361 356.373 361 256 280.191 74.262 180.5 74.262Zm288.25 10.646c-49.845 0-90.245 76.619-90.245 171.095s40.406 171.1 90.251 171.1 90.251-76.619 90.251-171.1H559c0-94.503-40.4-171.095-90.248-171.095Zm139.506 17.821c-17.526 0-31.735 68.628-31.735 153.274s14.2 153.274 31.735 153.274S640 340.631 640 256c0-84.649-14.215-153.271-31.742-153.271Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.js"></script>
+      
+        <script src="../../../javascripts/busuanzi.pure.mini.js"></script>
+      
+    
+  </body>
+</html>
