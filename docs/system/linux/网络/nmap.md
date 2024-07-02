@@ -4,6 +4,10 @@
 
 
 
+在线ipv6检测：http://www.ipv6scanner.com/cgi-bin/main.py 
+
+
+
 nmap的帮助手册真的是又臭又长，及时是help提供的内容也非常多，以下是gpt4理解并翻译的内容。
 
 nmap - 网络探索工具、安全或端口扫描仪
