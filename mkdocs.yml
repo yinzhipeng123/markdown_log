@@ -497,9 +497,9 @@ nav:
     - 路由器:
       - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
       - 输入配置: Cloud_Computing/路由器/输入配置.md
-      - ospf: docs/Cloud_Computing/路由器/OSPF.md
-      - vlan: docs/Cloud_Computing/路由器/VLAN.md
-      - vxlan: docs/Cloud_Computing/路由器/vxlan.md
+      - ospf: Cloud_Computing/路由器/OSPF.md
+      - vlan: Cloud_Computing/路由器/VLAN.md
+      - vxlan: Cloud_Computing/路由器/vxlan.md
     - 安全:
        - DNS劫持: security/DNS劫持.md
 - 工具和知识:
