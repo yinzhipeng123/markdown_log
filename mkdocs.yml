@@ -210,6 +210,8 @@ nav:
   - java:
       - java运维命令: programming_language/java/java.md
       - java_dump命令: programming_language/java/java_dump.md
+      - jvm参数调优: programming_language/java/jvm.md
+      - 新生代_老年代: programming_language/java/新生代_老年代.md
   - awk:
     - programming_language/awk/index.md
     - 基础语法: programming_language/awk/awk.md
@@ -300,6 +302,14 @@ nav:
     - n2n: middleware/n2n/n2n.md
   - Pinpoint:
     - Pinpoint安装: middleware/pinpoint/pinpoint_install.md
+  - 负载均衡:
+    - lvs: middleware/load_balance/lvs.md
+  - MQ:
+      - mq种类: middleware/MQ/mq.md
+      - mq对比: middleware/MQ/mqvs.md
+      - rocketmq部署: middleware/MQ/rocketmq.md
+  - CICD:
+    - CICD概念: middleware/CICD/cicd.md
 
   - Nginx:
       - Nginx部署: middleware/nginx/nginx_install.md
@@ -414,6 +424,9 @@ nav:
         - 查询raid卡信息-storcli命令: system/centos7/storcli.md
         - 查询raid卡信息-MegaCli命令: system/centos7/MegaCli.md
         - ulimit和limit文件: system/linux/IO/ulimit.md
+        - kdump: system/linux/IO/kdump.md
+        - 分析vmcore: system/linux/IO/分析vmcore.md
+        - sysrq-trigger: system/linux/IO/sysrq-trigger.md
     - 网络相关:
         - TCP图解: system/linux/网络/tcp.md
         - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
@@ -435,6 +448,8 @@ nav:
         - 查看域名解析: system/linux/网络/dig.md
         - nc命令: system/linux/网络/nc命令.md
         - DNS缓存: system/linux/网络/DNS缓存.md
+        - ifconfig详解: system/linux/网络/ifconfig详解.md
+        - ip命令: system/linux/网络/ip.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
@@ -461,6 +476,7 @@ nav:
       - 常用软件: system/mac/软件.md
       - 安装Homebrew: system/mac/安装Homebrew.md
       - MAC安装Python: system/mac/MAC安装Python.md
+      - cheerytree安装: system/mac/cheerytree.md
   - 汇编基础:
       - win10下搭建8086汇编环境: system/汇编/win10-masm.md
       - 存储单元: system/汇编/存储单元.md
@@ -478,6 +494,11 @@ nav:
     - IaaS:
         - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
     - Openstack: Cloud_Computing/openstack.md
+    - 路由器:
+      - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
+      - 输入配置: Cloud_Computing/路由器/输入配置.md
+    - 安全:
+       - DNS劫持: security/DNS劫持.md
 - 工具和知识:
   - tool/index.md
   - git及github的轻度教程: tool/github使用.md
@@ -487,6 +508,8 @@ nav:
   - 常用地址: tool/url.md
   - P99: tool/p99.md
   - github代码对比: tool/github.md
+  - brew使用: tool/brew.md
+  - siege压测: tool/siege压测.md
 - 笔记:
   - 《情商》丹尼尔·戈尔曼——笔记: soft/《情商》笔记.md
   - 爱情: soft/爱情.md
