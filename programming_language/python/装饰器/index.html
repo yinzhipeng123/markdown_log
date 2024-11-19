@@ -868,6 +868,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    装饰器的基本概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    一个简单的例子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    工作原理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    装饰器的常见应用
+  </a>
+  
+    <nav class="md-nav" aria-label="装饰器的常见应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 记录函数调用日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2. 权限验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 计算函数执行时间
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    多装饰器叠加
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7322,6 +7391,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    装饰器的基本概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    一个简单的例子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    工作原理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    装饰器的常见应用
+  </a>
+  
+    <nav class="md-nav" aria-label="装饰器的常见应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 记录函数调用日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2. 权限验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 计算函数执行时间
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    多装饰器叠加
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7566,6 +7704,119 @@ myfunc1()
         # 这里就不做实现了
         pass</code></pre>
 <p>从现在起，<code>@email_logit</code> 将会和 <code>@logit</code> 产生同样的效果，但是在打日志的基础上，还会多发送一封邮件给管理员。</p>
+<p>当然可以！Python的<strong>装饰器</strong>（decorator）是一个用于修改函数或类行为的函数。它可以在不改变原始函数或类代码的情况下，为它们增加功能。</p>
+<h3 id="_6"><strong>装饰器的基本概念</strong></h3>
+<ul>
+<li><strong>本质</strong>：装饰器是一个函数，它接受另一个函数（或类）作为参数，并返回一个新函数（或类）。</li>
+<li><strong>用途</strong>：常用于代码复用、权限验证、日志记录、性能测试等。</li>
+</ul>
+<hr />
+<h3 id="_7"><strong>一个简单的例子</strong></h3>
+<pre class="highlight"><code class="language-python"># 一个简单的装饰器
+def my_decorator(func):
+    def wrapper():
+        print("装饰器：在调用原函数之前执行")
+        func()
+        print("装饰器：在调用原函数之后执行")
+    return wrapper
+
+# 用装饰器装饰函数
+@my_decorator
+def say_hello():
+    print("Hello, Python!")
+
+# 调用被装饰的函数
+say_hello()</code></pre>
+<p><strong>输出：</strong>
+<pre class="highlight"><code>装饰器：在调用原函数之前执行
+Hello, Python!
+装饰器：在调用原函数之后执行</code></pre></p>
+<hr />
+<h3 id="_8"><strong>工作原理</strong></h3>
+<ol>
+<li><code>@my_decorator</code> 是装饰器语法糖，它等价于：
+   <pre class="highlight"><code class="language-python">say_hello = my_decorator(say_hello)</code></pre></li>
+<li><code>my_decorator</code> 返回一个 <code>wrapper</code> 函数，它取代了原来的 <code>say_hello</code>。</li>
+</ol>
+<hr />
+<h3 id="_9"><strong>装饰器的常见应用</strong></h3>
+<h4 id="1_1">1. <strong>记录函数调用日志</strong></h4>
+<pre class="highlight"><code class="language-python">def log_decorator(func):
+    def wrapper(*args, **kwargs):
+        print(f"调用了函数 {func.__name__}，参数：{args}, {kwargs}")
+        return func(*args, **kwargs)
+    return wrapper
+
+@log_decorator
+def add(a, b):
+    return a + b
+
+print(add(3, 5))</code></pre>
+<h4 id="2_2">2. <strong>权限验证</strong></h4>
+<pre class="highlight"><code class="language-python">def auth_decorator(func):
+    def wrapper(user):
+        if user != "admin":
+            print("权限不足！")
+            return
+        return func(user)
+    return wrapper
+
+@auth_decorator
+def access_dashboard(user):
+    print(f"欢迎 {user}，进入后台管理系统")
+
+access_dashboard("guest")  # 输出：权限不足！
+access_dashboard("admin")  # 输出：欢迎 admin，进入后台管理系统</code></pre>
+<h4 id="3">3. <strong>计算函数执行时间</strong></h4>
+<pre class="highlight"><code class="language-python">import time
+
+def timer_decorator(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"函数 {func.__name__} 执行时间：{end - start:.2f} 秒")
+        return result
+    return wrapper
+
+@timer_decorator
+def slow_function():
+    time.sleep(2)
+    print("执行完成")
+
+slow_function()</code></pre>
+<hr />
+<h3 id="_10"><strong>多装饰器叠加</strong></h3>
+<p>当一个函数有多个装饰器时，装饰器会从下到上依次执行：</p>
+<pre class="highlight"><code class="language-python">def decorator1(func):
+    def wrapper():
+        print("装饰器1")
+        func()
+    return wrapper
+
+def decorator2(func):
+    def wrapper():
+        print("装饰器2")
+        func()
+    return wrapper
+
+@decorator1
+@decorator2
+def my_function():
+    print("执行原函数")
+
+my_function()</code></pre>
+<p><strong>输出：</strong>
+<pre class="highlight"><code>装饰器1
+装饰器2
+执行原函数</code></pre></p>
+<hr />
+<h3 id="_11"><strong>小结</strong></h3>
+<ol>
+<li>装饰器是增强函数功能的简洁方法。</li>
+<li>通过 <code>*args</code> 和 <code>**kwargs</code> 支持任意类型的函数参数。</li>
+<li>常用于日志、性能监控和代码复用场景。</li>
+</ol>
 
 
   

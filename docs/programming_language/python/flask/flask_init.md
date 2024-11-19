@@ -106,3 +106,105 @@ Request对象的重要属性如下所列：
 
 https://blog.csdn.net/qq_42666483/article/details/82526765
 
+
+
+
+
+在 Flask 中，`g` 对象是一个全局的上下文变量，用于在一次请求的生命周期内存储和共享数据。`g` 对象由 Flask 提供，它是 `flask.g` 模块中的一个特殊对象。以下是关于 `g` 对象的一些关键点和使用方法的详细讲解：
+
+---
+
+### **`g` 对象的特性**
+1. **请求上下文**：
+   - `g` 是和 Flask 的请求上下文绑定的，这意味着它的生命周期与当前请求是同步的。
+   - 每个请求会有自己的独立的 `g` 对象，彼此之间互不影响。
+
+2. **线程安全**：
+   - Flask 使用线程局部存储来实现 `g` 对象的线程隔离。即使在多线程环境中，每个线程都有自己的 `g` 对象。
+
+3. **动态属性**：
+   - `g` 是一个空对象（类似于 Python 的 `SimpleNamespace`），你可以动态地为它添加属性。
+
+4. **临时存储**：
+   - `g` 通常用来存储在请求中共享但只需要在请求范围内存在的数据。
+
+---
+
+### **常见使用场景**
+1. **存储数据库连接**：
+   在每次请求中，可以将数据库连接存储到 `g` 对象中，以便在请求结束时释放资源。
+
+   ```python
+   from flask import Flask, g
+   import sqlite3
+   
+   app = Flask(__name__)
+   
+   def get_db():
+       if 'db' not in g:
+           g.db = sqlite3.connect("example.db")
+       return g.db
+   
+   @app.teardown_appcontext
+   def close_db(exception):
+       db = g.pop('db', None)
+       if db is not None:
+           db.close()
+   
+   @app.route('/')
+   def index():
+       db = get_db()
+       # 使用数据库执行操作
+       return "Hello, Flask!"
+   ```
+
+2. **存储用户信息**：
+   当一个请求需要验证用户身份时，可以将用户对象存储到 `g` 中，方便后续访问。
+
+   ```python
+   from flask import Flask, g, request
+   
+   app = Flask(__name__)
+   
+   @app.before_request
+   def load_user():
+       # 假设我们从请求中获取用户 ID
+       user_id = request.headers.get('User-ID')
+       g.user = {"id": user_id, "name": "Test User"}  # 模拟用户信息
+   
+   @app.route('/profile')
+   def profile():
+       user = g.get('user')
+       if user:
+           return f"Hello, {user['name']}!"
+       return "User not found!", 404
+   ```
+
+3. **共享跨函数变量**：
+   `g` 提供了一种方便的方法来共享变量而无需显式传递。
+
+---
+
+### **常用方法**
+1. **`g.get(key, default=None)`**：
+   获取 `g` 对象中的属性，如果不存在则返回默认值。
+
+2. **动态赋值**：
+   可以直接通过 `g.<属性名>` 的形式设置任意数据。
+
+---
+
+### **注意事项**
+1. **只用于当前请求**：
+   - 不要将需要跨请求持久化的数据存储在 `g` 中，因为 `g` 对象只在请求期间有效。
+   
+2. **生命周期**：
+   - 在请求处理函数返回后，`g` 对象会被清理。因此，不能在请求之外访问它。
+
+3. **避免滥用**：
+   - 不要将 `g` 作为全局变量的替代品，过度依赖 `g` 会让代码难以维护。
+
+---
+
+### **总结**
+`g` 是 Flask 提供的一个方便工具，适合用于在请求范围内共享临时数据，避免显式传递参数的麻烦。在实际使用中，可以结合 `@app.before_request` 和 `@app.teardown_appcontext` 等钩子函数来管理和清理 `g` 中的数据。

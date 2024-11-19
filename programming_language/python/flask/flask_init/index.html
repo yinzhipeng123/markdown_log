@@ -7303,6 +7303,116 @@ def login_log():
 </table>
 <h2 id="flask-response">Flask Response对象</h2>
 <p>https://blog.csdn.net/qq_42666483/article/details/82526765</p>
+<p>在 Flask 中，<code>g</code> 对象是一个全局的上下文变量，用于在一次请求的生命周期内存储和共享数据。<code>g</code> 对象由 Flask 提供，它是 <code>flask.g</code> 模块中的一个特殊对象。以下是关于 <code>g</code> 对象的一些关键点和使用方法的详细讲解：</p>
+<hr />
+<h3 id="g"><strong><code>g</code> 对象的特性</strong></h3>
+<ol>
+<li><strong>请求上下文</strong>：</li>
+<li><code>g</code> 是和 Flask 的请求上下文绑定的，这意味着它的生命周期与当前请求是同步的。</li>
+<li>
+<p>每个请求会有自己的独立的 <code>g</code> 对象，彼此之间互不影响。</p>
+</li>
+<li>
+<p><strong>线程安全</strong>：</p>
+</li>
+<li>
+<p>Flask 使用线程局部存储来实现 <code>g</code> 对象的线程隔离。即使在多线程环境中，每个线程都有自己的 <code>g</code> 对象。</p>
+</li>
+<li>
+<p><strong>动态属性</strong>：</p>
+</li>
+<li>
+<p><code>g</code> 是一个空对象（类似于 Python 的 <code>SimpleNamespace</code>），你可以动态地为它添加属性。</p>
+</li>
+<li>
+<p><strong>临时存储</strong>：</p>
+</li>
+<li><code>g</code> 通常用来存储在请求中共享但只需要在请求范围内存在的数据。</li>
+</ol>
+<hr />
+<h3 id="_1"><strong>常见使用场景</strong></h3>
+<ol>
+<li><strong>存储数据库连接</strong>：
+   在每次请求中，可以将数据库连接存储到 <code>g</code> 对象中，以便在请求结束时释放资源。</li>
+</ol>
+<pre class="highlight"><code class="language-python">from flask import Flask, g
+import sqlite3
+
+app = Flask(__name__)
+
+def get_db():
+    if 'db' not in g:
+        g.db = sqlite3.connect("example.db")
+    return g.db
+
+@app.teardown_appcontext
+def close_db(exception):
+    db = g.pop('db', None)
+    if db is not None:
+        db.close()
+
+@app.route('/')
+def index():
+    db = get_db()
+    # 使用数据库执行操作
+    return "Hello, Flask!"</code></pre>
+<ol>
+<li><strong>存储用户信息</strong>：
+   当一个请求需要验证用户身份时，可以将用户对象存储到 <code>g</code> 中，方便后续访问。</li>
+</ol>
+<pre class="highlight"><code class="language-python">from flask import Flask, g, request
+
+app = Flask(__name__)
+
+@app.before_request
+def load_user():
+    # 假设我们从请求中获取用户 ID
+    user_id = request.headers.get('User-ID')
+    g.user = {"id": user_id, "name": "Test User"}  # 模拟用户信息
+
+@app.route('/profile')
+def profile():
+    user = g.get('user')
+    if user:
+        return f"Hello, {user['name']}!"
+    return "User not found!", 404</code></pre>
+<ol>
+<li><strong>共享跨函数变量</strong>：
+   <code>g</code> 提供了一种方便的方法来共享变量而无需显式传递。</li>
+</ol>
+<hr />
+<h3 id="_2"><strong>常用方法</strong></h3>
+<ol>
+<li>
+<p><strong><code>g.get(key, default=None)</code></strong>：
+   获取 <code>g</code> 对象中的属性，如果不存在则返回默认值。</p>
+</li>
+<li>
+<p><strong>动态赋值</strong>：
+   可以直接通过 <code>g.&lt;属性名&gt;</code> 的形式设置任意数据。</p>
+</li>
+</ol>
+<hr />
+<h3 id="_3"><strong>注意事项</strong></h3>
+<ol>
+<li><strong>只用于当前请求</strong>：</li>
+<li>
+<p>不要将需要跨请求持久化的数据存储在 <code>g</code> 中，因为 <code>g</code> 对象只在请求期间有效。</p>
+</li>
+<li>
+<p><strong>生命周期</strong>：</p>
+</li>
+<li>
+<p>在请求处理函数返回后，<code>g</code> 对象会被清理。因此，不能在请求之外访问它。</p>
+</li>
+<li>
+<p><strong>避免滥用</strong>：</p>
+</li>
+<li>不要将 <code>g</code> 作为全局变量的替代品，过度依赖 <code>g</code> 会让代码难以维护。</li>
+</ol>
+<hr />
+<h3 id="_4"><strong>总结</strong></h3>
+<p><code>g</code> 是 Flask 提供的一个方便工具，适合用于在请求范围内共享临时数据，避免显式传递参数的麻烦。在实际使用中，可以结合 <code>@app.before_request</code> 和 <code>@app.teardown_appcontext</code> 等钩子函数来管理和清理 <code>g</code> 中的数据。</p>
 
 
   
