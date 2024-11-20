@@ -24,6 +24,135 @@ $ ps -ef
 
 load数值的计算代码为：https://github.com/torvalds/linux/blob/master/fs/proc/loadavg.c
 
+
+
+### 内核代码如何统计load？
+
+内核使用调度器中的 `nr_running` 和 `nr_uninterruptible` 来计算运行队列的总任务数：
+
+`nr_running`：当前 `TASK_RUNNING` 的任务数。
+
+`nr_uninterruptible`：当前 `TASK_UNINTERRUPTIBLE` 的任务数。
+
+在 `get_avenrun` 函数中，负载值是这样统计的：
+
+```c
+count = nr_running() + nr_uninterruptible();
+```
+
+**`get_avenrun`** 是 Linux 内核中一个核心函数，用于获取系统的负载平均值（Load Average）。它是负载平均值从内核导出到用户空间的关键接口，主要被用于用户态工具（如 `uptime`、`top`、`w` 等）以显示系统的负载信息。
+
+
+
+---
+
+### `get_avenrun` 的主要用途
+**1.获取系统负载平均值**：
+
+返回 1 分钟、5 分钟和 15 分钟的负载平均值。
+
+这些值是通过 **指数加权移动平均（EWMA）算法** 持续更新的，保存在内核中的 `avenrun[]` 数组。
+
+**2.为用户态工具提供接口**：
+
+用户态工具通过系统调用（如 `/proc/loadavg` 文件）读取这些值，从而显示系统的负载信息。
+
+**3.为其他内核组件服务**：
+
+某些内核模块可能需要负载信息来辅助决策。例如：
+
+1.调整 CPU 频率（动态调频）。
+
+2.配置资源分配策略。
+
+---
+
+### `get_avenrun` 的代码实现
+`get_avenrun` 的具体实现如下（省略一些上下文）：
+
+```c
+void get_avenrun(unsigned long *loads, unsigned long offset, int shift)
+{
+    int i;
+
+    for (i = 0; i < 3; i++)
+        loads[i] = (avenrun[i] + offset) << shift;
+}
+```
+
+#### 代码解读：
+**1.输入参数**：
+
+`loads`：指向用户空间或其他内核模块的数组，用于存储计算结果。
+
+`offset`：通常是 `FIXED_1/200`，用来调整精度。
+
+`shift`：用于调整负载值的位移，通常是 `0` 或 `FSHIFT`。
+
+**2.核心逻辑**：
+
+遍历 `avenrun[]`，按需求调整值后填充到 `loads[]` 中。
+
+**3.输出结果**：
+
+1 分钟、5 分钟、15 分钟的负载值被写入 `loads[]`，通常以**固定点数（fixed-point）表示**。
+
+---
+
+### 固定点数的表示
+负载值在内核中以**固定点数（fixed-point）**表示，而不是普通浮点数：
+
+`avenrun[]` 中的值以 `FSHIFT`（通常为 11）为小数位偏移。
+
+这样可以避免在内核中使用性能开销更大的浮点数运算。
+
+---
+
+### `get_avenrun` 的调用场景
+**1.`/proc/loadavg` 文件**：
+
+用户通过读取 `/proc/loadavg` 文件获取负载平均值，系统会调用 `get_avenrun` 提供数据。
+
+相关代码：
+```c
+static int loadavg_proc_show(struct seq_file *m, void *v)
+{
+    unsigned long avnrun[3];
+
+    get_avenrun(avnrun, FIXED_1/200, 0);
+    seq_printf(m, "%lu.%02lu %lu.%02lu %lu.%02lu\n",
+               LOAD_INT(avnrun[0]), LOAD_FRAC(avnrun[0]),
+               LOAD_INT(avnrun[1]), LOAD_FRAC(avnrun[1]),
+               LOAD_INT(avnrun[2]), LOAD_FRAC(avnrun[2]));
+    return 0;
+}
+```
+
+**2.`uptime`、`top`、`w` 等工具**：
+
+这些工具间接读取 `/proc/loadavg` 或调用系统接口，最终依赖 `get_avenrun` 获取负载值。
+
+**3.内核模块**：
+
+动态负载均衡、资源管理、CPU 调频等需要参考系统的历史负载数据。
+
+---
+
+### `get_avenrun` 的关系图
+```plaintext
+             /proc/loadavg
+                   ↓
+            `loadavg_proc_show`
+                   ↓
+             `get_avenrun`
+                   ↓
+      使用 `avenrun[]` 提供负载值
+```
+
+---
+
+
+
 查看系统的load值
 
 ```bash

@@ -4770,6 +4770,67 @@
     前言
   </a>
   
+    <nav class="md-nav" aria-label="前言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load_1" class="md-nav__link">
+    内核代码如何统计load？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_avenrun" class="md-nav__link">
+    get_avenrun 的主要用途
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_avenrun_1" class="md-nav__link">
+    get_avenrun 的代码实现
+  </a>
+  
+    <nav class="md-nav" aria-label="get_avenrun 的代码实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    代码解读：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    固定点数的表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_avenrun_2" class="md-nav__link">
+    get_avenrun 的调用场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_avenrun_3" class="md-nav__link">
+    get_avenrun 的关系图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4795,21 +4856,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     内存原因
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     网络原因
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     锁
   </a>
   
@@ -8041,6 +8102,67 @@
     前言
   </a>
   
+    <nav class="md-nav" aria-label="前言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load_1" class="md-nav__link">
+    内核代码如何统计load？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_avenrun" class="md-nav__link">
+    get_avenrun 的主要用途
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_avenrun_1" class="md-nav__link">
+    get_avenrun 的代码实现
+  </a>
+  
+    <nav class="md-nav" aria-label="get_avenrun 的代码实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    代码解读：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    固定点数的表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_avenrun_2" class="md-nav__link">
+    get_avenrun 的调用场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_avenrun_3" class="md-nav__link">
+    get_avenrun 的关系图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -8066,21 +8188,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     内存原因
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     网络原因
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     锁
   </a>
   
@@ -8122,6 +8244,78 @@
 <p>简单来说，平均负载是指单位时间内，系统处于正在运行、可运行状态和不可中断状态的平均进程（普通进程+LWP）数，它和 CPU 使用率并没有直接关系。</p>
 <p>再简单可以把load看成<code>（正在运行的进程数+不可中断状态的进程数+不可中断状态进程数）</code>或者把 load看成<code>（R状态的进程+D状态的进程）</code>，这只是简单的来说，其实load是个拟合值，其中数学算法比较复杂，具体的计算方法在如下代码中。</p>
 <p>load数值的计算代码为：https://github.com/torvalds/linux/blob/master/fs/proc/loadavg.c</p>
+<h3 id="load_1">内核代码如何统计load？</h3>
+<p>内核使用调度器中的 <code>nr_running</code> 和 <code>nr_uninterruptible</code> 来计算运行队列的总任务数：</p>
+<p><code>nr_running</code>：当前 <code>TASK_RUNNING</code> 的任务数。</p>
+<p><code>nr_uninterruptible</code>：当前 <code>TASK_UNINTERRUPTIBLE</code> 的任务数。</p>
+<p>在 <code>get_avenrun</code> 函数中，负载值是这样统计的：</p>
+<pre class="highlight"><code class="language-c">count = nr_running() + nr_uninterruptible();</code></pre>
+<p><strong><code>get_avenrun</code></strong> 是 Linux 内核中一个核心函数，用于获取系统的负载平均值（Load Average）。它是负载平均值从内核导出到用户空间的关键接口，主要被用于用户态工具（如 <code>uptime</code>、<code>top</code>、<code>w</code> 等）以显示系统的负载信息。</p>
+<hr />
+<h3 id="get_avenrun"><code>get_avenrun</code> 的主要用途</h3>
+<p><strong>1.获取系统负载平均值</strong>：</p>
+<p>返回 1 分钟、5 分钟和 15 分钟的负载平均值。</p>
+<p>这些值是通过 <strong>指数加权移动平均（EWMA）算法</strong> 持续更新的，保存在内核中的 <code>avenrun[]</code> 数组。</p>
+<p><strong>2.为用户态工具提供接口</strong>：</p>
+<p>用户态工具通过系统调用（如 <code>/proc/loadavg</code> 文件）读取这些值，从而显示系统的负载信息。</p>
+<p><strong>3.为其他内核组件服务</strong>：</p>
+<p>某些内核模块可能需要负载信息来辅助决策。例如：</p>
+<p>1.调整 CPU 频率（动态调频）。</p>
+<p>2.配置资源分配策略。</p>
+<hr />
+<h3 id="get_avenrun_1"><code>get_avenrun</code> 的代码实现</h3>
+<p><code>get_avenrun</code> 的具体实现如下（省略一些上下文）：</p>
+<pre class="highlight"><code class="language-c">void get_avenrun(unsigned long *loads, unsigned long offset, int shift)
+{
+    int i;
+
+    for (i = 0; i &lt; 3; i++)
+        loads[i] = (avenrun[i] + offset) &lt;&lt; shift;
+}</code></pre>
+<h4 id="_2">代码解读：</h4>
+<p><strong>1.输入参数</strong>：</p>
+<p><code>loads</code>：指向用户空间或其他内核模块的数组，用于存储计算结果。</p>
+<p><code>offset</code>：通常是 <code>FIXED_1/200</code>，用来调整精度。</p>
+<p><code>shift</code>：用于调整负载值的位移，通常是 <code>0</code> 或 <code>FSHIFT</code>。</p>
+<p><strong>2.核心逻辑</strong>：</p>
+<p>遍历 <code>avenrun[]</code>，按需求调整值后填充到 <code>loads[]</code> 中。</p>
+<p><strong>3.输出结果</strong>：</p>
+<p>1 分钟、5 分钟、15 分钟的负载值被写入 <code>loads[]</code>，通常以<strong>固定点数（fixed-point）表示</strong>。</p>
+<hr />
+<h3 id="_3">固定点数的表示</h3>
+<p>负载值在内核中以<strong>固定点数（fixed-point）</strong>表示，而不是普通浮点数：</p>
+<p><code>avenrun[]</code> 中的值以 <code>FSHIFT</code>（通常为 11）为小数位偏移。</p>
+<p>这样可以避免在内核中使用性能开销更大的浮点数运算。</p>
+<hr />
+<h3 id="get_avenrun_2"><code>get_avenrun</code> 的调用场景</h3>
+<p><strong>1.<code>/proc/loadavg</code> 文件</strong>：</p>
+<p>用户通过读取 <code>/proc/loadavg</code> 文件获取负载平均值，系统会调用 <code>get_avenrun</code> 提供数据。</p>
+<p>相关代码：
+<pre class="highlight"><code class="language-c">static int loadavg_proc_show(struct seq_file *m, void *v)
+{
+    unsigned long avnrun[3];
+
+    get_avenrun(avnrun, FIXED_1/200, 0);
+    seq_printf(m, "%lu.%02lu %lu.%02lu %lu.%02lu\n",
+               LOAD_INT(avnrun[0]), LOAD_FRAC(avnrun[0]),
+               LOAD_INT(avnrun[1]), LOAD_FRAC(avnrun[1]),
+               LOAD_INT(avnrun[2]), LOAD_FRAC(avnrun[2]));
+    return 0;
+}</code></pre></p>
+<p><strong>2.<code>uptime</code>、<code>top</code>、<code>w</code> 等工具</strong>：</p>
+<p>这些工具间接读取 <code>/proc/loadavg</code> 或调用系统接口，最终依赖 <code>get_avenrun</code> 获取负载值。</p>
+<p><strong>3.内核模块</strong>：</p>
+<p>动态负载均衡、资源管理、CPU 调频等需要参考系统的历史负载数据。</p>
+<hr />
+<h3 id="get_avenrun_3"><code>get_avenrun</code> 的关系图</h3>
+<pre class="highlight"><code class="language-plaintext">             /proc/loadavg
+                   ↓
+            `loadavg_proc_show`
+                   ↓
+             `get_avenrun`
+                   ↓
+      使用 `avenrun[]` 提供负载值</code></pre>
+<hr />
 <p>查看系统的load值</p>
 <pre class="highlight"><code class="language-bash">$ cat  /proc/loadavg
 0.06 0.04 0.05 1/170 4087
@@ -8156,14 +8350,14 @@ Linux 3.10.0-1160.45.1.el7.x86_64 (VM-0-20-centos)  05/21/2022  _x86_64_    (2 C
 Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
 vda               0.00     0.62    0.02    1.55     0.65    10.18    13.83     0.00    999.4   0.10   999.3   0.35   0.06
 vdb               0.00     0.00    0.00    0.00     0.00     0.00    48.89     0.00    0.45    0.45    0.00   0.33   0.00</code></pre>
-<h3 id="_2">内存原因</h3>
+<h3 id="_4">内存原因</h3>
 <ul>
 <li>task 在申请内存的时候，可能会触发内存回收，如果触发的是直接内存回收，那对性能的伤害很大。当前task 会被阻塞直到内存回收完成。一般这种只是暂时</li>
 <li>因为内存的分配是以页进行分配，有的时候，有的程序需要某个大小的页的内存或者连续的内存空间没有，导致分配内存的系统调用处于D状态，后续的内存申请都不能完成，导致大量线程处于D状态等待，从而load高</li>
 </ul>
-<h3 id="_3">网络原因</h3>
+<h3 id="_5">网络原因</h3>
 <p>如果网卡的大量的丢包或者重传，就会导致程序处于D状态，如果D状态进程太多，就会导致load高</p>
-<h3 id="_4">锁</h3>
+<h3 id="_6">锁</h3>
 <p>一般这种情况，通过vmstat查看系统可以r和b都非常少，但是通过ps命令查询D状态的进程非常多</p>
 <pre class="highlight"><code class="language-bash">$ vmstat -wt 1
 procs -----------------------memory---------------------- ---swap-- -----io---- -system-- --------cpu-------- -----timestamp-----
