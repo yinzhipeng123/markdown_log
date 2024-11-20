@@ -792,6 +792,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-args_1" class="md-nav__link">
+    1. *args
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-kwargs_1" class="md-nav__link">
+    2. **kwargs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-args-kwargs" class="md-nav__link">
+    3. 混合使用 *args 和 **kwargs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-unpacking" class="md-nav__link">
+    4. 解包（Unpacking）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7719,6 +7754,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-args_1" class="md-nav__link">
+    1. *args
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-kwargs_1" class="md-nav__link">
+    2. **kwargs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-args-kwargs" class="md-nav__link">
+    3. 混合使用 *args 和 **kwargs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-unpacking" class="md-nav__link">
+    4. 解包（Unpacking）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7774,6 +7844,110 @@ demo(name='aaa')</code></pre>
 function(a=2)</code></pre>
 <p>运行结果：</p>
 <pre class="highlight"><code class="language-python">{'a': 2} &lt;class 'dict'&gt;</code></pre>
+<p>在 Python 中，<code>*args</code> 和 <code>**kwargs</code> 是用于定义函数时的一种灵活参数机制。它们的主要作用是允许函数接收任意数量的参数。</p>
+<h3 id="1-args_1"><strong>1. <code>*args</code></strong></h3>
+<ul>
+<li>
+<p><strong>含义：</strong><br />
+<code>*args</code> 是一个用于接收<strong>位置参数</strong>的可变参数列表。<br />
+  当函数调用时，传递的所有额外位置参数都会被收集到一个<strong>元组</strong>中。</p>
+</li>
+<li>
+<p><strong>用法：</strong><br />
+  通常用于函数参数数量未知，或需要对多个位置参数进行统一处理的场景。</p>
+</li>
+<li>
+<p><strong>示例：</strong></p>
+</li>
+</ul>
+<pre class="highlight"><code class="language-python">def demo_args(*args):
+    print(args)  # args 是一个元组
+
+demo_args(1, 2, 3)  # 输出: (1, 2, 3)
+demo_args("a", "b", "c", "d")  # 输出: ('a', 'b', 'c', 'd')</code></pre>
+<ul>
+<li><strong>应用场景：</strong></li>
+<li>构建函数能接收任意数量的参数。</li>
+<li>迭代处理多参数。</li>
+</ul>
+<hr />
+<h3 id="2-kwargs_1"><strong>2. <code>**kwargs</code></strong></h3>
+<ul>
+<li>
+<p><strong>含义：</strong><br />
+<code>**kwargs</code> 是用于接收<strong>关键字参数</strong>的可变参数字典。<br />
+  所有额外的关键字参数会被收集到一个<strong>字典</strong>中。</p>
+</li>
+<li>
+<p><strong>用法：</strong><br />
+  通常用于函数参数的关键字对数量未知，或需要对多个关键字参数进行统一处理的场景。</p>
+</li>
+<li>
+<p><strong>示例：</strong></p>
+</li>
+</ul>
+<pre class="highlight"><code class="language-python">def demo_kwargs(**kwargs):
+    print(kwargs)  # kwargs 是一个字典
+
+demo_kwargs(a=1, b=2, c=3)  # 输出: {'a': 1, 'b': 2, 'c': 3}
+demo_kwargs(name="Alice", age=30)  # 输出: {'name': 'Alice', 'age': 30}</code></pre>
+<ul>
+<li><strong>应用场景：</strong></li>
+<li>灵活处理配置项。</li>
+<li>动态生成参数列表。</li>
+</ul>
+<hr />
+<h3 id="3-args-kwargs"><strong>3. 混合使用 <code>*args</code> 和 <code>**kwargs</code></strong></h3>
+<ul>
+<li><strong>规则：</strong>  </li>
+<li><code>*args</code> 必须出现在参数列表中 <code>**kwargs</code> 之前。</li>
+<li>
+<p>位置参数在关键字参数之前。</p>
+</li>
+<li>
+<p><strong>示例：</strong></p>
+</li>
+</ul>
+<pre class="highlight"><code class="language-python">def demo_mixed(a, b, *args, **kwargs):
+    print("a:", a)
+    print("b:", b)
+    print("args:", args)
+    print("kwargs:", kwargs)
+
+demo_mixed(1, 2, 3, 4, 5, name="Alice", age=30)
+# 输出:
+# a: 1
+# b: 2
+# args: (3, 4, 5)
+# kwargs: {'name': 'Alice', 'age': 30}</code></pre>
+<hr />
+<h3 id="4-unpacking"><strong>4. 解包（Unpacking）</strong></h3>
+<ul>
+<li>
+<p><strong><code>*</code> 和 <code>**</code> 的解包功能：</strong>
+  它们可以在函数调用时，将序列或字典中的值展开为独立的参数。</p>
+</li>
+<li>
+<p><strong>示例：</strong></p>
+</li>
+</ul>
+<pre class="highlight"><code class="language-python">def demo_unpack(a, b, c):
+    print(a, b, c)
+
+# 使用 * 解包列表/元组
+args = (1, 2, 3)
+demo_unpack(*args)  # 输出: 1 2 3
+
+# 使用 ** 解包字典
+kwargs = {"a": 4, "b": 5, "c": 6}
+demo_unpack(**kwargs)  # 输出: 4 5 6</code></pre>
+<hr />
+<h3 id="_1"><strong>总结</strong></h3>
+<ul>
+<li><strong><code>*args</code>：</strong> 用于接收任意数量的位置参数，存储为元组。</li>
+<li><strong><code>**kwargs</code>：</strong> 用于接收任意数量的关键字参数，存储为字典。</li>
+<li>它们让函数更灵活，适合多参数和动态参数传递的场景。</li>
+</ul>
 
 
   

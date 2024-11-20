@@ -930,6 +930,95 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 线程锁的定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 线程锁的用法
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 线程锁的用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    示例代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    运行结果：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 常用方法
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 常用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lockacquireblockingtrue-timeout-1" class="md-nav__link">
+    1. lock.acquire(blocking=True, timeout=-1)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lockrelease" class="md-nav__link">
+    2. lock.release()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 线程锁的意义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 线程锁的注意事项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 高级用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7721,6 +7810,95 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 线程锁的定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 线程锁的用法
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 线程锁的用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    示例代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    运行结果：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 常用方法
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 常用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lockacquireblockingtrue-timeout-1" class="md-nav__link">
+    1. lock.acquire(blocking=True, timeout=-1)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lockrelease" class="md-nav__link">
+    2. lock.release()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 线程锁的意义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 线程锁的注意事项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 高级用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7817,6 +7995,154 @@ print(num)</code></pre>
 -----开始线程时间Tue Aug 23 19:37:09 2022
 进入线程时间Tue Aug 23 19:37:09 2022
 10</code></pre>
+<p>Python 中的<strong>线程锁</strong>（<code>threading.Lock</code>）是一种用于在多线程环境下实现线程同步的工具。它可以防止多个线程同时访问共享资源，避免数据竞争或数据不一致的问题。</p>
+<hr />
+<h3 id="1"><strong>1. 线程锁的定义</strong></h3>
+<p>线程锁是一种<strong>互斥锁</strong>，也叫 <strong>mutex</strong>（mutual exclusion），它的工作方式是：
+- <strong>加锁（Lock）</strong>：当一个线程需要访问共享资源时，首先尝试获取锁。如果锁已经被其他线程占用，该线程将阻塞等待，直到锁被释放。
+- <strong>解锁（Unlock）</strong>：线程完成对共享资源的操作后，释放锁，其他阻塞的线程才能继续执行。</p>
+<hr />
+<h3 id="2"><strong>2. 线程锁的用法</strong></h3>
+<p>Python 提供了 <code>threading</code> 模块中的 <code>Lock</code> 类，可以用来创建和使用线程锁。</p>
+<h4 id="_3"><strong>示例代码</strong></h4>
+<pre class="highlight"><code class="language-python">import threading
+import time
+
+# 定义共享资源
+shared_resource = 0
+
+# 创建线程锁
+lock = threading.Lock()
+
+def thread_task():
+    global shared_resource
+    for _ in range(1000000):
+        # 加锁
+        lock.acquire()
+        try:
+            shared_resource += 1
+        finally:
+            # 解锁
+            lock.release()
+
+# 创建两个线程
+thread1 = threading.Thread(target=thread_task)
+thread2 = threading.Thread(target=thread_task)
+
+# 启动线程
+thread1.start()
+thread2.start()
+
+# 等待线程结束
+thread1.join()
+thread2.join()
+
+print("Final value of shared_resource:", shared_resource)</code></pre>
+<h4 id="_4"><strong>运行结果：</strong></h4>
+<ul>
+<li>在未使用锁的情况下，<code>shared_resource</code> 的值可能小于预期，因为多个线程可能同时访问共享变量。</li>
+<li>使用锁后，能够确保共享变量的操作是<strong>原子性</strong>的，从而避免数据竞争。</li>
+</ul>
+<hr />
+<h3 id="3"><strong>3. 常用方法</strong></h3>
+<h4 id="1-lockacquireblockingtrue-timeout-1">1. <code>lock.acquire(blocking=True, timeout=-1)</code></h4>
+<ul>
+<li><strong>功能：</strong> 获取锁。</li>
+<li><strong>参数：</strong></li>
+<li><code>blocking</code>：<ul>
+<li><code>True</code>（默认）：阻塞模式，等待直到获取到锁。</li>
+<li><code>False</code>：非阻塞模式，如果无法立即获取锁，返回 <code>False</code>。</li>
+</ul>
+</li>
+<li><code>timeout</code>：阻塞模式下，设置最大等待时间（秒）。如果超时未获取锁，则返回 <code>False</code>。</li>
+<li><strong>返回值：</strong> 是否成功获取锁。</li>
+</ul>
+<pre class="highlight"><code class="language-python">if lock.acquire(timeout=2):  # 尝试获取锁，最多等待2秒
+    try:
+        # 处理逻辑
+        pass
+    finally:
+        lock.release()
+else:
+    print("Failed to acquire lock")</code></pre>
+<h4 id="2-lockrelease">2. <code>lock.release()</code></h4>
+<ul>
+<li><strong>功能：</strong> 释放锁。</li>
+<li><strong>注意：</strong> 必须在持有锁的线程中调用，否则会抛出异常。</li>
+</ul>
+<hr />
+<h3 id="4"><strong>4. 线程锁的意义</strong></h3>
+<ol>
+<li>
+<p><strong>避免数据竞争：</strong>
+   在多线程访问共享资源时，可能出现多个线程同时修改数据的情况，导致数据不一致或错误。</p>
+</li>
+<li>
+<p><strong>保证操作原子性：</strong>
+   锁确保某一时刻只有一个线程可以执行特定代码块，从而实现操作的不可分割性。</p>
+</li>
+<li>
+<p><strong>提高程序可靠性：</strong>
+   使用锁能有效避免程序因并发访问而出现的潜在问题。</p>
+</li>
+</ol>
+<hr />
+<h3 id="5"><strong>5. 线程锁的注意事项</strong></h3>
+<ol>
+<li><strong>死锁问题：</strong>
+   如果多个线程互相等待对方释放锁，就会出现死锁。例如：
+   <pre class="highlight"><code class="language-python">lock1 = threading.Lock()
+lock2 = threading.Lock()
+
+def thread1():
+    lock1.acquire()
+    lock2.acquire()  # 如果 lock2 已被线程2占用，可能会死锁
+
+def thread2():
+    lock2.acquire()
+    lock1.acquire()  # 如果 lock1 已被线程1占用，可能会死锁</code></pre></li>
+</ol>
+<p><strong>解决方法：</strong>
+   - 避免嵌套使用多个锁。
+   - 使用 <code>threading.RLock</code>（可重入锁）。</p>
+<ol>
+<li><strong>性能损耗：</strong></li>
+<li>使用锁会增加线程之间的切换时间，影响性能。</li>
+<li>
+<p>避免频繁锁定和解锁，尽量缩小加锁代码块的范围。</p>
+</li>
+<li>
+<p><strong>推荐使用 <code>with</code> 语句：</strong></p>
+</li>
+<li>可以简化锁的获取和释放逻辑，避免遗漏解锁操作。</li>
+</ol>
+<p><strong>示例：</strong>
+   <pre class="highlight"><code class="language-python">with lock:
+    # 此处加锁，确保安全操作
+    shared_resource += 1
+# 自动释放锁</code></pre></p>
+<hr />
+<h3 id="6"><strong>6. 高级用法</strong></h3>
+<p>除了 <code>threading.Lock</code>，Python 还提供了一些其他同步工具：
+- <strong><code>threading.RLock</code>（可重入锁）：</strong><br />
+  允许同一线程多次获取锁，用于嵌套的锁定逻辑。</p>
+<ul>
+<li>
+<p><strong><code>threading.Semaphore</code>（信号量）：</strong><br />
+  用于控制对某些资源的访问线程数量。</p>
+</li>
+<li>
+<p><strong><code>threading.Condition</code>（条件变量）：</strong><br />
+  配合锁使用，用于线程间的协调和通信。</p>
+</li>
+<li>
+<p><strong><code>threading.Event</code>：</strong><br />
+  实现线程之间的简单信号通知机制。</p>
+</li>
+</ul>
+<hr />
+<h3 id="_5"><strong>总结</strong></h3>
+<p>线程锁是 Python 中实现线程同步的关键工具，通过 <code>threading.Lock</code> 类可以轻松加锁和解锁，确保共享资源在多线程环境下的安全性。但需要注意使用锁可能带来的死锁和性能问题，合理使用同步工具是实现并发编程的关键。</p>
 
 
   
