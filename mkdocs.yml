@@ -173,8 +173,11 @@ nav:
       - 通过继承实现多线程: programming_language/python/threading/thread.md
       - threading.Event(): programming_language/python/threading/thread_event.md
       - join的作用: programming_language/python/threading/join.md
+      - join详解: programming_language/python/threading/join讲解.md
+      - 守护线程: programming_language/python/threading/守护线程.md
       - 通过继承实现多线程: programming_language/python/threading/thread.md
     - 协程: programming_language/python/协程/协程.md
+    - 协程详解: programming_language/python/协程/协程2.md
     - shedule:
       - 后台执行: programming_language/python/shedule/run_in_back.md
       - schedule日志显示下次任务执行时间: programming_language/python/shedule/see_cron.md
@@ -187,6 +190,7 @@ nav:
       - if语句: programming_language/python/basics/if语句.md
       - match语句: programming_language/python/basics/match语句.md
       - while语句: programming_language/python/basics/while.md
+      - 常见语法: programming_language/python/basics/some.md
   - Go:
     - Go入门: programming_language/go/go_one.md
     - Web框架 Gin: 
@@ -450,10 +454,23 @@ nav:
         - DNS缓存: system/linux/网络/DNS缓存.md
         - ifconfig详解: system/linux/网络/ifconfig详解.md
         - ip命令: system/linux/网络/ip.md
+        - DNS优化: system/linux/网络/DNS优化.md
+        - IPSecVPN: system/linux/网络/IPSecVPN.md
+        - SSL_VPN: system/linux/网络/SSL_VPN原理.md
+        - IPSecVPN和SSLVPN区别: system/linux/网络/IPSecVPN和SSLVPN区别.md
+        - python模拟浏览器验证证书: system/linux/网络/python模拟浏览器验证证书.md
+        - 对称加密: system/linux/网络/对称加密.md
+        - 非对称加密: system/linux/网络/非对称加密.md
+        - bonding: system/linux/网络/bonding.md
+        - https原理: system/linux/网络/https原理.md
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
     - 修改网卡: system/centos7/ens33.md
+    - Centos7启动过程: system/centos7/Centos7启动过程.md
+    - LVM: system/centos7/LVM.md
+    - firewalld: system/centos7/firewalld.md
+    - iptable: system/centos7/iptable.md
     - Yum:
         - ius源: system/centos7/yum/ius.md
     - 时间同步chrony: system/centos7/chronyd.md
@@ -502,6 +519,7 @@ nav:
       - vxlan: Cloud_Computing/路由器/vxlan.md
     - 安全:
        - DNS劫持: security/DNS劫持.md
+       - SYN泛洪: security/SYN泛洪.md
 - 工具和知识:
   - tool/index.md
   - git及github的轻度教程: tool/github使用.md

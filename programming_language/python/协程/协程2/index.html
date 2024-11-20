@@ -17,7 +17,7 @@
     
     
       
-        <title>协程2 - MarkDown_Log</title>
+        <title>协程详解 - MarkDown_Log</title>
       
     
     
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              协程2
+              协程详解
             
           </span>
         </div>
@@ -227,13 +227,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         编程语言
       </a>
     </li>
@@ -469,12 +471,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -523,15 +527,19 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
+        
+          
         
           
         
@@ -855,6 +863,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_2_18">
@@ -931,6 +943,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../threading/join%E8%AE%B2%E8%A7%A3/" class="md-nav__link">
+        join详解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../threading/%E5%AE%88%E6%8A%A4%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        守护线程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../threading/thread/" class="md-nav__link">
         通过继承实现多线程
       </a>
@@ -964,12 +1004,132 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          协程详解
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        协程详解
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    什么是协程？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    协程的特点：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    协程与线程的区别：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python 中的协程实现
+  </a>
+  
+    <nav class="md-nav" aria-label="Python 中的协程实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    基础用法：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    并发运行多个协程：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    关键点详解：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    协程的应用场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    综合示例：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_20" type="checkbox" id="__nav_2_2_20" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_21" type="checkbox" id="__nav_2_2_21" >
       
       
       
@@ -980,13 +1140,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_2_20">
+        <label class="md-nav__link" for="__nav_2_2_21">
           shedule
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="shedule" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_2_20">
+        <label class="md-nav__title" for="__nav_2_2_21">
           <span class="md-nav__icon md-icon"></span>
           shedule
         </label>
@@ -1036,7 +1196,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_21" type="checkbox" id="__nav_2_2_21" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_22" type="checkbox" id="__nav_2_2_22" >
       
       
       
@@ -1047,13 +1207,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_2_21">
+        <label class="md-nav__link" for="__nav_2_2_22">
           类
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="类" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_2_21">
+        <label class="md-nav__title" for="__nav_2_2_22">
           <span class="md-nav__icon md-icon"></span>
           类
         </label>
@@ -1117,7 +1277,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_23" type="checkbox" id="__nav_2_2_23" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_24" type="checkbox" id="__nav_2_2_24" >
       
       
       
@@ -1130,15 +1290,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_2_2_23">
+        <label class="md-nav__link" for="__nav_2_2_24">
           基础
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="基础" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_2_23">
+        <label class="md-nav__title" for="__nav_2_2_24">
           <span class="md-nav__icon md-icon"></span>
           基础
         </label>
@@ -1194,6 +1356,20 @@
     <li class="md-nav__item">
       <a href="../../basics/while/" class="md-nav__link">
         while语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/some/" class="md-nav__link">
+        常见语法
       </a>
     </li>
   
@@ -5739,6 +5915,24 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_1_5">
@@ -6061,6 +6255,132 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/linux/%E7%BD%91%E7%BB%9C/DNS%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        DNS优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/linux/%E7%BD%91%E7%BB%9C/IPSecVPN/" class="md-nav__link">
+        IPSecVPN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/linux/%E7%BD%91%E7%BB%9C/SSL_VPN%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        SSL_VPN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/linux/%E7%BD%91%E7%BB%9C/IPSecVPN%E5%92%8CSSLVPN%E5%8C%BA%E5%88%AB/" class="md-nav__link">
+        IPSecVPN和SSLVPN区别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/linux/%E7%BD%91%E7%BB%9C/python%E6%A8%A1%E6%8B%9F%E6%B5%8F%E8%A7%88%E5%99%A8%E9%AA%8C%E8%AF%81%E8%AF%81%E4%B9%A6/" class="md-nav__link">
+        python模拟浏览器验证证书
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/linux/%E7%BD%91%E7%BB%9C/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/" class="md-nav__link">
+        对称加密
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/linux/%E7%BD%91%E7%BB%9C/%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/" class="md-nav__link">
+        非对称加密
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/linux/%E7%BD%91%E7%BB%9C/bonding/" class="md-nav__link">
+        bonding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/linux/%E7%BD%91%E7%BB%9C/https%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        https原理
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -6088,6 +6408,14 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
         
           
         
@@ -6184,11 +6512,67 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../system/centos7/Centos7%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        Centos7启动过程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/centos7/LVM/" class="md-nav__link">
+        LVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/centos7/firewalld/" class="md-nav__link">
+        firewalld
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../system/centos7/iptable/" class="md-nav__link">
+        iptable
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_4" type="checkbox" id="__nav_7_2_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_8" type="checkbox" id="__nav_7_2_8" >
       
       
       
@@ -6197,13 +6581,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_7_2_4">
+        <label class="md-nav__link" for="__nav_7_2_8">
           Yum
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Yum" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_2_4">
+        <label class="md-nav__title" for="__nav_7_2_8">
           <span class="md-nav__icon md-icon"></span>
           Yum
         </label>
@@ -7048,6 +7432,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_8_5">
@@ -7070,6 +7456,20 @@
     <li class="md-nav__item">
       <a href="../../../../security/DNS%E5%8A%AB%E6%8C%81/" class="md-nav__link">
         DNS劫持
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../security/SYN%E6%B3%9B%E6%B4%AA/" class="md-nav__link">
+        SYN泛洪
       </a>
     </li>
   
@@ -7745,7 +8145,7 @@
   </a>
 
 
-  <h1>协程2</h1>
+  <h1>协程详解</h1>
 
 <h3 id="_1"><strong>什么是协程？</strong></h3>
 <p>协程（Coroutine）是<strong>比线程更轻量级的并发单位</strong>，它是一种可以在执行中暂停并切换到其他任务的函数。协程本质上是单线程的，但通过协作式调度实现了高效的并发处理。</p>
@@ -7938,6 +8338,42 @@ Results: ['Content of http://example.com/1', 'Content of http://example.com/2', 
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../%E5%8D%8F%E7%A8%8B/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 协程" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              协程
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../shedule/run_in_back/" class="md-footer__link md-footer__link--next" aria-label="下一页: 后台执行" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              后台执行
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

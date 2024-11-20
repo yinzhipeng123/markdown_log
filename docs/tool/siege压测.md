@@ -32,40 +32,48 @@ brew install siege
 
 ### 使用示例
 
-1. **简单测试一个 URL**：
-   ```bash
-   siege -c 10 -t 1M https://example.com
-   ```
-   - `-c 10`：模拟 10 个并发用户。
-   - `-t 1M`：测试持续时间为 1 分钟。
-   - `https://example.com`：目标 URL。
+**1.简单测试一个 URL**：
 
-2. **测试 URL 列表**：
-   创建一个 `urls.txt` 文件，里面列出多个 URL：
-   ```
-   https://example.com/page1
-   https://example.com/page2
-   ```
-   然后执行：
-   ```bash
-   siege -c 20 -t 2M -f urls.txt
-   ```
-   - `-f urls.txt`：从文件中读取 URL。
+```bash
+siege -c 10 -t 1M https://example.com
+```
+`-c 10`：模拟 10 个并发用户。
 
-3. **指定请求方法和数据**：
-   ```bash
-   siege -c 10 -t 30S -m "POST Test" -H "Content-Type: application/json" \
-         'https://example.com/api POST {"key":"value"}'
-   ```
-   - `-m "POST Test"`：为测试命名。
-   - `-H "Content-Type: application/json"`：指定请求头。
-   - `'URL POST data'`：发送 POST 请求及其数据。
+`-t 1M`：测试持续时间为 1 分钟。
 
-4. **压力测试模式**：
-   使用 `--benchmark` 选项运行基准测试：
-   ```bash
-   siege --benchmark https://example.com
-   ```
+`https://example.com`：目标 URL。
+
+**2.测试 URL 列表**：
+创建一个 `urls.txt` 文件，里面列出多个 URL：
+
+```
+https://example.com/page1
+https://example.com/page2
+```
+然后执行：
+```bash
+siege -c 20 -t 2M -f urls.txt
+```
+`-f urls.txt`：从文件中读取 URL。
+
+**3.指定请求方法和数据**：
+
+```bash
+siege -c 10 -t 30S -m "POST Test" -H "Content-Type: application/json" \
+      'https://example.com/api POST {"key":"value"}'
+```
+`-m "POST Test"`：为测试命名。
+
+`-H "Content-Type: application/json"`：指定请求头。
+
+`'URL POST data'`：发送 POST 请求及其数据。
+
+**4.压力测试模式**：
+使用 `--benchmark` 选项运行基准测试：
+
+```bash
+siege --benchmark https://example.com
+```
 
 ---
 
