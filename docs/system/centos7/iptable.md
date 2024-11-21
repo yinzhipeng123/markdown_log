@@ -324,5 +324,172 @@ iptables-restore < /etc/iptables/rules.v4
 
 
 
+在使用 `iptables` 配置规则时，如果没有显式指定表（如 `-t nat`），默认情况下，规则会被添加到 **filter 表** 中。  
+
+**filter 表** 是 `iptables` 的默认表，主要负责数据包的过滤（例如允许或拒绝数据包）。
+
+如果没有通过 `-t` 参数指定表，`iptables` 会假定操作针对 **filter 表**。
+
+### 例子
+```bash
+iptables -A INPUT -s 192.168.1.100 -j DROP
+```
+**解释**：
+
+`-A INPUT`：将规则追加到 **filter 表** 的 INPUT 链。
+
+`-s 192.168.1.100`：匹配源地址为 `192.168.1.100` 的数据包。
+
+`-j DROP`：丢弃匹配的数据包。
+
+因此，这条规则会被添加到 **filter 表** 的 INPUT 链，用于过滤从 `192.168.1.100` 发来的流量。
+
+---
+
+### 为什么是 filter 表？
+`iptables` 有多张表，每张表的功能不同：
+1. **filter 表**（默认）：用于管理数据包的过滤（例如 `ACCEPT` 或 `DROP`）。
+2. **nat 表**：用于网络地址转换（SNAT、DNAT）。
+3. **mangle 表**：用于修改数据包的头部。
+4. **raw 表**：用于调整连接跟踪。
+5. **security 表**：用于安全策略相关规则。
+
+没有指定表时，`iptables` 默认操作的是最常用的 **filter 表**，因为大多数情况下，我们是在配置防火墙规则（例如允许或拒绝流量）。
+
+---
+
+### 如何验证规则在哪张表？
+使用以下命令可以列出 **filter 表** 的规则，并确认规则是否已添加：
+```bash
+sudo iptables -L INPUT -n -v
+```
+
+---
+
+### 如何避免混淆？
+如果需要明确规则所在的表，可以始终指定表名。例如：
+```bash
+sudo iptables -t filter -A INPUT -s 192.168.1.100 -j DROP
+```
+这与默认行为一致，但显式指定表有助于提高规则的可读性和维护性。
+
+如果没有指定表，`iptables` 默认操作的是 **filter 表**，所以你的规则会添加到 **filter 表** 的 INPUT 链中，用于过滤不想要的数据流量。显式指定表（如 `-t filter`）有助于避免歧义，是一种推荐的做法。
 
 
+
+并不是所有规则都可以添加到 **filter 表** 中。**filter 表** 是 `iptables` 的默认表，用于管理数据包的 **过滤**（即 `ACCEPT`、`DROP` 等操作），但有些功能只能在特定的表（如 **nat** 或 **mangle** 表）中实现。如果你尝试将不适合的规则添加到 **filter 表** 中，`iptables` 会报错。
+
+---
+
+### 适合添加到 **filter 表** 的规则
+
+**filter 表** 的功能主要是控制数据包的流向，可以使用以下目标（`-j` 参数）：
+
+**`ACCEPT`**：允许数据包通过。
+
+**`DROP`**：丢弃数据包。
+
+**`REJECT`**：拒绝数据包并发送错误响应。
+
+**`LOG`**：记录数据包信息到日志。
+
+**`RETURN`**：返回上一链表。
+
+常用的链：
+
+**INPUT**：管理进入本机的数据包（如SSH流量）。
+
+**FORWARD**：管理经过本机转发的数据包（如网关转发）。
+
+**OUTPUT**：管理从本机发出的数据包。
+
+示例（这些规则可以添加到 **filter 表**）：
+```bash
+# 禁止某个IP访问本机
+sudo iptables -A INPUT -s 192.168.1.100 -j DROP
+
+# 允许本机访问外网
+sudo iptables -A OUTPUT -d 8.8.8.8 -j ACCEPT
+
+# 转发流量的过滤
+sudo iptables -A FORWARD -s 192.168.1.0/24 -j ACCEPT
+```
+
+---
+
+### 无法添加到 **filter 表** 的规则
+
+有些操作必须添加到其他表中，无法通过 **filter 表** 实现。如果强行添加会报错，例如：
+
+**1.NAT相关规则**：
+
+NAT功能（如 SNAT、DNAT）必须添加到 **nat 表**。
+
+示例：
+```bash
+# 映射内网到外网地址（SNAT规则） -> 必须用nat表
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+```
+
+**2修改数据包头部**：
+
+修改TTL或其他数据包字段必须使用 **mangle 表**。
+
+示例：
+```bash
+# 修改数据包的TTL值 -> 必须用mangle表
+sudo iptables -t mangle -A POSTROUTING -j TTL --ttl-set 64
+```
+
+**3.关闭连接跟踪**：
+
+必须使用 **raw 表**。
+
+示例：
+```bash
+# 不使用连接跟踪 -> 必须用raw表
+sudo iptables -t raw -A PREROUTING -p tcp --dport 80 -j NOTRACK
+```
+
+---
+
+### 为什么不能将所有规则都添加到 **filter 表**？
+这是因为 `iptables` 的设计中，每个表有其特定的用途：
+1. **filter 表**：专注于数据包过滤。
+2. **nat 表**：处理地址转换（NAT）。
+3. **mangle 表**：用于修改数据包的头部。
+4. **raw 表**：用于连接跟踪的调整。
+
+将所有规则放到 **filter 表** 中，会破坏这种分工，也会导致某些操作无法实现或出现报错。
+
+---
+
+### 建议
+**1.默认表操作**：
+
+如果你只是过滤数据包（例如防火墙规则），可以省略表名，直接使用 **filter 表**。
+
+示例：
+```bash
+sudo iptables -A INPUT -s 192.168.1.100 -j DROP
+```
+
+**2涉及特殊功能时显式指定表**：
+
+如需NAT、修改数据包头部等操作，必须显式指定表：
+```bash
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+sudo iptables -t mangle -A POSTROUTING -j TTL --ttl-set 64
+```
+
+**3遵循规则分工**：
+
+不同表的规则分工明确，建议根据功能将规则添加到正确的表中，便于维护和排查。
+
+
+
+你可以省略表名添加规则到 **filter 表**，但只能用于过滤（`ACCEPT`、`DROP` 等）。
+
+涉及NAT、修改数据包头部或关闭连接跟踪等特殊操作时，必须显式指定正确的表（如 **nat**、**mangle** 或 **raw** 表）。
+
+遵循iptables表的分工原则，有助于规则的管理和功能实现。

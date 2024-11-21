@@ -85,7 +85,26 @@ G= 组改变
 T=修改时间改
 ```
 
+查询文件属于哪个软件包
 
+```bash
+#查询文件属于哪个软件包
+[root@VM-0-16-centos ~]# rpm -qf  /etc/passwd                                                                                   
+setup-2.13.7-6.el9.noarch 
+[root@VM-0-16-centos ~]# yum provides /etc/passwd
+Last metadata expiration check: 0:15:24 ago on Thu 21 Nov 2024 10:41:08 AM CST.
+setup-2.13.7-6.el9.noarch : A set of system configuration and setup files
+Repo        : @System  #代表已经安装在系统上
+Matched from:
+Filename    : /etc/passwd
 
-
+setup-2.13.7-6.el9.noarch : A set of system configuration and setup files
+Repo        : baseos
+Matched from:
+Filename    : /etc/passwd
+#查询软件包中已经发生的变化
+[root@VM-0-16-centos ~]# rpm --verify setup-2.13.7-6.el9.noarch
+S.5....T.  c /etc/bashrc
+.M....G..  g /var/log/lastlog
+```
 

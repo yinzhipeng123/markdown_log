@@ -83,3 +83,72 @@ ip link set dev eth0 down
 
 
 https://wangchujiang.com/linux-command/c/ip.html
+
+
+
+
+
+使用 `ip addr add` 命令为网卡（如 `eth0`）添加 IP 地址时，并不会影响该网卡当前已经绑定的 IP 地址，因为 `ip addr add` 操作会在该网卡上 **附加** 一个新的 IP 地址，而不是替换现有的 IP 地址。这是 Linux 网络栈的多地址功能的体现。
+
+### 核心原因
+
+1. **网卡多地址支持：**
+   - Linux 内核允许单个网络接口绑定多个 IP 地址。通过 `ip addr add`，新地址会作为该网卡的附加地址，而现有地址保持不变。
+2. **默认行为是附加而非替换：**
+   - `ip addr add` 不会移除或覆盖已有的地址。要删除地址，需要明确使用 `ip addr del` 命令。
+3. **路由表和流量分发：**
+   - 当网络接口上存在多个 IP 地址时，系统会根据路由规则或特定应用绑定的地址来决定如何处理流量。新地址的加入不会改变默认的路由或已有的流量分配。
+
+### 示例
+
+假设 `eth0` 当前已经绑定了 IP 地址 `192.168.1.10/24`：
+
+```bash
+ip addr show eth0
+```
+
+输出可能类似于：
+
+```
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    inet 192.168.1.10/24 scope global eth0
+       valid_lft forever preferred_lft forever
+```
+
+然后执行：
+
+```bash
+ip addr add 192.168.1.100/24 dev eth0
+```
+
+再次检查 `eth0` 的地址：
+
+```bash
+ip addr show eth0
+```
+
+输出：
+
+```
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    inet 192.168.1.10/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet 192.168.1.100/24 scope global secondary eth0
+       valid_lft forever preferred_lft forever
+```
+
+可以看到，新地址 `192.168.1.100/24` 被添加为 **secondary** 地址，而原有地址 `192.168.1.10/24` 依然存在。
+
+### 注意事项
+
+1. **删除地址：** 如果需要删除某个 IP 地址，使用 `ip addr del` 命令。例如：
+
+   ```bash
+   ip addr del 192.168.1.100/24 dev eth0
+   ```
+
+2. **多地址路由处理：** 添加新 IP 地址后，如果需要特定流量通过该地址，可以配置对应的路由或规则。
+
+3. **永久性设置：** 使用 `ip addr add` 是临时的，系统重启后会丢失。如果需要永久性配置，可以将 IP 地址添加到网络配置文件中（如 `/etc/network/interfaces` 或 `/etc/sysconfig/network-scripts/` 视操作系统而定）。
+
+这样，`ip addr add` 的设计在灵活性上非常强，适合动态调整网络配置。

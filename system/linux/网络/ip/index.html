@@ -2707,6 +2707,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         
@@ -3003,6 +3011,62 @@
     <li class="md-nav__item">
       <a href="../../../../lxc/kubernetes/initContainers/" class="md-nav__link">
         initContainers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lxc/kubernetes/CNI/" class="md-nav__link">
+        CNI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lxc/kubernetes/Controller/" class="md-nav__link">
+        Controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lxc/kubernetes/Secret/" class="md-nav__link">
+        Secret
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lxc/kubernetes/StatefulSet_Mysql/" class="md-nav__link">
+        StatefulSet_Mysql
       </a>
     </li>
   
@@ -4179,6 +4243,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_2">
@@ -4192,6 +4258,20 @@
           Prometheus
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../monitor/prometheus/prome/" class="md-nav__link">
+        prometheus概念
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -5829,6 +5909,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_1_5">
@@ -6235,6 +6319,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    核心原因
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    注意事项
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6364,6 +6469,34 @@
     <li class="md-nav__item">
       <a href="../https%E5%8E%9F%E7%90%86/" class="md-nav__link">
         https原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../centos7/%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F/" class="md-nav__link">
+        用户配置文件加载顺序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NAT%E7%BD%91%E5%85%B3%E6%A8%A1%E6%8B%9F/" class="md-nav__link">
+        NAT网关模拟
       </a>
     </li>
   
@@ -7203,6 +7336,8 @@
         
           
         
+          
+        
       
       
         
@@ -7467,6 +7602,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud_Computing/KVM/" class="md-nav__link">
+        KVM
+      </a>
     </li>
   
 
@@ -8101,6 +8250,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    核心原因
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    注意事项
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -8164,6 +8334,48 @@ ip link set dev eth0 down</code></pre></p>
 <h3 id="_1">总结</h3>
 <p><code>ip</code> 命令是非常强大且灵活的，涵盖了网络管理的方方面面。它可以配置和查看网络接口、路由、IP 地址、隧道、邻居缓存等信息，并且替代了许多老旧的命令，如 <code>ifconfig</code> 和 <code>route</code>。</p>
 <p>https://wangchujiang.com/linux-command/c/ip.html</p>
+<p>使用 <code>ip addr add</code> 命令为网卡（如 <code>eth0</code>）添加 IP 地址时，并不会影响该网卡当前已经绑定的 IP 地址，因为 <code>ip addr add</code> 操作会在该网卡上 <strong>附加</strong> 一个新的 IP 地址，而不是替换现有的 IP 地址。这是 Linux 网络栈的多地址功能的体现。</p>
+<h3 id="_2">核心原因</h3>
+<ol>
+<li><strong>网卡多地址支持：</strong></li>
+<li>Linux 内核允许单个网络接口绑定多个 IP 地址。通过 <code>ip addr add</code>，新地址会作为该网卡的附加地址，而现有地址保持不变。</li>
+<li><strong>默认行为是附加而非替换：</strong></li>
+<li><code>ip addr add</code> 不会移除或覆盖已有的地址。要删除地址，需要明确使用 <code>ip addr del</code> 命令。</li>
+<li><strong>路由表和流量分发：</strong></li>
+<li>当网络接口上存在多个 IP 地址时，系统会根据路由规则或特定应用绑定的地址来决定如何处理流量。新地址的加入不会改变默认的路由或已有的流量分配。</li>
+</ol>
+<h3 id="_3">示例</h3>
+<p>假设 <code>eth0</code> 当前已经绑定了 IP 地址 <code>192.168.1.10/24</code>：</p>
+<pre class="highlight"><code class="language-bash">ip addr show eth0</code></pre>
+<p>输出可能类似于：</p>
+<pre class="highlight"><code>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    inet 192.168.1.10/24 scope global eth0
+       valid_lft forever preferred_lft forever</code></pre>
+<p>然后执行：</p>
+<pre class="highlight"><code class="language-bash">ip addr add 192.168.1.100/24 dev eth0</code></pre>
+<p>再次检查 <code>eth0</code> 的地址：</p>
+<pre class="highlight"><code class="language-bash">ip addr show eth0</code></pre>
+<p>输出：</p>
+<pre class="highlight"><code>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    inet 192.168.1.10/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet 192.168.1.100/24 scope global secondary eth0
+       valid_lft forever preferred_lft forever</code></pre>
+<p>可以看到，新地址 <code>192.168.1.100/24</code> 被添加为 <strong>secondary</strong> 地址，而原有地址 <code>192.168.1.10/24</code> 依然存在。</p>
+<h3 id="_4">注意事项</h3>
+<ol>
+<li><strong>删除地址：</strong> 如果需要删除某个 IP 地址，使用 <code>ip addr del</code> 命令。例如：</li>
+</ol>
+<pre class="highlight"><code class="language-bash">ip addr del 192.168.1.100/24 dev eth0</code></pre>
+<ol>
+<li>
+<p><strong>多地址路由处理：</strong> 添加新 IP 地址后，如果需要特定流量通过该地址，可以配置对应的路由或规则。</p>
+</li>
+<li>
+<p><strong>永久性设置：</strong> 使用 <code>ip addr add</code> 是临时的，系统重启后会丢失。如果需要永久性配置，可以将 IP 地址添加到网络配置文件中（如 <code>/etc/network/interfaces</code> 或 <code>/etc/sysconfig/network-scripts/</code> 视操作系统而定）。</p>
+</li>
+</ol>
+<p>这样，<code>ip addr add</code> 的设计在灵活性上非常强，适合动态调整网络配置。</p>
 
 
   

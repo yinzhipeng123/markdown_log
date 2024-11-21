@@ -2707,6 +2707,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         
@@ -3003,6 +3011,62 @@
     <li class="md-nav__item">
       <a href="../../../lxc/kubernetes/initContainers/" class="md-nav__link">
         initContainers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/CNI/" class="md-nav__link">
+        CNI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/Controller/" class="md-nav__link">
+        Controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/Secret/" class="md-nav__link">
+        Secret
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lxc/kubernetes/StatefulSet_Mysql/" class="md-nav__link">
+        StatefulSet_Mysql
       </a>
     </li>
   
@@ -4179,6 +4243,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_2">
@@ -4192,6 +4258,20 @@
           Prometheus
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../monitor/prometheus/prome/" class="md-nav__link">
+        prometheus概念
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -5825,6 +5905,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_1_5">
@@ -6267,6 +6351,34 @@
     <li class="md-nav__item">
       <a href="../../linux/%E7%BD%91%E7%BB%9C/https%E5%8E%9F%E7%90%86/" class="md-nav__link">
         https原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F/" class="md-nav__link">
+        用户配置文件加载顺序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E7%BD%91%E7%BB%9C/NAT%E7%BD%91%E5%85%B3%E6%A8%A1%E6%8B%9F/" class="md-nav__link">
+        NAT网关模拟
       </a>
     </li>
   
@@ -7242,6 +7354,8 @@
         
           
         
+          
+        
       
       
         
@@ -7506,6 +7620,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud_Computing/KVM/" class="md-nav__link">
+        KVM
+      </a>
     </li>
   
 
@@ -8206,75 +8334,75 @@
 <p>CentOS 7 的启动过程基于 <strong>systemd</strong> 系统管理器，可以分为以下几个阶段，涵盖了从加载 BIOS 到完全进入用户空间的整个流程：</p>
 <hr />
 <h3 id="1-biosuefi">1. <strong>BIOS/UEFI 阶段</strong></h3>
-<ul>
+<ul class="task-list">
 <li><strong>功能：</strong> 计算机加电后，BIOS 或 UEFI 固件进行硬件初始化（如 CPU、内存、存储设备等），并执行自检（POST）。</li>
 <li><strong>操作：</strong> </li>
-<li>搜索引导设备（硬盘、U盘、光盘等）。</li>
-<li>加载并运行存储设备上的引导加载程序（通常是 GRUB）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 搜索引导设备（硬盘、U盘、光盘等）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加载并运行存储设备上的引导加载程序（通常是 GRUB）。</li>
 </ul>
 <hr />
 <h3 id="2-grubgrand-unified-bootloader">2. <strong>GRUB（GRand Unified Bootloader）阶段</strong></h3>
-<ul>
+<ul class="task-list">
 <li><strong>功能：</strong> 引导加载程序负责引导操作系统内核。</li>
 <li><strong>操作：</strong></li>
-<li>加载 GRUB 配置文件（通常是 <code>/boot/grub2/grub.cfg</code>）。</li>
-<li>显示引导菜单供用户选择（如果启用了）。</li>
-<li>加载用户选择的内核镜像文件（<code>vmlinuz</code>）和初始化内存盘（<code>initramfs</code>）。</li>
-<li>将控制权交给内核。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加载 GRUB 配置文件（通常是 <code>/boot/grub2/grub.cfg</code>）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 显示引导菜单供用户选择（如果启用了）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加载用户选择的内核镜像文件（<code>vmlinuz</code>）和初始化内存盘（<code>initramfs</code>）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 将控制权交给内核。</li>
 </ul>
 <hr />
 <h3 id="3">3. <strong>内核初始化阶段</strong></h3>
-<ul>
+<ul class="task-list">
 <li><strong>功能：</strong> 内核完成基础硬件初始化，并挂载临时根文件系统。</li>
 <li><strong>操作：</strong></li>
-<li>内核被加载到内存后开始运行。</li>
-<li>初始化硬件设备的驱动程序，检测并加载必要的模块。</li>
-<li>加载临时根文件系统（<code>initramfs</code>），提供启动所需的最小环境。</li>
-<li>查找并挂载实际的根文件系统。</li>
-<li>启动用户空间的第一个进程，通常是 <code>/sbin/init</code>。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 内核被加载到内存后开始运行。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 初始化硬件设备的驱动程序，检测并加载必要的模块。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加载临时根文件系统（<code>initramfs</code>），提供启动所需的最小环境。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 查找并挂载实际的根文件系统。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 启动用户空间的第一个进程，通常是 <code>/sbin/init</code>。</li>
 </ul>
 <hr />
 <h3 id="4-initsystemd">4. <strong>init/systemd 初始化阶段</strong></h3>
-<ul>
+<ul class="task-list">
 <li><strong>功能：</strong> systemd 作为系统和服务管理器接管系统的初始化。</li>
 <li><strong>操作：</strong></li>
-<li>加载 <code>/etc/systemd/system/default.target</code> 指定的默认目标（类似于运行级别）。<ul>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加载 <code>/etc/systemd/system/default.target</code> 指定的默认目标（类似于运行级别）。<ul>
 <li>默认目标通常是 <code>multi-user.target</code> 或 <code>graphical.target</code>。</li>
 </ul>
 </li>
-<li>按照依赖顺序并行启动所有需要的服务。</li>
-<li>初始化完成后，进入指定的目标（例如命令行界面或图形桌面）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 按照依赖顺序并行启动所有需要的服务。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 初始化完成后，进入指定的目标（例如命令行界面或图形桌面）。</li>
 </ul>
 <hr />
 <h3 id="5">5. <strong>目标加载与服务启动</strong></h3>
-<ul>
+<ul class="task-list">
 <li><strong>功能：</strong> 启动用户指定的所有服务。</li>
 <li><strong>操作：</strong></li>
-<li>加载目标配置文件，定义该目标下需要启动的服务和依赖项。</li>
-<li>启动服务，常见的服务类型：<ul>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加载目标配置文件，定义该目标下需要启动的服务和依赖项。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 启动服务，常见的服务类型：<ul>
 <li>系统基础服务：<code>network</code>, <code>sshd</code>, <code>firewalld</code> 等。</li>
 <li>应用服务：<code>httpd</code>, <code>mysqld</code> 等。</li>
 </ul>
 </li>
-<li>如果是图形目标，还会启动图形界面服务（如 <code>gdm</code>）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 如果是图形目标，还会启动图形界面服务（如 <code>gdm</code>）。</li>
 </ul>
 <hr />
 <h3 id="6">6. <strong>用户登录阶段</strong></h3>
-<ul>
+<ul class="task-list">
 <li><strong>功能：</strong> 系统启动完成后，进入用户登录界面。</li>
 <li><strong>操作：</strong></li>
-<li>呈现控制台登录提示或图形界面登录屏幕。</li>
-<li>用户登录后，加载用户会话配置文件（如 <code>.bashrc</code>、<code>.profile</code>）。</li>
-<li>启动用户会话或桌面环境。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 呈现控制台登录提示或图形界面登录屏幕。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 用户登录后，加载用户会话配置文件（如 <code>.bashrc</code>、<code>.profile</code>）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 启动用户会话或桌面环境。</li>
 </ul>
 <hr />
 <h3 id="_1">总结</h3>
 <p>CentOS 7 启动过程强调了 systemd 的并行化特性，优化了服务启动时间。主要阶段如下：
-1. BIOS/UEFI 加载引导程序。
-2. GRUB 加载内核和 <code>initramfs</code>。
-3. 内核初始化硬件和根文件系统。
-4. systemd 接管，加载服务和目标。
-5. 提供用户登录界面。</p>
+- [ ] BIOS/UEFI 加载引导程序。
+- [ ] GRUB 加载内核和 <code>initramfs</code>。
+- [ ] 内核初始化硬件和根文件系统。
+- [ ] systemd 接管，加载服务和目标。
+- [ ] 提供用户登录界面。</p>
 <h2 id="_2">忘记密码进行重置</h2>
 <p>如果你忘记了 CentOS 7 的密码，可以通过以下步骤重置密码。这需要物理访问服务器或虚拟机控制台权限。</p>
 <hr />

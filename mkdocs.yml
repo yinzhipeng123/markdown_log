@@ -287,6 +287,11 @@ nav:
     - 滚动升级中的maxSurge和maxUnavailable: lxc/kubernetes/滚动升级中的maxSurge和maxUnavailable.md
     - pod生命周期: lxc/kubernetes/生命周期.md
     - initContainers: lxc/kubernetes/initContainers.md
+    - CNI: lxc/kubernetes/CNI.md
+    - Controller: lxc/kubernetes/Controller.md
+    - Secret: lxc/kubernetes/Secret.md
+    - StatefulSet_Mysql: lxc/kubernetes/StatefulSet_Mysql.md
+
   - KubeSphere:
     - KubeSphere安装: lxc/kubesphere/kubesphere.md
   - Rancher:
@@ -342,6 +347,7 @@ nav:
 - 监控:
   - monitor/index.md
   - Prometheus:
+    - prometheus概念: monitor/prometheus/prome.md
     - 单机部署: monitor/prometheus/prometheus.md
     - K8S部署: monitor/prometheus/prometheus_k8s.md
     - K8S kube-state-metrics指标说明: monitor/prometheus/kube-state-metrics.md
@@ -463,6 +469,9 @@ nav:
         - 非对称加密: system/linux/网络/非对称加密.md
         - bonding: system/linux/网络/bonding.md
         - https原理: system/linux/网络/https原理.md
+        - 用户配置文件加载顺序: system/centos7/用户配置文件加载顺序.md
+        - NAT网关模拟: system/linux/网络/NAT网关模拟.md
+
   - Centos7:
     - 提供命令查询的网站: system/centos7/命令搜索.md
     - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
@@ -520,6 +529,7 @@ nav:
     - 安全:
        - DNS劫持: security/DNS劫持.md
        - SYN泛洪: security/SYN泛洪.md
+    - KVM: Cloud_Computing/KVM.md
 - 工具和知识:
   - tool/index.md
   - git及github的轻度教程: tool/github使用.md
