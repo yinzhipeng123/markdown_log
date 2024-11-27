@@ -8372,8 +8372,9 @@
      <pre class="highlight"><code class="language-bash">iftop -h</code></pre></li>
 </ol>
 <h2 id="_2">命令结果解释</h2>
+<p><img alt="image-20241127205629360" src="https://s2.loli.net/2024/11/27/9vdZj7g2VFSDXNW.png" /></p>
 <p>这张 <code>iftop</code> 的截图显示了通过 <code>eth0</code> 网络接口的实时网络流量，并且使用 <code>-P</code> 参数来展示端口信息。下面是对屏幕的解释：</p>
-<ul>
+<ul class="task-list">
 <li>
 <p><strong>每一行</strong>：代表一个活动的网络连接。每个连接由三部分组成：源地址（左侧）、目的地址（中间）和流量统计（右侧）。</p>
 </li>
@@ -8389,10 +8390,10 @@
 <li>
 <p><strong>cum、peak 和 rates</strong>：</p>
 </li>
-<li><code>cum</code>：表示自 <code>iftop</code> 启动以来的累积流量。</li>
-<li><code>peak</code>：显示观察期间的最高流量峰值。</li>
-<li>
-<p><code>rates</code>：展示当前的平均流量速率，分别对应过去 2 秒、10 秒和 40 秒的平均值。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>cum</code>：表示自 <code>iftop</code> 启动以来的累积流量。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>peak</code>：显示观察期间的最高流量峰值。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>rates</code>：展示当前的平均流量速率，分别对应过去 2 秒、10 秒和 40 秒的平均值。</p>
 </li>
 <li>
 <p><strong>TOTAL</strong>：底部的 <code>TOTAL</code> 行显示了传输和接收数据的总和。</p>
@@ -8410,6 +8411,7 @@
 <li><code>Gb</code>：代表吉字节（Gigabytes）</li>
 </ul>
 <p>截图上显示的单位是 <code>Kb</code>，表示千字节。这意味着数值后面带有 <code>Kb</code> 的流量数据是以千字节为单位的。例如，<code>5.41Kb</code> 表示 5.41 千字节。这些数据通常是按照每秒的速率显示的，即 <code>Kbps</code>（千字节每秒）。在网络术语中，速率通常指的是每秒可以传输的数据量。</p>
+<p>https://yinzhipeng123.github.io/markdown_log/system/centos7/%E5%90%84%E7%A7%8D%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8%E5%8D%95%E4%BD%8D%E5%92%8C%E7%BD%91%E9%80%9F%E5%8D%95%E4%BD%8D/</p>
 <p>https://wangchujiang.com/linux-command/c/iftop.html</p>
 
 
