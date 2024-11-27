@@ -493,7 +493,8 @@ nav:
     - linux文件系统的简单描述: system/centos7/linux文件系统的简单描述.md
     - 系统日志syslog-ng服务: system/centos7/系统日志1.md
     - 系统日志rsyslog服务: system/centos7/系统日志2.md
-    - 查询硬件信息: system/centos7/dmidecode.md
+    - 查询硬件信息-dmidecode: system/centos7/dmidecode.md
+    - 查询硬件信息-ipmitool: system/centos7/ipm.md
     - find命令: system/centos7/find.md
     - gun软件列表: system/centos7/gun软件列表.md
     - 关闭selinux: system/centos7/关闭selinux.md
@@ -522,6 +523,7 @@ nav:
     - IaaS:
         - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
     - Openstack: Cloud_Computing/openstack.md
+    - Ansible: programming_language/Ansible.md
     - 路由器:
       - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
       - 输入配置: Cloud_Computing/路由器/输入配置.md
@@ -532,6 +534,9 @@ nav:
        - DNS劫持: security/DNS劫持.md
        - SYN泛洪: security/SYN泛洪.md
     - KVM: Cloud_Computing/KVM.md
+    - KVM排查: Cloud_Computing/KVM排查.md
+- 大数据:
+  - HDFS: Cloud_Computing/HDFS.md
 - 工具和知识:
   - tool/index.md
   - git及github的轻度教程: tool/github使用.md
