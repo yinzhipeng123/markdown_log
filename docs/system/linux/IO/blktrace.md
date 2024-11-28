@@ -138,42 +138,39 @@ Usage: blkparse
 
 
 
-```
+```bash
 TRACE ACTIONS
        识别以下跟踪：
-       C -- complete A previously issued request has been completed.  The output will detail the sector and size of that request, as well as the success or failure of it.
+C -- 完成 之前发出的请求已经完成。输出将详细说明该请求的部门和大小，以及成功或失败的情况。  
 
-       D -- issued A request that previously resided on the block layer queue or in the i/o scheduler has been sent to the driver.
+D -- 发出 之前位于块层队列或 I/O 调度器中的请求已经发送给驱动程序。  
 
-       I -- inserted A request is being sent to the i/o scheduler for addition to the internal queue and later service by the driver. The request is fully formed at this time.
+I -- 插入 请求正在发送到 I/O 调度器，添加到内部队列中，稍后由驱动程序服务。此时请求已完全形成。  
 
-       Q -- queued This notes intent to queue i/o at the given location.  No real requests exists yet.
+Q -- 排队 记录计划在指定位置排队 I/O。此时尚未有实际请求存在。  
 
-       B  --  bounced  The  data pages attached to this bio are not reachable by the hardware and must be bounced to a lower memory location. This causes a big slowdown in i/o performance, since the data must be copied to/from kernel buffers. Usually this can be fixed with using better hardware -- either a
-           better i/o controller, or a platform with an IOMMU.
+B -- 弹回 附加到此 bio 的数据页无法通过硬件访问，必须弹回到较低的内存位置。这会导致 I/O 性能的大幅下降，因为数据必须在内核缓冲区之间复制/传输。通常通过使用更好的硬件（如更好的 I/O 控制器或具有 IOMMU 的平台）来解决此问题。  
 
-       M -- back merge A previously inserted request exists that ends on the boundary of where this i/o begins, so the i/o scheduler can merge them together.
+M -- 后合并 之前插入的请求在此 I/O 开始的边界上，因此 I/O 调度器可以将它们合并在一起。  
 
-       F -- front merge Same as the back merge, except this i/o ends where a previously inserted requests starts.
+F -- 前合并 与后合并相同，只是此 I/O 在之前插入的请求开始处结束。  
 
-       M --front or back merge One of the above
+M -- 前或后合并 上述任一合并。  
 
-       M -- front or back merge One of the above.
+G -- 获取请求 要发送任何类型的请求到块设备，首先必须分配一个请求容器结构。  
 
-       G -- get request To send any type of request to a block device, a struct request container must be allocated first.
+S -- 睡眠 没有可用的请求结构，因此发出请求的方必须等待一个请求结构被释放。  
 
-       S -- sleep No available request structures were available, so the issuer has to wait for one to be freed.
+P -- 插入 当 I/O 被排队到一个先前为空的块设备队列时，Linux 会插入该队列，以便在数据被需要之前预期将来会有更多 I/O 被添加。  
 
-       P -- plug When i/o is queued to a previously empty block device queue, Linux will plug the queue in anticipation of future ios being added before this data is needed.
+U -- 弹出 当设备中已经排队了一些请求数据时，开始将请求发送给驱动程序。如果超时周期已过（见下文）或队列中已添加了多个请求，这通常会自动发生。  
 
-       U -- unplug Some request data already queued in the device, start sending requests to the driver. This may happen automatically if a timeout period has passed (see next entry) or if a number of requests have been added to the queue.
+T -- 由于定时器弹出 如果排队的 I/O 在插入队列后没有被请求，Linux 将在定义的时间段后自动弹出它。  
 
-       T -- unplug due to timer If nobody requests the i/o that was queued after plugging the queue, Linux will automatically unplug it after a defined period has passed.
+X -- 拆分 在 RAID 或设备映射器设置中，传入的 I/O 可能跨越一个设备或内部区域，需要将其分割成更小的部分进行服务。这可能表示由于 RAID/dm 设备设置不当而导致的性能问题，但也可能只是正常的边界条件。  
+dm 在这方面特别糟糕，通常会克隆大量的 I/O。  
 
-       X -- split On raid or device mapper setups, an incoming i/o may straddle a device or internal zone and needs to be chopped up into smaller pieces for service. This may indicate a performance problem due to a bad setup of that raid/dm device, but may also just be part of normal  boundary  conditions.
-           dm is notably bad at this and will clone lots of i/o.
-
-       A -- remap For stacked devices, incoming i/o is remapped to device below it in the i/o stack. The remap action details what exactly is being remapped to what.
+A -- 重映射 对于堆叠设备，传入的 I/O 会被重新映射到其下的设备。重映射动作将详细说明到底重映射了什么到什么设备。
 ```
 
 
@@ -1253,5 +1250,328 @@ Device:       rrqm/s   wrqm/s     r/s     w/s    rsec/s    wsec/s     rkB/s     
 
 Device:       rrqm/s   wrqm/s     r/s     w/s    rsec/s    wsec/s     rkB/s     wkB/s avgrq-sz avgqu-sz   await   svctm  %util   Stamp
 (253,  0)       0.00    13.52    0.00    7.59      0.00    176.61      0.00     88.30    23.27   -75.91    1.40    4.22   8.95   TOTAL
+```
+
+
+
+
+
+这个 `blkparse` 输出显示了对块设备（是 `/dev/vda`）的 I/O 操作的追踪结果。逐行分析这些输出
+
+```text
+253,0    0        1     0.000000000 31360  A  WS 18285248 + 8 <- (253,1) 18283200
+253,0    0        2     0.000002963 31360  Q  WS 18285248 + 8 [barad_agent]
+253,0    0        3     0.000005948 31360  G  WS 18285248 + 8 [barad_agent]
+253,0    0        4     0.000008960 31360  P   N [barad_agent]
+253,0    0        5     0.000011457 31360 UT   N [barad_agent] 1
+253,0    0        6     0.000012926 31360  I  WS 18285248 + 8 [barad_agent]
+253,0    0        7     0.000016476 31360  D  WS 18285248 + 8 [barad_agent]
+253,0    0        8     0.000910827     0  C  WS 18285248 + 8 [0]
+```
+
+每一行代表一次 I/O 操作。字段的含义如下：
+
+### 1. **设备号和队列号**
+
+- `253,0`：设备号。在这里，`253` 是设备的主设备号，`0` 是设备的从设备号，表示 `/dev/vda`。
+- `31360`：是 I/O 请求的进程 ID。
+
+### 2. **事件编号**
+
+- `1`, `2`, `3`, ..., `8`：这是该行输出的事件编号，每个事件编号代表一次块设备的 I/O 操作。
+
+### 3. **时间戳**
+
+- `0.000000000`、`0.000002963`、`0.000005948` 等：这是该事件发生的时间戳（单位为秒），相对于 `blktrace` 追踪的开始时间。
+
+### 4. **操作类型、
+
+这些是不同的操作类型，表示块设备的不同 I/O 操作。常见的操作类型包括：
+
+- [ ] `A`：请求添加（Add）
+- [ ] `Q`：请求排队（Queue）
+- [ ] `G`：请求获取（Get）
+- [ ] `P`：请求处理（Process）
+- [ ] `UT`：请求完成的未处理（Unprocessed）
+- [ ] `I`：请求完成（Interrupt）
+- [ ] `D`：请求完成（Dispatch）
+- [ ] `C`：请求完成（Complete）
+
+- 在这条输出中，我们可以看到不同操作的状态，例如 `A`（添加），`Q`（排队），`D`（分派），`C`（完成）。
+
+### 5. **请求大小和偏移量**
+
+- `WS 18285248 + 8`：表示请求的操作类型（`WS` 是写操作，`18285248` 是操作的偏移量，`8` 是请求的大小）。这表示写操作将数据写入偏移量为 `18285248` 的位置，数据大小为 8 字节。
+
+这表示设备上的块请求。`WS` 表示写操作，`18285248 + 8` 表示请求大小。
+
+### 6. **进程信息**
+
+- `[barad_agent]`：这是执行该 I/O 操作的进程名称。在这个例子中，`barad_agent` 是操作的进程。
+
+### 7. **I/O 目标设备**
+
+- `<- (253,1) 18283200`：这表示该操作是来自另一个设备的 I/O 请求。这是源设备和偏移量。`253,1` 表示一个不同的块设备（可能是 `/dev/vdb`）和 `18283200` 是设备上的偏移量。
+
+### 解释各行：
+
+- **行 1**：
+
+  ```text
+  253,0    0        1     0.000000000 31360  A  WS 18285248 + 8 <- (253,1) 18283200
+  ```
+
+  这是一个 I/O 请求，设备 253,0（可能是 `/dev/vda`）发起了一个写操作（`WS`），写入偏移量 `18285248`，请求大小为 8 字节。它从设备 `253,1`（可能是 `/dev/vdb`）上获取了数据。
+
+- **行 2**：
+
+  ```text
+  253,0    0        2     0.000002963 31360  Q  WS 18285248 + 8 [barad_agent]
+  ```
+
+  这是队列操作，`barad_agent` 进程将请求添加到队列中。
+
+- **行 3**：
+
+  ```text
+  253,0    0        3     0.000005948 31360  G  WS 18285248 + 8 [barad_agent]
+  ```
+
+  这是获取请求的操作，`barad_agent` 进程获取请求并准备执行。
+
+- **行 4**：
+
+  ```text
+  253,0    0        4     0.000008960 31360  P   N [barad_agent]
+  ```
+
+  这是处理请求的操作，`barad_agent` 进程处理该请求。
+
+- **行 5**：
+
+  ```text
+  253,0    0        5     0.000011457 31360 UT   N [barad_agent] 1
+  ```
+
+  这是请求完成时未处理的状态。
+
+- **行 6**：
+
+  ```text
+  253,0    0        6     0.000012926 31360  I  WS 18285248 + 8 [barad_agent]
+  ```
+
+  这是中断操作，表示该请求的 I/O 完成。
+
+- **行 7**：
+
+  ```text
+  253,0    0        7     0.000016476 31360  D  WS 18285248 + 8 [barad_agent]
+  ```
+
+  这是分派操作，表示请求已被分配给设备并开始执行。
+
+- **行 8**：
+
+  ```text
+  253,0    0        8     0.000910827     0  C  WS 18285248 + 8 [0]
+  ```
+
+  这是完成操作，表示请求已完成。
+
+
+
+这些输出表明，设备 `/dev/vda` 上正在进行一系列的块设备 I/O 操作。每个请求从发起到完成都经历了多个步骤，包括排队、获取、处理、分派和完成。可以通过这些信息来分析磁盘 I/O 操作的时间、队列长度、请求大小等，进一步确定是否有 I/O 性能问题。如果你发现某些操作的延迟过高，或者排队时间过长，可能是磁盘存在性能瓶颈。
+
+
+
+要判断 `blktrace` 中的 I/O 操作时间是否过长，主要关注每个 I/O 请求的 **延迟时间**。延迟时间是指从请求发起到完成的时间间隔。以下是几种方法来分析这些延迟，并判断是否存在性能问题：
+
+### 1. **计算每个 I/O 操作的延迟时间**
+
+在 `blktrace` 输出中，每条记录的时间戳指示了该事件发生的时间点。例如，在你的输出中，我们可以看到事件的时间戳：
+
+```text
+253,0    0        1     0.000000000 31360  A  WS 18285248 + 8 <- (253,1) 18283200
+253,0    0        2     0.000002963 31360  Q  WS 18285248 + 8 [barad_agent]
+253,0    0        3     0.000005948 31360  G  WS 18285248 + 8 [barad_agent]
+253,0    0        4     0.000008960 31360  P   N [barad_agent]
+253,0    0        5     0.000011457 31360 UT   N [barad_agent] 1
+253,0    0        6     0.000012926 31360  I  WS 18285248 + 8 [barad_agent]
+253,0    0        7     0.000016476 31360  D  WS 18285248 + 8 [barad_agent]
+253,0    0        8     0.000910827     0  C  WS 18285248 + 8 [0]
+```
+
+- **时间戳**：每个事件前面的数字（例如 `0.000000000`, `0.000002963`, `0.000005948`）表示事件发生的时间，单位是秒。
+- **事件**：每个事件标识符（例如 `A`、`Q`、`G`、`P`、`D`、`C`）代表不同的操作阶段。
+
+#### 如何计算延迟：
+
+1. **获取开始时间和结束时间**：
+    通常，你需要关注 **请求发起（A）** 和 **请求完成（C）** 事件。例如，假设请求的开始时间是 `0.000000000`，完成时间是 `0.000910827`。
+
+2. **计算延迟**：
+    你可以通过以下方式计算延迟：
+
+   ```
+   延迟 = 完成时间 - 发起时间
+   延迟 = 0.000910827 - 0.000000000 = 0.000910827 秒
+   ```
+
+   也就是说，该 I/O 请求的延迟时间为 **0.000910827 秒**。
+
+### 2. **分析延迟时间**
+
+- **单个请求延迟**：检查每个 I/O 操作的延迟。如果单个 I/O 请求的延迟时间超过了系统的预期或业务需求，那么就可以认为该请求的延迟过长。
+- **多个请求的延迟**：如果你有大量的 I/O 操作，并且发现大部分操作的延迟都超过了一定的阈值（例如，1ms 或 10ms），那么系统可能存在性能瓶颈。
+
+### 3. **查看延迟分布和平均值**
+
+如果你在使用 `blktrace` 进行大规模跟踪时，可以提取所有 I/O 操作的时间戳，并计算以下内容：
+
+- **平均延迟**：所有 I/O 操作的平均延迟时间。如果平均延迟很高，可能是磁盘设备或存储系统存在瓶颈。
+- **最大延迟**：最大延迟时间。如果某些 I/O 请求的延迟非常高，可能是由于某些突发负载或硬件故障导致的。
+- **延迟的标准差**：标准差可以帮助你了解延迟的波动范围。如果标准差很大，说明 I/O 操作的延迟不稳定。
+
+### 4. **设置延迟阈值**
+
+在生产环境中，你可以设置一个 **延迟阈值**，比如 1 毫秒、10 毫秒，或者根据你的应用需求设定一个合理的阈值。如果任何 I/O 操作的延迟超过这个阈值，就可以认为该操作存在问题。
+
+例如，你可以分析延迟超过 1 毫秒的操作：
+
+```bash
+blkparse trace | awk '$4 > 0.001'
+```
+
+这条命令将筛选出延迟超过 1 毫秒的操作。
+
+### 5. **寻找长期延迟的模式**
+
+如果你看到某些 I/O 操作的延迟特别长，且持续时间很长，可能是系统中某些操作一直处于等待状态。例如：
+
+- **I/O 队列堵塞**：如果多个请求的延迟时间持续增加，可能表示设备 I/O 队列过长，磁盘处理能力不足。
+- **硬件问题**：硬盘的物理损坏或存储设备故障可能导致 I/O 请求长时间得不到响应，从而产生高延迟。
+
+### 6. **诊断过高延迟的原因**
+
+如果发现延迟过长，可以通过以下几种方式进行诊断：
+
+- **I/O 排队**：过长的队列可能导致延迟增加，可以通过查看 `blktrace` 输出中的 `Q`（排队）和 `C`（完成）事件来分析。
+- **硬件性能瓶颈**：检查磁盘性能（如使用 `iostat`, `dstat` 等工具）来查看设备的 I/O 响应时间。
+- **系统负载**：高系统负载或大量并发 I/O 操作也可能导致延迟增高。可以使用 `top` 或 `vmstat` 等工具来监控系统资源使用情况。
+
+
+
+- 要判断 I/O 延迟是否过长，关键是 **计算每个请求的延迟时间**（即请求完成时间减去请求发起时间）。
+- 如果发现延迟时间显著高于预期，或者有大量的请求的延迟过高，可以进一步分析是否存在性能瓶颈。
+- 如果 I/O 延迟过长，可能需要分析磁盘的排队情况、硬件性能、系统负载等因素，找到延迟的根本原因并加以解决。
+
+
+
+
+
+```
+CPU0 (myvda):
+ Reads Queued:           0,        0KiB  Writes Queued:          87,      348KiB
+ Read Dispatches:        0,        0KiB  Write Dispatches:       34,      348KiB
+ Reads Requeued:         0               Writes Requeued:         0
+ Reads Completed:        0,        0KiB  Writes Completed:       72,      640KiB
+ Read Merges:            0,        0KiB  Write Merges:           53,      212KiB
+ Read depth:             0               Write depth:             3
+ IO unplugs:             0               Timer unplugs:          17
+CPU1 (myvda):
+ Reads Queued:           0,        0KiB  Writes Queued:          63,      268KiB
+ Read Dispatches:        0,        0KiB  Write Dispatches:       18,      268KiB
+ Reads Requeued:         0               Writes Requeued:         0
+ Reads Completed:        0,        0KiB  Writes Completed:        0,        0KiB
+ Read Merges:            0,        0KiB  Write Merges:           45,      180KiB
+ Read depth:             0               Write depth:             3
+ IO unplugs:             0               Timer unplugs:          13
+```
+
+这是 `blkparse` 命令的部分输出，用于分析系统的块设备 I/O 操作。该输出涉及两个 CPU 核心（CPU0 和 CPU1），并展示了与 `myvda` 块设备相关的 I/O 操作的各种统计信息。下面逐个解释这些字段的含义：
+
+### CPU0 (myvda) 和 CPU1 (myvda)
+
+这表示两个 CPU 核心的 I/O 活动，它们都在与块设备 `myvda` 进行交互。输出中显示了每个 CPU 核心的 I/O 操作统计信息。
+
+### 关键字段解释：
+
+1. **Reads Queued / Writes Queued**:
+   - 这些字段表示当前有多少读/写操作排队等待处理。`0, 0KiB` 表示没有读操作排队，`87, 348KiB` 表示有 87 个写操作排队，总数据量为 348 KiB。
+2. **Read Dispatches / Write Dispatches**:
+   - 这些表示已调度的读/写操作数。`0, 0KiB` 表示没有调度读操作，`34, 348KiB` 表示 34 个写操作已经调度，总数据量为 348 KiB。
+3. **Reads Requeued / Writes Requeued**:
+   - 这些表示读/写操作重新排队的次数。`0` 表示没有读/写操作被重新排队。
+4. **Reads Completed / Writes Completed**:
+   - 这些字段表示已完成的读/写操作数量。`0, 0KiB` 表示没有读操作完成，`72, 640KiB` 表示 72 个写操作已经完成，总数据量为 640 KiB。
+5. **Read Merges / Write Merges**:
+   - 这些字段表示读取/写入操作合并的次数。`0, 0KiB` 表示没有合并的读操作，`53, 212KiB` 表示有 53 次写操作合并，总数据量为 212 KiB。
+6. **Read Depth / Write Depth**:
+   - 这些表示 I/O 队列的深度，即等待处理的读/写操作数量。`0` 表示没有等待的读操作，`3` 表示有 3 个写操作在等待处理。
+7. **IO Unplugs**:
+   - 这个字段表示 I/O 操作解堵塞的次数。`0` 表示没有 I/O 解堵塞。
+8. **Timer Unplugs**:
+   - 这个字段表示与 I/O 操作相关的定时器解堵塞次数。`17` 表示 17 次定时器解堵塞。
+
+- 从输出中来看，CPU0 的写操作相对较多，且写操作已经完成了 72 次，数据量为 640 KiB。
+- CPU1 主要有一些写操作排队，但没有完成任何写操作。
+- 没有读操作被调度或完成，表明大多数活动是写操作。
+- 合并写操作和写操作的队列深度表明系统可能正在优化写入，以减少 I/O 操作的开销。
+
+
+
+
+
+```
+Throughput (R/W): 0KiB/s / 88KiB/s
+Events (myvda): 690 entries
+Skips: 0 forward (0 -   0.0%)
+```
+
+这段输出来自 `blkparse` 的统计信息，主要包含以下几个字段：
+
+### 1. **Throughput (R/W): 0KiB/s / 88KiB/s**
+
+- **Read Throughput (R)**: `0KiB/s` 表示当前没有进行任何读操作，因此读的吞吐量为 0 KB/s。
+- **Write Throughput (W)**: `88KiB/s` 表示写操作的吞吐量为 88 KB 每秒。这表明系统正在进行写操作，并且写入速率为 88 KB/s。
+
+### 2. **Events (myvda): 690 entries**
+
+- 这表示与 `myvda` 设备相关的 I/O 事件总数为 690 条。这些事件可能包括读写操作、调度、合并等其他 I/O 处理活动。
+
+### 3. **Skips: 0 forward (0 - 0.0%)**
+
+- **Skips**: 这表示在 I/O 追踪过程中跳过的事件数。`0 forward` 表示没有跳过任何事件。
+- `0.0%` 表示跳过的事件占总事件的百分比，0% 表示没有跳过任何事件。
+
+### 总结：
+
+- 系统没有读操作，写操作的吞吐量为 88 KB/s，表明有稳定的写入流量。
+- 共记录了 690 条 I/O 事件，没有事件被跳过。
+
+
+
+
+
+
+
+
+
+```
+[root@VM-0-16-centos mydata]# btt -I iostatreport  -i myvdabin
+==================== All Devices ====================
+
+            ALL           MIN           AVG           MAX           N
+--------------- ------------- ------------- ------------- -----------
+Q2Qdm             0.000000438   0.047675694   5.468759846         152
+Q2Cdm             0.000631999   0.001516763   0.003607410         153
+
+Q2G               0.000000160   0.000000786   0.000004391          55
+G2I               0.000001009   0.000004959   0.000026337          38
+Q2M               0.000000126   0.000000332   0.000011216          98
+I2D               0.000000630   0.000002691   0.000017820          38
+M2D               0.000001295   0.000008099   0.000024640          98
+D2C               0.000630444   0.001496100   0.003603108         153
 ```
 

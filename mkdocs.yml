@@ -380,6 +380,7 @@ nav:
         - perf命令: system/linux/计算/perf.md
         - vmstat命令: system/linux/计算/vmstat.md
         - ps命令: system/linux/计算/ps.md
+        - 线程名字的含义: system/linux/计算/进程名字.md
         - iostat命令: system/linux/计算/iostat.md
         - sar命令: system/linux/计算/sar.md
         - tsar命令: system/linux/计算/tsar.md
@@ -408,6 +409,11 @@ nav:
     - IO相关:
         - 内核参数: system/linux/IO/内核参数.md
         - proc文件系统: system/linux/IO/0proc文件系统.md
+        - partitions: system/linux/IO/0proc0partitions.md
+        - dd命令: system/linux/IO/dd命令.md
+        - fio命令: system/linux/IO/fio.md
+        - jbd2线程: system/linux/IO/jbd2.md
+        - Linux常用文件系统优缺点: system/linux/IO/不同文件系统优缺点.md
         - sys文件系统: system/linux/IO/0sys文件系统.md
         - IO技术栈: system/linux/IO/IO技术栈.md
         - IO指标及工具: system/linux/IO/IO指标及工具.md
@@ -473,9 +479,11 @@ nav:
         - https原理: system/linux/网络/https原理.md
         - 用户配置文件加载顺序: system/centos7/用户配置文件加载顺序.md
         - NAT网关模拟: system/linux/网络/NAT网关模拟.md
-
-  - Centos7:
+  - Linux软件:
+    - rsync: system/Linux通用软件/rsync.md
     - 提供命令查询的网站: system/centos7/命令搜索.md
+    - find命令: system/centos7/find.md
+  - Centos7:
     - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
     - 修改网卡: system/centos7/ens33.md
     - Centos7启动过程: system/centos7/Centos7启动过程.md
@@ -495,7 +503,6 @@ nav:
     - 系统日志rsyslog服务: system/centos7/系统日志2.md
     - 查询硬件信息-dmidecode: system/centos7/dmidecode.md
     - 查询硬件信息-ipmitool: system/centos7/ipm.md
-    - find命令: system/centos7/find.md
     - gun软件列表: system/centos7/gun软件列表.md
     - 关闭selinux: system/centos7/关闭selinux.md
   - Windows:
