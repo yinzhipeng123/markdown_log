@@ -227,6 +227,10 @@ nav:
     - awk使用bash变量: programming_language/awk/awk_var.md
     - awk无缓存输出: programming_language/awk/awk_nocache.md
     - awk不打印某列: programming_language/awk/awk_noprint.md
+  - Ansible:
+    - Ansible部署: programming_language/Ansible部署.md
+    - Ansible_Dome: programming_language/Ansible_Dome.md
+    - Ansible检查正确性: programming_language/Ansible检查正确性.md
   - Bash:
     - programming_language/bash/index.md
     - 语法:
@@ -354,6 +358,7 @@ nav:
         - redis运维动作: database/redis/redis运维动作.md
         - redis部署形态: database/redis/redis部署形态.md
         - redis配置详解: database/redis/redis配置详解.md
+        - redis支持存储的类型: database/redis/redis支持存储的类型.md
 - 监控:
   - monitor/index.md
   - Prometheus:
@@ -500,6 +505,7 @@ nav:
     - LVM: system/centos7/LVM.md
     - firewalld: system/centos7/firewalld.md
     - iptable: system/centos7/iptable.md
+    - iptables流量标记: system/centos7/iptables流量标记.md
     - Yum:
         - ius源: system/centos7/yum/ius.md
     - 时间同步chrony: system/centos7/chronyd.md
