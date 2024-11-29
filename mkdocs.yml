@@ -344,6 +344,16 @@ nav:
         - 索引: database/mysql/索引.md
         - ab复制: database/mysql/ab复制.md
         - 读写分离: database/mysql/读写分离.md
+    - Redis:
+        - redis: database/redis/redis.md
+        - redis_info详解: database/redis/redis_info.md
+        - redis_info_stats详解: database/redis/redis_info_stats.md
+        - redis作为缓存的优化方案: database/redis/redis作为缓存的优化方案.md
+        - redis快速部署: database/redis/redis快速部署.md
+        - redis编译安装主从: database/redis/redis编译安装主从.md
+        - redis运维动作: database/redis/redis运维动作.md
+        - redis部署形态: database/redis/redis部署形态.md
+        - redis配置详解: database/redis/redis配置详解.md
 - 监控:
   - monitor/index.md
   - Prometheus:
@@ -530,6 +540,7 @@ nav:
     - IaaS:
         - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
     - Openstack: Cloud_Computing/openstack.md
+    - 四层还是七层: Cloud_Computing/四层还是七层.md
     - Ansible: programming_language/Ansible.md
     - 路由器:
       - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
