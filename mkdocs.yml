@@ -373,6 +373,7 @@ nav:
     - Prometheus recording_rules功能: monitor/prometheus/prometheus_recording_rule.md
     - Prometheus指标讲解"为什么rate可以计算CPU的使用率": monitor/prometheus/prometheus_rate.md
     - 时序数据库: monitor/prometheus/TSDB.md
+    - 查询某个机器的CPU: monitor/prometheus/查询某个机器的CPU.md
   - Alertmanager:
     - Alertmanager部署: monitor/prometheus/prometheus.md
     - Alertmanager配置: monitor/alertmanager/alertmanager_config.md
