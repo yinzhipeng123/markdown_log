@@ -425,6 +425,8 @@ nav:
         - TLB: system/linux/内存/TLB.md
         - 内存大页: system/linux/内存/内存大页.md
         - 透明大页: system/linux/内存/透明大页.md
+        - pidstat查看线程内存状态: system/linux/内存/pidstat_r.md
+        - 堆栈信息查看: system/linux/内存/堆栈.md
     - IO相关:
         - 内核参数: system/linux/IO/内核参数.md
         - proc文件系统: system/linux/IO/0proc文件系统.md
@@ -498,6 +500,7 @@ nav:
         - https原理: system/linux/网络/https原理.md
         - 用户配置文件加载顺序: system/centos7/用户配置文件加载顺序.md
         - NAT网关模拟: system/linux/网络/NAT网关模拟.md
+        - 流表: system/linux/网络/流表.md
   - Linux软件:
     - rsync: system/Linux通用软件/rsync.md
     - 提供命令查询的网站: system/centos7/命令搜索.md
