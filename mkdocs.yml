@@ -295,7 +295,8 @@ nav:
     - Controller: lxc/kubernetes/Controller.md
     - Secret: lxc/kubernetes/Secret.md
     - StatefulSet_Mysql: lxc/kubernetes/StatefulSet_Mysql.md
-
+    - etc备份: lxc/kubernetes/etc备份.md
+    - 节点维护: lxc/kubernetes/节点维护.md
   - KubeSphere:
     - KubeSphere安装: lxc/kubesphere/kubesphere.md
   - Rancher:
@@ -321,9 +322,17 @@ nav:
       - mq种类: middleware/MQ/mq.md
       - mq对比: middleware/MQ/mqvs.md
       - rocketmq部署: middleware/MQ/rocketmq.md
+  - Kafka:
+      - 基本概念: middleware/kafka/基本概念.md
+      - 连接器: middleware/kafka/connect.md
+      - 去zookeeper新特性: middleware/kafka/新特性.md
+      - 单机部署: middleware/kafka/单机部署.md
+      - 运维命令: middleware/kafka/运维命令.md
+      - 配置文件详解: middleware/kafka/配置文件.md
+      - 集群模式: middleware/kafka/集群模式.md
   - CICD:
     - CICD概念: middleware/CICD/cicd.md
-
+    - Pipeline: lxc/kubernetes/Pipeline.md
   - Nginx:
       - Nginx部署: middleware/nginx/nginx_install.md
       - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
