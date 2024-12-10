@@ -286,6 +286,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/lxc/kubernetes/hostalias/</loc>
+         <lastmod>2024-12-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/lxc/kubernetes/hostpath/</loc>
          <lastmod>2024-12-10</lastmod>
          <changefreq>daily</changefreq>

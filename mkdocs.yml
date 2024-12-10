@@ -151,6 +151,7 @@ nav:
 - 编程语言:
   - programming_language/index.md
   - Python:
+    - Virtualenv: programming_language/python/virtualenv/env.md
     - Python一些语法: programming_language/python/basics/basic.md
     - CSV模块: programming_language/python/csv.md
     - CSV、列变行、行变列转换: programming_language/python/csv_row_to_col.md
@@ -267,6 +268,7 @@ nav:
       - 查看系统软件变化: programming_language/bash_help/rpm.md
       - bash批量登录服务器: programming_language/bash_help/sshpass.md
       - sort排序: programming_language/bash_help/sort.md
+      - shellcheck: programming_language/bash_help/shellcheck.md
 - 容器技术:
   - lxc/index.md
   - K8S:
@@ -297,6 +299,7 @@ nav:
     - StatefulSet_Mysql: lxc/kubernetes/StatefulSet_Mysql.md
     - etc备份: lxc/kubernetes/etc备份.md
     - 节点维护: lxc/kubernetes/节点维护.md
+    - hostalias: lxc/kubernetes/hostalias.md
   - KubeSphere:
     - KubeSphere安装: lxc/kubesphere/kubesphere.md
   - Rancher:
@@ -586,6 +589,7 @@ nav:
   - 常用地址: tool/url.md
   - P99: tool/p99.md
   - github代码对比: tool/github.md
+  - git一次报错: tool/git.md
   - brew使用: tool/brew.md
   - siege压测: tool/siege压测.md
 - 笔记:
