@@ -3948,6 +3948,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    查看消费组内的消费情况
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -8715,6 +8722,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_11">
@@ -8751,6 +8760,20 @@
     <li class="md-nav__item">
       <a href="../../../soft/%E7%88%B1%E6%83%85/" class="md-nav__link">
         爱情
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E6%84%9F%E6%83%85/" class="md-nav__link">
+        爱情2
       </a>
     </li>
   
@@ -9049,6 +9072,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    查看消费组内的消费情况
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -9213,6 +9243,33 @@ Topic: __consumer_offsets       TopicId: 2G8TIlujSISTjGZ2NupZSQ PartitionCount: 
 <p>当你发送消息到 Kafka 时，生产者通常会自动选择一个分区。如果你没有指定分区，生产者会使用 <strong>分区器</strong>（Partitioner）根据消息的 <strong>key</strong> 来决定消息发送到哪个分区。例如，<code>key</code> 值相同的消息将会被发送到同一个分区，这样可以保证它们的顺序性。</p>
 <p>如果你想手动指定消息的分区，可以通过设置 <code>produce()</code> 方法中的 <code>partition</code> 参数来指定目标分区。</p>
 <pre class="highlight"><code class="language-python">producer.produce('my_topic', key='key1', value='value1', partition=1)  # 指定发送到分区1</code></pre>
+<h2 id="_2">查看消费组内的消费情况</h2>
+<pre class="highlight"><code class="language-bash">bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group test_group
+
+Consumer group 'test_group' has no active members.
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+test_group      test_topic      0          12              12              0               -               -               -  </code></pre>
+<p>这个命令 <code>bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group test_group</code> 用于查看 Kafka 消费者组（<code>test_group</code>）的状态。它显示了当前消费者组在指定主题（<code>test_topic</code>）上的消费情况。</p>
+<p>输出的各个字段含义如下：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>GROUP</strong>：消费者组的名称，在此例中是 <code>test_group</code>。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>TOPIC</strong>：消费者组订阅的 Kafka 主题，这里是 <code>test_topic</code>。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>PARTITION</strong>：指示此消费者组消费的主题分区编号，在此例中是分区 <code>0</code>。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>CURRENT-OFFSET</strong>：消费者组当前的消费偏移量。偏移量是指消费者消费到 Kafka 主题中的哪个位置。在此例中是 <code>12</code>，表示消费者已经消费了 12 条消息。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>LOG-END-OFFSET</strong>：Kafka 中日志的最新偏移量，即该分区的最新消息的偏移量。此处也是 <code>12</code>，表示日志中最多有 12 条消息。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>LAG</strong>：消费滞后，表示当前偏移量与日志末尾偏移量的差异。滞后为 <code>0</code>，表示消费者已经消费完所有消息，没有滞后。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>CONSUMER-ID</strong>：消费者的唯一标识符。在此例中是 <code>-</code>，表示没有消费者连接到该消费者组。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>HOST</strong>：消费者的主机名或 IP 地址。此处为 <code>-</code>，也表示没有活跃的消费者。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>CLIENT-ID</strong>：消费者的客户端标识符。此处为 <code>-</code>，表示没有客户端连接。</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Consumer group 'test_group' has no active members</code>：说明当前 <code>test_group</code> 消费者组没有任何活跃的消费者。</p>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>LAG = 0</code>：尽管没有消费者，但日志中没有新的未消费的消息。</li>
+</ul>
+<p>可能的原因是消费者组没有消费者进程在消费，或者消费者已经断开连接。如果你希望看到有消费者在消费消息，可以尝试启动一个或多个消费者，确保他们在该组内活跃。</p>
 
 
   
