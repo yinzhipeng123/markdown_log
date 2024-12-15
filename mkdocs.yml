@@ -336,6 +336,8 @@ nav:
   - CICD:
     - CICD概念: middleware/CICD/cicd.md
     - Pipeline: lxc/kubernetes/Pipeline.md
+    - Jenkins的yum部署: middleware/CICD/jenkins_yum部署.md
+    - Jenkins的简单构建任务: middleware/CICD/Jenkins简单的构建任务.md
   - Nginx:
       - Nginx部署: middleware/nginx/nginx_install.md
       - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
@@ -478,6 +480,7 @@ nav:
         - kdump: system/linux/IO/kdump.md
         - 分析vmcore: system/linux/IO/分析vmcore.md
         - sysrq-trigger: system/linux/IO/sysrq-trigger.md
+        - 文件描述符: system/linux/IO/文件描述符.md
     - 网络相关:
         - TCP图解: system/linux/网络/tcp.md
         - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
@@ -524,6 +527,8 @@ nav:
     - LVM: system/centos7/LVM.md
     - firewalld: system/centos7/firewalld.md
     - iptable: system/centos7/iptable.md
+    - service服务书写规则: system/centos7/service.md
+    - service服务快速失败: system/centos7/快速失败.md
     - iptables流量标记: system/centos7/iptables流量标记.md
     - Yum:
         - ius源: system/centos7/yum/ius.md

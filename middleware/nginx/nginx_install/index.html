@@ -4012,6 +4012,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_8">
@@ -4048,6 +4052,34 @@
     <li class="md-nav__item">
       <a href="../../../lxc/kubernetes/Pipeline/" class="md-nav__link">
         Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CICD/jenkins_yum%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        Jenkins的yum部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CICD/Jenkins%E7%AE%80%E5%8D%95%E7%9A%84%E6%9E%84%E5%BB%BA%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
+        Jenkins的简单构建任务
       </a>
     </li>
   
@@ -6131,6 +6163,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_1_4">
@@ -6671,6 +6705,20 @@
     <li class="md-nav__item">
       <a href="../../../system/linux/IO/sysrq-trigger/" class="md-nav__link">
         sysrq-trigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/linux/IO/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6/" class="md-nav__link">
+        文件描述符
       </a>
     </li>
   
@@ -7409,6 +7457,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_3">
@@ -7513,6 +7565,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../system/centos7/service/" class="md-nav__link">
+        service服务书写规则
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/centos7/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5/" class="md-nav__link">
+        service服务快速失败
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../system/centos7/iptables%E6%B5%81%E9%87%8F%E6%A0%87%E8%AE%B0/" class="md-nav__link">
         iptables流量标记
       </a>
@@ -7530,7 +7610,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_8" type="checkbox" id="__nav_7_3_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_10" type="checkbox" id="__nav_7_3_10" >
       
       
       
@@ -7539,13 +7619,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_7_3_8">
+        <label class="md-nav__link" for="__nav_7_3_10">
           Yum
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Yum" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_3_8">
+        <label class="md-nav__title" for="__nav_7_3_10">
           <span class="md-nav__icon md-icon"></span>
           Yum
         </label>
@@ -9272,14 +9352,18 @@ nginx-1.24.0.tar.gz  pcre2-10.42  pcre2-10.42.tar.gz
 [root@VM-0-16-centos src]# ls
 nginx-1.24.0  nginx-1.24.0.tar.gz  pcre2-10.42  pcre2-10.42.tar.gz</code></pre>
 <p>对nginx编译前配置</p>
-<p><code>--prefix=/usr/local/webserver/nginx #安装路径
---with-http_stub_status_module  该模块提供 访问基本状态信息
---with-http_ssl_module 该模块提供 对 HTTPS 的必要支持
---with-pcre 设置 PCRE库的源码的路径。 该库被ngx_http_rewrite_module模块所需要</code></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>--prefix=/usr/local/webserver/nginx #安装路径</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>--with-http_stub_status_module  该模块提供 访问基本状态信息</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>--with-http_ssl_module 该模块提供 对 HTTPS 的必要支持</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>--with-pcre 设置 PCRE库的源码的路径。 该库被ngx_http_rewrite_module模块所需要</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>--user=nginx</code>：指定 Nginx 使用的用户。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>--group=nginx</code>：指定 Nginx 使用的用户组。</li>
+</ul>
 <pre class="highlight"><code class="language-bash">[root@VM-0-16-centos src]# ls
 nginx-1.24.0  nginx-1.24.0.tar.gz  pcre2-10.42  pcre2-10.42.tar.gz
 [root@VM-0-16-centos src]# cd nginx-1.24.0
-[root@VM-0-16-centos nginx-1.24.0]# ./configure --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre2-10.42
+[root@VM-0-16-centos nginx-1.24.0]# ./configure --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre2-10.42  --user=nginx --group=nginx 
 ...
 ...
 Configuration summary
@@ -9303,8 +9387,10 @@ Configuration summary
 
 
 [root@VM-0-16-centos nginx-1.24.0]# make &amp;&amp; make install  
+[root@VM-0-16-centos nginx-1.24.0]# useradd -r -s /sbin/nologin nginx
 [root@VM-0-16-centos nginx]# pwd
 /usr/local/webserver/nginx
+[root@VM-0-16-centos nginx]# chown -R nginx:nginx /usr/local/webserver/nginx
 [root@VM-0-16-centos nginx]# tree
 .
 ├── conf #默认配置目录
@@ -9329,6 +9415,40 @@ Configuration summary
 ├── logs #日志目录
 └── sbin #nginx二进制文件
     └── ngin</code></pre>
+<p>修改 <code>nginx</code> 用户的最大打开文件数，修改 <code>/etc/security/limits.conf</code> 文件，添加如下内容：</p>
+<pre class="highlight"><code class="language-bash">nginx   soft    nofile   65535
+nginx   hard    nofile   65535
+nginx   soft    nproc    4096
+nginx   hard    nproc    4096 #用户最大文件描述</code></pre>
+<pre class="highlight"><code>[root@VM-0-16-centos ~]# cat /etc/pam.d/system-auth | grep pam_li                                                                       
+session     required                                     pam_limits.so  </code></pre>
+<p>如果不通过systemd启动，那么在系统启动脚本中，增加一条限制进程最大文件描述符的限制</p>
+<pre class="highlight"><code>[root@VM-0-16-centos ~]# echo "ulimit -n 65535" &gt;&gt; /etc/rc.local 
+[root@VM-0-16-centos ~]# cat /etc/rc.local </code></pre>
+<p>手动创建一个 systemd 启动脚本来管理 Nginx 服务。创建文件 <code>/etc/systemd/system/nginx.service</code>，并添加如下内容：</p>
+<pre class="highlight"><code class="language-bash">[Unit]
+Description=The nginx HTTP and reverse proxy server
+Documentation=http://nginx.org/en/docs/
+After=network.target
+
+[Service]
+ExecStartPre=/usr/local/webserver/nginx/sbin/nginx -t
+ExecStart=/usr/local/webserver/nginx/sbin/nginx
+ExecReload=/usr/local/webserver/nginx/sbin/nginx -s reload
+ExecStop=/usr/local/webserver/nginx/sbin/nginx -s stop
+PIDFile=/usr/local/webserver/nginx/logs/nginx.pid
+User=nginx
+Group=nginx
+WorkingDirectory=/usr/local/nginx
+# 设置 Nginx 服务进程最大文件描述符限制
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+<p>保存文件后，重新加载 systemd 配置并启用 Nginx：</p>
+<pre class="highlight"><code class="language-bash">systemctl daemon-reload
+systemctl enable nginx
+systemctl start nginx</code></pre>
 <h6 id="nginx-configure-help">NGINX 编译的选项  configure --help</h6>
 <p>官网说明：<a href="http://nginx.org/en/docs/configure.html">从源代码构建nginx</a></p>
 <pre class="highlight"><code class="language-bash">  [root@VM-0-16-centos nginx-1.24.0]# ./configure --help
@@ -9490,7 +9610,7 @@ Configuration summary
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../../../lxc/kubernetes/Pipeline/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Pipeline" rel="prev">
+        <a href="../../CICD/Jenkins%E7%AE%80%E5%8D%95%E7%9A%84%E6%9E%84%E5%BB%BA%E4%BB%BB%E5%8A%A1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Jenkins的简单构建任务" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -9499,7 +9619,7 @@ Configuration summary
               <span class="md-footer__direction">
                 上一页
               </span>
-              Pipeline
+              Jenkins的简单构建任务
             </div>
           </div>
         </a>

@@ -79,16 +79,23 @@ nginx-1.24.0  nginx-1.24.0.tar.gz  pcre2-10.42  pcre2-10.42.tar.gz
 
 对nginx编译前配置
 
-`--prefix=/usr/local/webserver/nginx #安装路径
---with-http_stub_status_module  该模块提供 访问基本状态信息
---with-http_ssl_module 该模块提供 对 HTTPS 的必要支持
---with-pcre 设置 PCRE库的源码的路径。 该库被ngx_http_rewrite_module模块所需要`
+- [ ] `--prefix=/usr/local/webserver/nginx #安装路径
+  `
+- [ ] `--with-http_stub_status_module  该模块提供 访问基本状态信息
+  `
+- [ ] `--with-http_ssl_module 该模块提供 对 HTTPS 的必要支持
+  `
+- [ ] `--with-pcre 设置 PCRE库的源码的路径。 该库被ngx_http_rewrite_module模块所需要`
+- [ ] `--user=nginx`：指定 Nginx 使用的用户。
+- [ ] `--group=nginx`：指定 Nginx 使用的用户组。
+
+
 
 ```bash
 [root@VM-0-16-centos src]# ls
 nginx-1.24.0  nginx-1.24.0.tar.gz  pcre2-10.42  pcre2-10.42.tar.gz
 [root@VM-0-16-centos src]# cd nginx-1.24.0
-[root@VM-0-16-centos nginx-1.24.0]# ./configure --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre2-10.42
+[root@VM-0-16-centos nginx-1.24.0]# ./configure --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre2-10.42  --user=nginx --group=nginx 
 ...
 ...
 Configuration summary
@@ -112,8 +119,10 @@ Configuration summary
   
   
 [root@VM-0-16-centos nginx-1.24.0]# make && make install  
+[root@VM-0-16-centos nginx-1.24.0]# useradd -r -s /sbin/nologin nginx
 [root@VM-0-16-centos nginx]# pwd
 /usr/local/webserver/nginx
+[root@VM-0-16-centos nginx]# chown -R nginx:nginx /usr/local/webserver/nginx
 [root@VM-0-16-centos nginx]# tree
 .
 ├── conf #默认配置目录
@@ -141,6 +150,65 @@ Configuration summary
 ```
 
 
+
+修改 `nginx` 用户的最大打开文件数，修改 `/etc/security/limits.conf` 文件，添加如下内容：
+
+```bash
+nginx   soft    nofile   65535
+nginx   hard    nofile   65535
+nginx   soft    nproc    4096
+nginx   hard    nproc    4096 #用户最大文件描述
+```
+
+
+
+```
+[root@VM-0-16-centos ~]# cat /etc/pam.d/system-auth | grep pam_li                                                                       
+session     required                                     pam_limits.so  
+```
+
+
+
+如果不通过systemd启动，那么在系统启动脚本中，增加一条限制进程最大文件描述符的限制
+
+```
+[root@VM-0-16-centos ~]# echo "ulimit -n 65535" >> /etc/rc.local 
+[root@VM-0-16-centos ~]# cat /etc/rc.local 
+```
+
+
+
+手动创建一个 systemd 启动脚本来管理 Nginx 服务。创建文件 `/etc/systemd/system/nginx.service`，并添加如下内容：
+
+```bash
+[Unit]
+Description=The nginx HTTP and reverse proxy server
+Documentation=http://nginx.org/en/docs/
+After=network.target
+
+[Service]
+ExecStartPre=/usr/local/webserver/nginx/sbin/nginx -t
+ExecStart=/usr/local/webserver/nginx/sbin/nginx
+ExecReload=/usr/local/webserver/nginx/sbin/nginx -s reload
+ExecStop=/usr/local/webserver/nginx/sbin/nginx -s stop
+PIDFile=/usr/local/webserver/nginx/logs/nginx.pid
+User=nginx
+Group=nginx
+WorkingDirectory=/usr/local/nginx
+# 设置 Nginx 服务进程最大文件描述符限制
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+```
+
+保存文件后，重新加载 systemd 配置并启用 Nginx：
+
+```bash
+systemctl daemon-reload
+systemctl enable nginx
+systemctl start nginx
+```
 
 
 

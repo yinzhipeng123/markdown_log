@@ -68,8 +68,9 @@ http {
 
 ```bash
 
-#user  nobody; 
-#user  定义工作进程使用的用户 不填写默认为nobody
+user nginx; 
+# 使用专门的nginx用户来运行Nginx可以确保该进程的权限仅限于其必要的操作。即使攻击者成功利用某些漏洞入侵Nginx，攻击者也只能获得nginx用户的权限，而不是root权限。这样可以降低潜在的攻击面
+#user  定义工作进程使用的用户,推荐使用nginx用户
 worker_processes  1;
 #nginx有一个主进程和几个工作进程。主进程的主要目的是读取和评估配置，
 #并维护工作进程。工作进程对请求进行实际处理。nginx采用基于事件的模型
