@@ -311,6 +311,7 @@ nav:
     - docker_compse讲解: lxc/docker/pinpoint_compose.md
     - dockerfile: lxc/docker/dockerfile.md
     - docker命令: lxc/docker/docker命令.md
+    - registry: lxc/docker/registry.md
 - 中间件:
   - middleware/index.md
   - Etcd:
@@ -338,6 +339,9 @@ nav:
     - Pipeline: lxc/kubernetes/Pipeline.md
     - Jenkins的yum部署: middleware/CICD/jenkins_yum部署.md
     - Jenkins的简单构建任务: middleware/CICD/Jenkins简单的构建任务.md
+    - IDEA_Jenkins插件: middleware/CICD/IDEA_Jenkins插件.md
+    - Jenkins审查制度: middleware/CICD/Jenkins审查制度.md
+    - pipeline示例: middleware/CICD/pipeline示例.md
   - Nginx:
       - Nginx部署: middleware/nginx/nginx_install.md
       - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
