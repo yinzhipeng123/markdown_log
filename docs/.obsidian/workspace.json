@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "75bccde17f2013c1",
+        "id": "b6470cc8432fbf4c",
         "type": "tabs",
         "children": [
           {
-            "id": "d5b2a952cac67db5",
+            "id": "f399ece4aed67413",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "lxc/kubernetes/生命周期.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lxc/kubernetes/生命周期.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "lxc/kubernetes/生命周期.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "lxc/kubernetes/生命周期.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -134,7 +126,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,10 +139,21 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "d5b2a952cac67db5",
+  "active": "f399ece4aed67413",
   "lastOpenFiles": [
-    "index.md",
+    "未命名 1.canvas",
+    "未命名.canvas",
+    "database/mysql/读写分离.md",
+    "database/mysql/编译安装.md",
+    "image/image-20210714195401479.png",
+    "image/image-20210714195020249.png",
+    "image/image-20210714193055178.png",
+    "image/为什么写博客.jpg",
+    "image/dfasdfasdf.png",
+    "image/github/select_png.png",
+    "image/github/select_compare.png",
     "lxc/kubernetes/生命周期.md",
+    "index.md",
     "programming_language/bash/不同的脚本执行方式.md",
     "system/linux/内存/Linux的两种内存分配方式.md",
     "system/linux/内存/free.md",
