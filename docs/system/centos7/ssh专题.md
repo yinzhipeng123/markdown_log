@@ -1,4 +1,5 @@
-# ssh相关命令中文man
+- [ ] # ssh相关命令中文man
+
 
 ## 服务端
 
@@ -54,3 +55,18 @@ $rpm -ql openssh-clients
 [ssh(1) — manpages-zh — Debian unstable — Debian Manpages](https://manpages.debian.org/unstable/manpages-zh/ssh.1.zh_CN.html)
 
 [scp(1) — manpages-zh — Debian unstable — Debian Manpages](https://manpages.debian.org/unstable/manpages-zh/scp.1.zh_CN.html)
+
+
+
+免密配置：
+
+```bash
+ssh-keygen -t rsa -b 4096
+```
+
+发送密钥
+
+```bash
+ssh-copy-id root@ip地址
+```
+

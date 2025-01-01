@@ -28,3 +28,28 @@ brew install openssl@3
 
 ```
 
+
+
+
+
+
+
+### 查看包的安装路径
+
+运行以下命令列出所有已安装的软件包及其文件路径：
+
+```bash
+v_yinzhipeng01@yinzhipeng123 ~ % brew list --verbose wget   
+/opt/homebrew/Cellar/wget/1.25.0/INSTALL_RECEIPT.json
+/opt/homebrew/Cellar/wget/1.25.0/bin/wget
+/opt/homebrew/Cellar/wget/1.25.0/.brew/wget.rb
+/opt/homebrew/Cellar/wget/1.25.0/ChangeLog
+/opt/homebrew/Cellar/wget/1.25.0/AUTHORS
+/opt/homebrew/Cellar/wget/1.25.0/sbom.spdx.json
+/opt/homebrew/Cellar/wget/1.25.0/README
+/opt/homebrew/Cellar/wget/1.25.0/COPYING
+/opt/homebrew/Cellar/wget/1.25.0/NEWS
+/opt/homebrew/Cellar/wget/1.25.0/.bottle/etc/wgetrc
+/opt/homebrew/Cellar/wget/1.25.0/share/man/man1/wget.1
+/opt/homebrew/Cellar/wget/1.25.0/share/locale/sl/LC_MESSAGES/wget-gnulib.mo
+```
