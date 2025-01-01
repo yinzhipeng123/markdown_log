@@ -7,40 +7,39 @@ repo_name: MarkDown_Log
 repo_url: https://github.com/yinzhipeng123/markdown_log/
 
 markdown_extensions:
-#  语法高亮，不使用pygments，设置Highlight.jsw为高亮，参考：https://github.com/squidfunk/mkdocs-material/blob/master/docs/setup/extensions/python-markdown-extensions.md
+  #  语法高亮，不使用pygments，设置Highlight.jsw为高亮，参考：https://github.com/squidfunk/mkdocs-material/blob/master/docs/setup/extensions/python-markdown-extensions.md
   - pymdownx.highlight:
       use_pygments: false
   - pymdownx.superfences
-
-#  可以在md引用单独的代码段文件，参看使用：https://squidfunk.github.io/mkdocs-material/reference/abbreviations/#adding-a-glossary
+  #  可以在md引用单独的代码段文件，参看使用：https://squidfunk.github.io/mkdocs-material/reference/abbreviations/#adding-a-glossary
   - pymdownx.snippets
-#  可以在md中添加键盘图标，参考：https://squidfunk.github.io/mkdocs-material/reference/formatting/#adding-keyboard-keys
+  #  可以在md中添加键盘图标，参考：https://squidfunk.github.io/mkdocs-material/reference/formatting/#adding-keyboard-keys
   - pymdownx.keys
-# 下面三个选项，给md添加关键字，来实现页面上特殊的提示块，参考使用：https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage
+  # 下面三个选项，给md添加关键字，来实现页面上特殊的提示块，参考使用：https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-#  给md文档中的关键字添加页面提示，官网地址：https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
+  #  给md文档中的关键字添加页面提示，官网地址：https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
   - abbr
-#  通过md给页面添加按钮，图片格式等样式
+  #  通过md给页面添加按钮，图片格式等样式
   - attr_list
-#  通过md给页面添加特殊的列表
+  #  通过md给页面添加特殊的列表
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
-#  添加脚注，参考：https://squidfunk.github.io/mkdocs-material/reference/footnotes/#configuration
+  #  添加脚注，参考：https://squidfunk.github.io/mkdocs-material/reference/footnotes/#configuration
   - footnotes
-#   可以设置页面属性的功能
+  #   可以设置页面属性的功能
   - meta
-# 可以在md中添加html。参考 https://python-markdown.github.io/extensions/md_in_html/
+  # 可以在md中添加html。参考 https://python-markdown.github.io/extensions/md_in_html/
   - md_in_html
 extra:
   disqus: 'something'
-#  谷歌分析。https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#google-analytics
+  #  谷歌分析。https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#google-analytics
   analytics:
     provider: google
     property: G-2ZF49ZVQ2M
-#  设置页脚
+  #  设置页脚
   social:
     - icon: fontawesome/solid/paper-plane
       link: mailto:yinzhipeng361@tom.com
@@ -51,46 +50,44 @@ extra:
     - icon: fontawesome/brands/medium
       link: https://yinzhipeng123.github.io/markdown_log/feed_rss_updated.xml
       name: rss订阅地址
-
-
 theme:
   name: material
-#  设置站点语言
-#  官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/
+  #  设置站点语言
+  #  官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/
   language: 'zh'
   features:
     - content.code.annotate
     - content.tabs.link
-#   自动隐藏
+    #   自动隐藏
     - header.autohide
-#    启用索引页，也就是介绍页
+    #    启用索引页，也就是介绍页
     - navigation.indexes
-#    即时加载
-#    - navigation.instant
-#    导航栏
+    #    即时加载
+    #    - navigation.instant
+    #    导航栏
     - navigation.tabs
-#    导航选项卡将锁定在标题下方
+    #    导航选项卡将锁定在标题下方
     - navigation.tabs.sticky
-#   【返回顶部】的按钮
+    #   【返回顶部】的按钮
     - navigation.top
-#    锚点跟踪
+    #    锚点跟踪
     - navigation.tracking
-#    搜索代码块
+    #    搜索代码块
     - search.highlight
-#    搜索结果共享
+    #    搜索结果共享
     - search.share
-#    搜索建议
+    #    搜索建议
     - search.suggest
 
   palette:
-#    - 主体颜色
-#    - 官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+    #    - 主体颜色
+    #    - 官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     - scheme: slate
-#      导航栏颜色
+      #      导航栏颜色
       primary: indigo
-#      点击颜色
+      #      点击颜色
       accent: cyan
-#     点击切换主题
+      #     点击切换主题
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
@@ -100,8 +97,8 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-#  设置文章字体
-#  官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/
+  #  设置文章字体
+  #  官方文档说明：https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/
   font:
     text: Roboto
     code: Roboto Mono
@@ -131,504 +128,525 @@ plugins:
         utm_medium: "RSS"
         utm_campaign: "feed-syndication"
   - search:
-#  配置搜索索引器在为页面生成索引时将使用的策略。如果项目规模较大，并且索引占用大量磁盘空间，则此属性特别有用,参考地址：https://www.mkdocs.org/user-guide/configuration/#configuration-inheritance
+      #  配置搜索索引器在为页面生成索引时将使用的策略。如果项目规模较大，并且索引占用大量磁盘空间，则此属性特别有用,参考地址：https://www.mkdocs.org/user-guide/configuration/#configuration-inheritance
       indexing: 'full'
       separator: '[\\s\\u200b\\-]'
       lang:
         - 'en'
 extra_javascript:
-#highlight.js  cdn获取地址：https://highlightjs.org/download/
+  #highlight.js  cdn获取地址：https://highlightjs.org/download/
   - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js
   - javascripts/highlight.js
   - javascripts/busuanzi.pure.mini.js
 extra_css:
-#设置代码风格：https://github.com/highlightjs/highlight.js/tree/main/src/styles，注意的:是不要忘记在“.css”之前添加“.min”
+  #设置代码风格：https://github.com/highlightjs/highlight.js/tree/main/src/styles，注意的:是不要忘记在“.css”之前添加“.min”
   - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/a11y-dark.min.css
 
 
 nav:
-- Home: index.md
+  - Home: index.md
+  - 操作系统:
+      - Linux性能排查相关:
+          - system/index.md
+          - 计算相关:
+              - 什么是线程: system/linux/计算/线程的研究.md
+              - LWP: system/linux/计算/LWP.md
+              - 进程间通信: system/linux/计算/进程间通信.md
+              - 僵尸进程: system/linux/计算/僵尸进程.md
+              - 孤儿进程: system/linux/计算/孤儿进程.md
+              - 中断: system/linux/计算/中断.md
+              - load高的原因: system/linux/计算/load高的原因.md
+              - 上下文切换导致sys高: system/linux/计算/上下文切换导致sys高.md
+              - perf命令: system/linux/计算/perf.md
+              - vmstat命令: system/linux/计算/vmstat.md
+              - ps命令: system/linux/计算/ps.md
+              - 线程名字的含义: system/linux/计算/进程名字.md
+              - iostat命令: system/linux/计算/iostat.md
+              - sar命令: system/linux/计算/sar.md
+              - tsar命令: system/linux/计算/tsar.md
+              - top命令: system/linux/计算/top.md
+              - /proc/stat: system/linux/计算/0proc0stat.md
+              - strace命令: system/linux/计算/strace.md
+              - pidstat命令: system/linux/计算/pidstat.md
+              - core_dump: system/linux/计算/core_dump.md
+              - 机器夯住原因: system/linux/计算/机器夯住原因.md
+          - 内存相关:
+              - 内存: system/linux/内存/内存.md
+              - Linux的两种内存分配方式: system/linux/内存/Linux的两种内存分配方式.md
+              - 内存回收的方式: system/linux/内存/内存回收的方式.md
+              - slabtop命令: system/linux/内存/slabtop.md
+              - /proc/slabinfo: system/linux/内存/0proc0slabinfo.md
+              - /proc/meminfo: system/linux/内存/0proc0meminfo.md
+              - 内存页的理解: system/linux/内存/内存页的理解.md
+              - min_free_kbytes参数: system/linux/内存/min_free_kbytes参数.md
+              - oom机制: system/linux/内存/oom机制.md
+              - oom评分是如何算出来: system/linux/内存/oom评分是如何算出来的.md
+              - 计算oom评分的脚本: system/linux/内存/计算oom评分的脚本.md
+              - free命令: system/linux/内存/free.md
+              - 内存优化的手段: system/linux/内存/内存优化的手段.md
+              - 查看进程swap使用的脚本: system/linux/内存/查看进程swap使用的脚本.md
+              - 过度分配的理解: system/linux/内存/过度分配的理解.md
+              - TLB: system/linux/内存/TLB.md
+              - 内存大页: system/linux/内存/内存大页.md
+              - 透明大页: system/linux/内存/透明大页.md
+              - pidstat查看线程内存状态: system/linux/内存/pidstat_r.md
+              - 堆栈信息查看: system/linux/内存/堆栈.md
+          - IO相关:
+              - 内核参数: system/linux/IO/内核参数.md
+              - proc文件系统: system/linux/IO/0proc文件系统.md
+              - partitions: system/linux/IO/0proc0partitions.md
+              - dd命令: system/linux/IO/dd命令.md
+              - fio命令: system/linux/IO/fio.md
+              - jbd2线程: system/linux/IO/jbd2.md
+              - Linux常用文件系统优缺点: system/linux/IO/不同文件系统优缺点.md
+              - sys文件系统: system/linux/IO/0sys文件系统.md
+              - IO技术栈: system/linux/IO/IO技术栈.md
+              - IO指标及工具: system/linux/IO/IO指标及工具.md
+              - IO优化建议: system/linux/IO/IO优化建议.md
+              - IO scheduler: system/linux/IO/IO scheduler.md
+              - IO的类型: system/linux/IO/IO的类型.md
+              - blktrace常用使用方法: system/linux/IO/blktrace常用使用方法.md
+              - blktrace命令: system/linux/IO/blktrace.md
+              - mount命令: system/linux/IO/mount.md
+              - iodump命令: system/linux/IO/iodump.md
+              - hdparm命令: system/linux/IO/hdparm命令.md
+              - dumpe2fs: system/linux/IO/dumpe2fs.md
+              - iostat: system/linux/IO/iostat.md
+              - iotop: system/linux/IO/iotop.md
+              - Python导致IO慢案例: system/linux/IO/Python导致IO慢案例.md
+              - SQL查询慢案例: system/linux/IO/SQL查询慢案例.md
+              - IO测试方法: system/linux/IO/IO测试方法.md
+              - findmnt命令: system/linux/IO/findmnt.md
+              - e2label命令: system/linux/IO/e2label.md
+              - blkid命令: system/linux/IO/blkid.md
+              - lspci命令: system/linux/IO/lspci.md
+              - lsblk命令: system/linux/IO/lsblk.md
+              - 查看目录大小: system/linux/IO/du.md
+              - 句柄: system/linux/IO/句柄.md
+              - lsof: system/linux/IO/lsof.md
+              - 查询raid卡信息-storcli命令: system/centos7/storcli.md
+              - 查询raid卡信息-MegaCli命令: system/centos7/MegaCli.md
+              - ulimit和limit文件: system/linux/IO/ulimit.md
+              - kdump: system/linux/IO/kdump.md
+              - 分析vmcore: system/linux/IO/分析vmcore.md
+              - sysrq-trigger: system/linux/IO/sysrq-trigger.md
+              - 文件描述符: system/linux/IO/文件描述符.md
+          - 网络相关:
+              - TCP图解: system/linux/网络/tcp.md
+              - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
+              - 阿里云修改TCP的TIME-WAIT超时时间: system/linux/网络/修改TCP的TIME-WAIT超时时间.md
+              - Linux修改TCP的TIME-WAIT超时时间: system/linux/网络/net.ipv4.tcp_fin_timeout.md
+              - 模拟一次CLOSE_WAIT: system/linux/网络/模拟一次.md
+              - 全连接队列和半连接队列: system/linux/网络/全连接队列和半连接队列.md
+              - tcpdump: system/linux/网络/tcpdump.md
+              - netstat: system/linux/网络/netstat命令.md
+              - 测试TCP带宽: system/linux/网络/测试网络带宽.md
+              - nmap命令: system/linux/网络/nmap.md
+              - ethtool命令: system/linux/网络/ethtool.md
+              - iperf3测速: system/linux/网络/iperf3.md
+              - mtr测试: system/linux/网络/mtr工具.md
+              - curl命令: system/linux/网络/curl命令.md
+              - 排查网页打不开: system/linux/网络/排查网页打不开.md
+              - 各种计算机存储单位和网速单位: system/centos7/各种计算机存储单位和网速单位.md
+              - 查看网卡实时流量: system/linux/网络/iftop.md
+              - 查看域名解析: system/linux/网络/dig.md
+              - nc命令: system/linux/网络/nc命令.md
+              - DNS缓存: system/linux/网络/DNS缓存.md
+              - ifconfig详解: system/linux/网络/ifconfig详解.md
+              - ip命令: system/linux/网络/ip.md
+              - DNS优化: system/linux/网络/DNS优化.md
+              - IPSecVPN: system/linux/网络/IPSecVPN.md
+              - SSL_VPN: system/linux/网络/SSL_VPN原理.md
+              - IPSecVPN和SSLVPN区别: system/linux/网络/IPSecVPN和SSLVPN区别.md
+              - python模拟浏览器验证证书: system/linux/网络/python模拟浏览器验证证书.md
+              - 对称加密: system/linux/网络/对称加密.md
+              - 非对称加密: system/linux/网络/非对称加密.md
+              - bonding: system/linux/网络/bonding.md
+              - https原理: system/linux/网络/https原理.md
+              - 用户配置文件加载顺序: system/centos7/用户配置文件加载顺序.md
+              - NAT网关模拟: system/linux/网络/NAT网关模拟.md
+              - 流表: system/linux/网络/流表.md
+      - Linux软件:
+          - rsync: system/Linux通用软件/rsync.md
+          - rootfs: system/Linux通用软件/rootfs.md
+          - 提供命令查询的网站: system/centos7/命令搜索.md
+          - find命令: system/centos7/find.md
+      - Centos7:
+          - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
+          - 修改网卡: system/centos7/ens33.md
+          - Centos7启动过程: system/centos7/Centos7启动过程.md
+          - LVM: system/centos7/LVM.md
+          - firewalld: system/centos7/firewalld.md
+          - iptable: system/centos7/iptable.md
+          - service服务书写规则: system/centos7/service.md
+          - service服务快速失败: system/centos7/快速失败.md
+          - iptables流量标记: system/centos7/iptables流量标记.md
+          - Yum:
+              - ius源: system/centos7/yum/ius.md
+          - 时间同步chrony: system/centos7/chronyd.md
+          - 系统日志查询命令: system/centos7/journalctl.md
+          - ssh专题: system/centos7/ssh专题.md
+          - rpm官网: system/centos7/rpm官网.md
+          - ls命令详解: system/centos7/ls命令详解.md
+          - Linux特殊权限解释: system/centos7/Linux特殊权限解释.md
+          - linux文件系统的简单描述: system/centos7/linux文件系统的简单描述.md
+          - 系统日志syslog-ng服务: system/centos7/系统日志1.md
+          - 系统日志rsyslog服务: system/centos7/系统日志2.md
+          - 查询硬件信息-dmidecode: system/centos7/dmidecode.md
+          - 查询硬件信息-ipmitool: system/centos7/ipm.md
+          - gun软件列表: system/centos7/gun软件列表.md
+          - 关闭selinux: system/centos7/关闭selinux.md
+      - Windows:
+          - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
+          - tcping: system/windows/tcping.md
+      - Mac:
+          - 常用软件: system/mac/软件.md
+          - 安装Homebrew: system/mac/安装Homebrew.md
+          - MAC安装Python: system/mac/MAC安装Python.md
+          - cheerytree安装: system/mac/cheerytree.md
+      - 汇编基础:
+          - win10下搭建8086汇编环境: system/汇编/win10-masm.md
+          - 存储单元: system/汇编/存储单元.md
+          - 地址总线: system/汇编/地址总线.md
+          - 控制总线: system/汇编/控制总线.md
+          - 数据总线: system/汇编/数据总线.md
+          - 内存地址空间: system/汇编/内存地址空间.md
+          - 8086CPU: system/汇编/8086CPU.md
+          - debug命令: system/汇编/debug命令.md
+          - 寄存器: system/汇编/寄存器.md
+          - 代码段: system/汇编/代码段.md
+          - 汇编指令合集: system/汇编/汇编指令合集.md
+  - 其他技术:
+      - 云计算:
+          - Cloud_Computing/index.md
+          - 云计算概念: Cloud_Computing/云计算概念.md
+          - 云计算形态:
+              - Openstack: Cloud_Computing/openstack.md
+          - 云计算相关底层硬件:
+              - Bluefield智能网卡: hardware/Bluefield智能网卡.md
+              - 交换机路由器等:
+                  - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
+                  - 输入配置: Cloud_Computing/路由器/输入配置.md
+              - 交换机网络协议:
+                  - Ospf: Cloud_Computing/路由器/OSPF.md
+                  - Vlan: Cloud_Computing/路由器/VLAN.md
+                  - vxlan: Cloud_Computing/路由器/vxlan.md
+          - 云服务器:
+              - 云服务器实现原理之KVM:
+                  - KVM概念: Cloud_Computing/KVM.md
+                  - KVM排查: Cloud_Computing/KVM排查.md
+              - 云服务器镜像转换:
+                  - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
+          - 负载均衡:
+              - 负载均衡选择四层还是七层: Cloud_Computing/四层还是七层.md
+              - 负载均衡底层原理之Nginx:
+                  - Nginx部署: middleware/nginx/nginx_install.md
+                  - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
+                  - Nginx配置详解: middleware/nginx/nginx_conf.md
+                  - Nginx7层负载均衡: middleware/nginx/nginx7层负载均衡.md
+                  - Nginx7层反向代理: middleware/nginx/nginx7层反向代理.md
+                  - Nginx4层转发: middleware/nginx/nginx4层转发.md
+                  - Nginx概述: middleware/nginx/nginx概述.md
+              - 负载均衡底层原理之LVS:
+                  - LVS: middleware/load_balance/lvs.md
+          - 数据库:
+              - Mysql:
+                  - 基本语法: database/mysql/basic.md
+                  - 数据类型: database/mysql/type.md
+                  - 约束: database/mysql/constraint.md
+                  - 授权: database/mysql/grant.md
+                  - 查询: database/mysql/select.md
+                  - 函数: database/mysql/function.md
+                  - 备份: database/mysql/bak.md
+                  - 在数据库中备份某些表: database/mysql/BAK_TABLE.md
+                  - SHOW_SLAVE_STATUS: database/mysql/SHOW_SLAVE_STATUS.md
+                  - 慢sql: database/mysql/慢sql.md
+                  - mysql的编译安装: database/mysql/编译安装.md
+                  - 索引: database/mysql/索引.md
+                  - ab复制: database/mysql/ab复制.md
+                  - 读写分离: database/mysql/读写分离.md
+              - Redis:
+                  - redis: database/redis/redis.md
+                  - redis_info详解: database/redis/redis_info.md
+                  - redis_info_stats详解: database/redis/redis_info_stats.md
+                  - redis作为缓存的优化方案: database/redis/redis作为缓存的优化方案.md
+                  - redis快速部署: database/redis/redis快速部署.md
+                  - redis编译安装主从: database/redis/redis编译安装主从.md
+                  - redis运维动作: database/redis/redis运维动作.md
+                  - redis部署形态: database/redis/redis部署形态.md
+                  - redis配置详解: database/redis/redis配置详解.md
+                  - redis支持存储的类型: database/redis/redis支持存储的类型.md
+          - 消息队列:
+              - MQ:
+                  - MQ种类: middleware/MQ/mq.md
+                  - MQ对比: middleware/MQ/MQVS.md
+                  - Rocketmq:
+                      - rocketmq部署: middleware/MQ/rocketmq.md
+              - Kafka:
+                  - 基本概念: middleware/kafka/基本概念.md
+                  - 连接器: middleware/kafka/connect.md
+                  - 去zookeeper新特性: middleware/kafka/新特性.md
+                  - 单机部署: middleware/kafka/单机部署.md
+                  - 运维命令: middleware/kafka/运维命令.md
+                  - 配置文件详解: middleware/kafka/配置文件.md
+                  - 集群模式: middleware/kafka/集群模式.md
+          - 大数据:
+              - HDFS: Cloud_Computing/HDFS.md
+          - Devops:
+              - CICD概念: middleware/CICD/cicd.md
+              - CICD产品Jenkins:
+                  - Jenkins的yum部署: middleware/CICD/jenkins_yum部署.md
+                  - Jenkins的简单构建任务: middleware/CICD/Jenkins简单的构建任务.md
+                  - IDEA_Jenkins插件: middleware/CICD/IDEA_Jenkins插件.md
+                  - Jenkins审查制度: middleware/CICD/Jenkins审查制度.md
+                  - 核心功能之Pipeline:
+                      - Pipeline: lxc/kubernetes/Pipeline.md
+                      - pipeline示例: middleware/CICD/pipeline示例.md
+          - K8S:
+              - lxc/kubernetes/index.md
+              - minikube: lxc/kubernetes/minikube/minikube.md
+              - K8S 1.16.9部署: lxc/kubernetes/kubernetes1.16.md
+              - 基础概念: lxc/kubernetes/basic.md
+              - 污点: lxc/kubernetes/stain.md
+              - 亲和性: lxc/kubernetes/dispatch.md
+              - initContainers: lxc/kubernetes/initContainers.md
+              - 一个比较完整的deployment的样例: lxc/kubernetes/一个完整的deployment.md
+              - ClusterRole: lxc/kubernetes/ClusterRole.md
+              - emptyDir: lxc/kubernetes/emptyDir.md
+              - deployment添加配置文件: lxc/kubernetes/configmap-one.md
+              - 主机内目录挂载到pod中: lxc/kubernetes/hostpath.md
+              - Deployment的demo: lxc/kubernetes/depolyment_model.md
+              - statefulset的demo: lxc/kubernetes/statefulset.md
+              - liveness: lxc/kubernetes/liveness.md
+              - readiness: lxc/kubernetes/readiness.md
+              - pvc实验: lxc/kubernetes/pvc实验.md
+              - K8S部署应用的8项原则: lxc/kubernetes/principle.md
+              - 滚动升级中的maxSurge和maxUnavailable: lxc/kubernetes/滚动升级中的maxSurge和maxUnavailable.md
+              - pod生命周期: lxc/kubernetes/生命周期.md
+              - initContainers: lxc/kubernetes/initContainers.md
+              - CNI: lxc/kubernetes/CNI.md
+              - Controller: lxc/kubernetes/Controller.md
+              - Secret: lxc/kubernetes/Secret.md
+              - StatefulSet_Mysql: lxc/kubernetes/StatefulSet_Mysql.md
+              - etc备份: lxc/kubernetes/etc备份.md
+              - 节点维护: lxc/kubernetes/节点维护.md
+              - hostalias: lxc/kubernetes/hostalias.md
+          - 监控:
+              - monitor/index.md
+              - Prometheus:
+                  - prometheus概念: monitor/prometheus/prome.md
+                  - 单机部署: monitor/prometheus/prometheus.md
+                  - K8S部署: monitor/prometheus/prometheus_k8s.md
+                  - K8S kube-state-metrics指标说明: monitor/prometheus/kube-state-metrics.md
+                  - Exporter Metrics解释: monitor/prometheus/Exporter_Metrics.md
+                  - Prometheus监控查询例子: monitor/prometheus/query_xamples.md
+                  - Prometheus监控查询语法入门: monitor/prometheus/query_rules.md
+                  - Prometheus语法函数: monitor/prometheus/function.md
+                  - Prometheus recording_rules功能: monitor/prometheus/prometheus_recording_rule.md
+                  - Prometheus指标讲解"为什么rate可以计算CPU的使用率": monitor/prometheus/prometheus_rate.md
+                  - 时序数据库: monitor/prometheus/TSDB.md
+                  - 查询某个机器的CPU: monitor/prometheus/查询某个机器的CPU.md
+              - Alertmanager:
+                  - Alertmanager部署: monitor/prometheus/prometheus.md
+                  - Alertmanager配置: monitor/alertmanager/alertmanager_config.md
+              - Grafana:
+                  - Grafana部署: monitor/grafana/grafana_install.md
+                  - Dashboard: monitor/grafana/grafana_dashboard.md
+                  - Grafana添加变量: monitor/grafana/grafana_var.md
+          - 安全:
+              - DNS劫持: security/DNS劫持.md
+              - SYN泛洪: security/SYN泛洪.md
+      - 其他中间件:
+          - middleware/index.md
+          - Etcd:
+              - Etcd部署: middleware/etcd/etcd.md
+          - 内网穿透:
+              - n2n: middleware/n2n/n2n.md
+          - Pinpoint:
+              - Pinpoint安装: middleware/pinpoint/pinpoint_install.md
+      - 其他容器相关技术:
+          - lxc/index.md
+          - Docker:
+              - Docker安装和加速: lxc/docker/docker_su.md
+              - 停止docker出现警告: lxc/docker/docker_Warning.md
+              - docker_compose中卷的映射: lxc/docker/docker-compose.md
+              - docker_compse讲解: lxc/docker/pinpoint_compose.md
+              - dockerfile: lxc/docker/dockerfile.md
+              - docker命令: lxc/docker/docker命令.md
+              - registry: lxc/docker/registry.md
+          - KubeSphere:
+              - KubeSphere安装: lxc/kubesphere/kubesphere.md
+          - Rancher:
+              - Rancher安装: lxc/rancher/rancher_instatll.md
+      - 编程语言:
+          - programming_language/index.md
+          - Python:
+              - Virtualenv: programming_language/python/virtualenv/env.md
+              - Python一些语法: programming_language/python/basics/basic.md
+              - CSV模块: programming_language/python/csv.md
+              - CSV、列变行、行变列转换: programming_language/python/csv_row_to_col.md
+              - XLSX模块: programming_language/python/xlxs.md
+              - XLSX转CSV: programming_language/python/xlsx_to_csv.md
+              - K8S模块: programming_language/python/k8s.md
+              - 内存性能模块: programming_language/python/mem.md
+              - Centos7安装Python3: programming_language/python/python3_env.md
+              - Python3 Dokcer镜像制作: programming_language/python/python3_docker.md
+              - Python3 日志控制: programming_language/python/python_log.md
+              - python函数参数: programming_language/python/函数参数.md
+              - python装饰器: programming_language/python/装饰器.md
+              - python生成器: programming_language/python/生成器.md
+              - python迭代器: programming_language/python/迭代器.md
+              - lambda函数: programming_language/python/lambda函数.md
+              - Flask: programming_language/python/flask/flask_init.md
+              - 多进程和多线程: programming_language/python/多进程和多线程.md
+              - 线程:
+                  - thread线程锁: programming_language/python/threading/thread线程锁.md
+                  - 通过继承实现多线程: programming_language/python/threading/thread.md
+                  - threading.Event(): programming_language/python/threading/thread_event.md
+                  - join的作用: programming_language/python/threading/join.md
+                  - join详解: programming_language/python/threading/join讲解.md
+                  - 守护线程: programming_language/python/threading/守护线程.md
+                  - 通过继承实现多线程: programming_language/python/threading/thread.md
+              - 协程: programming_language/python/协程/协程.md
+              - 协程详解: programming_language/python/协程/协程2.md
+              - shedule:
+                  - 后台执行: programming_language/python/shedule/run_in_back.md
+                  - schedule日志显示下次任务执行时间: programming_language/python/shedule/see_cron.md
+              - 类:
+                  - 类的继承: programming_language/python/basics/class/class.md
+                  - 类变量与实例变量: programming_language/python/basics/class/class_var.md
+              - mypy: programming_language/python/basics/mypy.md
+              - 基础:
+                  - for循环: programming_language/python/basics/for循环.md
+                  - if语句: programming_language/python/basics/if语句.md
+                  - match语句: programming_language/python/basics/match语句.md
+                  - while语句: programming_language/python/basics/while.md
+                  - 常见语法: programming_language/python/basics/some.md
+          - Go:
+              - Go入门: programming_language/go/go_one.md
+              - Web框架 Gin:
+                  - Gin入门: programming_language/go/go_gin.md
+                  - Gin 路由拆分成单个文件: programming_language/go/gin_route.md
+                  - Gin 路由拆分成单独APP: programming_language/go/gin__app_route.md
+          - Vue:
+              - html中加载VUE: programming_language/vue/html中加载VUE.md
+              - 安装nodejs: programming_language/vue/安装nodejs.md
+              - nodejs运行网站: programming_language/vue/nodejs运行网站.md
+              - npm的使用: programming_language/vue/npm的使用.md
+              - VUE安装: programming_language/vue/vue安装.md
+              - VUE目录文件: programming_language/vue/vue目录文件.md
+              - VUE使用axios加载本地json: programming_language/vue/VUE使用axios加载本地json.md
+              - VUE使用for循环: programming_language/vue/VUE使用for循环.md
+              - VUE使用if: programming_language/vue/VUE使用if.md
+              - VUE使用事件监听: programming_language/vue/VUE使用事件监听.md
+              - VUE方法和计算属性: programming_language/vue/VUE方法和计算属性.md
+              - VUE输入绑定: programming_language/vue/VUE输入绑定.md
+              - 前端时代的变革: programming_language/vue/前端时代的变革.md
+          - java:
+              - java运维命令: programming_language/java/java.md
+              - java_dump命令: programming_language/java/java_dump.md
+              - jvm参数调优: programming_language/java/jvm.md
+              - 新生代_老年代: programming_language/java/新生代_老年代.md
+          - awk:
+              - programming_language/awk/index.md
+              - 基础语法: programming_language/awk/awk.md
+              - 数组: programming_language/awk/awk_array.md
+              - 循环控制: programming_language/awk/awk_process_control.md
+              - 匹配: programming_language/awk/awk_matching.md
+              - 函数: programming_language/awk/awk_function.md
+              - 重定向: programming_language/awk/awk_redirect.md
+              - awk使用bash变量: programming_language/awk/awk_var.md
+              - awk无缓存输出: programming_language/awk/awk_nocache.md
+              - awk不打印某列: programming_language/awk/awk_noprint.md
+          - Ansible:
+              - Ansible部署: programming_language/Ansible部署.md
+              - Ansible_Dome: programming_language/Ansible_Dome.md
+              - Ansible检查正确性: programming_language/Ansible检查正确性.md
+              - Ansible实例: programming_language/Ansible实例.md
+          - Bash:
+              - programming_language/bash/index.md
+              - 语法:
+                  - 变量: programming_language/bash/var.md
+                  - shell读取变量: programming_language/bash/read_var.md
+                  - 数学运算: programming_language/bash/math.md
+                  - 判断: programming_language/bash/branch.md
+                  - if语句: programming_language/bash/if.md
+                  - case语句: programming_language/bash/case.md
+                  - for循环: programming_language/bash/for.md
+                  - while循环: programming_language/bash/while.md
+                  - until循环: programming_language/bash/until.md
+                  - 数组: programming_language/bash/array.md
+                  - 函数: programming_language/bash/function.md
+                  - 特殊符号: programming_language/bash/special_symbols.md
+                  - bash的通配符: programming_language/bash/re.md
+                  - 重定向: programming_language/bash/redirect.md
+                  - 不同的脚本执行方式: programming_language/bash/不同的脚本执行方式.md
+          - 一些帮助书写Bash脚本的东西:
+              - programming_language/bash_help/index.md
+              - sed:
+                  - programming_language/bash_help/sed/index.md
+                  - 语法: programming_language/bash_help/sed/sed.md
+                  - sed脚本: programming_language/bash_help/sed/sed_script.md
+                  - 拓展: programming_language/bash_help/sed/sed_exd.md
+              - grep: programming_language/bash_help/re/grep.md
+              - 正则表达式: programming_language/bash_help/re/re.md
+              - bash的颜色控制: programming_language/bash_help/echo.md
+              - bash脚本查看文件指定行: programming_language/bash_help/cat.md
+              - bashm脚本命令行选项: programming_language/bash_help/getops.md
+              - bash脚本加密: programming_language/bash_help/gzexe.md
+              - 控制bash子bash: programming_language/bash_help/mkfifo.md
+              - bash中的异常处理: programming_language/bash_help/trap.md
+              - 查看系统软件变化: programming_language/bash_help/rpm.md
+              - bash批量登录服务器: programming_language/bash_help/sshpass.md
+              - sort排序: programming_language/bash_help/sort.md
+              - shellcheck: programming_language/bash_help/shellcheck.md
+
+      - 工具和知识:
+          - tool/index.md
+          - git及github的轻度教程: tool/github使用.md
+          - Pycharm及配合Github的使用: tool/pycharm.md
+          - MkDocs的使用: tool/MkDoc.md
+          - URL在线编码转换工具: tool/url_code.md
+          - 常用地址: tool/url.md
+          - P99: tool/p99.md
+          - github代码对比: tool/github.md
+          - git一次报错: tool/git.md
+          - brew使用: tool/brew.md
+          - siege压测: tool/siege压测.md
+
+  - 读书笔记:
+      - 社会文化:
+          - 《情商》丹尼尔·戈尔著—读书笔记: soft/《情商》笔记.md
+          - 《人性的弱点》:
+              - 与人相处的诀窍: soft/与人相处的诀窍.md
+              - 可以被别人喜欢: soft/可以被别人喜欢.md
+              - 赢得别人的赞同: soft/赢得别人的赞同.md
+              - 领导者知晓的: soft/领导者必须领悟的.md
+      #            - 爱情: soft/爱情.md
+      #            - 出轨: soft/感情.md
+      - 医疗健康:
+          - 健身:
+              - NSCA-CSCS体能教练笔记: soft/NSCA.md
+              - 什么叫三分化和五分化: soft/什么叫三分化和五分化.md
+          - 日常饮食:
+              - 戒烟: soft/戒烟.md
+              - 喝酒: soft/喝酒.md
+              - 抗氧化食物: soft/我需要的抗氧化食物.md
+              - 喝水: soft/每天喝水.md
+      - 个人成长:
+          - 寻找人生之路: soft/寻找人生之路.md
+          - 7个习惯: soft/7个习惯.md
+          - 了解自我: soft/了解自我.md
+          - 道理: soft/道理.md
+      #       - 随便记记: soft/随便记记.md
+      - 哲学宗教:
+          - 佛教:
+              - 佛法中解脱的方法: soft/佛法.md
+              - 般若波罗蜜多心经: soft/般若波罗蜜多心经.md
+          - 道教:
+              - 天干地支: soft/八字易经/天干地支.md
+      - 心理:
+          - 一些心理学概念: soft/心理学概念.md
 
 
-
-- 操作系统:
-  - Linux:
-    - system/index.md
-    - 计算相关:
-        - 什么是线程: system/linux/计算/线程的研究.md
-        - LWP: system/linux/计算/LWP.md
-        - 进程间通信: system/linux/计算/进程间通信.md
-        - 僵尸进程: system/linux/计算/僵尸进程.md
-        - 孤儿进程: system/linux/计算/孤儿进程.md
-        - 中断: system/linux/计算/中断.md
-        - load高的原因: system/linux/计算/load高的原因.md
-        - 上下文切换导致sys高: system/linux/计算/上下文切换导致sys高.md
-        - perf命令: system/linux/计算/perf.md
-        - vmstat命令: system/linux/计算/vmstat.md
-        - ps命令: system/linux/计算/ps.md
-        - 线程名字的含义: system/linux/计算/进程名字.md
-        - iostat命令: system/linux/计算/iostat.md
-        - sar命令: system/linux/计算/sar.md
-        - tsar命令: system/linux/计算/tsar.md
-        - top命令: system/linux/计算/top.md
-        - /proc/stat: system/linux/计算/0proc0stat.md
-        - strace命令: system/linux/计算/strace.md
-        - pidstat命令: system/linux/计算/pidstat.md
-        - core_dump: system/linux/计算/core_dump.md
-        - 机器夯住原因: system/linux/计算/机器夯住原因.md
-    - 内存相关:
-        - 内存: system/linux/内存/内存.md
-        - Linux的两种内存分配方式: system/linux/内存/Linux的两种内存分配方式.md
-        - 内存回收的方式: system/linux/内存/内存回收的方式.md
-        - slabtop命令: system/linux/内存/slabtop.md
-        - /proc/slabinfo: system/linux/内存/0proc0slabinfo.md
-        - /proc/meminfo: system/linux/内存/0proc0meminfo.md
-        - 内存页的理解: system/linux/内存/内存页的理解.md
-        - min_free_kbytes参数: system/linux/内存/min_free_kbytes参数.md
-        - oom机制: system/linux/内存/oom机制.md
-        - oom评分是如何算出来: system/linux/内存/oom评分是如何算出来的.md
-        - 计算oom评分的脚本: system/linux/内存/计算oom评分的脚本.md
-        - free命令: system/linux/内存/free.md
-        - 内存优化的手段: system/linux/内存/内存优化的手段.md
-        - 查看进程swap使用的脚本: system/linux/内存/查看进程swap使用的脚本.md
-        - 过度分配的理解: system/linux/内存/过度分配的理解.md
-        - TLB: system/linux/内存/TLB.md
-        - 内存大页: system/linux/内存/内存大页.md
-        - 透明大页: system/linux/内存/透明大页.md
-        - pidstat查看线程内存状态: system/linux/内存/pidstat_r.md
-        - 堆栈信息查看: system/linux/内存/堆栈.md
-    - IO相关:
-        - 内核参数: system/linux/IO/内核参数.md
-        - proc文件系统: system/linux/IO/0proc文件系统.md
-        - partitions: system/linux/IO/0proc0partitions.md
-        - dd命令: system/linux/IO/dd命令.md
-        - fio命令: system/linux/IO/fio.md
-        - jbd2线程: system/linux/IO/jbd2.md
-        - Linux常用文件系统优缺点: system/linux/IO/不同文件系统优缺点.md
-        - sys文件系统: system/linux/IO/0sys文件系统.md
-        - IO技术栈: system/linux/IO/IO技术栈.md
-        - IO指标及工具: system/linux/IO/IO指标及工具.md
-        - IO优化建议: system/linux/IO/IO优化建议.md
-        - IO scheduler: system/linux/IO/IO scheduler.md
-        - IO的类型: system/linux/IO/IO的类型.md
-        - blktrace常用使用方法: system/linux/IO/blktrace常用使用方法.md
-        - blktrace命令: system/linux/IO/blktrace.md
-        - mount命令: system/linux/IO/mount.md
-        - iodump命令: system/linux/IO/iodump.md
-        - hdparm命令: system/linux/IO/hdparm命令.md
-        - dumpe2fs: system/linux/IO/dumpe2fs.md
-        - iostat: system/linux/IO/iostat.md
-        - iotop: system/linux/IO/iotop.md
-        - Python导致IO慢案例: system/linux/IO/Python导致IO慢案例.md
-        - SQL查询慢案例: system/linux/IO/SQL查询慢案例.md
-        - IO测试方法: system/linux/IO/IO测试方法.md
-        - findmnt命令: system/linux/IO/findmnt.md
-        - e2label命令: system/linux/IO/e2label.md
-        - blkid命令: system/linux/IO/blkid.md
-        - lspci命令: system/linux/IO/lspci.md
-        - lsblk命令: system/linux/IO/lsblk.md
-        - 查看目录大小: system/linux/IO/du.md
-        - 句柄: system/linux/IO/句柄.md
-        - lsof: system/linux/IO/lsof.md
-        - 查询raid卡信息-storcli命令: system/centos7/storcli.md
-        - 查询raid卡信息-MegaCli命令: system/centos7/MegaCli.md
-        - ulimit和limit文件: system/linux/IO/ulimit.md
-        - kdump: system/linux/IO/kdump.md
-        - 分析vmcore: system/linux/IO/分析vmcore.md
-        - sysrq-trigger: system/linux/IO/sysrq-trigger.md
-        - 文件描述符: system/linux/IO/文件描述符.md
-    - 网络相关:
-        - TCP图解: system/linux/网络/tcp.md
-        - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
-        - 阿里云修改TCP的TIME-WAIT超时时间: system/linux/网络/修改TCP的TIME-WAIT超时时间.md
-        - Linux修改TCP的TIME-WAIT超时时间: system/linux/网络/net.ipv4.tcp_fin_timeout.md
-        - 模拟一次CLOSE_WAIT: system/linux/网络/模拟一次.md
-        - 全连接队列和半连接队列: system/linux/网络/全连接队列和半连接队列.md
-        - tcpdump: system/linux/网络/tcpdump.md
-        - netstat: system/linux/网络/netstat命令.md
-        - 测试TCP带宽: system/linux/网络/测试网络带宽.md
-        - nmap命令: system/linux/网络/nmap.md
-        - ethtool命令: system/linux/网络/ethtool.md
-        - iperf3测速: system/linux/网络/iperf3.md
-        - mtr测试: system/linux/网络/mtr工具.md
-        - curl命令: system/linux/网络/curl命令.md
-        - 排查网页打不开: system/linux/网络/排查网页打不开.md
-        - 各种计算机存储单位和网速单位: system/centos7/各种计算机存储单位和网速单位.md
-        - 查看网卡实时流量: system/linux/网络/iftop.md
-        - 查看域名解析: system/linux/网络/dig.md
-        - nc命令: system/linux/网络/nc命令.md
-        - DNS缓存: system/linux/网络/DNS缓存.md
-        - ifconfig详解: system/linux/网络/ifconfig详解.md
-        - ip命令: system/linux/网络/ip.md
-        - DNS优化: system/linux/网络/DNS优化.md
-        - IPSecVPN: system/linux/网络/IPSecVPN.md
-        - SSL_VPN: system/linux/网络/SSL_VPN原理.md
-        - IPSecVPN和SSLVPN区别: system/linux/网络/IPSecVPN和SSLVPN区别.md
-        - python模拟浏览器验证证书: system/linux/网络/python模拟浏览器验证证书.md
-        - 对称加密: system/linux/网络/对称加密.md
-        - 非对称加密: system/linux/网络/非对称加密.md
-        - bonding: system/linux/网络/bonding.md
-        - https原理: system/linux/网络/https原理.md
-        - 用户配置文件加载顺序: system/centos7/用户配置文件加载顺序.md
-        - NAT网关模拟: system/linux/网络/NAT网关模拟.md
-        - 流表: system/linux/网络/流表.md
-  - Linux软件:
-    - rsync: system/Linux通用软件/rsync.md
-    - 提供命令查询的网站: system/centos7/命令搜索.md
-    - find命令: system/centos7/find.md
-  - Centos7:
-    - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
-    - 修改网卡: system/centos7/ens33.md
-    - Centos7启动过程: system/centos7/Centos7启动过程.md
-    - LVM: system/centos7/LVM.md
-    - firewalld: system/centos7/firewalld.md
-    - iptable: system/centos7/iptable.md
-    - service服务书写规则: system/centos7/service.md
-    - service服务快速失败: system/centos7/快速失败.md
-    - iptables流量标记: system/centos7/iptables流量标记.md
-    - Yum:
-        - ius源: system/centos7/yum/ius.md
-    - 时间同步chrony: system/centos7/chronyd.md
-    - 系统日志查询命令: system/centos7/journalctl.md
-    - ssh专题: system/centos7/ssh专题.md
-    - rpm官网: system/centos7/rpm官网.md
-    - ls命令详解: system/centos7/ls命令详解.md
-    - Linux特殊权限解释: system/centos7/Linux特殊权限解释.md
-    - linux文件系统的简单描述: system/centos7/linux文件系统的简单描述.md
-    - 系统日志syslog-ng服务: system/centos7/系统日志1.md
-    - 系统日志rsyslog服务: system/centos7/系统日志2.md
-    - 查询硬件信息-dmidecode: system/centos7/dmidecode.md
-    - 查询硬件信息-ipmitool: system/centos7/ipm.md
-    - gun软件列表: system/centos7/gun软件列表.md
-    - 关闭selinux: system/centos7/关闭selinux.md
-  - Windows:
-    - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
-    - tcping: system/windows/tcping.md
-  - Mac:
-      - 常用软件: system/mac/软件.md
-      - 安装Homebrew: system/mac/安装Homebrew.md
-      - MAC安装Python: system/mac/MAC安装Python.md
-      - cheerytree安装: system/mac/cheerytree.md
-  - 汇编基础:
-      - win10下搭建8086汇编环境: system/汇编/win10-masm.md
-      - 存储单元: system/汇编/存储单元.md
-      - 地址总线: system/汇编/地址总线.md
-      - 控制总线: system/汇编/控制总线.md
-      - 数据总线: system/汇编/数据总线.md
-      - 内存地址空间: system/汇编/内存地址空间.md
-      - 8086CPU: system/汇编/8086CPU.md
-      - debug命令: system/汇编/debug命令.md
-      - 寄存器: system/汇编/寄存器.md
-      - 代码段: system/汇编/代码段.md
-      - 汇编指令合集: system/汇编/汇编指令合集.md
-  - 其他：
-- 其他:
-  - 云计算:
-    - Cloud_Computing/index.md
-    - IaaS:
-        - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
-    - Openstack: Cloud_Computing/openstack.md
-    - 四层还是七层: Cloud_Computing/四层还是七层.md
-    - Ansible: programming_language/Ansible.md
-    - 路由器:
-      - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
-      - 输入配置: Cloud_Computing/路由器/输入配置.md
-      - ospf: Cloud_Computing/路由器/OSPF.md
-      - vlan: Cloud_Computing/路由器/VLAN.md
-      - vxlan: Cloud_Computing/路由器/vxlan.md
-    - 安全:
-       - DNS劫持: security/DNS劫持.md
-       - SYN泛洪: security/SYN泛洪.md
-    - KVM: Cloud_Computing/KVM.md
-    - KVM排查: Cloud_Computing/KVM排查.md
-  - 大数据:
-      - HDFS: Cloud_Computing/HDFS.md
-  - 数据库:
-      - Mysql:
-          - 基本语法: database/mysql/basic.md
-          - 数据类型: database/mysql/type.md
-          - 约束: database/mysql/constraint.md
-          - 授权: database/mysql/grant.md
-          - 查询: database/mysql/select.md
-          - 函数: database/mysql/function.md
-          - 备份: database/mysql/bak.md
-          - 在数据库中备份某些表: database/mysql/BAK_TABLE.md
-          - SHOW_SLAVE_STATUS: database/mysql/SHOW_SLAVE_STATUS.md
-          - 慢sql: database/mysql/慢sql.md
-          - mysql的编译安装: database/mysql/编译安装.md
-          - 索引: database/mysql/索引.md
-          - ab复制: database/mysql/ab复制.md
-          - 读写分离: database/mysql/读写分离.md
-      - Redis:
-          - redis: database/redis/redis.md
-          - redis_info详解: database/redis/redis_info.md
-          - redis_info_stats详解: database/redis/redis_info_stats.md
-          - redis作为缓存的优化方案: database/redis/redis作为缓存的优化方案.md
-          - redis快速部署: database/redis/redis快速部署.md
-          - redis编译安装主从: database/redis/redis编译安装主从.md
-          - redis运维动作: database/redis/redis运维动作.md
-          - redis部署形态: database/redis/redis部署形态.md
-          - redis配置详解: database/redis/redis配置详解.md
-          - redis支持存储的类型: database/redis/redis支持存储的类型.md
-  - 监控:
-      - monitor/index.md
-      - Prometheus:
-          - prometheus概念: monitor/prometheus/prome.md
-          - 单机部署: monitor/prometheus/prometheus.md
-          - K8S部署: monitor/prometheus/prometheus_k8s.md
-          - K8S kube-state-metrics指标说明: monitor/prometheus/kube-state-metrics.md
-          - Exporter Metrics解释: monitor/prometheus/Exporter_Metrics.md
-          - Prometheus监控查询例子: monitor/prometheus/query_xamples.md
-          - Prometheus监控查询语法入门: monitor/prometheus/query_rules.md
-          - Prometheus语法函数: monitor/prometheus/function.md
-          - Prometheus recording_rules功能: monitor/prometheus/prometheus_recording_rule.md
-          - Prometheus指标讲解"为什么rate可以计算CPU的使用率": monitor/prometheus/prometheus_rate.md
-          - 时序数据库: monitor/prometheus/TSDB.md
-          - 查询某个机器的CPU: monitor/prometheus/查询某个机器的CPU.md
-      - Alertmanager:
-          - Alertmanager部署: monitor/prometheus/prometheus.md
-          - Alertmanager配置: monitor/alertmanager/alertmanager_config.md
-      - Grafana:
-          - Grafana部署: monitor/grafana/grafana_install.md
-          - Dashboard: monitor/grafana/grafana_dashboard.md
-          - Grafana添加变量: monitor/grafana/grafana_var.md
-  - 中间件:
-      - middleware/index.md
-      - Etcd:
-          - etcd部署: middleware/etcd/etcd.md
-      - 内网穿透:
-          - n2n: middleware/n2n/n2n.md
-      - Pinpoint:
-          - Pinpoint安装: middleware/pinpoint/pinpoint_install.md
-      - 负载均衡:
-          - lvs: middleware/load_balance/lvs.md
-      - MQ:
-          - mq种类: middleware/MQ/mq.md
-          - mq对比: middleware/MQ/mqvs.md
-          - rocketmq部署: middleware/MQ/rocketmq.md
-      - Kafka:
-          - 基本概念: middleware/kafka/基本概念.md
-          - 连接器: middleware/kafka/connect.md
-          - 去zookeeper新特性: middleware/kafka/新特性.md
-          - 单机部署: middleware/kafka/单机部署.md
-          - 运维命令: middleware/kafka/运维命令.md
-          - 配置文件详解: middleware/kafka/配置文件.md
-          - 集群模式: middleware/kafka/集群模式.md
-      - CICD:
-          - CICD概念: middleware/CICD/cicd.md
-          - Pipeline: lxc/kubernetes/Pipeline.md
-          - Jenkins的yum部署: middleware/CICD/jenkins_yum部署.md
-          - Jenkins的简单构建任务: middleware/CICD/Jenkins简单的构建任务.md
-          - IDEA_Jenkins插件: middleware/CICD/IDEA_Jenkins插件.md
-          - Jenkins审查制度: middleware/CICD/Jenkins审查制度.md
-          - pipeline示例: middleware/CICD/pipeline示例.md
-      - Nginx:
-          - Nginx部署: middleware/nginx/nginx_install.md
-          - Nginx启动及命令行参数: middleware/nginx/nginx_cmd.md
-          - Nginx配置详解: middleware/nginx/nginx_conf.md
-          - Nginx7层负载均衡: middleware/nginx/nginx7层负载均衡.md
-          - Nginx7层反向代理: middleware/nginx/nginx7层反向代理.md
-          - Nginx4层转发: middleware/nginx/nginx4层转发.md
-          - Nginx概述: middleware/nginx/nginx概述.md
-  - 编程语言:
-      - programming_language/index.md
-      - Python:
-          - Virtualenv: programming_language/python/virtualenv/env.md
-          - Python一些语法: programming_language/python/basics/basic.md
-          - CSV模块: programming_language/python/csv.md
-          - CSV、列变行、行变列转换: programming_language/python/csv_row_to_col.md
-          - XLSX模块: programming_language/python/xlxs.md
-          - XLSX转CSV: programming_language/python/xlsx_to_csv.md
-          - K8S模块: programming_language/python/k8s.md
-          - 内存性能模块: programming_language/python/mem.md
-          - Centos7安装Python3: programming_language/python/python3_env.md
-          - Python3 Dokcer镜像制作: programming_language/python/python3_docker.md
-          - Python3 日志控制: programming_language/python/python_log.md
-          - python函数参数: programming_language/python/函数参数.md
-          - python装饰器: programming_language/python/装饰器.md
-          - python生成器: programming_language/python/生成器.md
-          - python迭代器: programming_language/python/迭代器.md
-          - lambda函数: programming_language/python/lambda函数.md
-          - Flask: programming_language/python/flask/flask_init.md
-          - 多进程和多线程: programming_language/python/多进程和多线程.md
-          - 线程:
-              - thread线程锁: programming_language/python/threading/thread线程锁.md
-              - 通过继承实现多线程: programming_language/python/threading/thread.md
-              - threading.Event(): programming_language/python/threading/thread_event.md
-              - join的作用: programming_language/python/threading/join.md
-              - join详解: programming_language/python/threading/join讲解.md
-              - 守护线程: programming_language/python/threading/守护线程.md
-              - 通过继承实现多线程: programming_language/python/threading/thread.md
-          - 协程: programming_language/python/协程/协程.md
-          - 协程详解: programming_language/python/协程/协程2.md
-          - shedule:
-              - 后台执行: programming_language/python/shedule/run_in_back.md
-              - schedule日志显示下次任务执行时间: programming_language/python/shedule/see_cron.md
-          - 类:
-              - 类的继承: programming_language/python/basics/class/class.md
-              - 类变量与实例变量: programming_language/python/basics/class/class_var.md
-          - mypy: programming_language/python/basics/mypy.md
-          - 基础:
-              - for循环: programming_language/python/basics/for循环.md
-              - if语句: programming_language/python/basics/if语句.md
-              - match语句: programming_language/python/basics/match语句.md
-              - while语句: programming_language/python/basics/while.md
-              - 常见语法: programming_language/python/basics/some.md
-      - Go:
-          - Go入门: programming_language/go/go_one.md
-          - Web框架 Gin:
-              - Gin入门: programming_language/go/go_gin.md
-              - Gin 路由拆分成单个文件: programming_language/go/gin_route.md
-              - Gin 路由拆分成单独APP: programming_language/go/gin__app_route.md
-      - Vue:
-          - html中加载VUE: programming_language/vue/html中加载VUE.md
-          - 安装nodejs: programming_language/vue/安装nodejs.md
-          - nodejs运行网站: programming_language/vue/nodejs运行网站.md
-          - npm的使用: programming_language/vue/npm的使用.md
-          - VUE安装: programming_language/vue/vue安装.md
-          - VUE目录文件: programming_language/vue/vue目录文件.md
-          - VUE使用axios加载本地json: programming_language/vue/VUE使用axios加载本地json.md
-          - VUE使用for循环: programming_language/vue/VUE使用for循环.md
-          - VUE使用if: programming_language/vue/VUE使用if.md
-          - VUE使用事件监听: programming_language/vue/VUE使用事件监听.md
-          - VUE方法和计算属性: programming_language/vue/VUE方法和计算属性.md
-          - VUE输入绑定: programming_language/vue/VUE输入绑定.md
-          - 前端时代的变革: programming_language/vue/前端时代的变革.md
-      - java:
-          - java运维命令: programming_language/java/java.md
-          - java_dump命令: programming_language/java/java_dump.md
-          - jvm参数调优: programming_language/java/jvm.md
-          - 新生代_老年代: programming_language/java/新生代_老年代.md
-      - awk:
-          - programming_language/awk/index.md
-          - 基础语法: programming_language/awk/awk.md
-          - 数组: programming_language/awk/awk_array.md
-          - 循环控制: programming_language/awk/awk_process_control.md
-          - 匹配: programming_language/awk/awk_matching.md
-          - 函数: programming_language/awk/awk_function.md
-          - 重定向: programming_language/awk/awk_redirect.md
-          - awk使用bash变量: programming_language/awk/awk_var.md
-          - awk无缓存输出: programming_language/awk/awk_nocache.md
-          - awk不打印某列: programming_language/awk/awk_noprint.md
-      - Ansible:
-          - Ansible部署: programming_language/Ansible部署.md
-          - Ansible_Dome: programming_language/Ansible_Dome.md
-          - Ansible检查正确性: programming_language/Ansible检查正确性.md
-      - Bash:
-          - programming_language/bash/index.md
-          - 语法:
-              - 变量: programming_language/bash/var.md
-              - shell读取变量: programming_language/bash/read_var.md
-              - 数学运算: programming_language/bash/math.md
-              - 判断: programming_language/bash/branch.md
-              - if语句: programming_language/bash/if.md
-              - case语句: programming_language/bash/case.md
-              - for循环: programming_language/bash/for.md
-              - while循环: programming_language/bash/while.md
-              - until循环: programming_language/bash/until.md
-              - 数组: programming_language/bash/array.md
-              - 函数: programming_language/bash/function.md
-              - 特殊符号: programming_language/bash/special_symbols.md
-              - bash的通配符: programming_language/bash/re.md
-              - 重定向: programming_language/bash/redirect.md
-              - 不同的脚本执行方式: programming_language/bash/不同的脚本执行方式.md
-      - 一些帮助书写Bash脚本的东西:
-          - programming_language/bash_help/index.md
-          - sed:
-              - programming_language/bash_help/sed/index.md
-              - 语法: programming_language/bash_help/sed/sed.md
-              - sed脚本: programming_language/bash_help/sed/sed_script.md
-              - 拓展: programming_language/bash_help/sed/sed_exd.md
-          - grep: programming_language/bash_help/re/grep.md
-          - 正则表达式: programming_language/bash_help/re/re.md
-          - bash的颜色控制: programming_language/bash_help/echo.md
-          - bash脚本查看文件指定行: programming_language/bash_help/cat.md
-          - bashm脚本命令行选项: programming_language/bash_help/getops.md
-          - bash脚本加密: programming_language/bash_help/gzexe.md
-          - 控制bash子bash: programming_language/bash_help/mkfifo.md
-          - bash中的异常处理: programming_language/bash_help/trap.md
-          - 查看系统软件变化: programming_language/bash_help/rpm.md
-          - bash批量登录服务器: programming_language/bash_help/sshpass.md
-          - sort排序: programming_language/bash_help/sort.md
-          - shellcheck: programming_language/bash_help/shellcheck.md
-  - 容器技术:
-      - lxc/index.md
-      - K8S:
-          - lxc/kubernetes/index.md
-          - minikube: lxc/kubernetes/minikube/minikube.md
-          - K8S 1.16.9部署: lxc/kubernetes/kubernetes1.16.md
-          - 基础概念: lxc/kubernetes/basic.md
-          - 污点: lxc/kubernetes/stain.md
-          - 亲和性: lxc/kubernetes/dispatch.md
-          - initContainers: lxc/kubernetes/initContainers.md
-          - 一个比较完整的deployment的样例: lxc/kubernetes/一个完整的deployment.md
-          - ClusterRole: lxc/kubernetes/ClusterRole.md
-          - emptyDir: lxc/kubernetes/emptyDir.md
-          - deployment添加配置文件: lxc/kubernetes/configmap-one.md
-          - 主机内目录挂载到pod中: lxc/kubernetes/hostpath.md
-          - Deployment的demo: lxc/kubernetes/depolyment_model.md
-          - statefulset的demo: lxc/kubernetes/statefulset.md
-          - liveness: lxc/kubernetes/liveness.md
-          - readiness: lxc/kubernetes/readiness.md
-          - pvc实验: lxc/kubernetes/pvc实验.md
-          - K8S部署应用的8项原则: lxc/kubernetes/principle.md
-          - 滚动升级中的maxSurge和maxUnavailable: lxc/kubernetes/滚动升级中的maxSurge和maxUnavailable.md
-          - pod生命周期: lxc/kubernetes/生命周期.md
-          - initContainers: lxc/kubernetes/initContainers.md
-          - CNI: lxc/kubernetes/CNI.md
-          - Controller: lxc/kubernetes/Controller.md
-          - Secret: lxc/kubernetes/Secret.md
-          - StatefulSet_Mysql: lxc/kubernetes/StatefulSet_Mysql.md
-          - etc备份: lxc/kubernetes/etc备份.md
-          - 节点维护: lxc/kubernetes/节点维护.md
-          - hostalias: lxc/kubernetes/hostalias.md
-      - KubeSphere:
-          - KubeSphere安装: lxc/kubesphere/kubesphere.md
-      - Rancher:
-          - Rancher安装: lxc/rancher/rancher_instatll.md
-      - Docker:
-          - Docker安装和加速: lxc/docker/docker_su.md
-          - 停止docker出现警告: lxc/docker/docker_Warning.md
-          - docker_compose中卷的映射: lxc/docker/docker-compose.md
-          - docker_compse讲解: lxc/docker/pinpoint_compose.md
-          - dockerfile: lxc/docker/dockerfile.md
-          - docker命令: lxc/docker/docker命令.md
-          - registry: lxc/docker/registry.md
-  - 工具和知识:
-    - tool/index.md
-    - git及github的轻度教程: tool/github使用.md
-    - Pycharm及配合Github的使用: tool/pycharm.md
-    - MkDocs的使用: tool/MkDoc.md
-    - URL在线编码转换工具: tool/url_code.md
-    - 常用地址: tool/url.md
-    - P99: tool/p99.md
-    - github代码对比: tool/github.md
-    - git一次报错: tool/git.md
-    - brew使用: tool/brew.md
-    - siege压测: tool/siege压测.md
-
-- 读书笔记:
-  - 《情商》丹尼尔·戈尔曼——笔记: soft/《情商》笔记.md
-  - 爱情: soft/爱情.md
-  - 爱情2: soft/感情.md
-  - 与人相处的诀窍: soft/与人相处的诀窍.md
-  - 可以被别人喜欢: soft/可以被别人喜欢.md
-  - 赢得别人的赞同: soft/赢得别人的赞同.md
-  - 领导者知晓的: soft/领导者必须领悟的.md
-  - 寻找人生之路: soft/寻找人生之路.md
-  - 7个习惯: soft/7个习惯.md
-  - 佛法中解脱的方法: soft/佛法.md
-  - 般若波罗蜜多心经: soft/般若波罗蜜多心经.md
-  - 道理: soft/道理.md
-  - 了解自我: soft/了解自我.md
-  - 随便记记: soft/随便记记.md
-  - NSCA-CSCS体能教练笔记: soft/NSCA.md
-  - 什么叫三分化和五分化: soft/什么叫三分化和五分化.md
-  - 戒烟: soft/戒烟.md
-  - 喝酒: soft/喝酒.md
-  - 抗氧化食物: soft/我需要的抗氧化食物.md
-  - 喝水: soft/每天喝水.md
-  - 一些心理学概念: soft/心理学概念.md
-- 八字易经:
-  - 天干地支: soft/八字易经/天干地支.md
 
