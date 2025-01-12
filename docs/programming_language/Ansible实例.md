@@ -41,3 +41,13 @@ ansible all -i host.txt -m shell -a "sed -i 's/^PasswordAuthentication yes/Passw
 ansible all -i host.txt -m shell -a "systemctl restart sshd" -e 'ansible_ssh_common_args=" -o StrictHostKeyChecking=no"'
 ```
 
+
+
+
+
+忽略 Host Key 检查，并设置ssh密码
+
+```bash
+ansible all -i ip.txt -m shell -a "uptime" -e 'ansible_ssh_common_args="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"' --extra-vars "ansible_password=mypasswd"
+```
+

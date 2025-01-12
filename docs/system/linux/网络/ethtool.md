@@ -221,3 +221,76 @@ NIC statistics:
 
 ### 
 这些统计信息帮助了解每个接收和发送队列的流量、丢包情况、超时、XDP 数据包的处理情况等。通常，`drops` 为 0 表示网卡正常工作，没有丢失数据。如果这些值变大，可能需要优化系统或硬件性能。
+
+
+
+
+
+
+
+
+
+
+
+```bash
+[root ~]# ethtool p1
+Settings for p1:  # 显示接口p1的设置
+	Supported ports: [ FIBRE ]  # 支持的端口类型：光纤（FIBRE）
+	Supported link modes:   1000baseT/Full  # 支持的链路模式：千兆以太网（1000baseT），全双工模式（Full）
+	                        1000baseKX/Full  # 支持的链路模式：千兆以太网KX（1000baseKX），全双工模式（Full）
+	                        10000baseT/Full  # 支持的链路模式：万兆以太网（10000baseT），全双工模式（Full）
+	                        10000baseKR/Full  # 支持的链路模式：万兆以太网KR（10000baseKR），全双工模式（Full）
+	                        40000baseKR4/Full  # 支持的链路模式：40Gb以太网KR4（40000baseKR4），全双工模式（Full）
+	                        40000baseCR4/Full  # 支持的链路模式：40Gb以太网CR4（40000baseCR4），全双工模式（Full）
+	                        40000baseSR4/Full  # 支持的链路模式：40Gb以太网SR4（40000baseSR4），全双工模式（Full）
+	                        40000baseLR4/Full  # 支持的链路模式：40Gb以太网LR4（40000baseLR4），全双工模式（Full）
+	                        25000baseCR/Full  # 支持的链路模式：25Gb以太网CR（25000baseCR），全双工模式（Full）
+	                        25000baseKR/Full  # 支持的链路模式：25Gb以太网KR（25000baseKR），全双工模式（Full）
+	                        25000baseSR/Full  # 支持的链路模式：25Gb以太网SR（25000baseSR），全双工模式（Full）
+	                        50000baseCR2/Full  # 支持的链路模式：50Gb以太网CR2（50000baseCR2），全双工模式（Full）
+	                        50000baseKR2/Full  # 支持的链路模式：50Gb以太网KR2（50000baseKR2），全双工模式（Full）
+	                        100000baseKR4/Full  # 支持的链路模式：100Gb以太网KR4（100000baseKR4），全双工模式（Full）
+	                        100000baseSR4/Full  # 支持的链路模式：100Gb以太网SR4（100000baseSR4），全双工模式（Full）
+	                        100000baseCR4/Full  # 支持的链路模式：100Gb以太网CR4（100000baseCR4），全双工模式（Full）
+	                        100000baseLR4_ER4/Full  # 支持的链路模式：100Gb以太网LR4/ER4（100000baseLR4_ER4），全双工模式（Full）
+	                        50000baseSR2/Full  # 支持的链路模式：50Gb以太网SR2（50000baseSR2），全双工模式（Full）
+	                        1000baseX/Full  # 支持的链路模式：千兆以太网X（1000baseX），全双工模式（Full）
+	                        10000baseCR/Full  # 支持的链路模式：万兆以太网CR（10000baseCR），全双工模式（Full）
+	                        10000baseSR/Full  # 支持的链路模式：万兆以太网SR（10000baseSR），全双工模式（Full）
+	                        10000baseLR/Full  # 支持的链路模式：万兆以太网LR（10000baseLR），全双工模式（Full）
+	                        10000baseER/Full  # 支持的链路模式：万兆以太网ER（10000baseER），全双工模式（Full）
+	Supported pause frame use: Symmetric  # 支持的暂停帧使用：对称（Symmetric），指双方可以发送暂停帧
+	Supports auto-negotiation: Yes  # 支持自动协商：是（Yes），自动协商允许设备协商最佳连接速率
+	Supported FEC modes: None BaseR RS  # 支持的前向纠错（FEC）模式：无（None），BaseR，RS
+	Advertised link modes:  1000baseT/Full  # 广告的链路模式：千兆以太网（1000baseT），全双工模式（Full）
+	                        1000baseKX/Full  # 广告的链路模式：千兆以太网KX（1000baseKX），全双工模式（Full）
+	                        10000baseT/Full  # 广告的链路模式：万兆以太网（10000baseT），全双工模式（Full）
+	                        10000baseKR/Full  # 广告的链路模式：万兆以太网KR（10000baseKR），全双工模式（Full）
+	                        40000baseKR4/Full  # 广告的链路模式：40Gb以太网KR4（40000baseKR4），全双工模式（Full）
+	                        40000baseCR4/Full  # 广告的链路模式：40Gb以太网CR4（40000baseCR4），全双工模式（Full）
+	                        40000baseSR4/Full  # 广告的链路模式：40Gb以太网SR4（40000baseSR4），全双工模式（Full）
+	                        40000baseLR4/Full  # 广告的链路模式：40Gb以太网LR4（40000baseLR4），全双工模式（Full）
+	                        25000baseCR/Full  # 广告的链路模式：25Gb以太网CR（25000baseCR），全双工模式（Full）
+	                        25000baseKR/Full  # 广告的链路模式：25Gb以太网KR（25000baseKR），全双工模式（Full）
+	                        25000baseSR/Full  # 广告的链路模式：25Gb以太网SR（25000baseSR），全双工模式（Full）
+	                        50000baseCR2/Full  # 广告的链路模式：50Gb以太网CR2（50000baseCR2），全双工模式（Full）
+	                        50000baseKR2/Full  # 广告的链路模式：50Gb以太网KR2（50000baseKR2），全双工模式（Full）
+	                        100000baseKR4/Full  # 广告的链路模式：100Gb以太网KR4（100000baseKR4），全双工模式（Full）
+	                        100000baseSR4/Full  # 广告的链路模式：100Gb以太网SR4（100000baseSR4），全双工模式（Full）
+	                        100000baseCR4/Full  # 广告的链路模式：100Gb以太网CR4（100000baseCR4），全双工模式（Full）
+	                        100000baseLR4_ER4/Full  # 广告的链路模式：100Gb以太网LR4/ER4（100000baseLR4_ER4），全双工模式（Full）
+	                        50000baseSR2/Full  # 广告的链路模式：50Gb以太网SR2（50000baseSR2），全双工模式（Full）
+	                        1000baseX/Full  # 广告的链路模式：千兆以太网X（1000baseX），全双工模式（Full）
+	                        10000baseCR/Full  # 广告的链路模式：万兆以太网CR（10000baseCR），全双工模式（Full）
+	                        10000baseSR/Full  # 广告的链路模式：万兆以太网SR（10000baseSR），全双工模式（Full）
+	                        10000baseLR/Full  # 广告的链路模式：万兆以太网LR（10000baseLR），全双工模式（Full）
+	                        10000baseER/Full  # 广告的链路模式：万兆以太网ER（10000baseER），全双工模式（Full）
+	Advertised pause frame use: No  # 广告的暂停帧使用：无（No），表示不使用暂停帧
+	Advertised auto-negotiation: Yes  # 广告的自动协商：是（Yes）
+	Advertised FEC modes: RS  # 广告的前向纠错（FEC）模式：RS
+	Speed: 100000Mb/s  # 当前链路速率：100000 Mb/s（100Gbps）
+	Duplex: Full  # 双工模式：全双工（Full），可以同时发送和接收数据
+	Port: FIBRE  # 端口类型：光纤（FIB
+
+```
+

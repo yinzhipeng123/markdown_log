@@ -266,6 +266,7 @@ nav:
               - 用户配置文件加载顺序: system/centos7/用户配置文件加载顺序.md
               - NAT网关模拟: system/linux/网络/NAT网关模拟.md
               - 流表: system/linux/网络/流表.md
+              - 通过ip查询mac地址: system/linux/网络/通过ip查询mac地址.md
       - Linux软件:
           - rsync: system/Linux通用软件/rsync.md
           - rootfs: system/Linux通用软件/rootfs.md
@@ -559,6 +560,7 @@ nav:
               - awk无缓存输出: programming_language/awk/awk_nocache.md
               - awk不打印某列: programming_language/awk/awk_noprint.md
           - Ansible:
+              - Ansible: programming_language/Ansible.md
               - Ansible部署: programming_language/Ansible部署.md
               - Ansible_Dome: programming_language/Ansible_Dome.md
               - Ansible检查正确性: programming_language/Ansible检查正确性.md
@@ -581,6 +583,8 @@ nav:
                   - bash的通配符: programming_language/bash/re.md
                   - 重定向: programming_language/bash/redirect.md
                   - 不同的脚本执行方式: programming_language/bash/不同的脚本执行方式.md
+              - Demo:
+                  - Demo: programming_language/bash/demo.md
           - 一些帮助书写Bash脚本的东西:
               - programming_language/bash_help/index.md
               - sed:
@@ -600,6 +604,7 @@ nav:
               - bash批量登录服务器: programming_language/bash_help/sshpass.md
               - sort排序: programming_language/bash_help/sort.md
               - shellcheck: programming_language/bash_help/shellcheck.md
+              - split: programming_language/bash_help/split.md
 
       - 工具和知识:
           - tool/index.md
