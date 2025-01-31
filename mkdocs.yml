@@ -173,6 +173,7 @@ nav:
           - 内存相关:
               - 内存: system/linux/内存/内存.md
               - Linux的两种内存分配方式: system/linux/内存/Linux的两种内存分配方式.md
+              - numa: hardware/numa.md
               - 内存回收的方式: system/linux/内存/内存回收的方式.md
               - slabtop命令: system/linux/内存/slabtop.md
               - /proc/slabinfo: system/linux/内存/0proc0slabinfo.md
@@ -267,11 +268,17 @@ nav:
               - NAT网关模拟: system/linux/网络/NAT网关模拟.md
               - 流表: system/linux/网络/流表.md
               - 通过ip查询mac地址: system/linux/网络/通过ip查询mac地址.md
+              - 缩短长连接: system/linux/网络/缩短长连接.md
       - Linux软件:
           - rsync: system/Linux通用软件/rsync.md
           - rootfs: system/Linux通用软件/rootfs.md
           - 提供命令查询的网站: system/centos7/命令搜索.md
           - find命令: system/centos7/find.md
+          - 把任务存放后台: system/Linux通用软件/把任务存放后台.md
+          - 查询系统重启记录的方法: system/Linux通用软件/查询系统重启记录的方法.md
+          - 给进程做coredump: system/Linux通用软件/给进程做coredump.md
+          - ntp: tool/ntp.md
+          - Linux加模块: system/Linux通用软件/加载模.md
       - Centos7:
           - CentOS查看系统驱动: system/centos7/CentOS查看系统驱动.md
           - 修改网卡: system/centos7/ens33.md
@@ -305,6 +312,7 @@ nav:
           - 安装Homebrew: system/mac/安装Homebrew.md
           - MAC安装Python: system/mac/MAC安装Python.md
           - cheerytree安装: system/mac/cheerytree.md
+          - Mac本地运行简单的ubantu: tool/Mac本地运行简单的ubantu.md
       - 汇编基础:
           - win10下搭建8086汇编环境: system/汇编/win10-masm.md
           - 存储单元: system/汇编/存储单元.md
@@ -323,6 +331,10 @@ nav:
           - 云计算概念: Cloud_Computing/云计算概念.md
           - 云计算形态:
               - Openstack: Cloud_Computing/openstack.md
+          - 云计算部署:
+              - MAAS: tool/MAAS.md
+              - Juju: tool/MAAS_Juju.md
+              - Charm: tool/Charm.md
           - 云计算相关底层硬件:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
               - 交换机路由器等:
@@ -332,6 +344,9 @@ nav:
                   - Ospf: Cloud_Computing/路由器/OSPF.md
                   - Vlan: Cloud_Computing/路由器/VLAN.md
                   - vxlan: Cloud_Computing/路由器/vxlan.md
+                  - DHCP_Relay: tool/DHCP_Relay.md
+              - GPU:
+                  - xpu: tool/xpu.md
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
@@ -605,7 +620,7 @@ nav:
               - sort排序: programming_language/bash_help/sort.md
               - shellcheck: programming_language/bash_help/shellcheck.md
               - split: programming_language/bash_help/split.md
-
+              - tr: programming_language/bash_help/tr.md
       - 工具和知识:
           - tool/index.md
           - git及github的轻度教程: tool/github使用.md
@@ -648,6 +663,7 @@ nav:
           - 佛教:
               - 佛法中解脱的方法: soft/佛法.md
               - 般若波罗蜜多心经: soft/般若波罗蜜多心经.md
+              - 不执着于欲望的行为表现: soft/不执着于欲望的行为表现.md
           - 道教:
               - 天干地支: soft/八字易经/天干地支.md
       - 心理:
