@@ -51,3 +51,11 @@ ansible all -i host.txt -m shell -a "systemctl restart sshd" -e 'ansible_ssh_com
 ansible all -i ip.txt -m shell -a "uptime" -e 'ansible_ssh_common_args="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"' --extra-vars "ansible_password=mypasswd"
 ```
 
+
+
+并发40，让机器批量执行本地/path/check_running.sh脚本，忽略 Host Key 检查，并设置ssh密码，设置SSH超时10秒
+
+```bash
+ansible all -i host.list -m script -a "/path/check_running.sh"   -e 'ansible_ssh_common_args="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=10"'   --extra-vars "ansible_password=mypasswd" -o -f 40 | tee check_result.log
+```
+

@@ -172,6 +172,8 @@ nav:
               - 机器夯住原因: system/linux/计算/机器夯住原因.md
           - 内存相关:
               - 内存: system/linux/内存/内存.md
+              - 内存是如何分配的: system/linux/内存/内存是如何分配的.md
+              - 记一次内存占用高的分析: system/linux/内存/记一次内存占用高的分析.md
               - Linux的两种内存分配方式: system/linux/内存/Linux的两种内存分配方式.md
               - numa: hardware/numa.md
               - 内存回收的方式: system/linux/内存/内存回收的方式.md
@@ -232,6 +234,7 @@ nav:
               - 分析vmcore: system/linux/IO/分析vmcore.md
               - sysrq-trigger: system/linux/IO/sysrq-trigger.md
               - 文件描述符: system/linux/IO/文件描述符.md
+              - 清理磁盘: system/linux/IO/清理磁盘.md
           - 网络相关:
               - TCP图解: system/linux/网络/tcp.md
               - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
@@ -269,6 +272,8 @@ nav:
               - 流表: system/linux/网络/流表.md
               - 通过ip查询mac地址: system/linux/网络/通过ip查询mac地址.md
               - 缩短长连接: system/linux/网络/缩短长连接.md
+              - lldptools: system/linux/网络/lldptools.md
+              - tcpdump_lldp: system/linux/网络/tcpdump_lldp.md
       - Linux软件:
           - rsync: system/Linux通用软件/rsync.md
           - rootfs: system/Linux通用软件/rootfs.md
@@ -304,6 +309,7 @@ nav:
           - 查询硬件信息-ipmitool: system/centos7/ipm.md
           - gun软件列表: system/centos7/gun软件列表.md
           - 关闭selinux: system/centos7/关闭selinux.md
+          - 无交互式修改root密码: system/centos7/无交互式修改root密码.md
       - Windows:
           - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
           - tcping: system/windows/tcping.md
@@ -337,6 +343,7 @@ nav:
               - Charm: tool/Charm.md
           - 云计算相关底层硬件:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
+              - 查询物理机交换机信息: hardware/查询物理机交换机信息.md
               - 交换机路由器等:
                   - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
                   - 输入配置: Cloud_Computing/路由器/输入配置.md
@@ -381,6 +388,7 @@ nav:
                   - 索引: database/mysql/索引.md
                   - ab复制: database/mysql/ab复制.md
                   - 读写分离: database/mysql/读写分离.md
+                  - 数据库连接命令: database/mysql/数据库连接命令.md
               - Redis:
                   - redis: database/redis/redis.md
                   - redis_info详解: database/redis/redis_info.md

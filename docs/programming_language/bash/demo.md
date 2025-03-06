@@ -124,4 +124,34 @@ for file in *.txt; do
     mv "$file" "${file%.txt}.list"
 done
 ```
+远程执行命令，提供一个主机列表，命令行后输入需要执行的命令
 
+```
+#!/bin/bash
+
+# 检查参数
+if [ "$#" -lt 2 ]; then
+    echo "用法: $0 <machine_list_file> <command>"
+    exit 1
+fi
+
+MACHINE_LIST="$1"
+shift
+COMMAND="$@"
+USERNAME="root"  # SSH 用户名，请修改为实际的用户名
+PASSWORD="centos"  # 你可以修改为从环境变量或安全方式获取密码
+
+# 检查 sshpass 是否安装
+if ! command -v sshpass &> /dev/null; then
+    echo "sshpass 未安装，请先安装它 (例如：apt install sshpass 或 yum install sshpass)"
+    exit 1
+fi
+
+# 读取机器列表并执行命令（串行执行，保证顺序）
+for HOST in $(cat "$MACHINE_LIST"); do
+    echo -n "正在连接 $HOST :"
+    sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR  -o ConnectTimeout=3 "$USERNAME@$HOST" "$COMMAND"
+done
+
+echo "所有命令执行完毕。"
+```

@@ -1,6 +1,5 @@
 - [ ] # ssh相关命令中文man
 
-
 ## 服务端
 
 服务端包含的命令：
@@ -29,8 +28,6 @@ $rpm -ql openssh-server
 
 [ssh-keygen 中文手册 [金步国\] (jinbuguo.com)](https://www.jinbuguo.com/openssh/ssh-keygen.html)
 
-
-
 ## 客户端
 
 客户端包含的命令：
@@ -56,8 +53,6 @@ $rpm -ql openssh-clients
 
 [scp(1) — manpages-zh — Debian unstable — Debian Manpages](https://manpages.debian.org/unstable/manpages-zh/scp.1.zh_CN.html)
 
-
-
 免密配置：
 
 ```bash
@@ -70,3 +65,46 @@ ssh-keygen -t rsa -b 4096
 ssh-copy-id root@ip地址
 ```
 
+
+
+
+
+不使用免密登录root
+
+```
+ssh -o PubkeyAuthentication=no root@hostname
+```
+
+
+
+ssh 连接提示如下：
+
+```bash
+[root@ ~]# ssh root@ip 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+Please contact your system administrator.
+Add correct host key in /root/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /root/.ssh/known_hosts:2186
+
+
+```
+
+
+解决方法：
+
+```
+ssh-keygen -R "服务器IP地址"
+#这会自动从known_hosts文件中删除该主机的旧记录。之后重新连接时会提示你确认新指纹。
+```
+
+
+```commandline
+sshpass -p "密码" ssh -o PubkeyAuthentication=no -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null   root@IP 
+#不使用免密，不验证远程主机的SSH密钥且不保存记录
+```
