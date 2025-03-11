@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -4839,9 +4844,38 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          数据库连接命令
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         数据库连接命令
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    直接输入密码（不推荐）
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -10450,6 +10484,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    直接输入密码（不推荐）
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -10471,6 +10520,15 @@
   <h1>数据库连接命令</h1>
 
 <pre class="highlight"><code>mysql -h &lt;服务器地址&gt; -P &lt;端口号&gt; -u &lt;用户名&gt; -p</code></pre>
+<h3 id="_1">直接输入密码（不推荐）</h3>
+<p>如果你想在命令中直接提供密码（不安全，可能会被记录到历史记录中），可以这样做：</p>
+<pre class="highlight"><code>mysql -h 192.168.1.100 -P 3306 -u root -p'你的密码'</code></pre>
+<p>⚠ <strong>注意</strong>：</p>
+<ul>
+<li><code>-p</code> 与密码之间不能有空格，必须紧跟。</li>
+<li>直接写密码可能会导致密码泄露（如命令历史 <code>~/.bash_history</code> 可能记录）。</li>
+<li>更安全的方式是使用 <code>mysql_config_editor</code> 配置凭据，或者使用 <code>--defaults-extra-file</code> 读取密码文件。</li>
+</ul>
 
 
   

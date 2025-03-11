@@ -10839,6 +10839,43 @@
 <ol>
 <li><strong>时钟调节</strong>：NTPD 会根据实际的时间差异调整系统时钟的频率，以纠正长时间积累的小误差。这种调节方式不会突然改变系统时间，而是平滑地进行调整。</li>
 </ol>
+<pre class="highlight"><code class="language-bash">[root@ ~]# rpm -ql  ntp-4.2.6p5-29.el7.centos.2.x86_64 
+/etc/dhcp/dhclient.d   # DHCP客户端的配置脚本目录，用于设置NTP相关配置
+/etc/dhcp/dhclient.d/ntp.sh   # 脚本，用于从DHCP服务器获取NTP服务器地址
+/etc/ntp.conf   # NTP配置文件，指定NTP服务器和其他时间同步设置
+/etc/ntp/crypto   # 存放NTP加密文件和密钥的目录
+/etc/ntp/crypto/pw   # 存放NTP认证所需的密码文件
+/etc/sysconfig/ntpd   # 配置NTP守护进程启动参数的系统配置文件
+/usr/bin/ntpstat   # 显示NTP同步状态的工具
+/usr/lib/systemd/ntp-units.d/60-ntpd.list   # systemd依赖关系和单位配置文件
+/usr/lib/systemd/system/ntpd.service   # systemd服务单元，管理ntpd服务
+/usr/sbin/ntp-keygen   # 用于生成和管理NTP密钥的工具
+/usr/sbin/ntpd   # NTP守护进程主程序，负责时间同步
+/usr/sbin/ntpdc   # 用于监控ntpd守护进程的工具（已废弃）
+/usr/sbin/ntpq   # 查询ntpd状态和统计信息的工具
+/usr/sbin/ntptime   # 显示系统时间和NTP同步状态的工具
+/usr/sbin/tickadj   # 调整系统时钟滴答间隔的工具
+/usr/share/doc/ntp-4.2.6p5   # NTP文档目录，包含软件包的使用说明
+/usr/share/doc/ntp-4.2.6p5/COPYRIGHT   # NTP软件包的版权声明
+/usr/share/doc/ntp-4.2.6p5/ChangeLog   # 记录NTP包更新内容的日志文件
+/usr/share/doc/ntp-4.2.6p5/NEWS   # 发布说明，告诉用户新版本的改动
+/usr/share/man/man1/ntpstat.1.gz   # ntpstat命令的手册页，压缩版
+/usr/share/man/man5/ntp.conf.5.gz   # ntp.conf配置文件手册页，压缩版
+/usr/share/man/man5/ntp_acc.5.gz   # NTP认证配置的手册页
+/usr/share/man/man5/ntp_auth.5.gz   # NTP认证的手册页
+/usr/share/man/man5/ntp_clock.5.gz   # 配置NTP时间源的手册页
+/usr/share/man/man5/ntp_decode.5.gz   # 解释NTP数据包的手册页
+/usr/share/man/man5/ntp_misc.5.gz   # 其他NTP配置选项的手册页
+/usr/share/man/man5/ntp_mon.5.gz   # ntpd监控配置的手册页
+/usr/share/man/man8/ntp-keygen.8.gz   # ntp-keygen命令的手册页，压缩版
+/usr/share/man/man8/ntpd.8.gz   # ntpd守护进程手册页
+/usr/share/man/man8/ntpdc.8.gz   # ntpdc命令手册页
+/usr/share/man/man8/ntpq.8.gz   # ntpq命令手册页
+/usr/share/man/man8/ntptime.8.gz   # ntptime命令手册页
+/usr/share/man/man8/tickadj.8.gz   # tickadj命令手册页
+/var/lib/ntp   # 存储NTP服务运行时数据的目录
+/var/lib/ntp/drift   # NTP系统时钟漂移数据文件
+/var/log/ntpstats   # 存储ntpd日志和同步状态信息的目录</code></pre>
 <h3 id="ntpd_2">配置 NTPD 服务</h3>
 <ol>
 <li><strong>安装 NTPD</strong></li>
@@ -10869,20 +10906,30 @@ sudo apt install ntp</code></pre>
 <p><pre class="highlight"><code class="language-bash">sudo systemctl status ntp</code></pre>
 3. <strong>配置 NTPD</strong></p>
 <p><code>ntpd</code> 的配置文件通常位于 <code>/etc/ntp.conf</code>，可以编辑这个文件来配置时间服务器和其他设置。</p>
+<pre class="highlight"><code class="language-bash">[root@noaheese ~]# cat /etc/ntp.conf  
+driftfile /var/lib/ntp/drift               # 指定存储本地时钟漂移值的文件，ntpd 用它来校正系统时钟误差
+restrict default kod nomodify notrap nopeer noquery  # 为所有客户端设置默认访问限制，启用关键字检测（kod），禁止修改、陷阱、对等连接和查询
+restrict -6 default kod nomodify notrap nopeer noquery # 为所有 IPv6 客户端设置与 IPv4 相同的默认访问限制
+restrict 127.0.0.1                        # 对本地 IPv4 回环地址提供较宽松的访问权限，允许本机查询和修改
+restrict ::1                              # 对本地 IPv6 回环地址提供较宽松的访问权限，允许本机查询和修改
+includefile /etc/ntp/crypto/pw            # 包含存放 NTP 认证密码的文件，用于安全认证
+keys /etc/ntp/keys                        # 指定存储 NTP 认证密钥的文件，供 ntpd 验证和生成时间戳签名
+disable monitor                           # 禁用 ntpd 的监控功能，防止外部访问详细的状态信息
+server xxx.xxx.xxx.xxx                        # 指定用于时间同步的上游 NTP 服务器地址</code></pre>
 <p>基本配置如下：</p>
-<pre class="highlight"><code class="language-ini"># /etc/ntp.conf
+<pre class="highlight"><code class="language-ini"># /etc/ntp.conf                       
+# 定义时间服务器                         # 注释说明接下来是定义上游时间服务器
+server 0.centos.pool.ntp.org iburst   # 指定上游 NTP 服务器为 0.centos.pool.ntp.org，iburst 选项用于加速初始同步
+server 1.centos.pool.ntp.org iburst   # 指定上游 NTP 服务器为 1.centos.pool.ntp.org，iburst 选项用于加速初始同步
+server 2.centos.pool.ntp.org iburst   # 指定上游 NTP 服务器为 2.centos.pool.ntp.org，iburst 选项用于加速初始同步
+server 3.centos.pool.ntp.org iburst   # 指定上游 NTP 服务器为 3.centos.pool.ntp.org，iburst 选项用于加速初始同步
 
-# 定义时间服务器
-server 0.centos.pool.ntp.org iburst
-server 1.centos.pool.ntp.org iburst
-server 2.centos.pool.ntp.org iburst
-server 3.centos.pool.ntp.org iburst
+# 启用局域网中的广播模式                # 注释说明启用局域网内的广播时间同步功能
+broadcast 192.168.1.255                # 设置广播地址为 192.168.1.255，ntpd 将通过此地址广播时间信息到局域网内
 
-# 启用局域网中的广播模式
-broadcast 192.168.1.255
-
-# 允许特定的客户端访问本地 NTP 服务
-restrict 192.168.0.0 mask 255.255.255.0 nomodify notrap</code></pre>
+# 允许特定的客户端访问本地 NTP 服务      # 注释说明配置对特定网络的客户端访问限制
+restrict 192.168.0.0 mask 255.255.255.0 nomodify notrap.  # 对 192.168.0.0/24 网络的客户端应用访问限制，允许查询但禁止修改配置及发送 trap 消息
+</code></pre>
 <ul>
 <li><code>server</code> 行指定了要使用的 NTP 服务器。可以选择本地的 NTP 服务器或公共的 NTP 服务器。</li>
 <li><code>iburst</code> 选项可以在启动时快速同步时间。</li>
@@ -10897,9 +10944,18 @@ restrict 192.168.0.0 mask 255.255.255.0 nomodify notrap</code></pre>
 <p>这将显示当前正在使用的 NTP 服务器以及它们的状态信息。例如，输出可能如下所示：</p>
 <pre class="highlight"><code class="language-bash">     remote           refid      st t when poll reach   delay   offset  jitter
 ==============================================================================
-*0.centos.pool.ntp.org  .POOL.          16 p    1   64  377   0.059   -0.005   0.003
-+1.centos.pool.ntp.org  .POOL.          16 p    2   64  377   0.065   -0.001   0.003
-+2.centos.pool.ntp.org  .POOL.          16 p    3   64  377   0.072   +0.003   0.002</code></pre>
+*xx.xx.xx.xx     xx.xxx.xx.xx      2 u 1004 1024  377    0.115   -1.462   0.221
+# *10.52.192.2     # 远程 NTP 服务器的 IP 地址
+# 10.50.27.35      # 参考 ID，表示远程服务器时间来源的地址
+# 2                # 层级，表示该服务器距离参考时钟的距离（层次为 2）
+# u                # 连接类型，u 表示单播连接
+# 1004             # 距离上次轮询的时间（秒）
+# 1024             # 轮询间隔（秒）
+# 377              # 可达性寄存器，表示 NTP 查询的状态（八进制）
+# 0.115            # 网络延迟，单位为毫秒（此处为 0.115 秒，即 115 毫秒）
+# -1.462           # 时间偏移，表示本地系统与远程服务器之间的时间差（单位为毫秒）
+# 0.221            # 抖动，时间偏移测量的变化范围（单位为毫秒）
+</code></pre>
 <ul>
 <li>
 <p><code>*</code> 表示当前选中的同步源。</p>
@@ -11004,11 +11060,22 @@ sudo systemctl start ntpd</code></pre>
 </ul>
 <pre class="highlight"><code class="language-bash">timedatectl</code></pre>
 <p>输出示例：</p>
-<pre class="highlight"><code>      Local time: Wed 2024-12-18 14:25:36 CST
-  Universal time: Wed 2024-12-18 06:25:36 UTC
-        RTC time: Wed 2024-12-18 06:25:35
-       Time zone: Asia/Shanghai (CST, +0800)
-     NTP enabled: yes</code></pre>
+<pre class="highlight"><code class="language-bash">      Local time: Fri 2025-03-07 22:28:01 CST   # 当前系统的本地时间，根据所设置的时区（此处为CST）显示
+  Universal time: Fri 2025-03-07 14:28:01 UTC   # 当前协调世界时（UTC），独立于本地时区显示
+        RTC time: Fri 2025-03-07 22:28:00     # 硬件实时时钟（RTC）的时间，此处与本地时间一致（因RTC采用本地时间模式）
+       Time zone: Asia/Shanghai (CST, +0800)   # 系统所用时区为Asia/Shanghai，即中国标准时间，UTC偏移+8小时
+     NTP enabled: no        # 这行表示系统的自动时间同步服务（通常是 systemd-timesyncd）没有启用，也就是说，系统没有使用内置的 systemd NTP 客户端来定期更新时间。
+NTP synchronized: yes       # 这行表示当前系统时间已经与某个 NTP 服务器保持同步。即使 systemd 的自动同步服务没有启用，系统仍可能通过其他 NTP 守护进程（如 ntpd 或 chronyd）或者一次性手动同步等方式获得正确的时间。
+ RTC in local TZ: yes       # 表示硬件时钟（RTC）设置为本地时区时间，而非UTC
+      DST active: n/a       # 表示夏令时（DST）不适用或未激活
+
+Warning: The system is configured to read the RTC time in the local time zone.   # 警告：系统配置为以本地时区读取RTC时间
+         This mode can not be fully supported. It will create various problems         # 此模式支持不完全，可能导致时区更改及夏令时调整时出现问题
+         with time zone changes and daylight saving time adjustments. The RTC
+         time is never updated, it relies on external facilities to maintain it.      # RTC时间不会自动更新，而是依赖外部工具或服务进行维护
+         If at all possible, use RTC in UTC by calling                                 # 建议尽可能将RTC设置为UTC，避免潜在问题，可使用以下命令
+         'timedatectl set-local-rtc 0'.                                               # 'timedatectl set-local-rtc 0' 将RTC设置为UTC模式
+</code></pre>
 <ul>
 <li><strong>启用 NTP</strong>：</li>
 </ul>
@@ -11053,6 +11120,27 @@ sudo systemctl start ntpd</code></pre>
 <hr />
 <h3 id="ntp_1"><strong>NTP 服务管理命令</strong></h3>
 <h4 id="1">1. <strong>服务启动与管理</strong></h4>
+<pre class="highlight"><code class="language-bash">[root@ ~]# cat /etc/sysconfig/ntpd
+# Command line options for ntpd           # 注释：指定 ntpd 命令行选项
+OPTIONS="-g"                             # 定义 ntpd 启动时使用的选项，-g 表示允许 ntpd 在启动时进行大幅度时间校正
+
+[root@ ~]# cat /usr/lib/systemd/system/ntpd.service
+[Unit]                                   # [Unit] 部分，用于描述服务和其依赖关系
+Description=Network Time Service           # 描述该服务的功能：网络时间同步服务
+After=syslog.target ntpdate.service sntp.service  # 指定此服务必须在 syslog、ntpdate 和 sntp 服务启动后再启动
+
+[Service]                                # [Service] 部分，定义服务的启动方式和运行环境
+Type=forking                             # 指定服务类型为“forking”，表示服务启动后会派生出子进程并在后台运行
+EnvironmentFile=-/etc/sysconfig/ntpd      # 从 /etc/sysconfig/ntpd 加载环境变量，前面的“-”表示文件不存在时不报错
+ExecStart=/usr/sbin/ntpd -u ntp:ntp $OPTIONS  # 定义启动命令：以 ntp 用户/组身份运行 ntpd，并附加 /etc/sysconfig/ntpd 中定义的选项
+PrivateTmp=true                          # 为该服务提供私有临时目录，提高服务安全性
+
+[Install]                                # [Install] 部分，定义服务在系统目标中的安装配置
+WantedBy=multi-user.target               # 指定该服务在 multi-user.target（多用户运行级别）下启动
+
+
+[root@ ~]# ps -ef | grep ntpd
+ntp       13852      1  0  2024 ?        00:00:31 /usr/sbin/ntpd -u ntp:ntp -g</code></pre>
 <ul>
 <li><strong>启动 NTP 服务</strong>：</li>
 </ul>

@@ -98,13 +98,13 @@ Offending ED25519 key in /root/.ssh/known_hosts:2186
 
 解决方法：
 
-```
-ssh-keygen -R "服务器IP地址"
+```bash
+ssh-keygen -R 服务器IP地址
 #这会自动从known_hosts文件中删除该主机的旧记录。之后重新连接时会提示你确认新指纹。
 ```
 
 
-```commandline
-sshpass -p "密码" ssh -o PubkeyAuthentication=no -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null   root@IP 
+```bash
+sshpass -p 密码 ssh -o PubkeyAuthentication=no -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null   root@IP 
 #不使用免密，不验证远程主机的SSH密钥且不保存记录
 ```
