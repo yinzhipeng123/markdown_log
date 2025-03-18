@@ -59,3 +59,42 @@ ansible all -i ip.txt -m shell -a "uptime" -e 'ansible_ssh_common_args="-o Stric
 ansible all -i host.list -m script -a "/path/check_running.sh"   -e 'ansible_ssh_common_args="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=10"'   --extra-vars "ansible_password=mypasswd" -o -f 40 | tee check_result.log
 ```
 
+
+
+
+
+
+
+
+
+```bash
+#批量检查22端口通不通
+nmap -p22 -iL ips.txt -oG - | awk '/22\/open/{print $2}'
+```
+
+
+
+传输大文件
+
+```bash
+ansible all -i host.txt  -m synchronize -a "src=/home/文件  dest=/root/" -e 'ansible_ssh_common_args="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"'  -f 20 -o
+```
+
+
+
+复制文件
+
+```bash
+ansible all  -i live_ip.txt   -m copy -a "src=/etc/resolv.conf  dest=/etc/"  -e 'ansible_ssh_common_args="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"' 
+```
+
+
+
+
+
+软件安装
+
+```bash
+ansible all -i live_ip.txt -m yum -a "name=lldpad state=present" -e 'ansible_ssh_common_args="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"' 
+```
+

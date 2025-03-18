@@ -1,3 +1,5 @@
+
+
 一些bash的例子：
 
 
@@ -126,7 +128,7 @@ done
 ```
 远程执行命令，提供一个主机列表，命令行后输入需要执行的命令
 
-```
+```bash
 #!/bin/bash
 
 # 检查参数
@@ -155,3 +157,44 @@ done
 
 echo "所有命令执行完毕。"
 ```
+
+
+
+
+
+linux有个目录，我想删除除了以.sh结尾其他的文件
+
+```bash
+find ./ -type f ! -name "*.sh" -exec rm -f {} +
+```
+
+linux有个目录，我想删除除了以.sh和.bin结尾其他的文件
+
+```bash
+find ./ -type f ! -name "*.sh" ! -name "*.bin" | xargs rm -f
+```
+
+linux有个目录，我想删除除了以.sh，.bin，.gz，.jar结尾其他的文件，仅操作文件，不处理目录，仅处理一级目录中文件
+
+```bash
+find ./  -maxdepth 1  -type f ! -name "*.sh" ! -name "*.bin" ! -name "*.gz" ! -name "*.jar" | xargs rm -rf 
+```
+
+
+
+
+
+```bash
+find ./ -type f -name '日志.log.2025*' ! -name '日志.log.20250304*' -exec rm {} +
+```
+
+```
+find ./ -type f -name '日志.log.2025*' ! -name '日志.log.20250314*' -exec ls -l {} +
+```
+
+
+
+```
+du -ah --max-depth=1 ./ | sort -rh | head -n 20
+```
+

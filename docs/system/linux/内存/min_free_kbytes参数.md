@@ -1,5 +1,13 @@
 # min_free_kbytes参数深入解析及优化
 
+
+
+```bash
+cat /proc/sys/vm/min_free_kbytes
+```
+
+
+
 min_free_kbytes这个参数，相信很多同学都听说过。给系统预留的最低内存数。但是这个说法太泛泛了，不能完全说清楚这个参数的实际意义。
 
 内核有一整套的内存管理的系统：

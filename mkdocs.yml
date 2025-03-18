@@ -358,6 +358,8 @@ nav:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
                   - KVM排查: Cloud_Computing/KVM排查.md
+                  - virsh命令: Cloud_Computing/虚拟机命令.md
+                  - virsh统计虚拟机占用内存的脚本: Cloud_Computing/统计虚拟机内存.md
               - 云服务器镜像转换:
                   - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
           - 负载均衡:

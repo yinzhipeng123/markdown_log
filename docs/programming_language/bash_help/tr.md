@@ -82,3 +82,10 @@ tr '\n' ',' < input.txt > output.txt
 
 
 
+
+换行符换成逗号，并去掉最后一个逗号
+
+```bash
+tr '\n' ',' < input.txt | sed 's/,$/\n/'
+```
+

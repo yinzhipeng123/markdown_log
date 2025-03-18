@@ -4179,6 +4179,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1_6_1">
@@ -4215,6 +4219,34 @@
     <li class="md-nav__item">
       <a href="../../../Cloud_Computing/KVM%E6%8E%92%E6%9F%A5/" class="md-nav__link">
         KVM排查
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud_Computing/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        virsh命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud_Computing/%E7%BB%9F%E8%AE%A1%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98/" class="md-nav__link">
+        virsh统计虚拟机占用内存的脚本
       </a>
     </li>
   
@@ -10597,6 +10629,8 @@
 <p><code>tr</code> 是一个简单高效的命令，特别适合进行字符级的替换或处理。</p>
 <p>把换行符号换成逗号</p>
 <pre class="highlight"><code class="language-bash">tr '\n' ',' &lt; input.txt &gt; output.txt</code></pre>
+<p>换行符换成逗号，并去掉最后一个逗号</p>
+<pre class="highlight"><code class="language-bash">tr '\n' ',' &lt; input.txt | sed 's/,$/\n/'</code></pre>
 
 
   
