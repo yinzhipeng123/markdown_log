@@ -10506,6 +10506,44 @@
 <pre class="highlight"><code class="language-bash">find ./ -type f -name 'db.log.2025*' ! -name 'db.log.20250304*' -exec rm {} +</code></pre>
 <p>清理当前正在输出的日志</p>
 <pre class="highlight"><code class="language-bash">truncate -s 0 my.log  # 文件大小立即可见为0，空间释放</code></pre>
+<p>查找大于500M的日志文件</p>
+<pre class="highlight"><code class="language-bash">find /home -type f -name "*.log.*" -size +500M -exec du -h {} \;</code></pre>
+<p>查找大于500M的文件</p>
+<pre class="highlight"><code class="language-bash">find /home -type f -size +500M -exec du -h {} \;</code></pre>
+<p>查找大于500M的文件并按照大小排序</p>
+<pre class="highlight"><code class="language-bash">find /home -type f -size +500M -exec du -h {} \; |sort -k1,1hr</code></pre>
+<p>查找大于500M的日志文件并按照大小排序</p>
+<pre class="highlight"><code class="language-bash">find /home -type f -name "*.log.*" -size +500M -exec du -h {} \; | sort -k1,1hr</code></pre>
+<p>查找名字叫log的目录，并按照大小排序</p>
+<pre class="highlight"><code class="language-bash">find /home -type d -name "log" -exec du -sh {} + | sort -k1,1hr</code></pre>
+<p><strong>区别</strong></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th><code>-exec du -sh {} \;</code></th>
+<th><code>-exec du -sh {} +</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>处理方式</strong></td>
+<td>逐条处理</td>
+<td>批量处理</td>
+</tr>
+<tr>
+<td><strong>效率</strong></td>
+<td>较低（多次调用 <code>du</code>）</td>
+<td>较高（一次调用 <code>du</code>）</td>
+</tr>
+</tbody>
+</table>
+<p>把3天前的文件移动到/home/data/下</p>
+<pre class="highlight"><code class="language-bash">find ./ -type f -mtime +2 -exec mv {}  /home/data/  \;</code></pre>
+<p>把3天前的文件删除</p>
+<pre class="highlight"><code class="language-bash">find ./ -type f -mtime +2 -exec rm -rf {} + </code></pre>
+<p>删除txt为后缀的文件，并每个文件之前手动确认</p>
+<pre class="highlight"><code class="language-bash">find ./ -name "*.txt" -ok rm {} \;</code></pre>
 
 
   
