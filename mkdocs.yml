@@ -235,6 +235,7 @@ nav:
               - sysrq-trigger: system/linux/IO/sysrq-trigger.md
               - 文件描述符: system/linux/IO/文件描述符.md
               - 清理磁盘: system/linux/IO/清理磁盘.md
+              - 清理磁盘的脚本: system/linux/IO/清理磁盘的脚本.md
           - 网络相关:
               - TCP图解: system/linux/网络/tcp.md
               - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
@@ -275,6 +276,8 @@ nav:
               - lldptools: system/linux/网络/lldptools.md
               - tcpdump_lldp: system/linux/网络/tcpdump_lldp.md
       - Linux软件:
+          - 日志查看常用命令less: system/Linux通用软件/less.md
+          - crontab: system/Linux通用软件/crontab.md
           - rsync: system/Linux通用软件/rsync.md
           - rootfs: system/Linux通用软件/rootfs.md
           - 提供命令查询的网站: system/centos7/命令搜索.md
@@ -344,6 +347,7 @@ nav:
           - 云计算相关底层硬件:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
               - 查询物理机交换机信息: hardware/查询物理机交换机信息.md
+              - 什么叫巨型帧: Cloud_Computing/什么是巨型帧.md
               - 交换机路由器等:
                   - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
                   - 输入配置: Cloud_Computing/路由器/输入配置.md
@@ -362,6 +366,13 @@ nav:
                   - virsh统计虚拟机占用内存的脚本: Cloud_Computing/统计虚拟机内存.md
               - 云服务器镜像转换:
                   - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
+          - 裸金属服务器:
+              - 裸金属服务器: Cloud_Computing/裸金属服务器.md
+              - 百度裸金属和阿里云裸金属对比: Cloud_Computing/百度裸金属和阿里云裸金属.md
+          - GPU服务器:
+                - 什么叫NVSwitch: Cloud_Computing/NVSwitch.md
+                - 什么叫NVLink: Cloud_Computing/NVLink.md
+                - 如何查看显卡之前的连接状态: Cloud_Computing/查看显卡之间连接状态.md
           - 负载均衡:
               - 负载均衡选择四层还是七层: Cloud_Computing/四层还是七层.md
               - 负载均衡底层原理之Nginx:
@@ -402,6 +413,8 @@ nav:
                   - redis部署形态: database/redis/redis部署形态.md
                   - redis配置详解: database/redis/redis配置详解.md
                   - redis支持存储的类型: database/redis/redis支持存储的类型.md
+              - Memcache:
+                - Redis和Memcache对比: database/memcache/memcachevsredis.md
           - 消息队列:
               - MQ:
                   - MQ种类: middleware/MQ/mq.md
@@ -584,6 +597,7 @@ nav:
               - awk使用bash变量: programming_language/awk/awk_var.md
               - awk无缓存输出: programming_language/awk/awk_nocache.md
               - awk不打印某列: programming_language/awk/awk_noprint.md
+              - awk的一些例子: programming_language/awk/awk_demo.md
           - Ansible:
               - Ansible: programming_language/Ansible.md
               - Ansible部署: programming_language/Ansible部署.md
@@ -618,6 +632,7 @@ nav:
                   - sed脚本: programming_language/bash_help/sed/sed_script.md
                   - 拓展: programming_language/bash_help/sed/sed_exd.md
               - grep: programming_language/bash_help/re/grep.md
+              - grep多个关键字: programming_language/bash_help/grep多个关键字.md
               - 正则表达式: programming_language/bash_help/re/re.md
               - bash的颜色控制: programming_language/bash_help/echo.md
               - bash脚本查看文件指定行: programming_language/bash_help/cat.md
@@ -631,6 +646,7 @@ nav:
               - shellcheck: programming_language/bash_help/shellcheck.md
               - split: programming_language/bash_help/split.md
               - tr: programming_language/bash_help/tr.md
+              - paste: programming_language/bash_help/paste.md
       - 工具和知识:
           - tool/index.md
           - git及github的轻度教程: tool/github使用.md
@@ -673,6 +689,7 @@ nav:
           - 佛教:
               - 佛法中解脱的方法: soft/佛法.md
               - 般若波罗蜜多心经: soft/般若波罗蜜多心经.md
+              - 大悲咒: soft/大悲咒.md
               - 不执着于欲望的行为表现: soft/不执着于欲望的行为表现.md
           - 道教:
               - 天干地支: soft/八字易经/天干地支.md
