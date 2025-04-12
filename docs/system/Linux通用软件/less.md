@@ -143,3 +143,14 @@ LESS=-Q less filename  # -Q 禁用部分正则特性（可能不完全生效）
 ```bash
 grep -F "example.com" filename | less  # -F 表示固定字符串匹配
 ```
+
+
+
+
+
+我的常用用法
+
+```bash
+less -ipN 文件名
+```
+

@@ -276,6 +276,7 @@ nav:
               - lldptools: system/linux/网络/lldptools.md
               - tcpdump_lldp: system/linux/网络/tcpdump_lldp.md
       - Linux软件:
+          - ls命令: system/Linux通用软件/ls命令.md
           - 日志查看常用命令less: system/Linux通用软件/less.md
           - crontab: system/Linux通用软件/crontab.md
           - rsync: system/Linux通用软件/rsync.md
