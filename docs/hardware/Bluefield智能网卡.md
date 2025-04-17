@@ -203,7 +203,7 @@ BlueField智能网卡配备DPU（数据处理单元），能够直接卸载以�
 
 ------
 
-# BlueField Bundle
+## BlueField Bundle
 
 是一个涵盖硬件、软件、开发、部署和管理的完整套件。它的目标是帮助用户充分利用 BlueField 智能网卡（DPU）的全部潜力，而不仅仅是提供网络和存储的基本访问能力。
 
