@@ -349,6 +349,7 @@ nav:
               - Charm: tool/Charm.md
           - 云计算相关底层硬件:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
+              - mft: hardware/mft.md
               - 查询物理机交换机信息: hardware/查询物理机交换机信息.md
               - 什么叫巨型帧: Cloud_Computing/什么是巨型帧.md
               - 交换机路由器等:
