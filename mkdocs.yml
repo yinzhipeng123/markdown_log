@@ -277,6 +277,7 @@ nav:
               - tcpdump_lldp: system/linux/网络/tcpdump_lldp.md
           - 系统重启问题:
               - 查看系统启动时间: system/linux/系统重启问题/查看系统启动时间.md
+              - 系统启动分析: system/centos7/系统启动分析.md
       - Linux软件:
           - ls命令: system/Linux通用软件/ls命令.md
           - 日志查看常用命令less: system/Linux通用软件/less.md
@@ -350,6 +351,7 @@ nav:
           - 云计算相关底层硬件:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
               - mft: hardware/mft.md
+              - 什么是DPU: hardware/DPU.md
               - 查询物理机交换机信息: hardware/查询物理机交换机信息.md
               - 什么叫巨型帧: Cloud_Computing/什么是巨型帧.md
               - 交换机路由器等:
