@@ -10953,7 +10953,8 @@
   <h1>查看系统启动时间</h1>
 
 <p>查看系统启动时间</p>
-<pre class="highlight"><code class="language-bash">[root@ yinzhipeng]# echo "系统启动时间: $(date -d "$(awk '{print $1}' /proc/uptime) seconds ago")" 
+<pre class="highlight"><code class="language-bash">[root@ yinzhipeng]# echo "系统启动时间: $(date -d "$(awk '{print $1}' /proc/uptime) seconds ago")"    
+
 系统启动时间: 2025年 04月 12日 星期六 12:48:48 CST</code></pre>
 <pre class="highlight"><code class="language-bash">[root@yinzhipeng]# who -b 
          系统引导 2025-04-12 12:49</code></pre>
