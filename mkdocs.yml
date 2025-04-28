@@ -352,6 +352,7 @@ nav:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
               - mft: hardware/mft.md
               - 什么是DPU: hardware/DPU.md
+              - 什么是TPU: hardware/TPU.md
               - 查询物理机交换机信息: hardware/查询物理机交换机信息.md
               - 什么叫巨型帧: Cloud_Computing/什么是巨型帧.md
               - 交换机路由器等:
@@ -557,6 +558,8 @@ nav:
               - shedule:
                   - 后台执行: programming_language/python/shedule/run_in_back.md
                   - schedule日志显示下次任务执行时间: programming_language/python/shedule/see_cron.md
+              - supervisord:
+                    - supervisord是什么: programming_language/python/Supervisord/Supervisord.md
               - 类:
                   - 类的继承: programming_language/python/basics/class/class.md
                   - 类变量与实例变量: programming_language/python/basics/class/class_var.md
