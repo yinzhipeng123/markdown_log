@@ -474,3 +474,21 @@ juju config docker-hello external-port=80 message="A new message"
 **总结：**
 
 `juju show-status-log docker-hello` 是一个非常有用的命令，可以让你回顾 `docker-hello` 应用程序的部署和运行历史，帮助你诊断问题、监控状态和理解应用程序的行为。它提供了比 `juju status docker-hello` 命令更详细的历史信息，后者只显示应用程序的当前状态。
+
+
+
+### juju show-action-output命令
+
+`juju show-action-output` 命令用于显示特定 Juju action 执行的输出结果。
+
+当你使用 `juju run` 命令在 Juju 管理的单元上执行一个 action 时，该命令会返回一个 action 的 ID。你可以使用这个 ID，通过 `juju show-action-output <action_id>` 命令来查看该 action 执行的详细输出，包括标准输出 (stdout)、标准错误 (stderr) 以及 action 定义中设置的任何结果。
+
+**主要用途包括：**
+
+- **查看 Action 执行结果:** 确认 action 是否成功执行，并查看其返回的任何数据。
+- **排查 Action 执行问题:** 如果 action 执行失败或出现异常，可以通过查看输出来诊断问题所在，例如错误信息、日志等。
+- **监控 Action 进度:** 对于长时间运行的 action，虽然 `juju show-action-output` 主要用于查看最终结果，但在某些情况下，action 可能会在输出中包含进度信息。更实时的进度监控通常会通过 `juju show-operation` 或 action 本身的日志来实现。
+
+**简而言之，`juju show-action-output` 让你能够回顾和检查 Juju action 的执行情况和结果。**
+
+在较新的 Juju 版本中，你可能会发现 `juju show-operation` 和 `juju show-task` 命令在某些方面取代了 `juju show-action-output` 的功能，提供了更细粒度的查看 action 执行状态和输出的选项。`juju show-operation` 显示整个操作的详细信息，而 `juju show-task` 则关注操作中的单个任务（即在特定单元上运行的 action）。你可以根据你的 Juju 版本和具体需求选择合适的命令。
