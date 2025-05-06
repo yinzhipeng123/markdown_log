@@ -523,3 +523,27 @@ MB_Power         | 260 Watts         | ok    # 主板功率传感器，当前功
 
 ```
 
+
+
+
+
+ 协议远程设置服务器的下一次启动方式为 PXE（网络启动）:
+
+```bash
+ipmitool -U ilo_user -P ilo_password -H ilo_ip -I lanplus chassis bootdev pxe
+```
+
+
+
+| 参数                  | 含义                                         |
+| --------------------- | -------------------------------------------- |
+| `ipmitool`            | 工具名称，用于与 IPMI 接口交互               |
+| `-U ilo_user`         | 登录 iLO（或 BMC）的用户名                   |
+| `-P ilo_password`     | 登录 iLO 的密码（注意安全性，不推荐明文）    |
+| `-H ilo_ip`           | iLO（即服务器的带外管理接口）地址            |
+| `-I lanplus`          | 使用加密的 `lanplus` 协议（比 `lan` 更安全） |
+| `chassis bootdev pxe` | 命令部分：设置下次启动设备为 PXE 网络引导    |
+
+### 整体作用：
+
+这条命令的作用是：通过 IPMI 远程登录服务器的管理接口（如 HPE 的 iLO），并设置下一次服务器重启时通过 PXE 网络引导启动操作系统。

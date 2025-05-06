@@ -347,6 +347,7 @@ nav:
           - 云计算部署:
               - MAAS: tool/MAAS.md
               - Juju: tool/MAAS_Juju.md
+              - juju常用命令: tool/juju命令详解.md
               - Charm: tool/Charm.md
           - 云计算相关底层硬件:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
