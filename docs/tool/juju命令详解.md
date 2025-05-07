@@ -492,3 +492,52 @@ juju config docker-hello external-port=80 message="A new message"
 **简而言之，`juju show-action-output` 让你能够回顾和检查 Juju action 的执行情况和结果。**
 
 在较新的 Juju 版本中，你可能会发现 `juju show-operation` 和 `juju show-task` 命令在某些方面取代了 `juju show-action-output` 的功能，提供了更细粒度的查看 action 执行状态和输出的选项。`juju show-operation` 显示整个操作的详细信息，而 `juju show-task` 则关注操作中的单个任务（即在特定单元上运行的 action）。你可以根据你的 Juju 版本和具体需求选择合适的命令。
+
+
+
+### juju status 命令
+
+`juju status` 是 Juju 的核心命令之一，用于显示当前部署环境中所有应用、单元（unit）、机器和容器的状态。这个命令输出的信息会因部署的模型不同而略有差异，但一般格式如下：
+
+------
+
+示例输出（简化版本）：
+
+```
+Model    Controller  Cloud/Region   Version  SLA          Timestamp
+default  myctrl      aws/us-east-1  2.9.42   unsupported  16:45:12Z
+
+App           Version  Status   Scale  Charm         Store       Rev  OS      Notes
+mysql         8.0      active       1  mysql         charmhub     78  ubuntu  
+wordpress     5.8      active       2  wordpress     charmhub     25  ubuntu  
+
+Unit             Workload  Agent  Machine  Public address  Ports           Message
+mysql/0          active    idle   0        52.91.100.12    3306/tcp        Ready
+wordpress/0      active    idle   1        18.215.21.17    80/tcp,443/tcp  Ready
+wordpress/1      active    idle   2        54.81.23.22     80/tcp,443/tcp  Ready
+
+Machine  State    DNS             Inst id              Series  AZ          Message
+0        started  52.91.100.12    i-0abcd1234efgh5678   focal   us-east-1a  Running
+1        started  18.215.21.17    i-0abcd1234efgh5679   focal   us-east-1b  Running
+2        started  54.81.23.22     i-0abcd1234efgh5680   focal   us-east-1c  Running
+```
+
+------
+
+各部分说明：
+
+- **Model**: 当前的模型（模型是 Juju 中资源的管理单位）。
+- **App**: 部署的应用，如 mysql、wordpress。
+- **Unit**: 应用的单元，实际运行的实例，如 mysql/0、wordpress/1。
+- **Status**:
+  - `active`: 正常运行
+  - `waiting`: 等待资源或其它应用
+  - `blocked`: 被阻塞，需要人工干预
+  - `error`: 出错
+- **Machine**: 显示物理或虚拟机资源情况。
+- **Agent**: Juju Agent 的状态，一般为 `idle` 表示空闲正常。
+- **Public address**: 应用所在机器的公网 IP。
+
+------
+
+你可以使用 `juju status --format=yaml` 或 `--format=json` 得到结构化输出，适用于脚本或程序处理。
