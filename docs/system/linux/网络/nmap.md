@@ -246,6 +246,39 @@ nmap -p 1-65535 -T4 --min-rate 1000 --max-retries 1 -n --host-timeout 30m <目�
 
 
 
+
+
+使用 `-Pn` 告诉 Nmap **不要进行主机在线检测，直接扫描端口**：
+
+```bash
+nmap -Pn -p 10443,40299 192.168.0.120
+```
+
+这会跳过“主机是否在线”的判断，直接去扫指定端口。
+
+
+
+
+
+服务版本类型探测
+
+```bash
+v_yinzhipeng01@MacBooK ~ % nmap -Pn -sV -p 10443 192.168.0.120 
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-07 14:44 CST
+Nmap scan report for 192.168.0.120
+Host is up (0.019s latency).
+
+PORT      STATE SERVICE  VERSION
+10443/tcp open  ssl/http AppDynamics EUM server or Apache Mesos slave
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 85.93 seconds
+```
+
+
+
+
+
 [Nmap使用教程（初级篇） - zha0gongz1 - 博客园 (cnblogs.com)](https://www.cnblogs.com/zha0gongz1/p/12231851.html)
 
 [Nmap使用教程（进阶篇） - zha0gongz1 - 博客园 (cnblogs.com)](https://www.cnblogs.com/zha0gongz1/p/12234762.html)

@@ -278,6 +278,7 @@ nav:
           - 系统重启问题:
               - 查看系统启动时间: system/linux/系统重启问题/查看系统启动时间.md
               - 系统启动分析: system/centos7/系统启动分析.md
+              - 排查系统宕机原因: system/linux/系统重启问题/查看系统宕机原因.md
       - Linux软件:
           - ls命令: system/Linux通用软件/ls命令.md
           - 日志查看常用命令less: system/Linux通用软件/less.md
@@ -393,6 +394,15 @@ nav:
                   - Nginx概述: middleware/nginx/nginx概述.md
               - 负载均衡底层原理之LVS:
                   - LVS: middleware/load_balance/lvs.md
+              - keepalive:
+                    - keepalive: middleware/load_balance/keepalive.md
+                    - keepalive部署: middleware/load_balance/keepalive如何部署.md
+                    - lvs加keepalive部署: middleware/load_balance/lvs加keepalve部署.md
+                    - lvs加keepalve部署脚本: middleware/load_balance/lvs加keepalive部署脚本.md
+          - 对象存储:
+                - 对象存储概念: Cloud_Computing/对象存储/对象存储概念.md
+                - EC 校验: Cloud_Computing/对象存储/EC校验.md
+                - Ceph : Cloud_Computing/对象存储/Ceph.md
           - 数据库:
               - Mysql:
                   - 基本语法: database/mysql/basic.md
@@ -423,6 +433,11 @@ nav:
                   - redis支持存储的类型: database/redis/redis支持存储的类型.md
               - Memcache:
                 - Redis和Memcache对比: database/memcache/memcachevsredis.md
+          - 日志采集:
+                - elk体系: Cloud_Computing/日志采集/elk.md
+          - 网络软件:
+                - bgpd: Cloud_Computing/路由器/bgpd.md
+                - zebra: Cloud_Computing/路由器/zebra.md
           - 消息队列:
               - MQ:
                   - MQ种类: middleware/MQ/mq.md
