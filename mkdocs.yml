@@ -349,6 +349,7 @@ nav:
               - MAAS: tool/MAAS.md
               - Juju: tool/MAAS_Juju.md
               - juju常用命令: tool/juju命令详解.md
+              - juju组件逻辑: tool/juju组件逻辑.md
               - Charm: tool/Charm.md
           - 云计算相关底层硬件:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
@@ -493,6 +494,7 @@ nav:
               - etc备份: lxc/kubernetes/etc备份.md
               - 节点维护: lxc/kubernetes/节点维护.md
               - hostalias: lxc/kubernetes/hostalias.md
+              - kubectl: lxc/kubernetes/kubectl.md
           - 监控:
               - monitor/index.md
               - Prometheus:
