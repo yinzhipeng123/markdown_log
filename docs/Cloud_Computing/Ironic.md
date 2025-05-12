@@ -52,26 +52,26 @@ Ironic 的核心架构由以下几个组件组成：
 
 ## 二、Ironic 工作流程（以 direct deploy 为例）
 
-1. **注册裸金属节点信息**
+**1.注册裸金属节点信息**
 
-   * 包括 BMC（如 IPMI）地址、驱动类型、MAC 地址、硬盘容量等。
+* 包括 BMC（如 IPMI）地址、驱动类型、MAC 地址、硬盘容量等。
 
-2. **设置节点为 `available` 状态**
+**2.设置节点为 `available` 状态**
 
-3. **Nova/Ironic 触发部署流程**
+**3.Nova/Ironic 触发部署流程**
 
-   * Ironic 通过 PXE 启动引导镜像（deploy ramdisk）。
-   * ramdisk 启动后联系 Ironic conductor。
+* Ironic 通过 PXE 启动引导镜像（deploy ramdisk）。
+* ramdisk 启动后联系 Ironic conductor。
 
-4. **Conductor 分发镜像**
+**4.Conductor 分发镜像**
 
-   * 使用 HTTP 或 iSCSI，将 Glance 镜像写入裸金属本地磁盘。
+* 使用 HTTP 或 iSCSI，将 Glance 镜像写入裸金属本地磁盘。
 
-5. **部署完成后重启**
+**5.部署完成后重启**
 
-   * 进入用户镜像，完成部署。
+* 进入用户镜像，完成部署。
 
-6. **节点状态变为 `active`**
+**6.节点状态变为 `active`**
 
 ---
 

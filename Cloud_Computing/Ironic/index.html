@@ -11769,41 +11769,25 @@
 </ul>
 <hr />
 <h2 id="ironic-direct-deploy">二、Ironic 工作流程（以 direct deploy 为例）</h2>
-<ol>
-<li>
-<p><strong>注册裸金属节点信息</strong></p>
-</li>
-<li>
-<p>包括 BMC（如 IPMI）地址、驱动类型、MAC 地址、硬盘容量等。</p>
-</li>
-<li>
-<p><strong>设置节点为 <code>available</code> 状态</strong></p>
-</li>
-<li>
-<p><strong>Nova/Ironic 触发部署流程</strong></p>
-</li>
-<li>
-<p>Ironic 通过 PXE 启动引导镜像（deploy ramdisk）。</p>
-</li>
-<li>
-<p>ramdisk 启动后联系 Ironic conductor。</p>
-</li>
-<li>
-<p><strong>Conductor 分发镜像</strong></p>
-</li>
-<li>
-<p>使用 HTTP 或 iSCSI，将 Glance 镜像写入裸金属本地磁盘。</p>
-</li>
-<li>
-<p><strong>部署完成后重启</strong></p>
-</li>
-<li>
-<p>进入用户镜像，完成部署。</p>
-</li>
-<li>
-<p><strong>节点状态变为 <code>active</code></strong></p>
-</li>
-</ol>
+<p><strong>1.注册裸金属节点信息</strong></p>
+<ul>
+<li>包括 BMC（如 IPMI）地址、驱动类型、MAC 地址、硬盘容量等。</li>
+</ul>
+<p><strong>2.设置节点为 <code>available</code> 状态</strong></p>
+<p><strong>3.Nova/Ironic 触发部署流程</strong></p>
+<ul>
+<li>Ironic 通过 PXE 启动引导镜像（deploy ramdisk）。</li>
+<li>ramdisk 启动后联系 Ironic conductor。</li>
+</ul>
+<p><strong>4.Conductor 分发镜像</strong></p>
+<ul>
+<li>使用 HTTP 或 iSCSI，将 Glance 镜像写入裸金属本地磁盘。</li>
+</ul>
+<p><strong>5.部署完成后重启</strong></p>
+<ul>
+<li>进入用户镜像，完成部署。</li>
+</ul>
+<p><strong>6.节点状态变为 <code>active</code></strong></p>
 <hr />
 <h2 id="_1">三、运维注意事项</h2>
 <h3 id="1">1. 网络配置是最常见的问题来源</h3>
