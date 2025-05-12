@@ -377,6 +377,7 @@ nav:
               - 云服务器镜像转换:
                   - iso格式转换为vhd格式: Cloud_Computing/iso格式转换为vhd格式.md
           - 裸金属服务器:
+              - opnestack中的Ironic服务: Cloud_Computing/Ironic.md
               - 裸金属服务器: Cloud_Computing/裸金属服务器.md
               - 百度裸金属和阿里云裸金属对比: Cloud_Computing/百度裸金属和阿里云裸金属.md
           - GPU服务器:
