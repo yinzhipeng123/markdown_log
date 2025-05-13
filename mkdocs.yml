@@ -357,6 +357,7 @@ nav:
               - 什么是DPU: hardware/DPU.md
               - 什么是TPU: hardware/TPU.md
               - 查询物理机交换机信息: hardware/查询物理机交换机信息.md
+              - 检查光模块: hardware/光模块质量检查.md
               - 什么叫巨型帧: Cloud_Computing/什么是巨型帧.md
               - 交换机路由器等:
                   - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
