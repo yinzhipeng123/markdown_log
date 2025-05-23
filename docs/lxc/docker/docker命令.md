@@ -149,3 +149,13 @@ docker pull ubuntu – 从 Docker Hub 拉取镜像
 docker push fosstechnix/nodejsdocker – 再次推送 Docker 镜像
 
 docker logout – 从 Docker Hub 注销
+
+
+
+
+
+查看容器的目录映射都有哪些
+
+```bash
+ docker inspect -f '{{ .Mounts }}' 容器名 
+```

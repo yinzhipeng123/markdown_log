@@ -1045,5 +1045,15 @@ procps-ng                                           2020-06-04                  
 
 
 
+使用 ps -efww（加 -ww 选项）
+
+```bash
+ps -efww
+```
+
+- -ww 选项强制 ps 不限制命令行宽度，显示完整命令（即使很长）。
+
+
+
 
 https://man7.org/linux/man-pages/man1/ps.1.html
