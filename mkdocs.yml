@@ -381,7 +381,7 @@ nav:
               - opnestack中的Ironic服务: Cloud_Computing/Ironic.md
               - 裸金属服务器: Cloud_Computing/裸金属服务器.md
               - 百度裸金属和阿里云裸金属对比: Cloud_Computing/百度裸金属和阿里云裸金属.md
-              - Tinkerbell快速部署裸金属: Cloud_Computing/Tinkerbell.md
+              - Tinkerbell快速部署裸金属s: Cloud_Computing/Tinkerbell.md
           - GPU服务器:
                 - 什么叫NVSwitch: Cloud_Computing/NVSwitch.md
                 - 什么叫NVLink: Cloud_Computing/NVLink.md
