@@ -16,7 +16,7 @@
 
 ```bash
 [root@VM-0-16-centos conf]# cd /usr/local/webserver/nginx/conf/
-[root@VM-0-16-centos conf]# cat nginx.conf | grep -v "^[[:blank:]]*#"  | grep -v '^#' | grep -v '^$'  #去掉注释
+[root@VM-0-16-centos conf]# cat nginx.conf | grep -v "^[[:blank:]]*#"  | grep -v '^#' | grep -v '^$' |grep -v "^[[:blank:]]*#" | grep -v "^[[:blank:]]*$"  #去掉注释，去掉空行
 worker_processes  1;  
 #nginx有一个主进程和几个工作进程。主进程的主要目的是读取和评估配置，
 #并维护工作进程。工作进程对请求进行实际处理。nginx采用基于事件的模型

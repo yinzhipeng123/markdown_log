@@ -11093,6 +11093,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_3">
@@ -11171,6 +11173,20 @@
     <li class="md-nav__item">
       <a href="../../../soft/%E7%8A%AF%E9%94%99/" class="md-nav__link">
         犯错
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E5%A6%82%E4%BD%95%E6%8B%A5%E6%9C%89%E8%B6%85%E8%B6%8A%E6%97%B6%E4%BB%A3%E7%9A%84%E6%80%9D%E6%83%B3/" class="md-nav__link">
+        如果拥有超越时代的思想
       </a>
     </li>
   
@@ -11596,7 +11612,7 @@
 <li><strong>location块</strong>：配置请求的路由，以及各种页面的处理情况</li>
 </ol>
 <pre class="highlight"><code class="language-bash">[root@VM-0-16-centos conf]# cd /usr/local/webserver/nginx/conf/
-[root@VM-0-16-centos conf]# cat nginx.conf | grep -v "^[[:blank:]]*#"  | grep -v '^#' | grep -v '^$'  #去掉注释
+[root@VM-0-16-centos conf]# cat nginx.conf | grep -v "^[[:blank:]]*#"  | grep -v '^#' | grep -v '^$' |grep -v "^[[:blank:]]*#" | grep -v "^[[:blank:]]*$"  #去掉注释，去掉空行
 worker_processes  1;  
 #nginx有一个主进程和几个工作进程。主进程的主要目的是读取和评估配置，
 #并维护工作进程。工作进程对请求进行实际处理。nginx采用基于事件的模型
