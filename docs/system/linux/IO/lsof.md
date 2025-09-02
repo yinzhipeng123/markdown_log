@@ -44,3 +44,18 @@
 
 
 [lsof 命令，Linux lsof 命令详解：显示Linux系统当前已打开的所有文件列表 `lsof -p pid` - Linux 命令搜索引擎 (wangchujiang.com)](https://wangchujiang.com/linux-command/c/lsof.html)
+
+
+
+
+
+根据PID查询这个进程启动哪些端口
+
+```bash
+lsof -Pan -p $PID -i | grep LISTEN
+```
+
+1. **`-P`**：禁用端口号到服务名称的转换（直接显示数字端口，如 `8080` 而不是 `http-alt`）。
+2. **`-a`**：将多个选项条件合并为“同时满足”（默认是“或”关系）。
+3. **`-n`**：禁用 IP 地址到主机名的转换（直接显示 IP，如 `192.168.1.1` 而不是 `example.com`）。
+4. **`-p $PID`**：指定进程 ID，仅显示该进程打开的文件或连接（`$PID` 需替换为实际进程号）。

@@ -11780,6 +11780,14 @@
 <li><strong>NAME</strong>：文件的名称和路径，或者是设备、网络连接的详细信息。</li>
 </ol>
 <p><a href="https://wangchujiang.com/linux-command/c/lsof.html">lsof 命令，Linux lsof 命令详解：显示Linux系统当前已打开的所有文件列表 <code>lsof -p pid</code> - Linux 命令搜索引擎 (wangchujiang.com)</a></p>
+<p>根据PID查询这个进程启动哪些端口</p>
+<pre class="highlight"><code class="language-bash">lsof -Pan -p $PID -i | grep LISTEN</code></pre>
+<ol>
+<li><strong><code>-P</code></strong>：禁用端口号到服务名称的转换（直接显示数字端口，如 <code>8080</code> 而不是 <code>http-alt</code>）。</li>
+<li><strong><code>-a</code></strong>：将多个选项条件合并为“同时满足”（默认是“或”关系）。</li>
+<li><strong><code>-n</code></strong>：禁用 IP 地址到主机名的转换（直接显示 IP，如 <code>192.168.1.1</code> 而不是 <code>example.com</code>）。</li>
+<li><strong><code>-p $PID</code></strong>：指定进程 ID，仅显示该进程打开的文件或连接（<code>$PID</code> 需替换为实际进程号）。</li>
+</ol>
 
 
   
