@@ -24,7 +24,7 @@ fi
 
 
 shopt -s extglob
-rm -rf !(mkdocs.yml|README.md|docs|site|.git|windows_clear_code.sh|requirements.txt|build_option.ini|mac_clear_code.sh|.gitignore|venv|mac_sed.sh|mac_see.sh|.gitignore)
+rm -rf !(mkdocs.yml|tencent1378306385400008399.txt|README.md|docs|site|.git|windows_clear_code.sh|requirements.txt|build_option.ini|mac_clear_code.sh|.gitignore|venv|mac_sed.sh|mac_see.sh|.gitignore)
 pip freeze > requirements.txt
 mkdocs.exe build
 
