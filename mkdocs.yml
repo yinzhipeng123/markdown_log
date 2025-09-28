@@ -369,6 +369,12 @@ nav:
                   - DHCP_Relay: tool/DHCP_Relay.md
               - GPU:
                   - xpu: tool/xpu.md
+          - AI:
+             - 卷积: AI/卷积.md
+             - Transformer: AI/Transformer.md
+             - RAG: AI/RAG.md
+             - Pytorch: AI/Pytorch.md
+             - Pytorch训练的是什么: AI/Pytorch训练的是什么.md
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
@@ -436,7 +442,10 @@ nav:
                   - redis配置详解: database/redis/redis配置详解.md
                   - redis支持存储的类型: database/redis/redis支持存储的类型.md
               - Memcache:
+                - Memcache: database/memcache/memcache.md
                 - Redis和Memcache对比: database/memcache/memcachevsredis.md
+                - memcache安全性: database/memcache/memcache安全性.md
+
           - 日志采集:
                 - elk体系: Cloud_Computing/日志采集/elk.md
           - 网络软件:
@@ -523,6 +532,9 @@ nav:
           - 安全:
               - DNS劫持: security/DNS劫持.md
               - SYN泛洪: security/SYN泛洪.md
+              - WAF: security\WAF.md
+              - 常见网页攻击: security\常见攻击.md
+
       - 其他中间件:
           - middleware/index.md
           - Etcd:
@@ -744,7 +756,7 @@ nav:
               - 六十四卦对应图: soft/八字易经/六十四卦对应图.md
               - 道家五术: soft/八字易经/道家五术.md
       - 文学:
-        - 梁秋实: soft/文学/梁秋实.md
+        - 梁实秋: soft/文学/梁实秋.md
         - 《傲慢与偏见》: soft/文学/傲慢与偏见.md
       - 心理:
           - 一些心理学概念: soft/心理学概念.md
