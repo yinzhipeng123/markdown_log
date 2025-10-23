@@ -507,6 +507,20 @@ nav:
               - 节点维护: lxc/kubernetes/节点维护.md
               - hostalias: lxc/kubernetes/hostalias.md
               - kubectl: lxc/kubernetes/kubectl.md
+              - K8S的kubelet日志查看: lxc/kubernetes/K8S的kubelet日志查看.md
+              - K8S部署应用失败排查: lxc/kubernetes/K8S部署失败排查.md
+              - K8S集群的一些目录用途: lxc\kubernetes\目录.md
+              - K8S查询集群内部DNS: lxc\kubernetes\新知识\K8S查询内部DNS.md
+              - K8S网络: lxc\kubernetes\新知识\K8S网络.md
+              - POD查询日志: lxc\kubernetes\新知识\POD查询日志.md
+              - volumes和volumeMounts: lxc\kubernetes\新知识\volumes和volumeMounts.md
+              - 快速删除POD和PVC: lxc\kubernetes\新知识\快速删除POD和PVC.md
+              - 查看POD内几个容器: lxc\kubernetes\新知识\查看POD内几个容器.md
+              - 通过IP查询POD: lxc\kubernetes\新知识\通过IP查询POD.md
+              - crictl: lxc\kubernetes\新知识\crictl\crictl.md
+              - crictl常用命令: lxc\kubernetes\新知识\crictl\crictl常用命令.md
+
+
           - 监控:
               - monitor/index.md
               - Prometheus:
