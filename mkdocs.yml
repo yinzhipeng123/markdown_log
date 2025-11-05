@@ -375,6 +375,7 @@ nav:
              - RAG: AI/RAG.md
              - Pytorch: AI/Pytorch.md
              - Pytorch训练的是什么: AI/Pytorch训练的是什么.md
+             - 权重文件解析: AI/权重文件解析.md
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
