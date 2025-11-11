@@ -370,12 +370,28 @@ nav:
               - GPU:
                   - xpu: tool/xpu.md
           - AI:
-             - 卷积: AI/卷积.md
-             - Transformer: AI/Transformer.md
-             - RAG: AI/RAG.md
-             - Pytorch: AI/Pytorch.md
-             - Pytorch训练的是什么: AI/Pytorch训练的是什么.md
-             - 权重文件解析: AI/权重文件解析.md
+             - AI体系:
+               - AI/引擎.md
+               - 卷积: AI/卷积.md
+               - Transformer: AI/Transformer.md
+             - 神经网络:
+               - AI/神经网络.md
+               - Pytorch: AI/Pytorch.md
+               - Pytorch训练的是什么: AI/Pytorch训练的是什么.md
+             - 基本概念:
+                 - 注意力机制: AI/注意力机制.md
+                 - 多头注意力机制: AI/多头注意力.md
+             - 大模型应用:
+                 - RAG: AI/RAG.md
+             - 大模型相关:
+                 - 什么是LLM: AI/llm.md
+                 - 什么是VLLM: AI/vllm.md
+                 - 权重文件解析: AI/权重文件解析.md
+                 - 如何通过模型参数推算显存使用量: AI/如何通过参数量估算使用显存.md
+                 - KV cache是什么: AI/KV_cache.md
+             - 大模型跑分:
+                 - 大模型基准测试: AI/大模型测试结果.md
+                 - EvalScope: AI/evalscope.md
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
