@@ -392,6 +392,7 @@ nav:
              - 大模型跑分:
                  - 大模型基准测试: AI/大模型测试结果.md
                  - EvalScope: AI/evalscope.md
+                 - MMLU-Pro数据集: AI/MMLU-Pro数据集.md
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
@@ -899,6 +900,7 @@ nav:
         - 梁实秋: soft/文学/梁实秋.md
         - 三岛由纪夫: soft/文学/三岛由纪夫.md
         - 《傲慢与偏见》: soft/文学/傲慢与偏见.md
+        - 海伦凯勒: soft/文学/海伦凯勒.md
 
       - 瓷器:
           - 瓷器: soft/瓷器/瓷器.md
@@ -908,3 +910,5 @@ nav:
           - 四川茶叶: soft/茶叶/四川茶叶.md
       - 心理:
           - 一些心理学概念: soft/心理学概念.md
+      - 金融:
+          - 稳定币交易: soft/金融/USDT稳定币.md
