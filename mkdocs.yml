@@ -533,10 +533,15 @@ nav:
               - POD查询日志: lxc/kubernetes/新知识/POD查询日志.md
               - volumes和volumeMounts: lxc/kubernetes/新知识/volumes和volumeMounts.md
               - 快速删除POD和PVC: lxc/kubernetes/新知识/快速删除POD和PVC.md
+              - 批量删除pending的pod: lxc/kubernetes/批量删除pending的pod.md
               - 查看POD内几个容器: lxc/kubernetes/新知识/查看POD内几个容器.md
+              - kubectl_get_pod命令的含义: lxc/kubernetes/kubectl_get_pod.md
               - 通过IP查询POD: lxc/kubernetes/新知识/通过IP查询POD.md
+              - 查看一个节点上POD的CPU占用情况: lxc/kubernetes/查看一个节点上POD的CPU占用情况.md
+              - 查看节点上所有POD及相关PVC: lxc/kubernetes/查看节点上所有POD及相关PVC.md
               - crictl: lxc/kubernetes/新知识/crictl/crictl.md
               - crictl常用命令: lxc/kubernetes/新知识/crictl/crictl常用命令.md
+              - nerdctl命令: lxc/nerdctl/nerdctl.md
 
 
           - 监控:
@@ -899,6 +904,9 @@ nav:
                     - 青龙: soft/八字易经/紫微斗数/杂星/青龙.md
                     - 飞廉: soft/八字易经/紫微斗数/杂星/飞廉.md
                   - 四化星: soft/八字易经/紫微斗数/四化星/四化星介绍.md
+              - 奇门遁甲:
+                  - 奇门遁甲介绍: soft/八字易经/奇门遁甲/奇门遁甲.md
+                  - 奇门遁甲中的八神: soft/八字易经/奇门遁甲/奇门遁甲中的八神.md
       - 文学:
         - 梁实秋: soft/文学/梁实秋.md
         - 三岛由纪夫: soft/文学/三岛由纪夫.md
