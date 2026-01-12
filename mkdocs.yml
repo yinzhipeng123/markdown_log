@@ -389,6 +389,7 @@ nav:
                  - 权重文件解析: AI/权重文件解析.md
                  - 如何通过模型参数推算显存使用量: AI/如何通过参数量估算使用显存.md
                  - KV cache是什么: AI/KV_cache.md
+                 - 大模型启动参数: AI/启动参数.md
              - 大模型跑分:
                  - 大模型基准测试: AI/大模型测试结果.md
                  - EvalScope: AI/evalscope.md
