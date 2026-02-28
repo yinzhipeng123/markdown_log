@@ -1,6 +1,10 @@
 
 
-------
+
+
+来源网站：
+
+[deepseek-ai (DeepSeek)](https://huggingface.co/deepseek-ai/models?sort=modified)
 
 ## 📋 DeepSeek-AI 模型用途说明（按照更新时间）
 
