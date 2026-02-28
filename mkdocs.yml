@@ -351,6 +351,7 @@ nav:
               - juju常用命令: tool/juju命令详解.md
               - juju组件逻辑: tool/juju组件逻辑.md
               - Charm: tool/Charm.md
+              - nms网络是啥: tool/nms网络.md
           - 云计算相关底层硬件:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
               - mft: hardware/mft.md
@@ -362,11 +363,12 @@ nav:
               - 交换机路由器等:
                   - 查看路由规则: Cloud_Computing/路由器/查看路由规则.md
                   - 输入配置: Cloud_Computing/路由器/输入配置.md
-              - 交换机网络协议:
+              - 交换机:
                   - Ospf: Cloud_Computing/路由器/OSPF.md
                   - Vlan: Cloud_Computing/路由器/VLAN.md
                   - vxlan: Cloud_Computing/路由器/vxlan.md
                   - DHCP_Relay: tool/DHCP_Relay.md
+                  - oid是什么: hardware/交换机/oid是什么.md
               - GPU:
                   - xpu: tool/xpu.md
           - AI:
@@ -394,6 +396,7 @@ nav:
                  - 大模型基准测试: AI/大模型测试结果.md
                  - EvalScope: AI/evalscope.md
                  - MMLU-Pro数据集: AI/MMLU-Pro数据集.md
+             - deepseek在Hugging_Face的各个版本用途: AI/deepseek的各个版本都是干嘛用的.md
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
