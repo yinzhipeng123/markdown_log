@@ -1,6 +1,6 @@
 
 
-
+efibootmgr查询启动顺序
 
 ```bash
 # efibootmgr -v 
@@ -43,11 +43,7 @@ Boot0011* UEFI HTTPv6 (MAC:CC40F38D2484 VLAN4040)       MAC(...)/Vlan(4040)/IPv6
 
 
 
-
-
-
-
-
+curl 命令查询网卡启动顺序
 
 ```bash
 # curl -g -k -u root:'password' -X GET https://[240c:4051:2323:9::f038]/redfish/v1/Systems/Bluefield
@@ -232,39 +228,4 @@ Boot0011* UEFI HTTPv6 (MAC:CC40F38D2484 VLAN4040)       MAC(...)/Vlan(4040)/IPv6
 
 
 
-
-
-
-
-
-```bash
-[root@master1-lc01 ~]# curl -g -k -u root:'password' \        # 使用 curl 命令；-g 允许 IPv6 方括号；-k 忽略 HTTPS 证书校验；-u 指定 Redfish BMC 的用户名和密码
-  -H 'Content-Type: application/json' \                          # 设置 HTTP 请求头，声明请求体是 JSON 格式
-  -X PATCH \                                                      # 使用 PATCH 方法，表示对已有资源进行“部分修改”
-  'https://[240c:4051:2323:9::f038]/redfish/v1/Systems/Bluefield' \# Redfish API 目标地址，访问的是该 BMC 下的 Systems/Bluefield 资源
-  -d '{                                                           # -d 指定请求体内容，这里开始传入 JSON 数据
-    "Boot": {                                                     # Boot 对象，表示与系统启动相关的配置项
-      "BootOrder": [                                              # BootOrder 字段，表示期望设置的启动项顺序
-        "Boot000E",                                               # 启动项 ID：Boot000E，通常对应某个 UEFI 启动项（如 PXE / Disk / iPXE 等）
-        "Boot0004",                                               # 启动项 ID：Boot0004，具体含义取决于当前 efibootmgr 中的定义
-        "Boot0000"                                                # 启动项 ID：Boot0000，通常是默认系统盘或 OS 启动项
-      ]                                                           # BootOrder 数组结束
-    }                                                             # Boot 对象结束
-  }'                                                             # JSON 请求体结束
-{
-  "BootOrder@Message.ExtendedInfo": [                             # 扩展错误信息字段，专门用于返回属性级别的错误说明
-    {
-      "@odata.type": "#Message.v1_1_1.Message",                   # Redfish 标准消息类型定义
-      "Message": "The property BootOrder is a read-only property and cannot be assigned a value.", # 明确说明 BootOrder 是只读属性，不能被写入
-      "MessageArgs": [                                            # 消息参数，占位符参数列表
-        "BootOrder"                                               # 指出具体出问题的字段名是 BootOrder
-      ],
-      "MessageId": "Base.1.18.1.PropertyNotWritable",              # Redfish 标准错误码：属性不可写
-      "MessageSeverity": "Warning",                                # 严重级别：Warning，说明请求被拒绝但系统未发生异常
-      "Resolution": "Remove the property from the request body and resubmit the request if the operation failed." # 官方建议：移除该字段后重新提交请求
-    }
-  ]
-}
-
-```
 

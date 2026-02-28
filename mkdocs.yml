@@ -354,7 +354,9 @@ nav:
               - nms网络是啥: tool/nms网络.md
           - 云计算相关底层硬件:
               - Bluefield智能网卡: hardware/Bluefield智能网卡.md
+              - 智能网卡查询网卡启动顺序: hardware/efibootmgr_查询更改启动项.md
               - mft: hardware/mft.md
+              - 内存条信息: hardware/内存条信息.md
               - 什么是DPU: hardware/DPU.md
               - 什么是TPU: hardware/TPU.md
               - 查询物理机交换机信息: hardware/查询物理机交换机信息.md
@@ -776,6 +778,7 @@ nav:
           - 培养耐心: soft/个人成长/培养耐心.md
           - 下班后找回掌控感: soft/个人成长/下班后找回掌控感.md
           - 如何日行一善: soft/个人成长/如何日行一善.md
+          - tft社交策略: soft/个人成长/tft社交策略.md
       #       - 随便记记: soft/随便记记.md
       - 两性:
         - 如何防止出轨: soft/如何防止出轨.md
