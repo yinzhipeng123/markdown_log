@@ -397,6 +397,7 @@ nav:
              - 大模型跑分:
                  - 大模型基准测试: AI/大模型测试结果.md
                  - EvalScope: AI/evalscope.md
+                 - EvalScope 模型推理性能压测: AI/evalscope_perf命令行测试.md
                  - MMLU-Pro数据集: AI/MMLU-Pro数据集.md
              - deepseek在Hugging_Face的各个版本用途: AI/deepseek的各个版本都是干嘛用的.md
           - 云服务器:
