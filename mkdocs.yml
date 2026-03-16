@@ -371,6 +371,8 @@ nav:
                   - vxlan: Cloud_Computing/路由器/vxlan.md
                   - DHCP_Relay: tool/DHCP_Relay.md
                   - oid是什么: hardware/交换机/oid是什么.md
+                  - 交换机团体字: hardware/交换机/交换机团体字.md
+                  - 登陆交换机: hardware/交换机/登陆交换机.md
               - GPU:
                   - xpu: tool/xpu.md
           - AI:
@@ -784,6 +786,7 @@ nav:
           - mtbi是什么: soft/mtbi是什么.md
           - npd人格: soft/个人成长/npd.md
           - 致良知: soft/个人成长/致良知.md
+          - 吸引力法则: soft/个人成长/吸引力法则.md
       #       - 随便记记: soft/随便记记.md
       - 两性:
         - 如何防止出轨: soft/如何防止出轨.md
@@ -923,6 +926,7 @@ nav:
                   - 奇门遁甲介绍: soft/八字易经/奇门遁甲/奇门遁甲.md
                   - 奇门遁甲中的八神: soft/八字易经/奇门遁甲/奇门遁甲中的八神.md
               - 天干地支纪年法: soft/八字易经/八字合盘/癸亥日.md
+              - 学习笔记: soft/八字易经/八字合盘/学习笔记.md
       - 文学:
         - 梁实秋: soft/文学/梁实秋.md
         - 三岛由纪夫: soft/文学/三岛由纪夫.md
