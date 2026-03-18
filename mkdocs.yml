@@ -402,6 +402,7 @@ nav:
                  - EvalScope 模型推理性能压测: AI/evalscope_perf命令行测试.md
                  - MMLU-Pro数据集: AI/MMLU-Pro数据集.md
              - deepseek在Hugging_Face的各个版本用途: AI/deepseek的各个版本都是干嘛用的.md
+             - qwen在Hugging_Face的各个版本用途: AI/qwen的各个版本都是干嘛用的.md
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
@@ -946,7 +947,7 @@ nav:
       - 金融:
           - 稳定币交易: soft/金融/USDT稳定币.md
       - 历史:
-          武则天相关: soft/历史/武则天.md
-          玄武门之变: soft/历史/玄武门之变.md
-          竹书纪年: soft/历史/竹书纪年.md
-          资治通鉴: soft/历史/资治通鉴.md
+          - 武则天相关: soft/历史/武则天.md
+          - 玄武门之变: soft/历史/玄武门之变.md
+          - 竹书纪年: soft/历史/竹书纪年.md
+          - 资治通鉴: soft/历史/资治通鉴.md
