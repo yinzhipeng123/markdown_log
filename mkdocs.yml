@@ -133,6 +133,7 @@ plugins:
       separator: '[\\s\\u200b\\-]'
       lang:
         - 'en'
+  - encryptcontent:
 extra_javascript:
   #highlight.js  cdn获取地址：https://highlightjs.org/download/
   - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js
@@ -403,6 +404,7 @@ nav:
                  - MMLU-Pro数据集: AI/MMLU-Pro数据集.md
              - deepseek在Hugging_Face的各个版本用途: AI/deepseek的各个版本都是干嘛用的.md
              - qwen在Hugging_Face的各个版本用途: AI/qwen的各个版本都是干嘛用的.md
+             - Mac本地跑一个Qwen: docs/AI/笔记本跑模型/Mac本地跑一个qwen.md
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
