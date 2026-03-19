@@ -1,6 +1,27 @@
+**标准工程链路**：
+
+```
+EvalScope（压测）
+   ↓
+LiteLLM（API网关）
+   ↓
+Ollama（模型运行）
+   ↓
+Qwen2（本地模型）
+```
 
 
 
+笔记本跑模型最佳的就是Ollama
+
+**Ollama对笔记本硬件友好**
+
+- 支持 CPU 推理（无 GPU 也可运行）
+- 自动适配内存使用
+- 自动适配线程数
+- 自动适配上下文长度
+
+### 安装Ollama
 
 ```bash
 zhipengyin@192 ~ % export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;export ALL_PROXY=socks5://127.0.0.1:1080
@@ -8,19 +29,23 @@ zhipengyin@192 ~ % curl -fsSL https://ollama.com/install.sh | sh
 zhipengyin@192 ~ % ollama serve 
 ```
 
+### 启动轻量级模型
+
 另一个终端:
 
 ```bash
 zhipengyin@192 ~ % OLLAMA_NUM_THREADS=4 ollama run qwen2:0.5b-instruct 
 ```
 
+### 安装代理程序LiteLLM
 
+LiteLLM 允许你用**一套统一的 OpenAI 格式代码**去调用这些所有的模型
 
 再开一个终端：
 
 ```bash
 /usr/local/bin/python3.11 -m venv eval-env #创建虚拟环境
-source eval-env/bin/activate 
+source eval-env/bin/activate #进入虚拟环境
 python --version
 Python 3.11.10
 pip install evalscope litellm #安装代理
@@ -28,11 +53,12 @@ pip install 'litellm[proxy]' #安装代理
 litellm --model ollama/qwen2:0.5b-instruct #启动代理服务
 ```
 
-
+### evalscope perf 进行测试
 
 再开一个终端:
 
-```
+```bash
+source eval-env/bin/activate #进入虚拟环境
 evalscope perf \
   --url http://127.0.0.1:4000/v1/chat/completions \
   --api openai \

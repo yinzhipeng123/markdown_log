@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#ollama" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -5091,9 +5096,59 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Mac本地跑一个Qwen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Mac本地跑一个Qwen
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ollama" class="md-nav__link">
+    安装Ollama
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    启动轻量级模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#litellm" class="md-nav__link">
+    安装代理程序LiteLLM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evalscope-perf" class="md-nav__link">
+    evalscope perf 进行测试
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -15457,6 +15512,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ollama" class="md-nav__link">
+    安装Ollama
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    启动轻量级模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#litellm" class="md-nav__link">
+    安装代理程序LiteLLM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evalscope-perf" class="md-nav__link">
+    evalscope perf 进行测试
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -15477,21 +15568,43 @@
 
   <h1>Mac本地跑一个Qwen</h1>
 
+<p><strong>标准工程链路</strong>：</p>
+<pre class="highlight"><code>EvalScope（压测）
+   ↓
+LiteLLM（API网关）
+   ↓
+Ollama（模型运行）
+   ↓
+Qwen2（本地模型）</code></pre>
+<p>笔记本跑模型最佳的就是Ollama</p>
+<p><strong>Ollama对笔记本硬件友好</strong></p>
+<ul>
+<li>支持 CPU 推理（无 GPU 也可运行）</li>
+<li>自动适配内存使用</li>
+<li>自动适配线程数</li>
+<li>自动适配上下文长度</li>
+</ul>
+<h3 id="ollama">安装Ollama</h3>
 <pre class="highlight"><code class="language-bash">zhipengyin@192 ~ % export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;export ALL_PROXY=socks5://127.0.0.1:1080
 zhipengyin@192 ~ % curl -fsSL https://ollama.com/install.sh | sh
 zhipengyin@192 ~ % ollama serve </code></pre>
+<h3 id="_1">启动轻量级模型</h3>
 <p>另一个终端:</p>
 <pre class="highlight"><code class="language-bash">zhipengyin@192 ~ % OLLAMA_NUM_THREADS=4 ollama run qwen2:0.5b-instruct </code></pre>
+<h3 id="litellm">安装代理程序LiteLLM</h3>
+<p>LiteLLM 允许你用<strong>一套统一的 OpenAI 格式代码</strong>去调用这些所有的模型</p>
 <p>再开一个终端：</p>
 <pre class="highlight"><code class="language-bash">/usr/local/bin/python3.11 -m venv eval-env #创建虚拟环境
-source eval-env/bin/activate 
+source eval-env/bin/activate #进入虚拟环境
 python --version
 Python 3.11.10
 pip install evalscope litellm #安装代理
 pip install 'litellm[proxy]' #安装代理
 litellm --model ollama/qwen2:0.5b-instruct #启动代理服务</code></pre>
+<h3 id="evalscope-perf">evalscope perf 进行测试</h3>
 <p>再开一个终端:</p>
-<pre class="highlight"><code>evalscope perf \
+<pre class="highlight"><code class="language-bash">source eval-env/bin/activate #进入虚拟环境
+evalscope perf \
   --url http://127.0.0.1:4000/v1/chat/completions \
   --api openai \
   --model ollama/qwen2:0.5b-instruct \
