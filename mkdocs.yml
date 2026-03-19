@@ -404,7 +404,7 @@ nav:
                  - MMLU-Pro数据集: AI/MMLU-Pro数据集.md
              - deepseek在Hugging_Face的各个版本用途: AI/deepseek的各个版本都是干嘛用的.md
              - qwen在Hugging_Face的各个版本用途: AI/qwen的各个版本都是干嘛用的.md
-             - Mac本地跑一个Qwen: AI/笔记本跑模型/Mac本地跑一个qwen.md
+             - Mac本地跑一个Qwen,进行evalscope测试: AI/笔记本跑模型/Mac本地跑一个qwen.md
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
