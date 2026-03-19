@@ -17,7 +17,7 @@
     
     
       
-        <title>[Protected] Mac本地跑一个Qwen - MarkDown_Log</title>
+        <title>Mac本地跑一个Qwen - MarkDown_Log</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              [Protected] Mac本地跑一个Qwen
+              Mac本地跑一个Qwen
             
           </span>
         </div>
@@ -5092,7 +5092,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        [Protected] Mac本地跑一个Qwen
+        Mac本地跑一个Qwen
       </a>
       
     </li>
@@ -12190,6 +12190,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_4">
@@ -12492,6 +12494,20 @@
     <li class="md-nav__item">
       <a href="../../../soft/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/%E5%9B%BD%E5%AF%8C%E8%AE%BA/" class="md-nav__link">
         国富论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E9%9A%8F%E4%BE%BF%E8%AE%B0%E8%AE%B0/" class="md-nav__link">
+        随便记记
       </a>
     </li>
   
@@ -15459,34 +15475,65 @@
   </a>
 
 
-<div id="mkdocs-encrypted-content" style="display:none">euqwz14k4+wiUmWtS5WU9Q==;EcVfsDhnDjmecYlS04JExORQ3ZYfmadmmJ8ftZ9e53GPBX0i7fAot2FcSYjwZPAyYcn4stUZnqavQ32r5thLVF2i1EVY/ppN0a24Er2B5NAPxfE7YriYlgnbKNT3UZ12aWmaM6WfE3iAkR1aDtlUhvfZBIAiA1yZa+7VFOHy1ZngtpAsHm3cy3Tplq/rSMaOhIrQG3E11JNUx7zfCSECdFo8ToHTWDYnXFYV+JrzXqiIoHGLde2PYYIT8hJ7qpGMeX1jqxnsvo3Rh6q+1t5XAUo6th7OKJCaE3ZYZAmK143X7XapoAsGVoTdYsBnil37hp+DW9L3e4uPBLE85oQJoMX6vKFGgFBQGEqGJapN1oabJ46nREtbbf7bxH72EmeJDtezNBJOQmPyCDVNc9SWiKXlvMhRC5y9Syz8EJYQIyN7uVfQWyapGt1mNYFTYztzx252qdWsHpiXY3yaf+tQmXberq4MwJAt3f424+TYO/fEWyFL7c0zlPSyKWDCh/trzs9xrBiD80Xp0Y9f2hhegvBbGKzopmcwHArNfcUrUWIakM1GvA+mp1ugf/SeTwPmHDfIi2YwboJY/1AS4yfjcokJ2jPrbOA19hXFJZtrsgU=</div>
-<div id="mkdocs-decrypted-content" style="display:none">
-    <form id="mkdocs-decrypt-form" class="md-content__inner md-typeset">
-        <h1>This content is protected with AES encryption. </h1>
-        <p>Contact your administrator for access to this page.</p>
-        <input class="md-input" type="password" id="mkdocs-content-password" placeholder="Password">
-        
-        <p id="mkdocs-decrypt-msg"></p>
-    </form>
-</div>
+  <h1>Mac本地跑一个Qwen</h1>
 
-<script type="text/javascript">
-var encryptcontent_id = "encryptcontent_1";
-var encryptcontent_path = "markdown_log/AI/%E7%AC%94%E8%AE%B0%E6%9C%AC%E8%B7%91%E6%A8%A1%E5%9E%8B/Mac%E6%9C%AC%E5%9C%B0%E8%B7%91%E4%B8%80%E4%B8%AAqwen/";
-var decryption_failure_message = "Invalid password.";
-var encryptcontent_keystore = ["F4B94o/0CfkjQTOViK+2/g==;9T+kMgB76QOeLmlG0ARJRvNLPI/cpTgckR+8f6axZxUHEmfbu/VPp+KzRxPMHPXMRXMCsXeCu2YcrNMKm2fGIE+W6rbt1M7GjHZV0Whw3TB6XBsvtnGJKE4QTvGlPye+;JyJ3l1VC/8rO9bsuO1qwXA=="];
-var encryptcontent_obfuscate = 0;
+<pre class="highlight"><code class="language-bash">zhipengyin@192 ~ % export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;export ALL_PROXY=socks5://127.0.0.1:1080
+zhipengyin@192 ~ % curl -fsSL https://ollama.com/install.sh | sh
+zhipengyin@192 ~ % ollama serve </code></pre>
+<p>另一个终端:</p>
+<pre class="highlight"><code class="language-bash">zhipengyin@192 ~ % OLLAMA_NUM_THREADS=4 ollama run qwen2:0.5b-instruct </code></pre>
+<p>再开一个终端：</p>
+<pre class="highlight"><code class="language-bash">/usr/local/bin/python3.11 -m venv eval-env #创建虚拟环境
+source eval-env/bin/activate 
+python --version
+Python 3.11.10
+pip install evalscope litellm #安装代理
+pip install 'litellm[proxy]' #安装代理
+litellm --model ollama/qwen2:0.5b-instruct #启动代理服务</code></pre>
+<p>再开一个终端:</p>
+<pre class="highlight"><code>evalscope perf \
+  --url http://127.0.0.1:4000/v1/chat/completions \
+  --api openai \
+  --model ollama/qwen2:0.5b-instruct \
+  --parallel 4 \
+  --number 50 \
+  --prompt "写一段关于人工智能的介绍" \
+  --max-tokens 128 \
+  --min-tokens 128</code></pre>
+<p>正常就可以看到结果了:</p>
+<pre class="highlight"><code class="language-bash">Running[perf]: 100%|█████████████████████████████████████████████████████████████████████████████| 1/1 [00:03&lt;00:00,  3.46s/it]
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Performance Test Summary Report                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
 
-const encryptcontent_event = new Event("encryptcontent_event");
-var encryptcontent_done = false;
-</script>
-<script type="module">
-if (!window.hasOwnProperty("init_decryptor")) {
-    import("../../../assets/javascripts/decrypt-contents.js");
-} else {
-    init_decryptor();
-}
-</script>
+Basic Information:
+┌───────────────────────┬──────────────────────────────────────────────────────┐
+│ Model                 │ qwen2:0.5b-instruct                                  │
+│ Test Dataset          │ openqa                                               │
+│ API Type              │ openai                                               │
+│ Total Generated       │ 0 tokens                                             │
+│ Total Test Time       │ 0.00 seconds                                         │
+│ Avg Output Rate       │ N/A                                                  │
+│ Output Path           │ outputs/20260319_194308/qwen2_0.5b-instruct          │
+└───────────────────────┴──────────────────────────────────────────────────────┘
+
+
+                                    Detailed Performance Metrics                                    
+┏━━━━━━┳━━━━━━┳━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┓
+┃      ┃      ┃       ┃     Avg ┃     P99 ┃     Avg ┃    P99 ┃     Avg ┃    P99 ┃    Gen. ┃ Success┃
+┃Conc. ┃ Rate ┃   RPS ┃ Lat.(s) ┃ Lat.(s) ┃ TTFT(s) ┃ TTFT(… ┃ TPOT(s) ┃ TPOT(… ┃  toks/s ┃    Rate┃
+┡━━━━━━╇━━━━━━╇━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━┩
+│    4 │  INF │ -1.00 │  -1.000 │     nan │  -1.000 │    nan │  -1.000 │    nan │   -1.00 │    0.0%│
+└──────┴──────┴───────┴─────────┴─────────┴─────────┴────────┴─────────┴────────┴─────────┴────────┘
+
+
+               Best Performance Configuration               
+ Highest RPS         Concurrency 4 (-1.00 req/sec)          
+ Lowest Latency      Concurrency 4 (-1.000 seconds)         
+
+Performance Recommendations:
+• The system seems not to have reached its performance bottleneck, try higher concurrency
+• Success rate is low at high concurrency, check system resources or reduce concurrency</code></pre>
 
 
   
