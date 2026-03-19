@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: infra-consul-net
+  namespace: default
+  labels:
+    app: infra-consul-net
+    service: yzp-infra-consul-net
+spec:
+  type: ClusterIP
+  ports:
+    - name: one
+      port: 8300
+      protocol: TCP
+      targetPort: 8300
+    - name: two
+      port: 8301
+      protocol: TCP
+      targetPort: 8301
+    - name: three
+      port: 8301
+      protocol: UDP
+      targetPort: 8301
+    - name: four
+      port: 8302
+      protocol: TCP
+      targetPort: 8302
+    - name: five
+      port: 8500
+      protocol: TCP
+      targetPort: 8500
+    - name: six
+      port: 8600
+      protocol: TCP
+      targetPort: 8600
+    - name: seven
+      port: 8600
+      protocol: UDP
+      targetPort: 8600
+  selector:
+    app: infra-consul

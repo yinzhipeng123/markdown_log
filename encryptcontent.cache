@@ -1,0 +1,5 @@
+kdf_iterations: 100000
+obfuscate: {}
+password:
+  mysecret123: 318bf6b03ae0f46ab2bcc00e3b500b2c5cbd82da4acc31f6598da63f90c90d5a;272277975542ffcacef5bb2e3b5ab05c;6e9f78c1c24acdee688a360f1212c9b9989e7469d6a6e39e4ed7ca279f0c7846
+userpass: {}
