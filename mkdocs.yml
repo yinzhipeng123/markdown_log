@@ -554,7 +554,8 @@ nav:
               - crictl: lxc/kubernetes/新知识/crictl/crictl.md
               - crictl常用命令: lxc/kubernetes/新知识/crictl/crictl常用命令.md
               - nerdctl命令: lxc/nerdctl/nerdctl.md
-
+              - 查询pod里面暴露的端口: lxc/kubernetes/新知识/查询pod里面暴露的端口.md
+              - 无shell时进入容器: lxc/kubernetes/新知识/查询pod里面暴露的端口.md
 
           - 监控:
               - monitor/index.md
