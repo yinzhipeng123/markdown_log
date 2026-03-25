@@ -53,6 +53,10 @@ Python 3.11.10
 pip install evalscope litellm #安装代理
 pip install 'litellm[proxy]' #安装代理
 litellm --model ollama/qwen2:0.5b-instruct #启动代理服务
+
+测试
+curl http://localhost:4000/v1/models
+
 ```
 
 ### evalscope perf 进行测试

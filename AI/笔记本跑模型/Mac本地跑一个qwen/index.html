@@ -4978,6 +4978,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1_6_6">
@@ -5028,6 +5030,20 @@
     <li class="md-nav__item">
       <a href="../../evalscope_perf%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B5%8B%E8%AF%95/" class="md-nav__link">
         EvalScope 模型推理性能压测
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        批量跑EvalScope推理性能压测
       </a>
     </li>
   
@@ -15765,7 +15781,11 @@ python --version
 Python 3.11.10
 pip install evalscope litellm #安装代理
 pip install 'litellm[proxy]' #安装代理
-litellm --model ollama/qwen2:0.5b-instruct #启动代理服务</code></pre>
+litellm --model ollama/qwen2:0.5b-instruct #启动代理服务
+
+测试
+curl http://localhost:4000/v1/models
+</code></pre>
 <h3 id="evalscope-perf">evalscope perf 进行测试</h3>
 <p>再开一个终端:</p>
 <pre class="highlight"><code class="language-bash">source eval-env/bin/activate #进入虚拟环境
