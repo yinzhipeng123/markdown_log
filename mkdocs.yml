@@ -750,6 +750,7 @@ nav:
           - git一次报错: tool/git.md
           - brew使用: tool/brew.md
           - siege压测: tool/siege压测.md
+          - screen命令: tool/screen.md
 
   - 读书笔记:
       - soft/index.md
@@ -797,6 +798,8 @@ nav:
           - 专注当下: soft/个人成长/专注当下.md
           - 积极心理学: soft/个人成长/积极心理学.md
           - 24种美好品质: soft/个人成长/24种美好品质.md
+          - 行为模式分析: soft/个人成长/三大理由.md
+          - 给大脑进行刺激: soft/个人成长/给大脑进行刺激.md
 
       - 两性:
         - 如何防止出轨: soft/如何防止出轨.md
@@ -962,3 +965,4 @@ nav:
           - 玄武门之变: soft/历史/玄武门之变.md
           - 竹书纪年: soft/历史/竹书纪年.md
           - 资治通鉴: soft/历史/资治通鉴.md
+          - 王朝很少能超过300年的原因: soft/个人成长/王朝很少能超过300年的原因.md
