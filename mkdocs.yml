@@ -394,6 +394,7 @@ nav:
                  - 什么是LLM: AI/llm.md
                  - 什么是VLLM: AI/vllm.md
                  - 权重文件解析: AI/权重文件解析.md
+                 - 极速解压和下载: AI/极速解压和下载.md
                  - 如何通过模型参数推算显存使用量: AI/如何通过参数量估算使用显存.md
                  - KV cache是什么: AI/KV_cache.md
                  - 大模型启动参数: AI/启动参数.md

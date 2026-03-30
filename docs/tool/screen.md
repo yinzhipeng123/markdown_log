@@ -25,7 +25,7 @@ Ctrl + A  然后按 D
 
 ### 3️⃣ 查看当前会话
 
-```
+```bash
 screen -ls
 ```
 
@@ -33,7 +33,23 @@ screen -ls
 
 ### 4️⃣ 重新进入会话
 
-```
+```bash
 screen -r mysession
+```
+
+
+
+杀掉会话
+
+```bash
+screen -S mysession -X quit
+```
+
+
+
+强制接管：
+
+```bash
+screen -d -r 3643498.jieya
 ```
 

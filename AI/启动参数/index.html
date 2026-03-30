@@ -4848,6 +4848,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1_6_5">
@@ -4898,6 +4900,20 @@
     <li class="md-nav__item">
       <a href="../%E6%9D%83%E9%87%8D%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="md-nav__link">
         权重文件解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9E%81%E9%80%9F%E8%A7%A3%E5%8E%8B%E5%92%8C%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        极速解压和下载
       </a>
     </li>
   
@@ -15690,6 +15706,27 @@ python -m vllm.entrypoints.openai.api_server \
 <pre class="highlight"><code class="language-bash">max-model-len   单个用户最多 32K
 max_num_batched_tokens  一次调度最多 32K
 max-seq-len-to-capture  为 32K 长度生成 CUDA Graph</code></pre>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>参数写法</th>
+<th>实际含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FP16</td>
+<td><code>--dtype float16</code></td>
+<td>传统半精度（精度低一点，范围小）</td>
+</tr>
+<tr>
+<td>BF16</td>
+<td><code>--dtype bfloat16</code></td>
+<td>更稳定（范围更大，训练/推理更稳）</td>
+</tr>
+</tbody>
+</table>
 
 
   

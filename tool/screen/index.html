@@ -4847,6 +4847,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1_6_5">
@@ -4897,6 +4899,20 @@
     <li class="md-nav__item">
       <a href="../../AI/%E6%9D%83%E9%87%8D%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="md-nav__link">
         权重文件解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/%E6%9E%81%E9%80%9F%E8%A7%A3%E5%8E%8B%E5%92%8C%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        极速解压和下载
       </a>
     </li>
   
@@ -15756,10 +15772,14 @@
 </ul>
 <hr />
 <h3 id="3">3️⃣ 查看当前会话</h3>
-<pre class="highlight"><code>screen -ls</code></pre>
+<pre class="highlight"><code class="language-bash">screen -ls</code></pre>
 <hr />
 <h3 id="4">4️⃣ 重新进入会话</h3>
-<pre class="highlight"><code>screen -r mysession</code></pre>
+<pre class="highlight"><code class="language-bash">screen -r mysession</code></pre>
+<p>杀掉会话</p>
+<pre class="highlight"><code class="language-bash">screen -S mysession -X quit</code></pre>
+<p>强制接管：</p>
+<pre class="highlight"><code class="language-bash">screen -d -r 3643498.jieya</code></pre>
 
 
   
