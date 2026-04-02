@@ -16090,6 +16090,11 @@ xpu-smi xpulink --help</code></pre>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Disabled</strong>: 未启用 SR-IOV 功能。</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Enabled</strong>: 表示启用了虚拟化支持，用于将单个设备分割成多个虚拟设备。</li>
 </ul>
+<p>重置显卡</p>
+<p>1.</p>
+<pre class="highlight"><code>xpu-smi -r -i 0,1,2,3,4,5,6,7</code></pre>
+<p>2.</p>
+<pre class="highlight"><code class="language-bash">lsof /dev/xpu* | awk '{print $2}' |grep -v PID | xargs  kill -9 &amp;&amp; xpu-smi -r -i 0,1,2,3,4,5,6,7</code></pre>
 
 
   

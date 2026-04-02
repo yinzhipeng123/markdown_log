@@ -322,3 +322,20 @@ xpu-smi xpulink --help
 - **SR-IOV M**: SR-IOV（单根 I/O 虚拟化）模式状态：
   - [ ] **Disabled**: 未启用 SR-IOV 功能。
   - [ ] **Enabled**: 表示启用了虚拟化支持，用于将单个设备分割成多个虚拟设备。
+
+
+
+重置显卡
+
+1.
+
+```
+xpu-smi -r -i 0,1,2,3,4,5,6,7
+```
+
+2.
+
+```bash
+lsof /dev/xpu* | awk '{print $2}' |grep -v PID | xargs  kill -9 && xpu-smi -r -i 0,1,2,3,4,5,6,7
+```
+
