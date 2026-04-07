@@ -404,6 +404,13 @@ nav:
                  - EvalScope 模型推理性能压测: AI/evalscope_perf命令行测试.md
                  - 批量跑EvalScope推理性能压测: AI/脚本.md
                  - MMLU-Pro数据集: AI/MMLU-Pro数据集.md
+                 - Qwen3-30B-A3B——SFT训练: AI/Megatron.md
+                 - 一个脚本的解释: docs/AI/Megatron.md
+             - 大模型量化:
+                 - 什么叫量化: docs/AI/什么叫量化.md
+                 - GPTQ: docs/AI/GPTQ.md
+                 - AWQ: docs/AI/AWQ.md
+                 - compressed-tensors: docs/AI/compressed-tensors.md
              - deepseek在Hugging_Face的各个版本用途: AI/deepseek的各个版本都是干嘛用的.md
              - qwen在Hugging_Face的各个版本用途: AI/qwen的各个版本都是干嘛用的.md
              - Mac本地跑一个Qwen,进行evalscope测试: AI/笔记本跑模型/Mac本地跑一个qwen.md
