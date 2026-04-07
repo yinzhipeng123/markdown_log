@@ -250,6 +250,8 @@
         
   
   
+    
+  
 
 
   
@@ -261,7 +263,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Cloud_Computing/" class="md-tabs__link">
+      <a href="../../Cloud_Computing/" class="md-tabs__link md-tabs__link--active">
         其他技术
       </a>
     </li>
@@ -3729,12 +3731,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -3767,12 +3771,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
       
       
       
@@ -4491,12 +4497,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_6" type="checkbox" id="__nav_3_1_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_6" type="checkbox" id="__nav_3_1_6" checked>
       
       
       
@@ -5098,8 +5106,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/AI/Megatron.md" class="md-nav__link">
-        一个脚本的解释
+      <a href="../Megatron/" class="md-nav__link">
+        Qwen3-30B-A3B——SFT训练
       </a>
     </li>
   
@@ -5117,12 +5125,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_6_7" type="checkbox" id="__nav_3_1_6_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_6_7" type="checkbox" id="__nav_3_1_6_7" checked>
       
       
       
@@ -5155,7 +5165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/AI/什么叫量化.md" class="md-nav__link">
+      <a href="../%E4%BB%80%E4%B9%88%E5%8F%AB%E9%87%8F%E5%8C%96/" class="md-nav__link">
         什么叫量化
       </a>
     </li>
@@ -5169,7 +5179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/AI/GPTQ.md" class="md-nav__link">
+      <a href="../GPTQ/" class="md-nav__link">
         GPTQ
       </a>
     </li>
@@ -5181,11 +5191,123 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../docs/AI/AWQ.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AWQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         AWQ
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#awq" class="md-nav__link">
+    一、AWQ 是干什么的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    二、核心思想（重点）
+  </a>
+  
+    <nav class="md-nav" aria-label="二、核心思想（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    简单理解：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、怎么做到的？
+  </a>
+  
+    <nav class="md-nav" aria-label="三、怎么做到的？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-calibration-data" class="md-nav__link">
+    1️⃣ 采样一小部分真实数据（calibration data）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2️⃣ 观察激活分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3️⃣ 做“选择性保护”
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#awq_1" class="md-nav__link">
+    四、AWQ 的优点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    五、缺点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    六、最通俗一句话总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5197,7 +5319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/AI/compressed-tensors.md" class="md-nav__link">
+      <a href="../compressed-tensors/" class="md-nav__link">
         compressed-tensors
       </a>
     </li>
@@ -16007,6 +16129,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../GPTQ/" class="md-footer__link md-footer__link--prev" aria-label="上一页: GPTQ" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              GPTQ
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../compressed-tensors/" class="md-footer__link md-footer__link--next" aria-label="下一页: compressed-tensors" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              compressed-tensors
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
