@@ -1,9 +1,9 @@
 #mkdocs serve
 site_description: yinzhipengのmarkdown_log
-site_name: MarkDown_Log
+site_name: 小渺的个人记录
 site_url: https://yinzhipeng123.github.io/markdown_log/
 # 设置git库 https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/
-repo_name: MarkDown_Log
+repo_name: 小渺的个人记录
 repo_url: https://github.com/yinzhipeng123/markdown_log/
 
 markdown_extensions:
@@ -376,45 +376,7 @@ nav:
                   - 登陆交换机: hardware/交换机/登陆交换机.md
               - GPU:
                   - xpu: tool/xpu.md
-          - AI:
-             - AI体系:
-               - AI是否能代替人类: AI/AI是否能代替人类.md
-               - 引擎: AI/引擎.md
-               - 卷积: AI/卷积.md
-               - Transformer: AI/Transformer.md
-             - 神经网络:
-               - 神经网络: AI/神经网络.md
-               - Pytorch: AI/Pytorch.md
-               - Pytorch训练的是什么: AI/Pytorch训练的是什么.md
-             - 基本概念:
-                 - 注意力机制: AI/注意力机制.md
-                 - 多头注意力机制: AI/多头注意力.md
-             - 大模型应用:
-                 - RAG: AI/RAG.md
-             - 大模型相关:
-                 - 什么是LLM: AI/llm.md
-                 - 什么是VLLM: AI/vllm.md
-                 - 权重文件解析: AI/权重文件解析.md
-                 - 极速解压和下载: AI/极速解压和下载.md
-                 - 如何通过模型参数推算显存使用量: AI/如何通过参数量估算使用显存.md
-                 - KV cache是什么: AI/KV_cache.md
-                 - 大模型启动参数: AI/启动参数.md
-             - 大模型跑分:
-                 - 大模型基准测试: AI/大模型测试结果.md
-                 - EvalScope: AI/evalscope.md
-                 - EvalScope 模型推理性能压测: AI/evalscope_perf命令行测试.md
-                 - 批量跑EvalScope推理性能压测: AI/脚本.md
-                 - MMLU-Pro数据集: AI/MMLU-Pro数据集.md
-                 - Qwen3-30B-A3B——SFT训练: AI/Megatron.md
-                 - 一个脚本的解释: AI/Megatron.md
-             - 大模型量化:
-                 - 什么叫量化: AI/什么叫量化.md
-                 - GPTQ: AI/GPTQ.md
-                 - AWQ: AI/AWQ.md
-                 - compressed-tensors: AI/compressed-tensors.md
-             - deepseek在Hugging_Face的各个版本用途: AI/deepseek的各个版本都是干嘛用的.md
-             - qwen在Hugging_Face的各个版本用途: AI/qwen的各个版本都是干嘛用的.md
-             - Mac本地跑一个Qwen,进行evalscope测试: AI/笔记本跑模型/Mac本地跑一个qwen.md
+
           - 云服务器:
               - 云服务器实现原理之KVM:
                   - KVM概念: Cloud_Computing/KVM.md
@@ -1004,3 +966,46 @@ nav:
           - 竹书纪年: soft/历史/竹书纪年.md
           - 资治通鉴: soft/历史/资治通鉴.md
           - 王朝很少能超过300年的原因: soft/个人成长/王朝很少能超过300年的原因.md
+  - AI板块:
+      - AI:
+          - AI体系:
+              - AI是否能代替人类: AI/AI是否能代替人类.md
+              - 引擎: AI/引擎.md
+              - 卷积: AI/卷积.md
+              - Transformer: AI/Transformer.md
+          - 一些人物传记:
+              - 彭罗斯: soft/哲学/彭罗斯.md
+              - 杰弗里·辛顿: soft/哲学/杰弗里·辛顿.md
+          - 神经网络:
+              - 神经网络: AI/神经网络.md
+              - Pytorch: AI/Pytorch.md
+              - Pytorch训练的是什么: AI/Pytorch训练的是什么.md
+          - 基本概念:
+              - 注意力机制: AI/注意力机制.md
+              - 多头注意力机制: AI/多头注意力.md
+          - 大模型应用:
+              - RAG: AI/RAG.md
+          - 大模型相关:
+              - 什么是LLM: AI/llm.md
+              - 什么是VLLM: AI/vllm.md
+              - 权重文件解析: AI/权重文件解析.md
+              - 极速解压和下载: AI/极速解压和下载.md
+              - 如何通过模型参数推算显存使用量: AI/如何通过参数量估算使用显存.md
+              - KV cache是什么: AI/KV_cache.md
+              - 大模型启动参数: AI/启动参数.md
+          - 大模型跑分:
+              - 大模型基准测试: AI/大模型测试结果.md
+              - EvalScope: AI/evalscope.md
+              - EvalScope 模型推理性能压测: AI/evalscope_perf命令行测试.md
+              - 批量跑EvalScope推理性能压测: AI/脚本.md
+              - MMLU-Pro数据集: AI/MMLU-Pro数据集.md
+              - Qwen3-30B-A3B——SFT训练: AI/Megatron.md
+              - 一个脚本的解释: AI/Megatron.md
+          - 大模型量化:
+              - 什么叫量化: AI/什么叫量化.md
+              - GPTQ: AI/GPTQ.md
+              - AWQ: AI/AWQ.md
+              - compressed-tensors: AI/compressed-tensors.md
+          - deepseek在Hugging_Face的各个版本用途: AI/deepseek的各个版本都是干嘛用的.md
+          - qwen在Hugging_Face的各个版本用途: AI/qwen的各个版本都是干嘛用的.md
+          - Mac本地跑一个Qwen,进行evalscope测试: AI/笔记本跑模型/Mac本地跑一个qwen.md
