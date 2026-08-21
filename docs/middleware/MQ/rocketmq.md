@@ -5,18 +5,18 @@
 ## **一、环境准备**
 
 1. **操作系统**：
-   - Linux 是推荐的环境，但也支持 Windows。
+   - [ ] Linux 是推荐的环境，但也支持 Windows。
 
 2. **依赖环境**：
-   - JDK 1.8 或更高版本（Java 环境）。
-   - 配置 `JAVA_HOME` 环境变量。
-   - 确保服务器网络通畅，端口未被占用（默认 `9876` 为 NameServer 端口，`10911` 和 `10909` 为 Broker 使用的端口）。
+   - [ ] JDK 1.8 或更高版本（Java 环境）。
+   - [ ] 配置 `JAVA_HOME` 环境变量。
+   - [ ] 确保服务器网络通畅，端口未被占用（默认 `9876` 为 NameServer 端口，`10911` 和 `10909` 为 Broker 使用的端口）。
 
 3. **下载 RocketMQ**：
-   - 从 [RocketMQ 官方 GitHub 仓库](https://github.com/apache/rocketmq) 下载稳定版本的二进制包或源码。
+   - [ ] 从 [RocketMQ 官方 GitHub 仓库](https://github.com/apache/rocketmq) 下载稳定版本的二进制包或源码。
 
 4. **解压并配置**：
-   - 将下载的 RocketMQ 解压到指定目录。
+   - [ ] 将下载的 RocketMQ 解压到指定目录。
 
 ---
 
@@ -42,8 +42,8 @@ nohup sh mqbroker -n localhost:9876 > logs/broker.log 2>&1 &
 ```
 
 **参数说明**：
-- `-n localhost:9876`：指定 NameServer 地址。
-- `logs/broker.log`：日志文件路径。
+- [ ] `-n localhost:9876`：指定 NameServer 地址。
+- [ ] `logs/broker.log`：日志文件路径。
 
 ### **3. 验证服务**
 使用 `jps` 查看是否有 `NamesrvStartup` 和 `BrokerStartup` 两个 Java 进程运行。
@@ -58,8 +58,8 @@ jps
 
 ### **1. 部署架构**
 集群部署一般包括：
-- **多个 NameServer**：提高 NameServer 的可用性。
-- **多个 Broker**：
+- [ ] **多个 NameServer**：提高 NameServer 的可用性。
+- [ ] **多个 Broker**：
   - **Master-Slave 模式**：实现高可用（推荐）。
   - **多 Master 模式**：实现更高的吞吐量。
 
@@ -132,22 +132,22 @@ JAVA_OPT="${JAVA_OPT} -XX:+UseG1GC"
 
 ### **3. 运维工具**
 RocketMQ 提供 Web 控制台，可以方便地管理和监控集群：
-- 下载：[RocketMQ Dashboard](https://github.com/apache/rocketmq-dashboard)
-- 部署并访问。
+- [ ] 下载：[RocketMQ Dashboard](https://github.com/apache/rocketmq-dashboard)
+- [ ] 部署并访问。
 
 ---
 
 ## **六、常见问题**
 
 1. **NameServer 无法连接**：
-   - 检查 `9876` 端口是否开放。
-   - 确保 `namesrvAddr` 配置正确。
+   - [ ] 检查 `9876` 端口是否开放。
+   - [ ] 确保 `namesrvAddr` 配置正确。
 
 2. **Broker 无法启动**：
-   - 确保 `storePathCommitLog` 和 `storePathRootDir` 有足够的权限。
-   - 检查 JVM 参数是否适配当前硬件。
+   - [ ] 确保 `storePathCommitLog` 和 `storePathRootDir` 有足够的权限。
+   - [ ] 检查 JVM 参数是否适配当前硬件。
 
 3. **高可用验证**：
-   - 停止 Master Broker，测试 Slave 是否正常接管。
+   - [ ] 停止 Master Broker，测试 Slave 是否正常接管。
 
 ---

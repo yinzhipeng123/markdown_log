@@ -15693,6 +15693,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_13">
@@ -15771,6 +15773,20 @@
     <li class="md-nav__item">
       <a href="../../../soft/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/%E7%8E%8B%E6%9C%9D%E5%BE%88%E5%B0%91%E8%83%BD%E8%B6%85%E8%BF%87300%E5%B9%B4%E7%9A%84%E5%8E%9F%E5%9B%A0/" class="md-nav__link">
         王朝很少能超过300年的原因
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E5%8E%86%E5%8F%B2/%E9%AB%98%E5%8E%8B%E7%A4%BE%E4%BC%9A/" class="md-nav__link">
+        高压社会的生存法则
       </a>
     </li>
   
@@ -16859,29 +16875,29 @@
 <p>部署 RocketMQ 通常包括以下几个步骤，从简单的单机部署到生产级的集群部署，以下是详细步骤：</p>
 <hr />
 <h2 id="_1"><strong>一、环境准备</strong></h2>
-<ol>
+<ol class="task-list">
 <li><strong>操作系统</strong>：</li>
-<li>
-<p>Linux 是推荐的环境，但也支持 Windows。</p>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Linux 是推荐的环境，但也支持 Windows。</p>
 </li>
 <li>
 <p><strong>依赖环境</strong>：</p>
 </li>
-<li>JDK 1.8 或更高版本（Java 环境）。</li>
-<li>配置 <code>JAVA_HOME</code> 环境变量。</li>
-<li>
-<p>确保服务器网络通畅，端口未被占用（默认 <code>9876</code> 为 NameServer 端口，<code>10911</code> 和 <code>10909</code> 为 Broker 使用的端口）。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> JDK 1.8 或更高版本（Java 环境）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 配置 <code>JAVA_HOME</code> 环境变量。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 确保服务器网络通畅，端口未被占用（默认 <code>9876</code> 为 NameServer 端口，<code>10911</code> 和 <code>10909</code> 为 Broker 使用的端口）。</p>
 </li>
 <li>
 <p><strong>下载 RocketMQ</strong>：</p>
 </li>
-<li>
-<p>从 <a href="https://github.com/apache/rocketmq">RocketMQ 官方 GitHub 仓库</a> 下载稳定版本的二进制包或源码。</p>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 从 <a href="https://github.com/apache/rocketmq">RocketMQ 官方 GitHub 仓库</a> 下载稳定版本的二进制包或源码。</p>
 </li>
 <li>
 <p><strong>解压并配置</strong>：</p>
 </li>
-<li>将下载的 RocketMQ 解压到指定目录。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 将下载的 RocketMQ 解压到指定目录。</li>
 </ol>
 <hr />
 <h2 id="_2"><strong>二、单机部署</strong></h2>
@@ -16897,8 +16913,8 @@ nohup sh mqnamesrv &gt; logs/nameserver.log 2&gt;&amp;1 &amp;</code></pre>
 <pre class="highlight"><code class="language-bash"># 启动 Broker
 nohup sh mqbroker -n localhost:9876 &gt; logs/broker.log 2&gt;&amp;1 &amp;</code></pre>
 <p><strong>参数说明</strong>：
-- <code>-n localhost:9876</code>：指定 NameServer 地址。
-- <code>logs/broker.log</code>：日志文件路径。</p>
+- [ ] <code>-n localhost:9876</code>：指定 NameServer 地址。
+- [ ] <code>logs/broker.log</code>：日志文件路径。</p>
 <h3 id="3"><strong>3. 验证服务</strong></h3>
 <p>使用 <code>jps</code> 查看是否有 <code>NamesrvStartup</code> 和 <code>BrokerStartup</code> 两个 Java 进程运行。</p>
 <pre class="highlight"><code class="language-bash">jps</code></pre>
@@ -16906,8 +16922,8 @@ nohup sh mqbroker -n localhost:9876 &gt; logs/broker.log 2&gt;&amp;1 &amp;</code
 <h2 id="_3"><strong>三、集群部署（推荐生产环境使用）</strong></h2>
 <h3 id="1"><strong>1. 部署架构</strong></h3>
 <p>集群部署一般包括：
-- <strong>多个 NameServer</strong>：提高 NameServer 的可用性。
-- <strong>多个 Broker</strong>：
+- [ ] <strong>多个 NameServer</strong>：提高 NameServer 的可用性。
+- [ ] <strong>多个 Broker</strong>：
   - <strong>Master-Slave 模式</strong>：实现高可用（推荐）。
   - <strong>多 Master 模式</strong>：实现更高的吞吐量。</p>
 <hr />
@@ -16957,27 +16973,27 @@ nohup sh mqbroker -c conf/broker-a-s.properties &gt; logs/broker-a-s.log 2&gt;&a
 JAVA_OPT="${JAVA_OPT} -XX:+UseG1GC"</code></pre></p>
 <h3 id="3_1"><strong>3. 运维工具</strong></h3>
 <p>RocketMQ 提供 Web 控制台，可以方便地管理和监控集群：
-- 下载：<a href="https://github.com/apache/rocketmq-dashboard">RocketMQ Dashboard</a>
-- 部署并访问。</p>
+- [ ] 下载：<a href="https://github.com/apache/rocketmq-dashboard">RocketMQ Dashboard</a>
+- [ ] 部署并访问。</p>
 <hr />
 <h2 id="_6"><strong>六、常见问题</strong></h2>
-<ol>
+<ol class="task-list">
 <li><strong>NameServer 无法连接</strong>：</li>
-<li>检查 <code>9876</code> 端口是否开放。</li>
-<li>
-<p>确保 <code>namesrvAddr</code> 配置正确。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 检查 <code>9876</code> 端口是否开放。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 确保 <code>namesrvAddr</code> 配置正确。</p>
 </li>
 <li>
 <p><strong>Broker 无法启动</strong>：</p>
 </li>
-<li>确保 <code>storePathCommitLog</code> 和 <code>storePathRootDir</code> 有足够的权限。</li>
-<li>
-<p>检查 JVM 参数是否适配当前硬件。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 确保 <code>storePathCommitLog</code> 和 <code>storePathRootDir</code> 有足够的权限。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 检查 JVM 参数是否适配当前硬件。</p>
 </li>
 <li>
 <p><strong>高可用验证</strong>：</p>
 </li>
-<li>停止 Master Broker，测试 Slave 是否正常接管。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 停止 Master Broker，测试 Slave 是否正常接管。</li>
 </ol>
 <hr />
 

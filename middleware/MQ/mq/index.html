@@ -15638,6 +15638,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_13">
@@ -15716,6 +15718,20 @@
     <li class="md-nav__item">
       <a href="../../../soft/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/%E7%8E%8B%E6%9C%9D%E5%BE%88%E5%B0%91%E8%83%BD%E8%B6%85%E8%BF%87300%E5%B9%B4%E7%9A%84%E5%8E%9F%E5%9B%A0/" class="md-nav__link">
         王朝很少能超过300年的原因
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E5%8E%86%E5%8F%B2/%E9%AB%98%E5%8E%8B%E7%A4%BE%E4%BC%9A/" class="md-nav__link">
+        高压社会的生存法则
       </a>
     </li>
   
@@ -16751,105 +16767,105 @@
 <p>消息队列（Message Queue）是一种用于在不同系统或服务之间传递数据的机制，通常用于解耦生产者和消费者，提高系统的可伸缩性和可靠性。以下是一些常见的消息队列及其特点：</p>
 <hr />
 <h3 id="1-rabbitmq"><strong>1. RabbitMQ</strong></h3>
-<ul>
-<li><strong>类型</strong>：基于 AMQP（高级消息队列协议）。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：基于 AMQP（高级消息队列协议）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>支持多种消息模式（点对点、发布/订阅）。</li>
 <li>可靠性高，支持消息确认机制。</li>
 <li>丰富的插件生态，易于扩展。</li>
 <li>管理界面友好。</li>
-<li><strong>适用场景</strong>：企业级消息系统、需要复杂路由规则的场景。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：企业级消息系统、需要复杂路由规则的场景。</li>
 </ul>
 <hr />
 <h3 id="2-apache-kafka"><strong>2. Apache Kafka</strong></h3>
-<ul>
-<li><strong>类型</strong>：分布式流处理平台。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：分布式流处理平台。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>高吞吐量，适合处理海量数据。</li>
 <li>支持持久化消息（消息可以长期保存）。</li>
 <li>可扩展性强，支持集群部署。</li>
 <li>强调实时数据处理。</li>
-<li><strong>适用场景</strong>：日志收集、大数据分析、事件流处理。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：日志收集、大数据分析、事件流处理。</li>
 </ul>
 <hr />
 <h3 id="3-activemq"><strong>3. ActiveMQ</strong></h3>
-<ul>
-<li><strong>类型</strong>：基于 JMS（Java 消息服务）规范的开源消息中间件。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：基于 JMS（Java 消息服务）规范的开源消息中间件。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>历史悠久，支持多种协议（AMQP、MQTT、STOMP）。</li>
 <li>容易上手，配置灵活。</li>
 <li>性能不如 Kafka 和 RabbitMQ。</li>
-<li><strong>适用场景</strong>：Java 应用的消息传递、轻量级队列需求。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：Java 应用的消息传递、轻量级队列需求。</li>
 </ul>
 <hr />
 <h3 id="4-rocketmq"><strong>4. RocketMQ</strong></h3>
-<ul>
-<li><strong>类型</strong>：Apache 顶级项目，起源于阿里巴巴。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：Apache 顶级项目，起源于阿里巴巴。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>性能优异，适合高并发场景。</li>
 <li>支持延时消息、事务消息。</li>
 <li>与大数据生态集成良好（如 Flink、Spark）。</li>
-<li><strong>适用场景</strong>：金融交易系统、订单处理系统。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：金融交易系统、订单处理系统。</li>
 </ul>
 <hr />
 <h3 id="5-aws-sqssimple-queue-service"><strong>5. AWS SQS（Simple Queue Service）</strong></h3>
-<ul>
-<li><strong>类型</strong>：Amazon 提供的托管消息队列服务。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：Amazon 提供的托管消息队列服务。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>无需管理基础设施，完全托管。</li>
 <li>支持标准队列和 FIFO 队列。</li>
 <li>与其他 AWS 服务集成良好。</li>
-<li><strong>适用场景</strong>：无需高吞吐量的云原生应用。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：无需高吞吐量的云原生应用。</li>
 </ul>
 <hr />
 <h3 id="6-azure-service-bus"><strong>6. Azure Service Bus</strong></h3>
-<ul>
-<li><strong>类型</strong>：Microsoft Azure 提供的消息队列服务。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：Microsoft Azure 提供的消息队列服务。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>支持 FIFO 和高级消息功能。</li>
 <li>与 Azure 生态系统高度集成。</li>
 <li>适合企业级场景。</li>
-<li><strong>适用场景</strong>：基于 Azure 的分布式应用。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：基于 Azure 的分布式应用。</li>
 </ul>
 <hr />
 <h3 id="7-google-cloud-pubsub"><strong>7. Google Cloud Pub/Sub</strong></h3>
-<ul>
-<li><strong>类型</strong>：Google 提供的发布/订阅服务。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：Google 提供的发布/订阅服务。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>自动扩展，支持海量消息。</li>
 <li>实时数据处理能力强。</li>
 <li>与 Google Cloud 服务无缝集成。</li>
-<li><strong>适用场景</strong>：云原生架构、实时事件流处理。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：云原生架构、实时事件流处理。</li>
 </ul>
 <hr />
 <h3 id="8-redis"><strong>8. Redis（作为消息队列）</strong></h3>
-<ul>
-<li><strong>类型</strong>：内存数据库（支持简单的队列功能）。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：内存数据库（支持简单的队列功能）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>超低延迟，适合轻量级场景。</li>
 <li>使用 <code>List</code> 或 <code>Stream</code> 数据结构实现。</li>
 <li>无法保证消息持久性和复杂路由。</li>
-<li><strong>适用场景</strong>：轻量级任务队列、实时通知。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：轻量级任务队列、实时通知。</li>
 </ul>
 <hr />
 <h3 id="9-zeromq"><strong>9. ZeroMQ</strong></h3>
-<ul>
-<li><strong>类型</strong>：高性能消息库，而非传统消息队列。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：高性能消息库，而非传统消息队列。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>无需中间代理，点对点通信。</li>
 <li>超高性能，延迟极低。</li>
 <li>配置复杂。</li>
-<li><strong>适用场景</strong>：分布式应用中的高性能通信。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：分布式应用中的高性能通信。</li>
 </ul>
 <hr />
 <h3 id="10-pulsar"><strong>10. Pulsar</strong></h3>
-<ul>
-<li><strong>类型</strong>：Apache 顶级项目。</li>
-<li><strong>特点</strong>：</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>类型</strong>：Apache 顶级项目。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>特点</strong>：</li>
 <li>支持多租户和地理分布。</li>
 <li>提供流式存储。</li>
 <li>性能和功能与 Kafka 类似，但架构更灵活。</li>
-<li><strong>适用场景</strong>：实时流处理、需要分布式存储的场景。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>适用场景</strong>：实时流处理、需要分布式存储的场景。</li>
 </ul>
 <hr />
 

@@ -15636,6 +15636,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_13">
@@ -15714,6 +15716,20 @@
     <li class="md-nav__item">
       <a href="../../../soft/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/%E7%8E%8B%E6%9C%9D%E5%BE%88%E5%B0%91%E8%83%BD%E8%B6%85%E8%BF%87300%E5%B9%B4%E7%9A%84%E5%8E%9F%E5%9B%A0/" class="md-nav__link">
         王朝很少能超过300年的原因
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../soft/%E5%8E%86%E5%8F%B2/%E9%AB%98%E5%8E%8B%E7%A4%BE%E4%BC%9A/" class="md-nav__link">
+        高压社会的生存法则
       </a>
     </li>
   
@@ -16748,123 +16764,123 @@
 <hr />
 <h3 id="1-rabbitmq"><strong>1. RabbitMQ</strong></h3>
 <h4 id="_1"><strong>优点</strong></h4>
-<ol>
+<ol class="task-list">
 <li><strong>成熟和稳定</strong>：</li>
-<li>开发时间长，拥有广泛的社区支持和插件生态。</li>
-<li>
-<p>经验证的 AMQP 协议，适用于多种消息模式（点对点、发布/订阅、路由等）。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 开发时间长，拥有广泛的社区支持和插件生态。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 经验证的 AMQP 协议，适用于多种消息模式（点对点、发布/订阅、路由等）。</p>
 </li>
 <li>
 <p><strong>易用性</strong>：</p>
 </li>
-<li>简单易用，具有友好的 Web 管理界面。</li>
-<li>
-<p>丰富的插件可以扩展功能，如监控、延时队列等。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 简单易用，具有友好的 Web 管理界面。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 丰富的插件可以扩展功能，如监控、延时队列等。</p>
 </li>
 <li>
 <p><strong>消息可靠性</strong>：</p>
 </li>
-<li>支持消息持久化、消息确认机制。</li>
-<li>
-<p>消费端可以选择自动或手动确认，提高消息传递的可靠性。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 支持消息持久化、消息确认机制。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 消费端可以选择自动或手动确认，提高消息传递的可靠性。</p>
 </li>
 <li>
 <p><strong>跨语言支持</strong>：</p>
 </li>
-<li>
-<p>支持多种编程语言和协议（如 AMQP、STOMP、MQTT），适合多语言开发环境。</p>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 支持多种编程语言和协议（如 AMQP、STOMP、MQTT），适合多语言开发环境。</p>
 </li>
 <li>
 <p><strong>灵活性</strong>：</p>
 </li>
-<li>路由规则灵活，支持复杂的消息路由（通过交换机绑定队列）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 路由规则灵活，支持复杂的消息路由（通过交换机绑定队列）。</li>
 </ol>
 <hr />
 <h4 id="_2"><strong>缺点</strong></h4>
-<ol>
+<ol class="task-list">
 <li><strong>性能有限</strong>：</li>
-<li>吞吐量较低，通常适合中小型流量的场景。</li>
-<li>
-<p>在高并发场景下性能会显著下降。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 吞吐量较低，通常适合中小型流量的场景。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 在高并发场景下性能会显著下降。</p>
 </li>
 <li>
 <p><strong>资源占用高</strong>：</p>
 </li>
-<li>
-<p>对内存和磁盘资源的消耗较大，特别是在消息持久化和高可用配置下。</p>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 对内存和磁盘资源的消耗较大，特别是在消息持久化和高可用配置下。</p>
 </li>
 <li>
 <p><strong>分布式能力弱</strong>：</p>
 </li>
-<li>默认不支持分布式部署，扩展性有限。</li>
-<li>
-<p>虽然支持镜像队列，但需要手动配置，且可能增加复杂度。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 默认不支持分布式部署，扩展性有限。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 虽然支持镜像队列，但需要手动配置，且可能增加复杂度。</p>
 </li>
 <li>
 <p><strong>延时较高</strong>：</p>
 </li>
-<li>在高负载情况下，消息的延迟可能较高。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 在高负载情况下，消息的延迟可能较高。</li>
 </ol>
 <hr />
 <h3 id="2-rocketmq"><strong>2. RocketMQ</strong></h3>
 <h4 id="_3"><strong>优点</strong></h4>
-<ol>
+<ol class="task-list">
 <li><strong>高性能</strong>：</li>
-<li>设计上针对高并发优化，单机吞吐量高（可达数百万级别）。</li>
-<li>
-<p>采用顺序写磁盘的方式，极大提升了消息写入性能。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 设计上针对高并发优化，单机吞吐量高（可达数百万级别）。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 采用顺序写磁盘的方式，极大提升了消息写入性能。</p>
 </li>
 <li>
 <p><strong>分布式能力强</strong>：</p>
 </li>
-<li>原生支持分布式部署，方便扩展。</li>
-<li>
-<p>提供高可用机制，能应对节点故障。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 原生支持分布式部署，方便扩展。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 提供高可用机制，能应对节点故障。</p>
 </li>
 <li>
 <p><strong>丰富的功能</strong>：</p>
 </li>
-<li>支持延时消息、事务消息，适合复杂业务需求。</li>
-<li>
-<p>提供多种消费模式（广播消费、集群消费）。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 支持延时消息、事务消息，适合复杂业务需求。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 提供多种消费模式（广播消费、集群消费）。</p>
 </li>
 <li>
 <p><strong>生态集成</strong>：</p>
 </li>
-<li>与大数据生态（如 Hadoop、Spark、Flink）集成良好。</li>
-<li>
-<p>支持丰富的监控和运维工具，便于管理和诊断。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 与大数据生态（如 Hadoop、Spark、Flink）集成良好。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 支持丰富的监控和运维工具，便于管理和诊断。</p>
 </li>
 <li>
 <p><strong>成本效益高</strong>：</p>
 </li>
-<li>消息持久化性能强，可减少消息丢失风险。</li>
-<li>高性能和高吞吐量使其在大规模场景下性价比高。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 消息持久化性能强，可减少消息丢失风险。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 高性能和高吞吐量使其在大规模场景下性价比高。</li>
 </ol>
 <hr />
 <h4 id="_4"><strong>缺点</strong></h4>
-<ol>
+<ol class="task-list">
 <li><strong>学习成本较高</strong>：</li>
-<li>配置和部署相对复杂，入门门槛高。</li>
-<li>
-<p>文档和社区支持不如 RabbitMQ 丰富。</p>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 配置和部署相对复杂，入门门槛高。</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 文档和社区支持不如 RabbitMQ 丰富。</p>
 </li>
 <li>
 <p><strong>协议支持有限</strong>：</p>
 </li>
-<li>
-<p>原生仅支持 RocketMQ 的专有协议，跨语言支持较少（相比 RabbitMQ 的多协议支持）。</p>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 原生仅支持 RocketMQ 的专有协议，跨语言支持较少（相比 RabbitMQ 的多协议支持）。</p>
 </li>
 <li>
 <p><strong>延时较高（部分场景）</strong>：</p>
 </li>
-<li>
-<p>对于严格的实时性要求（如毫秒级延迟），RocketMQ 不如 Kafka 或 ZeroMQ。</p>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 对于严格的实时性要求（如毫秒级延迟），RocketMQ 不如 Kafka 或 ZeroMQ。</p>
 </li>
 <li>
 <p><strong>运维复杂</strong>：</p>
 </li>
-<li>需要更多的维护工作，包括集群管理、性能调优等。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 需要更多的维护工作，包括集群管理、性能调优等。</li>
 </ol>
 <hr />
 <h3 id="_5"><strong>适用场景对比</strong></h3>
@@ -16921,9 +16937,9 @@
 </table>
 <hr />
 <h3 id="_6"><strong>总结</strong></h3>
-<ul>
-<li><strong>选择 RabbitMQ</strong>：如果的业务对高性能要求不高，但需要复杂的路由规则、多语言支持、以及易用性，比如小型应用或企业内消息系统。</li>
-<li><strong>选择 RocketMQ</strong>：如果的业务需要处理高并发、高吞吐量的场景（如订单系统、支付系统）或需要分布式部署和事务消息支持。</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>选择 RabbitMQ</strong>：如果的业务对高性能要求不高，但需要复杂的路由规则、多语言支持、以及易用性，比如小型应用或企业内消息系统。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>选择 RocketMQ</strong>：如果的业务需要处理高并发、高吞吐量的场景（如订单系统、支付系统）或需要分布式部署和事务消息支持。</li>
 </ul>
 
 
