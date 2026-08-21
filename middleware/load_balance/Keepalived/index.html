@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/keepalive%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/Keepalived/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
-        <title>keepalive部署 - 小渺的个人记录</title>
+        <title>Keepalived - 小渺的个人记录</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#keepalived" class="md-skip">
           跳转至
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              keepalive部署
+              Keepalived
             
           </span>
         </div>
@@ -4916,6 +4916,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1_9">
@@ -5107,6 +5109,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1_9_3">
@@ -5127,8 +5133,87 @@
   
   
     <li class="md-nav__item">
-      <a href="../lvs/" class="md-nav__link">
+      <a href="../LVS/" class="md-nav__link">
         LVS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LVS%E5%8A%A0Keepalived%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        LVS加Keepalived部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LVS%E5%8A%A0Keepalived%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        LVS加Keepalived部署脚本
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_9_4" type="checkbox" id="__nav_3_1_9_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_9_4">
+          负载均衡底层原理之HAProxy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="负载均衡底层原理之HAProxy" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_1_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          负载均衡底层原理之HAProxy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HAProxy_Keepalived%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        HAProxy_Keepalived部署
       </a>
     </li>
   
@@ -5153,7 +5238,7 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_9_4" type="checkbox" id="__nav_3_1_9_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_9_5" type="checkbox" id="__nav_3_1_9_5" checked>
       
       
       
@@ -5162,37 +5247,19 @@
         
           
         
-          
-        
-          
-        
       
       
-        <label class="md-nav__link" for="__nav_3_1_9_4">
-          keepalive
+        <label class="md-nav__link" for="__nav_3_1_9_5">
+          虚拟IP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="keepalive" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_1_9_4">
+      <nav class="md-nav" aria-label="虚拟IP" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_1_9_5">
           <span class="md-nav__icon md-icon"></span>
-          keepalive
+          虚拟IP
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../keepalive/" class="md-nav__link">
-        keepalive
-      </a>
-    </li>
-  
-
-            
           
             
               
@@ -5208,12 +5275,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          keepalive部署
+          Keepalived
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        keepalive部署
+        Keepalived
       </a>
       
         
@@ -5230,90 +5297,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    🚀 一、环境准备
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#keepalived" class="md-nav__link">
-    🧩 二、安装 Keepalived
+    什么是 Keepalived？
   </a>
-  
-    <nav class="md-nav" aria-label="🧩 二、安装 Keepalived">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#centos-rhel" class="md-nav__link">
-    ✅ CentOS / RHEL：
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ubuntu-debian" class="md-nav__link">
-    ✅ Ubuntu / Debian：
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#keepalived_1" class="md-nav__link">
-    🛠️ 三、配置 Keepalived
-  </a>
-  
-    <nav class="md-nav" aria-label="🛠️ 三、配置 Keepalived">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#master" class="md-nav__link">
-    主节点（MASTER）配置：
+    Keepalived 的核心组成
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#backup" class="md-nav__link">
-    备节点（BACKUP）配置：
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    实际工作流程（简单理解）
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#keepalived_2" class="md-nav__link">
+    Keepalived 示例配置
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    🔄 四、启动服务
+    常见用途
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    🧪 五、验证是否成功
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    🧱 六、常用故障排查命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    ✅ 提示
+    优点
   </a>
   
 </li>
@@ -5333,22 +5353,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../lvs%E5%8A%A0keepalve%E9%83%A8%E7%BD%B2/" class="md-nav__link">
-        lvs加keepalive部署
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lvs%E5%8A%A0keepalive%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC/" class="md-nav__link">
-        lvs加keepalve部署脚本
+      <a href="../Keepalived%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        Keepalived部署
       </a>
     </li>
   
@@ -5382,6 +5388,8 @@
       
       
       
+        
+          
         
           
         
@@ -5439,6 +5447,20 @@
     <li class="md-nav__item">
       <a href="../../../Cloud_Computing/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/Ceph/" class="md-nav__link">
         Ceph
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/MinIO部署.md" class="md-nav__link">
+        MinIO
       </a>
     </li>
   
@@ -6285,6 +6307,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1_14_1">
@@ -6365,6 +6389,57 @@
     <li class="md-nav__item">
       <a href="../../MQ/rocketmq/" class="md-nav__link">
         rocketmq部署
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_14_1_4" type="checkbox" id="__nav_3_1_14_1_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_14_1_4">
+          RabbitMQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RabbitMQ" data-md-level="5">
+        <label class="md-nav__title" for="__nav_3_1_14_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          RabbitMQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MQ/rabbitmq/" class="md-nav__link">
+        RabbitMQ部署
       </a>
     </li>
   
@@ -16692,90 +16767,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    🚀 一、环境准备
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#keepalived" class="md-nav__link">
-    🧩 二、安装 Keepalived
+    什么是 Keepalived？
   </a>
-  
-    <nav class="md-nav" aria-label="🧩 二、安装 Keepalived">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#centos-rhel" class="md-nav__link">
-    ✅ CentOS / RHEL：
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ubuntu-debian" class="md-nav__link">
-    ✅ Ubuntu / Debian：
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#keepalived_1" class="md-nav__link">
-    🛠️ 三、配置 Keepalived
-  </a>
-  
-    <nav class="md-nav" aria-label="🛠️ 三、配置 Keepalived">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#master" class="md-nav__link">
-    主节点（MASTER）配置：
+    Keepalived 的核心组成
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#backup" class="md-nav__link">
-    备节点（BACKUP）配置：
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    实际工作流程（简单理解）
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#keepalived_2" class="md-nav__link">
+    Keepalived 示例配置
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    🔄 四、启动服务
+    常见用途
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    🧪 五、验证是否成功
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    🧱 六、常用故障排查命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    ✅ 提示
+    优点
   </a>
   
 </li>
@@ -16794,37 +16822,59 @@
                 
                   
 
-  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/middleware/load_balance/keepalive如何部署.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/middleware/load_balance/Keepalived.md" title="编辑此页" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>keepalive部署</h1>
+  <h1>Keepalived</h1>
 
-<p>Keepalived 的部署其实非常简单，下面是一个完整的部署步骤，包括安装、配置和启动服务。我们以两台 CentOS / Ubuntu 系统的 Linux 服务器为例：一台作为主节点（MASTER），一台作为备节点（BACKUP），共同管理一个虚拟 IP。</p>
-<hr />
-<h2 id="_1">🚀 一、环境准备</h2>
-<p>假设：</p>
+<h2 id="keepalived">什么是 Keepalived？</h2>
+<p><strong>Keepalived</strong> 是一个高可用性（High Availability, HA）软件，主要用于在 Linux 系统中实现 <strong>虚拟 IP 漂移（VIP漂移）</strong>，从而提供服务的高可用性。它经常与 <strong>LVS（Linux Virtual Server）</strong> 配合使用，但也可以独立使用。</p>
+<p>它的核心功能包括：</p>
 <ul>
-<li>主节点 IP：192.168.1.10</li>
-<li>备节点 IP：192.168.1.11</li>
-<li>虚拟 IP（VIP）：192.168.1.100</li>
-<li>网卡名：<code>eth0</code>（你实际的网卡可能是 <code>ens33</code>, <code>enp0s3</code> 等，可用 <code>ip a</code> 查看）</li>
+<li><strong>VRRP（Virtual Router Redundancy Protocol）协议实现</strong>：通过主备模式确保服务可用；</li>
+<li><strong>健康检查（health check）机制</strong>：可以监控服务状态，如果主节点服务失败会自动漂移 VIP；</li>
+<li><strong>脚本调用</strong>：可以根据需要运行用户定义的脚本实现复杂的高可用逻辑。</li>
 </ul>
 <hr />
-<h2 id="keepalived">🧩 二、安装 Keepalived</h2>
-<h3 id="centos-rhel">✅ CentOS / RHEL：</h3>
-<pre class="highlight"><code class="language-bash">sudo yum install keepalived -y</code></pre>
-<h3 id="ubuntu-debian">✅ Ubuntu / Debian：</h3>
-<pre class="highlight"><code class="language-bash">sudo apt update
-sudo apt install keepalived -y</code></pre>
+<h2 id="keepalived_1">Keepalived 的核心组成</h2>
+<p><strong>1.VRRP 实现</strong>（最核心功能）：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 类似于路由器的冗余协议。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 定义主备角色（MASTER/BACKUP），并设置优先级（priority）。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 同一个 VRRP 实例拥有一个 VIP（虚拟 IP），只有当前 MASTER 拥有这个 IP。</li>
+</ul>
+<p><strong>2.健康检查（Health Check）</strong>：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 可以对服务、端口、脚本等进行检查。</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 一旦检测到失败，可以触发故障切换。</li>
+</ul>
+<p><strong>3.脚本执行机制</strong>：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 提供 <code>vrrp_script</code>，在状态变化时执行用户自定义脚本。</li>
+</ul>
 <hr />
-<h2 id="keepalived_1">🛠️ 三、配置 Keepalived</h2>
-<p>编辑主配置文件：</p>
-<pre class="highlight"><code class="language-bash">sudo vim /etc/keepalived/keepalived.conf</code></pre>
-<h3 id="master">主节点（MASTER）配置：</h3>
-<pre class="highlight"><code class="language-bash">vrrp_instance VI_1 {
+<h2 id="_1">实际工作流程（简单理解）</h2>
+<p>假设你有两台服务器，分别为：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>A</strong>（主节点，优先级高）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>B</strong>（备节点，优先级低）</li>
+</ul>
+<p>两者运行 Keepalived，并配置相同的 VRRP 实例（同一个虚拟路由）。</p>
+<p>工作过程：</p>
+<ol>
+<li><strong>A 是 MASTER</strong>，它绑定了 VIP（例如 192.168.1.100）；</li>
+<li>如果 A 崩溃或失联（例如服务宕机、网络断开）；</li>
+<li>B 检测到 A 不再发送 VRRP 心跳；</li>
+<li>B 自动接管 VIP，成为新的 MASTER；</li>
+<li>服务恢复后，视配置而定是否抢占（preempt）。</li>
+</ol>
+<hr />
+<h2 id="keepalived_2">Keepalived 示例配置</h2>
+<pre class="highlight"><code class="language-bash">
+vrrp_instance VI_1 {
     state MASTER
     interface eth0
     virtual_router_id 51
@@ -16838,65 +16888,30 @@ sudo apt install keepalived -y</code></pre>
         192.168.1.100
     }
 }</code></pre>
-<h3 id="backup">备节点（BACKUP）配置：</h3>
-<pre class="highlight"><code class="language-bash">vrrp_instance VI_1 {
-    state BACKUP
-    interface eth0
-    virtual_router_id 51
-    priority 90
-    advert_int 1
-    authentication {
-        auth_type PASS
-        auth_pass 1234
-    }
-    virtual_ipaddress {
-        192.168.1.100
-    }
-}</code></pre>
-<blockquote>
-<p>⚠️ 注意：</p>
+<p>这段配置的意思：</p>
 <ul>
-<li><code>state</code>：主为 MASTER，备为 BACKUP；</li>
-<li><code>priority</code>：主节点值必须高于备节点；</li>
-<li><code>virtual_router_id</code>：主备必须一致；</li>
-<li><code>auth_pass</code>：主备必须一致。</li>
+<li><code>state MASTER</code>：当前为主节点；</li>
+<li><code>interface eth0</code>：绑定网卡；</li>
+<li><code>virtual_router_id 51</code>：虚拟路由器 ID，主备必须相同；</li>
+<li><code>priority 100</code>：优先级（备机可设为 90）；</li>
+<li><code>advert_int 1</code>：心跳间隔为 1 秒；</li>
+<li><code>virtual_ipaddress</code>：设定的虚拟 IP。</li>
 </ul>
-</blockquote>
 <hr />
-<h2 id="_2">🔄 四、启动服务</h2>
-<pre class="highlight"><code class="language-bash"># 启动 keepalived
-sudo systemctl start keepalived
-
-# 设置开机自启
-sudo systemctl enable keepalived
-
-# 查看状态
-sudo systemctl status keepalived</code></pre>
-<hr />
-<h2 id="_3">🧪 五、验证是否成功</h2>
-<ol>
-<li>在主节点执行：</li>
-</ol>
-<pre class="highlight"><code class="language-bash">ip addr | grep 192.168.1.100</code></pre>
-<p>应看到 VIP 已绑定。</p>
-<ol>
-<li>停止主节点 keepalived 服务：</li>
-</ol>
-<pre class="highlight"><code class="language-bash">sudo systemctl stop keepalived</code></pre>
-<ol>
-<li>在备节点执行相同命令，应看到 VIP 自动漂移到备节点。</li>
-</ol>
-<hr />
-<h2 id="_4">🧱 六、常用故障排查命令</h2>
-<pre class="highlight"><code class="language-bash">journalctl -u keepalived    # 查看日志
-tail -f /var/log/messages   # 监控系统日志（CentOS）
-ip a                        # 查看网卡绑定的 IP</code></pre>
-<hr />
-<h2 id="_5">✅ 提示</h2>
+<h2 id="_2">常见用途</h2>
 <ul>
-<li>Keepalived 的 VIP 通常用于前端服务（如 Nginx、HAProxy）监听；</li>
-<li>如果网卡为 <code>ens33</code> 或 <code>enp0s3</code>，请记得将 <code>interface eth0</code> 改成你的网卡名；</li>
-<li>Keepalived 支持健康检查脚本 <code>vrrp_script</code>，可进一步增强容错性。</li>
+<li>Nginx、HAProxy 前端负载均衡器的高可用；</li>
+<li>数据库主备切换辅助；</li>
+<li>LVS 后端管理；</li>
+<li>服务自动容灾切换。</li>
+</ul>
+<hr />
+<h2 id="_3">优点</h2>
+<ul>
+<li>简单易用，配置直观；</li>
+<li>支持自定义脚本，灵活；</li>
+<li>社区活跃，文档丰富；</li>
+<li>轻量级，不需要额外服务。</li>
 </ul>
 
 
@@ -16927,7 +16942,7 @@ ip a                        # 查看网卡绑定的 IP</code></pre>
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../keepalive/" class="md-footer__link md-footer__link--prev" aria-label="上一页: keepalive" rel="prev">
+        <a href="../HAProxy_Keepalived%E9%83%A8%E7%BD%B2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: HAProxy_Keepalived部署" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -16936,20 +16951,20 @@ ip a                        # 查看网卡绑定的 IP</code></pre>
               <span class="md-footer__direction">
                 上一页
               </span>
-              keepalive
+              HAProxy_Keepalived部署
             </div>
           </div>
         </a>
       
       
         
-        <a href="../lvs%E5%8A%A0keepalve%E9%83%A8%E7%BD%B2/" class="md-footer__link md-footer__link--next" aria-label="下一页: lvs加keepalive部署" rel="next">
+        <a href="../Keepalived%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2/" class="md-footer__link md-footer__link--next" aria-label="下一页: Keepalived部署" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              lvs加keepalive部署
+              Keepalived部署
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/lvs%E5%8A%A0keepalive%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC/">
+        <link rel="canonical" href="https://yinzhipeng123.github.io/markdown_log/middleware/storage/minio%E9%83%A8%E7%BD%B2/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
-        <title>lvs加keepalve部署脚本 - 小渺的个人记录</title>
+        <title>MinIO 生产环境标准部署手册 - 小渺的个人记录</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-master-192168110" class="md-skip">
+        <a href="#minio" class="md-skip">
           跳转至
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              lvs加keepalve部署脚本
+              MinIO 生产环境标准部署手册
             
           </span>
         </div>
@@ -250,8 +250,6 @@
         
   
   
-    
-  
 
 
   
@@ -263,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Cloud_Computing/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../Cloud_Computing/" class="md-tabs__link">
         其他技术
       </a>
     </li>
@@ -3761,14 +3759,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -3801,14 +3797,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
       
       
@@ -4896,17 +4890,17 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_9" type="checkbox" id="__nav_3_1_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_9" type="checkbox" id="__nav_3_1_9" >
       
       
       
+        
+          
         
           
         
@@ -5107,6 +5101,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1_9_3">
@@ -5127,8 +5125,36 @@
   
   
     <li class="md-nav__item">
-      <a href="../lvs/" class="md-nav__link">
+      <a href="../../load_balance/LVS/" class="md-nav__link">
         LVS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../load_balance/LVS%E5%8A%A0Keepalived%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        LVS加Keepalived部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../load_balance/LVS%E5%8A%A0Keepalived%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        LVS加Keepalived部署脚本
       </a>
     </li>
   
@@ -5146,37 +5172,29 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_9_4" type="checkbox" id="__nav_3_1_9_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_9_4" type="checkbox" id="__nav_3_1_9_4" >
       
       
       
-        
-          
-        
-          
-        
-          
         
           
         
       
       
         <label class="md-nav__link" for="__nav_3_1_9_4">
-          keepalive
+          负载均衡底层原理之HAProxy
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="keepalive" data-md-level="4">
+      <nav class="md-nav" aria-label="负载均衡底层原理之HAProxy" data-md-level="4">
         <label class="md-nav__title" for="__nav_3_1_9_4">
           <span class="md-nav__icon md-icon"></span>
-          keepalive
+          负载均衡底层原理之HAProxy
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -5186,9 +5204,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../keepalive/" class="md-nav__link">
-        keepalive
+      <a href="../../load_balance/HAProxy_Keepalived%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        HAProxy_Keepalived部署
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -5197,98 +5222,58 @@
             
               
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../keepalive%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2/" class="md-nav__link">
-        keepalive部署
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lvs%E5%8A%A0keepalve%E9%83%A8%E7%BD%B2/" class="md-nav__link">
-        lvs加keepalive部署
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
   
   
     
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <li class="md-nav__item md-nav__item--nested">
       
       
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_9_5" type="checkbox" id="__nav_3_1_9_5" >
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          lvs加keepalve部署脚本
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_9_5">
+          虚拟IP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        lvs加keepalve部署脚本
+      <nav class="md-nav" aria-label="虚拟IP" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_1_9_5">
+          <span class="md-nav__icon md-icon"></span>
+          虚拟IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../load_balance/Keepalived/" class="md-nav__link">
+        Keepalived
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+            
+          
+            
+              
   
   
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-master-192168110" class="md-nav__link">
-    🧠 1. MASTER 节点脚本（如：192.168.1.10）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-backup-192168111" class="md-nav__link">
-    👥 2. BACKUP 节点脚本（如：192.168.1.11）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-real-server-1921681101-1921681102" class="md-nav__link">
-    🧱 3. Real Server 脚本（192.168.1.101 和 192.168.1.102）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    🧪 4. 使用说明
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="../../load_balance/Keepalived%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        Keepalived部署
+      </a>
     </li>
   
 
@@ -5321,6 +5306,8 @@
       
       
       
+        
+          
         
           
         
@@ -5378,6 +5365,20 @@
     <li class="md-nav__item">
       <a href="../../../Cloud_Computing/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/Ceph/" class="md-nav__link">
         Ceph
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MinIO部署.md" class="md-nav__link">
+        MinIO
       </a>
     </li>
   
@@ -6224,6 +6225,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1_14_1">
@@ -6304,6 +6307,57 @@
     <li class="md-nav__item">
       <a href="../../MQ/rocketmq/" class="md-nav__link">
         rocketmq部署
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_14_1_4" type="checkbox" id="__nav_3_1_14_1_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_14_1_4">
+          RabbitMQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RabbitMQ" data-md-level="5">
+        <label class="md-nav__title" for="__nav_3_1_14_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          RabbitMQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MQ/rabbitmq/" class="md-nav__link">
+        RabbitMQ部署
       </a>
     </li>
   
@@ -16623,6 +16677,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -16631,30 +16687,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-master-192168110" class="md-nav__link">
-    🧠 1. MASTER 节点脚本（如：192.168.1.10）
+  <a href="#1" class="md-nav__link">
+    1. 架构
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    推荐规划
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-backup-192168111" class="md-nav__link">
-    👥 2. BACKUP 节点脚本（如：192.168.1.11）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-real-server-1921681101-1921681102" class="md-nav__link">
-    🧱 3. Real Server 脚本（192.168.1.101 和 192.168.1.102）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    🧪 4. 使用说明
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -16672,163 +16720,543 @@
                 
                   
 
-  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/middleware/load_balance/lvs加keepalive部署脚本.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/yinzhipeng123/markdown_log/edit/master/docs/middleware/storage/minio部署.md" title="编辑此页" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>lvs加keepalve部署脚本</h1>
-
-<p>一个 <strong>LVS + Keepalived 高可用架构一键部署脚本</strong>，包含：</p>
-<ul>
-<li>🧠 主节点（MASTER）</li>
-<li>👥 备节点（BACKUP）</li>
-<li>🧱 Real Server（真实后端）</li>
-</ul>
-<p>我将为每个角色提供独立脚本，按你的实际服务器角色运行对应的脚本即可。</p>
+<h1 id="minio">MinIO 生产环境标准部署手册</h1>
+<h2 id="1">1. 架构</h2>
+<p>采用：</p>
+<pre class="highlight"><code>                        ┌──────────────┐
+                        │ 业务系统/用户  │
+                        └──────┬───────┘
+                               │
+                            HTTPS/S3
+                               │
+                        ┌──────▼───────┐
+                        │  DNS / VIP   │
+                        └──────┬───────┘
+                               │
+                        ┌──────▼───────┐
+                        │  HAProxy/LB  │
+                        └──────┬───────┘
+                               │
+          ┌────────────────────┼────────────────────┐
+          │                    │                    │
+          ▼                    ▼                    ▼
+      minio01              minio02              minio03       minio04
+      10.0.0.11            10.0.0.12            10.0.0.13     10.0.0.14
+          │                    │                    │              │
+      4 × SSD              4 × SSD              4 × SSD        4 × SSD
+          └────────────────────┼────────────────────┘
+                               │
+                        MinIO Distributed
+                         Erasure Coding</code></pre>
+<h3 id="_1">推荐规划</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MinIO 节点</td>
+<td>4</td>
+</tr>
+<tr>
+<td>每节点数据盘</td>
+<td>4</td>
+</tr>
+<tr>
+<td>总数据盘</td>
+<td>16</td>
+</tr>
+<tr>
+<td>API</td>
+<td>9000</td>
+</tr>
+<tr>
+<td>Console</td>
+<td>9001</td>
+</tr>
+<tr>
+<td>LB</td>
+<td>443</td>
+</tr>
+<tr>
+<td>API 域名</td>
+<td><code>minio.example.com</code></td>
+</tr>
+<tr>
+<td>Console 域名</td>
+<td><code>minio-console.example.com</code></td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="1-master-192168110">🧠 1. MASTER 节点脚本（如：192.168.1.10）</h2>
-<p>保存为 <code>setup_master.sh</code>：</p>
-<pre class="highlight"><code class="language-bash">#!/bin/bash
-set -e
-
-# 基础安装
-yum install -y ipvsadm keepalived
-
-# 配置 Keepalived
-cat &gt; /etc/keepalived/keepalived.conf &lt;&lt;EOF
-global_defs {
-    router_id LVS_MASTER
-}
-
-vrrp_instance VI_1 {
-    state MASTER
-    interface eth0
-    virtual_router_id 51
-    priority 100
-    advert_int 1
-    authentication {
-        auth_type PASS
-        auth_pass 1234
-    }
-    virtual_ipaddress {
-        192.168.1.100
-    }
-}
-
-virtual_server 192.168.1.100 80 {
-    delay_loop 6
-    lb_algo rr
-    lb_kind DR
-    persistence_timeout 60
-    protocol TCP
-
-    real_server 192.168.1.101 80 {
-        weight 1
-        TCP_CHECK {
-            connect_timeout 3
-            nb_get_retry 3
-            delay_before_retry 3
-        }
-    }
-
-    real_server 192.168.1.102 80 {
-        weight 1
-        TCP_CHECK {
-            connect_timeout 3
-            nb_get_retry 3
-            delay_before_retry 3
-        }
-    }
-}
-EOF
-
-# 启动服务
-systemctl enable keepalived --now</code></pre>
+<h1 id="2">2. 服务器准备</h1>
+<p>4 台服务器：</p>
+<pre class="highlight"><code>minio01  10.0.0.11
+minio02  10.0.0.12
+minio03  10.0.0.13
+minio04  10.0.0.14</code></pre>
+<p>建议：</p>
+<pre class="highlight"><code>CPU：8C+
+内存：16G+
+系统盘：100G+
+数据盘：4 × SSD
+网络：10Gbps 优先</code></pre>
+<h3 id="_2">注意</h3>
+<p>MinIO 是存储系统，<strong>数据盘尽量使用独立本地盘</strong>，不要简单地在一个系统盘上创建四个目录冒充四块盘。</p>
 <hr />
-<h2 id="2-backup-192168111">👥 2. BACKUP 节点脚本（如：192.168.1.11）</h2>
-<p>保存为 <code>setup_backup.sh</code>：</p>
-<pre class="highlight"><code class="language-bash">#!/bin/bash
-set -e
-
-# 基础安装
-yum install -y ipvsadm keepalived
-
-# 配置 Keepalived
-cat &gt; /etc/keepalived/keepalived.conf &lt;&lt;EOF
-global_defs {
-    router_id LVS_BACKUP
-}
-
-vrrp_instance VI_1 {
-    state BACKUP
-    interface eth0
-    virtual_router_id 51
-    priority 90
-    advert_int 1
-    authentication {
-        auth_type PASS
-        auth_pass 1234
-    }
-    virtual_ipaddress {
-        192.168.1.100
-    }
-}
-
-virtual_server 192.168.1.100 80 {
-    delay_loop 6
-    lb_algo rr
-    lb_kind DR
-    persistence_timeout 60
-    protocol TCP
-
-    real_server 192.168.1.101 80 {
-        weight 1
-        TCP_CHECK {
-            connect_timeout 3
-            nb_get_retry 3
-            delay_before_retry 3
-        }
-    }
-
-    real_server 192.168.1.102 80 {
-        weight 1
-        TCP_CHECK {
-            connect_timeout 3
-            nb_get_retry 3
-            delay_before_retry 3
-        }
-    }
-}
-EOF
-
-# 启动服务
-systemctl enable keepalived --now</code></pre>
+<h1 id="3">3. 设置主机名</h1>
+<p>分别执行：</p>
+<h3 id="minio01">minio01</h3>
+<pre class="highlight"><code>hostnamectl set-hostname minio01</code></pre>
+<h3 id="minio02">minio02</h3>
+<pre class="highlight"><code>hostnamectl set-hostname minio02</code></pre>
+<h3 id="minio03">minio03</h3>
+<pre class="highlight"><code>hostnamectl set-hostname minio03</code></pre>
+<h3 id="minio04">minio04</h3>
+<pre class="highlight"><code>hostnamectl set-hostname minio04</code></pre>
 <hr />
-<h2 id="3-real-server-1921681101-1921681102">🧱 3. Real Server 脚本（192.168.1.101 和 192.168.1.102）</h2>
-<p>保存为 <code>setup_real_server.sh</code>：</p>
-<pre class="highlight"><code class="language-bash">#!/bin/bash
-set -e
-
-# 绑定 VIP 到 lo 接口
-ip addr add 192.168.1.100/32 dev lo
-ip link set lo up
-
-# 设置 ARP 策略，避免冲突
-cat &gt;&gt; /etc/sysctl.conf &lt;&lt;EOF
-net.ipv4.conf.all.arp_ignore = 1
-net.ipv4.conf.all.arp_announce = 2
-EOF
-
-sysctl -p</code></pre>
+<h1 id="4-etchosts">4. 配置 <code>/etc/hosts</code></h1>
+<p>4 台机器全部配置：</p>
+<pre class="highlight"><code>vim /etc/hosts</code></pre>
+<p>加入：</p>
+<pre class="highlight"><code>10.0.0.11 minio01
+10.0.0.12 minio02
+10.0.0.13 minio03
+10.0.0.14 minio04</code></pre>
+<p>测试：</p>
+<pre class="highlight"><code>ping -c 3 minio01
+ping -c 3 minio02
+ping -c 3 minio03
+ping -c 3 minio04</code></pre>
 <hr />
-<h2 id="4">🧪 4. 使用说明</h2>
-<ul>
-<li>修改脚本中的网卡名（默认为 eth0），根据你的实际网络接口替换。</li>
-<li><code>192.168.1.100</code> 是 VIP，可以替换成你自己的业务 IP。</li>
-<li>后端服务器需部署好 Web 服务（如 nginx、httpd 或 Python 简易 HTTP 服务器）监听 80 端口供测试。</li>
-</ul>
+<h1 id="5">5. 数据盘准备</h1>
+<p>假设每台服务器：</p>
+<pre class="highlight"><code>/dev/sdb
+/dev/sdc
+/dev/sdd
+/dev/sde</code></pre>
+<p>分别对应：</p>
+<pre class="highlight"><code>/data/disk1
+/data/disk2
+/data/disk3
+/data/disk4</code></pre>
+<p>例如：</p>
+<pre class="highlight"><code>mkfs.xfs /dev/sdb
+mkfs.xfs /dev/sdc
+mkfs.xfs /dev/sdd
+mkfs.xfs /dev/sde</code></pre>
+<p>创建目录：</p>
+<pre class="highlight"><code>mkdir -p /data/disk{1..4}</code></pre>
+<p>挂载：</p>
+<pre class="highlight"><code>mount /dev/sdb /data/disk1
+mount /dev/sdc /data/disk2
+mount /dev/sdd /data/disk3
+mount /dev/sde /data/disk4</code></pre>
+<p>检查：</p>
+<pre class="highlight"><code>df -h</code></pre>
+<p>应该看到类似：</p>
+<pre class="highlight"><code>/dev/sdb   500G   /data/disk1
+/dev/sdc   500G   /data/disk2
+/dev/sdd   500G   /data/disk3
+/dev/sde   500G   /data/disk4</code></pre>
+<hr />
+<h1 id="6">6. 配置开机自动挂载</h1>
+<p>先获取 UUID：</p>
+<pre class="highlight"><code>blkid</code></pre>
+<p>例如：</p>
+<pre class="highlight"><code>/dev/sdb UUID="xxxx-1111"
+/dev/sdc UUID="xxxx-2222"
+/dev/sdd UUID="xxxx-3333"
+/dev/sde UUID="xxxx-4444"</code></pre>
+<p>编辑：</p>
+<pre class="highlight"><code>vim /etc/fstab</code></pre>
+<p>加入：</p>
+<pre class="highlight"><code>UUID=xxxx-1111 /data/disk1 xfs defaults,noatime 0 0
+UUID=xxxx-2222 /data/disk2 xfs defaults,noatime 0 0
+UUID=xxxx-3333 /data/disk3 xfs defaults,noatime 0 0
+UUID=xxxx-4444 /data/disk4 xfs defaults,noatime 0 0</code></pre>
+<p>测试：</p>
+<pre class="highlight"><code>umount /data/disk1
+mount -a
+df -h</code></pre>
+<p><strong>这一步非常重要。</strong></p>
+<p>否则服务器重启以后数据盘没挂载，MinIO 可能出现严重问题。</p>
+<hr />
+<h1 id="7-minio">7. 创建 MinIO 用户</h1>
+<p>4 台机器都执行：</p>
+<pre class="highlight"><code>useradd -r -s /sbin/nologin minio</code></pre>
+<p>授权：</p>
+<pre class="highlight"><code>chown -R minio:minio /data</code></pre>
+<p>检查：</p>
+<pre class="highlight"><code>ls -ld /data/disk*</code></pre>
+<hr />
+<h1 id="8-minio">8. 安装 MinIO</h1>
+<p>建议生产环境<strong>固定版本</strong>，不要直接使用：</p>
+<pre class="highlight"><code>latest</code></pre>
+<p>先从官方获取当前需要部署的版本，然后安装对应二进制。</p>
+<p>Linux x86_64 示例：</p>
+<pre class="highlight"><code>wget https://dl.min.io/server/minio/release/linux-amd64/minio</code></pre>
+<p>安装：</p>
+<pre class="highlight"><code>chmod +x minio
+mv minio /usr/local/bin/minio</code></pre>
+<p>检查：</p>
+<pre class="highlight"><code>minio --version</code></pre>
+<p>4 台机器版本必须一致。</p>
+<hr />
+<h1 id="9-minio">9. 配置 MinIO 环境变量</h1>
+<p>创建：</p>
+<pre class="highlight"><code>mkdir -p /etc/minio
+vim /etc/minio/minio.env</code></pre>
+<p>例如：</p>
+<pre class="highlight"><code>MINIO_ROOT_USER=minioadmin
+MINIO_ROOT_PASSWORD='修改成复杂密码'
+
+
+MINIO_VOLUMES="http://minio{1...4}/data/disk{1...4}"
+
+
+MINIO_OPTS="--address :9000 --console-address :9001"</code></pre>
+<p>生产环境密码必须自己生成，<strong>不要使用示例密码</strong>。</p>
+<p>例如：</p>
+<pre class="highlight"><code>openssl rand -base64 32</code></pre>
+<hr />
+<h1 id="10-systemd">10. 配置 systemd</h1>
+<p>创建：</p>
+<pre class="highlight"><code>vim /etc/systemd/system/minio.service</code></pre>
+<p>写入：</p>
+<pre class="highlight"><code>[Unit]
+Description=MinIO Object Storage
+Documentation=https://min.io/docs/
+Wants=network-online.target
+After=network-online.target
+
+
+[Service]
+User=minio
+Group=minio
+
+
+EnvironmentFile=/etc/minio/minio.env
+
+
+ExecStart=/usr/local/bin/minio server \
+  $MINIO_VOLUMES \
+  $MINIO_OPTS
+
+
+Restart=always
+RestartSec=5
+
+
+LimitNOFILE=65536
+LimitNPROC=65536
+
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+<hr />
+<h1 id="11-minio">11. 启动 MinIO</h1>
+<p>4 台机器都执行：</p>
+<pre class="highlight"><code>systemctl daemon-reload</code></pre>
+<p>设置开机启动：</p>
+<pre class="highlight"><code>systemctl enable minio</code></pre>
+<p>启动：</p>
+<pre class="highlight"><code>systemctl start minio</code></pre>
+<p>检查：</p>
+<pre class="highlight"><code>systemctl status minio</code></pre>
+<hr />
+<h1 id="12">12. 查看日志</h1>
+<pre class="highlight"><code>journalctl -u minio -f</code></pre>
+<p>如果启动失败：</p>
+<pre class="highlight"><code>journalctl -u minio --no-pager -n 100</code></pre>
+<p>重点检查：</p>
+<pre class="highlight"><code>磁盘是否挂载
+权限是否正确
+hosts 是否正确
+节点之间网络是否通
+MinIO 版本是否一致
+启动参数是否一致</code></pre>
+<hr />
+<h1 id="13">13. 防火墙</h1>
+<p>节点之间至少确保 MinIO API 端口可以互通：</p>
+<pre class="highlight"><code>9000</code></pre>
+<p>Console：</p>
+<pre class="highlight"><code>9001</code></pre>
+<p>如果使用 LB：</p>
+<pre class="highlight"><code>客户端 → LB:443
+LB → MinIO:9000</code></pre>
+<p>生产环境不要为了省事直接：</p>
+<pre class="highlight"><code>systemctl stop firewalld</code></pre>
+<p>而应该按照实际网络规划放行所需端口。</p>
+<hr />
+<h1 id="14">14. 验证集群</h1>
+<p>安装 MinIO Client <code>mc</code>。</p>
+<p>然后配置：</p>
+<pre class="highlight"><code>mc alias set minio \
+http://minio01:9000 \
+minioadmin \
+'的密码'</code></pre>
+<p>查看集群：</p>
+<pre class="highlight"><code>mc admin info minio</code></pre>
+<p>正常应该能看到：</p>
+<pre class="highlight"><code>minio01
+minio02
+minio03
+minio04</code></pre>
+<p>以及对应的 Drives。</p>
+<hr />
+<h1 id="15-bucket">15. 创建测试 Bucket</h1>
+<pre class="highlight"><code>mc mb minio/test</code></pre>
+<p>查看：</p>
+<pre class="highlight"><code>mc ls minio</code></pre>
+<p>创建测试文件：</p>
+<pre class="highlight"><code>echo "hello minio" &gt; test.txt</code></pre>
+<p>上传：</p>
+<pre class="highlight"><code>mc cp test.txt minio/test/</code></pre>
+<p>查看：</p>
+<pre class="highlight"><code>mc ls minio/test/</code></pre>
+<p>下载：</p>
+<pre class="highlight"><code>mc cp minio/test/test.txt /tmp/</code></pre>
+<p>验证：</p>
+<pre class="highlight"><code>cat /tmp/test.txt</code></pre>
+<hr />
+<h1 id="16">16. 配置生产访问域名</h1>
+<p>不要让业务使用：</p>
+<pre class="highlight"><code>10.0.0.11:9000</code></pre>
+<p>配置 DNS：</p>
+<pre class="highlight"><code>minio.example.com
+        ↓
+       LB</code></pre>
+<p>Console：</p>
+<pre class="highlight"><code>minio-console.example.com
+        ↓
+       LB</code></pre>
+<p>最终：</p>
+<pre class="highlight"><code>S3 API：
+https://minio.example.com
+
+
+Console：
+https://minio-console.example.com</code></pre>
+<hr />
+<h1 id="17">17. 配置负载均衡</h1>
+<p>例如使用 HAProxy。</p>
+<p>核心思想：</p>
+<pre class="highlight"><code>                     minio.example.com
+                            │
+                            ▼
+                         HAProxy
+                            │
+             ┌──────────────┼──────────────┐
+             ▼              ▼              ▼
+          minio01        minio02        minio03        minio04</code></pre>
+<p>HAProxy 后端：</p>
+<pre class="highlight"><code>minio01:9000
+minio02:9000
+minio03:9000
+minio04:9000</code></pre>
+<p>生产环境建议至少两台 LB：</p>
+<pre class="highlight"><code>             VIP
+              │
+       ┌──────┴──────┐
+       ▼             ▼
+   HAProxy01      HAProxy02
+      MASTER        BACKUP</code></pre>
+<p>使用 Keepalived 提供 VIP。</p>
+<hr />
+<h1 id="18-https">18. HTTPS</h1>
+<p>生产环境使用：</p>
+<pre class="highlight"><code>https://minio.example.com</code></pre>
+<p>不要直接：</p>
+<pre class="highlight"><code>http://minio.example.com</code></pre>
+<p>可以让 LB 负责 TLS：</p>
+<pre class="highlight"><code>客户端
+  │
+ HTTPS
+  ↓
+LB
+  │
+ HTTP/HTTPS
+  ↓
+MinIO</code></pre>
+<p>Console 同理：</p>
+<pre class="highlight"><code>https://minio-console.example.com</code></pre>
+<hr />
+<h1 id="19">19. 创建业务账号</h1>
+<p><strong>不要让业务程序使用 Root 用户。</strong></p>
+<p>例如：</p>
+<pre class="highlight"><code>Root
+ │
+ ├── 创建 Policy
+ │
+ └── 创建业务账号
+          │
+          ├── Access Key
+          └── Secret Key</code></pre>
+<p>业务系统配置：</p>
+<pre class="highlight"><code>Endpoint:
+https://minio.example.com
+
+
+AccessKey:
+业务自己的 Access Key
+
+
+SecretKey:
+业务自己的 Secret Key
+
+
+Bucket:
+业务自己的 Bucket</code></pre>
+<p>例如：</p>
+<pre class="highlight"><code>mc admin user add minio app-user '复杂密码'</code></pre>
+<p>然后根据业务需求配置 Policy。</p>
+<hr />
+<h1 id="20">20. 故障测试</h1>
+<p>生产部署完成以后<strong>必须测试</strong>。</p>
+<h3 id="_3">测试节点故障</h3>
+<p>在 <code>minio01</code>：</p>
+<pre class="highlight"><code>systemctl stop minio</code></pre>
+<p>然后测试：</p>
+<pre class="highlight"><code>mc ls minio/test
+mc cp test.txt minio/test/
+mc cp minio/test/test.txt /tmp/</code></pre>
+<p>确认业务仍然可以访问。</p>
+<p>然后恢复：</p>
+<pre class="highlight"><code>systemctl start minio</code></pre>
+<hr />
+<h3 id="_4">测试磁盘故障</h3>
+<p>模拟某个数据盘不可用，观察：</p>
+<pre class="highlight"><code>mc admin info minio</code></pre>
+<p>以及：</p>
+<pre class="highlight"><code>journalctl -u minio -f</code></pre>
+<p>确认：</p>
+<pre class="highlight"><code>故障被发现
+集群仍能工作
+监控能够告警
+恢复后节点重新正常</code></pre>
+<p><strong>不要直接在生产环境物理拔盘做第一次测试，先在测试环境演练。</strong></p>
+<hr />
+<h1 id="21">21. 监控</h1>
+<p>标准生产环境建议：</p>
+<pre class="highlight"><code>MinIO
+  ↓
+Prometheus
+  ↓
+Grafana
+  ↓
+Alertmanager</code></pre>
+<p>重点监控：</p>
+<pre class="highlight"><code>节点状态
+磁盘状态
+磁盘容量
+CPU
+内存
+网络
+S3 请求
+S3 错误
+请求延迟</code></pre>
+<p>尤其关注：</p>
+<pre class="highlight"><code>磁盘容量</code></pre>
+<p>对象存储最怕磁盘空间耗尽。</p>
+<hr />
+<h1 id="22">22. 备份/灾备</h1>
+<p>最后一定要记住：</p>
+<blockquote>
+<p><strong>MinIO 集群高可用 ≠ 数据备份。</strong></p>
+</blockquote>
+<p>的架构：</p>
+<pre class="highlight"><code>              生产 MinIO
+                   │
+                   │
+            备份 / Replication
+                   │
+                   ▼
+              灾备 MinIO
+                   │
+                   ▼
+                异地机房</code></pre>
+<p>至少要考虑：</p>
+<pre class="highlight"><code>误删除
+误操作
+程序 BUG
+勒索软件
+整个集群故障
+机房故障</code></pre>
+<hr />
+<h1 id="23">23. 上线前检查表</h1>
+<p>以后真正部署的时候，可以按照这个检查：</p>
+<pre class="highlight"><code>[ ] 4 台服务器准备完成
+[ ] 4 台服务器时间同步
+[ ] hostname 配置
+[ ] /etc/hosts 配置
+[ ] 数据盘格式化
+[ ] 数据盘挂载
+[ ] /etc/fstab 配置
+[ ] MinIO 用户创建
+[ ] 数据目录权限正确
+[ ] 4 台 MinIO 版本一致
+[ ] MinIO 配置完成
+[ ] systemd 配置完成
+[ ] MinIO 启动成功
+[ ] 9000 端口互通
+[ ] 9001 端口可访问
+[ ] mc admin info 正常
+[ ] Bucket 创建成功
+[ ] 上传测试成功
+[ ] 下载测试成功
+[ ] DNS 配置
+[ ] LB 配置
+[ ] HTTPS 配置
+[ ] Console 可以访问
+[ ] 业务账号创建
+[ ] 权限配置
+[ ] 监控配置
+[ ] 告警配置
+[ ] 备份/灾备方案
+[ ] 节点故障测试
+[ ] 磁盘故障测试</code></pre>
+<h2 id="_5">最终生产架构</h2>
+<p>以后面试或者实际部署，脑子里就记这张：</p>
+<pre class="highlight"><code>                         业务系统
+                            │
+                         HTTPS/S3
+                            │
+                            ▼
+                    ┌───────────────┐
+                    │   DNS / VIP   │
+                    └───────┬───────┘
+                            │
+                    ┌───────▼───────┐
+                    │ HAProxy / F5  │
+                    │  + Keepalived │
+                    └───────┬───────┘
+                            │
+          ┌─────────────────┼─────────────────┐
+          ▼                 ▼                 ▼
+      MinIO-01          MinIO-02          MinIO-03          MinIO-04
+          │                 │                 │                 │
+      4 × SSD            4 × SSD            4 × SSD           4 × SSD
+          └─────────────────┼─────────────────┘
+                            │
+                    MinIO Distributed
+                     Erasure Coding
+                            │
+             ┌──────────────┴──────────────┐
+             ▼                             ▼
+        Prometheus                    Backup/DR
+             │                             │
+          Grafana                    灾备 MinIO</code></pre>
+<p><strong>这套就是比较完整的生产部署模板。</strong></p>
 
 
   
@@ -16853,42 +17281,6 @@ sysctl -p</code></pre>
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="页脚" >
-      
-        
-        <a href="../lvs%E5%8A%A0keepalve%E9%83%A8%E7%BD%B2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: lvs加keepalive部署" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              lvs加keepalive部署
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../../Cloud_Computing/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%A6%82%E5%BF%B5/" class="md-footer__link md-footer__link--next" aria-label="下一页: 对象存储概念" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              对象存储概念
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

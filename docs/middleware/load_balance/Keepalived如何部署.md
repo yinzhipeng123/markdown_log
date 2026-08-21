@@ -1,8 +1,8 @@
-Keepalived 的部署其实非常简单，下面是一个完整的部署步骤，包括安装、配置和启动服务。我们以两台 CentOS / Ubuntu 系统的 Linux 服务器为例：一台作为主节点（MASTER），一台作为备节点（BACKUP），共同管理一个虚拟 IP。
+Keepalived 的部署其实非常简单，下面是一个完整的部署步骤，包括安装、配置和启动服务
 
 ------
 
-## 🚀 一、环境准备
+## 一、环境准备
 
 假设：
 
@@ -13,15 +13,15 @@ Keepalived 的部署其实非常简单，下面是一个完整的部署步骤，
 
 ------
 
-## 🧩 二、安装 Keepalived
+## 二、安装 Keepalived
 
-### ✅ CentOS / RHEL：
+### CentOS / RHEL：
 
 ```bash
 sudo yum install keepalived -y
 ```
 
-### ✅ Ubuntu / Debian：
+### Ubuntu / Debian：
 
 ```bash
 sudo apt update
@@ -30,7 +30,7 @@ sudo apt install keepalived -y
 
 ------
 
-## 🛠️ 三、配置 Keepalived
+## 三、配置 Keepalived
 
 编辑主配置文件：
 
@@ -76,7 +76,7 @@ vrrp_instance VI_1 {
 }
 ```
 
-> ⚠️ 注意：
+> 注意：
 >
 > - `state`：主为 MASTER，备为 BACKUP；
 > - `priority`：主节点值必须高于备节点；
@@ -85,7 +85,7 @@ vrrp_instance VI_1 {
 
 ------
 
-## 🔄 四、启动服务
+## 四、启动服务
 
 ```bash
 # 启动 keepalived
@@ -100,7 +100,7 @@ sudo systemctl status keepalived
 
 ------
 
-## 🧪 五、验证是否成功
+## 五、验证是否成功
 
 1. 在主节点执行：
 
@@ -120,7 +120,7 @@ sudo systemctl stop keepalived
 
 ------
 
-## 🧱 六、常用故障排查命令
+## 六、常用故障排查命令
 
 ```bash
 journalctl -u keepalived    # 查看日志
@@ -130,7 +130,7 @@ ip a                        # 查看网卡绑定的 IP
 
 ------
 
-## ✅ 提示
+## 提示
 
 - Keepalived 的 VIP 通常用于前端服务（如 Nginx、HAProxy）监听；
 - 如果网卡为 `ens33` 或 `enp0s3`，请记得将 `interface eth0` 改成你的网卡名；

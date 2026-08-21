@@ -4,19 +4,23 @@
 
 ## **一、环境准备**
 
-1. **操作系统**：
-   - [ ] Linux 是推荐的环境，但也支持 Windows。
+**1.操作系统**：
 
-2. **依赖环境**：
-   - [ ] JDK 1.8 或更高版本（Java 环境）。
-   - [ ] 配置 `JAVA_HOME` 环境变量。
-   - [ ] 确保服务器网络通畅，端口未被占用（默认 `9876` 为 NameServer 端口，`10911` 和 `10909` 为 Broker 使用的端口）。
+- [ ] Linux 是推荐的环境，但也支持 Windows。
 
-3. **下载 RocketMQ**：
-   - [ ] 从 [RocketMQ 官方 GitHub 仓库](https://github.com/apache/rocketmq) 下载稳定版本的二进制包或源码。
+**2.依赖环境**：
 
-4. **解压并配置**：
-   - [ ] 将下载的 RocketMQ 解压到指定目录。
+- [ ] JDK 1.8 或更高版本（Java 环境）。
+- [ ] 配置 `JAVA_HOME` 环境变量。
+- [ ] 确保服务器网络通畅，端口未被占用（默认 `9876` 为 NameServer 端口，`10911` 和 `10909` 为 Broker 使用的端口）。
+
+**3.下载 RocketMQ**：
+
+- [ ] 从 [RocketMQ 官方 GitHub 仓库](https://github.com/apache/rocketmq) 下载稳定版本的二进制包或源码。
+
+**4.解压并配置**：
+
+- [ ] 将下载的 RocketMQ 解压到指定目录。
 
 ---
 

@@ -1,14 +1,14 @@
 一个 **LVS + Keepalived 高可用架构一键部署脚本**，包含：
 
-- 🧠 主节点（MASTER）
-- 👥 备节点（BACKUP）
-- 🧱 Real Server（真实后端）
+- 主节点（MASTER）
+- 备节点（BACKUP）
+- Real Server（真实后端）
 
 我将为每个角色提供独立脚本，按你的实际服务器角色运行对应的脚本即可。
 
 ------
 
-## 🧠 1. MASTER 节点脚本（如：192.168.1.10）
+## 1. MASTER 节点脚本（如：192.168.1.10）
 
 保存为 `setup_master.sh`：
 
@@ -73,7 +73,7 @@ systemctl enable keepalived --now
 
 ------
 
-## 👥 2. BACKUP 节点脚本（如：192.168.1.11）
+## 2. BACKUP 节点脚本（如：192.168.1.11）
 
 保存为 `setup_backup.sh`：
 
@@ -138,7 +138,7 @@ systemctl enable keepalived --now
 
 ------
 
-## 🧱 3. Real Server 脚本（192.168.1.101 和 192.168.1.102）
+## 3. Real Server 脚本（192.168.1.101 和 192.168.1.102）
 
 保存为 `setup_real_server.sh`：
 
@@ -161,7 +161,7 @@ sysctl -p
 
 ------
 
-## 🧪 4. 使用说明
+## 4. 使用说明
 
 - 修改脚本中的网卡名（默认为 eth0），根据你的实际网络接口替换。
 - `192.168.1.100` 是 VIP，可以替换成你自己的业务 IP。

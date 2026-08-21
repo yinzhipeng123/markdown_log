@@ -673,6 +673,10 @@
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/MQ/rabbitmq/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/middleware/MQ/rocketmq/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
@@ -709,23 +713,27 @@
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/keepalive/</loc>
+         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/HAProxy_Keepalived%E9%83%A8%E7%BD%B2/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/keepalive%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2/</loc>
+         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/Keepalived/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/lvs/</loc>
+         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/Keepalived%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/lvs%E5%8A%A0keepalive%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC/</loc>
+         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/LVS/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
-         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/lvs%E5%8A%A0keepalve%E9%83%A8%E7%BD%B2/</loc>
+         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/LVS%E5%8A%A0Keepalived%E9%83%A8%E7%BD%B2/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/load_balance/LVS%E5%8A%A0Keepalived%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
@@ -762,6 +770,10 @@
     </url>
     <url>
          <loc>https://yinzhipeng123.github.io/markdown_log/middleware/pinpoint/pinpoint_install/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://yinzhipeng123.github.io/markdown_log/middleware/storage/minio%E9%83%A8%E7%BD%B2/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
