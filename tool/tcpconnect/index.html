@@ -17056,7 +17056,47 @@ systemctl enable --now tcpconnect.service</code></pre>
 <p>另开一个 SSH 窗口：</p>
 <pre class="highlight"><code>curl http://www.baidu.com</code></pre>
 <p>然后：</p>
-<pre class="highlight"><code>tail -n 20 /var/log/tcpconnect.log</code></pre>
+<p>可以看到进程号，进程名字，发起地址，和目的地址，目的端口</p>
+<pre class="highlight"><code class="language-bash">tail -n 20 /var/log/tcpconnect.log
+PID    COMM         IP SADDR            DADDR            DPORT
+1669   curl         4  172.31.89.232    183.2.172.177    80 
+</code></pre>
+<p>服务资源占用情况</p>
+<pre class="highlight"><code class="language-bash">服务情况
+[root@localhost ~]# systemctl status tcpconnect.service
+● tcpconnect.service - BCC TCP Connect Monitor
+   Loaded: loaded (/etc/systemd/system/tcpconnect.service; enabled; vendor preset: disabled)
+   Active: active (running) since 五 2026-10-09 14:26:09 CST; 25min ago
+ Main PID: 1045 (bash)
+   CGroup: /system.slice/tcpconnect.service
+           ├─1045 /bin/bash -c /usr/bin/python -u /usr/share/bcc/tools/tcpconnect &gt;&gt; /var/log/tcpconnect.log 2&gt;&amp;1
+           └─1047 /usr/bin/python -u /usr/share/bcc/tools/tcpconnect
+
+10月 09 14:26:09 localhost.localdomain systemd[1]: Started BCC TCP Connect Monitor.
+进程占用情况
+[root@localhost ~]# ps -ef | grep tcpconnect
+root      1045     1  0 14:26 ?        00:00:00 /bin/bash -c /usr/bin/python -u /usr/share/bcc/tools/tcpconnect &gt;&gt; /var/log/tcpconnect.log 2&gt;&amp;1
+root      1047  1045  0 14:26 ?        00:00:02 /usr/bin/python -u /usr/share/bcc/tools/tcpconnect
+root      1685  1648  0 14:52 pts/0    00:00:00 grep --color=auto tcpconnect
+
+
+
+ps查看资源占用情况
+[root@localhost ~]# ps -p 1045,1047 -o pid,ppid,%cpu,%mem,rss,vsz,etime,cmd
+  PID  PPID %CPU %MEM   RSS    VSZ     ELAPSED CMD
+ 1045     1  0.0  0.0  1432 115404       24:01 /bin/bash -c /usr/bin/python -u /usr/share/bcc/tools/tcpconnect &gt;&gt; /var/log/tcpconnect.log 2&gt;&amp;1
+ 1047  1045  0.1  2.6 101060 367740      24:01 /usr/bin/python -u /usr/share/bcc/tools/tcpconnect
+TOP查看资源占用情况
+[root@localhost ~]# top -p 1045,1047
+ top - 14:51:01 up 24 min,  2 users,  load average: 0.00, 0.01, 0.02
+Tasks:   2 total,   0 running,   2 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.1 si,  0.0 st
+KiB Mem :  3879640 total,   502556 free,  3185600 used,   191484 buff/cache
+KiB Swap:  4063228 total,  4063228 free,        0 used.   477328 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                         
+ 1045 root      20   0  115404   1432   1240 S   0.0  0.0   0:00.00 bash                                                                            
+ 1047 root      20   0  367740 101060  31716 S   0.0  2.6   0:02.18 python </code></pre>
 
 
   
