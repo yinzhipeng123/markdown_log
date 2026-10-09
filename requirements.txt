@@ -52,7 +52,7 @@ smmap==5.0.0
 soupsieve==2.8.3
 tinycss2==1.2.1
 typing_extensions==4.15.0
-tzdata==2023.4
+tzdata==2025.3
 urllib3==1.26.13
 watchdog==6.0.0
 weasyprint==59.0

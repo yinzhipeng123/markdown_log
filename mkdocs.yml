@@ -238,6 +238,7 @@ nav:
               - 清理磁盘: system/linux/IO/清理磁盘.md
               - 清理磁盘的脚本: system/linux/IO/清理磁盘的脚本.md
           - 网络相关:
+              - 记录服务器主动外联网络的服务: tool/tcpconnect.md
               - TCP图解: system/linux/网络/tcp.md
               - TIME_WAIT过多的解决方法: system/linux/网络/time_wait.md
               - 阿里云修改TCP的TIME-WAIT超时时间: system/linux/网络/修改TCP的TIME-WAIT超时时间.md
@@ -322,6 +323,7 @@ nav:
       - Windows:
           - 虚拟机安装Windows: system/windows/虚拟机安装windows.md
           - tcping: system/windows/tcping.md
+          - WSL2使用记录: tool/WSL2使用记录.md
       - Mac:
           - 常用软件: system/mac/软件.md
           - 安装Homebrew: system/mac/安装Homebrew.md
